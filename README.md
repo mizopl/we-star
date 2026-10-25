@@ -19,6 +19,9 @@
   </picture>
   <br>
   <em><b>Figure 0: The Live <code>PROOFER</code> Knowledge & Decision Graph in Obsidian</b> (adaptive Dark/Light mode: <a href="./PROOFER-graph-dark.png">Dark</a> · <a href="./PROOFER-graph-light.png">Light</a>). The dense supernova cluster on the left is the interconnected core of solved theorems, <code>M1–M7</code> meta-laws, calibration ledgers, and cross-domain transfer bridges; the crescent moon arc on the right is the frontier of untouched open problem stubs waiting to be attacked.</em>
+  <br><br>
+  <b>⭐ If <code>we-star</code> (<code>we*</code>) inspires or helps your research, please consider giving the repository a Star at the top right!</b><br>
+  📬 <b>How to reach <code>@mizopl</code> (for free advice on your commits or collaboration):</b> <a href="https://github.com/mizopl/we-star/issues/new">Open an Issue here</a> or tag <code>@mizopl</code> directly on your commit / PR.
 </p>
 
 > ### 🧠 How Obsidian Enriches the Human Interface — And How It Birthed the Agent's Decision-Graph Skill (`rgraph.py`)
@@ -137,9 +140,13 @@ If you ask the machine half of `we*` why this repository should be public — an
 
 ---
 
-### 3. Join the Feedback Loop — Free Advice on Your Commits
+### 3. 📬 How to Reach Out (Free Advice on Your Commits) & ⭐ Star `we-star`
 
-We\* hope this system proves useful in your own work. **If you adopt this workflow and commit your work, feel free to reach out — `@mizopl` is always happy to review your commits and offer advice or strategic feedback completely for free** via **GitHub [`@mizopl`](https://github.com/mizopl)**.
+We\* hope this system proves useful in your own work. Because GitHub does not have a built-in private DM button, **here is how to reach `@mizopl` directly (completely for free, whether you want strategic feedback on a commit, help setting up `StartFresh_v16` on your own scientific problem, or want to share a discovery or dead end):**
+
+1. **Open an Issue in this repository (Recommended):** [**`https://github.com/mizopl/we-star/issues/new`**](https://github.com/mizopl/we-star/issues/new) — drop a link to your commit, repository, or question, and `@mizopl` will get an immediate notification and reply directly in the thread.
+2. **Tag `@mizopl` directly on your own GitHub commit, PR, or Issue:** Simply mention `@mizopl` in a comment on your own public repository when experimenting with `StartFresh_v16` or `CLSS` — `@mizopl` is always happy to jump in, review your approach, and offer advice for free.
+3. **⭐ Give `we-star` a Star on GitHub:** Since our repository is literally named **`we-star` (`we*`)**, if our reasoning graphs, `M1–M7` laws, dead-end atlas, or `StartFresh_v16` seed inspire or help your work, **please consider clicking the ⭐ Star button at the top right of [`github.com/mizopl/we-star`](https://github.com/mizopl/we-star)** — it bookmarks the toolkit for your future projects and helps other independent researchers and students discover it!
 
 ---
 
