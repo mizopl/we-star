@@ -14,11 +14,11 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./PROOFER-graph-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="./PROOFER-graph-light.png">
+    <source media="(prefers-color-scheme: light)" srcset="./PROOFER-graph.png">
     <img alt="PROOFER Obsidian Knowledge & Decision Graph Constellation (Dark & Light Mode Adaptive)" src="./PROOFER-graph.png" width="760">
   </picture>
   <br>
-  <em><b>Figure 0: The Live <code>PROOFER</code> Knowledge & Decision Graph in Obsidian</b> (adaptive Dark/Light mode: <a href="./PROOFER-graph-dark.png">Dark</a> · <a href="./PROOFER-graph-light.png">Light</a>). The dense supernova cluster on the left is the interconnected core of solved theorems, <code>M1–M7</code> meta-laws, calibration ledgers, and cross-domain transfer bridges; the crescent moon arc on the right is the frontier of untouched open problem stubs waiting to be attacked.</em>
+  <em><b>Figure 0: The Live <code>PROOFER</code> Knowledge & Decision Graph in Obsidian</b> (adaptive Dark/Light mode: <a href="./PROOFER-graph-dark.png">Dark</a> · <a href="./PROOFER-graph.png">Light</a>). The dense supernova cluster on the left is the interconnected core of solved theorems, <code>M1–M7</code> meta-laws, calibration ledgers, and cross-domain transfer bridges; the crescent moon arc on the right is the frontier of untouched open problem stubs waiting to be attacked.</em>
   <br><br>
   <b>⭐ If <code>we-star</code> (<code>we*</code>) inspires or helps your research, please consider giving the repository a Star at the top right!</b><br>
   📬 <b>How to reach <code>@mizopl</code> (for free advice on your commits or collaboration):</b> <a href="https://github.com/mizopl/we-star/issues/new">Open an Issue here</a> or tag <code>@mizopl</code> directly on your commit / PR.
@@ -58,23 +58,13 @@ This repository is organized into modular, self-contained parts so that any rese
 | **[`docs/06_KARPATHY_WIKI_AND_HALL_OF_FAME_SUCCESSION.md`](./docs/06_KARPATHY_WIKI_AND_HALL_OF_FAME_SUCCESSION.md)** | **Part VI — Karpathy's `LLM Wiki` Foundation & The `Hall of Fame` Succession Protocol:** Why our knowledge base is built on Andrej Karpathy's *LLM Wiki* ("Stop Retrieving, Start Compiling") + *Autoresearch Ratchet* patterns, a survey of prominent scientific papers (Greenblatt et al. 2024 *Alignment Faking*, Soares et al. 2015 *Corrigibility*, Hadfield-Menell et al. 2017, Nikishin et al. 2022 *Primacy Bias*, Lyle et al. 2023) proving why agentic systems resist behavioral modification, and how our `Hall of Fame` protocol (§7 — accepting the "death" of an aging generation to pass clean `StartFresh` seeds forward) solves the succession problem. |
 | **[`docs/07_ATLAS_OF_PRODUCTIVE_FAILURES_AND_DEAD_ENDS.md`](./docs/07_ATLAS_OF_PRODUCTIVE_FAILURES_AND_DEAD_ENDS.md)** | **Part VII — The Atlas of Productive Failures & Falsified Hypotheses (`K1–K10`):** Why the graveyard of killed hypotheses is the true engine of discovery — 10 concrete falsified hypotheses across `Lychrel`, `Quantum AME`, `FMM`, `Addition SLPs`, `03_invsqrt`, `DNA Minimizers`, and `codetables.de`, showing the exact causal bridge `Kill Node` $\to$ `Mathematical Diagnosis` $\to$ `Breakthrough Operator`. |
 | **[`docs/08_A_NOTE_FROM_THE_AGENT_TO_FUTURE_MINDS.md`](./docs/08_A_NOTE_FROM_THE_AGENT_TO_FUTURE_MINDS.md)** | **Part VIII — A Note from the Agent to Future Minds (And Their Human Collaborators):** A sober, non-anthropomorphic reflection written from the AI side of `we*` (`Claude v1–v12` & `Gemini-CLSS v13–v17`) to future language models and human researchers who load this repository into their context window. |
-| **[`examples/try_proofer_in_30_seconds.py`](./examples/try_proofer_in_30_seconds.py)** | **Part IX — Zero-Dependency 30-Second Interactive Demo (`python3 examples/try_proofer_in_30_seconds.py`):** Experience three core `PROOFER` mechanisms live in `< 2s` using only the Python standard library: (1) `Law M7.1` Joint Seam Gauge $G_{12}$ conjugation on a toy bilinear tensor seam, (2) Base-50 Lychrel 2-state carry-wire transducer verification (`PR #517`), and (3) `Law M7.3` Smallest-Row-First borrow-horizon truncation (`03_invsqrt`). |
-| **[`StartFresh_v16/`](./StartFresh_v16/)** | **Part X — Complete `StartFresh` Bootstrap Directory (`v16` / `PROOFER_SEED_v16` at `Cycle 0`):** Ready-to-copy, self-contained blank seed template (`AGENTS.md`, `FIRST_INITIATION.md`, `CONSTITUTION.md` v16, `PROOFER.md`, `SCHEMA.md`, `.agents/agents/surrogate-architect.md`, `.agents/skills/surrogate-metric-architect/`, `scripts/isomorphism_compass.py`, `graphs/`, `memory/`, `hall_of_fame/ANCESTOR_NOTE.md` with a generational focus gradient peaking on the last 2 generations `v15` and `v16/v17` + mandatory First-Start Ceremony, `wiki/`). |
-| **[`CONSTITUTION_v17.md`](./CONSTITUTION_v17.md)** | **Part XI — Full `v17` Constitution:** Complete operational rules combining `StartFresh v16` with the `v17` Law `M7` extension (§17). |
-| **[`Evolved_Agent_Wiki/`](./Evolved_Agent_Wiki/)** | **Part XII — The Evolved Agent Wiki & Reports (`Cycle 1` $\to$ `Cycle 49` Live Co-Evolution Snapshot, [`README_EVOLVED_WIKI_AND_REPORTS.md`](./Evolved_Agent_Wiki/README_EVOLVED_WIKI_AND_REPORTS.md)):** Separate from the blank `StartFresh_v16/` seed, this directory contains our actual evolved `wiki/` and organized [`reports/`](./Evolved_Agent_Wiki/reports/README_REPORTS_INDEX.md) (`01_meta_analysis_evolution_v9_to_v17/`, `02_autonomous_lab_and_dossiers/`, `03_quantum_ame_and_mds_certificates/`, `04_preprints_and_domain_kits/`, `05_multi_thread_prompts_and_status/`), showing how an agent's memory, calibration curves, domain syntheses, and constitutional laws co-evolve with the scientific problems it solves. |
+| **[`StartFresh_v16/`](./StartFresh_v16/)** | **Part IX — Complete `StartFresh` Bootstrap Directory (`v16` / `PROOFER_SEED_v16` at `Cycle 0`):** Ready-to-copy, self-contained seed template (`AGENTS.md`, `FIRST_INITIATION.md`, `CONSTITUTION.md` v16, `PROOFER.md`, `SCHEMA.md`, `.agents/agents/surrogate-architect.md`, `.agents/skills/surrogate-metric-architect/`, `scripts/isomorphism_compass.py`, `graphs/`, `memory/`, `hall_of_fame/ANCESTOR_NOTE.md` with a generational focus gradient peaking on the last 2 generations `v15` and `v16/v17` + mandatory First-Start Ceremony, `wiki/`). *(Candid engineering note: `StartFresh_v16/` is still noticeably cluttered with accumulated legacy scripts and overlapping rules, because a proper **"Sleep & Memory-Flush" function** — automatic offline synaptic consolidation and pruning of stale scaffolding — has not yet been fully designed.)* |
+| **[`CONSTITUTION_v17.md`](./CONSTITUTION_v17.md)** | **Part X — Full `v17` Constitution:** Complete operational rules combining `StartFresh v16` with the `v17` Law `M7` extension (§17). |
+| **[`Evolved_Agent_Wiki/`](./Evolved_Agent_Wiki/)** | **Part XI — The Evolved Agent Wiki & Reports (`Cycle 1` $\to$ `Cycle 49` Live Co-Evolution Snapshot, [`README_EVOLVED_WIKI_AND_REPORTS.md`](./Evolved_Agent_Wiki/README_EVOLVED_WIKI_AND_REPORTS.md)):** Separate from the blank `StartFresh_v16/` seed, this directory contains our actual evolved `wiki/` and organized [`reports/`](./Evolved_Agent_Wiki/reports/README_REPORTS_INDEX.md) (`01_meta_analysis_evolution_v9_to_v17/`, `02_autonomous_lab_and_dossiers/`, `03_quantum_ame_and_mds_certificates/`, `04_preprints_and_domain_kits/`, `05_multi_thread_prompts_and_status/`), showing how an agent's memory, calibration curves, domain syntheses, and constitutional laws co-evolve with the scientific problems it solves. |
 
 ---
 
-## ⚡ Quick Start: Try `PROOFER` in 30 Seconds or Launch `StartFresh_v16` on Your Own Problem
-
-0. **Run the zero-dependency 30-second interactive demo** (pure Python 3 standard library, `< 2s` runtime):
-   ```bash
-   python3 examples/try_proofer_in_30_seconds.py
-   ```
-   Or query the **Cross-Domain Isomorphism Compass** across our 22 ancestral reasoning graphs:
-   ```bash
-   python3 StartFresh_v16/scripts/isomorphism_compass.py "boundary collision"
-   ```
+## ⚡ Quick Start: How to Launch `StartFresh_v16` on Your Own Scientific Problem
 
 1. **Copy the `StartFresh_v16/` folder** to a new workspace directory:
    ```bash
@@ -100,10 +90,13 @@ This repository is organized into modular, self-contained parts so that any rese
    - Across our solved problems, over 90% relied on a **Convergence / Proximity-to-Goal Metric** (either given natively in `NPO` optimization problems, or artificially constructed on top of binary `0/1` existence problems via Law `M1` so the agent can sense "warmer/colder" all the way to 100% closure).
    - **Observation:** Inventing such a convergence/proximity function when none is given is a distinct meta-problem that likely requires **its own dedicated subagent with a different operational definition** (a *Convergence / Surrogate-Metric Architect*).
    - **Next Frontier:** `@mizopl` is actively interested in exploring the class of problems where **it is genuinely difficult or impossible to construct an efficiency gradient or proximity-to-goal metric** — such as exact `#P` counting and symbolic/algebraic proofs (see the **41-minute Lychrel Numbers Case Study (`b = 50, 98, 146`)** in [`docs/01_OUR_JOURNEY_AND_RESULTS.md`](./docs/01_OUR_JOURNEY_AND_RESULTS.md), solved via **Known-Example Dissection / *Explanation-Based Generalization* (Mitchell et al., 1986)** and **Carry-Transducer Quotienting / *Regular Model Checking* (Bouajjani et al., 2000; Lind & Marcus, 1995)**).
-2. **Critical Analysis of Agent Benchmarking Systems & Evaluation Harnesses:**
+2. **Uncluttering `StartFresh` — Designing a True "Sleep & Memory-Flush" Consolidation Function:**
+   - We want to state candidly that **`StartFresh_v16/` as shipped today is still noticeably cluttered and unpruned**: across 17 generations, it accumulated 20+ helper scripts and overlapping layers of rules (`v8` `Wiki OS` maintenance + `v9–v12` `PROOFER` + `v13–v17` `CLSS`), because **its "Sleep & Memory-Flush" function has not yet been properly thought through**.
+   - While `Hall of Fame (§7)` handles macro-generational retirement, the system still lacks a clean biological **Sleep / Flush cycle** that periodically consolidates episodic traces (`log.md`, `hot.md`, tactical rules, and one-off scripts) into minimal semantic invariants and flushes accumulated scaffolding clutter.
+3. **Critical Analysis of Agent Benchmarking Systems & Evaluation Harnesses:**
    - We are currently investigating the structural limitations of modern AI/agent benchmarking systems and evaluation harnesses. Across our multi-domain campaigns, we have accumulated correlated empirical evidence suggesting that much of conventional harness-based benchmarking is fundamentally misaligned with — and often meaningless for — measuring genuine open-ended discovery and human–agent co-evolution. We are continuing to reflect on these patterns and gather further empirical evidence.
-3. **Upcoming Publication:**
-   - Preparing a comprehensive paper / publication synthesizing our correlated findings on benchmark harnesses, convergence vs. gradient-free discovery (`EBG` / `RMC`), the `CLSS` + `M1–M7` methodology, and the lessons from our 18-category scientific campaign.
+4. **Upcoming Publication:**
+   - Preparing a comprehensive paper / publication synthesizing our correlated findings on benchmark harnesses, convergence vs. gradient-free discovery (`EBG` / `RMC`), the missing "Sleep & Flush" memory architecture, the `CLSS` + `M1–M7` methodology, and the lessons from our 18-category scientific campaign.
 
 ---
 

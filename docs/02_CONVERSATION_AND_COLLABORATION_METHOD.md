@@ -44,7 +44,7 @@ Whenever we upgrade the system's operating rules (`v8` $\to$ `v9` $\to \dots \to
 
 ## 3. The Visual Human Cockpit: How Obsidian Enriches the Interface & Birthed the Agent's Decision-Graph Skill (`rgraph.py`)
 
-While the agent threads interact with the workspace via CLI commands and Python scripts, **`@mizopl`'s personal interface is enriched by [Obsidian](https://obsidian.md/)**, which renders the entire `wiki/` vault and `graphs/*.canvas` files as an interactive visual knowledge graph (`PROOFER-graph.png` / `PROOFER-graph-dark.png` / `PROOFER-graph-light.png` in the root directory).
+While the agent threads interact with the workspace via CLI commands and Python scripts, **`@mizopl`'s personal interface is enriched by [Obsidian](https://obsidian.md/)**, which renders the entire `wiki/` vault and `graphs/*.canvas` files as an interactive visual knowledge graph (`PROOFER-graph.png` / `PROOFER-graph-dark.png` in the root directory).
 
 Tracing our `Hall of Fame` evolutionary archives (`INIT_note.md` and `ancestor_v8` through `ancestor_v9.1`) reveals a direct genealogical link: **the agent's skill of building formal Decision & Reasoning Graphs (`scripts/rgraph.py` and `graphs/*.jsonl`) grew directly out of Obsidian's Graph View and JSON Canvas (`.canvas`) architecture:**
 

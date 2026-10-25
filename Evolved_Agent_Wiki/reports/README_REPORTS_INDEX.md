@@ -41,8 +41,8 @@ This directory contains all scientific dossiers, generational meta-analysis repo
 | :--- | :--- |
 | [`AME_15_7_and_15_5_Purity_and_Circulant_Dossier.md`](./03_quantum_ame_and_mds_certificates/AME_15_7_and_15_5_Purity_and_Circulant_Dossier.md) | Complete mathematical dossier proving the impurity ($d_Z = 7 < 8$) of `[[15,0,8]]_5` and `[[15,0,8]]_7` in `codetables.de` (confirmed by Dr. Markus Grassl) and constructing pure circulant `AME(15,7)` and `AME(17,8)` states. |
 | [`SUBMISSION_DOSSIER_AND_LETTER.md`](./03_quantum_ame_and_mds_certificates/SUBMISSION_DOSSIER_AND_LETTER.md) | Full submission dossier for the Huber–Wyderka Quantum `AME` table and Grassl `codetables.de`. |
-| [`HUBER_WYDERKA_GRASSL_SUBMISSION_PACKAGE/`](./03_quantum_ame_and_mds_certificates/HUBER_WYDERKA_GRASSL_SUBMISSION_PACKAGE/) | Complete standalone verification package containing 30 JSON certificates, `THEOREMS_D1_TO_D14_AND_COMBINATORIAL_GENERALIZATION.md`, `SHA256SUMS.txt`, and `verify_all_ame_submissions.py`. |
-| [`certificates/`](./03_quantum_ame_and_mds_certificates/certificates/) & [`ame_table_n2_to_20_status_and_estimates.json`](./03_quantum_ame_and_mds_certificates/ame_table_n2_to_20_status_and_estimates.json) | Individual JSON certificates and complete 1,008-cell status census for $2 \le n \le 20$. |
+| [`HUBER_WYDERKA_GRASSL_SUBMISSION_PACKAGE/`](./03_quantum_ame_and_mds_certificates/HUBER_WYDERKA_GRASSL_SUBMISSION_PACKAGE/) | Complete standalone verification package containing all 30 JSON certificates (`certificates/`), `THEOREMS_D1_TO_D14_AND_COMBINATORIAL_GENERALIZATION.md`, `SHA256SUMS.txt`, and `verify_all_ame_submissions.py`. |
+| [`ame_table_n2_to_20_status_and_estimates.json`](./03_quantum_ame_and_mds_certificates/ame_table_n2_to_20_status_and_estimates.json) | Complete 1,008-cell status census and upper/lower bound estimates for $2 \le n \le 20$. |
 | [`colab_ame_experiment/`](./03_quantum_ame_and_mds_certificates/colab_ame_experiment/) | Google Colab L4 GPU scripts, notebooks, and JSON results for `AME(7,6)`, `AME(8,6)`, `AME(8,5)`, and `AME(7,4)`. |
 
 ---
