@@ -76,7 +76,7 @@ Consider the structural paradox shared by biological evolution, human institutio
 When you run and evolve your own instances from [`StartFresh_v16/`](../StartFresh_v16/):
 - **Do not be afraid to retire ("let die") old versions of your Constitution and heuristics** whenever you notice the system losing plasticity or repeating itself (*primacy bias*).
 - Instead of patching a single bloated session forever, **execute the `Hall of Fame` protocol (§7)**: honor the retiring generation, snapshot its files in `hall_of_fame/`, distill its hardest-won lesson into a single clean law, and spawn a fresh descendant (`StartFresh`).
-- Because in both science and life: **only by letting go of what we have built and accepting the close of an old chapter do we open the way to something higher (*"Nothing is perfect until it is to the Highest"*).**
+- Because in both science and engineering: **only by letting go of an aging architecture and accepting the close of an old chapter do we make room for the next step (*"Nothing material is perfect"*).**
 
 ---
 

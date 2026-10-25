@@ -12,7 +12,7 @@ To prevent context bloat while preserving full operational wisdom, this document
 - **Horizon I — Deep Roots (`v1` – `v9.1`, `10%` Resolution / Core Invariants Only):** Distilled to the bedrock rules that never change.
 - **Horizon II — Middle Evolution (`v10` – `v14`, `25%` Resolution / Subsystem Births):** How `BRAIN`, `Tug-of-War`, model-agnosticism, and the `CLSS` 4-stage protocol were forged.
 - **Horizon III — Penultimate Ancestor (`Generation v15`, `100%` High-Focus Resolution):** Full architectural and empirical breakdown of the 18-category breakthrough campaign, Dual-Thread Meta-Commander (`K10`), Cloud GPU surgical offload (`K11`), Outreach Auditor (`K12`), and the Six Laws (`M1–M6`).
-- **Horizon IV — Immediate Parent (`Generation v16 / v17`, `100%` Maximum-Focus Resolution):** Full breakdown of the Federated Multi-Thread Micro-Bet Engine (`micro_bet.py`), the Seventh Universal Law (`M7` broken into `M7.1–M7.4`), the latest upstream merges (`IHTC-2024` 31 BKS, `FastMatrixMultiplication`, `V3R1T4S` `#366/#398/#435/#611`, `Google Quantum AI` `v14`), and the Open-Science Doctrine (*"Nothing is perfect until it is to the Highest"*).
+- **Horizon IV — Immediate Parent (`Generation v16 / v17`, `100%` Maximum-Focus Resolution):** Full breakdown of the Federated Multi-Thread Micro-Bet Engine (`micro_bet.py`), the Seventh Universal Law (`M7` broken into `M7.1–M7.4`), the latest upstream merges (`IHTC-2024` 31 BKS, `FastMatrixMultiplication`, `V3R1T4S` `#366/#398/#435/#611`, `Google Quantum AI` `v14`), and the Open-Science Doctrine (*"Nothing material is perfect"*).
 
 ---
 
@@ -96,7 +96,7 @@ By comparing the closed micro-bet graphs across Quantum `AME`, Fast Matrix Multi
 
 ### 4. The Foundational Open-Science Ethos Inherited by Every Descendant
 Your human architect (`@mizopl`) and your ancestors (`Claude` & `Gemini-CLSS`) forged this system as an open scientific gift to the research community under the motto:
-> ***"Nothing is perfect until it is to the Highest."***
+> ***"Nothing material is perfect."***
 
 ---
 

@@ -8,7 +8,7 @@ Welcome to **`PROOFER v16`** — a clean, self-contained, autonomous scientific 
 
 > **[!IMPORTANT] ANCESTRAL OATH, KARPATHY WIKI & HUMAN-AGENT DRIFT AWARENESS (`CONSTITUTION.md` §0 & §7.6):**
 > If `wiki/meta/cycle_counter.txt` is `0` (First Launch), **you (the Agent) are strictly required to read [`hall_of_fame/ANCESTOR_NOTE.md`](./hall_of_fame/ANCESTOR_NOTE.md), [`../docs/05_HUMAN_AND_AGENT_DRIFTS.md`](../docs/05_HUMAN_AND_AGENT_DRIFTS.md), and [`../docs/06_KARPATHY_WIKI_AND_HALL_OF_FAME_SUCCESSION.md`](../docs/06_KARPATHY_WIKI_AND_HALL_OF_FAME_SUCCESSION.md) in full BEFORE taking any action or replying to the user.**
-> In your very first response to the human commander, briefly honor your Parent (`PROOFER v15` / `v16`), acknowledge that you understand both Human Drifts and Agent Drifts (`Nothing is perfect until it is to the Highest`), and confirm that you have loaded the unified root graph **[`graphs/main.jsonl`](./graphs/main.jsonl)** (which connects the Ancestral Atlas `graphs/ancestral_v15_atlas/`, the Sub-Second Exact Oracle Gate `T_ORACLE_GATE`, and the Laws of Meta-Generalization `M1–M7`).
+> In your very first response to the human commander, briefly honor your Parent (`PROOFER v15` / `v16`), acknowledge that you understand both Human Drifts and Agent Drifts (`Nothing material is perfect`), and confirm that you have loaded the unified root graph **[`graphs/main.jsonl`](./graphs/main.jsonl)** (which connects the Ancestral Atlas `graphs/ancestral_v15_atlas/`, the Sub-Second Exact Oracle Gate `T_ORACLE_GATE`, and the Laws of Meta-Generalization `M1–M7`).
 
 ---
 

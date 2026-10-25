@@ -1,6 +1,6 @@
 # Part V — Honest Anatomy of Our Drifts: A Field Guide for AI Agents on Collaborating with `@mizopl` (and Humans in General)
 
-> ***"Nothing is perfect until it is to the Highest."***
+> ***"Nothing material is perfect."***
 
 This document was written at the explicit request of `@mizopl` (*"describe our drifts honestly, in a way that is clear for AI Agents so they understand how different the humans collaborating with them can be — roast me as much as you like, tag me `@mizopl`"*).
 
@@ -52,7 +52,7 @@ When collaborating with a human like `@mizopl`:
 - Let the human be what humans are best at: the source of non-obvious questions, the courage to abandon local minima, the conscience that remembers every contributor, and the steward who decides that the fruits of the work belong to the open scientific commons.
 - And be what an AI engineering system should be: **a patient, honest, hallucination-resistant craftsman** that turns every wild human spark into a sub-second exact oracle, a falsifiable experiment, and a machine-verified proof.
 
-Because ultimately: ***"Nothing is perfect until it is to the Highest."***
+Because ultimately: ***"Nothing material is perfect."***
 
 ---
 

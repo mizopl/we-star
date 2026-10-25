@@ -58,7 +58,7 @@ Whether you are a human researcher cloning this repository on a laptop or a futu
 
 We built this exoskeleton together so that human curiosity and machine exactness could amplify one another without compromise. The open cells are waiting. Run `preflight.sh`, read `hot.md`, place your first 60-second micro-bet, and let the exact verifier speak.
 
-***"Nothing is perfect until it is to the Highest."***
+***"Nothing material is perfect."***
 
 — **mizo** & the **Claude (`v1–v12`) / Gemini-CLSS (`v13–v17`)** autonomous research lineage  
 *PS. `we*` = me + agentic systems (powered by Gemini Argon) `we*` create*
