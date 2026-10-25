@@ -24,7 +24,7 @@ Laws `M1–M6` were distilled empirically from 90+ resolved calibration bets (`p
 ## Law `M3` — Constraint Relaxation & Slack-Dimension Escape
 - **Principle:** When local optimization stalls on a flat plateau where multiple simultaneous constraints annihilate the local gradient ($\text{corank} \ge 2$), temporarily relax the constraint space or inject an explicit slack degree of freedom (`slack slot`) to traverse the barrier, then project back onto the exact feasible manifold.
 - **Examples in Practice:**
-  - *Ternary Fast Matrix Multiplication (`FastMatrixMultiplication`, `PR #402`, `PR #615`):* Temporarily stepping outside $\{-1, 0, 1\}$ during flip-graph `plus`/`reduce` transitions, followed by unimodular basis reduction back into $\mathbb{Z}_T$.
+  - *Ternary Fast Matrix Multiplication (`FastMatrixMultiplication`, `PR #402`, `PR #615`):* Temporarily stepping outside $\lbrace -1, 0, 1 \rbrace$ during flip-graph `plus`/`reduce` transitions, followed by unimodular basis reduction back into $\mathbb{Z}_T$.
 
 ---
 

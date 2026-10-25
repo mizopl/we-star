@@ -40,5 +40,5 @@ If the problem requires finding an existential witness $x \in \Omega$:
 ### Phase 3: The 3-Gate Certification
 Run a standalone check confirming:
 - **Exactness at Zero:** $E_{\text{viol}}(x) = 0 \iff \text{Valid}(x) = 1$.
-- **Gradient Density:** $> 25\%$ of 1-step random neighbors around non-optimal states exhibit $\Delta E_{\text{viol}} \ne 0$.
+- **Gradient Density:** > 25% of 1-step random neighbors around non-optimal states exhibit $\Delta E_{\text{viol}} \ne 0$.
 - **Speed:** $\ge 1{,}000$ incremental evaluations per second on a single CPU core.

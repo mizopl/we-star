@@ -59,7 +59,7 @@ Frequently, freeing the interface (`M7.1`–`M7.3`) resolves 98–99% of a globa
 
 ### Concrete Examples:
 - **Quantum `03_invsqrt` (`v12`, `BET-INVSQRT-006`):** When aliasing `A2|A3` in-place inside the dead bits of `A0 = y1[:29]`, only a 10-bit tail `y1[29:39]` overflowed; instead of abandoning in-place aliasing, we surgically split off just the 10-bit tail into the shared ancilla pool.
-- **Ternary `FMM` Upgrades (`PR #615`):** When an integer scheme over $\mathbb{Z}$ had a single $\pm 2$ coefficient blocking membership in $\mathbb{Z}_T = \{-1, 0, 1\}$, we surgically split only that single rank-1 term into two ternary terms and reduced the resulting seam.
+- **Ternary `FMM` Upgrades (`PR #615`):** When an integer scheme over $\mathbb{Z}$ had a single $\pm 2$ coefficient blocking membership in $\mathbb{Z}_T = \lbrace -1, 0, 1 \rbrace$, we surgically split only that single rank-1 term into two ternary terms and reduced the resulting seam.
 
 ---
 
