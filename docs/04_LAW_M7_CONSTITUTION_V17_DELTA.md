@@ -29,7 +29,7 @@ In multi-stage optimization, practitioners almost always take a **single** "best
 > **Solutions tied on their first-stage metric are NOT equivalent for second-stage composition. Score the entire fiber of tied first-stage solutions using a fast millisecond compatibility proxy, select the top-$k$ candidates, and hybridize distinct complementary representatives $(A^{(i)}, A^{(j)})$ across orbits rather than cloning a single canonical winner.**
 
 ### Concrete Examples:
-- **Additive Complexity Reduction in `FMM` (`PR #616`):** Distinct ternary decompositions of the exact same multiplicative rank $R$ have vastly different common-subexpression graphs; scanning the full rank-$R$ solution fiber beat live addition-count records across 11 matrix formats.
+- **Additive Complexity Reduction in `FMM` (`PR #616`):** Distinct ternary decompositions of the exact same multiplicative rank $R$ have vastly different common-subexpression graphs; scanning the full rank-$R$ solution fiber reduced 48 SLPs across 11 matrix formats and beat the live `docs/additions.md` ternary table on 4 formats (`3x3x7`, `3x5x6`, `3x5x7`, `5x6x6`).
 - **Quantum Circuit `03_invsqrt` (`v13` $\to$ `v14`):** Among the fiber of polynomial table configurations achieving worst-case fidelity $> 0.80$, selecting widths `W=[27, 22, 17, 10]` and `DK=[15, 13, 8]` minimized downstream borrow-propagation spans in Stage 2.
 
 ---
