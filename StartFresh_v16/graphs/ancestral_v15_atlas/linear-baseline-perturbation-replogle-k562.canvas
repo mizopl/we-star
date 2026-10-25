@@ -1,0 +1,35 @@
+{
+ "nodes": [
+  {
+   "id": "L1_repro_and_cis_attenuation",
+   "type": "text",
+   "text": "**L1_repro_and_cis_attenuation** · hypothesis\n\nExact Python port of GEARS simulation split + pseudobulk + solve_y_axb reproduces published Source Data mean and lpm_selftrained to <1e-5, and adding train-fitted cis-knockdown attenuation (g == p) reduces L2 significantly.",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "L2_topK_resolvent_and_rpe1_p1_optimization",
+   "type": "text",
+   "text": "**L2_topK_resolvent_and_rpe1_p1_optimization** · hypothesis\n\nTop-K sparse neighborhood filtering + relative spectral shrinkage in Lens 1 + Lens 2 will push both replogle_k562_essential and replogle_rpe1_essential (p1) past the 5% and 2*SD L2 and Pearson delta thresholds simultaneously.",
+   "x": 0,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "L3_per_gene_loo_shrinkage_and_5seed_p2_p3_suite",
+   "type": "text",
+   "text": "**L3_per_gene_loo_shrinkage_and_5seed_p2_p3_suite** · hypothesis\n\nAdding 2-hop graph diffusion + per-gene LOO Empirical-Bayes shrinkage kappa_g and evaluating across all 5 seeds (1..5), Panel A, Panel C, test-only, and functional distance bins (p2) + 400 permutation null controls will pass all Full Win + p1 + p2 + p3 criteria.",
+   "x": 0,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": []
+}
