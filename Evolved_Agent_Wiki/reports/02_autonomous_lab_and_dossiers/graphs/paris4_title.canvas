@@ -1,0 +1,25 @@
+{
+ "nodes": [
+  {
+   "id": "H_lasagna_inner_core_unroll",
+   "type": "text",
+   "text": "✗ **H_lasagna_inner_core_unroll** · hypothesis\n\nExtracting Lasagna contour layers (cos/grad_mag) for the inner core inside 5753_-7 (wind_a 10..2, 6.6..15.1 cm past the last column) and unrolling windings -7..-15 will reveal subscriptio traces\n\n*why dead:* [L-PT-001=0] Simple radial steps along Lasagna ridges (wind_a 10..3) revealed strong S-shaped folding of core sheets (lasagna_radial_profiles.png), causing polar rays to cross the same fold multiple times instead of tracking arc-length along the folded sheet.",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H_arclength_contour_inner_core",
+   "type": "text",
+   "text": "**H_arclength_contour_inner_core** · hypothesis\n\nUnrolling the folded inner-core windings (wind_a=10..2) along true arc-length s of Lasagna phase contours (cos+sin / vctracks) instead of polar rays will remove S-fold distortions and expose continuous eschatocol sheets",
+   "x": 0,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": []
+}

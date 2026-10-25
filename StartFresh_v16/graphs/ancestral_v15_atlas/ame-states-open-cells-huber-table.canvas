@@ -1,0 +1,112 @@
+{
+ "nodes": [
+  {
+   "id": "H1",
+   "type": "text",
+   "text": "**H1** · hypothesis\n\nBordered / double-circulant self-orthogonal MDS / quantum stabilizer search over F_q / F_{q^2} settles an open cell of the Huber-Wyderka AME(n,D) table",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "E1",
+   "type": "text",
+   "text": "**E1** · experiment\n\nFast C search (/tmp/search_circ10_f81.c) for circulant/constacyclic AME generator matrices with exact weight-distribution / Krawtchouk / minor verification",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "R1",
+   "type": "text",
+   "text": "**R1** · result\n\nExact closed-form Q(zeta_5) constructions for AME(9,10) (claim/ame_9_10_certificate.json, 126/126 4-party cuts exact) and AME(11,10) (claim/ame_11_10_certificate.json, 462/462 5-party cuts + 923/923 F_25 minors exact) + 1,008-cell purity audit exposing impure [[15,0,8]]_5 and [[15,0,8]]_7 (p2); 3/3 skeptics pass:true",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "H_antisym_C2_neg_C1_184755",
+   "type": "text",
+   "text": "✗ **H_antisym_C2_neg_C1_184755** · hypothesis\n\nAntisymmetric block ansatz C2=-C1 verified across all 184,755 4x4 minors reaches <10 zero minors or isolates algebraic obstruction\n\n*why dead:* [L-ASOC-001=0] C2=-C1 with G10 (12,477 orbits) reached 18/12,477 (300/184,755 bad minors) due to Poisson lambda=43.17 threshold",
+   "x": 0,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H_ame20_17_g20_plucker",
+   "type": "text",
+   "text": "**H_ame20_17_g20_plucker** · hypothesis\n\nG20 = Z_5 x W_tilde x R_tilde (6430 orbits, 282 subfield orbits) Plucker sieve reaches TOTAL <= 12 bad orbits or sub_bad == 0 in 7s",
+   "x": 0,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_ame20_17_g20_unitary_strict",
+   "type": "text",
+   "text": "✗ **H_ame20_17_g20_unitary_strict** · hypothesis\n\nStrictly unitary G20 (mode in {0,1}, 0 mismatches, U*U^dag=I_10) Plucker sieve reaches TOTAL <= 8/6430 and beats 184,475/184,755 across all r=1..10\n\n*why dead:* [L-ASOC-003=0] Strictly unitary G20 reached 10/6430 bad orbits (184,435/184,755 total) with an all-time record on r=5: 63,484/63,504 (99.9685%, only 1 bad orbit at r=5!)",
+   "x": 0,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H_ame20_17_g40_jacobi_plucker",
+   "type": "text",
+   "text": "✗ **H_ame20_17_g40_jacobi_plucker** · hypothesis\n\nG40-Jacobi Plucker sieve (4,970 orbits: 538 subfield + 4,432 ext, lazy D3) reaches <= 8/4970 bad orbits and >300,000 matrices/sec in 7s\n\n*why dead:* [L-ASOC-004=0] G40-Jacobi lazy D3 sieve achieved sub_bad=0/538, ext_bad=9/4432 (TOTAL=9/4970 = 99.8189%) at 290,950 matrices/sec (2.04M matrices in 7s); Cayley delocalization + lambda_ext=15.33 floors at 9",
+   "x": 0,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H_ame20_17_d22_chiral_dressing",
+   "type": "text",
+   "text": "**H_ame20_17_d22_chiral_dressing** · hypothesis\n\nTheorem D22 15-parameter Chiral Gauge-Dressed G40-Unitary Plucker solver (breaking fix_H subfield trap via K in C_5(F_289)) strictly beats 9/4970 and reaches <=7/4970 bad orbits",
+   "x": 0,
+   "y": 1100,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_ame20_17_d23_presieve_r12_lock",
+   "type": "text",
+   "text": "**H_ame20_17_d23_presieve_r12_lock** · hypothesis\n\nTheorem D23 pure-U12 K-invariant pre-sieve + Stage-0 r=1,2 zero-tolerance lock before D2[45][45] in Theorem D22 chiral dressing solver reaches <=5/4970 bad orbits (or <100/184755 bad minors across r=1..10)",
+   "x": 0,
+   "y": 1320,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "H1",
+   "toNode": "E1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "tests"
+  },
+  {
+   "id": "e1",
+   "fromNode": "E1",
+   "toNode": "R1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "proves"
+  }
+ ]
+}

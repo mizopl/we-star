@@ -1,0 +1,11 @@
+{"ev": "node", "key": "Q0", "type": "question", "text": "Can CLSS seam surgery + subset NRA MILP strictly lower the best known upper bound on >=1 hidden m01..m30 instance?", "by": "commander", "run": "2026-10-18-1607", "pred": "P0043", "ts": "2026-10-18T17:39Z"}
+{"ev": "node", "key": "H1", "type": "hypothesis", "text": "Coupled PAS+SCP+NRA Seam Surgery + 6/7/8-nurse Subset MILP Polish on m01..m30", "by": "commander", "run": "2026-10-18-1607", "pred": "P0043", "ts": "2026-10-18T17:39Z"}
+{"ev": "edge", "src": "Q0", "dst": "H1", "rel": "derives", "ts": "2026-10-18T17:39Z"}
+{"ev": "node", "key": "E1", "type": "experiment", "text": "seam_surgery_ihtp.cc + subset_nra_milp.py on m01..m30: strictly improved 15/30 hidden m-instances; deep-polished m28 from 45,913 to 45,873 (-40 pts, Total violations = 0)", "by": "commander", "run": "2026-10-18-1607", "pred": "P0043", "ts": "2026-10-18T17:39Z"}
+{"ev": "edge", "src": "H1", "dst": "E1", "rel": "derives", "ts": "2026-10-18T17:39Z"}
+{"ev": "node", "key": "R1", "type": "result", "text": "Hidden instance m28 lowered from 45,913 to 45,873 (-40 pts, Total violations = 0 in IHTP_Validator); 15/30 hidden m-instances strictly improved", "by": "commander", "run": "2026-10-18-1607", "pred": "P0043", "ts": "2026-10-18T17:39Z"}
+{"ev": "edge", "src": "E1", "dst": "R1", "rel": "derives", "ts": "2026-10-18T17:39Z"}
+{"ev": "close", "key": "Q0", "why": "m28 lowered to 45,873 vs 45,913 (-40 pts, 0 violations); 3/3 skeptics pass, packaged in 2026-10-18-mizopl-d54f4151", "ts": "2026-10-18T17:39Z"}
+{"ev": "close", "key": "R1", "why": "Verified by 3-skeptic panel and check_run.py PASS (2026-10-18-mizopl-d54f4151)", "ts": "2026-10-18T17:39Z"}
+{"ev": "close", "key": "H1", "why": "P0043=1: CONFIRMED_SOLUTION on hidden instance m28 (45,873 vs 45,913, -40, 0 violations, PR #431)", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "E1", "why": "P0043=1: 15/30 hidden m-instances strictly improved; m28 packaged in PR #431", "ts": "2026-10-21T16:25Z"}

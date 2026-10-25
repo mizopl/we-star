@@ -1,0 +1,136 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.1cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    citecolor=blue!60!black,
+    urlcolor=blue!60!black
+}
+
+\title{\textbf{Compositional Lifting and Seam Surgery (CLSS):\\
+Over 80 Machine-Verified World Records Across Eight Scientific Domains on a Single Local Office Computer}}
+
+\author{
+  \textbf{mizopl}$^{1,*}$, \textbf{Claude}$^{2}$, and \textbf{Gemini}$^{3}$\\[4pt]
+  \small $^{1}$Independent Researcher, Poland \quad $^{2}$Anthropic (AI Co-Author) \quad $^{3}$Google DeepMind / Antigravity (AI Co-Author)\\
+  \small $^{*}$Corresponding author. Verification Packages \& Artifacts: \texttt{https://github.com/mizopl/V3R1T4S}\\
+  \small (Pull Requests \#366, \#397, \#398, \#402, \#416, \#425, \#431, \#432, \#433, \#435, \#457, \#462, \#466, \#485)
+}
+
+\date{October 19, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Prevailing approaches to automated mathematical and algorithmic discovery---such as AlphaTensor, FunSearch, AlphaEvolve, and PatternBoost---rely on distributed cloud clusters of GPUs or TPUs to train specialized neural policies or evolve heuristics across hundreds of thousands of evaluations. In this paper, we report the discovery and machine verification of \textbf{over 80 new world records across eight distinct scientific domains}, computed entirely locally over a single weekend on a standard office computer (Apple M1 Pro, 10 CPU cores, 16\,GB RAM, zero cloud compute). Our method, \textbf{CLSS (\emph{Compositional Lifting and Seam Surgery})}, exploits a universal structural artifact in human-constructed mathematical record tables: to verify correctness on paper, human researchers compose smaller exact building blocks using rigid, uniform algebraic rules (Kronecker products, symmetric block splits, group lifts, concentric atomic shells, or unpruned digit bases), leaving localized structural redundancy---a \textbf{compositional seam}---at component boundaries. By concentrating local exact optimization exclusively on these boundary seams, we establish new certified world records in:
+(1) \textbf{Operations Research} (31 of 60 official IHTC-2024 hospital timetabling instances, led by \texttt{i27}: $50{,}976 \to \mathbf{50{,}063}$),
+(2) \textbf{Combinatorial Design Theory} (20 covering design records, led by $C(94,13,5) \le \mathbf{125{,}184}$, $-4{,}019$ blocks),
+(3) \textbf{Bioinformatics} (17 DNA minimizer density records, led by $(w{=}12,k{=}4)$ at $\mathbf{0.1336292920}$, $-1.776\%$),
+(4) \textbf{Nanomaterials Physics} (8 putative global minima for 55-atom $\text{Cu}_n\text{Ag}_{55-n}$ Gupta nanoalloys in the Cambridge Cluster Database, led by $\text{Cu}_{39}\text{Ag}_{16}$ with $\Delta E = \mathbf{-1.18984440\text{ eV}}$),
+(5) \textbf{Symbolic Algorithms} (4 ternary fast matrix multiplication records in $\mathbb{Z}_T=\{-1,0,1\}$, led by $\langle 14,15,15\rangle$ at rank $\mathbf{1{,}894}$ and $\langle 9,12,14\rangle$ at rank $\mathbf{954}$),
+(6) \textbf{Extremal Graph Theory} (a degree--diameter $(14,3)$ graph on $\mathbf{N=1{,}118}$ vertices),
+(7) \textbf{Statistical Mechanics} (exact 44-digit $\text{A054759}(15)$ and the complete 80-entry antidiagonal $d=79$ of $\text{A089980}$ up to 279 digits), and
+(8) \textbf{Additive Number Theory \& Erd\H{o}s Problems} (an explicit finite-depth $N=10^{13}$ lower bound $C_{3a}(V) > \mathbf{1.19230254}$ for the Gyarmati--Hennecart--Ruzsa sum-difference constant, beating the finite-certified record $1.19102809$ by $+0.00127445$).
+\end{abstract}
+
+\section{Introduction: The Seam Principle \& Local Office-Computer Discovery}
+
+Across discrete mathematics, additive number theory, operations research, bioinformatics, and computational physics, public benchmark repositories track the best known explicit constructions and bounds. In recent years, beating entries in these tables has been widely assumed to require industrial-scale compute clusters.
+
+We demonstrate that industrial cloud compute is unnecessary when search is guided by structural seam analysis. Because our entire cross-disciplinary campaign was executed locally over a single Sunday on a standard office computer without external accelerators, the acronym \textbf{CLSS} equally stands for \textbf{\emph{COMPUTER LAZY SUNDAY SOLVER}}. Why is local execution on a standard office machine scientifically significant?
+\begin{enumerate}\itemsep=1pt
+    \item \textbf{Mathematical Structure Beats Brute-Force Scale:} At medium-to-large scales ($v=94$ covering designs with $5.49 \times 10^7$ quintuples, $14 \times 15 \times 15$ matrix tensors with $9.92 \times 10^6$ equations, or $N=10^{13}$ digit sets), unconstrained search spaces exceed $10^{1000}$ states. No GPU cluster can brute-force them; however, isolating the low-dimensional \emph{compositional seam} between known building blocks reduces the active degrees of freedom to a tractable subproblem solvable in minutes on a 10-core CPU.
+    \item \textbf{Zero-Barrier Reproducibility:} Every certificate reported in this work can be independently verified from scratch in under 5 seconds on any standard desktop or office laptop.
+\end{enumerate}
+
+\section{Overview of Certified World Records Across Eight Domains}
+
+Table~\ref{tab:summary} summarizes our 14 primary verification packages and over 80 certified world-record objects across eight scientific disciplines.
+
+\begin{table}[htbp]
+\centering
+\caption{Overview of certified world records discovered across eight scientific disciplines on a single office computer.}
+\label{tab:summary}
+\small
+\begin{tabular}{@{}llllr@{}}
+\toprule
+\textbf{Scientific Domain} & \textbf{Benchmark / Repository} & \textbf{Flagship New Record} & \textbf{Previous SOTA} & \textbf{Verified Records} \\
+\midrule
+1. Operations Research & IHTC-2024 Timetabling & \texttt{i27}: $\mathbf{50{,}063}$ ($0$ viol.) & $50{,}976$ ($\Delta = -913$) & \textbf{31 instances} \\
+2. Combinatorial Designs & Covering Repository / LJCR & $C(94,13,5) \le \mathbf{125{,}184}$ & $129{,}203$ ($\Delta = -4{,}019$) & \textbf{20 cells} \\
+3. Bioinformatics & GreedyMini / 10-minimizers & $(w{=}12,k{=}4)$: $\mathbf{0.13362929}$ & $0.13604584$ ($-1.776\%$) & \textbf{17 $(w,k)$ pairs} \\
+4. Nanomaterials Physics & Cambridge Cluster DB (CCD) & $\text{Cu}_{39}\text{Ag}_{16}$: $\mathbf{-163.8021\text{ eV}}$ & $-162.6123\text{ eV}$ ($-1.190\text{ eV}$) & \textbf{8 compositions} \\
+5. Symbolic Algorithms & FMM over $\mathbb{Z}_T=\{-1,0,1\}$ & $\langle 14,15,15\rangle$: $\mathbf{1{,}894}$ & $\mathbb{Z}_T{:}1{,}905$, $\mathbb{Z}{:}1{,}895$ & \textbf{4 formats} \\
+6. Extremal Graph Theory & Degree--Diameter Table & $(\Delta{=}14,D{=}3)$: $\mathbf{N=1{,}118}$ & Comellas $1{,}116$ ($+2$) & \textbf{1 graph} \\
+7. Statistical Mechanics & OEIS A054759 \& A089980 & $\text{A054759}(15)$ \& $d{=}79$ (80 terms) & $n=14$ / $d=78$ & \textbf{81 exact terms} \\
+8. Erd\H{o}s \& Number Theory & Tao \texttt{constants/3a.md} ($C_{3a}$) & $C_{3a}(V) > \mathbf{1.19230254}$ ($N{=}10^{13}$) & $1.19102809$ ($+0.001274$) & \textbf{2 certificates} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Domain-Specific Results and Mathematical Certificates}
+
+\subsection{Domain 1: Healthcare Operations Research --- 31 New World Records on IHTC-2024}
+The Integrated Healthcare Timetabling Competition 2024 (IHTC-2024) couples surgical theater scheduling, patient admission, room assignment, and nurse shift assignment across 84 shifts. Single-shift nurse swaps cannot cross the \texttt{ContinuityOfCare} barrier when a nurse covers $k \ge 2$ shifts of a patient's stay. Introducing \textbf{Compound Patient-Stay Nurse Consolidation} (replacing a dropped nurse $n_{\text{drop}} \to n_{\text{keep}}$ simultaneously across all shifts of a patient's stay in $O(1)$ incremental time) followed by exact HiGHS MILP polishing over 6-nurse subsets improved **31 out of 60 official competition instances** (`i01--i30`, `m01--m30`), led by public benchmark \texttt{i27} ($50{,}976 \to \mathbf{50{,}063}$, $\mathbf{-913}$ soft cost, $0$ hard violations, PR~\#416) and hidden instance \texttt{m28} ($45{,}913 \to \mathbf{45{,}873}$, $\mathbf{-40}$, PR~\#431), alongside \texttt{m23} ($-434$), \texttt{m16} ($-287$), \texttt{i21} ($-271$), and \texttt{m27} ($-243$).
+
+\subsection{Domain 2: Computational Physics --- 8 New Global Minima for 55-Atom $\text{Cu--Ag}$ Nanoalloys}
+Under the second-moment tight-binding Gupta potential with exact Nunez--Johnston (2010) parameters (reproducing all 56 header energies of \texttt{CuAg\_55.rar} in the Cambridge Cluster Database to $4.890 \times 10^{-9}\text{ eV}$), cross-composition motif transfer, core--shell exchange, and 30-digit \texttt{mpmath} quasi-Newton polishing discovered **8 new certified lower-energy putative global minima** (PR~\#466, Table~\ref{tab:gupta}), resolving non-monotonic energy spikes that had stood since 2011.
+
+\begin{table}[htbp]
+\centering
+\caption{Certified 55-atom $\text{Cu}_n\text{Ag}_{55-n}$ Gupta nanoalloy minima vs.\ Cambridge Cluster Database (\texttt{CuAg\_55.rar}).}
+\label{tab:gupta}
+\small
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+\textbf{Cluster} & \textbf{CCD Archive $E$ (eV)} & \textbf{New Certified $E^*$ (eV)} & \textbf{$\Delta E$ (eV)} & \textbf{$\|\nabla E^*\|_{\text{mp30}}$} & \textbf{Zero/Neg Modes} & \textbf{$\lambda_7$ ($\text{eV/\AA}^2$)} \\
+\midrule
+$\text{Cu}_{39}\text{Ag}_{16}$ & $-162.61229825$ & $\mathbf{-163.80214265}$ & $\mathbf{-1.18984440}$ & $2.09 \times 10^{-29}$ & $6 / 0$ & $0.699916$ \\
+$\text{Cu}_{34}\text{Ag}_{21}$ & $-160.81218484$ & $\mathbf{-161.76692486}$ & $\mathbf{-0.95474003}$ & $6.34 \times 10^{-23}$ & $6 / 0$ & $0.714086$ \\
+$\text{Cu}_{33}\text{Ag}_{22}$ & $-160.43136967$ & $\mathbf{-161.35336662}$ & $\mathbf{-0.92199695}$ & $4.52 \times 10^{-23}$ & $6 / 0$ & $0.733798$ \\
+$\text{Cu}_{31}\text{Ag}_{24}$ & $-159.69487106$ & $\mathbf{-160.49285973}$ & $\mathbf{-0.79798867}$ & $1.56 \times 10^{-26}$ & $6 / 0$ & $0.729365$ \\
+$\text{Cu}_{22}\text{Ag}_{33}$ & $-156.38507389$ & $\mathbf{-156.61674699}$ & $\mathbf{-0.23167311}$ & $7.04 \times 10^{-26}$ & $6 / 0$ & $0.779003$ \\
+$\text{Cu}_{20}\text{Ag}_{35}$ & $-155.56958143$ & $\mathbf{-155.69839654}$ & $\mathbf{-0.12881511}$ & $4.53 \times 10^{-24}$ & $6 / 0$ & $0.777510$ \\
+$\text{Cu}_{15}\text{Ag}_{40}$ & $-153.49887624$ & $\mathbf{-153.62512358}$ & $\mathbf{-0.12624733}$ & $1.32 \times 10^{-28}$ & $6 / 0$ & $0.241364$ \\
+$\text{Cu}_{17}\text{Ag}_{38}$ & $-154.40077125$ & $\mathbf{-154.46534927}$ & $\mathbf{-0.06457801}$ & $9.16 \times 10^{-29}$ & $6 / 0$ & $0.250397$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Domain 3: Additive Number Theory \& Erd\H{o}s Sum-Difference Constant $C_{3a} > 1.19230254$}
+In the tradition of Erd\H{o}s and Ruzsa on sum-difference asymmetry, the Gyarmati--Hennecart--Ruzsa constant $C_{3a}$ is the supremum of exponents $\theta$ for which arbitrarily large finite sets satisfy $|A-B| \gg |A+B|^\theta$. By the GHR Lemma (tracked on Terence Tao's \texttt{teorth/optimizationproblems/blob/main/constants/3a.md}), any finite set $V \subset \mathbb{Z}_{\ge 0}$ with $0 \in V$ and $|V-V| < 2\max V + 1$ certifies $C_{3a} \ge 1 + \frac{\log(|V-V|/|V+V|)}{\log(2\max V + 1)}$.
+
+Prior work by Kleinwaks (2026) achieved an asymptotic limit bound of $1.19519192^*$ as $N \to \infty$ in even base $q = 27{,}022$, but its explicit finite-depth certificate at $N = 10^{13}$ had to fall back to the large uncontrolled-carry base $Q = 2B + 1 = 34{,}065$ ($B = 17{,}032$), capping the published finite-certified record at $\mathbf{1.19102809}$. We observed that the formal injectivity theorem (\texttt{residue\_word\_injective} in \texttt{CoreConstruction.lean}) requires only that the pruned difference alphabet $\widetilde{D} \subseteq M - M$ have pairwise distinct residues modulo an \emph{odd} base $q < 2B + 1$. Partitioning non-zero residues modulo odd $q = 27{,}995$ into $13{,}997$ complementary pairs $\{r, q-r\}$ and selecting the minimum digit-sum representative $\kappa(d)$ on mask $M = \operatorname{span}_{\mathbb{N}_0}(\{3,4\}\times\{506,508,529\}) \cap [0, 17086]$ ($|M|=3{,}153, |S|=18{,}835$) yields a **complete residue system modulo $27{,}995$** ($|\widetilde{D}_+| = 13{,}997$, $|\widetilde{D}| = 27{,}995 = q$). Setting $V = 2U$ at finite depth $N = 10^{13}$ ($n_0 = 17{,}074{,}745{,}018$, $L = 50{,}031{,}092{,}045{,}455{,}301$) certifies:
+$$C_{3a}(V) > \mathbf{1.19230254070568368329} \quad (\text{60-dps \texttt{mpmath.iv}}) \quad \text{and} \quad > \mathbf{1.19230254068351294895} \quad (\text{integer Lean Stirling bounds}),$$
+strictly beating the published finite-certified record $1.19102809$ by $\mathbf{+0.00127445}$ ($12{,}744\times$ the $10^{-7}$ threshold, V3R1T4S PR~\#485; submitted to Terence Tao's \texttt{teorth/optimizationproblems} as PR~\#236). Even on Kleinwaks's exact mask $B = 17{,}032$, our odd-base pruning at $q = 27{,}995$ certifies $C_{3a}(V) > \mathbf{1.1922990484}$.
+
+\subsection{Domains 4--8: Covering Designs, Ternary FMM, DNA Minimizers, Graphs \& Lattice Gases}
+\begin{itemize}\itemsep=2pt
+    \item \textbf{Combinatorial Covering Designs (20 records, PRs~\#397, \#398, \#435):} Generalized staircase composition + bit-parallel C 1-minimality pruning (\texttt{prune.c}) and 2-to-1 seam merging (\texttt{merge.c}) established $C(94,13,5) \le \mathbf{125{,}184}$ ($-4{,}019$ blocks vs.\ CR $129{,}203$), $C(68,14,5) \le \mathbf{15{,}675}$ ($-329$), $C(40,16,7) \le \mathbf{7{,}251}$ ($-219$), and 17 additional records ($C(55,14,6) \le 30{,}275$, $C(58,15,6) \le 23{,}551$, $C(49,13,4) \le 740$, $C(32,12,7) \le 6{,}626$, $C(45,16,7) \le 19{,}206$).
+    \item \textbf{Ternary Fast Matrix Multiplication in $\mathbb{Z}_T = \{-1,0,1\}$ (4 records, PRs~\#402, \#432):} Signed permutation $B_4$ sub-block conjugation made all 20 unshared terms of $\langle 4,3,3\rangle = \langle 2,3,3\rangle \oplus \langle 2,3,3\rangle$ $100\%$ sign-pure, yielding $\langle 9,12,14\rangle$ rank $\mathbf{954}$ (vs.\ $960$), $\langle 14,15,15\rangle$ rank $\mathbf{1{,}894}$ (beating both $\mathbb{Z}_T=1{,}905$ and $\mathbb{Z}=1{,}895$), $\langle 12,15,15\rangle$ rank $\mathbf{1{,}640}$ (vs.\ $1{,}650$), and $\langle 10,15,15\rangle$ rank $\mathbf{1{,}389}$ (vs.\ $1{,}395$).
+    \item \textbf{DNA Minimizer Density Tables (17 records, PRs~\#425, \#433):} Exact Sum-Over-Subsets Fast Zeta Transform (SOS-DP) over tie-seam gamechanger DAGs lowered $(w=12,k=4)$ to $573{,}933{,}439/2^{32} = \mathbf{0.1336292920}$ ($-1.7763\%$ rel.), $(w=12,k=3)$ to $\mathbf{0.1365689458}$ ($-1.3155\%$ rel.), and 15 additional $(w,k)$ pairs by up to $\mathbf{-4.274\%}$.
+    \item \textbf{Degree--Diameter Graphs \& OEIS Lattice Gases (PRs~\#366, \#457, \#462):} Constructed a $(\Delta=14, D=3)$ graph on $\mathbf{N = 1{,}118}$ vertices ($7{,}809$ edges, vs.\ Comellas $1{,}116$) via $\mathbb{Z}_{16}$ voltage lift + 22-vertex seam patch surgery; and computed $\text{A054759}(15) = 4310182149988584261406143524214457416387448$ (44 digits) plus all 80 terms of antidiagonal $d=79$ of $\text{A089980}$ (up to 279-digit $T(39,40)$) via two independent modular transfer decompositions across 75 primes.
+\end{itemize}
+
+\begin{thebibliography}{9}
+\bibitem{fawzi2022} A. Fawzi et al., ``Discovering faster matrix multiplication algorithms with reinforcement learning,'' \emph{Nature} \textbf{610}, 47--53 (2022).
+\bibitem{romera2023} B. Romera-Paredes et al., ``Mathematical discoveries from program search with large language models,'' \emph{Nature} \textbf{625}, 468--475 (2023).
+\bibitem{charton2024} F. Charton, J. S. Ellenberg, A. Z. Wagner, and G. Williamson, ``PatternBoost: Constructions in Mathematics with a Little Help from AI,'' \emph{arXiv:2411.00566} (2024).
+\bibitem{ghr2007} K. Gyarmati, F. Hennecart, and I. Z. Ruzsa, ``Sums and differences of finite sets,'' \emph{Functiones et Approximatio} \textbf{37}, 175--186 (2007); T. Tao et al., \texttt{https://github.com/teorth/optimizationproblems/blob/main/constants/3a.md}.
+\bibitem{lai2011} S. Nunez and R. L. Johnston, \emph{J. Phys. Chem. C} \textbf{114}, 13255 (2010); X. Lai, W. Huang, and R. Xu, \emph{J. Chem. Phys.} \textbf{135}, 164109 (2011).
+\bibitem{orenstein2025} S. Golan, I. Tziony, M. Kraus, Y. Orenstein, and A. Shur, ``GreedyMini: generating low-density DNA minimizers,'' \emph{Bioinformatics} (2025) \& \emph{WABI} (2026).
+\end{thebibliography}
+
+\end{document}

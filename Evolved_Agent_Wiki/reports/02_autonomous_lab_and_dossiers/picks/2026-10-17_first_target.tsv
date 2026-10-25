@@ -1,0 +1,9 @@
+id	typicality	p_success	cost_min	tags	text
+degree-diameter-table	0.22	0.03	600		push another (d,k) cell above Comellas (repo already harvested 7 cells)
+spherical-codes-cohn-table	0.18	0.05	300		beat a converged Cohn spherical-code row by 1e-10
+packomania-hyperspheres-hsp4-hsp6	0.14	0.04	300		beat a Packomania hypersphere packing (family already in known-knowns)
+square-grid-lattice-gas-exact-counts-oeis	0.12	0.25	240		next exact term of A006506/A063443 (main) or A054759 torus ice (partial p1) by modular transfer matrices
+site-percolation-2-uniform-lattices-thresholds	0.12	0.12	480		2-uniform site threshold to 2e-6 via Newman-Ziff + critical polynomials
+kings-hard-core-entropy-a247413-digits	0.10	0.10	360	import	22+ digits of the king hard-core entropy via CTM/boundary-MPS (tensor-network import)
+new-periodic-variables-not-in-vsx	0.06	0.15	240	import	new periodic variables in public ZTF/TESS cutouts absent from VSX
+pycox-metabric-gbsg-breast-cancer-survival	0.06	0.05	60	import,strange	beat pycox METABRIC/GBSG survival C-index with a lattice-gas-style transfer model

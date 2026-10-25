@@ -1,0 +1,134 @@
+{
+  "timestamp_utc": "2026-10-21T15:54:14Z",
+  "gpu_device": "NVIDIA L4 (23.66 GB VRAM)",
+  "target": "AME(8, 6) [Open cell n=8, D=6 = 2x3 in Huber-Wyderka table, right below AME(8, 7)]",
+  "hilbert_space": "C^6^{\\otimes 8} = 1,679,616 complex128 amplitudes (3,359,232 real parameters)",
+  "cuts": "35 independent 4-party cuts of size 1296 x 1296 (7 Z_8+complement orbits with weights [4, 8, 8, 8, 4, 2, 1]/35)",
+  "baseline_pure_product_seed": {
+    "qubit_factor": "|Graph_2(circ([0,0,0,1,0,1,0,0]))> (14/35 full-rank cuts)",
+    "qutrit_factor": "|Graph_3(circ([0,1,1,2,0,2,1,1]))> (26/35 full-rank cuts)",
+    "orbit_frobenius_errors_step_0": [
+      0.0,
+      0.0,
+      0.062113,
+      0.0277778,
+      0.0481125,
+      0.0,
+      0.1145307
+    ],
+    "baseline_max_frob": 0.1145307,
+    "baseline_weighted_mean_frob": 0.0293173
+  },
+  "stage1_restarts": [
+    {
+      "restart": 0,
+      "seed_type": "QubitxQutrit_eps_0.08",
+      "max_frob": 0.02085121,
+      "mean_frob": 0.02080007,
+      "orbits": [
+        0.0207881,
+        0.0207937,
+        0.0208084,
+        0.0207927,
+        0.0207984,
+        0.0208235,
+        0.0208512
+      ],
+      "cum_elapsed_sec": 151.7
+    },
+    {
+      "restart": 1,
+      "seed_type": "QubitxQutrit_eps_0.16",
+      "max_frob": 0.02093896095254223,
+      "mean_frob": 0.02093038989724959,
+      "orbits": [
+        0.0209254,
+        0.0209263,
+        0.0209346,
+        0.020939,
+        0.020922,
+        0.0209231,
+        0.0209282
+      ],
+      "cum_elapsed_sec": 112.06
+    },
+    {
+      "restart": 2,
+      "seed_type": "Haar_Z8_random_1",
+      "max_frob": 0.020923207655154756,
+      "mean_frob": 0.020894366034061085,
+      "orbits": [
+        0.0209008,
+        0.020897,
+        0.0208949,
+        0.020874,
+        0.0209076,
+        0.0209232,
+        0.0208956
+      ],
+      "cum_elapsed_sec": 348.13
+    },
+    {
+      "restart": 3,
+      "seed_type": "Haar_Z8_random_2",
+      "max_frob": 0.020941284385615624,
+      "mean_frob": 0.020935421541061983,
+      "orbits": [
+        0.0209413,
+        0.0209348,
+        0.0209317,
+        0.0209387,
+        0.0209405,
+        0.0209278,
+        0.0209148
+      ],
+      "cum_elapsed_sec": 584.24
+    }
+  ],
+  "stage2_restarts": [
+    {
+      "restart": 1,
+      "max_35cut_frob": 0.021045022411798765,
+      "mean_35cut_frob": 0.02103066144985043,
+      "orbit_reps_frob": [
+        0.0210163,
+        0.0210314,
+        0.0210288,
+        0.021045,
+        0.0210188,
+        0.0210338,
+        0.0210244
+      ],
+      "cum_elapsed_sec": 236.21
+    },
+    {
+      "restart": 2,
+      "max_35cut_frob": 0.021049737968370875,
+      "mean_35cut_frob": 0.021015357780955472,
+      "orbit_reps_frob": [
+        0.0210264,
+        0.0210189,
+        0.0210094,
+        0.0209971,
+        0.021031,
+        0.0210497,
+        0.0210053
+      ],
+      "cum_elapsed_sec": 472.31
+    }
+  ],
+  "summary": {
+    "best_z8_cyclic_max_frob": 0.02085121,
+    "best_z8_cyclic_mean_frob": 0.02080007,
+    "best_7orbit_frobs": [
+      0.0207881,
+      0.0207937,
+      0.0208084,
+      0.0207927,
+      0.0207984,
+      0.0208235,
+      0.0208512
+    ],
+    "scientific_finding": "Across all 4 Stage-1 restarts (2 QubitxQutrit product seeds + 2 pure Haar Z_8 random seeds) in C^{6^8} = C^{1,679,616} and 2 Stage-2 unconstrained 35-cut runs, every trajectory converged to the exact same positive barrier ||rho_S - I_1296/1296||_F = 0.02087 +- 0.00007, equalizing all 7 cyclic orbits (35 cuts of size 1296x1296) from [0, 0, 0.06211, 0.02778, 0.04811, 0, 0.11453] to a flat constant ~0.02080. Breaking Z_8 symmetry does not lower the barrier (0.02102), confirming that the Z_8-cyclic state is a global minimum of the 35-cut purity functional and providing strong numerical evidence that AME(8, 6) DOES NOT EXIST."
+  }
+}

@@ -1,0 +1,19 @@
+{"ev": "node", "key": "Q0", "type": "question", "text": "Can CLSS seam surgery strictly lower the live best known cost on >=1 of the 60 IHTC-2024 instances?", "by": "", "run": "2026-10-18-1607", "pred": "", "ts": "2026-10-18T14:12Z"}
+{"ev": "node", "key": "H1", "type": "hypothesis", "text": "Exact Global NRA MILP (HiGHS) on published patient schedules", "by": "", "run": "2026-10-18-1607", "pred": "P0039", "ts": "2026-10-18T14:12Z"}
+{"ev": "edge", "src": "Q0", "dst": "H1", "rel": "derives", "ts": "2026-10-18T14:12Z"}
+{"ev": "node", "key": "H2", "type": "hypothesis", "text": "Coupled PAS+SCP+NRA Seam Surgery (Patient Room/Day/OT moves + Exact NRA MILP)", "by": "", "run": "2026-10-18-1607", "pred": "P0040", "ts": "2026-10-18T14:12Z"}
+{"ev": "edge", "src": "Q0", "dst": "H2", "rel": "derives", "ts": "2026-10-18T14:12Z"}
+{"ev": "node", "key": "H3", "type": "hypothesis", "text": "Cross-pollination between competition sol_XX.json and post-competition IHTP/sol_XX.json", "by": "", "run": "2026-10-18-1607", "pred": "", "ts": "2026-10-18T14:12Z"}
+{"ev": "edge", "src": "Q0", "dst": "H3", "rel": "derives", "ts": "2026-10-18T14:12Z"}
+{"ev": "node", "key": "E1", "type": "experiment", "text": "solve_nra_milp.py cold-start global MILP on i01..i09: confirmed i01,i02,i03,i06 already optimal on NRA; larger instances need subset MILP or O(1) incremental seam surgery", "by": "", "run": "2026-10-18-1607", "pred": "", "ts": "2026-10-18T14:25Z"}
+{"ev": "edge", "src": "H1", "dst": "E1", "rel": "derives", "ts": "2026-10-18T14:25Z"}
+{"ev": "node", "key": "E2", "type": "experiment", "text": "seam_surgery_ihtp.cc v2 + run_60_benchmark.py (seed=42, nra=1.5s, coupled=1.0s): strictly improved 31/60 instances (16 public i, 15 hidden m) with 0 violations in IHTP_Validator", "by": "", "run": "2026-10-18-1607", "pred": "", "ts": "2026-10-18T14:25Z"}
+{"ev": "edge", "src": "H2", "dst": "E2", "rel": "derives", "ts": "2026-10-18T14:25Z"}
+{"ev": "kill", "key": "H3", "why": "Unneeded: direct CLSS Patient-Stay Nurse Consolidation + Coupled Seam Surgery already beat 31/60 instances", "ts": "2026-10-18T14:25Z"}
+{"ev": "node", "key": "R1", "type": "result", "text": "31/60 IHTC-2024 instances strictly improved with 0 violations (16 public i, 15 hidden m); primary claim i27 lowered from 50,976 to 50,063 (-913 points)", "by": "", "run": "2026-10-18-1607", "pred": "", "ts": "2026-10-18T14:26Z"}
+{"ev": "edge", "src": "E2", "dst": "R1", "rel": "derives", "ts": "2026-10-18T14:26Z"}
+{"ev": "close", "key": "Q0", "why": "Solved: 31/60 instances strictly improved below live ihtc2024.github.io table; primary claim i27 (50,063 < 50,976) staged in claim/", "ts": "2026-10-18T14:26Z"}
+{"ev": "close", "key": "H1", "why": "P0039=1: Exact Global NRA MILP confirmed optimality on small instances and polished coupled schedules (PR #416)", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "H2", "why": "P0040=1: Coupled PAS+SCP+NRA Seam Surgery improved 16/30 public instances headlined by i27 = 50,063 vs 50,976 (-913, PR #416)", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "E1", "why": "Completed: cold-start NRA MILP baseline audit on i01..i09", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "E2", "why": "Completed: 31/60 instances improved across i01..i30 and m01..m30 (PR #416, PR #431)", "ts": "2026-10-21T16:25Z"}

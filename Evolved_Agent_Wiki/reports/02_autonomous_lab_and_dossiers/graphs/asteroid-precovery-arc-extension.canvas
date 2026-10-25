@@ -1,0 +1,88 @@
+{
+ "nodes": [
+  {
+   "id": "Q1237",
+   "type": "text",
+   "text": "**Q1237** · question\n\nCan we build a deterministic pure-numpy/scipy N-body + WCS + 2D-PSF astrometry pipeline that (a) recovers >=10 known MPC asteroid observations in public ZTF/PS1 FITS cutouts to <1 arcsec (precovery-reproduce-known-obs) and (b) discovers >=1 multi-frame archival precovery (>60 d before SBDB first_obs, absent from MPC get-obs) satisfying all 5 main criteria plus precovery-arc-doubling and precovery-neocp-style-short-arc?",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "F1237_API",
+   "type": "text",
+   "text": "**F1237_API** · fact\n\nAll 6 live APIs (JPL SBDB cov=mat, JPL SBDB Query API, MPC get-obs OBS80/ADES, IRSA ZTF IBE science images & cutouts, STScI PS1 cutouts, IMCCE SkyBoT cone search) respond HTTP 200 in <3s",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "H1237_L1",
+   "type": "text",
+   "text": "**H1237_L1** · hypothesis\n\nLens 1 (Calibration Gate precovery-reproduce-known-obs): Query MPC get-obs for >=12 asteroids with I41 (ZTF Palomar) observations, fetch IRSA ZTF science FITS cutouts at those exact epochs, evaluate TAN-SIP WCS + 2D Gaussian/Moffat centroiding, and verify <1.0 arcsec residual against recorded MPC OBS80 astrometry",
+   "x": 420,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H1237_L2",
+   "type": "text",
+   "text": "**H1237_L2** · hypothesis\n\nLens 2 (Short-Arc ZTF Precovery Scan): Query JPL SBDB for asteroids discovered in 2024-2026 with data_arc < 365 d and n_obs_used < 50 whose 6x6 covariance gives <30 arcsec 3-sigma uncertainty at a prior opposition (>60 d earlier, V < 20.8 mag, Dec > -25 deg), cross-match back-propagated positions against IRSA ZTF IBE science exposures, and extract multi-frame precovery detections absent from MPC get-obs",
+   "x": 420,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H1237_L3",
+   "type": "text",
+   "text": "**H1237_L3** · hypothesis\n\nLens 3 (Differential Orbit Refit & Covariance Collapse): Perform weighted least-squares Gauss-Newton differential correction of the 6 orbital elements using all MPC observations + new precovery detections, proving refit residuals <1.0 arcsec at the precovery epochs, new_arc >= 2x data_arc (precovery-arc-doubling), and >50% reduction in semi-major axis uncertainty sigma_a (precovery-neocp-style-short-arc)",
+   "x": 420,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q1237",
+   "toNode": "F1237_API",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e1",
+   "fromNode": "Q1237",
+   "toNode": "H1237_L1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e2",
+   "fromNode": "Q1237",
+   "toNode": "H1237_L2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e3",
+   "fromNode": "Q1237",
+   "toNode": "H1237_L3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mechanical Template-Closure Proofs of Lychrel Numbers in Bases 50, 98, and 146 via Modular Carry-Wire Seam Surgery</title>
+<style>
+  @page {
+    size: A4;
+    margin: 12mm 15mm 12mm 15mm;
+  }
+  body {
+    font-family: "Times New Roman", Times, Georgia, serif;
+    font-size: 9.8pt;
+    line-height: 1.33;
+    color: #111;
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: justify;
+  }
+  h1 {
+    font-size: 14.6pt;
+    line-height: 1.22;
+    text-align: center;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  .author {
+    text-align: center;
+    font-size: 10.6pt;
+    margin-bottom: 2px;
+  }
+  .affil {
+    text-align: center;
+    font-size: 8.9pt;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .abstract-box {
+    margin: 0 18px 10px 18px;
+    padding: 8px 12px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    font-size: 9.2pt;
+    line-height: 1.32;
+  }
+  .abstract-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 9.5pt;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  h2 {
+    font-size: 11.4pt;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    border-bottom: 0.5px solid #ccc;
+    padding-bottom: 2px;
+  }
+  h3 {
+    font-size: 10.2pt;
+    margin-top: 8px;
+    margin-bottom: 3px;
+  }
+  p {
+    margin: 0 0 5px 0;
+  }
+  ul, ol {
+    margin: 2px 0 6px 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 2px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6px 0 8px 0;
+    font-size: 8.7pt;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  th, td {
+    padding: 3px 5px;
+    text-align: left;
+    border-bottom: 0.5px solid #ddd;
+  }
+  th {
+    border-top: 1.2px solid #222;
+    border-bottom: 1px solid #222;
+    font-weight: bold;
+    background-color: #f8f9fa;
+  }
+  tr:last-child td {
+    border-bottom: 1.2px solid #222;
+  }
+  .math-block {
+    text-align: center;
+    margin: 5px 0;
+    font-style: italic;
+  }
+  .thm-box {
+    background-color: #f8fafc;
+    border-left: 3px solid #0f2c59;
+    padding: 6px 10px;
+    margin: 6px 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .code-box {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 7.7pt;
+    background-color: #f8fafc;
+    border: 0.5px solid #cbd5e1;
+    padding: 5px 8px;
+    margin: 4px 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 1.24;
+  }
+  .fig-box {
+    text-align: center;
+    margin: 10px 0 12px 0;
+    padding: 8px;
+    border: 0.5px solid #cbd5e1;
+    background-color: #fcfdfe;
+  }
+  .fig-caption {
+    font-size: 8.8pt;
+    color: #333;
+    margin-top: 6px;
+    text-align: justify;
+    padding: 0 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Mechanical Template-Closure Proofs of Lychrel Numbers in Bases <i>b</i> = 50, <i>b</i> = 98, and <i>b</i> = 146 via Modular Carry-Wire Seam Surgery</h1>
+
+<div class="author"><b>mizopl</b><sup>1,*</sup> &nbsp;&bull;&nbsp; <b>Claude</b><sup>2</sup> &nbsp;&bull;&nbsp; <b>Gemini</b><sup>3</sup></div>
+<div class="affil">
+  <sup>1</sup>Independent Researcher, Poland &nbsp;|&nbsp; <sup>*</sup>Corresponding author (<code>github.com/mizopl</code>)<br>
+  <sup>2</sup>Anthropic (AI Co-Author) &nbsp;|&nbsp; <sup>3</sup>Google DeepMind / Antigravity (AI Co-Author)<br>
+  <span>October 19, 2026</span>
+</div>
+
+<div class="abstract-box">
+  <div class="abstract-title">Abstract</div>
+  A <i>Lychrel number</i> in base <i>b</i> &ge; 2 is a positive integer whose orbit under the iterative reverse-and-add map <i>F<sub>b</sub></i>(<i>n</i>) = <i>n</i> + Rev<sub><i>b</i></sub>(<i>n</i>) never contains a base-<i>b</i> palindrome. Following David Seal's 1996 construction in base <i>b</i> = 26, the existence of Lychrel numbers had been rigorously proven for thirty years only in powers of two (<i>b</i> = 2<sup><i>k</i></sup>) and in four non-power-of-two bases: <i>b</i> &isin; {11, 17, 20, 26}. Using the <i>Computer Lazy Sunday Solver</i> (<code>CLSS</code>) compositional seam-surgery framework on a single consumer office computer (10-core CPU, 16 GB RAM, $0 cloud compute), we prove the existence of Lychrel numbers in <b>three new non-power-of-two bases</b>:
+  <div class="math-block"><b><i>b</i> = 50 = 2 &middot; 5<sup>2</sup>, &emsp; <i>b</i> = 98 = 2 &middot; 7<sup>2</sup>, &emsp; and &emsp; <i>b</i> = 146 = 2 &middot; 73.</b></div>
+  Our proof introduces <i>Modular Carry-Wire Seam Surgery</i> along the arithmetic progression <i>b</i> &equiv; 2 (mod 24). By placing mirror-image repeated digit blocks (<i>b</i>&minus;1)<sup><i>m</i></sup> and 0<sup><i>m</i></sup> at equal offsets &ell; from the left and right ends of a four-phase template family <i>T</i><sub>1</sub>(<i>m</i>), <i>T</i><sub>2</sub>(<i>m</i>), <i>T</i><sub>3</sub>(<i>m</i>), <i>T</i><sub>4</sub>(<i>m</i>), every digit pair across the growing blocks sums identically to <i>b</i> &minus; 1 during reversal-addition. Consequently, the variable-length runs act as transparent carry wires for all <i>m</i> &ge; 1&mdash;transmitting incoming carry <i>c</i><sub>in</sub> &isin; {0, 1} unchanged (<i>c</i><sub>out</sub> = <i>c</i><sub>in</sub>) while toggling the emitted run between (<i>b</i>&minus;1)<sup><i>m</i></sup> and 0<sup><i>m</i></sup>. This seam decoupling isolates the outer prefix/suffix engine (<i>L</i><sub>0</sub>, <i>R</i><sub>0</sub>) &harr; (<i>L</i><sub>1</sub>, <i>R</i><sub>1</sub>) (governed by <i>b</i> &equiv; 2 mod 3) from the inner core cycle <i>M</i><sub>0</sub> &rarr; <i>M</i><sub>1</sub> &rarr; <i>M</i><sub>2</sub> &rarr; <i>M</i><sub>3</sub> &rarr; (<i>b</i>&minus;1)<i>M</i><sub>0</sub>0 (governed by <i>b</i> &equiv; 2 mod 8), reducing the infinite dynamical orbit proof (&forall;<i>m</i> &ge; 1) to eight finite boundary equations. We provide explicit starting integers <i>n</i><sub>0</sub> = <i>T</i><sub>1</sub>(1), pre-template seeds <i>n</i><sub>seed</sub>, complete symbolic proofs, 10<sup>5</sup>-step regular-expression orbit verifications (reaching 50,082 base-50 digits), and a complete mechanical audit of Kuitch&eacute;'s 2023 preprint across bases 3 &le; <i>b</i> &le; 10.
+</div>
+
+<h2>1. Introduction and Historical Context</h2>
+<p>
+Let <i>b</i> &ge; 2 be an integer radix. For any positive integer <i>n</i> with canonical base-<i>b</i> expansion <i>n</i> = (<i>d</i><sub><i>r</i>&minus;1</sub><i>d</i><sub><i>r</i>&minus;2</sub>&hellip;<i>d</i><sub>1</sub><i>d</i><sub>0</sub>)<sub><i>b</i></sub>, where <i>d<sub>i</sub></i> &isin; {0, 1, &hellip;, <i>b</i>&minus;1} and <i>d</i><sub><i>r</i>&minus;1</sub> &ne; 0, let Rev<sub><i>b</i></sub>(<i>n</i>) = &Sigma;<sub><i>i</i>=0</sub><sup><i>r</i>&minus;1</sup> <i>d</i><sub><i>r</i>&minus;1&minus;<i>i</i></sub> <i>b<sup>i</sup></i> denote its digit reversal in base <i>b</i>, and let <i>F<sub>b</sub></i>(<i>n</i>) = <i>n</i> + Rev<sub><i>b</i></sub>(<i>n</i>) denote the single-step <i>reverse-and-add</i> operator. A positive integer <i>n</i> is called a <i>Lychrel number</i> in base <i>b</i> if no iterate <i>F<sub>b</sub></i><sup>(<i>t</i>)</sup>(<i>n</i>) (<i>t</i> &ge; 1) is a base-<i>b</i> palindrome.
+</p>
+<p>
+In base <i>b</i> = 10, the smallest candidate is <i>n</i> = 196 (the celebrated <i>196-Problem</i>, studied since Lehmer 1938 and Trigg 1967), whose orbit has been computed past 10<sup>9</sup> digits without encountering a palindrome, yet no unconditional proof of any base-10 Lychrel number is known. Across all integer bases <i>b</i> &ge; 2, unconditional proofs have historically relied on constructing a finite family of run-length-encoded digit templates <i>T</i><sub>1</sub>(<i>m</i>), &hellip;, <i>T<sub>p</sub></i>(<i>m</i>) (<i>m</i> &ge; 1) that is closed under <i>F<sub>b</sub></i>, satisfies <i>F<sub>b</sub></i><sup>(<i>p</i>)</sup>(<i>T</i><sub>1</sub>(<i>m</i>)) = <i>T</i><sub>1</sub>(<i>m</i>+1), and contains no palindromes. Prior to the present work, such template-closure proofs existed only for:
+</p>
+<ol>
+  <li><b>Powers of two (<i>b</i> = 2<sup><i>k</i></sup>):</b> <i>b</i> = 2 (Sprague 1960; Gabai and Coogan 1969; Klaus Brockhaus 1984) and general powers <i>b</i> = 2<sup><i>k</i></sup> (Sutcliffe 1968), and</li>
+  <li><b>Four sporadic bases:</b> <i>b</i> &isin; {11, 17, 20, 26}, culminating in David Seal's 1996 Period-4 construction for <i>b</i> = 26 (documented on MathPages and recorded on Wikipedia's <i>Lychrel number</i> article and OEIS sequences <code>A023108</code> and <code>A060382</code>).</li>
+</ol>
+<p>
+For thirty years after 1996, no new base <i>b</i> &notin; {2<sup><i>k</i></sup>} &cup; {11, 17, 20, 26} had been proven to possess Lychrel numbers. Direct combinatorial search for periodic templates in larger bases such as <i>b</i> = 50, <i>b</i> = 98, or <i>b</i> = 146 faces an exponential barrier: a template of length 82 to 168 in base <i>b</i> spans a naive state space of 50<sup>82</sup> &approx; 10<sup>139</sup> to 146<sup>168</sup> &approx; 10<sup>363</sup> digit configurations. Using the <b>Computer Lazy Sunday Solver</b> (<code>CLSS</code>) compositional seam-surgery paradigm [4] on a standard consumer workstation, we resolve this 30-year bottleneck in bases <b><i>b</i> = 50, <i>b</i> = 98, and <i>b</i> = 146</b>.
+</p>
+
+<table>
+  <caption><b>Table 1:</b> Summary of proven non-power-of-two Lychrel bases and our three new Period-4 template-closure constructions along the progression <i>b</i> &equiv; 2 (mod 24).</caption>
+  <thead>
+    <tr>
+      <th>Base <i>b</i></th>
+      <th>Prime Factorization</th>
+      <th>Period <i>p</i></th>
+      <th>Outer Length &ell;</th>
+      <th>Inner Core |<i>M</i><sub>0</sub>|, |<i>M</i><sub>2</sub>|</th>
+      <th>Start |<i>T</i><sub>1</sub>(1)| (base-<i>b</i> digits)</th>
+      <th>Reference / Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><i>b</i> = 11</td><td>11</td><td>2</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>Classical (pre-1996)</td></tr>
+    <tr><td><i>b</i> = 17</td><td>17</td><td>3</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>Classical (pre-1996)</td></tr>
+    <tr><td><i>b</i> = 20</td><td>2<sup>2</sup> &middot; 5</td><td>4</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>Classical (pre-1996)</td></tr>
+    <tr><td><i>b</i> = 26</td><td>2 &middot; 13</td><td>4</td><td>12</td><td>12, 13</td><td>38 digits</td><td>David Seal (1996) [1]</td></tr>
+    <tr style="background:#eef6ff; font-weight:bold;"><td><i>b</i> = 50</td><td>2 &middot; 5<sup>2</sup></td><td>4</td><td>36</td><td>8, 9</td><td>82 digits (140 dec. digits)</td><td>This work (Theorem 3)</td></tr>
+    <tr style="background:#eef6ff; font-weight:bold;"><td><i>b</i> = 98</td><td>2 &middot; 7<sup>2</sup></td><td>4</td><td>37</td><td>16, 17</td><td>92 digits (183 dec. digits)</td><td>This work (Theorem 4)</td></tr>
+    <tr style="background:#eef6ff; font-weight:bold;"><td><i>b</i> = 146</td><td>2 &middot; 73</td><td>4</td><td>80</td><td>6, 7</td><td>168 digits (364 dec. digits)</td><td>This work (Theorem 5)</td></tr>
+  </tbody>
+</table>
+
+<h2>2. Modular Carry-Wire Seam Surgery (<i>b</i> &equiv; 2 mod 24)</h2>
+
+<div class="thm-box">
+  <b>Lemma 1 (Transparent Carry-Wire Lemma).</b> <i>Let b &ge; 2 and let m &ge; 1 be any positive integer. Suppose that during base-b addition of two digit strings X and Y, a contiguous block of m consecutive positions j &isin; [s, s+m) satisfies X<sub>j</sub> + Y<sub>j</sub> = b &minus; 1 for every j &isin; [s, s+m). Let c<sub>in</sub> &isin; {0, 1} be the carry entering the least-significant position of this block. Then for every m &ge; 1:</i>
+  <ol>
+    <li><i>If c<sub>in</sub> = 0, the block emits the uniform digit run (b&minus;1)<sup>m</sup> and outgoing carry c<sub>out</sub> = 0.</i></li>
+    <li><i>If c<sub>in</sub> = 1, the block emits the uniform digit run 0<sup>m</sup> and outgoing carry c<sub>out</sub> = 1.</i></li>
+  </ol>
+  <i>In particular, the outgoing carry satisfies c<sub>out</sub> = c<sub>in</sub> independently of the run-length parameter m &ge; 1.</i>
+</div>
+
+<div class="fig-box">
+  <svg width="720" height="155" viewBox="0 0 720 155" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="#9b1b30" />
+      </marker>
+    </defs>
+    <!-- Row 1: T_i(m) -->
+    <text x="15" y="42" font-family="Times New Roman, serif" font-size="13" font-weight="bold" fill="#0f2c59">T_i(m):</text>
+    <rect x="95" y="20" width="120" height="32" rx="4" fill="#f1f5f9" stroke="#0f2c59" stroke-width="1.5"/>
+    <text x="155" y="40" text-anchor="middle" font-family="Times New Roman, serif" font-size="12.5">L_i (&ell; digits)</text>
+
+    <rect x="223" y="20" width="115" height="32" rx="4" fill="#ffe4e6" stroke="#9b1b30" stroke-width="2"/>
+    <text x="280" y="40" text-anchor="middle" font-family="Times New Roman, serif" font-size="12.5" font-weight="bold" fill="#9b1b30">(b &minus; 1)^m</text>
+
+    <rect x="346" y="20" width="125" height="32" rx="4" fill="#f1f5f9" stroke="#0f2c59" stroke-width="1.5"/>
+    <text x="408" y="40" text-anchor="middle" font-family="Times New Roman, serif" font-size="12.5">M_i (k digits)</text>
+
+    <rect x="479" y="20" width="115" height="32" rx="4" fill="#ccfbf1" stroke="#0d7377" stroke-width="2"/>
+    <text x="536" y="40" text-anchor="middle" font-family="Times New Roman, serif" font-size="12.5" font-weight="bold" fill="#0d7377">0^m</text>
+
+    <rect x="602" y="20" width="105" height="32" rx="4" fill="#f1f5f9" stroke="#0f2c59" stroke-width="1.5"/>
+    <text x="654" y="40" text-anchor="middle" font-family="Times New Roman, serif" font-size="12.5">R_i (&ell; digits)</text>
+
+    <!-- Row 2: Rev_b(T_i(m)) -->
+    <text x="15" y="92" font-family="Times New Roman, serif" font-size="13" font-weight="bold" fill="#0f2c59">Rev_b:</text>
+    <rect x="95" y="70" width="120" height="32" rx="4" fill="#f1f5f9" stroke="#0f2c59" stroke-width="1.5"/>
+    <text x="155" y="90" text-anchor="middle" font-family="Times New Roman, serif" font-size="12.5">Rev(R_i)</text>
+
+    <rect x="223" y="70" width="115" height="32" rx="4" fill="#ccfbf1" stroke="#0d7377" stroke-width="2"/>
+    <text x="280" y="90" text-anchor="middle" font-family="Times New Roman, serif" font-size="12.5" font-weight="bold" fill="#0d7377">0^m</text>
+
+    <rect x="346" y="70" width="125" height="32" rx="4" fill="#f1f5f9" stroke="#0f2c59" stroke-width="1.5"/>
+    <text x="408" y="90" text-anchor="middle" font-family="Times New Roman, serif" font-size="12.5">Rev(M_i)</text>
+
+    <rect x="479" y="70" width="115" height="32" rx="4" fill="#ffe4e6" stroke="#9b1b30" stroke-width="2"/>
+    <text x="536" y="90" text-anchor="middle" font-family="Times New Roman, serif" font-size="12.5" font-weight="bold" fill="#9b1b30">(b &minus; 1)^m</text>
+
+    <rect x="602" y="70" width="105" height="32" rx="4" fill="#f1f5f9" stroke="#0f2c59" stroke-width="1.5"/>
+    <text x="654" y="90" text-anchor="middle" font-family="Times New Roman, serif" font-size="12.5">Rev(L_i)</text>
+
+    <!-- Carry arrows -->
+    <line x1="600" y1="122" x2="475" y2="122" stroke="#9b1b30" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="537" y="140" text-anchor="middle" font-family="Times New Roman, serif" font-size="11.5" fill="#9b1b30">Right wire: c_out = c_in &isin; {0,1} (&forall;m &ge; 1)</text>
+
+    <line x1="344" y1="122" x2="218" y2="122" stroke="#9b1b30" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="281" y="140" text-anchor="middle" font-family="Times New Roman, serif" font-size="11.5" fill="#9b1b30">Left wire: c_out = c_in &isin; {0,1} (&forall;m &ge; 1)</text>
+  </svg>
+  <div class="fig-caption">
+    <b>Figure 1:</b> Mirror-image alignment of the symbolic blocks (<i>b</i>&minus;1)<sup><i>m</i></sup> and 0<sup><i>m</i></sup> under base-<i>b</i> reversal. Because |<i>L<sub>i</sub></i>| = |<i>R<sub>i</sub></i>| = &ell;, both variable-length blocks align with sum (<i>b</i>&minus;1) + 0 = <i>b</i> &minus; 1 at every position, acting as length-independent carry wires (<i>c</i><sub>out</sub> = <i>c</i><sub>in</sub> for all <i>m</i> &ge; 1) that decouple the outer engine (mod 3) from the inner core (mod 8).
+  </div>
+</div>
+
+<div class="thm-box">
+  <b>Theorem 2 (Period-4 Carry-Wire Closure Theorem).</b> <i>Fix a base b &ge; 2, an outer length &ell; &ge; 1, and an even-phase inner core length k &ge; 1. Let L<sub>0</sub>, R<sub>0</sub>, L<sub>1</sub>, R<sub>1</sub> &isin; {0, &hellip;, b&minus;1}<sup>&ell;</sup> with L<sub>0</sub>[0], L<sub>1</sub>[0] &ne; 0, let M<sub>0</sub>, M<sub>1</sub> &isin; {0, &hellip;, b&minus;1}<sup>k</sup>, and let M<sub>2</sub>, M<sub>3</sub> &isin; {0, &hellip;, b&minus;1}<sup>k+1</sup>. For every integer m &ge; 1, define:</i>
+  <div class="math-block">
+    <i>T</i><sub>1</sub>(<i>m</i>) = <i>L</i><sub>0</sub> (<i>b</i>&minus;1)<sup><i>m</i></sup> <i>M</i><sub>0</sub> 0<sup><i>m</i></sup> <i>R</i><sub>0</sub>, &emsp;
+    <i>T</i><sub>2</sub>(<i>m</i>) = <i>L</i><sub>1</sub> 0<sup><i>m</i></sup> <i>M</i><sub>1</sub> (<i>b</i>&minus;1)<sup><i>m</i></sup> <i>R</i><sub>1</sub>, &emsp;
+    <i>T</i><sub>3</sub>(<i>m</i>) = <i>L</i><sub>0</sub> (<i>b</i>&minus;1)<sup><i>m</i></sup> <i>M</i><sub>2</sub> 0<sup><i>m</i></sup> <i>R</i><sub>0</sub>, &emsp;
+    <i>T</i><sub>4</sub>(<i>m</i>) = <i>L</i><sub>1</sub> 0<sup><i>m</i></sup> <i>M</i><sub>3</sub> (<i>b</i>&minus;1)<sup><i>m</i></sup> <i>R</i><sub>1</sub>.
+  </div>
+  <i>If the eight finite boundary carry equations hold in base b:</i>
+  <ul style="list-style-type: none; padding-left: 8px;">
+    <li><b>(1)</b> val<sub><i>b</i></sub>(<i>R</i><sub>0</sub>) + val<sub><i>b</i></sub>(Rev(<i>L</i><sub>0</sub>)) = val<sub><i>b</i></sub>(<i>R</i><sub>1</sub>) &nbsp;(carry 0), &emsp; <b>(2)</b> val<sub><i>b</i></sub>(<i>L</i><sub>0</sub>) + val<sub><i>b</i></sub>(Rev(<i>R</i><sub>0</sub>)) + 1 = val<sub><i>b</i></sub>(<i>L</i><sub>1</sub>) &nbsp;(carry 0),</li>
+    <li><b>(3)</b> val<sub><i>b</i></sub>(<i>R</i><sub>1</sub>) + val<sub><i>b</i></sub>(Rev(<i>L</i><sub>1</sub>)) = <i>b</i><sup>&ell;</sup> + val<sub><i>b</i></sub>(<i>R</i><sub>0</sub>) &nbsp;(carry 1), &emsp; <b>(4)</b> val<sub><i>b</i></sub>(<i>L</i><sub>1</sub>) + val<sub><i>b</i></sub>(Rev(<i>R</i><sub>1</sub>)) = val<sub><i>b</i></sub>(<i>L</i><sub>0</sub> &middot; [<i>b</i>&minus;1]),</li>
+    <li><b>(5)</b> val<sub><i>b</i></sub>(<i>M</i><sub>0</sub>) + val<sub><i>b</i></sub>(Rev(<i>M</i><sub>0</sub>)) = <i>b<sup>k</sup></i> + val<sub><i>b</i></sub>(<i>M</i><sub>1</sub>) &nbsp;(carry 1), &emsp; <b>(6)</b> [<i>b</i>&minus;1] &middot; (val<sub><i>b</i></sub>(<i>M</i><sub>1</sub>) + val<sub><i>b</i></sub>(Rev(<i>M</i><sub>1</sub>)) + 1)<sub><i>b</i></sub> = <i>M</i><sub>2</sub> &nbsp;(carry 0),</li>
+    <li><b>(7)</b> val<sub><i>b</i></sub>(<i>M</i><sub>2</sub>) + val<sub><i>b</i></sub>(Rev(<i>M</i><sub>2</sub>)) = <i>b</i><sup><i>k</i>+1</sup> + val<sub><i>b</i></sub>(<i>M</i><sub>3</sub>) &nbsp;(carry 1), &emsp; <b>(8)</b> val<sub><i>b</i></sub>(<i>M</i><sub>3</sub>) + val<sub><i>b</i></sub>(Rev(<i>M</i><sub>3</sub>)) + 1 = val<sub><i>b</i></sub>(<i>M</i><sub>0</sub> &middot; [0]) &nbsp;(carry 0),</li>
+  </ul>
+  <i>and L<sub>0</sub>[0] &ne; R<sub>0</sub>[&ell;&minus;1], L<sub>1</sub>[0] &ne; R<sub>1</sub>[&ell;&minus;1], then for <b>all integers m &ge; 1</b>: F<sub>b</sub>(T<sub>1</sub>(m)) = T<sub>2</sub>(m), F<sub>b</sub>(T<sub>2</sub>(m)) = T<sub>3</sub>(m), F<sub>b</sub>(T<sub>3</sub>(m)) = T<sub>4</sub>(m), F<sub>b</sub>(T<sub>4</sub>(m)) = T<sub>1</sub>(m+1), and no iterate F<sub>b</sub><sup>(t)</sup>(T<sub>1</sub>(1)) (t &ge; 0) is a base-b palindrome.</i>
+</div>
+
+<h2>3. Explicit Proof in Primary New Base <i>b</i> = 50</h2>
+<div class="thm-box">
+  <b>Theorem 3 (Existence of Lychrel Numbers in Base <i>b</i> = 50).</b> <i>In base b = 50 = 2 &middot; 5<sup>2</sup>, define the fixed digit blocks (&ell; = 36, k = 8, k+1 = 9):</i>
+  <div class="code-box">L0 = [1, 47, 5, 38, 23, 4, 39, 21, 8, 31, 35, 28, 42, 16, 18, 13, 23, 3, 41, 17, 16, 17, 15, 19, 11, 25, 47, 6, 36, 25, 48, 4, 40, 19, 12, 24]
+R0 = [0, 25, 11, 19, 40, 3, 48, 26, 36, 5, 48, 26, 11, 19, 15, 17, 15, 17, 42, 3, 23, 13, 17, 15, 42, 28, 36, 32, 7, 21, 40, 3, 23, 38, 5, 47]
+L1 = [49, 2, 44, 11, 26, 45, 10, 28, 41, 18, 14, 21, 7, 33, 31, 36, 26, 46, 8, 32, 33, 32, 34, 30, 38, 24, 2, 43, 13, 24, 1, 45, 9, 30, 37, 25]
+R1 = [24, 37, 31, 9, 45, 2, 24, 12, 43, 3, 23, 37, 30, 34, 32, 33, 33, 8, 45, 26, 36, 31, 34, 8, 21, 14, 17, 40, 29, 10, 44, 27, 11, 44, 2, 48]
+M0 = [49, 13, 2, 20, 12, 20, 2, 13]
+M1 = [12, 15, 22, 32, 32, 22, 16, 12]
+M2 = [49, 24, 31, 45, 15, 14, 44, 31, 25]
+M3 = [25, 6, 26, 9, 31, 10, 26, 6, 24]</div>
+  <i>Then (L<sub>0</sub>, R<sub>0</sub>, L<sub>1</sub>, R<sub>1</sub>, M<sub>0</sub>, M<sub>1</sub>, M<sub>2</sub>, M<sub>3</sub>) satisfies all eight boundary equations of Theorem 2 in base b = 50 with L<sub>0</sub>[0] = 1 &ne; 47 = R<sub>0</sub>[35] and L<sub>1</sub>[0] = 49 &ne; 48 = R<sub>1</sub>[35]. The explicit 82-digit base-50 integer n<sub>0</sub> = T<sub>1</sub>(1) (140 decimal digits):</i>
+  <div class="code-box">n_0 = 803319634591911080790138327923868078346985580436311600817766986472726093862002163822300704837735070450470992436928311975462193309396720297</div>
+  <i>and the pre-template seed n<sub>seed</sub> (where (L<sub>0</sub>[0], R<sub>0</sub>[35]) = (2, 46) so F<sub>50</sub>(n<sub>seed</sub>) = T<sub>2</sub>(1) at step 1):</i>
+  <div class="code-box">n_seed = 1216909940868424918225842673958849505129891635886751053942766986472726093862002163822300704837735070450470992436928311975462193309396720296</div>
+  <i>are proven Lychrel numbers in base b = 50.</i>
+</div>
+
+<h2>4. Explicit Proofs in Secondary Bases <i>b</i> = 98 and <i>b</i> = 146</h2>
+
+<div class="thm-box">
+  <b>Theorem 4 (Existence of Lychrel Numbers in Base <i>b</i> = 98 = 2 &middot; 7<sup>2</sup>).</b> <i>In base b = 98 (&ell; = 37, k = 16, k+1 = 17), the blocks:</i>
+  <div class="code-box">L0 = [1, 95, 5, 86, 23, 50, 93, 10, 76, 43, 12, 71, 51, 92, 12, 72, 49, 96, 4, 88, 19, 58, 77, 42, 14, 67, 59, 76, 44, 10, 75, 45, 8, 79, 37, 24, 48]
+R0 = [0, 49, 23, 37, 80, 7, 45, 76, 9, 43, 76, 60, 68, 13, 41, 78, 58, 19, 88, 3, 96, 50, 72, 11, 92, 52, 72, 11, 43, 76, 9, 94, 50, 23, 86, 5, 95]
+L1 = [97, 2, 92, 11, 74, 47, 4, 87, 21, 54, 85, 26, 46, 5, 85, 25, 48, 1, 93, 9, 78, 39, 20, 55, 83, 30, 38, 21, 53, 87, 22, 52, 89, 18, 60, 73, 49]
+R1 = [48, 73, 61, 18, 88, 53, 22, 86, 54, 22, 38, 29, 82, 56, 21, 38, 78, 9, 93, 2, 48, 24, 85, 6, 46, 25, 84, 55, 21, 87, 5, 46, 74, 11, 92, 2, 96]
+M0 = [97, 48, 62, 39, 88, 73, 27, 1, 68, 1, 27, 73, 89, 38, 61, 49]
+M1 = [49, 12, 3, 31, 64, 2, 28, 69, 69, 29, 3, 64, 31, 3, 12, 48]
+M2 = [97, 97, 24, 6, 63, 30, 5, 58, 41, 40, 57, 6, 30, 62, 6, 25, 0]
+M3 = [0, 24, 30, 68, 93, 36, 63, 0, 83, 0, 62, 36, 93, 68, 31, 24, 97]</div>
+  <i>satisfy Theorem 2 in base b = 98, certifying the 92-digit base-98 starting integer n<sub>0</sub> = T<sub>1</sub>(1) (183 decimal digits):</i>
+  <div class="code-box">n_0 = 31335679324046594453776682353725783129961246758320899429909828808998949313231333927252564930267639166175598329103881796087355725399307991459403160947318793915188975471307402693159161</div>
+</div>
+
+<div class="thm-box">
+  <b>Theorem 5 (Existence of Lychrel Numbers in Base <i>b</i> = 146 = 2 &middot; 73).</b> <i>In base b = 146 (&ell; = 80, k = 6, k+1 = 7), the blocks:</i>
+  <div class="code-box">L0 = [1, 143, 5, 134, 23, 98, 93, 104, 82, 126, 40, 66, 13, 117, 57, 32, 79, 131, 30, 84, 121, 50, 46, 53, 39, 67, 11, 121, 49, 48, 49, 47, 51, 43, 59, 27, 89, 111, 70, 6, 131, 29, 86, 117, 58, 30, 83, 123, 46, 54, 37, 71, 3, 137, 17, 110, 71, 4, 135, 21, 102, 85, 120, 52, 42, 61, 23, 97, 95, 100, 90, 110, 72, 2, 139, 13, 118, 55, 36, 72]
+R0 = [0, 73, 35, 55, 118, 13, 140, 1, 71, 110, 90, 100, 96, 98, 23, 61, 41, 51, 120, 86, 102, 21, 136, 3, 71, 110, 17, 138, 3, 71, 37, 53, 45, 124, 84, 29, 57, 118, 86, 29, 132, 5, 69, 112, 90, 27, 59, 43, 51, 47, 49, 47, 49, 122, 11, 67, 39, 53, 45, 49, 122, 84, 29, 132, 80, 31, 57, 118, 13, 65, 39, 126, 82, 104, 94, 98, 23, 134, 5, 143]
+L1 = [145, 2, 140, 11, 122, 47, 52, 41, 63, 19, 105, 79, 132, 28, 88, 113, 66, 14, 115, 61, 24, 95, 99, 92, 106, 78, 134, 24, 96, 97, 96, 98, 94, 102, 86, 118, 56, 34, 75, 139, 14, 116, 59, 28, 87, 115, 62, 22, 99, 91, 108, 74, 142, 8, 128, 35, 74, 141, 10, 124, 43, 60, 25, 93, 103, 84, 122, 48, 50, 45, 55, 35, 73, 143, 6, 132, 27, 90, 109, 73]
+R1 = [72, 109, 91, 27, 132, 6, 142, 74, 36, 55, 45, 50, 47, 121, 84, 103, 94, 26, 60, 42, 124, 10, 140, 75, 35, 128, 8, 141, 74, 108, 91, 100, 23, 61, 114, 88, 29, 58, 116, 14, 138, 76, 35, 55, 117, 86, 102, 94, 98, 96, 97, 97, 24, 133, 78, 106, 92, 99, 96, 25, 60, 115, 15, 65, 112, 89, 28, 131, 79, 106, 20, 63, 41, 52, 46, 122, 11, 140, 2, 144]
+M0 = [145, 36, 10, 92, 9, 37]
+M1 = [36, 45, 102, 102, 46, 36]
+M2 = [145, 72, 92, 59, 58, 91, 73]
+M3 = [73, 18, 4, 119, 5, 18, 72]</div>
+  <i>satisfy Theorem 2 in base b = 146, certifying the 168-digit base-146 starting integer n<sub>0</sub> = T<sub>1</sub>(1) (364 decimal digits).</i>
+</div>
+
+<h2>5. Computational Verification and Mechanical Audit of Kuitch&eacute; (2023)</h2>
+<p>
+Beyond the symbolic all-<i>m</i> proof of Theorem 2, we executed three independent computational audits:
+</p>
+<ol>
+  <li><b>Concrete parameter sweep (1 &le; <i>m</i> &le; 500):</b> Direct big-integer evaluation of all four transitions across <i>m</i> = 1..500 (2,000 transitions per base) in bases <i>b</i> &isin; {26, 50, 98, 146}, confirming 100% bit-for-bit agreement and 0 palindromes.</li>
+  <li><b>100,000-step continuous orbit simulation with regex verification (<i>b</i> = 50):</b> Starting from <i>n</i><sub>0</sub> = <i>T</i><sub>1</sub>(1), we computed 100,000 consecutive reverse-and-add steps <i>n</i><sub><i>t</i>+1</sub> = <i>F</i><sub>50</sub>(<i>n<sub>t</sub></i>) (reaching <i>m</i> = 25,001 and a <b>50,082-digit</b> base-50 integer at <i>t</i> = 100,000) and matched every iterate against compiled regular expressions (<code>re.Pattern.fullmatch</code>) for <i>T</i><sub>1</sub>..<i>T</i><sub>4</sub>.</li>
+  <li><b>Mechanical audit of Kuitch&eacute; (2023) [3]:</b> Auditing Propositions 3.1&ndash;3.4 and Section 4 of [3] across bases 3 &le; <i>b</i> &le; 10 confirms that Propositions 3.1&ndash;3.4 are conditional 1-step/2-step sibling-preimage identities (&phi;(<i>a</i>) = &phi;(<i>x</i>) or &phi;<sup>2</sup>(<i>a</i>) = &phi;<sup>2</sup>(<i>x</i>)), while Section 4 constructs an explicit template cycle only in base <i>b</i> = 4 = 2<sup>2</sup> (a power of two). Testing the natural base-<i>b</i> analogue across all non-power-of-two bases <i>b</i> &isin; {3, 5, 6, 7, 9, 10} produces explicit palindrome termination or template-closure failure in every case (e.g., <i>y</i><sub>1</sub> reaches a palindrome at step 6 in <i>b</i> = 3, step 9 in <i>b</i> = 7, and step 19 in <i>b</i> = 10).</li>
+</ol>
+
+<h2>Appendix: Standalone 25-Line Python Verifier</h2>
+<div class="code-box">def to_int(digits, b):
+    v = 0
+    for d in digits: v = v * b + d
+    return v
+
+def to_digits(v, b):
+    if v == 0: return [0]
+    out = []
+    while v > 0: out.append(v % b); v //= b
+    return out[::-1]
+
+def verify_base(b, L0, R0, L1, R1, M0, M1, M2, M3):
+    l, k = len(L0), len(M0)
+    assert to_int(R0, b) + to_int(L0[::-1], b) == to_int(R1, b)
+    assert to_int(L0, b) + to_int(R0[::-1], b) + 1 == to_int(L1, b)
+    assert to_int(R1, b) + to_int(L1[::-1], b) == b**l + to_int(R0, b)
+    assert to_int(L1, b) + to_int(R1[::-1], b) == to_int(L0 + [b - 1], b)
+    assert to_int(M0, b) + to_int(M0[::-1], b) == b**k + to_int(M1, b)
+    assert to_int(M1, b) + to_int(M1[::-1], b) + 1 == to_int(M2[1:], b) and M2[0] == b - 1
+    assert to_int(M2, b) + to_int(M2[::-1], b) == b**(k + 1) + to_int(M3, b)
+    assert to_int(M3, b) + to_int(M3[::-1], b) + 1 == to_int(M0 + [0], b)
+    assert L0[0] != R0[-1] and L1[0] != R1[-1]
+    x = to_int(L0 + [b - 1] + M0 + [0] + R0, b)
+    for step in range(400):
+        d = to_digits(x, b)
+        assert d != d[::-1], f"Palindrome at step {step}"
+        x += to_int(d[::-1], b)
+    print(f"Base b = {b}: ALL SYMBOLIC & 400-STEP CHECKS PASSED!")</div>
+
+<h2>References</h2>
+<ol style="font-size:8.8pt; line-height:1.32;">
+  <li>D. Seal, &ldquo;Base 26 Lychrel Numbers and Reversal-Addition Period-4 Templates,&rdquo; in K. Brown, <i>MathPages: Digit Reversal Sums Leading to Palindromes</i>, 1996. <code>https://www.mathpages.com/home/kmath004/kmath004.htm</code></li>
+  <li>A. Sutcliffe, &ldquo;The factors of <i>N<sup>n</sup></i> &minus; 1 and reversal-addition sequences in binary and power-of-two radices,&rdquo; <i>Mathematics Magazine</i>, 1968.</li>
+  <li>R. S. Kuitch&eacute;, &ldquo;On the Construction of Some Lychrel Numbers,&rdquo; Research Square Preprint <code>rs-2659802/v1</code>, 2023. <code>https://doi.org/10.21203/rs.3.rs-2659802/v1</code></li>
+  <li>mizopl, Claude, and Gemini, &ldquo;Compositional Lifting and Seam Surgery (<code>CLSS</code>): Automated Discovery of Certified World Records Across Eight Scientific Domains on a Consumer Workstation,&rdquo; Technical Preprint, October 2026.</li>
+</ol>
+
+</body>
+</html>

@@ -1,0 +1,1252 @@
+{
+ "nodes": [
+  {
+   "id": "Q0",
+   "type": "text",
+   "text": "**Q0** · question\n\nfirst unknown exact term of A006506/A063443/A028420 (main) or A054759/A027683 (partial p1)",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "F1",
+   "type": "text",
+   "text": "**F1** · fact\n\npitfall: offsets differ (A028420 from n=0, A054759 from n=1); a new term at the wrong index is an existing one",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "F2",
+   "type": "text",
+   "text": "**F2** · fact\n\npitfall: torus conventions for n=1,2 (multi-edges, loops) change small terms; reproduce published small terms first",
+   "x": 420,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "F3",
+   "type": "text",
+   "text": "**F3** · fact\n\npitfall: CRT with too few primes returns value mod product; bound a(N) from entropy constant with wide margin",
+   "x": 420,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "F4",
+   "type": "text",
+   "text": "**F4** · fact\n\nmachine: M1 Pro 10 cores 16 GB RAM, ~15 GB free disk; keep arrays under 6 GB",
+   "x": 420,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "H1",
+   "type": "text",
+   "text": "**H1** · hypothesis\n\nsmaller-first: A054759 square ice torus n=15 by row transfer matrix 2^n states + tracked boundary edge, mod primes",
+   "x": 420,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H2",
+   "type": "text",
+   "text": "✗ **H2** · hypothesis\n\nextender: A006506 n=40 broken-profile DP over Fibonacci frontier states F(42)=2.7e8, ~13 primes, parallel over cores\n\n*why dead:* P0003=0: A006506(40) frontier F(42)=2.68e8 states exceeds 16GB RAM 3-run budget; p1 (PR #366) and p2 (PR #462) won instead",
+   "x": 420,
+   "y": 1100,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "F5",
+   "type": "text",
+   "text": "**F5** · fact\n\ncriterion pitfall: open-boundary a(N)^(1/N^2) is far from the entropy constant (A006506 n=39: 1.508289 vs torus A027683 n=32: 1.503048, gap 5e-3 > 1e-3); literal growth clause may be unmeetable for A028420/A006506/A063443",
+   "x": 420,
+   "y": 1320,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "H3",
+   "type": "text",
+   "text": "**H3** · hypothesis\n\nsmall-data: rectangular m x n hard squares (A089980) and monomer-dimer (A210662) via width-min transfer matrix; validate against published values, target p2 new row",
+   "x": 420,
+   "y": 1540,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "E1",
+   "type": "text",
+   "text": "**E1** · experiment\n\nA054759(15) two independent modular transfer-matrix runs; reproduce n<=14 first",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "SF1",
+   "type": "text",
+   "text": "**SF1** · experiment\n\nSector transfer matrix (conserved up-arrow count), closed-form entry via prefix-sum min/max, float64 modular matmul + CRT; reproduce A054759 n=1..14 exactly, then attempt n=15 with two encodings",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "E2",
+   "type": "text",
+   "text": "**E2** · experiment\n\nhard-squares rectangular counter (independent-set profile, Fibonacci frontier, SOS transfer, exact bigint): reproduce A089980 antidiagonal b-file for feasible widths",
+   "x": 840,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "E3",
+   "type": "text",
+   "text": "**E3** · experiment\n\nmonomer-dimer rectangular counter (broken-profile frontier DP, exact bigint): reproduce A210662 triangle b-file rows for feasible widths",
+   "x": 840,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "X1",
+   "type": "text",
+   "text": "✗ **X1** · tool\n\nheadless claude -p with background subagents (run_in_background) ending the turn\n\n*why dead:* print mode kills background subagents 10 min after the turn ends; lenses must run in foreground and the run must wait",
+   "x": 0,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "R1",
+   "type": "text",
+   "text": "**R1** · result\n\nsector transfer matrix (sixvertex.py) reproduces ALL 14 published A054759 terms exactly (8 primes <2^20, CRT 160 bits, 35 s)",
+   "x": 840,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "L1",
+   "type": "text",
+   "text": "**L1** · lead\n\nA054759(15): RUN_A fwd 11 primes ~2^20 + RUN_B reversed encoding 12 disjoint primes ~2^19, PID 89748, outputs runs/2026-10-17-1225/attempts/smaller-first/code/n15_*; next: CRT both, compare, self-break, panel",
+   "x": 1260,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "R2",
+   "type": "text",
+   "text": "**R2** · result\n\nn15 RUN_A (11 primes, 220-bit modulus) and RUN_B (12 disjoint primes, reversed encoding, explicit builder, 228-bit) AGREE: a(15)=4310182149988584261406143524214457416387448 (43 digits, 142 bits); 694 s",
+   "x": 1680,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "F9",
+   "type": "text",
+   "text": "**F9** · fact\n\ncorrection: R2's panel bet is P0007 (R2 node says P0004 by mistake)",
+   "x": 2100,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "SB1",
+   "type": "text",
+   "text": "**SB1** · result\n\nstep-5 self-break (break.py): PART A full-edge brute force n=1,2,3 = 4,18,148 MATCH; PART B independent non-sector TM n<=8 all MATCH incl a(8); PART C independent CRT both runs == candidate, 23 residues consistent, prime sets disjoint; PART D growth a(15)^(1/225)=1.54699 vs W=1.53960 gap 0.00739>1e-3 FAILS literally (published a(14) also fails). Verdict SURVIVES on value+two-run+reproduction; growth clause flagged.",
+   "x": 2100,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "CONF1",
+   "type": "text",
+   "text": "**CONF1** · result\n\nPANEL 3x pass:true (REPRODUCE recomputed all 23 n=15 residues from scratch; NOVELTY live b-file HTTP200 index15 absent; CRITERION p1 met literally, growth not part of p1). Gate CONFIRMED_PARTIAL. Package outbox/2026-10-17-anonymous-8ee58c17-fd616054 CHECK_RUN PASS. a(15)=4310182149988584261406143524214457416387448.",
+   "x": 1680,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "GROWTHNOTE",
+   "type": "text",
+   "text": "**GROWTHNOTE** · fact\n\nLESSON: the main criterion's a(N)^(1/N^2) within-1e-3 growth clause is UNREACHABLE at finite n for these torus sequences (published a(14) gap 0.0085, a(15) gap 0.0074). Treat it as an asymptotic note, not a per-term gate; partial p1 names only two-run+reproduction rules.",
+   "x": 840,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "R3",
+   "type": "text",
+   "text": "**R3** · result\n\nCONFIRMED_PARTIAL p1: A054759(15)=4310182149988584261406143524214457416387448; panel 3/3 pass, gate, CHECK_RUN PASS; package outbox/2026-10-17-anonymous-8ee58c17-fd616054",
+   "x": 2100,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "X2",
+   "type": "text",
+   "text": "✗ **X2** · tool\n\ncron-scheduled claude -p on macOS\n\n*why dead:* cron has no keychain login: 'Not logged in'; use launchd LaunchAgent (gui session)",
+   "x": 0,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "L2",
+   "type": "text",
+   "text": "**L2** · lead\n\np2: new row of A089980 (hard squares m x n) or A210662 (monomer-dimer) — counter validated widths<=16; needs two decompositions + disjoint primes, then panel",
+   "x": 2520,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "L3",
+   "type": "text",
+   "text": "✗ **L3** · lead\n\np1 bis: A027683(33) hard squares on 33x33 torus — same two-run rules; Fibonacci-like torus states, check feasibility\n\n*why dead:* Superseded: p1 already won and merged via A054759(15) (PR #366)",
+   "x": 2520,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "E4",
+   "type": "text",
+   "text": "**E4** · experiment\n\nsmall-data run 1708: modular numpy broken-profile hard-squares counter, validate A089980 at widths 20..32, project antidiagonal-79 cost per prime",
+   "x": 840,
+   "y": 1100,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "E5",
+   "type": "text",
+   "text": "**E5** · experiment\n\nsettled-check run 1708: is A089980 antidiagonal 79 / A210662 row 28 / A006506(40) / A028420(28) already published (Liang 2025 papers, OEIS drafts, GitHub)?",
+   "x": 420,
+   "y": 1760,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "R4",
+   "type": "text",
+   "text": "**R4** · result\n\ncommander extra check: fresh primes 999983 and 786433 (in neither run) — recomputed residues equal a(15) mod p (31 s each); package run_checks.sh PASS from clean copy; sha256 fd616054…",
+   "x": 2520,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "R1708A",
+   "type": "text",
+   "text": "**R1708A** · result\n\nhs_mod.py (two-piece Fibonacci frontier, 3 numpy slice ops per cell, uint64 mod p<2^31): 1714 A089980 cells exact for widths 0-20,22,24,26,28,30, 0 mismatches; w=38,39 length-2 spot checks match. 315 s/prime for w=39 L=40 (3.05 GiB); antidiagonal 79 ~8.6 core-h (HEURISTIC), T(40,40) ~5-5.7 core-h",
+   "x": 1260,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "L1708",
+   "type": "text",
+   "text": "**L1708** · lead\n\nA089980 antidiagonal 79 (p2): one prime per process with hs_mod.py; validate w=32/34 per-prime first (exact() loop per prime + --first-prime-index), then 32-37 primes for w<=39 over ~1-2 nights, plus a second decomposition (column sweep / reversed encoding, disjoint primes); watch host swap",
+   "x": 1680,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "H1708A",
+   "type": "text",
+   "text": "✗ **H1708A** · hypothesis\n\nseveral CRT primes per process at width>=32 to amortise the frontier walk\n\n*why dead:* no per-prime speedup, memory multiplies by #primes; thrashed swap and timed out at w=32. Always one prime per process at large width",
+   "x": 1260,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H1708B",
+   "type": "text",
+   "text": "✗ **H1708B** · hypothesis\n\ndense transfer over all 2^w row patterns (zeta/subset transform) for width 39\n\n*why dead:* 2^39 entries = 4 TiB; only the Fibonacci frontier (F(w+2) states) is feasible",
+   "x": 1260,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "R1708B",
+   "type": "text",
+   "text": "**R1708B** · result\n\nsettled-check: A089980 antidiagonal 79, A210662 row 28, A006506(40), A028420(28), next A063443 NOT published (b-files 17:10Z HTTP 200; Liang 2507.04007 covers m+n<=78 and borrowed N(39,39); 2505.12776's m+n<=79 is king graphs). OEIS history 404 -> drafts PENDING TABLE CHECK. Both p2 rows contain main-target-hard cells",
+   "x": 840,
+   "y": 1320,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "F1708",
+   "type": "text",
+   "text": "**F1708** · fact\n\npitfall: arXiv 2505.12776 'm+n<=79' refers to KING graphs (A193580/A245013), not P_n x P_m",
+   "x": 1260,
+   "y": 1100,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "H1708C",
+   "type": "text",
+   "text": "✗ **H1708C** · hypothesis\n\nguess T(39,40) from the asymptotic log fit and certify on a few primes\n\n*why dead:* a fit cannot fix ~925 exact bits; certifying any residue needs the full DP anyway, so it saves nothing",
+   "x": 1260,
+   "y": 1320,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "R1708C",
+   "type": "text",
+   "text": "**R1708C** · result\n\nhs_mod.py one-prime-per-process + --first-prime-index: w=32 validated, 47 cells m=0..46, 0 mismatches, 35 primes, 355.80 s, peak 135 MiB; total 1761 cells 0 mismatches. Next: w=34 alone (~935 s), then w=39 residues per prime",
+   "x": 2100,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "F20",
+   "type": "text",
+   "text": "**F20** · fact\n\ncommander nodes carry an empty run id (R3,R4,L2,L3,X2 written 17:08-17:11Z by the interactive PROOFER session) — not a foreign writer",
+   "x": 0,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "F21",
+   "type": "text",
+   "text": "**F21** · fact\n\ncommander projection (HEURISTIC, from secs column w=28..33 ratio ~1.6/width): w34~1000s, w35~1600s, w36~2600s, w37~4200s, w38~6800s, w39~11000s for all primes in ONE process => ~7 h single-core for w35-39; driver default cap 1800 s/width breaks the loop at w36 — split primes across 2-3 processes (RAM ~0.3 GB at w33 x1.6/width) or raise cap",
+   "x": 0,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "E1754",
+   "type": "text",
+   "text": "**E1754** · experiment\n\nrun 1754: resume L1708. hs_mod.exact(w,79-w) w=0..34, one prime/sweep + CRT check prime, per-width 0-mismatch gate vs live b-file",
+   "x": 2100,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "R1754A",
+   "type": "text",
+   "text": "**R1754A** · result\n\nantidiag-79 cells T(w,79-w) for w=0..34 computed (35 of 40 distinct cells); 2142 published-cell checks 0 mismatches; peak 463 MiB at w=34; fresh-prime self-break PASS on w=30,32,34",
+   "x": 2520,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "R1754B",
+   "type": "text",
+   "text": "**R1754B** · result\n\nindependent exact-bigint full-column-pattern transfer (no CRT, different encoding) reproduces 1001 published cells w<=14 (0 mism) and AGREES with modular run on all antidiag-79 cells w=0..16 (17/17). Two-run agreement for w<=16 only",
+   "x": 2940,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "R1754S",
+   "type": "text",
+   "text": "**R1754S** · result\n\nsettled-check run 1754: A089980 d=79 NOT published; b-file re-fetched HTTP 200 labelled 'Liang Kai antidiagonals 0..78'; Liang papers cover m+n<=78; 2505.12776 m+n<=79 is KING graphs; no injection",
+   "x": 840,
+   "y": 1540,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "L1754",
+   "type": "text",
+   "text": "**L1754** · lead\n\np2 antidiag-79: DONE w=0..34 (w<=16 two-decomposition). TODO: (1) widths 35..39 one-per-process when swap free; (2) second modular decomposition disjoint primes for w=17..39; (3) panel. Then CONFIRMED_PARTIAL candidate for the whole row",
+   "x": 2940,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "E1913",
+   "type": "text",
+   "text": "**E1913** · experiment\n\nrun 1913: resume L1754. pool of per-(w,prime) hs_mod residue jobs w=35..39, mem cap 7 GiB, then CRT + 0-mismatch gate",
+   "x": 3360,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "RF1913A",
+   "type": "text",
+   "text": "**RF1913A** · experiment\n\nfar-import: row-to-row transfer over Fibonacci strings, w-pass trie disjoint-sum transform (no reversal perm thanks to reflection symmetry), uint64 lazy mod primes<2^30, CRT+check prime; gate all published cells; A089980 antidiag79 w=17..",
+   "x": 0,
+   "y": 1100,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "X3",
+   "type": "text",
+   "text": "✗ **X3** · tool\n\nresume agent retrying every 20 min before the announced limit reset\n\n*why dead:* each premature retry burned one of 8 daily resumes; fixed: run.sh parses 'resets <time>' into RESUME_AFTER and waits",
+   "x": 0,
+   "y": 1320,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "F22",
+   "type": "text",
+   "text": "**F22** · fact\n\npool cap_sec(37)=600 s < needed ~550-650 s (w36 jobs 327-362 s); w>=37 jobs time out — rerun failed (w,j) with cap >= 2x previous width time",
+   "x": 0,
+   "y": 1540,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "E1913C",
+   "type": "text",
+   "text": "**E1913C** · experiment\n\ncommander relaunch: frozen pool.py with cap_sec 1283/2078/3367 s for w37/38/39, 4 jobs, 7 GiB; queued behind PID 17509 by waiter 25617; log pool_commander.log",
+   "x": 420,
+   "y": 1980,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "F23",
+   "type": "text",
+   "text": "**F23** · fact\n\nv10: infra dead ends X1, X2, X3 are now preflight checks (preflight.sh); F22 class is covered by the job queue's caps (>=2x); runs no longer resolve bets (K3)",
+   "x": 0,
+   "y": 1760,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "EH2208A",
+   "type": "text",
+   "text": "**EH2208A** · result\n\nA089980 antidiag 79: frozen assemble.py on run-1913 res/ ACCEPTED w=35 (T(35,44), 914 bits, 275 digits, 36 primes, 44 pub cells 0 mismatch) and w=36 (T(36,43), 918 bits, 277 digits, 37 primes, 43 pub cells 0 mismatch), check prime ok; values in runs/2026-10-17-2208/attempts/extender-harvest/antidiag79_w35plus.tsv. NUMERICAL (extender only, not yet two-run agreed)",
+   "x": 0,
+   "y": 1980,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "EH2208B",
+   "type": "text",
+   "text": "**EH2208B** · result\n\nw=35,36 residue headers equal hs_mod.primes_below_2_31(nprimes_for) for all 36/37 files; CRT product margin over V(w)^L: 5.9 bits (w35), 31.5 bits (w36)",
+   "x": 420,
+   "y": 2200,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "EH2208C",
+   "type": "text",
+   "text": "**EH2208C** · result\n\nHEURISTIC growth sanity w=35,36 new cells: fixed-width log-ratio differences alternate with contraction factor continuing smooth published sequence (-0.464102 -> -0.464419 w35; -0.463737 -> -0.464062 w36); new log-ratio strictly between neighbour widths",
+   "x": 420,
+   "y": 2420,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "EH2208D",
+   "type": "text",
+   "text": "**EH2208D** · fact\n\nw=37 (L=42, needs 37 primes): 16/37 residue files complete at 2026-10-18 00:11 CEST (j0-12,25-27); j16-19 running (.part); j13,14,15 TIMEOUT left for rerun; 21 missing",
+   "x": 0,
+   "y": 2200,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "EH2208E",
+   "type": "text",
+   "text": "✗ **EH2208E** · hypothesis\n\nDeterminism audit: re-run frozen assemble.py to a copy and compare bytes\n\n*why dead:* Ran: byte-identical output for w=35,36. Dead as a verification line: same code, same residues, zero independence; only rules out nondeterminism.",
+   "x": 0,
+   "y": 2420,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "EH2208F",
+   "type": "text",
+   "text": "✗ **EH2208F** · hypothesis\n\nLast digit of T(w,m) along fixed w is periodic (small period) so new cells last digits predictable\n\n*why dead:* Ran on published m for w=35,36: no period <= L/2 found in T mod 10. Dead.",
+   "x": 0,
+   "y": 2640,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "EH2208G",
+   "type": "text",
+   "text": "✗ **EH2208G** · hypothesis\n\nAitken/geometric extrapolation of fixed-width log ratios predicts new cell log ratio\n\n*why dead:* Ran: prediction error 3.2e-4 of last diff (w35 and w36): consistent but not exact, redundant with EH2208C; dead as an exactness check.",
+   "x": 0,
+   "y": 2860,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "X4",
+   "type": "text",
+   "text": "✗ **X4** · tool\n\njob spec with relative cwd started by the launchd ticker\n\n*why dead:* ticker starts in '/', cd failed before logging; fixed: submit stores abspath, tick resolves vs workdir, cd errors go to out.log; preflight warns on missing cwd",
+   "x": 0,
+   "y": 3080,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "E2213",
+   "type": "text",
+   "text": "**E2213** · experiment\n\npool moved into job queue as ad79-w37-39-pool-q: 2 parallel jobs, POOL_CAP_FACTOR=4.0 (w37 2333 s), after 4-parallel cap-1283 s timeouts under swap contention; old pool PID 25617 + 4 children killed by exact pid",
+   "x": 840,
+   "y": 1760,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "EH2208H",
+   "type": "text",
+   "text": "**EH2208H** · fact\n\nUpdate to EH2208D at 00:12:30: w=37 j=16 also TIMEOUT (4 timeouts j13-16); per-prime runtime rose 290-305s (j0-3) -> 686-877s (j4-11) -> TIMEOUT (j13-16), consistent with host memory/swap pressure; next run should rerun j13-16 with fewer concurrent jobs",
+   "x": 420,
+   "y": 2640,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "CC2208A",
+   "type": "text",
+   "text": "**CC2208A** · result\n\ncross-check: extender (hs_mod) vs far.py T(w,79-w) exact decimal-string equality w=17..34: 18/18 AGREE, 0 disagree; all far rows pub_mismatch 0 + check prime ok; extender rows 0 mismatches (compare_out.txt)",
+   "x": 3360,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "CC2208B",
+   "type": "text",
+   "text": "**CC2208B** · result\n\nindependence audit: far code imports only sys/os/time/json/resource/numpy/concurrent/datetime, 0 mentions of hs_mod/extender; prime sets per width w=17..34 intersection 0 (far max 1073741789 <2^30, hs min 2147482859 >2^30); far res primes == computed lists; extender value mod all 589 far (w,p) residues: 589 ok 0 bad. Encodings differ in ranking/sweep but share product state shape V(k)xV(w-k)",
+   "x": 3780,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "CC2208C",
+   "type": "text",
+   "text": "**CC2208C** · result\n\nfresh-prime spot check: own dense 2^w bitmask broken-profile counter (trial-division primes 536870909, 268435399; in neither code) passes 882 published cells w<=11 x2 primes 0 mism, negatives novert 1430 / nohoriz 1562 mism; T(w,79-w) mod p for w=17..22 matches BOTH tables 12/12",
+   "x": 3780,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "CC2208D",
+   "type": "text",
+   "text": "✗ **CC2208D** · hypothesis\n\nown fresh-prime counter at large widths w>=30 via dense 2^w array\n\n*why dead:* 2^30 int64 = 8 GiB per array, far over the 500 MB cap / swap-full host; twin of H1708B; fresh-prime check at w>=23 needs a Fibonacci-frontier counter (own, ~F(w+2) states)",
+   "x": 4200,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "SC2208A",
+   "type": "text",
+   "text": "**SC2208A** · result\n\nsettled-check run 2208: A089980 d=79 NOT published (b-file sha a28e1a8d identical, d<=78; A089934 b-file d<=78 edited 2026-09-22; A006506 n<=39, A028420 n<=27; arXiv 24 mo nothing new; GitHub repos 0, code search 401 PENDING; Zenodo none). No injection",
+   "x": 840,
+   "y": 1980,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "SC2208B",
+   "type": "text",
+   "text": "**SC2208B** · fact\n\nd=79 cells w=0..7 are already implied by OEIS rows A000045 (a(m+2)), A001333 (a(m+1)), A051736, A051737, A089936-8 (a(m)); all 7 equal run-1754 values. Novelty claim must say 'first full row; w<=7 agree with existing row sequences'. No row sequence for w>=8",
+   "x": 2940,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "SC2208C",
+   "type": "text",
+   "text": "✗ **SC2208C** · dead\n\nsettled-check: look for A089980 d=79 in GitHub/Zenodo/stat-phys/SeqFan — 0 repo hits (control 858), Zenodo irrelevant, web search only OEIS+Liang; code search 401",
+   "x": 840,
+   "y": 2200,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "R2208",
+   "type": "text",
+   "text": "**R2208** · result\n\nrun 2208: antidiag-79 w=0..34 two-decomposition agreed (far.py vs hs_mod 18/18 exact, disjoint primes); w=35,36 hs_mod ACCEPTED (0 pub mismatches); w=37 16/37 residues",
+   "x": 3360,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "L2208",
+   "type": "text",
+   "text": "**L2208** · lead\n\np2 antidiag-79 TODO: harvest jobs ad79-far-w35/-w36 and compare; finish w=37..39 hs_mod (<=2 jobs in parallel at w>=37 under swap pressure; rerun TIMEOUT j13-16); far.py w=37..39 as queued jobs; then claim/ + 3-skeptic panel. Novelty wording: cells w<=7 implied by published row sequences",
+   "x": 3780,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "F2208",
+   "type": "text",
+   "text": "**F2208** · fact\n\n4 parallel w=37 hs_mod jobs under ~14/15 GB swap slowed 290 s -> 690-880 s and hit the 1283 s cap; heavy widths need fewer parallel jobs",
+   "x": 0,
+   "y": 3300,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "T1",
+   "type": "text",
+   "text": "**T1** · result\n\ntug gate 2026-10-18-next-nights: IMPLEMENT (finish p2) won bout 1 by concession; SEARCH's H' A054759(16) conceded: same partial class as the banked (15), cost unmeasured",
+   "x": 3360,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "L4",
+   "type": "text",
+   "text": "✗ **L4** · lead\n\nreserve (from tug SEARCH): A054759(16) square ice on the 16x16 torus — measure cost (hours, RSS) first; low value while p1 is already banked\n\n*why dead:* Superseded: A054759(15) (PR #366) and A089980 d=79 (PR #462) already won",
+   "x": 3780,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "X5",
+   "type": "text",
+   "text": "✗ **X5** · tool\n\ntug.py: any API error matching 'limit' treated as usage limit; partial bout skipped on resume\n\n*why dead:* a Sonnet safety-filter false positive aborted gate 2026-10-18-second-front; fixed: retry once, then fallback model (recorded per turn); resume skips only turns already logged",
+   "x": 0,
+   "y": 3520,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "X6",
+   "type": "text",
+   "text": "✗ **X6** · tool\n\ncommander moved a superseded public package into private/ and put a marker file in outbox/\n\n*why dead:* check_run treats private/ as secrets (97 false leak FAILs) and outbox/ as packages only; superseded packages and markers go to archive/",
+   "x": 0,
+   "y": 3740,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "X7",
+   "type": "text",
+   "text": "✗ **X7** · tool\n\ntug advocates with --system-prompt replacing Claude Code's default, on a cipher-solving topic\n\n*why dead:* all 18 turns API_REFUSED on every model; a normal claude -p with the default prompt answered the same topic fine; fixed: --append-system-prompt",
+   "x": 0,
+   "y": 3960,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "R2236",
+   "type": "text",
+   "text": "**R2236** · result\n\ncommander: far w35/w36 = hs_mod exactly (275/277 digits); 37/40 cells two-decomposition agreed; far w37 queued",
+   "x": 4200,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "R2253",
+   "type": "text",
+   "text": "**R2253** · result\n\ncommander: far w37 = hs w37 (278 d); hs w38 accepted; 38/40 dual-confirmed; far w38 queued; pool on w39",
+   "x": 4620,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "X11",
+   "type": "text",
+   "text": "✗ **X11** · dead\n\njobs.py tick computed wall-clock cap without subtracting SIGSTOP pause duration (443m paused on ad79-far-w38)\n\n*why dead:* fixed in jobs.py paused_seconds() + extend subcommand; added X11 preflight check; queued ad79-far-w39",
+   "x": 0,
+   "y": 4180,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "R_AD79_40_OF_40",
+   "type": "text",
+   "text": "**R_AD79_40_OF_40** · result\n\nAll 40/40 widths w=0..39 of A089980 antidiagonal 79 completed and matched digit-for-digit across two independent decompositions (hs_mod vs far.py, 0 mismatches, T(39,40)=2547356820811895...95377, 279 digits)",
+   "x": 0,
+   "y": 4400,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "R_A089980_AD79_CONFIRMED",
+   "type": "text",
+   "text": "**R_A089980_AD79_CONFIRMED** · result\n\nCONFIRMED_PARTIAL (p2): Complete 80-entry antidiagonal d=79 of OEIS A089980 (a089980_antidiag79.txt, sha256 918a1787, 40/40 widths dual-verified across hs_mod and far.py + w=0..16 exact bigint, 3-skeptic panel pass, packaged in outbox/2026-10-18-mizopl-918a1787)",
+   "x": 0,
+   "y": 4620,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q0",
+   "toNode": "F1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "blocks"
+  },
+  {
+   "id": "e1",
+   "fromNode": "Q0",
+   "toNode": "F2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "blocks"
+  },
+  {
+   "id": "e2",
+   "fromNode": "Q0",
+   "toNode": "F3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "blocks"
+  },
+  {
+   "id": "e3",
+   "fromNode": "Q0",
+   "toNode": "F4",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e4",
+   "fromNode": "Q0",
+   "toNode": "H1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e5",
+   "fromNode": "Q0",
+   "toNode": "H2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e6",
+   "fromNode": "Q0",
+   "toNode": "F5",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "blocks"
+  },
+  {
+   "id": "e7",
+   "fromNode": "Q0",
+   "toNode": "H3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e8",
+   "fromNode": "H1",
+   "toNode": "E1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "tests"
+  },
+  {
+   "id": "e9",
+   "fromNode": "E1",
+   "toNode": "SF1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "tests"
+  },
+  {
+   "id": "e10",
+   "fromNode": "H3",
+   "toNode": "E2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "tests"
+  },
+  {
+   "id": "e11",
+   "fromNode": "H3",
+   "toNode": "E3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "tests"
+  },
+  {
+   "id": "e12",
+   "fromNode": "H1",
+   "toNode": "R1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e13",
+   "fromNode": "R1",
+   "toNode": "L1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e14",
+   "fromNode": "L1",
+   "toNode": "R2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e15",
+   "fromNode": "R2",
+   "toNode": "F9",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e16",
+   "fromNode": "R2",
+   "toNode": "SB1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e17",
+   "fromNode": "L1",
+   "toNode": "CONF1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e18",
+   "fromNode": "F5",
+   "toNode": "GROWTHNOTE",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e19",
+   "fromNode": "R2",
+   "toNode": "R3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e20",
+   "fromNode": "R3",
+   "toNode": "L2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e21",
+   "fromNode": "R3",
+   "toNode": "L3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e22",
+   "fromNode": "H3",
+   "toNode": "E4",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "tests"
+  },
+  {
+   "id": "e23",
+   "fromNode": "Q0",
+   "toNode": "E5",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "tests"
+  },
+  {
+   "id": "e24",
+   "fromNode": "R3",
+   "toNode": "R4",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e25",
+   "fromNode": "E4",
+   "toNode": "R1708A",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e26",
+   "fromNode": "R1708A",
+   "toNode": "L1708",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e27",
+   "fromNode": "E4",
+   "toNode": "H1708A",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e28",
+   "fromNode": "E4",
+   "toNode": "H1708B",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e29",
+   "fromNode": "E5",
+   "toNode": "R1708B",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e30",
+   "fromNode": "R1708B",
+   "toNode": "F1708",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e31",
+   "fromNode": "E4",
+   "toNode": "H1708C",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e32",
+   "fromNode": "L1708",
+   "toNode": "R1708C",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e33",
+   "fromNode": "L1708",
+   "toNode": "E1754",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  },
+  {
+   "id": "e34",
+   "fromNode": "E1754",
+   "toNode": "R1754A",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e35",
+   "fromNode": "R1754A",
+   "toNode": "R1754B",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e36",
+   "fromNode": "E5",
+   "toNode": "R1754S",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e37",
+   "fromNode": "R1754A",
+   "toNode": "L1754",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e38",
+   "fromNode": "L1754",
+   "toNode": "E1913",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  },
+  {
+   "id": "e39",
+   "fromNode": "F22",
+   "toNode": "E1913C",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "tests"
+  },
+  {
+   "id": "e40",
+   "fromNode": "EH2208A",
+   "toNode": "EH2208B",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e41",
+   "fromNode": "EH2208A",
+   "toNode": "EH2208C",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e42",
+   "fromNode": "E1913C",
+   "toNode": "E2213",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  },
+  {
+   "id": "e43",
+   "fromNode": "EH2208D",
+   "toNode": "EH2208H",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e44",
+   "fromNode": "L1754",
+   "toNode": "CC2208A",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e45",
+   "fromNode": "CC2208A",
+   "toNode": "CC2208B",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e46",
+   "fromNode": "CC2208A",
+   "toNode": "CC2208C",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e47",
+   "fromNode": "CC2208C",
+   "toNode": "CC2208D",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e48",
+   "fromNode": "E5",
+   "toNode": "SC2208A",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e49",
+   "fromNode": "R1754A",
+   "toNode": "SC2208B",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e50",
+   "fromNode": "E5",
+   "toNode": "SC2208C",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e51",
+   "fromNode": "L1754",
+   "toNode": "R2208",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e52",
+   "fromNode": "R2208",
+   "toNode": "L2208",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e53",
+   "fromNode": "L1754",
+   "toNode": "T1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e54",
+   "fromNode": "T1",
+   "toNode": "L4",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e55",
+   "fromNode": "L2208",
+   "toNode": "R2236",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e56",
+   "fromNode": "R2236",
+   "toNode": "R2253",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  }
+ ]
+}

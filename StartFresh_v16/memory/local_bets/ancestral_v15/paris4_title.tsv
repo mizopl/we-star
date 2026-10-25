@@ -1,0 +1,4 @@
+ts	kind	id	target	node_key	p	outcome	text
+2026-10-21T19:26Z	predict	L-PT-001	paris4_title	H_lasagna_inner_core_unroll	0.55		Extracting Lasagna contour layers (cos/grad_mag) for the inner core inside 5753_-7 (wind_a 10..2, 6.6..15.1 cm past the last column) and unrolling windings -7..-15 will reveal subscriptio traces
+2026-10-21T19:35Z	resolve	L-PT-001	paris4_title	H_lasagna_inner_core_unroll	0.55	0	Simple radial steps along Lasagna ridges (wind_a 10..3) revealed strong S-shaped folding of core sheets (lasagna_radial_profiles.png), causing polar rays to cross the same fold multiple times instead of tracking arc-length along the folded sheet.
+2026-10-21T19:36Z	predict	L-PT-002	paris4_title	H_arclength_contour_inner_core	0.55		Unrolling the folded inner-core windings (wind_a=10..2) along true arc-length s of Lasagna phase contours (cos+sin / vctracks) instead of polar rays will remove S-fold distortions and expose continuous eschatocol sheets

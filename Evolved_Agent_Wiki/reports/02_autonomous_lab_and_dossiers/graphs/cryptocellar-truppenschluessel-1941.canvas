@@ -1,0 +1,88 @@
+{
+ "nodes": [
+  {
+   "id": "Q1",
+   "type": "text",
+   "text": "**Q1** · question\n\nCan we break an unmarked 1941 TS message on g-army-ts-messages.html or pass the p1 blind garble-tolerance benchmark (3 texts of 60-100 chars with ~8% Morse garbles, >=95% recovery)?",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "H1",
+   "type": "text",
+   "text": "✗ **H1** · hypothesis\n\nLens 1 (08.07.1941 & Multi-Day Rope Team): Same-day phase-locked clusters on 08.07.1941 (274 chars) and 03.07.1941 (250 chars) with V12/H1/H2/Unmix C Rope Team recover daily 5x5 squares\n\n*why dead:* 08.07.1941 (384,123 / 1401.9 per char), 03.07.1941 (124 unique chars after stutter dedup), and 04.07.1941 (internal phase shift in Nr.92 + garbles in VZHGZVUULVXKYOGKEK) did not reach >=85% German prose coverage without joint phase-shift breakpoint and garble-correction decoding.",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2",
+   "type": "text",
+   "text": "✗ **H2** · hypothesis\n\nLens 2 (p1 Blind Garble-Tolerance Benchmark): Validated C TS solver + V12/H1/H2/Unmix Rope Team + 1941 German military lexicon ungarbler recovers >=95% of plaintext letters on all 3 blind 60-100 letter German military texts with ~8% Morse-plausible garbles\n\n*why dead:* Uncapped T4_COND + Row-Pair Subset Unmixer recovers 194/194 (100.0%) of 14.07.1941 at Sample 811 from a 7-bigram crib, but single 60-100 char messages under 8.4% CT garbles have a true-key raw ceiling of 85.7% (204/238) due to digraphic error amplification and 6.3% single-message blind accuracy due to unicity deficit.",
+   "x": 420,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "Q2",
+   "type": "text",
+   "text": "✗ **Q2** · question\n\nCan joint Viterbi phase-shift + 1-letter Morse error-correcting EM inside the 5,120-move Row-Pair Subset Unmixer break 04.07.1941 (682 chars) or 08.07.1941 (274 chars)?\n\n*why dead:* P0073=0: 04.07.1941 stalled at 401,726 due to internal telegraph garbles and odd-phase shift in Nr. 92; p1 won instead (PR #602)",
+   "x": 420,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "L1",
+   "type": "text",
+   "text": "**L1** · lead\n\nUncapped T4_COND + V12/H1/H2 + 5,120-move Row-Pair Subset Unmixer recovers 194/194 (100.0%) of 14.07.1941 at Sample 811 from a 7-bigram crib (571,334/571,334) and 540,561/571,334 (94.6%) from blind starts.",
+   "x": 420,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q1",
+   "toNode": "H1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "Q1",
+   "toNode": "H2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e2",
+   "fromNode": "Q1",
+   "toNode": "Q2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e3",
+   "fromNode": "Q1",
+   "toNode": "L1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

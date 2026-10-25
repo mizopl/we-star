@@ -1,0 +1,15 @@
+{
+ "nodes": [
+  {
+   "id": "R1",
+   "type": "text",
+   "text": "**R1** · result\n\nCLSS Multi-Chain (alpha/beta/alphabeta) OOB + Analytical LOO + CSLS Hubness-Corrected Ensemble achieves 17-epitope _Average MicroAUC = 0.882173 vs tcrexab 0.847347 (+0.034826 >= +0.0200, 15/17 wins, p=6.71e-4, 9/17 all-method column maxima), SPRWYFYYL MicroAUC = 0.877874 (+0.040050 >= +0.0300, p1), _Average Rank = 2.859120 vs 3.284289 (-0.425169 <= -0.2500, p2), and complete negative-source & Levenshtein d>=2 audit (0.868783 vs 0.831030, p3)",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  }
+ ],
+ "edges": []
+}

@@ -1,0 +1,116 @@
+{
+ "nodes": [
+  {
+   "id": "Q_vesuvius_p1",
+   "type": "text",
+   "text": "**Q_vesuvius_p1** · question\n\nCan we reproduce PHerc. 343 w047/w048 bit-identically against SHA256SUMS, re-render the 66-layer surface from S3 PHerc0343 8.64 um volume, run all 4 public 9 um ink models, and achieve Pearson r >= 0.90 in the credited 4 cm^2 window (p1)?",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "H_mesh_ct_render",
+   "type": "text",
+   "text": "**H_mesh_ct_render** · hypothesis\n\nC++ native tifxyz surface renderer (render_tifxyz_66.cpp) + build_concat.py reproduces all 5 SHA256SUMS files bit-for-bit and achieves CT layer-34 Pearson r >= 0.99999 against published CT image",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "R_mesh_ct_render",
+   "type": "text",
+   "text": "**R_mesh_ct_render** · result\n\nCONFIRMED: 5/5 SHA256SUMS bit-identical + CT layer-34 Pearson r = 0.9999973 inside credited 4 cm^2 window",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "H_four_model_ensemble",
+   "type": "text",
+   "text": "**H_four_model_ensemble** · hypothesis\n\nTile-phase merge (w047 padded + w048 plain) and z-score ensemble of dnative, hecate 9.6um, and ink_9um seeds 42 & 43 achieves Pearson r >= 0.90 against published award ink channel with 0 PHerc0343 leak_audit overlap",
+   "x": 420,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "R_four_model_ensemble_p1",
+   "type": "text",
+   "text": "**R_four_model_ensemble_p1** · result\n\nCONFIRMED_PARTIAL p1 (2026-10-19-mizopl-abd283e3): ink Pearson r = 0.968341 (pooled) and r = 0.930987 (standalone) >= 0.90, RGB r = 0.982008, null z = 76.3 sigma, 3/3 skeptics PASS",
+   "x": 840,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "L_unread_a100_colab_scan",
+   "type": "text",
+   "text": "**L_unread_a100_colab_scan** · lead\n\nActive Google Colab NVIDIA A100 scan (proofer-e75799, colab_a100_master_scan.py) across eligible unread Vesuvius scrolls under K11 Cloud GPU Offload",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "H_core_spiral_wraps_0_neg7_mip",
+   "type": "text",
+   "text": "**H_core_spiral_wraps_0_neg7_mip** · hypothesis\n\nUncancelled MIP statistical voxel scan across inner core spiral wraps 0..-7 isolates coherent ink stroke clusters above background",
+   "x": 0,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q_vesuvius_p1",
+   "toNode": "H_mesh_ct_render",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "H_mesh_ct_render",
+   "toNode": "R_mesh_ct_render",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e2",
+   "fromNode": "Q_vesuvius_p1",
+   "toNode": "H_four_model_ensemble",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e3",
+   "fromNode": "H_four_model_ensemble",
+   "toNode": "R_four_model_ensemble_p1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e4",
+   "fromNode": "R_four_model_ensemble_p1",
+   "toNode": "L_unread_a100_colab_scan",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

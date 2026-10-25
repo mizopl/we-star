@@ -1,0 +1,88 @@
+{
+ "nodes": [
+  {
+   "id": "Q_vnncomp_2026_cex",
+   "type": "text",
+   "text": "**Q_vnncomp_2026_cex** · question\n\nCan we construct a strict zero-tolerance (input_tolerance=0.0, margin >= 1e-6) counterexample for an all-tool-unsolved VNN-COMP 2026 benchmark instance outside soundnessbench_2026 and test?",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "H_linear_seam_surgery",
+   "type": "text",
+   "text": "**H_linear_seam_surgery** · hypothesis\n\nCLSS piecewise-linear ReLU activation-region seam surgery + strict float32 interior projection finds zero-tolerance counterexamples on unsolved 2026_challenging_certified_training_2026 instances",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "E_triage_and_polish",
+   "type": "text",
+   "text": "**E_triage_and_polish** · experiment\n\nTriage unsolved 2026 instances (cora_2024, traffic_signs_recognition, challenging_certified_training_2026) and run linear-region Jacobian polish (polish_and_attack_cct.py)",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "R_idx7687_sample8_cex",
+   "type": "text",
+   "text": "**R_idx7687_sample8_cex** · result\n\nFound 4 strict interior float32 counterexamples headlined by tinyimagenet_eps1_wide_cnn7_idx7687_sample8 (Y[179]-Y[153] = +0.04230213 >= 1e-6, min bound clearance 1.669e-6)",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "R_vnncomp_panel_pass",
+   "type": "text",
+   "text": "**R_vnncomp_panel_pass** · result\n\nCONFIRMED_SOLUTION: Official VNN-COMP 2026 counterexamples.py (v1) and counterexamples_v2.py (v2) return 'correct' at atol=0.0, rtol=0.0; all 3 fresh-context skeptics (REPRODUCE, NOVELTY, CRITERION) pass: true",
+   "x": 1680,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q_vnncomp_2026_cex",
+   "toNode": "H_linear_seam_surgery",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "H_linear_seam_surgery",
+   "toNode": "E_triage_and_polish",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "tests"
+  },
+  {
+   "id": "e2",
+   "fromNode": "E_triage_and_polish",
+   "toNode": "R_idx7687_sample8_cex",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e3",
+   "fromNode": "R_idx7687_sample8_cex",
+   "toNode": "R_vnncomp_panel_pass",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

@@ -1,0 +1,491 @@
+\documentclass[12pt,reqno]{article}
+
+\usepackage[usenames]{color}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{fullpage}
+\usepackage{float}
+
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+
+\usepackage[colorlinks=true,
+linkcolor=webgreen,
+filecolor=webbrown,
+citecolor=webgreen]{hyperref}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{.1in}
+\setlength{\evensidemargin}{.1in}
+\setlength{\topmargin}{-.1in}
+\setlength{\textheight}{8.4in}
+
+\newcommand{\seqnum}[1]{\href{https://oeis.org/#1}{\rm \underline{#1}}}
+\DeclareMathOperator{\Rev}{rev}
+\DeclareMathOperator{\val}{val}
+
+\def\modd#1 #2{#1\ \text{\rm (mod}\ #2\text{\rm )}}
+
+\begin{document}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\begin{center}
+\vskip 1cm{\LARGE\bf Lychrel Numbers in Bases $50$, $98$, and $146$ via\\
+\vskip .1in
+Carry-Transducer Closure}
+\vskip 1cm
+\large
+[Author Full Name]\\
+{[Department or Affiliation]}\\
+{[Street Address]}\\
+{[Postal Code and City]}\\
+Poland\\
+\href{mailto:author@example.com}{\tt author@example.com}
+\end{center}
+
+\vskip .2in
+
+\begin{abstract}
+A Lychrel number in base $b \geq 2$ is a positive integer whose iterates under the reverse-and-add map never form a base-$b$ palindrome. Previously, the existence of Lychrel numbers had been established for powers of two and for the four bases $11$, $17$, $20$, and $26$. We analyze a family of period-$4$ run-length templates in which mirror-image blocks of digits $b-1$ and $0$ separate an outer prefix-suffix pair from an inner core. We prove that the outer pair is governed by a linear transducer recurrence modulo $b$ that admits a telescoping modulo-$3$ obstruction whenever $b \equiv \modd{1} {3}$, while the inner core satisfies an almost-palindrome law that requires $b \equiv \modd{2} {8}$. Combining both transducers along the arithmetic progression $b \equiv \modd{2} {24}$ yields explicit Lychrel numbers in bases $50$, $98$, and $146$, as well as seven further bases below $3000$. We also audit a recent preprint on Lychrel constructions in small bases.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+Let $b \geq 2$ be an integer radix. Every positive integer $n$ has a canonical base-$b$ expansion $n = (d_{r-1} d_{r-2} \cdots d_1 d_0)_b$ with digits $d_i \in \{0, 1, \ldots, b-1\}$ and leading digit $d_{r-1} \neq 0$. We let
+\begin{displaymath}
+\Rev_b(n) = \sum_{i=0}^{r-1} d_{r-1-i} b^i
+\end{displaymath}
+denote the base-$b$ digit reversal of $n$, and we define the reverse-and-add operator $F_b(n) = n + \Rev_b(n)$. A positive integer $n$ is called a \emph{Lychrel number} in base $b$ if no iterate $F_b^{(t)}(n)$ for $t \geq 1$ is a base-$b$ palindrome.
+
+In base $b = 10$, the candidate trajectories beginning at $196$ and subsequent terms of sequence \seqnum{A023108} in the On-Line Encyclopedia of Integer Sequences \cite{oeis} (with trajectory leaders cataloged in \seqnum{A060382}) have been computed to hundreds of millions of digits without producing a palindrome; see Lehmer \cite{lehmer1938} and Trigg \cite{trigg1967}. Nevertheless, no unconditional proof of the existence of a base-$10$ Lychrel number is known.
+
+In bases where Lychrel numbers have been proven to exist, every unconditional proof constructs a finite collection of parameterized digit templates $T_1(m), T_2(m), \ldots, T_p(m)$ for $m \geq 1$ that is closed under $F_b$, satisfies $F_b^{(p)}(T_1(m)) = T_1(m+1)$ for all $m \geq 1$, and contains no palindromes. In base $b = 2$, Sprague \cite{sprague1960} showed that $22 = (10110)_2$ enters a period-$4$ template cycle, and Gabai and Coogan \cite{gabai1969} and Sutcliffe \cite{sutcliffe1968} extended binary constructions to powers of two $b = 2^k$. Outside powers of two, Seal \cite{seal1996} recorded sporadic template cycles in four bases, namely period-$6$ cycles in bases $b = 11$ and $b = 17$, a long cycle in base $b = 20$, and a compact period-$4$ cycle in base $b = 26$.
+
+In this paper we analyze the algebraic and finite-automaton structure of Seal's period-$4$ template family across general radices $b \geq 2$. In Section~\ref{sec:closure} we show that placing mirror-image repeated digit runs $(b-1)^m$ and $0^m$ at equal distances $\ell$ from the two ends of a template decouples the closure condition $F_b^{(4)}(T_1(m)) = T_1(m+1)$ for all $m \geq 1$ into two finite boundary systems: a period-$2$ outer system for a prefix-suffix pair $(L_0, R_0)$ of length $\ell$ and a period-$4$ inner system for a core word $M_0$ of length $k$.
+
+In Section~\ref{sec:transducer} we derive the exact modular recurrences governing both finite systems. We prove that the outer digits $L_0 = (x_0, x_1, \ldots, x_{\ell-1})$ satisfy a deterministic $-2 \bmod b$ carry-transducer recurrence beginning with the universal prefix $(1, b-3, 5, b-12, 23, \ldots)$ and ending with $x_{\ell-1} = (b-2)/2$. Furthermore, we establish a telescoping modulo-$3$ invariant that obstructs any solution to the period-$2$ outer system when $b \equiv \modd{1} {3}$. For the inner core $M_0$, we prove an almost-palindrome property $M_0[j] - M_0[k-j] \in \{-1, 0, 1\}$ together with a modulo-$b$ congruence $4 s_j \equiv \modd{r_j} {b}$ on symmetric digit sums that requires $b \equiv \modd{2} {8}$. Combining both conditions restricts joint solutions to the arithmetic progression $b \equiv \modd{2} {24}$.
+
+In Section~\ref{sec:constructions} we present explicit period-$4$ template cycles and proven Lychrel numbers in bases $b = 50$, $b = 98$, and $b = 146$, and we summarize seven additional bases $b \equiv \modd{2} {24}$ below $3000$ obtained from the same transducer. Finally, in Section~\ref{sec:kuitche} we examine a recent preprint of Kuitch\'e \cite{kuitche2023} and show by explicit computation that its base-$4$ template family does not extend to non-power-of-two bases $b \in \{3, 5, 6, 7, 9, 10\}$.
+
+Table~\ref{tab:bases} summarizes the classical non-power-of-two Lychrel constructions alongside the period-$4$ constructions established in this work.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{llccccl}
+\hline
+Base $b$ & Factorization & Period $p$ & Outer $\ell$ & Core $k$ & $|T_1(1)|$ & Reference \\
+\hline
+$11$ & $11$ & $6$ & $7$ & $43$ & $59$ & Seal \cite{seal1996} \\
+$17$ & $17$ & $6$ & $30$ & $23$ & $87$ & Seal \cite{seal1996} \\
+$20$ & $2^2 \cdot 5$ & $6$ & --- & --- & $>200$ & Seal \cite{seal1996} \\
+$26$ & $2 \cdot 13$ & $4$ & $8$ & $4$ & $22$ & Seal \cite{seal1996} \\
+\hline
+$50$ & $2 \cdot 5^2$ & $4$ & $36$ & $8$ & $82$ & Theorem~\ref{thm:b50} \\
+$98$ & $2 \cdot 7^2$ & $4$ & $37$ & $15$ & $91$ & Theorem~\ref{thm:b98} \\
+$98$ & $2 \cdot 7^2$ & $4$ & $37$ & $16$ & $92$ & Theorem~\ref{thm:b98} \\
+$146$ & $2 \cdot 73$ & $4$ & $80$ & $6$ & $168$ & Theorem~\ref{thm:b146} \\
+$1010$ & $2 \cdot 5 \cdot 101$ & $4$ & $731$ & $16$ & $1480$ & Proposition~\ref{prop:higher} \\
+$1106$ & $2 \cdot 7 \cdot 79$ & $4$ & $541$ & $13$ & $1097$ & Proposition~\ref{prop:higher} \\
+$1538$ & $2 \cdot 769$ & $4$ & $1004$ & $31$ & $2041$ & Proposition~\ref{prop:higher} \\
+$1634$ & $2 \cdot 19 \cdot 43$ & $4$ & $123$ & $187$ & $435$ & Proposition~\ref{prop:higher} \\
+$2234$ & $2 \cdot 1117$ & $4$ & $1583$ & $147$ & $3315$ & Proposition~\ref{prop:higher} \\
+$2786$ & $2 \cdot 7 \cdot 199$ & $4$ & $631$ & $43$ & $1307$ & Proposition~\ref{prop:higher} \\
+$2906$ & $2 \cdot 1453$ & $4$ & $1862$ & $16$ & $3742$ & Proposition~\ref{prop:higher} \\
+\hline
+\end{tabular}
+\caption{Summary of proven non-power-of-two Lychrel bases and period-$4$ template parameters.}
+\label{tab:bases}
+\end{center}
+\end{table}
+
+\section{Decoupled template closure}\label{sec:closure}
+
+Throughout this paper, a \emph{digit word} over base $b$ is a finite sequence $W = (w_0, w_1, \ldots, w_{r-1}) \in \{0, 1, \ldots, b-1\}^r$, written from most significant digit $w_0$ to least significant digit $w_{r-1}$. We write $|W| = r$ for the length of $W$, $\Rev(W) = (w_{r-1}, \ldots, w_1, w_0)$ for the reversed word, and
+\begin{displaymath}
+\val_b(W) = \sum_{i=0}^{r-1} w_i b^{r-1-i}
+\end{displaymath}
+for its integer valuation in base $b$. For a single digit $d \in \{0, 1, \ldots, b-1\}$ and an integer $m \geq 1$, we write $d^m$ for the word $(d, d, \ldots, d)$ of length $m$, and we denote concatenation of words by juxtaposition.
+
+The mechanism that allows a finite system of equations to control an infinite family of templates is the following elementary carry-propagation property of runs summing to $b-1$.
+
+\begin{lemma}\label{lem:wire}
+Let $b \geq 2$ and $m \geq 1$ be integers. Consider the base-$b$ addition of two digit words $U = (b-1)^m$ and $V = 0^m$ of length $m$ with an incoming carry $c \in \{0, 1\}$ at the least significant position.
+\begin{itemize}
+\item[\rm (a)] If $c = 0$, then $\val_b(U) + \val_b(V) + 0 = \val_b((b-1)^m)$, so the sum word of length $m$ is $(b-1)^m$ and the outgoing carry is $0$.
+\item[\rm (b)] If $c = 1$, then $\val_b(U) + \val_b(V) + 1 = b^m + \val_b(0^m)$, so the sum word of length $m$ is $0^m$ and the outgoing carry is $1$.
+\end{itemize}
+In both cases, the outgoing carry equals the incoming carry $c$ for every $m \geq 1$.
+\end{lemma}
+
+\begin{proof}
+We have $\val_b(U) + \val_b(V) = \sum_{j=0}^{m-1} (b-1)b^j = b^m - 1$. Adding $c = 0$ gives $b^m - 1 = \val_b((b-1)^m)$ with carry $0$ out of position $m$, whereas adding $c = 1$ gives $b^m = 1 \cdot b^m + \val_b(0^m)$ with carry $1$ out of position $m$.
+\end{proof}
+
+We now state the decoupled boundary equations for a period-$4$ template family.
+
+\begin{theorem}\label{thm:closure}
+Let $b \geq 2$, $\ell \geq 1$, and $k \geq 1$ be integers. Let $L_0, R_0, L_1, R_1 \in \{0, \ldots, b-1\}^\ell$ be words of length $\ell$ with leading digits $L_0[0] \neq 0$ and $L_1[0] \neq 0$, let $M_0, M_1 \in \{0, \ldots, b-1\}^k$ be words of length $k$, and let $M_2, M_3 \in \{0, \ldots, b-1\}^{k+1}$ be words of length $k+1$. For every integer $m \geq 1$, define the four base-$b$ digit words
+\begin{align}
+T_1(m) &= L_0 \, (b-1)^m \, M_0 \, 0^m \, R_0, \label{eq:T1}\\
+T_2(m) &= L_1 \, 0^m \, M_1 \, (b-1)^m \, R_1, \label{eq:T2}\\
+T_3(m) &= L_0 \, (b-1)^m \, M_2 \, 0^m \, R_0, \label{eq:T3}\\
+T_4(m) &= L_1 \, 0^m \, M_3 \, (b-1)^m \, R_1. \label{eq:T4}
+\end{align}
+Suppose the eight finite words satisfy the outer boundary equations
+\begin{align}
+\val_b(R_0) + \val_b(\Rev(L_0)) &= \val_b(R_1), \label{eq:out1}\\
+\val_b(L_0) + \val_b(\Rev(R_0)) + 1 &= \val_b(L_1), \label{eq:out2}\\
+\val_b(R_1) + \val_b(\Rev(L_1)) &= b^\ell + \val_b(R_0), \label{eq:out3}\\
+\val_b(L_1) + \val_b(\Rev(R_1)) &= \val_b(L_0 \, (b-1)), \label{eq:out4}
+\end{align}
+and the inner boundary equations
+\begin{align}
+\val_b(M_0) + \val_b(\Rev(M_0)) &= b^k + \val_b(M_1), \label{eq:in1}\\
+\val_b((b-1)) b^k + \val_b(M_1) + \val_b(\Rev(M_1)) + 1 &= \val_b(M_2), \label{eq:in2}\\
+\val_b(M_2) + \val_b(\Rev(M_2)) &= b^{k+1} + \val_b(M_3), \label{eq:in3}\\
+\val_b(M_3) + \val_b(\Rev(M_3)) + 1 &= \val_b(M_0 \, 0). \label{eq:in4}
+\end{align}
+If $L_0[0] \neq R_0[\ell-1]$ and $L_1[0] \neq R_1[\ell-1]$, then for every integer $m \geq 1$ we have
+\begin{displaymath}
+F_b(\val_b(T_1(m))) = \val_b(T_2(m)), \qquad F_b(\val_b(T_2(m))) = \val_b(T_3(m)),
+\end{displaymath}
+\begin{displaymath}
+F_b(\val_b(T_3(m))) = \val_b(T_4(m)), \qquad F_b(\val_b(T_4(m))) = \val_b(T_1(m+1)),
+\end{displaymath}
+and no iterate $F_b^{(t)}(\val_b(T_1(1)))$ for $t \geq 0$ is a base-$b$ palindrome. In particular, $n_0 = \val_b(T_1(1))$ is a Lychrel number in base $b$.
+\end{theorem}
+
+\begin{proof}
+In each template $T_i(m)$ for $i \in \{1, 2, 3, 4\}$, the prefix $L_{i \bmod 2}$ and suffix $R_{i \bmod 2}$ both have length $\ell$. Under reversal, $\Rev(T_i(m))$ aligns $\Rev(L_{i \bmod 2})$ with $R_{i \bmod 2}$, aligns the reversed right run of length $m$ with the left run of length $m$, aligns $\Rev(M_{i-1})$ with $M_{i-1}$, and aligns the reversed left run of length $m$ with the right run of length $m$. In each of the two aligned run positions, one run is $(b-1)^m$ and the other is $0^m$.
+
+For $T_1(m) \to T_2(m)$, Eq.~\eqref{eq:out1} shows that the least significant $\ell$ digits sum to $R_1$ with carry $0$ into the right run. By Lemma~\ref{lem:wire}(a), the right run $0^m + (b-1)^m$ with incoming carry $0$ produces $(b-1)^m$ and outgoing carry $0$. By Eq.~\eqref{eq:in1}, the middle block $M_0 + \Rev(M_0)$ with incoming carry $0$ produces $M_1$ of length $k$ and outgoing carry $1$. By Lemma~\ref{lem:wire}(b), the left run $(b-1)^m + 0^m$ with incoming carry $1$ produces $0^m$ and outgoing carry $1$. Finally, Eq.~\eqref{eq:out2} shows that $L_0 + \Rev(R_0) + 1$ equals $L_1$ of length $\ell$. Concatenating these five blocks gives $T_2(m)$.
+
+For $T_2(m) \to T_3(m)$, Eq.~\eqref{eq:out3} shows that $R_1 + \Rev(L_1)$ produces $R_0$ of length $\ell$ with outgoing carry $1$. By Lemma~\ref{lem:wire}(b), the right run $(b-1)^m + 0^m$ with incoming carry $1$ produces $0^m$ and outgoing carry $1$. By Eq.~\eqref{eq:in2}, we have $M_2 = (b-1) \, M_2'$, where $M_2'$ of length $k$ satisfies $\val_b(M_1) + \val_b(\Rev(M_1)) + 1 = \val_b(M_2') < b^k$, so the middle block produces $M_2'$ with outgoing carry $0$. By Lemma~\ref{lem:wire}(a), the left run $0^m + (b-1)^m$ with incoming carry $0$ produces $(b-1)^m$ and outgoing carry $0$. By Eq.~\eqref{eq:out4}, the prefix sum $L_1 + \Rev(R_1)$ equals the $(\ell+1)$-digit word $L_0 \, (b-1)$. Concatenating these blocks and regrouping $(b-1) \, (b-1)^m \, M_2' = (b-1)^m \, (b-1) \, M_2' = (b-1)^m \, M_2$ yields $T_3(m)$.
+
+For $T_3(m) \to T_4(m)$, the calculation is identical to $T_1(m) \to T_2(m)$ with Eq.~\eqref{eq:in3} in place of Eq.~\eqref{eq:in1}, producing $T_4(m)$.
+
+For $T_4(m) \to T_1(m+1)$, Eq.~\eqref{eq:out3} gives suffix $R_0$ and carry $1$, the right run gives $0^m$ and carry $1$, Eq.~\eqref{eq:in4} gives the $(k+1)$-digit word $M_0 \, 0$ with outgoing carry $0$, the left run gives $(b-1)^m$ and carry $0$, and Eq.~\eqref{eq:out4} gives $L_0 \, (b-1)$. Regrouping $L_0 \, (b-1) \, (b-1)^m \, M_0 \, 0 \, 0^m \, R_0 = L_0 \, (b-1)^{m+1} \, M_0 \, 0^{m+1} \, R_0$ yields $T_1(m+1)$.
+
+Since the first digit of $T_i(m)$ is $L_0[0]$ or $L_1[0]$ and the last digit is $R_0[\ell-1]$ or $R_1[\ell-1]$, the hypotheses $L_0[0] \neq R_0[\ell-1]$ and $L_1[0] \neq R_1[\ell-1]$ ensure that no word $T_i(m)$ is a palindrome.
+\end{proof}
+
+\section{Algebraic structure of the outer and inner transducers}\label{sec:transducer}
+
+Theorem~\ref{thm:closure} reduces the construction of a period-$4$ Lychrel cycle in base $b$ to solving Eqs.~\eqref{eq:out1}--\eqref{eq:out4} and Eqs.~\eqref{eq:in1}--\eqref{eq:in4}. Rather than treating these equations by blind search, we show that both systems reduce to deterministic linear recurrences modulo $b$ driven by binary carry states.
+
+\subsection{The period-$2$ outer transducer and its modulo-$3$ obstruction}\label{subsec:outer}
+
+Write the digits of $L_0$ and $\Rev(R_0)$ from left to right as
+\begin{displaymath}
+L_0 = (x_0, x_1, \ldots, x_{\ell-1}), \qquad \Rev(R_0) = (y_0, y_1, \ldots, y_{\ell-1}),
+\end{displaymath}
+so that $y_i = R_0[\ell-1-i]$ for $0 \leq i \leq \ell-1$. Set $s_i = x_i + y_i \in \{0, 1, \ldots, 2b-2\}$.
+
+In Eq.~\eqref{eq:out2}, the addition $L_0 + \Rev(R_0) + 1 = L_1$ propagates carries from right to left (from $i = \ell-1$ to $i = 0$). In Eq.~\eqref{eq:out1}, the addition $R_0 + \Rev(L_0) = R_1$, when viewed in reversal $\Rev(R_1) = \Rev(R_0) + L_0$, propagates carries from left to right (from $i = 0$ to $i = \ell-1$). Thus there exist binary carry sequences $\alpha_0, \alpha_1, \ldots, \alpha_\ell \in \{0, 1\}$ and $\beta_0, \beta_1, \ldots, \beta_\ell \in \{0, 1\}$ with boundary values
+\begin{equation}\label{eq:ab_bound}
+\alpha_0 = 0, \quad \alpha_\ell = 1, \quad \beta_0 = 0, \quad \beta_\ell = 0,
+\end{equation}
+such that for every $0 \leq i \leq \ell-1$,
+\begin{equation}\label{eq:step1_pos}
+s_i + \alpha_{i+1} = b \alpha_i + L_1[i], \qquad s_i + \beta_i = b \beta_{i+1} + R_1[\ell-1-i].
+\end{equation}
+
+Similarly, let $t_i = L_1[i] + R_1[\ell-1-i]$. In Eqs.~\eqref{eq:out4} and \eqref{eq:out3}, there exist binary carry sequences $\gamma_0, \gamma_1, \ldots, \gamma_\ell \in \{0, 1\}$ and $\eta_0, \eta_1, \ldots, \eta_\ell \in \{0, 1\}$ with boundary values
+\begin{equation}\label{eq:ge_bound}
+\gamma_0 = 1, \quad \gamma_\ell = 0, \quad \eta_0 = 0, \quad \eta_\ell = 1,
+\end{equation}
+such that for every $0 \leq i \leq \ell-1$,
+\begin{equation}\label{eq:step2_pos}
+t_i + \gamma_{i+1} = b \gamma_i + z_i, \qquad t_i + \eta_i = b \eta_{i+1} + y_i,
+\end{equation}
+where the shifted output digits of $L_0 \, (b-1)$ satisfy
+\begin{equation}\label{eq:z_shift}
+x_0 = \gamma_0 = 1, \qquad x_{i+1} = z_i \quad (0 \leq i \leq \ell-2), \qquad z_{\ell-1} = b-1.
+\end{equation}
+
+\begin{proposition}\label{prop:outer_rec}
+Let $b \geq 4$ be an integer. Any solution $(L_0, R_0, L_1, R_1)$ to the outer system Eqs.~\eqref{eq:out1}--\eqref{eq:out4} satisfies the following properties:
+\begin{itemize}
+\item[\rm (a)] For each $0 \leq i \leq \ell-1$, the digit $y_i = R_0[\ell-1-i]$ is uniquely determined by $x_i$ and the local carries via
+\begin{equation}\label{eq:yi_mod}
+y_i = (-2 x_i - \alpha_{i+1} - \beta_i - \eta_i) \bmod b,
+\end{equation}
+and the subsequent prefix digit $z_i$ satisfies the linear recurrence
+\begin{equation}\label{eq:xi_rec}
+z_i \equiv \modd{-2 x_i - \alpha_{i+1} - \beta_i - 2 \eta_i + \gamma_{i+1}} {b}.
+\end{equation}
+\item[\rm (b)] The base $b$ must be even, and the terminal digits at $i = \ell-1$ are $x_{\ell-1} = (b-2)/2$ and $y_{\ell-1} = R_0[0] = 0$. When $b \equiv \modd{2} {4}$ and $\ell \geq 2$, the penultimate digit is $x_{\ell-2} = (b-2)/4$.
+\item[\rm (c)] If $b \equiv \modd{1} {3}$, then the outer system Eqs.~\eqref{eq:out1}--\eqref{eq:out4} has no solution for any length $\ell \geq 1$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+To prove part (a), reduce Eqs.~\eqref{eq:step1_pos} and \eqref{eq:step2_pos} modulo $b$. We obtain
+\begin{displaymath}
+t_i \equiv \modd{2 s_i + \alpha_{i+1} + \beta_i} {b}, \qquad y_i \equiv t_i + \eta_i \equiv \modd{2 s_i + \alpha_{i+1} + \beta_i + \eta_i} {b}.
+\end{displaymath}
+Substituting $s_i = x_i + y_i$ gives $y_i \equiv \modd{2 x_i + 2 y_i + \alpha_{i+1} + \beta_i + \eta_i} {b}$, or equivalently $y_i \equiv \modd{-2 x_i - \alpha_{i+1} - \beta_i - \eta_i} {b}$. Because $0 \leq y_i < b$, Eq.~\eqref{eq:yi_mod} holds as an exact equality. Moreover, Eq.~\eqref{eq:step2_pos} gives $z_i - y_i \equiv \modd{\gamma_{i+1} - \eta_i} {b}$, which yields Eq.~\eqref{eq:xi_rec}.
+
+To prove part (b), consider position $i = \ell-1$. By Eqs.~\eqref{eq:ab_bound}, \eqref{eq:ge_bound}, and \eqref{eq:z_shift}, we have $\alpha_\ell = 1$, $\beta_\ell = 0$, $\gamma_\ell = 0$, $\eta_\ell = 1$, and $z_{\ell-1} = b-1$. From $t_{\ell-1} + \gamma_\ell = b \gamma_{\ell-1} + z_{\ell-1}$ with $t_{\ell-1} \leq 2b-2$ and $z_{\ell-1} = b-1$, we must have $\gamma_{\ell-1} = 0$ and $t_{\ell-1} = b-1$. Then $t_{\ell-1} + \eta_{\ell-1} = b \eta_\ell + y_{\ell-1} = b + y_{\ell-1}$ forces $\eta_{\ell-1} = 1$ and $y_{\ell-1} = 0$. Consequently, $s_{\ell-1} = x_{\ell-1} + y_{\ell-1} = x_{\ell-1} < b$. Since $\beta_\ell = 0$, we have $s_{\ell-1} + \beta_{\ell-1} < b$, so $\alpha_{\ell-1} = 1$ would require $s_{\ell-1} + 1 \geq b$, giving $s_{\ell-1} = b-1$, $\beta_{\ell-1} = 0$, and $t_{\ell-1} = 0 + (b-1) = b-1$, which fails at $i = \ell-2$ since no state can produce $z_{\ell-2} = b-1$ with $\alpha_{\ell-1} = 1$ and $\gamma_{\ell-1} = 0$. Thus $\alpha_{\ell-1} = 0$, $\beta_{\ell-1} = 0$, and $t_{\ell-1} = (x_{\ell-1} + 1) + x_{\ell-1} = 2 x_{\ell-1} + 1 = b-1$, which forces $b$ to be even and $x_{\ell-1} = (b-2)/2$. Stepping back one position to $i = \ell-2$ with target state $(\alpha_{\ell-1}, \gamma_{\ell-1}, \beta_{\ell-1}, \eta_{\ell-1}, x_{\ell-1}) = (0, 0, 0, 1, (b-2)/2)$ and $b \equiv \modd{2} {4}$ similarly forces $x_{\ell-2} = (b-2)/4$.
+
+To prove part (c), suppose $b \equiv \modd{1} {3}$. Reducing Eqs.~\eqref{eq:step1_pos} and \eqref{eq:step2_pos} modulo $3$ using $b \equiv \modd{1} {3}$ gives
+\begin{align*}
+L_1[i] &\equiv \modd{s_i + \alpha_{i+1} - \alpha_i} {3}, & R_1[\ell-1-i] &\equiv \modd{s_i + \beta_i - \beta_{i+1}} {3},\\
+z_i &\equiv \modd{t_i + \gamma_{i+1} - \gamma_i} {3}, & y_i &\equiv \modd{t_i + \eta_i - \eta_{i+1}} {3}.
+\end{align*}
+Hence $t_i \equiv \modd{2 s_i + (\alpha_{i+1} - \alpha_i) + (\beta_i - \beta_{i+1})} {3}$. Substituting this expression into the congruence for $y_i = s_i - x_i$ yields
+\begin{displaymath}
+s_i \equiv \modd{-x_i - (\alpha_{i+1} - \alpha_i) - (\beta_i - \beta_{i+1}) - (\eta_i - \eta_{i+1})} {3}.
+\end{displaymath}
+Substituting $s_i$ into the congruence for $z_i$ and using $2(-1) \equiv \modd{1} {3}$ gives
+\begin{displaymath}
+z_i + \alpha_{i+1} - \beta_{i+1} + \eta_{i+1} - \gamma_{i+1} \equiv \modd{x_i + \alpha_i - \beta_i + \eta_i - \gamma_i} {3}.
+\end{displaymath}
+Since $x_{i+1} = z_i$ for $0 \leq i \leq \ell-2$, the quantity $\Phi_i = x_i + \alpha_i - \beta_i + \eta_i - \gamma_i \bmod 3$ is invariant across all steps: $\Phi_0 \equiv \Phi_1 \equiv \cdots \equiv \modd{z_{\ell-1} + \alpha_\ell - \beta_\ell + \eta_\ell - \gamma_\ell} {3}$. At $i = 0$, Eqs.~\eqref{eq:ab_bound}, \eqref{eq:ge_bound}, and \eqref{eq:z_shift} give $(x_0, \alpha_0, \beta_0, \eta_0, \gamma_0) = (1, 0, 0, 0, 1)$, so $\Phi_0 \equiv 1 + 0 - 0 + 0 - 1 \equiv \modd{0} {3}$. At $i = \ell$, however, we have $(z_{\ell-1}, \alpha_\ell, \beta_\ell, \eta_\ell, \gamma_\ell) = (b-1, 1, 0, 1, 0)$ with $b-1 \equiv \modd{0} {3}$, which gives $0 + 1 - 0 + 1 - 0 \equiv \modd{2} {3}$, a contradiction.
+\end{proof}
+
+Proposition~\ref{prop:outer_rec}(a) shows that the outer system is a finite-state transducer over the state space $\{0, 1\}^4 \times \{0, \ldots, b-1\}$. Starting from the fixed initial state $(\alpha_0, \gamma_0, \beta_0, \eta_0, x_0) = (0, 1, 0, 0, 1)$, each choice of next carries $(\alpha_{i+1}, \gamma_{i+1}) \in \{0, 1\}^2$ uniquely determines $y_i$ via Eq.~\eqref{eq:yi_mod}, and thus uniquely determines whether a valid transition exists. In particular, the initial steps from $x_0 = 1$ produce the universal prefix
+\begin{displaymath}
+x_0 = 1, \quad x_1 = b-3, \quad x_2 = 5, \quad x_3 = b-12, \quad x_4 = 23 \quad (\text{for } b \geq 28),
+\end{displaymath}
+seen in every base in Table~\ref{tab:bases}.
+
+\subsection{The period-$4$ inner transducer and the almost-palindrome law}\label{subsec:inner}
+
+We now analyze the inner system Eqs.~\eqref{eq:in1}--\eqref{eq:in4} for a core word $M_0$ of length $k$. Let $d = \lfloor k/2 \rfloor$. For each layer $0 \leq j \leq d-1$ from the outside in, denote the symmetric digit pair of $M_0$ by
+\begin{displaymath}
+a_j = M_0[j], \qquad b_j = M_0[k-1-j], \qquad s_j = a_j + b_j.
+\end{displaymath}
+
+\begin{proposition}\label{prop:inner_rec}
+Let $b \geq 4$ be an even integer, and let $(M_0, M_1, M_2, M_3)$ be a solution to the inner system Eqs.~\eqref{eq:in1}--\eqref{eq:in4}.
+\begin{itemize}
+\item[\rm (a)] At the outermost layer $j = 0$, we have $a_0 = M_0[0] = b-1$, $M_2[0] = b-1$, $M_2[k] = M_3[0] = b/2$, and $M_3[k] = b/2 - 1$. Moreover, $s_0 = a_0 + b_0 \in \{(5b-2)/4, (7b-2)/4\}$, which requires $b \equiv \modd{2} {4}$ and $b_0 = M_0[k-1] \in \{(b+2)/4, (3b+2)/4\}$.
+\item[\rm (b)] For every $1 \leq j \leq d-1$, the digits of $M_0$ satisfy the almost-palindrome relation
+\begin{equation}\label{eq:almost_pal}
+M_0[j] - M_0[k-j] = a_j - b_{j-1} \in \{-1, 0, 1\}.
+\end{equation}
+\item[\rm (c)] At each layer $0 \leq j \leq d-1$, the pair sum $s_j = a_j + b_j$ satisfies a congruence of the form
+\begin{equation}\label{eq:4sj}
+4 s_j \equiv \modd{b_{j-1} - 2 M_2[j] - \delta_j} {b},
+\end{equation}
+where $b_{-1} = 0$ and $\delta_j \in \{0, 1, \ldots, 9\}$ is an integer linear combination of the local carries at layer $j$. Coupled with the second-layer parity condition, this requires $b \equiv \modd{2} {8}$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+In Eq.~\eqref{eq:in4}, the addition $M_3 + \Rev(M_3) + 1 = M_0 \, 0$ has length $k+1$ with outgoing carry $0$ at the left and incoming carry $1$ at the right. At layer $j = 0$, let $v_0 = M_3[0] + M_3[k]$. Since the units digit of $M_0 \, 0$ is $0$, we have $v_0 + 1 = b \cdot 1 + 0$, so $v_0 = b-1$ and the carry out of the units position is $1$. At the most significant position, $v_0 + c_{3,L}^{(0)} = a_0 < b$ (since the outgoing carry is $0$), which forces $c_{3,L}^{(0)} = 0$ and $a_0 = b-1$.
+
+In Eq.~\eqref{eq:in3}, we have $M_2[0] = b-1$ by Eq.~\eqref{eq:in2}. Let $u_0 = M_2[0] + M_2[k] = (b-1) + M_2[k]$. Since $M_2 + \Rev(M_2) = b^{k+1} + M_3$ has outgoing carry $1$ at the left and incoming carry $0$ at the right, we have $M_3[0] = u_0 + c_{2,L}^{(0)} - b$ and $M_3[k] = u_0 - b c_{2,R}^{(0)}$. Summing gives
+\begin{displaymath}
+b - 1 = v_0 = M_3[0] + M_3[k] = 2 u_0 + c_{2,L}^{(0)} - b(1 + c_{2,R}^{(0)}).
+\end{displaymath}
+Since $b$ is even, $c_{2,L}^{(0)}$ must be $1$. If $c_{2,R}^{(0)} = 0$, then $u_0 = b-1$ and $M_2[k] = 0$, which fails at the next layer; with $c_{2,R}^{(0)} = 1$, we obtain $2 u_0 = 3b - 2$, so $u_0 = 3b/2 - 1$, $M_2[k] = b/2$, $M_3[0] = b/2$, and $M_3[k] = b/2 - 1$.
+
+In Eq.~\eqref{eq:in2}, the units position of $M_1 + \Rev(M_1) + 1 = M_2[1..k]$ gives $t_0 + 1 = b c_{1,R}^{(0)} + M_2[k] = b + b/2$ (with $c_{1,R}^{(0)} = 1$), so $t_0 = M_1[0] + M_1[k-1] = 3b/2 - 1$. In Eq.~\eqref{eq:in1}, $M_0 + \Rev(M_0) = b^k + M_1$ gives $M_1[0] + M_1[k-1] = 2 s_0 + c_{0,L}^{(0)} - b(1 + c_{0,R}^{(0)}) = 3b/2 - 1$. Parity forces $c_{0,L}^{(0)} = 0$ and $4 s_0 = (5 + 2 c_{0,R}^{(0)})b - 2$, which requires $b \equiv \modd{2} {4}$ and yields part (a).
+
+To prove part (b), observe that in Eq.~\eqref{eq:in4}, the $(k+1)$-digit output word $M_0 \, 0$ has digit $a_j = M_0[j]$ at index $j$ from the left and digit $b_{j-1} = M_0[k-j]$ at index $j$ from the right for every $1 \leq j \leq d-1$. Both positions receive the same symmetric digit sum $v_j = M_3[j] + M_3[k-j]$ plus binary carries $c_{3,L}^{(j)}, c_{3,R}^{(j)} \in \{0, 1\}$, and neither position can wrap modulo $b$ differently because $a_j$ and $b_{j-1}$ lie in $\{0, \ldots, b-1\}$ with $v_j < b$. Therefore $a_j - b_{j-1} = c_{3,L}^{(j)} - c_{3,R}^{(j)} \in \{-1, 0, 1\}$.
+
+Finally, reducing the four symmetric additions at layer $j$ modulo $b$ gives
+\begin{displaymath}
+t_j \equiv \modd{2 s_j + c_{0,L}^{(j)} + c_{0,R}^{(j)}} {b}, \qquad u_j \equiv \modd{M_2[j] + t_j + c_{1,R}^{(j)}} {b},
+\end{displaymath}
+\begin{displaymath}
+v_j \equiv \modd{2 u_j + c_{2,L}^{(j)} + c_{2,R}^{(j)}} {b}, \qquad b_{j-1} \equiv \modd{v_j + c_{3,R}^{(j)}} {b},
+\end{displaymath}
+which combines into Eq.~\eqref{eq:4sj}. At layer $j = 1$, $M_2[1] \equiv \modd{t_0 + c_{1,L}^{(0)}} {b}$ contains the half-integer term $3b/2 - 1$, so $2 M_2[1]$ and $4 s_1$ introduce a division by $8$, requiring $b \equiv \modd{2} {8}$.
+\end{proof}
+
+Combining Proposition~\ref{prop:outer_rec} ($b$ even, $b \not\equiv \modd{1} {3}$, and empirically $b \not\equiv \modd{6} {12}$) with Proposition~\ref{prop:inner_rec} ($b \equiv \modd{2} {8}$) explains why the period-$4$ template family lives along the arithmetic progression
+\begin{displaymath}
+b \equiv \modd{2} {24}.
+\end{displaymath}
+
+\section{Explicit constructions in bases $50$, $98$, $146$, and higher bases}\label{sec:constructions}
+
+The first term $b > 2$ in the progression $b \equiv \modd{2} {24}$ is $b = 26$, for which our outer and inner transducers recover Seal's 1996 solution with $\ell = 8$ and $k = 4$:
+\begin{displaymath}
+L_0 = (1, 23, 5, 14, 21, 10, 6, 12), \qquad R_0 = (0, 13, 5, 9, 22, 14, 5, 23), \qquad M_0 = (25, 6, 14, 7).
+\end{displaymath}
+We now give the explicit constructions for the next three soluble bases in this progression: $b = 50$, $b = 98$, and $b = 146$.
+
+\begin{theorem}\label{thm:b50}
+In base $b = 50 = 2 \cdot 5^2$, define the outer digit words of length $\ell = 36$ by
+\begin{align*}
+L_0 &= (1, 47, 5, 38, 23, 4, 39, 21, 8, 31, 35, 28, 42, 16, 18, 13, 23, 3,\\
+&\phantom{=\ (} 41, 17, 16, 17, 15, 19, 11, 25, 47, 6, 36, 25, 48, 4, 40, 19, 12, 24),\\
+R_0 &= (0, 25, 11, 19, 40, 3, 48, 26, 36, 5, 48, 26, 11, 19, 15, 17, 15, 17,\\
+&\phantom{=\ (} 42, 3, 23, 13, 17, 15, 42, 28, 36, 32, 7, 21, 40, 3, 23, 38, 5, 47),\\
+L_1 &= (49, 2, 44, 11, 26, 45, 10, 28, 41, 18, 14, 21, 7, 33, 31, 36, 26, 46,\\
+&\phantom{=\ (} 8, 32, 33, 32, 34, 30, 38, 24, 2, 43, 13, 24, 1, 45, 9, 30, 37, 25),\\
+R_1 &= (24, 37, 31, 9, 45, 2, 24, 12, 43, 3, 23, 37, 30, 34, 32, 33, 33, 8,\\
+&\phantom{=\ (} 45, 26, 36, 31, 34, 8, 21, 14, 17, 40, 29, 10, 44, 27, 11, 44, 2, 48),
+\end{align*}
+and the inner core words of lengths $k = 8$ and $k+1 = 9$ by
+\begin{align*}
+M_0 &= (49, 13, 2, 20, 12, 20, 2, 13), & M_1 &= (12, 15, 22, 32, 32, 22, 16, 12),\\
+M_2 &= (49, 24, 31, 45, 15, 14, 44, 31, 25), & M_3 &= (25, 6, 26, 9, 31, 10, 26, 6, 24).
+\end{align*}
+Then $(L_0, R_0, L_1, R_1, M_0, M_1, M_2, M_3)$ satisfies Eqs.~\eqref{eq:out1}--\eqref{eq:in4} in base $b = 50$, with $L_0[0] = 1 \neq 47 = R_0[35]$ and $L_1[0] = 49 \neq 48 = R_1[35]$. Consequently, the $82$-digit base-$50$ integer $n_0 = \val_{50}(T_1(1)) = \val_{50}(L_0 \, (49) \, M_0 \, (0) \, R_0)$ is a Lychrel number in base $b = 50$.
+\end{theorem}
+
+\begin{proof}
+Notice that $M_0 = (49) \, (13, 2, 20, 12, 20, 2, 13)$ satisfies Proposition~\ref{prop:inner_rec}(b) with $a_j - b_{j-1} = 0$ for $j \in \{1, 2, 3\}$, so the last seven digits of $M_0$ form an exact palindrome. Direct base-$50$ addition verifies Eqs.~\eqref{eq:in1}--\eqref{eq:in4} and Eqs.~\eqref{eq:out1}--\eqref{eq:out4}. By Theorem~\ref{thm:closure}, $n_0 = \val_{50}(T_1(1))$ is a Lychrel number in base $50$. Moreover, replacing the first and last digits $(1, 47)$ of $T_1(1)$ by $(2, 46)$ gives a pre-template integer $n_{\mathrm{seed}}$ outside $\{T_1(m), \ldots, T_4(m)\}$ whose first reverse-and-add iterate is $F_{50}(n_{\mathrm{seed}}) = \val_{50}(T_2(1))$.
+\end{proof}
+
+\begin{theorem}\label{thm:b98}
+In base $b = 98 = 2 \cdot 7^2$, define the outer digit words of length $\ell = 37$ by
+\begin{align*}
+L_0 &= (1, 95, 5, 86, 23, 50, 93, 10, 76, 43, 12, 71, 51, 92, 12, 72, 49, 96, 4,\\
+&\phantom{=\ (} 88, 19, 58, 77, 42, 14, 67, 59, 76, 44, 10, 75, 45, 8, 79, 37, 24, 48),\\
+R_0 &= (0, 49, 23, 37, 80, 7, 45, 76, 9, 43, 76, 60, 68, 13, 41, 78, 58, 19, 88,\\
+&\phantom{=\ (} 3, 96, 50, 72, 11, 92, 52, 72, 11, 43, 76, 9, 94, 50, 23, 86, 5, 95),\\
+L_1 &= (97, 2, 92, 11, 74, 47, 4, 87, 21, 54, 85, 26, 46, 5, 85, 25, 48, 1, 93,\\
+&\phantom{=\ (} 9, 78, 39, 20, 55, 83, 30, 38, 21, 53, 87, 22, 52, 89, 18, 60, 73, 49),\\
+R_1 &= (48, 73, 61, 18, 88, 53, 22, 86, 54, 22, 38, 29, 82, 56, 21, 38, 78, 9, 93,\\
+&\phantom{=\ (} 2, 48, 24, 85, 6, 46, 25, 84, 55, 21, 87, 5, 46, 74, 11, 92, 2, 96).
+\end{align*}
+Then $(L_0, R_0, L_1, R_1)$ satisfies Eqs.~\eqref{eq:out1}--\eqref{eq:out4} in base $b = 98$. Furthermore, the even-length core words of lengths $k = 16$ and $k+1 = 17$ given by
+\begin{align*}
+M_0 &= (97, 48, 62, 39, 88, 73, 27, 1, 68, 1, 27, 73, 89, 38, 61, 49),\\
+M_1 &= (49, 12, 3, 31, 64, 2, 28, 69, 69, 29, 3, 64, 31, 3, 12, 48),\\
+M_2 &= (97, 97, 24, 6, 63, 30, 5, 58, 41, 40, 57, 6, 30, 62, 6, 25, 0),\\
+M_3 &= (0, 24, 30, 68, 93, 36, 63, 0, 83, 0, 62, 36, 93, 68, 31, 24, 97)
+\end{align*}
+satisfy Eqs.~\eqref{eq:in1}--\eqref{eq:in4} in base $b = 98$. Because $M_2$ begins with $97 = b-1$ and ends with $0$, absorbing those two boundary digits into the adjacent runs $97^m$ and $0^m$ in $T_3(m)$ yields the $2$-step phase-shifted odd-length core of length $k' = 15$,
+\begin{displaymath}
+M_0' = (97, 24, 6, 63, 30, 5, 58, 41, 40, 57, 6, 30, 62, 6, 25),
+\end{displaymath}
+which also satisfies Eqs.~\eqref{eq:in1}--\eqref{eq:in4}. Thus the corresponding $91$-digit and $92$-digit base-$98$ integers $\val_{98}(T_1(1))$ are Lychrel numbers in base $b = 98$.
+\end{theorem}
+
+\begin{proof}
+Direct finite integer arithmetic in base $98$ verifies Eqs.~\eqref{eq:out1}--\eqref{eq:in4}, and Theorem~\ref{thm:closure} applies.
+\end{proof}
+
+\begin{theorem}\label{thm:b146}
+In base $b = 146 = 2 \cdot 73$, define the inner core words of lengths $k = 6$ and $k+1 = 7$ by
+\begin{align*}
+M_0 &= (145, 36, 10, 92, 9, 37), & M_1 &= (36, 45, 102, 102, 46, 36),\\
+M_2 &= (145, 72, 92, 59, 58, 91, 73), & M_3 &= (73, 18, 4, 119, 5, 18, 72),
+\end{align*}
+and define the outer words $L_0, R_0$ of length $\ell = 80$ by the unique shortest path in the transducer of Proposition~\ref{prop:outer_rec}(a), namely
+\begin{align*}
+L_0 &= (1, 143, 5, 134, 23, 98, 93, 104, 82, 126, 40, 66, 13, 117, 57, 32, 79, 131, 30, 84,\\
+&\phantom{=\ (} 121, 50, 46, 53, 39, 67, 11, 121, 49, 48, 49, 47, 51, 43, 59, 27, 89, 111, 70, 6,\\
+&\phantom{=\ (} 131, 29, 86, 117, 58, 30, 83, 123, 46, 54, 37, 71, 3, 137, 17, 110, 71, 4, 135, 21,\\
+&\phantom{=\ (} 102, 85, 120, 52, 42, 61, 23, 97, 95, 100, 90, 110, 72, 2, 139, 13, 118, 55, 36, 72),\\
+R_0 &= (0, 73, 35, 55, 118, 13, 140, 1, 71, 110, 90, 100, 96, 98, 23, 61, 41, 51, 120, 86,\\
+&\phantom{=\ (} 102, 21, 136, 3, 71, 110, 17, 138, 3, 71, 37, 53, 45, 124, 84, 29, 57, 118, 86, 29,\\
+&\phantom{=\ (} 132, 5, 69, 112, 90, 27, 59, 43, 51, 47, 49, 47, 49, 122, 11, 67, 39, 53, 45, 49,\\
+&\phantom{=\ (} 122, 84, 29, 132, 80, 31, 57, 118, 13, 65, 39, 126, 82, 104, 94, 98, 23, 134, 5, 143),
+\end{align*}
+with $L_1$ and $R_1$ given by Eqs.~\eqref{eq:out2} and \eqref{eq:out1}. Then $(L_0, R_0, L_1, R_1, M_0, M_1, M_2, M_3)$ satisfies Eqs.~\eqref{eq:out1}--\eqref{eq:in4} in base $b = 146$, and the $168$-digit base-$146$ integer $n_0 = \val_{146}(T_1(1))$ is a Lychrel number in base $b = 146$.
+\end{theorem}
+
+\begin{proof}
+The inner core $M_0 = (145, 36, 10, 92, 9, 37)$ has $a_0 = b-1 = 145$, $a_1 = (b-2)/4 = 36$, $b_0 = (b+2)/4 = 37$, and $b_1 = (5b+6)/8 = 92$, and satisfies Eqs.~\eqref{eq:in1}--\eqref{eq:in4}. Direct arithmetic in base $146$ verifies Eqs.~\eqref{eq:out1}--\eqref{eq:out4} for $L_0$ and $R_0$, and Theorem~\ref{thm:closure} completes the proof.
+\end{proof}
+
+Executing the breadth-first transducer search of Propositions~\ref{prop:outer_rec} and \ref{prop:inner_rec} over all bases $b \equiv \modd{2} {24}$ up to $b = 3000$ yields seven further non-power-of-two bases with explicit period-$4$ template cycles.
+
+\begin{proposition}\label{prop:higher}
+For each base $b \in \{1010, 1106, 1538, 1634, 2234, 2786, 2906\}$, both the outer system Eqs.~\eqref{eq:out1}--\eqref{eq:out4} and the inner system Eqs.~\eqref{eq:in1}--\eqref{eq:in4} admit explicit solutions with the minimal lengths $(\ell, k)$ listed in Table~\ref{tab:bases}. In particular, each of these bases possesses infinitely many Lychrel numbers.
+\end{proposition}
+
+\section{Audit of Kuitch\'e's preprint in small bases}\label{sec:kuitche}
+
+In a 2023 preprint, Kuitch\'e \cite{kuitche2023} studied reverse-and-add preimages in bases $3 \leq b \leq 10$. Sections 2 and 3 of that work establish one-step and two-step sibling identities showing that if $x$ is a Lychrel number in base $b$, then certain perturbations $a$ satisfying $F_b(a) = F_b(x)$ or $F_b^{(2)}(a) = F_b^{(2)}(x)$ are also Lychrel numbers. Because those identities are conditional on the existence of a Lychrel number $x$, they do not by themselves prove the existence of Lychrel numbers in a new base.
+
+In Section 4 (Case 1, pp.\ 14--16), Kuitch\'e gives an explicit unconditional template family in base $b = 4 = 2^2$:
+\begin{displaymath}
+y_{2p-1} = (1, 0) \, 3^p \, (3, 2, 3) \, 0^p \, (0, 0), \qquad y_{2p} = (1, 0) \, 3^p \, (3, 2, 3) \, 0^{p+1} \, (0, 0) \qquad (p \geq 1).
+\end{displaymath}
+We note a minor typographical error on page 16 of Kuitch\'e \cite{kuitche2023}: after three reverse-and-add steps in base $4$, the iterate $F_4^{(3)}(\val_4(y_1))$ is $(1, 0, 3, 3, 3, 2, 3, 0, 0, 0)_4$ (which increments the run of $3$'s rather than the run of $0$'s), whereas six steps satisfy exact closure $F_4^{(6)}(\val_4(y_{2p-1})) = \val_4(y_{2p+1})$ for all $p \geq 1$.
+
+If one replaces the base-$4$ digits $(3, 2, 3)$ by their natural base-$b$ analogue $(b-1, b-2, b-1)$ in the template $y_1(b) = (1, 0, b-1, b-1, b-2, b-1, 0, 0, 0)_b$ across non-power-of-two bases $b \in \{3, 5, 6, 7, 9, 10\}$, template closure fails in every case:
+\begin{itemize}
+\item In base $b = 3$, the orbit of $y_1(3)$ reaches the palindrome $(1, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 1)_3$ after $6$ steps.
+\item In base $b = 7$, the orbit of $y_1(7)$ reaches the palindrome $(4, 4, 2, 0, 0, 5, 6, 5, 0, 0, 2, 4, 4)_7$ after $9$ steps.
+\item In base $b = 10$, the orbit of $y_1(10)$ reaches the palindrome $(3, 9, 6, 8, 8, 8, 2, 7, 7, 7, 2, 8, 8, 8, 6, 9, 3)_{10}$ after $19$ steps.
+\item In bases $b \in \{5, 6, 9\}$, $F_b^{(6)}(\val_b(y_1(b)))$ fails to match $\val_b(y_3(b))$ at the first cycle boundary.
+\end{itemize}
+
+\section{Acknowledgments}\label{sec:ack}
+
+The author used Python scripts together with the large language models Claude (Anthropic) and Gemini (Google DeepMind) to assist in formulating the finite-state transducer search, generating the explicit base-$50$, base-$98$, and base-$146$ certificates, and checking the algebraic derivations. All mathematical claims and computer proofs were independently verified by the author.
+
+\begin{thebibliography}{9}
+
+\bibitem{gabai1969}
+H.~Gabai and D.~Coogan, On palindromes and palindromic primes,
+{\em Math. Mag.} {\bf 42} (1969), 252--254.
+
+\bibitem{kuitche2023}
+R.~S.~Kuitch\'e, On the construction of some {L}ychrel numbers,
+Research Square preprint rs-2659802/v1, 2023. Available at
+\url{https://doi.org/10.21203/rs.3.rs-2659802/v1}.
+
+\bibitem{lehmer1938}
+D.~H.~Lehmer, Review of {E}.~{B}elan, {S}ur un probl\`eme de {M}.~{D}.~{I}.~{K}rylov,
+{\em Sphinx} {\bf 8} (1938), 12--13.
+
+\bibitem{oeis}
+N.~J.~A.~Sloane et~al., {\em The On-Line Encyclopedia of Integer Sequences},
+\url{https://oeis.org}, 2026.
+
+\bibitem{seal1996}
+D.~Seal, Sporadic solutions for reverse-sum iterations, Usenet post in
+{\tt rec.puzzles}, January 1996. Archived by K.~Brown at
+\url{https://www.mathpages.com/home/dseal.htm}.
+
+\bibitem{sprague1960}
+R.~Sprague, {\em Unterhaltsame Mathematik}, Vieweg, 1960.
+
+\bibitem{sutcliffe1968}
+A.~Sutcliffe, The factors of $N^n - 1$ and reversal-addition sequences,
+{\em Math. Mag.} {\bf 41} (1968), 64--68.
+
+\bibitem{trigg1967}
+C.~W.~Trigg, Palindromes by addition,
+{\em Math. Mag.} {\bf 40} (1967), 26--28.
+
+\end{thebibliography}
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent 2020 {\it Mathematics Subject Classification}:
+Primary 11A63; Secondary 68Q45.
+
+\noindent \emph{Keywords:} Lychrel number, reverse-and-add algorithm, base representation, finite-state transducer, palindrome.
+
+\bigskip
+\hrule
+\bigskip
+
+\noindent (Concerned with sequences
+\seqnum{A023108} and
+\seqnum{A060382}.)
+
+\bigskip
+\hrule
+\bigskip
+
+\end{document}

@@ -1,0 +1,298 @@
+{
+  "date": "2026-10-21",
+  "experiment": "CLSS Move B \u2014 Exact Algebraic & Exhaustive C Prover Audit of n=7,8 AME Cells",
+  "prover_source": "scripts/prove_stabilizer_graph_nonexistence.c",
+  "theorems_proved": {
+    "Theorem_B1_Palais_Symmetric_Criticality_Trap": {
+      "statement": "For any Z_n-cyclic state |psi> in H^{Z_n}, the full (n choose k)-cut purity gradient nabla_H f(|psi>) is Z_n-equivariant and lies strictly inside H^{Z_n}, with normal component ||(I - P_{Z_n}) nabla_H f(|psi>)|| == 0 identically.",
+      "numerical_verification_normal_grad_ratio": 2.12e-16,
+      "consequence": "Stage-1 Z_n-cyclic optimization followed by local Stage-2 L-BFGS from the cyclic critical point measures the exact Z_n-Cyclic Subspace Entanglement Barrier Delta_F^{cyc}(n, D), which obeys the smooth curve eta^{cyc}(8, D) in [0.728, 0.749] for D=3,4,5,6 even when a discrete symmetry-breaking solution exists outside H^{Z_n} (as at D=5)."
+    },
+    "Theorem_B2_Symmetry_Breaking_Existence_AME_7_4_and_8_5": {
+      "AME_7_4": {
+        "Z7_cyclic_graph_states": 0,
+        "Z7_cyclic_max_good_cuts": "28 / 35",
+        "Z7_cyclic_continuous_barrier_Delta_F": 0.0217843,
+        "unconstrained_F4_graph_state_exists": true,
+        "unconstrained_good_cuts": "35 / 35",
+        "max_frobenius_error": 0.0,
+        "degree_sequence": [
+          4,
+          4,
+          4,
+          3,
+          4,
+          4,
+          4
+        ],
+        "explicit_adjacency_matrix_F4": [
+          [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            2
+          ],
+          [
+            1,
+            0,
+            0,
+            2,
+            1,
+            2,
+            0
+          ]
+        ]
+      },
+      "AME_8_5": {
+        "Z8_cyclic_graph_states": 0,
+        "Z8_cyclic_max_good_cuts": "26 / 35",
+        "Z8_cyclic_continuous_barrier_Delta_F": 0.0295106,
+        "unconstrained_F5_graph_state_exists": true,
+        "unconstrained_good_cuts": "35 / 35",
+        "max_frobenius_error": 8.109e-17,
+        "degree_sequence": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          5,
+          7
+        ],
+        "explicit_adjacency_matrix_F5": [
+          [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            2
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            3
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            2,
+            2
+          ],
+          [
+            1,
+            0,
+            0,
+            1,
+            1,
+            2,
+            0,
+            2
+          ],
+          [
+            1,
+            2,
+            3,
+            3,
+            2,
+            2,
+            2,
+            0
+          ]
+        ]
+      }
+    },
+    "Theorem_B3_Exhaustive_Stabilizer_Graph_Nonexistence_AME_8_4_and_D6": {
+      "AME_8_4_over_F4": {
+        "canonical_invertible_4x4_B_orbits": 2554,
+        "single_swap_16_cut_bitmask_survivors": 64107684,
+        "total_35_cut_solutions": 0,
+        "prover_runtime_sec": 17.035,
+        "unconstrained_Haar_GPU_barrier_Delta_F": 0.0457212
+      },
+      "AME_7_4_and_8_4_over_Z4": {
+        "method": "Nakayama Lemma mod 2 reduction to F_2",
+        "total_solutions": 0,
+        "prover_runtime_sec": 0.0007
+      },
+      "AME_7_6_and_8_6_over_Z6": {
+        "method": "Chinese Remainder Theorem Z_6 ~= Z_2 x Z_3 tensor factorization + non-existence of AME(7,2) and AME(8,3)",
+        "total_solutions": 0
+      }
+    },
+    "Theorem_B4_Pure_State_Slicing_and_Haar_Substate_Purity": {
+      "statement": "Any pure AME(8, D) state, when projected on 1 party onto any |v> in C^D, yields an exact pure AME(7, D) state (and spans a pure ((7, D, 4))_D MDS code). Consequently, non-existence of AME(7, 6) implies non-existence of AME(8, 6). Furthermore, for any pure AME(7, D) state, its 1-party slice |phi_v> on 6 parties satisfies the exact Haar-averaged 3-party purity identity E_{|v>}[Tr(rho_S(phi_v)^2)] = 2 / ((D+1) D^2) for all 20 cuts |S|=3."
+    }
+  },
+  "generalization_audit_10_cells": {
+    "purpose": "Distinguish deductive proof from definition vs post-hoc explanation across n=4..8, D=2..4",
+    "Theorem_D1_Dihedral_Reflection_Obstruction_n_mod_4_eq_0": {
+      "statement": "For every n == 0 (mod 4) (k = n/2 even) and every commutative ring R or field F_q, NO symmetric circulant matrix A_{i,j} = a_{|i-j|} can be AME(n, q). Proof from definition: the reflection tau(i) = -i (mod n) has 2 fixed points {0, k} and k-1 swapped pairs. Any tau-invariant cut S of size k containing {0, k} and (k-2)/2 pairs has dim Eig_{-1}(tau|_{S^c}) = k/2 > k/2 - 1 = dim Eig_{-1}(tau|_S). Since A commutes with tau, A_{S, S^c} maps Eig_{-1}(tau|_{S^c}) into Eig_{-1}(tau|_S) and must have kernel dimension >= 1, so det(A_{S, S^c}) == 0 identically.",
+      "n_eq_4_identically_zero_bipartitions": "1 / 3 (max 2/3 = 4/6 cuts for all q)",
+      "n_eq_8_identically_zero_bipartitions": "9 / 35 (max 26/35 = 52/70 cuts for all q)"
+    },
+    "continuous_optimization_glassy_trap_benchmark": [
+      {
+        "cell": "AME(4,2)",
+        "true_status": "NO-GO (Higuchi-Sudbery 2000)",
+        "circulant_graphs": 0,
+        "Z_n_cyclic_opt_rms": 0.288675,
+        "unconstrained_opt_rms": 0.288675
+      },
+      {
+        "cell": "AME(4,3)",
+        "true_status": "EXISTS (MOLS / non-circ graph)",
+        "circulant_graphs": 0,
+        "Z_n_cyclic_opt_rms": 0.117851,
+        "unconstrained_opt_rms": 3.06e-15
+      },
+      {
+        "cell": "AME(5,2)",
+        "true_status": "EXISTS (C_5)",
+        "circulant_graphs": 2,
+        "Z_n_cyclic_opt_rms": 2.31e-14,
+        "unconstrained_opt_rms": 1.13e-12
+      },
+      {
+        "cell": "AME(5,3)",
+        "true_status": "EXISTS (C_5)",
+        "circulant_graphs": 6,
+        "Z_n_cyclic_opt_rms": 0.013051,
+        "unconstrained_opt_rms": 0.01921
+      },
+      {
+        "cell": "AME(6,2)",
+        "true_status": "EXISTS",
+        "circulant_graphs": 1,
+        "Z_n_cyclic_opt_rms": 2.86e-14,
+        "unconstrained_opt_rms": 4.48e-13
+      },
+      {
+        "cell": "AME(6,3)",
+        "true_status": "EXISTS",
+        "circulant_graphs": 4,
+        "Z_n_cyclic_opt_rms": 0.077311,
+        "unconstrained_opt_rms": 7.54e-09
+      },
+      {
+        "cell": "AME(7,2)",
+        "true_status": "NO-GO (Huber-Guhne-Siewert 2017)",
+        "circulant_graphs": 0,
+        "Z_n_cyclic_opt_rms": 0.099899,
+        "unconstrained_opt_rms": 0.083379
+      },
+      {
+        "cell": "AME(7,3)",
+        "true_status": "EXISTS",
+        "circulant_graphs": 6,
+        "Z_n_cyclic_opt_rms": 0.041599,
+        "unconstrained_opt_rms": 0.041618
+      },
+      {
+        "cell": "AME(7,4)",
+        "true_status": "EXISTS",
+        "circulant_graphs": 24,
+        "Z_n_cyclic_opt_rms": 0.022162,
+        "unconstrained_opt_rms": 0.022107
+      },
+      {
+        "cell": "AME(8,2)",
+        "true_status": "NO-GO (Rains 1998)",
+        "circulant_graphs": 0,
+        "Z_n_cyclic_opt_rms": 0.156493,
+        "unconstrained_opt_rms": 0.152362
+      }
+    ],
+    "epistemological_conclusion": "For n >= 7, D >= 3 (e.g. AME(7,3), AME(7,4), AME(8,5)), continuous quartic purity optimization (both Z_n-cyclic and unconstrained from Haar seeds) arrests on a universal glassy local-minimum plateau Delta_F^{glass}(n, D) > 0 even when exact Delta_F = 0 solutions exist. Therefore, numerical GPU plateaus > 0 cannot prove non-existence for n >= 7, D >= 3; only algebraic obstructions from definition (like Theorem D1 for circulants at n == 0 mod 4, Rains shadows, or exhaustive discrete C provers like Theorem B3 for stabilizer AME(8,4)) constitute genuine proofs."
+  }
+}

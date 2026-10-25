@@ -1,0 +1,88 @@
+{
+ "nodes": [
+  {
+   "id": "Q0",
+   "type": "text",
+   "text": "**Q0** · question\n\nCan CLSS DNA tie-seam surgery strictly lower expected DNA density on >=1 (w,k) cell in OrensteinLab/10-minimizers and GreedyMini by >=0.5% relative?",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "H1",
+   "type": "text",
+   "text": "**H1** · hypothesis\n\nSOS-DP Fast Zeta Transform O(w * 2^(w-1)) over tie-window submasks accelerates exact prob_gc_dna local search by >10,000x and beats binary-only GreedyMini on (w=12, k=4) by >=0.5% relative",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H2",
+   "type": "text",
+   "text": "✗ **H2** · hypothesis\n\n4-ary de Bruijn transfer-matrix DP over 4^k states without primary-bit compression can find a compact non-binary order for (w=12, k=4)\n\n*why dead:* Unneeded: strict binary-to-DNA permutation [15,6,7,12,10,4,11,3,0,1,8,9,14,2,13,5] in identical 136-byte .gm format already achieves -1.7763% relative (3.55x the 0.5% threshold) with 100% tie-break equivalence between GreedyMini and 10-minimizers",
+   "x": 420,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "E1",
+   "type": "text",
+   "text": "**E1** · experiment\n\nsos_dna_optimizer.cpp (SOS-DP + SA + Steepest-Descent 2/3-Cycle Polish) across 48 precomputed .gm cells: strictly improved 17 cells by >=0.5% relative (up to -4.274% at w=8,k=3) and lowered flagship (w=12, k=4) from 0.1360458389 to 0.1336292920 (-1.7763% rel)",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "R1",
+   "type": "text",
+   "text": "**R1** · result\n\nFlagship (w=12, k=4) strict permutation w12_k4_improved.gm achieves exact expected DNA density 573,933,439 / 2^32 = 0.1336292920 vs 584,312,429 / 2^32 = 0.1360458389 (-1.7763% rel); 17 precomputed (w,k) cells improved by >=0.5% rel",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q0",
+   "toNode": "H1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "Q0",
+   "toNode": "H2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e2",
+   "fromNode": "H1",
+   "toNode": "E1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e3",
+   "fromNode": "E1",
+   "toNode": "R1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

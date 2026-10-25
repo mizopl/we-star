@@ -1,0 +1,184 @@
+{
+  "nodes": [
+    {
+      "id": "human",
+      "type": "text",
+      "x": 0,
+      "y": -520,
+      "width": 460,
+      "height": 150,
+      "color": "6",
+      "text": "### 👑 Sovereign Layer (Human — `mizopl`)\n- Directives and priorities (`.request.md` / chat)\n- Explicit `\"Yes\"` approval before every PR (`kit/SUBMIT.md`)\n- `DECISIONS_NEEDED.md` & `action_items.md`"
+    },
+    {
+      "id": "meta_commander",
+      "type": "text",
+      "x": -520,
+      "y": -260,
+      "width": 480,
+      "height": 280,
+      "color": "5",
+      "text": "### 🧠 Thread 1: Meta-Commander (`556ad873`, K10)\n- **Periodic 45-min governance cycle** (`HEARTBEAT.md`)\n- `preflight.sh` (Immune system guards `X1–X11`)\n- `brain.py status` (Beta posteriors, `V_outlet`, telemetry `K6/K8`)\n- `brain.py scan` (`S_CLSS` seam scanner across 287 targets `K1/K9`)\n- `brain.py audit` (Zero-collision `PREREG.md` drift audit)\n- `postdict.py resolve --by commander` (Independent bet settlement `K3`)\n- `pull_lab.py` + `monitor.py` (Wiki OS synchronization)"
+    },
+    {
+      "id": "deliberation",
+      "type": "text",
+      "x": 60,
+      "y": -260,
+      "width": 440,
+      "height": 240,
+      "color": "3",
+      "text": "### ⚖️ Target Selection & Deliberation (`BRAIN v2`)\n- **Decision Index (`K1`):**\n  `I(a) = (p * V * V_outlet)/C + 0.25*Unc + 0.40*S_CLSS + ExploreBonus`\n- **Verbalized Sampling (`vs_sample.py`):** Top-EV + tail sampling (`arXiv:2510.01171`)\n- **Tug-of-War Gate (`tug.py`, §13):** Adversarial duel between blind advocates `IMPLEMENT (H)` vs `SEARCH (H')` until explicit concession (`LOST`/`WON`)"
+    },
+    {
+      "id": "memory_layer",
+      "type": "text",
+      "x": -1080,
+      "y": -100,
+      "width": 460,
+      "height": 280,
+      "color": "2",
+      "text": "### 📚 Persistent Memory & Graphs (`Append-Only`)\n- `predictions.tsv` + `calibration.md` (Brier `0.203`, `K3`)\n- `costs.tsv` + `decisions.tsv` (`K5` cost model, `K1` decision log)\n- **Reasoning Graphs (`rgraph.py`):** `graphs/*.jsonl` + `.canvas` (Dead-end repeat blocker `exit 2`)\n- `wiki/meta/beliefs.md` + `hot.md`\n- `hall_of_fame/` (Constitutional evolution `v8 → v15`)"
+    },
+    {
+      "id": "two_clocks",
+      "type": "text",
+      "x": 600,
+      "y": -240,
+      "width": 440,
+      "height": 220,
+      "color": "2",
+      "text": "### ⏱️ Two Clocks: CPU Queue (`jobs.py`, K2 + X11)\n- Jobs `> 15 min` offloaded outside LLM session (`launchd` every 5 min)\n- `SIGSTOP` pause accounting (`paused_seconds`, `X11`)\n- Automatic FIFO job handoff (e.g., `ad79-far-w38` → `w39`)"
+    },
+    {
+      "id": "worker_clss",
+      "type": "text",
+      "x": -220,
+      "y": 100,
+      "width": 680,
+      "height": 310,
+      "color": "4",
+      "text": "### 🔬 Thread 2: Worker & 4-Stage `CLSS` Engine (`K9`)\nIsolated writes in `~/v3r1t4s/runs/<ts>/` (`target.md` → `scout.md` → `PREREG.md` → `postdict.py predict`):\n1. **Stage I — Bit-Parallel Exact Oracle (`< 5 s`):** Verifier in C/C++/NumPy with built-in (+/-) self-test\n2. **Stage II — Compositional Lifting (Macro-Scaffold):** Composition of smaller sub-objects with relaxed algebraic glue (staircase subsets, `B_4` conjugation, `Z_16` voltage lifts, patient stays)\n3. **Stage III — Deterministic Seam Surgery (Micro-Repair):** 100% of CPU power focused on the compositional seam (`prune.c`/`merge.c`, HiGHS MILP on 6-nurse subsets, SOS-DP zeta transform, 5-into-6 ternary surgery) + `git commit / checkout` ratchet\n4. **Stage IV — Self-Break:** 1-minimality proof (`0` removable elements) or agreement of 2 independent decompositions (`40/40`)"
+    },
+    {
+      "id": "skeptic_panel",
+      "type": "text",
+      "x": -220,
+      "y": 480,
+      "width": 680,
+      "height": 220,
+      "color": "1",
+      "text": "### 🛡️ Supreme Court: Panel of 3 Fresh Skeptics (`claim/`)\nThree isolated contexts viewing exclusively the `claim/` directory:\n- **Skeptic 1 (`REPRODUCE`):** Compiles and runs the verifier from scratch on the raw artifact\n- **Skeptic 2 (`NOVELTY`):** Audits the live upstream table (`SHA256`), `TROPHY_CASE.md`, and literature\n- **Skeptic 3 (`CRITERION`):** Verifies literal compliance with all clauses in `bank/targets.json`\n- **Mechanical gate:** `panel/gate.md` + `check_run.py` = `CHECK_RUN: PASS` → `outbox/`"
+    },
+    {
+      "id": "results_trophies",
+      "type": "text",
+      "x": 580,
+      "y": 140,
+      "width": 560,
+      "height": 640,
+      "color": "4",
+      "text": "### 🏆 World Records Achieved (14 PRs Across 8 Domains + 70+ in Reserve)\n1. **Physics (`#366`, `#462`):** `A054759(15)` (square ice) + full 80-term antidiagonal `d=79` of `A089980` (`40/40` doubly verified widths up to 279 digits)\n2. **Record Tables (`#397`, `#398`, `#435` + 17):** `C(94,13,5) <= 125 184` (`-4 019` blocks), `C(68,14,5) <= 15 675` (`-329`), `C(40,16,7) <= 7 251` (`-219`)\n3. **Algorithms (`#402`, `#432` + 2):** Fast matrix multiplication over `ZT={-1,0,1}`: `9×12×14` (`r=954` vs `960`), `14×15×15` (`r=1894` vs `ZT=1905` and `Z=1895`)\n4. **Optimization Benchmarks (`#416`, `#431` + 29):** **31 IHTC-2024 world records** in hospital timetabling (`i27`: `50 976 -> 50 063`, `m28`: `45 913 -> 45 873`)\n5. **Biology (`#425`, `#433` + 15):** **17 DNA minimizer density records** (`(w=12,k=4)` `-1.78%`, `(w=12,k=3)` `-1.32%`, `(w=8,k=3)` `-4.27%`)\n6. **Graphs (`#457`):** Degree-diameter `(14, 3)` graph on `N = 1 118` vertices (`+2` over Comellas `1 116`, `+1` over PR `#143`)\n7. **Packings-Physics (`#466`):** **8 new global minima of Gupta `Cu_n Ag_{55-n}` nanoalloys** in the Cambridge database (`Cu39Ag16`: `-1.189844 eV`, 30-digit Newton + Hessian)\n8. **Erdős & Proofs (`#485`):** GHR sum-difference constant `C_3a(V) > 1.19230254` (`N = 10^13`, odd base `q = 27 995`, `+0.00127445` over the finite record `1.19102809` in Terence Tao's `constants/3a.md` table)"
+    },
+    {
+      "id": "ablation_plan",
+      "type": "text",
+      "x": -1080,
+      "y": 260,
+      "width": 760,
+      "height": 440,
+      "color": "3",
+      "text": "### 📊 Benchmark & Ablation Study Plan (`CLSS-Bench-20`)\nAcross 20 instances from 5 domains (fixed budget: `30 min CPU` on M1 Pro, `3 seeds`):\n- **`A0` (Vanilla Agent):** Pure LLM without C oracle and without CLSS (`0/20` records)\n- **`A1` (Oracle + Blind SA):** Fast C checker + global SA without compositional lifting\n- **`A2` (Oracle + Macro-Scaffold):** Compositional block scaffold with relaxed glue but no seam surgery\n- **`A3` (CLSS without BRAIN):** Full 4-stage CLSS without `brain.py`, `rgraph.py`, and `K10`\n- **`A4` (Full PROOFER v15 + BRAIN v2 + CLSS):** Complete system (`20/20` records)\n- **External Baselines:**\n  - `B1`: Priority-function evolution in the style of *FunSearch / AlphaEvolve*\n  - `B2`: Pure global off-the-shelf MILP / CP-SAT solver (HiGHS / OR-Tools) for 30 min\n  - `B3`: False-positive rate audit (*Single-Context AI Scientist* vs *PROOFER Panel + K3*)"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "human",
+      "fromSide": "bottom",
+      "toNode": "meta_commander",
+      "toSide": "top",
+      "label": "Priorities / Governance"
+    },
+    {
+      "id": "e2",
+      "fromNode": "meta_commander",
+      "fromSide": "right",
+      "toNode": "deliberation",
+      "toSide": "left",
+      "label": "brain.py scan + status"
+    },
+    {
+      "id": "e3",
+      "fromNode": "meta_commander",
+      "fromSide": "left",
+      "toNode": "memory_layer",
+      "toSide": "right",
+      "label": "K3 resolve / K6 telemetry"
+    },
+    {
+      "id": "e4",
+      "fromNode": "deliberation",
+      "fromSide": "bottom",
+      "toNode": "worker_clss",
+      "toSide": "top",
+      "label": "Selected target & lens"
+    },
+    {
+      "id": "e5",
+      "fromNode": "meta_commander",
+      "fromSide": "bottom",
+      "toNode": "worker_clss",
+      "toSide": "top",
+      "label": "K10 brain.py audit (read-only)"
+    },
+    {
+      "id": "e6",
+      "fromNode": "worker_clss",
+      "fromSide": "left",
+      "toNode": "memory_layer",
+      "toSide": "bottom",
+      "label": "rgraph check / kill + predict"
+    },
+    {
+      "id": "e7",
+      "fromNode": "worker_clss",
+      "fromSide": "right",
+      "toNode": "two_clocks",
+      "toSide": "bottom",
+      "label": "K2 jobs > 15 min"
+    },
+    {
+      "id": "e8",
+      "fromNode": "worker_clss",
+      "fromSide": "bottom",
+      "toNode": "skeptic_panel",
+      "toSide": "top",
+      "label": "1-minimal candidate (claim/)"
+    },
+    {
+      "id": "e9",
+      "fromNode": "skeptic_panel",
+      "fromSide": "right",
+      "toNode": "results_trophies",
+      "toSide": "bottom",
+      "label": "3/3 PASS + CHECK_RUN: PASS"
+    },
+    {
+      "id": "e10",
+      "fromNode": "human",
+      "fromSide": "right",
+      "toNode": "results_trophies",
+      "toSide": "top",
+      "label": "Explicit 'Yes' → Draft PR"
+    },
+    {
+      "id": "e11",
+      "fromNode": "worker_clss",
+      "fromSide": "left",
+      "toNode": "ablation_plan",
+      "toSide": "right",
+      "label": "Validation A0–A4 vs B1–B3"
+    }
+  ]
+}

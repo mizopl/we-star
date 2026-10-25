@@ -1,0 +1,70 @@
+{
+ "nodes": [
+  {
+   "id": "H1_CROSS_GEOM_HOMOTOP",
+   "type": "text",
+   "text": "**H1_CROSS_GEOM_HOMOTOP** · hypothesis\n\nCross-seeding all 56 archive geometry templates with radial core-shell ordering + greedy pairwise Cu<->Ag homotop exchange + L-BFGS + 30-digit mpmath polish will lower non-monotonic compositions in CuAg_55.rar by >= 1e-4 eV",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "D1_COBALT_IDLS_EXHAUSTED",
+   "type": "text",
+   "text": "✗ **D1_COBALT_IDLS_EXHAUSTED** · dead\n\nPure Co_N (N=2..200) IDLS + neighbour cascade reproduced all 199 Zhan 2005 + 10 Lai Co.zip structures without finding a lower basin (< 1e-4 eV)",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D2_CUAU_AGAU_MONOTONIC",
+   "type": "text",
+   "text": "✗ **D2_CUAU_AGAU_MONOTONIC** · dead\n\nCuAu38, CuAu55, and AgAu55 archives in CCD are already smooth across compositions under cross-geometry homotop transfer (0 improvements >= 1e-4 eV); LiNa55/NaK55 revisited by Schebarchov & Wales 2017",
+   "x": 420,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "R1_CUAG55_8_IMPROVED_MINIMA",
+   "type": "text",
+   "text": "**R1_CUAG55_8_IMPROVED_MINIMA** · result\n\nCertified 8 new lower-energy Cu_n Ag_{55-n} Gupta global minima in CuAg_55.rar (headlined by Cu39Ag16 dE = -1.18984440 eV, plus Cu34Ag21 -0.9547 eV, Cu33Ag22 -0.9220 eV, Cu31Ag24 -0.7980 eV, Cu22Ag33, Cu20Ag35, Cu15Ag40, Cu17Ag38), 30-digit mpmath grad < 6.34e-23, 165x165 Hessian 0 negative eigenvalues, submitted as Draft PR #466",
+   "x": 420,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "H1_CROSS_GEOM_HOMOTOP",
+   "toNode": "D1_COBALT_IDLS_EXHAUSTED",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "H1_CROSS_GEOM_HOMOTOP",
+   "toNode": "D2_CUAU_AGAU_MONOTONIC",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e2",
+   "fromNode": "H1_CROSS_GEOM_HOMOTOP",
+   "toNode": "R1_CUAG55_8_IMPROVED_MINIMA",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

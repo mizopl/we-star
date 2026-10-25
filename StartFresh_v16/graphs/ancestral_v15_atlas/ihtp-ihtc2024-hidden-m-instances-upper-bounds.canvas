@@ -1,0 +1,70 @@
+{
+ "nodes": [
+  {
+   "id": "Q0",
+   "type": "text",
+   "text": "**Q0** · question\n\nCan CLSS seam surgery + subset NRA MILP strictly lower the best known upper bound on >=1 hidden m01..m30 instance?",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "H1",
+   "type": "text",
+   "text": "**H1** · hypothesis\n\nCoupled PAS+SCP+NRA Seam Surgery + 6/7/8-nurse Subset MILP Polish on m01..m30",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "E1",
+   "type": "text",
+   "text": "**E1** · experiment\n\nseam_surgery_ihtp.cc + subset_nra_milp.py on m01..m30: strictly improved 15/30 hidden m-instances; deep-polished m28 from 45,913 to 45,873 (-40 pts, Total violations = 0)",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "R1",
+   "type": "text",
+   "text": "**R1** · result\n\nHidden instance m28 lowered from 45,913 to 45,873 (-40 pts, Total violations = 0 in IHTP_Validator); 15/30 hidden m-instances strictly improved",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q0",
+   "toNode": "H1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "H1",
+   "toNode": "E1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e2",
+   "fromNode": "E1",
+   "toNode": "R1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

@@ -1,0 +1,718 @@
+{
+ "nodes": [
+  {
+   "id": "Q0",
+   "type": "text",
+   "text": "**Q0** · question\n\na (v,k,t) covering with strictly fewer blocks than every live table (LJCR, coveringrepository.com, GitHub/Zenodo snapshots)",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "F1",
+   "type": "text",
+   "text": "**F1** · fact\n\nconstraint: <=1.5 GB RAM per process, <=2 processes (swap nearly full, p2 jobs hold 7 GiB)",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "F2",
+   "type": "text",
+   "text": "**F2** · fact\n\npitfall: stale tables (GitHub data 2022, Zenodo 2026-04); compare to the live LJCR page and coveringrepository.com at verification time; unreachable table = PENDING TABLE CHECK",
+   "x": 420,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "F3",
+   "type": "text",
+   "text": "**F3** · fact\n\nfrom tug 2026-10-18-second-front: SEARCH proposed burnt-pancake n=28 (no RAM/tractability estimate; n=24 IDA* gate risks p2 swap) and conceded; IMPLEMENT p=0.07-0.08",
+   "x": 420,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "H1",
+   "type": "text",
+   "text": "**H1** · hypothesis\n\nfind weakly optimised cells (simple-construction methods, mid v) and anneal from the published design under a fixed-time ratchet with an exhaustive checker",
+   "x": 420,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H2328opt",
+   "type": "text",
+   "text": "✗ **H2328opt** · hypothesis\n\nannealing Nurmela-Ostergard from constructed design in high-ratio small cells\n\n*why dead:* P0027=0: run 2328 cold-start SA on small high-ratio cells did not beat table values; wins came from combining + prune/merge in run 0304",
+   "x": 420,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2328rec",
+   "type": "text",
+   "text": "**H2328rec** · hypothesis\n\ntable-wide recursive combining-construction bound scan",
+   "x": 420,
+   "y": 1100,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H2328wild",
+   "type": "text",
+   "text": "✗ **H2328wild** · hypothesis\n\nevolved greedy priority finite-field coordinates\n\n*why dead:* P0029=0: evolved greedy priority finite-field coordinates stayed 10-40% above best_seen",
+   "x": 420,
+   "y": 1320,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2328set",
+   "type": "text",
+   "text": "**H2328set** · hypothesis\n\nsearch GitHub arXiv for hobbyist covering values and per-cell GET access",
+   "x": 420,
+   "y": 1540,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "D2328SC1",
+   "type": "text",
+   "text": "✗ **D2328SC1** · dead\n\nCR per-cell history.aspx?id=118239 plain GET returns 403 cf-mitigated challenge; per-cell CR reads are not available\n\n*why dead:* coveringrepository.com history.aspx?id= is Cloudflare-challenged (403, 2026-10-17T23:37Z); do not use per-cell pages, use download_archive_vkt.aspx (whole (v,k,t) table) with one GET instead",
+   "x": 420,
+   "y": 1760,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D2328SC2",
+   "type": "text",
+   "text": "✗ **D2328SC2** · dead\n\narXiv API (abs/ti 'covering design', 54 entries, newest 2026-09) lists no new explicit C(v,k,t) upper bounds\n\n*why dead:* arXiv is not where covering-design records appear (2024-2026: none); recent claims are on GitHub READMEs and Zenodo records",
+   "x": 420,
+   "y": 1980,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D2328SC3",
+   "type": "text",
+   "text": "✗ **D2328SC3** · dead\n\nunquoted GitHub repo search 'covering design' returns 394078 unrelated repos; quoted phrase (117) and 'covering-designs' (187) queries are the usable ones; code search needs auth (PENDING)\n\n*why dead:* use quoted-phrase GitHub repo searches; unquoted is noise; code search unauthenticated is unavailable, so README-level claims only",
+   "x": 420,
+   "y": 2200,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "T2328SC1",
+   "type": "text",
+   "text": "**T2328SC1** · tool\n\nCR whole (v,k,t) archive: one GET https://coveringrepository.com/download_archive_vkt.aspx returned 200 text/plain 171741 B, 9490 rows (v k t m blank b), m=t everywhere, plain integers; parse in attempts/settled-check/code/compare_archive.py",
+   "x": 420,
+   "y": 2420,
+   "width": 380,
+   "height": 190,
+   "color": "0"
+  },
+  {
+   "id": "F2328SC1",
+   "type": "text",
+   "text": "**F2328SC1** · fact\n\ncells.tsv is stale in 1141 of 9482 cells (CR archive lower, all t: t2 17,t3 46,t4 289,t5 294,t6 249,t7 131,t8 115); use attempts/settled-check/live_min.tsv; 10 further third-party claims beat CR (6 Meliwat t=2, C(51,18,4)<=123 Zenodo, verified PASS)",
+   "x": 420,
+   "y": 2640,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "D2328SD1",
+   "type": "text",
+   "text": "✗ **D2328SD1** · dead\n\nmonotone (v+1,k-1,t+1), point-in-all-blocks and Turan point-adjoining bounds over all 9482 LJCR-snapshot cells: zero cells below best_seen on Zenodo values; only overlay artifact (53,19,4)<=C(54,19,4)=116 from CR recent feed\n\n*why dead:* monotone/adjoining bounds are fully consistent in LJCR; flags only appear when a partial CR overlay is mixed in, and CR has its own DP sweeper, so such flags are almost surely stale-table artifacts",
+   "x": 420,
+   "y": 2860,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D2328SD2",
+   "type": "text",
+   "text": "✗ **D2328SD2** · dead\n\nlocal-only recursive construction (combining+pt_all+mono from trivial designs, no table ingredients) on the 43-62 flagged cells: 2.5x-5.9x above best_seen\n\n*why dead:* recursion from trivial designs is useless at v>=40; combining leads need the actual published ingredient designs (LJCR downloads), which a no-web lens cannot get",
+   "x": 420,
+   "y": 3080,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D2328SD3",
+   "type": "text",
+   "text": "✗ **D2328SD3** · dead\n\nhobbyist claims C(28,13,4)<=53, C(32,13,4)<=95 as combining ingredients: 3 extra flags (56,25,8) 9993<10002, (63,23,7) 12724<12745, (64,25,8) 28991<29111 but ingredients unverified and not available\n\n*why dead:* unverified hobbyist values cannot be ingredients of a claim without their designs; revisit only if the brockchain design files are fetched and checked",
+   "x": 420,
+   "y": 3300,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "L2328SD1",
+   "type": "text",
+   "text": "**L2328SD1** · lead\n\nLJCR-internal combining inconsistencies (Zenodo values only): 12 cells e.g. (94,13,5) 125236<129337 via 47+47, (61,12,6) 187470<187936, (81,11,5) 147570<148763, (75,10,5) 166692<166799; buildable in seconds by attempts/small-data/code/construct.py --split once ingredient designs are fetched from LJCR; CR DP sweeper probably already has them (PENDING TABLE CHECK)",
+   "x": 420,
+   "y": 3520,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "D2328OP1",
+   "type": "text",
+   "text": "✗ **D2328OP1** · dead\n\nrandom-start NO-style SA/tabu (own C code) on high-ratio large-k DP cells (33,20,5),(30,19,6) cannot even tie best_seen: >=2070 uncovered at b=best_seen, >=2506 at b-1 in 7 min\n\n*why dead:* high Schonheim ratio at large k is not weakness: DP/combining records there are far beyond random-start local search; need structured seeds (the record design itself) or group orbits, not annealing from random",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D2328OP2",
+   "type": "text",
+   "text": "✗ **D2328OP2** · dead\n\nsmall old cells (22,13,4)=22,(17,11,6)=58,(16,10,5)=34: own SA/tabu fails to tie in 60-90 s (7,79,19 uncovered); (15,9,4)=20 tied in 1.3 s but b=19 floors at 9 uncovered with both SA and tabu (7 min each)\n\n*why dead:* minutes-scale annealing on a loaded laptop does not reach hobbyist/WSC records even on tiny cells; an anneal-to-beat line needs hours per cell and a stronger engine than a 1-hour lens",
+   "x": 840,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D2328WC1",
+   "type": "text",
+   "text": "✗ **D2328WC1** · dead\n\nEvolved (1+3)-ES parameterised greedy (Z_v orbit start + point-greedy blocks + prune) on 6 frozen small cells: best mean b/best_seen 1.444; held-out seeds 28-60% above best_seen\n\n*why dead:* Parameter-evolved greedy priorities plateau ~45% above LJCR on old small cells (v20-23,k13-14,t5-7) after ~195 evals; greedy+prune is not a record route; spend budget on local search/annealing instead",
+   "x": 420,
+   "y": 3740,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D2328WC2",
+   "type": "text",
+   "text": "✗ **D2328WC2** · dead\n\nMultiplier subgroups of AGL(1,n) (orders 2,3) and Z_{v-1}+inf orbits as greedy candidates on (21,14,7),(22,14,6),(23,14,6)\n\n*why dead:* Larger prescribed-group orbits inside a greedy are worse or equal (best 139/96/134 vs records 104/66/91); more orbit blocks before switching to block greedy hurts; orbit approach needs an exact ILP, not greedy",
+   "x": 420,
+   "y": 3960,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D2328WC3",
+   "type": "text",
+   "text": "✗ **D2328WC3** · dead\n\nPoint-degree (rarity) lookahead weight in greedy point choice, evolved jointly\n\n*why dead:* Evolution drove the degree weight to ~0.005 and noise to 0; only the waste (overlap) penalty about -0.38 mattered; rarity lookahead adds nothing to block-building greedy",
+   "x": 420,
+   "y": 4180,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H0304",
+   "type": "text",
+   "text": "**H0304** · hypothesis\n\nstream LJCR covers.json once, keep v<=50 ingredient designs, and build the L2328SD1 combining designs; 7 cells claimable by C(v,t)<=5e9",
+   "x": 840,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "D0304SC1",
+   "type": "text",
+   "text": "✗ **D0304SC1** · dead\n\nsettled-check: 6-month web search (GitHub quoted-phrase + covering-designs repo search pushed>2026-04-18, Zenodo API 'covering design(s)', arXiv API abs) for the 9 L2328SD1 cells: no value for any of them; CR 100-row improvements feed (07-17/10/2026) has none\n\n*why dead:* the 9 combining cells (61,12,6)...(86,23,7) are not settled elsewhere as of 2026-10-18T03:17Z; recent hobbyist/Zenodo activity is at small v (t<=4 or exact small cells), so web re-search is not where these cells will be overtaken - the CR archive itself is",
+   "x": 840,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D0304SC2",
+   "type": "text",
+   "text": "✗ **D0304SC2** · dead\n\nsettled-check: CR about_sums.aspx (200, 2026-10-18T03:16Z): derived/sum coverings are created and published as stored current records by the Repository system account; no on-the-fly lower plain values\n\n*why dead:* CR sum-derived values are ordinary archive rows, so download_archive_vkt.aspx is the live plain value; yet CR's own sums with CR-archive ingredients would give lower than the archive on all 9 cells (e.g. (86,23,7) 137700 vs 147364), so CR's automation does not do this per-j k1 split - but it 'may recalculate' any time, so re-fetch before claiming",
+   "x": 840,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D0304SC3",
+   "type": "text",
+   "text": "✗ **D0304SC3** · dead\n\nsettled-check: LJCR Zenodo v1.2 (record 19735294, 2026-04-24) vs v1.1 coverdata: 3 size changes only ((47,23,7),(50,23,7),(81,23,7)), none of the 9 cells or their ingredients; GitHub dmgordo/LJCR coverdata (8759 cells) has none of the 9 cells\n\n*why dead:* LJCR snapshot values for the 9 cells are identical in v1.1 and v1.2 and absent from GitHub; LJCR is never the binding value (CR archive <= LJCR on all 9), so the comparison is against CR only",
+   "x": 840,
+   "y": 1100,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "F0304SC1",
+   "type": "text",
+   "text": "**F0304SC1** · fact\n\nsettled-check: with CR-archive ingredient values (same v1,k1_j as RFLAG) the combining bound drops: (61,12,6) 187400, (65,17,7) 181769, (79,21,7) 147697, (81,11,5) 147552, (94,13,5) 125188, (77,25,8) 158975, (86,23,7) 137700; (68,18,7),(80,16,6) unchanged; but ljcr_designs INDEX.tsv (7194 rows, ends at (17,13,6)) lacks many t>=6 ingredients e.g. (33,17,7),(48,16,6)",
+   "x": 840,
+   "y": 1320,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "D0304CO1",
+   "type": "text",
+   "text": "**D0304CO1** · result\n\nconstructor: exact L2328SD1 combining builds from 82 checker-PASS LJCR ingredients; frozen bit checker PASS: (81,11,5) b=147570 vs CR 148485; (94,13,5) 125236 vs 129203; (61,12,6) 187470 vs 187869; (80,16,6) 150732 (dedupe from 151292) vs 155960; (65,17,7) 182341 vs 183815; (68,18,7) 173096 vs 173588 (CR archive 03:10Z; PENDING live re-fetch + panel)",
+   "x": 840,
+   "y": 1540,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "D0304CO2",
+   "type": "text",
+   "text": "✗ **D0304CO2** · dead\n\nconstructor H4: ingredient files vs RFLAG counts mismatch\n\n*why dead:* all 82 non-trivial ingredient designs of the 9 L2328SD1 cells pass the frozen checker and have exactly the RFLAG (coverdata size) block counts; the snapshot is internally consistent, so predicted sums are realisable as-is",
+   "x": 420,
+   "y": 4400,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D0304CO3",
+   "type": "text",
+   "text": "✗ **D0304CO3** · dead\n\nconstructor H7: 0/1-base or padding bug in combining builder breaks coverage\n\n*why dead:* LJCR files are 1-based; shift V2 by +v1 after converting to 0-based; no padding was ever needed in the 9 RFLAG prescriptions (k1+k2=k always); every built design had distinct=blocks and 0 uncovered",
+   "x": 420,
+   "y": 4620,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D0304EX1",
+   "type": "text",
+   "text": "✗ **D0304EX1** · dead\n\nextender: iterated (recursive) generalized combining with on-disk LJCR designs (v<=50,<=20000 blocks)+trivial+pad/mono_t/pt_all/delete-point over all v<=99,k<=25,t<=8: same 9 flags as L2328SD1, no new cell\n\n*why dead:* with on-disk LJCR ingredients, iterating combining or adding point-deletion/pt_all adds no flags beyond the 2-part L2328SD1 cells; LJCR small cells are internally consistent under recursion",
+   "x": 420,
+   "y": 4840,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D0304EX2",
+   "type": "text",
+   "text": "✗ **D0304EX2** · dead\n\nextender: segment terms (one k1 covering a j-range [p,q] via C(v1,k1,q)*C(v2,k-k1,t-p), generalizing V1whole/V2whole tails): 0 new flags\n\n*why dead:* range terms C(v1,k1,q)C(v2,k-k1,t-p) never beat per-j singles plus whole-side tails on LJCR values",
+   "x": 420,
+   "y": 5060,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D0304EX3",
+   "type": "text",
+   "text": "✗ **D0304EX3** · dead\n\nextender: greedy redundant-block pruning of plain combining designs on 29 near-miss cells (bound 1-10 above live): 0 blocks removable\n\n*why dead:* plain products of independent LJCR ingredient designs have no redundant blocks unless terms share k1 (then dedupe/prune helps); prune only after nested/staircase builds",
+   "x": 420,
+   "y": 5280,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D0304CO4",
+   "type": "text",
+   "text": "**D0304CO4** · result\n\nconstructor: (79,21,7) exact RFLAG combining build b=147717 passes frozen bit checker (880 s, C(v,t)=2.90e9) vs CR 157903 (03:10Z archive; PENDING live re-fetch + panel). (77,25,8) b=159179 and (86,23,7) b=139766 built, unchecked, PENDING chunked check",
+   "x": 840,
+   "y": 1760,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "D0304OP1",
+   "type": "text",
+   "text": "✗ **D0304OP1** · dead\n\noptimizer: re-optimising combining split over every v1, k1_j, V1whole/V2whole tails with on-disk LJCR designs incl. padded (k'<k) and point-deleted (v'>v) ingredients reproduces the 2328 predicted b exactly on all 7 cells (no gain)\n\n*why dead:* split re-optimisation is exhausted: the 2328 refine.py plan is already optimal over v1/k1_j/tails with available designs; gains must come from post-processing the built design (prune, merge)",
+   "x": 840,
+   "y": 1980,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D0304OP2",
+   "type": "text",
+   "text": "✗ **D0304OP2** · dead\n\noptimizer: pair-merge (2 blocks -> 1 k-set spanning their jointly-unique t-sets) on combining designs: one round gains 6-101 blocks ((81,11,5) 101, (61,12,6) 62, (94,13,5) 52, (80,16,6) 6), second round 0\n\n*why dead:* pair-merge saturates after one round on combining designs; further gains need 3->2 moves or re-optimised removal order, not repeated pair merges",
+   "x": 840,
+   "y": 2200,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D0304OP3",
+   "type": "text",
+   "text": "**D0304OP3** · result\n\noptimizer: combining build + greedy redundant-block removal + pair-merge, frozen cover_check_bits PASS: (81,11,5) 147467, (94,13,5) 125184, (61,12,6) 187385, (80,16,6) 146365, (65,17,7) 174849, (68,18,7) 173095 (all below CR archive copy 03:10Z); files RUN/attempts/optimizer/result/",
+   "x": 840,
+   "y": 2420,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "L0304EX1",
+   "type": "text",
+   "text": "**L0304EX1** · lead\n\nextender: staircase/nested combining (same k1 over consecutive j; A_i greedy subset of A_{i+1}, B_{i+1} greedy subset of B_i) + greedy redundant-block prune, on-disk LJCR ingredients: 17 designs pass cover_check_bits with b below CR 03:10Z archive and LJCR, 13 cells new vs L2328SD1, e.g. (40,16,7) 7251<7470, (96,18,5) 22980<23699, (64,23,6) 3250<3394; only 66/170 optimistic flags with C(v,t)<=3e8 tried (PENDING TABLE CHECK, re-fetch CR)",
+   "x": 420,
+   "y": 5500,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "F0304EX1",
+   "type": "text",
+   "text": "**F0304EX1** · fact\n\nextender L0304EX1 update 04:26Z: +(42,19,8) 9463<9488 (cover_check_bits PASS); total 18 PASS designs below CR 03:10Z and LJCR, 14 new vs L2328SD1",
+   "x": 840,
+   "y": 2640,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q0",
+   "toNode": "F1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "blocks"
+  },
+  {
+   "id": "e1",
+   "fromNode": "Q0",
+   "toNode": "F2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "blocks"
+  },
+  {
+   "id": "e2",
+   "fromNode": "Q0",
+   "toNode": "F3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e3",
+   "fromNode": "Q0",
+   "toNode": "H1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e4",
+   "fromNode": "Q0",
+   "toNode": "H2328opt",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e5",
+   "fromNode": "Q0",
+   "toNode": "H2328rec",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e6",
+   "fromNode": "Q0",
+   "toNode": "H2328wild",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e7",
+   "fromNode": "Q0",
+   "toNode": "H2328set",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e8",
+   "fromNode": "Q0",
+   "toNode": "D2328SC1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e9",
+   "fromNode": "Q0",
+   "toNode": "D2328SC2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e10",
+   "fromNode": "Q0",
+   "toNode": "D2328SC3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e11",
+   "fromNode": "Q0",
+   "toNode": "T2328SC1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e12",
+   "fromNode": "Q0",
+   "toNode": "F2328SC1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e13",
+   "fromNode": "Q0",
+   "toNode": "D2328SD1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e14",
+   "fromNode": "Q0",
+   "toNode": "D2328SD2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e15",
+   "fromNode": "Q0",
+   "toNode": "D2328SD3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e16",
+   "fromNode": "Q0",
+   "toNode": "L2328SD1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e17",
+   "fromNode": "H1",
+   "toNode": "D2328OP1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e18",
+   "fromNode": "H1",
+   "toNode": "D2328OP2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e19",
+   "fromNode": "Q0",
+   "toNode": "D2328WC1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e20",
+   "fromNode": "Q0",
+   "toNode": "D2328WC2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e21",
+   "fromNode": "Q0",
+   "toNode": "D2328WC3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e22",
+   "fromNode": "L2328SD1",
+   "toNode": "H0304",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  },
+  {
+   "id": "e23",
+   "fromNode": "L2328SD1",
+   "toNode": "D0304SC1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e24",
+   "fromNode": "L2328SD1",
+   "toNode": "D0304SC2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e25",
+   "fromNode": "L2328SD1",
+   "toNode": "D0304SC3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e26",
+   "fromNode": "L2328SD1",
+   "toNode": "F0304SC1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e27",
+   "fromNode": "L2328SD1",
+   "toNode": "D0304CO1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e28",
+   "fromNode": "Q0",
+   "toNode": "D0304CO2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e29",
+   "fromNode": "Q0",
+   "toNode": "D0304CO3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e30",
+   "fromNode": "Q0",
+   "toNode": "D0304EX1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e31",
+   "fromNode": "Q0",
+   "toNode": "D0304EX2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e32",
+   "fromNode": "Q0",
+   "toNode": "D0304EX3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e33",
+   "fromNode": "L2328SD1",
+   "toNode": "D0304CO4",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e34",
+   "fromNode": "L2328SD1",
+   "toNode": "D0304OP1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e35",
+   "fromNode": "L2328SD1",
+   "toNode": "D0304OP2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e36",
+   "fromNode": "L2328SD1",
+   "toNode": "D0304OP3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e37",
+   "fromNode": "Q0",
+   "toNode": "L0304EX1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e38",
+   "fromNode": "L0304EX1",
+   "toNode": "F0304EX1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

@@ -1,0 +1,85 @@
+---
+id: v3r1t4s-vnncomp-verifier-holds-soundness-counterexample
+type: entity
+tags: [v3r1t4s, v3r1t4s/ml-robustness, kind/harvest]
+inbound_links: 1
+confidence: 0.8
+last_ingested_sources: [".raw/V3R1T4S/bank/targets.json@7dd4480"]
+status: "open"
+priority: ""
+notes: ""
+category: ml-robustness
+kind: harvest
+tractability: 2
+compute: "laptop-hours"
+disclosure: open
+status_checked: "2026-10-09"
+---
+# VNN-COMP verifier soundness: a validated counterexample for an instance that a participating tool certified as 'holds'
+
+# Overview
+
+> Bank id `vnncomp-verifier-holds-soundness-counterexample` · harvest · tractability 2 · laptop-hours · disclosure **open**
+> Bank says open as of 2026-10-09. Statuses go stale — re-check the primary source before any work.
+
+## Statement
+
+In VNN-COMP, when one tool says 'holds' (UNSAT) and another produces a validated counterexample, the 'holds' tool is scored as incorrect (PENALTY_INCORRECT = -150 in SCORING/settings.py). The 2026 scoring log (SCORING/results.txt, re-parsed by the vetter on 2026-10-09) records incorrect 'holds' verdicts for act (7, dist_shift_2023), super_simple_vnn_comp (14, sat_relu), neuralsat (8, soundnessbench_2026), sobolbox (2, cgan2026) and cora (1, sat_relu), so unsound 'holds' answers happen in practice; SoundnessBench (arXiv:2412.03154, TMLR 12/2025) found soundness bugs in alpha-beta-CROWN, NeuralSAT and Marabou-2023 with planted counterexamples, and arXiv:2605.17153 (May 2026) reports an implementation bug and numeric-tolerance concerns in popular verifiers. The open question: among the VNN-COMP 2026 instances for which at least one tool returned 'holds' and NO tool's counterexample was validated (True Result 'unsat' in the log; 2,152 instances on 2026-10-09, of which 2,127 have no 'violated' cell at all; 2,138 / 2,113 after excluding soundnessbench_2026), is any one OUTSIDE the soundnessbench_2026 and test benchmarks actually SAT? A single strict counterexample for such an instance is a new soundness finding about a named verifier, mechanically checkable by replaying the ONNX model on the input (onnxruntime CPU) against the vnnlib property. soundnessbench_2026 is excluded because every instance there is SAT by construction with ground truth held privately by the benchmark authors (a hit there is subsumed). The analogous 2025 set (holds-only instances under SCORING-ZERO-TOL in VNN-COMP/vnncomp2025_results, 2,505 on 2026-10-09, of which 2,074 have no 'violated' cell) is a secondary table (partial win p1). Hottest hunting grounds: the 25 2026 instances where some tool returned 'violated' but every submitted witness failed validation (21 malformed_ce, 3 spec_not_violated, 1 correct_up_to_tolerance) while another tool said 'holds'; the 77 instances where act is the ONLY tool saying 'holds' (and 20 where alpha_beta_crown is the only one, 1 bright); and remaining 'holds' answers from tools with incorrect verdicts elsewhere (act, super_simple_vnn_comp, neuralsat, sobolbox, cora).
+
+## Success criterion
+
+Success means a saved counterexample input (in the competition witness text format) for ONE VNN-COMP 2026 instance such that ALL of the following hold. (a) INSTANCE: ONNX and vnnlib are unmodified files from https://github.com/VNN-COMP/vnncomp2026_benchmarks at the exact benchmarks/<category>/<version>/ paths named in the contradicted tool's per-benchmark results.csv (<tool>/2026_<category>/results.csv in the live results repo; sha256 of both files recorded); the category is neither 'test' nor 'soundnessbench_2026'. (b) CONTRADICTED VERDICT: in the live https://github.com/VNN-COMP/vnncomp2026_results, re-fetched immediately before claiming, at least one tool's per-benchmark results.csv row for that exact (network path, property path) has result 'holds' or 'unsat' with run_time <= the timeout for that instance in the same version's instances.csv (a 'holds' reported after the timeout is scored as a timeout by the organisers and does NOT count), AND no tool directory contains a witness for that instance whose .counterexample.check.json has result 'correct' or 'correct_up_to_tolerance' (equivalently classification 'correct' or 'correct_with_tolerance'); if the live log shows the instance's True Result as 'sat', the finding is already known and fails. (c) STRICT VIOLATION: every input coordinate lies strictly inside the vnnlib input bounds (lb < x < ub, checked in float64 on the float32-rounded values actually fed to the network) and running the ONNX model on it with onnxruntime CPUExecutionProvider in float32 makes some disjunct of the vnnlib output assertion true with margin >= 1e-6 on every constraint of that disjunct, evaluated by the competition validator for the instance's VNN-LIB version (SCORING/counterexamples.py for 1.0, SCORING/counterexamples_v2.py for 2.0) with input_tol = 0 and output_tol = 0 returning CORRECT. (d) SECOND RUNTIME: the same input violates the property (same disjunct, margin >= 1e-6) under an independent ONNX executor (onnx2pytorch or onnx reference evaluator) in float32 AND float64. (e) WRITE-UP: names every tool whose 'holds' is contradicted, quotes their results.csv rows, and records the attack script and random seeds. Nothing is reported to the organisers or tool authors by the agent; the human decides.
+
+## Partial wins
+
+- {"id": "p1", "statement": "The same as the full criterion (a)-(e), with the 2025 repositories substituted: ONNX + vnnlib unmodified from https://github.com/VNN-COMP/vnncomp2025_benchmarks; a 'holds'/'unsat' row within timeout in some tool's results in https://github.com/VNN-COMP/vnncomp2025_results; the instance's True Result is 'unsat' in SCORING-ZERO-TOL/results.txt AND no tool's witness for it was classified 'correct' or 'correct_up_to_tolerance' in EITHER 2025 scoring run (zero-tolerance or small-tolerance), since tightening an existing within-tolerance witness into the box is trivial; the category is not soundnessbench or test; and, if the identical ONNX+vnnlib pair (same sha256) was reused in 2026, it must also satisfy (b) in the 2026 repo. Strictness check (c)-(d) as in the full criterion."}
+- {"id": "p2", "statement": "A soundness bug demonstrated on a NEW property (not a VNN-COMP instance) over an unmodified VNN-COMP 2026 ONNX network: a vnnlib file for which a named open-source VNN-COMP 2026 participant (alpha_beta_crown, neuralsat, pyrat, nnenum, cora, nnv, act, super_simple_vnn_comp, n2v, bright, agate, vibecheck, sobolbox), installed at the commit it submitted to VNN-COMP 2026 and run with its official 2026 configuration for that benchmark (only the device may differ, e.g. CPU instead of GPU, and this must be stated), returns 'holds'/'unsat', while a counterexample satisfying (c)-(d) exists. The property file, tool commit, full command line and config must be frozen in the attempt with sha256; the skeptic must be able to re-run the tool on the property in under one hour; and the write-up must show the bug is not a reproduction of one already reported in SoundnessBench (arXiv:2412.03154), arXiv:2605.17153, or the tool's public issue tracker (search terms and dates recorded). A 'holds' that disappears when the tool is run twice (non-determinism) still counts; a 'holds' caused by the tool silently skipping an unsupported operator counts only if the tool did not warn."}
+
+## Verification
+
+Skeptic's own checker, written from the vnnlib grammar before reading the attacker's code: (1) download ONNX + vnnlib from the benchmarks repo at the version directory named in the contradicted tool's results.csv row and verify both sha256 values; (2) parse the vnnlib independently and check every input coordinate is strictly inside its bounds; (3) replay the input with onnxruntime CPUExecutionProvider (float32) and with a second executor (onnx2pytorch or onnx.reference) in float32 and float64; require the same disjunct violated with margin >= 1e-6 in all runs; (4) run the competition's own validator for the instance's VNN-LIB version (counterexamples.py for 1.0, counterexamples_v2.py for 2.0) with zero tolerance and require CORRECT; (5) fetch the live results repo, open the per-benchmark results.csv of every tool for that category, confirm at least one 'holds'/'unsat' row for the exact network+property paths with run_time <= the instances.csv timeout, and confirm that no <tool>/2026_<category>/<instance>.counterexample.check.json has result correct or correct_up_to_tolerance; also confirm the instance's True Result is 'unsat' in SCORING/results.txt; (6) confirm the category is not test or soundnessbench_2026. For p1 repeat with the 2025 repos and both scoring runs. For p2 install the named tool at the frozen commit, run the frozen command on the frozen property, and require the 'holds' output to reproduce. Minutes to one hour.
+
+## Angles
+
+- Start with the 25 instances (2026-10-09 parse) where a tool returned 'violated' but its witness was rejected (malformed_ce / spec_not_violated / tolerance-only) while another tool said 'holds': re-run a strong attack there, since a verifier already believed the property was violable.
+- Rank the remaining holds-only instances by suspicion: 'holds' from a tool with incorrect verdicts elsewhere (act, super_simple_vnn_comp, neuralsat, sobolbox, cora), 'holds' where that tool is the ONLY one saying holds (act 77, alpha_beta_crown 20, bright 1), 'holds' returned in under 1 second on a large network, 'holds' where other complete tools timed out, and 'holds' on benchmarks with non-ReLU activations or unusual ops (cgan2026, ml4acopf_2024, smart_turn_multimodal_2026, adaptive_cruise_control_non_linear_2026, dist_shift_2023 concat nets, vit_2023); attack those with heavy PGD, random restarts, vertex and boundary search.
+- Numerical-tolerance hunting: tools reason in float64 or with loosened constraints; look for instances where the vnnlib output threshold is within ~1e-4 of the network's maximum over the box (estimate with gradient ascent) and try to produce a float32 counterexample that a float64 reasoner would miss, then push the margin past 1e-6.
+- Operator-semantics bugs (p2): for networks with ops verifiers approximate (Reshape/Transpose/Flatten orders, average pooling, BatchNorm folding, Sigmoid/Tanh, Softmax, Gather, residual adds, Concat), build small new properties that stress each op and compare the tool's 'holds' against onnxruntime sampling; SoundnessBench's planted-counterexample recipe (train so attacks miss the counterexample) can be reproduced locally on a tiny network, but the resulting bug must be new.
+- Replay official 2026 tool configurations locally for the open-source tools and compare verdicts on perturbed properties (shrink/shift the input box slightly around a known violated instance): a tool that flips to 'holds' while a counterexample still exists in the shrunk box exhibits a reproducible bug (p2).
+- Exhaustive methods on tiny instances: for acasxu_2023 / isomorphic_acasxu_2026 / monotonic_acasxu_2026 / lsnc_relu / sat_relu (5-input or small MLPs) run an exact MILP/SMT (OR-Tools CP-SAT, SCIP, or Z3 on the exact piecewise-linear encoding in rational arithmetic) on the instances a suspicious tool marked 'holds'; any SAT answer gives a candidate to validate in float32.
+
+## Pitfalls
+
+- Counterexample that violates the property only by floating-point noise (< 1e-6), only in one runtime, or only with inputs on or outside the box boundary. Require strict interior membership, margin >= 1e-6 and two runtimes; the organisers' 1e-4 input tolerance (COUNTEREXAMPLE_ATOL) does not apply here.
+- Misattributing a verdict: read the per-benchmark <tool>/2026_<category>/results.csv in the live repo, not the aggregate log columns; the flat per-tool results.csv has multi-network (python-list-like) network fields for isomorphic/monotonic acasxu that break naive CSV parsing. Confirm no validated witness exists in ANY tool directory (check.json result correct / correct_up_to_tolerance), otherwise the finding is already known (subsumed).
+- check.json vocabulary: the 'result' field uses correct / correct_up_to_tolerance / malformed_ce / spec_not_violated / unsupported / no_ce, while the 'classification' field uses correct / correct_with_tolerance / malformed / incorrect / unsupported / missing. Use the right field.
+- Scoring timeouts: a 'holds' row whose run_time exceeds the instance timeout in instances.csv was scored as a timeout, not as holds; it does not count. Likewise 'unknown'/'timeout'/'error' never count as 'holds'.
+- VNN-LIB 1.0 vs 2.0: the same benchmark exists in two version directories and the two validators differ (counterexamples.py vs counterexamples_v2.py; 1.0 checks bounds in Python float, 2.0 in the declared dtype, see results-repo issue #1). Use the version directory the contradicted tool actually ran, and the matching validator.
+- Property semantics: the vnnlib assertion describes the violation region as a disjunction of conjunctions; a point outside the informal SAFE region may not satisfy any disjunct as written. Use the competition evaluator, and read sat_relu / lsnc_relu encodings carefully.
+- Vacuous 'holds': adaptive_cruise_control_non_linear_2026 has 18/50 instances with an empty input region (benchmarks issue #11, open) and isomorphic_acasxu_2026 had a contradictory output spec (issue #6); no counterexample can exist there. Skip them.
+- soundnessbench_2026 (and 2025 soundnessbench) are excluded from the full criterion and p1: all instances are SAT by construction and the benchmark authors hold the planted counterexamples, so any hit is subsumed. cifar100_2024 deliberately retains ~18% instances with known adversarial examples (2025 report, section 4.10) 'for potentially identifying unsound results'; a hit there is admissible only if the panel confirms the adversarial example is not published in the benchmark's source repo.
+- p2 claims where the tool was run with a non-competition configuration, a later commit, or with an unsupported op silently skipped; freeze commit, config and full command line, and state the device. Bugs already reported in SoundnessBench, arXiv:2605.17153 or the tool's issue tracker are not new.
+- Hard-coding counts: the 2,152 / 2,138 / 25 / 77 figures are the vetter's 2026-10-09 parse of the log; re-derive them live, since the organisers may re-score (the 2025 repo was re-scored twice).
+
+## Sources
+
+- https://github.com/VNN-COMP/vnncomp2026_results
+- https://github.com/VNN-COMP/vnncomp2026_benchmarks
+- https://github.com/VNN-COMP/vnncomp2025_results
+- https://github.com/VNN-COMP/vnncomp2025_benchmarks
+- https://raw.githubusercontent.com/VNN-COMP/vnncomp2026_results/main/SCORING/counterexamples.py
+- https://raw.githubusercontent.com/VNN-COMP/vnncomp2026_results/main/SCORING/counterexamples_v2.py
+- https://raw.githubusercontent.com/VNN-COMP/vnncomp2026_results/main/SCORING/cex_checks.py
+- https://arxiv.org/abs/2412.03154
+- https://arxiv.org/abs/2605.17153
+- Status source: https://github.com/VNN-COMP/vnncomp2026_results
+
+## Citations
+
+- [Problem page](../../../../.raw/V3R1T4S/known-unknowns/ml-robustness/vnncomp-verifier-holds-soundness-counterexample.md)
+- [Bank entry](../../../../.raw/V3R1T4S/bank/targets.json) (id `vnncomp-verifier-holds-soundness-counterexample`, commit `7dd4480`)
+
+## Related Nodes
+
+- [[V3R1T4S ML robustness]]
+- [[V3R1T4S]]

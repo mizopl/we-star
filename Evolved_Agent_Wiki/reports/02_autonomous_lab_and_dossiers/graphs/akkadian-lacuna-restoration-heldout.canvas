@@ -1,0 +1,88 @@
+{
+ "nodes": [
+  {
+   "id": "Q1645",
+   "type": "text",
+   "text": "**Q1645** · question\n\nCan a hybrid boundary-deduplicated C slot-syntax, parallel-passage, and 2-pass belief-propagation engine (CLSS-Akk-v3) beat both the reproduced MBERT+Akk baseline and Lazar et al. (2021) on the frozen SLAB-NLP/Akk SEED=2, seed=42 split?",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "H1645_L1",
+   "type": "text",
+   "text": "**H1645_L1** · hypothesis\n\nLens 1 (MBERT+Akk Baseline Comparability Gate): Fine-tuning bert-base-multilingual-cased + 1,875 Akkadian sign tokens strictly on the 18,568 SEED=2 training rows achieves Hit@5 in [0.87, 0.91] on the N=27,650 frozen test positions (and N=25,957 non-missing subset)",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H1645_L2",
+   "type": "text",
+   "text": "**H1645_L2** · hypothesis\n\nLens 2 (Boundary-Deduplicated 53-Template C Engine + 2-Pass Belief Propagation + MBERT+Akk Fusion): Indexing the 18,568 training docs into a 2^23-slot C hash table with out-of-bounds template skipping, UNK_C->MASK_C corrupted-token filtering, rare-anchor TF-IDF passage retrieval, and 2-pass belief propagation beats both Paper (Hit@5=0.89/0.895, MRR=0.83) and Baseline by >= +0.01",
+   "x": 420,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "D1645_BOUND",
+   "type": "text",
+   "text": "✗ **D1645_BOUND** · dead\n\nClamping out-of-bounds template offsets to boundary [CLS]/[SEP] tokens caused boundary bigrams to match 3-gram/4-gram/5-gram templates simultaneously with weight n^2*1.6^n; skipping out-of-bounds templates raised pure C MRR from 0.8118 to 0.82480 and Hit@5 to 0.89638",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "R1645_WIN",
+   "type": "text",
+   "text": "**R1645_WIN** · result\n\nCONFIRMED_SOLUTION + p1: MBERT+Akk baseline Hit@5 = 0.87700 (0.87152 non-missing) in [0.87, 0.91], MRR = 0.82369; CLSS-Akk-v3 achieves Hit@5 = 0.92156 (+4.46 pts vs baseline, +3.16 pts vs paper), MRR = 0.85593 (+3.22 pts vs baseline, +2.59 pts vs paper), Hit@1 = 0.80098, Hit@10 = 0.94517, 3/3 skeptics pass: true, CHECK_RUN: PASS",
+   "x": 840,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q1645",
+   "toNode": "H1645_L1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "Q1645",
+   "toNode": "H1645_L2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e2",
+   "fromNode": "H1645_L2",
+   "toNode": "D1645_BOUND",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e3",
+   "fromNode": "H1645_L2",
+   "toNode": "R1645_WIN",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  }
+ ]
+}

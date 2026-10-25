@@ -1,0 +1,5 @@
+seed: 730399641
+top-ev	square-grid-lattice-gas-exact-counts-oeis	p=0.25	cost=240m	typ=0.12	next exact term of A006506/A063443 (main) or A054759 torus ice (partial p1) by modular transfer matrices
+top-ev	pycox-metabric-gbsg-breast-cancer-survival	p=0.05	cost=60m	typ=0.06	beat pycox METABRIC/GBSG survival C-index with a lattice-gas-style transfer model
+tail	new-periodic-variables-not-in-vsx	p=0.15	cost=240m	typ=0.06	new periodic variables in public ZTF/TESS cutouts absent from VSX
+VS_SAMPLE: PASS

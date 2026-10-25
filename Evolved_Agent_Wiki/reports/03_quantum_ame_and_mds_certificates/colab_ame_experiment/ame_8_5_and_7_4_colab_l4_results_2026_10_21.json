@@ -1,0 +1,47 @@
+{
+  "timestamp_utc": "2026-10-21T16:19:04Z",
+  "gpu_device": "NVIDIA L4 (23.66 GB VRAM)",
+  "experiment": "CLSS Move A — Blind Out-of-Sample GPU Test on Open Cells AME(8, 5) & AME(7, 4) [Completing 5/5 Open Cells for n=7,8]",
+  "pre_registered_blind_prediction_8_5": {
+    "formula": "(1/25) * sqrt(15/28)",
+    "predicted_delta_f": 0.0292770022,
+    "predicted_eta": 0.73192505,
+    "predicted_A_4_star": 37.5,
+    "measured_best_mean_frob": 0.0295105774,
+    "measured_best_max_frob": 0.0295532911,
+    "measured_eta_star": 0.737766,
+    "measured_A_4_star": 38.100745,
+    "out_of_sample_relative_error_pct": 0.7978
+  },
+  "AME_8_5": {
+    "hilbert_space": "5^8 = 390,625 complex128 amplitudes",
+    "baseline_f5_graph_seed": "circ([0,1,0,2,0,2,0,1]) mod 5 (26/35 full-rank cuts, 5/7 cyclic orbits at exact 0.0 error)",
+    "baseline_orbit_frobs": [0.0, 0.0, 0.08, 0.0, 0.0, 0.0, 0.08],
+    "best_stage1_z8_mean_frob": 0.02959693,
+    "best_stage1_z8_max_frob": 0.02964622,
+    "best_stage2_35cut_mean_frob": 0.0295105774,
+    "best_stage2_35cut_max_frob": 0.0295532911,
+    "best_7orbit_frobs": [0.0294705, 0.0295472, 0.0294833, 0.0294874, 0.0295726, 0.0294906, 0.0295726],
+    "haar_frob": 0.0399998976,
+    "eta_star": 0.737766,
+    "irreducible_shor_laflamme_A_4_star": 38.100745
+  },
+  "AME_7_4": {
+    "hilbert_space": "4^7 = 16,384 complex128 amplitudes",
+    "best_stage1_z7_mean_frob": 0.0220556226,
+    "best_stage1_z7_max_frob": 0.0224117458,
+    "best_stage2_35cut_mean_frob": 0.0217843305,
+    "best_stage2_35cut_max_frob": 0.0222892416,
+    "best_5orbit_frobs": [0.0222826, 0.0217649, 0.0221097, 0.0211506, 0.0216035],
+    "haar_frob": 0.0624904631,
+    "eta_star": 0.348602,
+    "irreducible_shor_laflamme_A_3_star": 1.063008
+  },
+  "complete_n7_n8_open_cell_atlas": [
+    {"cell": "AME(7, 4)", "status": "?", "D_pow_n": 16384, "mean_frob": 0.0217843, "max_frob": 0.0222892, "haar_frob": 0.0624905, "eta_star": 0.348602, "A_k_star": 1.063008},
+    {"cell": "AME(7, 6)", "status": "?", "D_pow_n": 279936, "mean_frob": 0.0080983, "max_frob": 0.0081572, "haar_frob": 0.0277774, "eta_star": 0.291544, "A_k_star": 0.495808},
+    {"cell": "AME(8, 4)", "status": "?", "D_pow_n": 65536, "mean_frob": 0.0457210, "max_frob": 0.0457810, "haar_frob": 0.0624990, "eta_star": 0.731547, "A_k_star": 37.460144},
+    {"cell": "AME(8, 5)", "status": "?", "D_pow_n": 390625, "mean_frob": 0.0295106, "max_frob": 0.0295533, "haar_frob": 0.0399999, "eta_star": 0.737766, "A_k_star": 38.100745},
+    {"cell": "AME(8, 6)", "status": "?", "D_pow_n": 1679616, "mean_frob": 0.0208001, "max_frob": 0.0208512, "haar_frob": 0.0277778, "eta_star": 0.748803, "A_k_star": 39.249365}
+  ]
+}

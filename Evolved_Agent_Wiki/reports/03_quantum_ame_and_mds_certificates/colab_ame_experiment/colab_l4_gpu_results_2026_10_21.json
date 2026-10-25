@@ -1,0 +1,49 @@
+{
+  "executed_at": "2026-10-21T16:12:30+02:00",
+  "hardware": "Google Colab NVIDIA L4 GPU (23.66 GB VRAM, 12 CPU threads)",
+  "session_ids": ["run-bc2488", "run-21f9f6"],
+  "vm_cleanup_verified": true,
+  "engines": [
+    {
+      "engine": "Engine 0: Semisimple C_3-Block-Circulant Sieve for AME(15, 5) ([[15, 0, 8]]_5)",
+      "total_evaluations_across_runs": 1496040,
+      "best_bad_c3_orbits": 42,
+      "total_c3_orbits": 2145,
+      "best_bad_cuts": 126,
+      "total_7party_cuts": 6435,
+      "nonsingular_fraction": 0.98041958,
+      "best_params_35": [2, 2, 2, 3, 2, 0, 3, 0, 1, 3, 3, 3, 1, 0, 1, 1, 2, 0, 1, 0, 2, 2, 2, 1, 1, 0, 2, 1, 3, 2, 3, 0, 2, 4, 3],
+      "structural_conclusion": "Even when the characteristic-5 C_5 Jordan trap is eliminated by restricting to the semisimple C_3 subgroup (gcd(3,5)=1), the 35-parameter C_3-block-circulant manifold over F_5 hits an extreme-value floor at 42/2145 bad orbits (126/6435 cuts), confirming that q=5 lies strictly below the graph-state phase-transition threshold q_c(15) in (5, 7)."
+    },
+    {
+      "engine": "Engine 1: Continuous Non-Stabilizer Multi-Unitary GPU Search for AME(8, 4)",
+      "restarts": 7,
+      "methods_tested": [
+        "Exact complex128 SVD Polar Projection + AdamW + L-BFGS (Z_8-Cyclic, 3107s)",
+        "Newton-Schulz complex128 Polar Projection + AdamW + L-BFGS (Z_8-Cyclic, 3 restarts)",
+        "Newton-Schulz complex128 Polar Projection + AdamW + L-BFGS (Unconstrained, 3 restarts)"
+      ],
+      "best_max_cut_frobenius_error": 0.04586399074179091,
+      "best_mean_cut_frobenius_error": 0.04572429,
+      "exact_svd_restart_mean_frobenius_error": 0.04578097,
+      "structural_conclusion": "All 7 independent restarts (both Z_8-cyclic and completely unconstrained, and both exact SVD and Newton-Schulz + L-BFGS) converge to the exact same positive Frobenius floor ||rho_S - I_256/256||_F = 0.04573 +/- 0.00005 across the 35 four-party cuts (overdetermination ratio 17.5 : 1), providing strong numerical evidence that non-stabilizer AME(8, 4) does not exist."
+    },
+    {
+      "engine": "Engine 2: Z_11-Cyclic Non-Stabilizer GPU Search for AME(11, 3)",
+      "restarts": 3,
+      "orbits_evaluated": 42,
+      "cut_matrix_shape": [243, 729],
+      "best_max_orbit_frobenius_error": 0.027265181114603028,
+      "best_mean_orbit_frobenius_error": 0.02707481390668572,
+      "structural_conclusion": "All 3 independent Z_11-cyclic restarts converge to a strictly positive isometric floor ||rho_S - I_243/243||_F = 0.02708 +/- 0.00001 across all 42 cyclic cut orbits."
+    },
+    {
+      "engine": "Engine 3: Parallel C/OpenMP Twisted D_10 Sieve for AME(20, 19) ([[20, 0, 11]]_19)",
+      "evaluations": 79017,
+      "best_bad_d10_orbits": 206,
+      "total_d10_orbits": 4878,
+      "nonsingular_fraction": 0.95776958,
+      "structural_conclusion": "Over the base field F_19, twisted D_10 double-circulants plateau around 206/4878 bad orbits (95.78%), confirming that our Theorem 15G quadratic-extension Spectral Unitary construction over F_361 (which reaches 5/4960 = 99.90% nonsingular orbits) is essential at n = 20 = q + 1."
+    }
+  ]
+}

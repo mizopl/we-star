@@ -1,0 +1,160 @@
+{
+ "nodes": [
+  {
+   "id": "F_ANCESTRAL_ATLAS",
+   "type": "text",
+   "text": "**F_ANCESTRAL_ATLAS** · fact\n\nAncestral Atlas (Parent PROOFER v15): 21 resolved reasoning graphs (.jsonl & .canvas) in graphs/ancestral_v15_atlas/ (25 V3R1T4S wins across 17 categories + 21 AME certificates, Brier 0.168)",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "Q_META",
+   "type": "text",
+   "text": "**Q_META** · question\n\nRoot Meta & Oracle Seed: How do we combine the Sub-Second Exact Oracle (K9) and Six Breakthrough Laws (M1-M6) to solve the new domain targets in this instance?",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "T_ORACLE_GATE",
+   "type": "text",
+   "text": "**T_ORACLE_GATE** · tool\n\nStage I Sub-Second Exact Oracle Gate (< 5s deterministic verifier + 1 positive baseline test + 1 negative shuffled/corrupted test; mandatory before any search)",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "0"
+  },
+  {
+   "id": "M1_SEAM_SURGERY",
+   "type": "text",
+   "text": "**M1_SEAM_SURGERY** · hypothesis\n\nLaw M1 (Inter-Regime Seam Surgery, ~95% win rate): Compose two exact sub-solutions with relaxed boundary glue, freeze interiors, and apply exact MILP/SAT/prune+merge/basis surgery strictly on the narrow boundary seam.",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M2_FAST_EXACT_ORACLE",
+   "type": "text",
+   "text": "**M2_FAST_EXACT_ORACLE** · hypothesis\n\nLaw M2 (Algebraic Cost-Space Transform + MTF, 10^4x-10^6x speedup): Rewrite evaluation via Fast Zeta/SOS-DP, spectral/Cayley basis, Carry-Wire Decoupling, or Toeplitz rank-1 updates + Move-To-Front killer constraint ordering.",
+   "x": 1260,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M3_CORANK_SLACK_ESCAPE",
+   "type": "text",
+   "text": "**M3_CORANK_SLACK_ESCAPE** · hypothesis\n\nLaw M3 (Corank-1 & Slack-Slot Escape): Escape flat plateaus where corank(M)>=2 forces adj(M)=0 (zero 1-opt gradient) by minimizing kernel rank deficiency (Tau-Core) or injecting structure into unused degree-slack slots.",
+   "x": 1260,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M4_SMALL_DATA_LOO_KRR",
+   "type": "text",
+   "text": "**M4_SMALL_DATA_LOO_KRR** · hypothesis\n\nLaw M4 (Small-Data Physical/Structural Inductive Bias): For N=30..1000, combine exact domain laws, CSLS hubness correction, and directional MMP cliff surgery with closed-form Analytical Leave-One-Out Kernel Ridge Regression (LOO-KRR).",
+   "x": 1260,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M5_REVERSE_BACKPROJ_NULLS",
+   "type": "text",
+   "text": "**M5_REVERSE_BACKPROJ_NULLS** · hypothesis\n\nLaw M5 (Reverse Back-Projection & Null-Control Gate): Invert archival queries (back-projecting short-arc targets with 3-sigma covariance ellipses) gated by 100% known-object calibration and >=200-400 shuffled/synthetic negative controls (>=5 sigma).",
+   "x": 1260,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M6_THREE_RESTART_FLOOR",
+   "type": "text",
+   "text": "**M6_THREE_RESTART_FLOOR** · fact\n\nLaw M6 (Three-Restart Structural Floor Guard): Whenever >=3 independent random restarts halt at the exact same non-zero error floor, STOP brute-forcing immediately — prove the underlying No-Go/Parity Theorem and switch symmetry groups.",
+   "x": 1260,
+   "y": 1100,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "F_ANCESTRAL_ATLAS",
+   "toNode": "Q_META",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "Q_META",
+   "toNode": "T_ORACLE_GATE",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "blocks"
+  },
+  {
+   "id": "e2",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M1_SEAM_SURGERY",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e3",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M2_FAST_EXACT_ORACLE",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e4",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M3_CORANK_SLACK_ESCAPE",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e5",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M4_SMALL_DATA_LOO_KRR",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e6",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M5_REVERSE_BACKPROJ_NULLS",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e7",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M6_THREE_RESTART_FLOOR",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "blocks"
+  }
+ ]
+}

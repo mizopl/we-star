@@ -1,0 +1,100 @@
+{
+ "nodes": [
+  {
+   "id": "Q1320",
+   "type": "text",
+   "text": "**Q1320** · question\n\nCan composite FMM formats (2a,3b,3c) with ZT > Q be upgraded to ZT={-1,0,1} strictly below live ZT via CLSS seam surgery or sub-block conjugation?",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "F1320_OBSTACLE",
+   "type": "text",
+   "text": "**F1320_OBSTACLE** · fact\n\nDefault <4,3,3> row ordering (0,1,2,3) in 3x3x4_tensor.mpl has mixed inter-block overlap signs (up=5,um=4,wp=2,wm=5), creating +-2 seam entries on overlapping v-buds",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "L1320_SEAM56",
+   "type": "text",
+   "text": "**L1320_SEAM56** · result\n\nLens 1 (seam-surgery-5to6): 5-to-6 ternary seam surgery + hybrid ZT bud selection gives verified ZT records 14x15x15<=1898 (vs 1905) and 10x15x15<=1392 (vs 1395)",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "L1320_CONJ",
+   "type": "text",
+   "text": "**L1320_CONJ** · result\n\nLens 2 (subblock-conjugation-s3): Conjugating <4,3,3> by pi=(0,1,3,2) makes inter-block overlaps 100% sign-pure (up=0,um=11,wp=9,wm=0), yielding 4 verified ZT records: 9x12x14<=954, 10x15x15<=1389, 12x15x15<=1640, 14x15x15<=1894",
+   "x": 840,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "H_ftu_subblock_conjugation_zt_gt_z",
+   "type": "text",
+   "text": "**H_ftu_subblock_conjugation_zt_gt_z** · hypothesis\n\nApplying CLSS Sign-Pure Sub-Block Conjugation (S_2k row-block permutation and sign gauge on the serendipitous s3 block) on the live ZT > Z schemes (10x15x16 Z=1484 vs ZT=1488, 6x12x14 Z=654 vs ZT=666, 9x10x13 Z=763 vs ZT=771, 9x10x16 Z=920 vs ZT=924, 11x15x16 Z=1629 vs ZT=1641, 12x13x16 Z=1544 vs ZT=1548) will eliminate all |x|=2 collisions and yield >= 3 new verified ZT = {-1,0,1} schemes strictly beating live Perminov README ZT ranks.",
+   "x": 0,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_ftu_reverse_engineer_z_q_builders",
+   "type": "text",
+   "text": "**H_ftu_reverse_engineer_z_q_builders** · hypothesis\n\nReverse-engineering the exact SerendipitousProductBuilder / block-partitioning decomposition of 10x15x16_m1482_Q, 6x12x14_m654_Z, 9x10x13_m763_Z, 9x10x16_m920_Z, 11x15x16_m1629_Z, and 12x13x16_m1544_Z and applying signed B_2k sub-block conjugation will upgrade at least 2 more formats (including 10x15x16 to 1482 or 6x12x14/9x10x16 to Z rank) in ZT",
+   "x": 0,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_ftu_12x13x16_1541_and_global_serendipitous_scan",
+   "type": "text",
+   "text": "**H_ftu_12x13x16_1541_and_global_serendipitous_scan** · hypothesis\n\nBuild and verify 6x12x14_m654_ZT, 9x10x13_m763_ZT, 9x10x16_m920_ZT, 11x15x16_m1629_ZT, close the 26th group of 12x13x16 at rank <= 1544 (targeting 1541 in ZT), and scan all status.json formats for additional ZT/Z/Q rank improvements via S_bg serendipitous product conjugation",
+   "x": 0,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q1320",
+   "toNode": "F1320_OBSTACLE",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "F1320_OBSTACLE",
+   "toNode": "L1320_SEAM56",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e2",
+   "fromNode": "F1320_OBSTACLE",
+   "toNode": "L1320_CONJ",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

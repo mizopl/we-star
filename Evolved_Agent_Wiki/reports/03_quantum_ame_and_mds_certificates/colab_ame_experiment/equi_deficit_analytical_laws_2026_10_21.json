@@ -1,0 +1,61 @@
+{
+  "timestamp_utc": "2026-10-21T16:03:00Z",
+  "title": "Shor-Laflamme ANOVA Decomposition & Analytical Closed-Form Laws for Equi-Deficit Quasi-AME Barriers",
+  "shor_laflamme_anova_identity": {
+    "statement": "For any pure state |psi> in (C^D)^n and half-cut size k = floor(n/2), the mean squared Frobenius distance to the maximally mixed state across all binom(n, k) cuts decomposes exactly over the non-negative Shor-Laflamme weight enumerators A_r(psi) >= 0 (r = 1..k):",
+    "formula": "mean_{|S|=k} ||rho_S - I_{D^k}/D^k||_F^2 = (1 / (D^k * binom(n, k))) * sum_{r=1}^k binom(n - r, k - r) * A_r(psi)",
+    "corollary": "Because lower-weight correlations A_r (r < k) carry large binomial amplifiers binom(n-r, k-r) > 1, global Riemannian minimization drives A_1, ..., A_{k-1} -> 0 ((k-1)-uniformity) and concentrates the entire barrier into the irreducible weight-k Shor-Laflamme enumerator A_k*(n, D) = D^k * binom(n, k) * (Delta_F*(n, D))^2."
+  },
+  "two_structural_regimes": {
+    "regime_II_partial_factor_fano_seam": {
+      "cell": "AME(7, 6)",
+      "mechanism": "D = 6 = 2 x 3 has an exact AME(7, 3) factor (0/35 bad cuts) and a 7-qubit factor with a single 7-cut Fano-plane defect of initial Shor-Laflamme weight A_3(seed) = 7. Continuous unitary coupling between C^2 and C^3 suppresses A_3 by 2 x 7 = 14x down to the half-bit Rains shadow quantum A_3*(7, 6) = 1/2, spreading it uniformly across all binom(7, 3) = 35 cuts.",
+      "analytical_A_k_star": 0.5,
+      "analytical_formula": "1 / sqrt(2 * 6^3 * binom(7, 3)) = 1 / sqrt(15120)",
+      "analytical_prediction": 0.0081325006,
+      "gpu_35cut_mean_frob": 0.0080983356,
+      "gpu_35cut_max_frob": 0.0081572494,
+      "gpu_midpoint": 0.0081277925,
+      "relative_error_pct": 0.058,
+      "inside_gpu_mean_max_bracket": true
+    },
+    "regime_I_bulk_overdetermined_barrier": {
+      "mechanism": "When all prime-power factors of D lie strictly below the MDS/AME existence threshold (such as D=4 for n=8, D=3 for n=11, and both p=2 and q=3 in D=6 for n=8), no tensor factor can supply an exact AME state. The irreducible weight-k Shor-Laflamme enumerator locks to a universal fraction (15/28 = 0.5357 for prime-power D=4, 3; 9/16 = 0.5625 for composite D=6) of the Haar random weight A_k^Haar = binom(n, k) * D^{2k - n}.",
+      "cells": [
+        {
+          "cell": "AME(8, 6)",
+          "analytical_formula": "(3/4) * 6^{-2} = 1 / 48",
+          "analytical_prediction": 0.0208333333,
+          "gpu_mean_frob": 0.02080007,
+          "gpu_max_frob": 0.02085121,
+          "gpu_midpoint": 0.02082564,
+          "relative_error_pct": 0.037,
+          "inside_gpu_mean_max_bracket": true
+        },
+        {
+          "cell": "AME(8, 4)",
+          "analytical_formula": "sqrt(15/28) * 4^{-2}",
+          "analytical_prediction": 0.0457453159,
+          "gpu_mean_frob": 0.045721,
+          "gpu_max_frob": 0.045781,
+          "gpu_midpoint": 0.045751,
+          "relative_error_pct": 0.012,
+          "inside_gpu_mean_max_bracket": true
+        },
+        {
+          "cell": "AME(11, 3)",
+          "analytical_formula": "sqrt(15/28) * 3^{-3}",
+          "analytical_prediction": 0.0271083353,
+          "gpu_mean_frob": 0.02708,
+          "gpu_max_frob": 0.02709,
+          "gpu_midpoint": 0.027085,
+          "relative_error_pct": 0.086,
+          "inside_gpu_mean_max_bracket": false
+        }
+      ]
+    }
+  },
+  "why_linear_rains_bounds_failed_to_detect_these_cells": {
+    "explanation": "Direct evaluation of the linear Rains shadow inequalities S_j^{(m)} >= 0 (for all subsystem sizes m=1..n and shadow weights j=0..m) shows that all linear Rains shadows are strictly positive on hypothetical AME(7,6) [min S = +85/216 = +0.3935], AME(8,6) [min S = +275/1296 = +0.2122], AME(8,4) [min S = +3/256 = +0.0117], and AME(11,3) [min S = +4/81 = +0.0494]. Thus linear shadow programming cannot rule out these cells; the obstruction is genuinely non-linear (quartic manifold overdetermination on the pure-state Grassmannian)."
+  }
+}
