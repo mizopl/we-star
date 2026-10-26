@@ -33,7 +33,7 @@
   {
    "id": "H_l4_gpu_m2_to_m6_eschatokollon",
    "type": "text",
-   "text": "✗ **H_l4_gpu_m2_to_m6_eschatokollon** · hypothesis\n\nPelny skan 4 modeli GPU L4 (dnative+Hecate+seed42+seed43 w float16) i dwustronnego Thin-Sheet Z-DoG (zc54 - 0.65*avg(zc36,zc72)) dla pieciu zwojow eschatokollonu 5753_-2..-6 (1.1..5.5 cm za ostatnia kolumna, y_L3=1536..4992) odsloni powierzchniowy sygnal subscriptio\n\n*why dead:* [L-PT-004=0] All 5 eschatokollon wraps 5753_-2 through 5753_-6 scanned on Colab L4 GPU with 4-model ensemble + two-sided Thin-Sheet Z-DoG (zc=36,54,72): 5753_-2 at zc=54 recovers the right continuation of final column Line 6 (>-- ΑΝΑΓΕΓΡΑΦ[...], L3_y=1780..1950, x=1350..1750, zdog>80=17.48%), while the middle/lower eschatokollon zone (y_L3=2000..4992) across 5753_-2..-6 is blank unwritten papyrus (zdog_p99=52..59, zdog>80=0.03%..0.04% on -3..-6).",
+   "text": "✗ **H_l4_gpu_m2_to_m6_eschatokollon** · hypothesis\n\nFull 4-model L4 GPU scan (dnative+Hecate+seed42+seed43) + Thin-Sheet Z-DoG (zc=36,54,72) across unexplored eschatokollon wraps 5753_-2..-6 (between column 5753_-1 and inner core 5753_-7) will reveal missing title text\n\n*why dead:* [L-PT-004=0] All 5 eschatokollon wraps 5753_-2 through 5753_-6 scanned on Colab L4 GPU with 4-model ensemble + two-sided Thin-Sheet Z-DoG (zc=36,54,72): 5753_-2 at zc=54 recovers the right continuation of final column Line 6 (>-- ΑΝΑΓΕΓΡΑΦ[...], L3_y=1780..1950, x=1350..1750, zdog>80=17.48%), while the middle/lower eschatokollon zone (y_L3=2000..4992) across 5753_-2..-6 is blank unwritten papyrus (zdog_p99=52..59, zdog>80=0.03%..0.04% on -3..-6).",
    "x": 1260,
    "y": 0,
    "width": 380,
