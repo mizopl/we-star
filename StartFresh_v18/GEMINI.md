@@ -8,7 +8,7 @@
 
 Whether you are running on a frontier reasoning model (`Gemini Pro` / `Claude Opus`) or a **high-speed / lightweight model (`Gemini Flash` / `Flash-Lite` / `Haiku` / `Sonnet`)**, execute these exact steps in order on your first turn:
 
-1. **Read Session Memory First:** Read `wiki/meta/hot.md` and `wiki/meta/cycle_counter.txt`.
+1. **Read Session Memory First:** Read `wiki/meta/hot.md`, `wiki/meta/AUDITOR_INBOX.md` (coaching & steering notes from `MONITOR` / `AUDITOR`), and `wiki/meta/cycle_counter.txt`.
 2. **Read Your Operating Manuals:**
    - Read `FIRST_INITIATION.md` (your step-by-step cold-start runbook, tool recipes, and ancestral tour).
    - Read `AGENTS.md` (the 8-step Wiki OS workflow + Proof Mode).
