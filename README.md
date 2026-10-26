@@ -109,18 +109,27 @@ This repository is organized into modular, self-contained parts so that any rese
 
 ---
 
-## ⚡ Quick Start: How to Launch `StartFresh_v18` (or `StartFresh_v16`) on Your Own Scientific Problem
+## ⚡ Quick Start: How to Launch `StartFresh_v18` (or `StartFresh_v16`) on Your Own Problem
 
-1. **Copy either `StartFresh_v18/` (recommended: full `M1–M9` + `Sleep-Flush` `v18` seed) or `StartFresh_v16/` (earlier `M1–M6` branching point for custom evolutionary drift)** to a new workspace directory:
+Full copy-pasteable prompts and onboarding checklists are in **[`StartFresh_v18/README.md`](./StartFresh_v18/README.md)** and **[`StartFresh_v18/FIRST_INITIATION.md`](./StartFresh_v18/FIRST_INITIATION.md)** (or [`StartFresh_v16/FIRST_INITIATION.md`](./StartFresh_v16/FIRST_INITIATION.md) for the earlier `v16` seed). Here is the complete 4-step launch flow:
+
+1. **Bootstrap a new standalone project folder from `StartFresh_v18/` (1-liner):**
    ```bash
-   cp -R StartFresh_v18 ~/Desktop/MY_NEW_PROJECT
-   cd ~/Desktop/MY_NEW_PROJECT
+   mkdir -p ~/Desktop/MY_NEW_PROJECT && cd ~/Desktop/MY_NEW_PROJECT
+   git clone --depth 1 https://github.com/mizopl/we-star.git /tmp/we-star-seed && cp -R /tmp/we-star-seed/StartFresh_v18/. . && cp -R /tmp/we-star-seed/docs ./docs && rm -rf /tmp/we-star-seed
    ```
 2. **Drop your raw problem files, papers, datasets, or benchmark scripts** into `.raw/` (`.raw/` is strictly immutable — agents never modify or overwrite it).
-3. **Open the directory in your agent CLI/IDE (`Claude Code` or `Antigravity / Gemini CLI`)** and follow [`StartFresh_v16/FIRST_INITIATION.md`](./StartFresh_v16/FIRST_INITIATION.md):
-   - **Thread 1 (`PROOFER`):** Builds the sub-second deterministic verifier (`< 5s` Exact Oracle), writes the project charter, and runs the autoresearch ratchet.
-   - **Thread 2 (`MONITOR`):** Runs on a 45-minute schedule to independently resolve calibration bets (`postdict.py` / `micro_bet.py`) and enforce the Two-Miss Pivot (`M2`) and Three-Restart Floor Law (`M6`).
-   - **Thread 3 (`AUDITOR`):** Interactive 1:1 thread for human strategic steering, code review, and prose-to-certificate auditing (`K12`).
+3. **Open 3 terminal tabs (or IDE threads) in `~/Desktop/MY_NEW_PROJECT`** — works identically in **Claude Code (`claude`, `claude --model haiku`, `claude --model sonnet`, `claude --model opus`)** and **Antigravity (`agy`)**:
+   - **Tab 1 — `PROOFER` (Main Worker / Solver):**
+     Launch `claude` (or `claude --model haiku` for fast/lightweight mode, or `agy`) and paste the **First Initiation Prompt** from **[`StartFresh_v18/FIRST_INITIATION.md` (§I)](./StartFresh_v18/FIRST_INITIATION.md)**. It runs `sh scripts/preflight.sh`, builds a deterministic `< 5s` Exact Oracle, logs calibrated bets via `micro_bet.py`, updates `graphs/main.jsonl`, and reads coaching notes from `wiki/meta/AUDITOR_INBOX.md`.
+   - **Tab 2 — `MONITOR` (Autonomous Governor & Self-Healing Coach):**
+     Either run the automatic background heartbeat loop in Terminal Tab 2:
+     ```bash
+     sh scripts/run_monitor_loop.sh 600 haiku    # or: 900 sonnet | 2700 agy
+     ```
+     Or open an interactive `claude` / `agy` session and paste the **Monitor Prompt** from **[`StartFresh_v18/FIRST_INITIATION.md` (§III-A)](./StartFresh_v18/FIRST_INITIATION.md)**. It audits `graphs/*.jsonl`, resolves finished bets (`postdict.py`), runs `sleep_flush.py`, and writes strategic feedback into `wiki/meta/AUDITOR_INBOX.md` without touching the worker's active code files.
+   - **Tab 3 — `AUDITOR` (Interactive 1:1 Strategy, Math & Skeptic Coach):**
+     Open `claude` (or `claude --model haiku` / `agy`) and paste the **Auditor Prompt** from **[`StartFresh_v18/FIRST_INITIATION.md` (§III-B)](./StartFresh_v18/FIRST_INITIATION.md)** to brainstorm pruning invariants, run `python3 scripts/tug.py` debates, and steer the worker via `wiki/meta/AUDITOR_INBOX.md`.
 4. **Enter into an Attentive Dialogue — Co-Operate Like a Mindful Teacher:**
    - Do not treat the system as a "fire-and-forget" black box. Step into active dialogue with your threads (especially via `AUDITOR`), stay observant, and collaborate at the level of an **attentive teacher**: watch where the agent is tunneling on a local minimum, ask simple probing questions when a pipeline looks over-complicated, challenge incrementalism by asking where a step-change jump might hide, and gently guide the system back to first principles whenever it drifts.
 

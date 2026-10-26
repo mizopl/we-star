@@ -4,21 +4,39 @@ A clean, self-contained, **Sleep & Memory-Flushed** autonomous Knowledge OS and 
 
 ---
 
-## ⚡ Quick Start & Multi-Thread Setup (`PROOFER` + `MONITOR` + `AUDITOR` + `<TARGET>_LAB`)
+## ⚡ Step-by-Step Quick Start (`PROOFER` + `MONITOR` + `AUDITOR` + `<TARGET>_LAB`)
 
-1. **Copy this folder** to your new project location:
-   ```bash
-   cp -R StartFresh_v18 ~/Desktop/NEW_PROJECT_NAME
-   cd ~/Desktop/NEW_PROJECT_NAME
-   ```
-2. **Place any initial data, papers, or benchmark files** inside `.raw/` (`.raw/` is strictly immutable).
-3. **Open the directory** in your agent IDE/CLI (`Antigravity / Gemini CLI` or `Claude Code`) and use the **Federated Multi-Thread Architecture**:
-   - **Thread 1 — `PROOFER` (Main Worker / Hunter):** Name your first chat thread `PROOFER` and paste the **First Initiation Prompt** from [`FIRST_INITIATION.md`](./FIRST_INITIATION.md). At the end of Cycle 1, `PROOFER` will automatically remind you to launch `MONITOR` and print its exact prompt.
-   - **Thread 2 — `MONITOR` (45-Min Meta-Commander Governor & Rescue Daemon):** Open a second chat thread, name it `MONITOR`, and paste the Monitor Prompt from [`FIRST_INITIATION.md` §III](./FIRST_INITIATION.md). It runs a recurring 45-minute cron schedule to resolve macro bets (`K3`), audit federated micro-bets (`micro_bet.py status`), run `sleep_flush.py` (`K16` / `H-EVO-02` / `H-EVO-06`), enforce the Three-Restart Floor Law (`M6`), and hot-swap a rescue subagent if the worker thread ever hits a context ceiling (`Dead-End X14`).
-   - **Thread 3 — `AUDITOR` (Interactive 1:1 Thread):** Open a new chat thread anytime and name it `AUDITOR` for 1:1 conversation with the agent (checking processes, auditing hypotheses, steering strategy, or running `outreach-auditor` `K12` without interrupting `PROOFER`).
-   - **Thread 4+ — `<TARGET>_LAB` (Federated Specialist / Moonshot Lab Threads, [`FIRST_INITIATION.md` §IV](./FIRST_INITIATION.md)):** Spin up dedicated parallel lab threads on tough sub-problems. Each thread uses **`scripts/micro_bet.py`** (`memory/local_bets/<target>.tsv`, IDs `L-<TAG>-001..`) to place & resolve a micro-bet after every experiment without colliding on global `memory/predictions.tsv`, automatically wiring causal parent edges (`derives` / `resumes`) in `graphs/<target>.jsonl` + `.canvas`, tagging failed bets with structured `--obstruction` tags (`H-EVO-02`), capping first/pivot/conjunction confidence at $p \le 0.65$ (`H-EVO-01`), and triggering a mandatory **`🚨 [M2 STRUCTURAL PIVOT]`** after 2 consecutive failed shots (`0`).
-4. **Enter into an Attentive Dialogue — Co-Operate Like a Mindful Teacher:**
-   - Once the threads are running, stay observant and collaborate with the patience and clarity of an **attentive teacher**: watch for signs of local-minimum tunneling, ask probing questions that break rigid frames, verify that solutions remain simple and authentic, and guide the agents when they need a structural pivot.
+### Step 1: Bootstrap a Clean Project Folder (1-Liner)
+```bash
+mkdir -p ~/Desktop/NEW_PROJECT_NAME && cd ~/Desktop/NEW_PROJECT_NAME
+git clone --depth 1 https://github.com/mizopl/we-star.git /tmp/we-star-seed && cp -R /tmp/we-star-seed/StartFresh_v18/. . && cp -R /tmp/we-star-seed/docs ./docs && rm -rf /tmp/we-star-seed
+```
+*(Or if you already cloned `we-star` locally: `cp -R StartFresh_v18/. ~/Desktop/NEW_PROJECT_NAME && cp -R docs ~/Desktop/NEW_PROJECT_NAME/docs`).*
+
+### Step 2: Place Any Raw Data or Papers in `.raw/`
+Put any initial benchmark files, problem statements, or PDFs inside `.raw/` (`.raw/` is strictly immutable).
+
+### Step 3: Launch the 3-Tab Multi-Thread Flow (Claude Code or Antigravity)
+Open **3 terminal tabs** (all inside `~/Desktop/NEW_PROJECT_NAME`). All copy-pasteable prompts are in **[`FIRST_INITIATION.md`](./FIRST_INITIATION.md)**:
+
+1. **Tab 1 — `PROOFER` (Main Worker / Solver Thread):**
+   - Run `claude` (or `claude --model haiku` for fast/joyful mode, `claude --model sonnet`, `claude --model opus`, or Antigravity `agy`).
+   - Paste the **First Initiation Prompt** from **[`FIRST_INITIATION.md` (§I)](./FIRST_INITIATION.md)**.
+   - `PROOFER` reads `CLAUDE.md` / `GEMINI.md`, checks `wiki/meta/AUDITOR_INBOX.md`, builds the `< 5s` Exact Oracle, places calibrated micro-bets (`scripts/micro_bet.py`), and updates `graphs/main.jsonl`.
+2. **Tab 2 — `MONITOR` (Autonomous Governor & Self-Healing Coach):**
+   - **Option A (Automatic Loop Daemon):** Run in Terminal Tab 2:
+     ```bash
+     sh scripts/run_monitor_loop.sh 600 haiku    # every 10 min in Haiku (or: 900 sonnet | 2700 agy)
+     ```
+   - **Option B (Interactive Session):** Run `claude --model haiku` (or `agy`) in Tab 2 and paste the **Monitor Prompt** from **[`FIRST_INITIATION.md` (§III-A)](./FIRST_INITIATION.md)**.
+   - `MONITOR` audits the reasoning graph, resolves finished macro-bets (`postdict.py`), runs `sleep_flush.py` (`K16` / `X14` PDF guard), and writes coaching notes into **`wiki/meta/AUDITOR_INBOX.md`** without ever overwriting the worker's active Python/C code.
+3. **Tab 3 — `AUDITOR` (Interactive 1:1 Strategy, Math & Skeptic Coach):**
+   - Run `claude --model haiku` (or `sonnet`/`opus`/`agy`) in Tab 3 and paste the **Auditor Prompt** from **[`FIRST_INITIATION.md` (§III-B)](./FIRST_INITIATION.md)**.
+   - Use this tab to talk 1:1 with the Auditor: inspect whether the worker hit an exponential wall (`Law M1`/`M2`), design pruning invariants, trigger `python3 scripts/tug.py run <name> --model haiku` debates, and drop high-leverage hints into **`wiki/meta/AUDITOR_INBOX.md`**.
+4. **Tab 4+ — `<TARGET>_LAB` (Optional Federated Specialist Lab Threads, [`FIRST_INITIATION.md` (§IV)](./FIRST_INITIATION.md)):**
+   - Spin up dedicated parallel lab threads on tough sub-problems, each logging atomic micro-bets via `scripts/micro_bet.py` (`memory/local_bets/<target>.tsv`).
+5. **Enter into an Attentive Dialogue — Co-Operate Like a Mindful Teacher:**
+   - Stay observant and collaborate with the patience and clarity of an **attentive teacher**: watch for signs of local-minimum tunneling, ask probing questions that break rigid frames, verify that solutions remain simple and authentic, and guide the agents when they need a structural pivot.
 
 ---
 
