@@ -1,0 +1,70 @@
+{
+ "nodes": [
+  {
+   "id": "Q_DD_14_3",
+   "type": "text",
+   "text": "**Q_DD_14_3** · question\n\nCan we construct a simple undirected graph of max degree <= 14 and diameter <= 3 on N >= 1,118 vertices, beating Comellas 1,116 and V3R1T4S PR #143 1,117?",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "H_SPARE_DEG_SA",
+   "type": "text",
+   "text": "**H_SPARE_DEG_SA** · hypothesis\n\nG_14_3_N1117.edges has 68 deg-13 vertices + 8 diameter-3 redundant edges (84 free slots); inserting vertex 1117 + bit-parallel BFS SA rewiring with z=N0 in ends[] and multi-temp polish drives bad pairs to 0",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "E_SA2_OPT_1118",
+   "type": "text",
+   "text": "**E_SA2_OPT_1118** · experiment\n\nsa2_opt restart rs=8 (seed=1) + 10 polish rounds drove bad pairs 49 -> 13 -> 4 -> 2 -> 0, producing G_14_3_N1118.edges (N=1118, E=7809, sha256 cb0a027e)",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "R_G_14_3_N1118",
+   "type": "text",
+   "text": "**R_G_14_3_N1118** · result\n\nCONFIRMED_SOLUTION: G_14_3_N1118.edges (N=1118, max deg 14, diam 3), 3-skeptic panel pass, packaged in outbox/2026-10-18-mizopl-cb0a027e",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q_DD_14_3",
+   "toNode": "H_SPARE_DEG_SA",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "H_SPARE_DEG_SA",
+   "toNode": "E_SA2_OPT_1118",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e2",
+   "fromNode": "E_SA2_OPT_1118",
+   "toNode": "R_G_14_3_N1118",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

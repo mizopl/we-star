@@ -1,0 +1,142 @@
+{
+ "nodes": [
+  {
+   "id": "H_forced_structure_p2_L1_L5_dual_lrat",
+   "type": "text",
+   "text": "**H_forced_structure_p2_L1_L5_dual_lrat** · hypothesis\n\nDual-encoded Sinz+Totalizer Pure-RUP LRAT certificates for all 5 local structural lemmas L1-L5",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_prime_order_p11_p3fix0_frob21_p5t4_p2fix11",
+   "type": "text",
+   "text": "**H_prime_order_p11_p3fix0_frob21_p5t4_p2fix11** · hypothesis\n\nDual-encoded Pure-RUP LRAT exclusions for p=11, p=3(fix0), Frob(21), p=5(t=4), p=2(fix11)",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_edge_level_cnf_p5t1_p7fix1_direct",
+   "type": "text",
+   "text": "✗ **H_edge_level_cnf_p5t1_p7fix1_direct** · hypothesis\n\nDirect edge-orbit CNF (498-702 primary vars) with partial R4/CEGAR solves p5_t1 and p7_fix1 within 30s\n\n*why dead:* [L-C9G-003=0] Edge-level CDCL times out (>30s) rediscovering quotient degree sums; requires M2 pivot to Orbit-Valency Matrix B",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H_m2_pivot_orbit_matrix_B_p7_fix1",
+   "type": "text",
+   "text": "**H_m2_pivot_orbit_matrix_B_p7_fix1** · hypothesis\n\nM2 Pivot: 12x12 Orbit-Valency Matrix B decomposition [M|Q; Q^T|H] + Cauchy bound proves UNSAT for p7_fix1 with 0-RAT LRAT",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_m2_pivot_spectral_trace_p5_t1",
+   "type": "text",
+   "text": "**H_m2_pivot_spectral_trace_p5_t1** · hypothesis\n\nSubconstituent col(C)+ker(C^T) spectral trace Tr(B)=8 vs fixed-orbit R3/R4 proves UNSAT for p5_t1 with 0-RAT LRAT",
+   "x": 1680,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_p3_18block_and_p2_involution_trace_mod7",
+   "type": "text",
+   "text": "**H_p3_18block_and_p2_involution_trace_mod7** · hypothesis\n\n18-block S2^2xS3^4rtimes(D4xZ2) reduction for p3_t2..t4 and mod-7 spectral trace slicing 8a+3b+4k2=Tr(B) (mod 7) for p=2 involutions",
+   "x": 2100,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_p2_c1_trace_window_and_full_18case_lrat_suite",
+   "type": "text",
+   "text": "**H_p2_c1_trace_window_and_full_18case_lrat_suite** · hypothesis\n\nCertify p2_a1_b4_c1 via unique trace window Tr(B)=9 in both Sinz and Totalizer (<1s) and assemble the 18-case dual-encoded 0-RAT LRAT exclusion suite (36 proofs: p7_fix1, p5_t1, p3_t1, frob21, and 14 p=2 profiles) with all LRAT chunks <750 KB",
+   "x": 2520,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_claim_and_outbox_46proof_package_verification",
+   "type": "text",
+   "text": "**H_claim_and_outbox_46proof_package_verification** · hypothesis\n\nAssemble 23-theorem (46-proof) claim/ and outbox/ package, pass standalone verify.py, check_run.py, 3-skeptic panel, and outreach auditor",
+   "x": 2940,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "H_forced_structure_p2_L1_L5_dual_lrat",
+   "toNode": "H_prime_order_p11_p3fix0_frob21_p5t4_p2fix11",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "H_prime_order_p11_p3fix0_frob21_p5t4_p2fix11",
+   "toNode": "H_edge_level_cnf_p5t1_p7fix1_direct",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e2",
+   "fromNode": "H_edge_level_cnf_p5t1_p7fix1_direct",
+   "toNode": "H_m2_pivot_orbit_matrix_B_p7_fix1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  },
+  {
+   "id": "e3",
+   "fromNode": "H_m2_pivot_orbit_matrix_B_p7_fix1",
+   "toNode": "H_m2_pivot_spectral_trace_p5_t1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e4",
+   "fromNode": "H_m2_pivot_spectral_trace_p5_t1",
+   "toNode": "H_p3_18block_and_p2_involution_trace_mod7",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e5",
+   "fromNode": "H_p3_18block_and_p2_involution_trace_mod7",
+   "toNode": "H_p2_c1_trace_window_and_full_18case_lrat_suite",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e6",
+   "fromNode": "H_p2_c1_trace_window_and_full_18case_lrat_suite",
+   "toNode": "H_claim_and_outbox_46proof_package_verification",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

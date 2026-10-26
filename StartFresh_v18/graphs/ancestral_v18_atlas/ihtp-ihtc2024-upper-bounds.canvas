@@ -1,0 +1,124 @@
+{
+ "nodes": [
+  {
+   "id": "Q0",
+   "type": "text",
+   "text": "**Q0** · question\n\nCan CLSS seam surgery strictly lower the live best known cost on >=1 of the 60 IHTC-2024 instances?",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "H1",
+   "type": "text",
+   "text": "**H1** · hypothesis\n\nExact Global NRA MILP (HiGHS) on published patient schedules",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H2",
+   "type": "text",
+   "text": "**H2** · hypothesis\n\nCoupled PAS+SCP+NRA Seam Surgery (Patient Room/Day/OT moves + Exact NRA MILP)",
+   "x": 420,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H3",
+   "type": "text",
+   "text": "✗ **H3** · hypothesis\n\nCross-pollination between competition sol_XX.json and post-competition IHTP/sol_XX.json\n\n*why dead:* Unneeded: direct CLSS Patient-Stay Nurse Consolidation + Coupled Seam Surgery already beat 31/60 instances",
+   "x": 420,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "E1",
+   "type": "text",
+   "text": "**E1** · experiment\n\nsolve_nra_milp.py cold-start global MILP on i01..i09: confirmed i01,i02,i03,i06 already optimal on NRA; larger instances need subset MILP or O(1) incremental seam surgery",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "E2",
+   "type": "text",
+   "text": "**E2** · experiment\n\nseam_surgery_ihtp.cc v2 + run_60_benchmark.py (seed=42, nra=1.5s, coupled=1.0s): strictly improved 31/60 instances (16 public i, 15 hidden m) with 0 violations in IHTP_Validator",
+   "x": 840,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "R1",
+   "type": "text",
+   "text": "**R1** · result\n\n31/60 IHTC-2024 instances strictly improved with 0 violations (16 public i, 15 hidden m); primary claim i27 lowered from 50,976 to 50,063 (-913 points)",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q0",
+   "toNode": "H1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "Q0",
+   "toNode": "H2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e2",
+   "fromNode": "Q0",
+   "toNode": "H3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e3",
+   "fromNode": "H1",
+   "toNode": "E1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e4",
+   "fromNode": "H2",
+   "toNode": "E2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e5",
+   "fromNode": "E2",
+   "toNode": "R1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

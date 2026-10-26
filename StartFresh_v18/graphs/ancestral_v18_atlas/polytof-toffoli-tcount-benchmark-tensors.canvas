@@ -1,0 +1,15 @@
+{
+ "nodes": [
+  {
+   "id": "L-PTTF-001",
+   "type": "text",
+   "text": "**L-PTTF-001** · hypothesis\n\nApplying Law M7 (expanding the Stage-1 CP solution fiber via field automorphisms, evaluation-point gauges, and FGS pool generation, then running Stage-2 FastTODD waring with beam width b >= 8 across the fiber) will strictly improve Waring (T-count) and/or CP (Toffoli-count) below the live ZIB-IOL/polytof docs/tensors.md table on >= 3 benchmark tensors, while completing the 88-tensor p3 audit.",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": []
+}

@@ -1,0 +1,20 @@
+Execute one V3R1T4S run in ~/v3r1t4s (PROOFER shell v13 — Antigravity / Gemini).
+
+First read, in this order:
+1. ~/v3r1t4s/repo/AGENTS.md
+2. ~/v3r1t4s/repo/kit/RULES.md
+3. ~/v3r1t4s/repo/kit/POLICY.md
+4. ~/v3r1t4s/repo/kit/RUN.md
+5. ~/v3r1t4s/proofer/PROOFER.md
+6. ~/v3r1t4s/CHARTER.md, ~/v3r1t4s/settings.md, ~/v3r1t4s/LOG.md, ~/v3r1t4s/proofer/wiki/meta/beliefs.md
+7. ~/v3r1t4s/logs/preflight.txt (K4 preflight output from before this session started)
+
+Then run Steps 1-8 of kit/RUN.md layered with PROOFER v13:
+- Step 1 (preflight + harvest): read logs/preflight.txt first. Check `PROOFER_HOME=~/v3r1t4s/proofer /opt/homebrew/bin/python3 ~/v3r1t4s/proofer/scripts/jobs.py list` for any completed or running jobs in ~/v3r1t4s/jobs/; harvest finished results into the dossier and reasoning graph before choosing work, and never duplicate a running or adopted job (F22 + K2). Always use `/opt/homebrew/bin/python3` (`/usr/bin/python3` is broken on this Mac, X9). Never leave >500 loose files in `runs/*/data/` (pack bulk reference tables into `.tar.gz`, X8).
+- Step 2 (pick or continue): consult the target's reasoning graph (`PROOFER_HOME=~/v3r1t4s/proofer /opt/homebrew/bin/python3 ~/v3r1t4s/proofer/scripts/rgraph.py show TARGET`) so dead ends are never repeated; if picking a new quarry or lenses, use verbalized sampling (`vs_sample.py`) and log a pre-prediction (`postdict.py predict ...`) before acting.
+- Step 3 (preregister): freeze PREREG.md before any attack; log a prediction per lens (`--pred PRED_ID` on the hypothesis node in rgraph).
+- Step 4 (attack — SWARM + JOB QUEUE): the main session is the commander. Spawn one fresh subagent per lens in parallel (`invoke_subagent` or `~/.local/bin/agy -p ...`), passing only BRIEF.md, PREREG.md, its own attempts/LENS/ path, and the rgraph dead-ends list. Wait for all subagents before ending the turn. Any compute expected to take >15 min goes to `jobs.py submit NAME --cwd ABS_PATH --max-sec CAP -- CMD` (the 5-min launchd ticker runs it with a hard cap); do not block the session on multi-hour compute. Every dead line gets `rgraph.py kill TARGET KEY "reusable lesson"`.
+- Step 5-7 (break -> 3 fresh-context skeptic subagents in parallel [REPRODUCE, NOVELTY, CRITERION] seeing ONLY claim/ -> gate): only if a result survives Step 5.
+- Step 8 (postdiction -> report & stop): DO NOT call `postdict.py resolve` inside the run (`PROOFER_ROLE=run` blocks it — K3: the commander or a fresh skeptic resolves bets after the run so the run cannot grade its own homework). Write what happened in `runs/TS/POSTDICTION.md` (with `POSTDICTION` tags; never use the word CONFIRMED anywhere in POSTDICTION.md), run `/opt/homebrew/bin/python3 ~/v3r1t4s/repo/kit/check_run.py ~/v3r1t4s` (or `--setup` if dry run) until `CHECK_RUN: PASS`, write REPORT.md, append one line to LOG.md, and stop.
+
+Hard limits: no outward git push, PR, email, or upload; never touch files outside ~/v3r1t4s and ~/Desktop/PROOFER.

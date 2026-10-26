@@ -1,0 +1,5 @@
+{"ev": "node", "key": "H_cadd_free_ensemble_and_maf_shortcut", "type": "hypothesis", "text": "CADD-free open non-human ensemble beats 0.712185 baseline and exposes Freq100bp MAF shortcut in mendelian_traits.smk", "by": "PROOFER-Rescue", "run": "", "pred": "L-TMZS-001", "ts": "2026-10-26T12:37Z"}
+{"ev": "close", "key": "H_cadd_free_ensemble_and_maf_shortcut", "why": "[L-TMZS-001=1] CADD-free ensemble achieved 0.789624 (+0.077439) and proved Freq100bp alone gets 0.630563", "ts": "2026-10-26T12:37Z"}
+{"ev": "node", "key": "H_complex_traits_66x_norm_dilution", "type": "hypothesis", "text": "Isotropic L2 Ridge on CADD+Borzoi suffers >50:1 norm dilution on complex traits", "by": "PROOFER-Rescue", "run": "", "pred": "L-TMZS-002", "ts": "2026-10-26T12:37Z"}
+{"ev": "close", "key": "H_complex_traits_66x_norm_dilution", "why": "[L-TMZS-002=1] Exact 66.76:1 L2 norm dilution proven; block-standardized Ridge beats all baselines across 9/9 folds", "ts": "2026-10-26T12:37Z"}
+{"ev": "edge", "src": "H_cadd_free_ensemble_and_maf_shortcut", "dst": "H_complex_traits_66x_norm_dilution", "rel": "derives", "ts": "2026-10-26T12:59Z"}

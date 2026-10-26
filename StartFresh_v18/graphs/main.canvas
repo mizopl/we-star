@@ -1,0 +1,232 @@
+{
+ "nodes": [
+  {
+   "id": "F_ANCESTRAL_ATLAS",
+   "type": "text",
+   "text": "**F_ANCESTRAL_ATLAS** · fact\n\nAncestral Atlas (Parent PROOFER v18): 30 stitched reasoning graphs (.jsonl & .canvas, 337 nodes, 0 orphans) in graphs/ancestral_v18_atlas/ + 169 resolved calibration bets (Brier 0.1556) + 29 solved V3R1T4S problems (39 packages across 18/18 categories) + Terence Tao [M2026] merge",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "Q_META",
+   "type": "text",
+   "text": "**Q_META** · question\n\nRoot Meta & Oracle Seed (v18): How do we combine Stage-0.5 Spec Forensics (Law M9), the Sub-Second Exact Oracle (K9), Nine Breakthrough Laws (M1-M9), and Code-First Evolution (H-EVO-01/02/06) to solve the new domain targets in this instance?",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "T_ORACLE_GATE",
+   "type": "text",
+   "text": "**T_ORACLE_GATE** · tool\n\nStage I Sub-Second Exact Oracle Gate (< 5s deterministic verifier + 1 positive baseline test + 1 negative shuffled/corrupted test + Stage-0.5 Law M9 spec/metric check + X14 PDF-to-txt guard; mandatory before any search)",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "0"
+  },
+  {
+   "id": "M1_SEAM_SURGERY",
+   "type": "text",
+   "text": "**M1_SEAM_SURGERY** · hypothesis\n\nLaw M1 (Inter-Regime Seam Surgery, ~95% win rate): Compose two exact sub-solutions with relaxed boundary glue, freeze interiors, and apply exact MILP/SAT/prune+merge/basis surgery strictly on the narrow boundary seam.",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M2_FAST_EXACT_ORACLE",
+   "type": "text",
+   "text": "**M2_FAST_EXACT_ORACLE** · hypothesis\n\nLaw M2 (Algebraic Cost-Space Transform + MTF & Two-Miss Pivot): Rewrite evaluation via Fast Zeta/SOS-DP, spectral/Cayley basis, Orbit-Valency Matrix B, or rank-1 updates + Move-To-Front killer constraints; pivot representation after 2 consecutive 0 micro-bets.",
+   "x": 1260,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M3_CORANK_SLACK_ESCAPE",
+   "type": "text",
+   "text": "**M3_CORANK_SLACK_ESCAPE** · hypothesis\n\nLaw M3 (Corank-1 & Slack-Slot Escape): Escape flat plateaus where corank(M)>=2 forces adj(M)=0 by minimizing kernel rank deficiency (Tau-Core) or injecting structure into unused degree-slack slots.",
+   "x": 1260,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M4_SMALL_DATA_LOO_KRR",
+   "type": "text",
+   "text": "**M4_SMALL_DATA_LOO_KRR** · hypothesis\n\nLaw M4 (Small-Data Physical Priors & H-EVO-01 Cap): Combine exact domain priors, Hollow LOO graph resolvents, and directional MMP cliff surgery with Analytical LOO-KRR; cap initial/pivot/conjunction/subclaim p <= 0.65.",
+   "x": 1260,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M5_REVERSE_BACKPROJ_NULLS",
+   "type": "text",
+   "text": "**M5_REVERSE_BACKPROJ_NULLS** · hypothesis\n\nLaw M5 (Reverse Back-Projection & Null-Control Gate): Invert archival queries gated by 100% known-object calibration and >=200-400 shuffled/synthetic negative controls (>=5 sigma).",
+   "x": 1260,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M6_THREE_RESTART_FLOOR",
+   "type": "text",
+   "text": "**M6_THREE_RESTART_FLOOR** · fact\n\nLaw M6 (Three-Restart Structural Floor Guard): Whenever >=3 independent random restarts halt at the exact same non-zero error floor, STOP brute-forcing immediately — prove the underlying No-Go/Parity Theorem and switch symmetry groups.",
+   "x": 1260,
+   "y": 1100,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "M7_INTERFACE_DUAL_PINGPONG",
+   "type": "text",
+   "text": "**M7_INTERFACE_DUAL_PINGPONG** · hypothesis\n\nLaw M7 (Joint Interface Group G_12, Fiber Diversity & Primal-Dual Ping-Pong W*/W^T): Optimize across full joint interface group G_12, scan the tied Stage-1 solution fiber, alternate primal<->dual with signed cancellation, and split single residual defects.",
+   "x": 1260,
+   "y": 1320,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M8_EBG_RMC_SPLIT_HYGIENE",
+   "type": "text",
+   "text": "**M8_EBG_RMC_SPLIT_HYGIENE** · hypothesis\n\nLaw M8 (Surrogate Synthesis, EBG+RMC Symbolic Quotienting & Split Hygiene): On flat 0/1 landscapes build a Goodhart-proof surrogate or apply Explanation-Based Generalization + Regular Model Checking finite-state quotienting; correct Tobit censoring & L2 block dilution.",
+   "x": 1260,
+   "y": 1540,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M9_SPEC_METRIC_FALSIFICATION",
+   "type": "text",
+   "text": "**M9_SPEC_METRIC_FALSIFICATION** · hypothesis\n\nLaw M9 (Specification, Metric & Reference-Paper Falsification): Audit every benchmark harness and reference paper at Stage 0.5 for Simpson's paradox, non-causal matching shortcuts, silent tensor truncation, or lemma misprints; solve both literal and de-biased formulations.",
+   "x": 1260,
+   "y": 1760,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "T_SLEEP_FLUSH_EVOLUTION",
+   "type": "text",
+   "text": "**T_SLEEP_FLUSH_EVOLUTION** · tool\n\nCode-First Evolution Suite (H-EVO-01/02/06 in micro_bet.py, postdict.py, sleep_flush.py): Auto-wires --parent lineage (0 orphans), tags 0-kills by obstruction, caps conjunction/subclaim p<=0.65, closes dangling nodes (K16), and extracts binary PDFs to .txt (X14).",
+   "x": 840,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "0"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "F_ANCESTRAL_ATLAS",
+   "toNode": "Q_META",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "Q_META",
+   "toNode": "T_ORACLE_GATE",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "blocks"
+  },
+  {
+   "id": "e2",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M1_SEAM_SURGERY",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e3",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M2_FAST_EXACT_ORACLE",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e4",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M3_CORANK_SLACK_ESCAPE",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e5",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M4_SMALL_DATA_LOO_KRR",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e6",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M5_REVERSE_BACKPROJ_NULLS",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e7",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M6_THREE_RESTART_FLOOR",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "blocks"
+  },
+  {
+   "id": "e8",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M7_INTERFACE_DUAL_PINGPONG",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e9",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M8_EBG_RMC_SPLIT_HYGIENE",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e10",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "M9_SPEC_METRIC_FALSIFICATION",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e11",
+   "fromNode": "Q_META",
+   "toNode": "T_SLEEP_FLUSH_EVOLUTION",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

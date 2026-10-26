@@ -1,0 +1,88 @@
+{
+ "nodes": [
+  {
+   "id": "Q_polaris_moleculeace",
+   "type": "text",
+   "text": "**Q_polaris_moleculeace** · question\n\nCan a deterministic InChIKey[:14]-disjoint CLSS kernel + MMP seam surgery recipe reduce test MSE by >=5% over the live Polaris leaderboard with >=95% 10,000-resample bootstrap win rate on MoleculeACE activity-cliff benchmarks?",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "H_multiscale_ruzicka_mmp",
+   "type": "text",
+   "text": "**H_multiscale_ruzicka_mmp** · hypothesis\n\nMulti-scale Chiral/Achiral Morgan+FCFP+AtomPair+Torsion+RDKit+MACCS+ErG+RankGauss Ruzicka kernels + LOO KRR + Directional MMP Seam Surgery beats live Polaris and all 24 paper baselines",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "E_30_benchmark_sweep",
+   "type": "text",
+   "text": "**E_30_benchmark_sweep** · experiment\n\nAudit all 30 Polaris MoleculeACE benchmarks and run OOF-stacked CLSS recipe across all 30 official train/test splits (run_clss_moleculeace.py)",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "R_chembl287_and_29_wins",
+   "type": "text",
+   "text": "**R_chembl287_and_29_wins** · result\n\n29/30 Polaris MSE wins (21/30 passing >=5% & >=95% bootstrap), headlined by CHEMBL287_Ki MSE 0.408023 vs 0.503212 (-18.91% vs Polaris, -20.01% vs paper, 100.0% paired / 98.0% scalar bootstrap, cliff MSE -18.85%)",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "R_moleculeace_panel_pass",
+   "type": "text",
+   "text": "**R_moleculeace_panel_pass** · result\n\nCONFIRMED_SOLUTION + p1 + p2 (outbox/2026-10-19-mizopl-05d8ae3a): all 3 fresh-context skeptics (REPRODUCE, NOVELTY, CRITERION) pass: true, CHECK_RUN: PASS",
+   "x": 1680,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q_polaris_moleculeace",
+   "toNode": "H_multiscale_ruzicka_mmp",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "H_multiscale_ruzicka_mmp",
+   "toNode": "E_30_benchmark_sweep",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "tests"
+  },
+  {
+   "id": "e2",
+   "fromNode": "E_30_benchmark_sweep",
+   "toNode": "R_chembl287_and_29_wins",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e3",
+   "fromNode": "R_chembl287_and_29_wins",
+   "toNode": "R_moleculeace_panel_pass",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

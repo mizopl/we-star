@@ -1,0 +1,3 @@
+ts	kind	id	target	node_key	p	outcome	text
+2026-10-26T12:37Z	predict	L-MG5-001	moore-graph-57	H_galois_brauer_275_175_exclusion	0.60		Abelian Orbit Chord Lemma + Equivariant Galois-Brauer Rank Obstruction excludes |Aut(G)| in {275, 175}
+2026-10-26T12:37Z	resolve	L-MG5-001	moore-graph-57	H_galois_brauer_275_175_exclusion	0.60	1	Unconditionally excluded |Aut(G)| in {275, 175} and corrected Makhnev-Paduchikh Lemma 2.9(2)(i) 105u+35 -> 105u+70
