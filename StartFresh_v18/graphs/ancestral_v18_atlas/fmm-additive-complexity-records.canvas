@@ -3,7 +3,7 @@
   {
    "id": "H0110_L1_flat_beam_lns_cse_sieve",
    "type": "text",
-   "text": "✗ **H0110_L1_flat_beam_lns_cse_sieve** · hypothesis\n\nWielowątkowy reduktor CSE w C++ (clss_cse_beam_reducer.cpp) łączący reprezentację płaskich tablic ze strategiami Greedy-Potential (gp), Beam-Lookahead, częściową reinicjalizacją LNS (destroy-and-repair zmiennych świeżych) oraz przeszukiwaniem alternatywnych schematów ZT z repozytorium Perminova przebije rekordy cr dla >= 3 formatów o max(n,m,p) <= 8 (pełna wygrana + p3).\n\n*why dead:* [L-FACR-001=0] Czysto syntaktyczne CSE (rozłączne podzbiory bez kasowania algebraicznego) zatrzymuje się na cr=391 dla 4x5x6 (wobec 380 w ternary_addition_reducer i 345 w plikach z 19.10.2026), ponieważ rekordowe pliki z commitu 048b64987b wykorzystują kasowanie algebraiczne (fresh_cancellations=10,16,5 i el_cancellations=9,11,11 w DAG-u zmiennych świeżych).",
+   "text": "✗ **H0110_L1_flat_beam_lns_cse_sieve** · hypothesis\n\nMulti-threaded C++ CSE reducer (clss_cse_beam_reducer.cpp) combining flat-array representation with Greedy-Potential (gp), Beam-Lookahead, partial LNS destroy-and-repair of fresh variables, and search over alternative ZT schemes from Perminov repository beats cr records on >= 3 formats with max(n,m,p) <= 8 (full win + p3).\n\n*why dead:* [L-FACR-001=0] Purely syntactic CSE (disjoint subsets without algebraic cancellation) stalls at cr=391 on 4x5x6 (vs 380 in ternary_addition_reducer and 345 in 2026-10-19 files) because record files from commit 048b64987b exploit algebraic cancellation (fresh_cancellations=10,16,5 and el_cancellations=9,11,11 in the fresh-variable DAG).",
    "x": 0,
    "y": 0,
    "width": 380,
@@ -13,7 +13,7 @@
   {
    "id": "H0110_L2_dag_vector_cancellation_and_fv_opt",
    "type": "text",
-   "text": "**H0110_L2_dag_vector_cancellation_and_fv_opt** · hypothesis\n\nPost-optymalizator DAG-u z kasowaniem algebraicznym (skracanie wyrażeń resztowych u,v,w przez tablice skrótów 64-bitowych sum/różnic wektorów z puli V_pool, kompozycja niezależnych bloków u/v/w między plikami tej samej macierzy oraz redukcja z kasowaniem Boyara-Peralty na formatach _fv i wszystkich 49 formatach exact-SOTA max_dim<=8) obniży cr poniżej rekordu live dla >= 3 formatów.",
+   "text": "**H0110_L2_dag_vector_cancellation_and_fv_opt** · hypothesis\n\nAlgebraic-cancellation DAG post-optimizer (residual u,v,w reduction via 64-bit sum/difference hash tables over V_pool, cross-file independent u/v/w block composition, and Boyar-Peralta cancellation on _fv and all 49 exact-SOTA max_dim<=8 formats) lowers cr below the live record on >= 3 formats.",
    "x": 420,
    "y": 0,
    "width": 380,
