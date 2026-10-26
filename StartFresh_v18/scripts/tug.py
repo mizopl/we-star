@@ -35,9 +35,24 @@ from pathlib import Path
 HOME = Path(os.environ.get("PROOFER_HOME", Path(__file__).resolve().parent.parent))
 ROOT = HOME / "tug"
 AGENT = Path(os.environ.get("TUG_AGENT", HOME / ".agents/agents/tug-advocate.md"))
+if not AGENT.exists() and (HOME / ".claude/agents/tug-advocate.md").exists():
+    AGENT = HOME / ".claude/agents/tug-advocate.md"
 AGY = os.environ.get("AGY_BIN", str(Path.home() / ".local/bin/agy"))
+CLAUDE = os.environ.get("CLAUDE_BIN", "claude")
 PUBLIC_MAX = 1200
 EVIDENCE_MAX = 24000
+
+
+def _use_claude(model):
+    h = os.environ.get("TUG_HARNESS", "").lower()
+    if h in ("claude", "agy"):
+        return h == "claude"
+    if model and (model.lower() in ("haiku", "sonnet", "opus") or model.lower().startswith("claude")):
+        return True
+    conf = HOME / "scripts/agent.conf"
+    if conf.exists() and "claude" in conf.read_text(encoding="utf-8", errors="ignore"):
+        return True
+    return not Path(AGY).exists()
 
 
 def now():
@@ -59,17 +74,20 @@ def sim(a, b):
 
 
 def call(prompt, model):
-    """One advocate turn via Antigravity CLI (`agy -p --agent tug-advocate`). Usage limits stop the gate
-    (resume later); a safety-filter false positive or another API error is retried once, then retried on
-    FALLBACK_MODEL (the switch is recorded in the turn)."""
-    tries = [model, model, os.environ.get("TUG_FALLBACK_MODEL", "gemini-3.8-flash-high")]
+    """One advocate turn via Antigravity CLI (`agy -p --agent tug-advocate`) or Claude Code CLI (`claude -p`).
+    Automatically selects Claude CLI when `--model haiku|sonnet|opus|claude-*` or `TUG_HARNESS=claude` is set."""
+    use_cl = _use_claude(model)
+    default_fb = "sonnet" if use_cl else "gemini-3.8-flash-high"
+    tries = [model, model, os.environ.get("TUG_FALLBACK_MODEL", default_fb)]
     err = ""
     ROOT.mkdir(parents=True, exist_ok=True)
     for m in tries:
-        # --agent tug-advocate keeps Antigravity's default context and appends the text-only advocate definition
-        # (tools: []), avoiding X7 safety-filter refusals on cipher-topic gates while saving tool-schema tokens.
-        cmd = [AGY, "--agent", "tug-advocate", "--disable-slash-commands", "-p", prompt,
-               "--print-timeout", "0s", "--output-format", "json"] + (["--model", m] if m else [])
+        if _use_claude(m) or use_cl:
+            cmd = [CLAUDE, "-p", prompt, "--append-system-prompt", system_prompt(), "--tools", "",
+                   "--no-session-persistence", "--output-format", "json"] + (["--model", m] if m else [])
+        else:
+            cmd = [AGY, "--agent", "tug-advocate", "--disable-slash-commands", "-p", prompt,
+                   "--print-timeout", "0s", "--output-format", "json"] + (["--model", m] if m else [])
         r = subprocess.run(cmd, capture_output=True, text=True, timeout=900, cwd=str(HOME.parent))
         try:
             # Find the trailing JSON object line in stdout in case CLI warnings precede it

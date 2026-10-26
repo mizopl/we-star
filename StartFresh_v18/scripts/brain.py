@@ -356,7 +356,7 @@ def cmd_audit(_args):
         print("Worker Thread           : none found")
     try:
         import subprocess
-        out = subprocess.check_output(["pgrep", "-fl", "agy -p"], text=True, stderr=subprocess.DEVNULL).strip()
+        out = subprocess.check_output(["pgrep", "-fl", "agy -p|claude"], text=True, stderr=subprocess.DEVNULL).strip()
         if out:
             pids = [ln.split()[0] for ln in out.splitlines() if "V3R1T4S" in ln or "RUN_PROMPT" in ln]
             if pids:
