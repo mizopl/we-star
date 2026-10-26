@@ -142,7 +142,41 @@ def report():
         out.append(f"| {b/5:.1f}–{(b+1)/5:.1f} | {len(xs)} | {mp:.2f} | {hr:.2f} | {verdict} |")
     out += ["", "## Open predictions", ""]
     out += [f"- `{p['id']}` ({p['scope']}, p={float(p['p']):.2f}) {p['text']}" for p in open_] or ["_(none)_"]
+
+    # H-EVO-06: Aggregate federated per-target micro-bet ledgers (memory/local_bets/*.tsv)
+    local_dir = KB / "memory" / "local_bets"
+    local_files = sorted(local_dir.glob("*.tsv")) if local_dir.exists() else []
+    if local_files:
+        local_all = []
+        local_rows_md = []
+        for lf in local_files:
+            with open(lf, newline="", encoding="utf-8") as f:
+                lrows = list(csv.DictReader(f, delimiter="\t"))
+            lpreds = {r["id"]: r for r in lrows if r.get("kind") == "predict"}
+            lres = [(float(lpreds[r["id"]]["p"]), int(r["outcome"])) for r in lrows if r.get("kind") == "resolve" and r.get("id") in lpreds]
+            lopen = len(lpreds) - len(lres)
+            if lres or lopen:
+                lb = sum((lp - lo) ** 2 for lp, lo in lres) / len(lres) if lres else float("nan")
+                lw = sum(lo for _, lo in lres)
+                local_all.extend(lres)
+                local_rows_md.append(f"| `{lf.stem}` | {len(lres)} ({lw}W/{len(lres)-lw}L) | {lopen} | {lb:.3f} |")
+        if local_all:
+            lb_tot = sum((lp - lo) ** 2 for lp, lo in local_all) / len(local_all)
+            comb_pairs = [(float(p["p"]), o) for p, o in res] + local_all
+            comb_brier = sum((cp - co) ** 2 for cp, co in comb_pairs) / len(comb_pairs)
+            out += [
+                "",
+                f"## Federated Micro-Bets (`memory/local_bets/*.tsv` — H-EVO-06)",
+                "",
+                f"*Local total:* resolved {len(local_all)} · Local Brier {lb_tot:.3f} · **Combined Global+Local ({len(comb_pairs)} bets) Brier {comb_brier:.4f}**",
+                "",
+                "| Target | Resolved (W/L) | Open | Local Brier |",
+                "|---|---|---|---|",
+                *local_rows_md,
+            ]
+
     out.append("")
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(out), encoding="utf-8")
     print(f"wrote {REPORT.relative_to(KB)}: resolved {len(res)}, open {len(open_)}, brier {brier(res):.3f}")
 

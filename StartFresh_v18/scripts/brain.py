@@ -15,15 +15,16 @@ import pathlib
 import re
 import sys
 
-LAB = pathlib.Path(os.environ.get("V3R1T4S_LAB", "."))
-VAULT = pathlib.Path(os.environ.get("PROOFER_VAULT", "."))
+ROOT_DIR = pathlib.Path(__file__).resolve().parent.parent
+LAB = pathlib.Path(os.environ.get("V3R1T4S_LAB", ROOT_DIR))
+VAULT = pathlib.Path(os.environ.get("PROOFER_VAULT", ROOT_DIR))
 BANK_JSON = VAULT / ".raw/V3R1T4S/bank/targets.json"
 TROPHY_MD = VAULT / ".raw/V3R1T4S/TROPHY_CASE.md"
-PRED_TSV = LAB / "proofer/memory/predictions.tsv"
-DECISIONS_TSV = LAB / "proofer/memory/decisions.tsv"
-COSTS_TSV = LAB / "proofer/memory/costs.tsv"
-LOG_MD = LAB / "LOG.md"
-GRAPHS_DIR = LAB / "proofer/graphs"
+PRED_TSV = (VAULT / "memory/predictions.tsv") if (VAULT / "memory/predictions.tsv").exists() else (LAB / "proofer/memory/predictions.tsv")
+DECISIONS_TSV = (VAULT / "memory/decisions.tsv") if (VAULT / "memory").exists() else (LAB / "proofer/memory/decisions.tsv")
+COSTS_TSV = (VAULT / "memory/costs.tsv") if (VAULT / "memory").exists() else (LAB / "proofer/memory/costs.tsv")
+LOG_MD = (VAULT / "wiki/log.md") if (VAULT / "wiki/log.md").exists() else (LAB / "LOG.md")
+GRAPHS_DIR = (VAULT / "graphs") if (VAULT / "graphs").exists() else (LAB / "proofer/graphs")
 OUTBOX_DIR = LAB / "outbox"
 ARCHIVE_DIR = LAB / "archive"
 
@@ -196,13 +197,16 @@ def cmd_status(_args):
     outlet = compute_outlet_state()
     telem = compute_telemetry()
 
-    with open(BANK_JSON, encoding="utf-8") as f:
-        bdata = json.load(f)
-    targets = bdata["targets"] if isinstance(bdata, dict) and "targets" in bdata else bdata
+    if BANK_JSON.exists():
+        with open(BANK_JSON, encoding="utf-8") as f:
+            bdata = json.load(f)
+        targets = bdata["targets"] if isinstance(bdata, dict) and "targets" in bdata else bdata
+    else:
+        targets = []
     t_by_id = {t["id"]: t for t in targets}
     cats_run, targets_run = load_logged_categories(t_by_id)
 
-    print("=== BRAIN v2 & CLSS AUTORESEARCH STATUS (v14) ===")
+    print("=== BRAIN v2 & CLSS AUTORESEARCH STATUS (v18) ===")
     print(f"Targets attacked so far : {len(targets_run)} ({', '.join(sorted(targets_run))})")
     print(f"Categories explored     : {len(cats_run)} / 18 ({', '.join(sorted(cats_run))})")
     print(f"Outlet queue (K8)       : {outlet['submitted']} submitted PRs, {len(outlet['unsubmitted'])} unsubmitted in outbox")
@@ -214,9 +218,12 @@ def cmd_status(_args):
 
 def cmd_scan(args):
     ensure_costs_tsv()
-    with open(BANK_JSON, encoding="utf-8") as f:
-        bdata = json.load(f)
-    targets = bdata["targets"] if isinstance(bdata, dict) and "targets" in bdata else bdata
+    if BANK_JSON.exists():
+        with open(BANK_JSON, encoding="utf-8") as f:
+            bdata = json.load(f)
+        targets = bdata["targets"] if isinstance(bdata, dict) and "targets" in bdata else bdata
+    else:
+        targets = []
     t_by_id = {t["id"]: t for t in targets}
     trophy_text = TROPHY_MD.read_text(encoding="utf-8") if TROPHY_MD.exists() else ""
     cats_run, targets_run = load_logged_categories(t_by_id)

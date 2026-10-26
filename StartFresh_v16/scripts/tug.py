@@ -34,7 +34,7 @@ from pathlib import Path
 
 HOME = Path(os.environ.get("PROOFER_HOME", Path(__file__).resolve().parent.parent))
 ROOT = HOME / "tug"
-AGENT = Path(os.environ.get("TUG_AGENT", Path.home() / "Desktop/PROOFER/.agents/agents/tug-advocate.md"))
+AGENT = Path(os.environ.get("TUG_AGENT", HOME / ".agents/agents/tug-advocate.md"))
 AGY = os.environ.get("AGY_BIN", str(Path.home() / ".local/bin/agy"))
 PUBLIC_MAX = 1200
 EVIDENCE_MAX = 24000

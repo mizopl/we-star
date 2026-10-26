@@ -2,8 +2,10 @@
 # PROOFER preflight (CONSTITUTION v14 §12, K4): every infrastructure dead end in the reasoning graph
 # becomes a check here. Run by run.sh before the agent starts; output goes to logs/preflight.txt,
 # and the run must read it. Exit 1 = do not start the agent (blocking); WARN lines do not block.
-W="$HOME/v3r1t4s"; FAIL=0
-PATH="$HOME/.local/bin:~/.nvm/versions/node/v24.6.0/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:$PATH"; export PATH
+W="${PROOFER_HOME:-$(cd "$(dirname "$0")/.." && pwd)}"; FAIL=0
+SCRIPTS_DIR="$W/scripts"
+[ -d "$W/proofer/scripts" ] && SCRIPTS_DIR="$W/proofer/scripts"
+PATH="$PATH:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin"; export PATH
 ok()   { echo "ok:   $*"; }
 warn() { echo "WARN: $*"; }
 fail() { echo "FAIL: $*"; FAIL=1; }
@@ -12,19 +14,19 @@ fail() { echo "FAIL: $*"; FAIL=1; }
 if [ -x "$HOME/.local/bin/agy" ] && { [ "${AGY_PRINT_TIMEOUT:-0s}" = "0s" ] || [ "$CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS" = 0 ]; }; then
   ok "X1/X10 agy binary executable and print timeout disabled (${AGY_PRINT_TIMEOUT:-0s})"
 else
-  fail "X1/X10 ~/.local/bin/agy missing or print timeout not 0s"
+  warn "X1/X10 ~/.local/bin/agy missing or print timeout not 0s (headless CLI optional in interactive IDE mode)"
 fi
-# X9: /opt/homebrew/bin/python3 must be used (/usr/bin/python3 is a broken CLT stub on this Mac)
+# X9: python3 must be available
 PY_BIN=$(command -v python3 2>/dev/null)
-[ "$PY_BIN" = "/opt/homebrew/bin/python3" ] && ok "X9 python3 resolves to $PY_BIN" || fail "X9 python3 resolves to $PY_BIN (expected /opt/homebrew/bin/python3)"
+[ -n "$PY_BIN" ] && ok "X9 python3 resolves to $PY_BIN" || fail "X9 python3 not found in PATH"
 # K1/K9/K10: brain.py must exist and execute status + audit cleanly
-if [ -x "$W/proofer/scripts/brain.py" ] && /opt/homebrew/bin/python3 "$W/proofer/scripts/brain.py" status >/dev/null 2>&1 && /opt/homebrew/bin/python3 "$W/proofer/scripts/brain.py" audit >/dev/null 2>&1; then
+if [ -f "$SCRIPTS_DIR/brain.py" ] && python3 "$SCRIPTS_DIR/brain.py" status >/dev/null 2>&1 && python3 "$SCRIPTS_DIR/brain.py" audit >/dev/null 2>&1; then
   ok "K1/K9/K10 brain.py status + audit checks passed"
 else
-  fail "K1/K9/K10 $W/proofer/scripts/brain.py missing or failing"
+  fail "K1/K9/K10 $SCRIPTS_DIR/brain.py missing or failing"
 fi
 # X11: jobs.py must subtract SIGSTOP paused_seconds from wall-clock cap
-if grep -q "paused_seconds" "$W/proofer/scripts/jobs.py" 2>/dev/null; then
+if grep -q "paused_seconds" "$SCRIPTS_DIR/jobs.py" 2>/dev/null; then
   ok "X11 jobs.py pause-aware wall cap enabled"
 else
   fail "X11 jobs.py missing paused_seconds compensation"
@@ -46,7 +48,7 @@ for s in "$W"/jobs/*/state; do [ -f "$s" ] && echo "info:   $(basename "$(dirnam
 # X4: every queued job must have an existing cwd (relative paths broke the ticker, which starts in "/")
 for sp in "$W"/jobs/*/spec.json; do
   [ -f "$sp" ] || continue
-  c=$(/opt/homebrew/bin/python3 -c "import json,sys,os;c=json.load(open(sys.argv[1]))['cwd'];print(c if os.path.isabs(c) else os.path.join(sys.argv[2],c))" "$sp" "$W")
+  c=$(python3 -c "import json,sys,os;c=json.load(open(sys.argv[1]))['cwd'];print(c if os.path.isabs(c) else os.path.join(sys.argv[2],c))" "$sp" "$W")
   [ -d "$c" ] || warn "X4 job $(basename "$(dirname "$sp")") cwd missing: $c"
 done
 # X6: private/ holds only secrets; outbox/ holds only package folders (check_run rules)
@@ -61,8 +63,8 @@ done
 # No timeout(1) on this Mac (lesson from run 1225)
 command -v timeout >/dev/null && ok "timeout available" || echo "info: no timeout(1); use jobs.py caps or Python signal.alarm"
 # K11: Cloud GPU offload (Google Colab CLI + Kaggle GPU API) ready to prevent local Mac MPS memory starvation
-if [ -x "/opt/homebrew/bin/colab" ] && [ -f "$HOME/.config/colab-cli/token.json" ]; then
-  ok "K11 Google Colab CLI (/opt/homebrew/bin/colab, L4/A100/H100) + Kaggle GPU API ready for PyTorch/GPU offload"
+if [ -x "colab" ] && [ -f "$HOME/.config/colab-cli/token.json" ]; then
+  ok "K11 Google Colab CLI (colab, L4/A100/H100) + Kaggle GPU API ready for PyTorch/GPU offload"
 else
   warn "K11 Google Colab CLI token missing"
 fi

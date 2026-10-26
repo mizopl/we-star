@@ -28,7 +28,7 @@ import sys
 import time
 from pathlib import Path
 
-W = Path(os.environ.get("V3R1T4S_WORKDIR", Path.home() / "v3r1t4s"))
+W = Path(os.environ.get("PROOFER_HOME", os.environ.get("V3R1T4S_WORKDIR", Path(__file__).resolve().parent.parent)))
 JOBS = W / "jobs"
 MAX_MEM_GIB = 7.0          # total budget for queued jobs started by the ticker
 MIN_FREE_PCT = 20          # macOS memory_pressure free percentage required to start a job
