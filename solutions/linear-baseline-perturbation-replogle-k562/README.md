@@ -13,7 +13,7 @@
 Trained **strictly on the intra-dataset `train` perturbations** of the published GEARS splits (`sha256` verified) with zero cross-cell-line expression transfer and zero test/val leakage (verified by active test/val expression poisoning `max_poison_diff = 0.0`), our closed-form **Hollow Leave-One-Out Dual-Lens Kernel Regression (`hollow_loo_dual_lens`)** predictor beats both our same-environment re-run of `lpm_selftrained` and the best published method in the paper's Source Data across every criterion:
 
 | Criterion / Split Universe | Metric (`Top-1,000` Genes) | `lpm_selftrained` (Re-run & Published) | Best Published Method in Source Data | **`hollow_loo_dual_lens` (Ours)** | Relative Improvement vs `lpm_selftrained` | Across-Split SD Multiple (`>= 2x` req.) | Status |
-|---|---|---:|---:|---:|---:|---:|---|
+|---\lvert ---\rvert---:|---:|---:|---:|---:|---|
 | **Full Win: `replogle_k562_essential` (`Panel A`, `n = 262`)** | **Mean $L_2$ ($\downarrow$)** | `4.097028` (`SD = 0.013196`) | `4.078658` (`gears`, `SD = 0.064478`) | **`3.320307`** (`SD = 0.024271`) | **`-18.96%`** (`-18.59%` vs `gears`) | **`57.47x` `lpm` SD** (`31.25x` own SD) | **PASS (`>= 5%` & `>= 2x SD`)** |
 | **Full Win: `replogle_k562_essential` (`Panel A`, `n = 262`)** | **Median $L_2$ ($\downarrow$)** | `3.805564` (`3.805557` pub, `SD = 0.011305`) | `3.766328` (`uce`, `SD = 0.015954`) | **`3.044310`** (`SD = 0.058063`) | **`-20.00%`** (`-19.17%` vs `uce`) | **`63.87x` `lpm` SD** (`45.26x` `uce` SD) | **PASS (`>= 5%` & `>= 2x SD`)** |
 | **Full Win: `replogle_k562_essential` (`Panel A`, `n = 262`)** | **Mean Pearson $\Delta$ ($\uparrow$)** | `0.435544` (`SD = 0.024039`) | `0.435544` (`lpm_selftrained`) | **`0.620623`** (`SD = 0.016671`) | **`+42.49%`** (`+0.185079`) | **`7.70x` `lpm` SD** (`11.10x` own SD) | **PASS (`>= 5%` & `>= 2x SD`)** |
@@ -36,7 +36,7 @@ Trained **strictly on the intra-dataset `train` perturbations** of the published
 All discovery, baseline reproduction, ablation testing, and 300-run permutation certification were executed autonomously on a **single thread** of our [`we*`](https://github.com/mizopl/we-star) architecture running on a 16 GB Apple M1 laptop (CPU-only):
 
 | Phase / Benchmark Operation | Hardware | Single-Core CPU Compute Time | Wall-Clock Discovery Time (1 `we*` Thread) |
-|---|---|---:|---:|
+|---\lvert ---\rvert---:|---:|
 | GO IDF + Jaccard Graph Construction (`19,264` genes, `gene2go_all.pkl`) | 1 CPU core (Apple M1) | `7.62 s` | — |
 | `replogle_k562_essential` Full 5-Seed + Panel A/C + Ablation Suite | 1 CPU core (Apple M1) | `24.08 s` | — |
 | `replogle_rpe1_essential` Full 5-Seed + Panel A/C + Ablation Suite | 1 CPU core (Apple M1) | `38.55 s` | — |

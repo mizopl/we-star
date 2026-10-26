@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[cryptocellar-enigma-1941-remaining]] | harvest | 3 | open |
 | [[cryptocellar-truppenschluessel-1941]] | harvest | 3 | open |
 | [[mtc3-hutton-cipher-part-5]] | harvest | 3 | commit-only |

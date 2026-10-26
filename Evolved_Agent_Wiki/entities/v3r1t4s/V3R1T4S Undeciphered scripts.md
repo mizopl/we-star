@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[ebl-fragment-identification]] | harvest | 3 | open |
 | [[indus-temporal-heldout-structure]] | harvest | 3 | open |
 | [[linear-a-morphology-heldout]] | harvest | 3 | open |

@@ -23,7 +23,7 @@ Code, meshes, verification checksums, and results of our First Letters Prize sub
 ## 1. Results & Package Contents (`outputs/`)
 
 | File / Directory | Description |
-|---|---|
+|---\lvert ---\rvert
 | `[SEGMENT_NAME].png` | **Submission image:** ink prediction in yellow (`(255, 235, 120)`) over dimmed CT layer 34 (`0.45 * CT`), with a `1 cm` scale bar, representative letter dimensions (`px` / `mm`), and non-obscuring horizontal row baselines |
 | `[SEGMENT_NAME].json` | **JSON sidecar:** exact pixel/voxel bounding box, physical area (`cm²`), model checkpoint SHA-256 hashes, normalization statistics, and CLI command |
 | `[SEGMENT_NAME].tifxyz/` | **Flattened 3D surface mesh:** `x.tif`, `y.tif`, `z.tif` (float32 3D coordinates in level-0 voxels at 20-voxel grid step; `-1` = invalid node) and `meta.json` (`scale = [0.05, 0.05]`) |
@@ -76,7 +76,7 @@ Each model is evaluated on both the plain render and the `(40, 200)` zero-padded
 ### Step 4 — Z-Score Ensembling & Programmatic Image Composition
 - `ink/scripts/ensemble_maps.py` standardizes each model's output map on valid papyrus pixels (`CT > 0`) and computes the equal-weight 4-model ensemble $u$.
 - `ink/scripts/make_submission_image.py` (`--overlay-style dimmed-ct`) composites the final submission image on top of the fiber-visible CT layer 34 ($d = +1$):
-  $$\text{RGB} = 0.45 \cdot \text{CT}_{\text{grey}} \cdot (1 - \alpha) + (255, 235, 120) \cdot \alpha, \qquad \alpha = 0.9 \cdot \operatorname{clip}\!\left(\frac{u - 0.35}{0.40},\, 0,\, 1\right),$$
+  $$\text{RGB} = 0.45 \cdot \text{CT}_{\text{grey}} \cdot (1 - \alpha) + (255, 235, 120) \cdot \alpha, \qquad \alpha = 0.9 \cdot \mathrm{clip}\!\left(\frac{u - 0.35}{0.40},\, 0,\, 1\right),$$
   and programmatically draws the `1 cm` scale bar, letter dimension callouts, and horizontal row baselines without obscuring any characters.
 
 ---
@@ -103,7 +103,7 @@ To rule out hallucinated letterforms, pareidolia, or training-set memorization, 
 Per the First Letters Prize requirements (*"Run your method on the public input renders/volumes with known ground truth and include the results"*), we validated our exact rendering and 4-model inference pipeline on the credited `PHerc. 343` `w047/w048` region (`πᾶν τὸ γινόμε[νον`, `5641 x 2455 px`, `6.634 cm²` valid papyrus area):
 
 | Held-Out Validation Metric on `PHerc. 343` (`w047/w048`) | Value | Reference / Threshold | Status |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | Mesh concatenation (`concat_w047-w048_R5B2_z9500-11000.tifxyz`) | Bit-identical | `outputs/SHA256SUMS` | **PASS** |
 | Local S3-streamed 66-layer CT render (Layer 34 vs published award CT) | **`r = 0.9999973`** (`MAD = 0.0040/255`) | $\ge 0.99$ | **PASS** |
 | 4-model ensemble ink channel (pooled sidecar normalization) | **`r = 0.968341`** | $\ge 0.90$ | **PASS** |

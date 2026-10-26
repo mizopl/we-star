@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[degree-diameter-table]] | harvest | 3.5 | open |
 | [[cage-upper-bounds]] | harvest | 3 | open |
 | [[rectilinear-crossing-kn]] | harvest | 2.5 | open |

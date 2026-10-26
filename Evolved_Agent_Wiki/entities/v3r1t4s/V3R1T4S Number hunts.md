@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[bb6-holdout-certificates]] | harvest | 2.5 | open |
 | [[abc-high-quality-triples]] | harvest | 2 | open |
 | [[bb33-bb25-cryptid-adjacent]] | harvest | 2 | open |

@@ -15,7 +15,7 @@ BRAIN is the meta-heuristic decision layer above individual runs (`~/v3r1t4s/pro
 ## 1. Key Empirical Observations
 
 | # | Observation | Evidence | Tag |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | O1 | First breakthrough came from **smaller-first (`H-sibling`)** on a sibling sequence with a fast deterministic verifier (`A054759` on the torus, PR #366) | Run 1225 -> 1252; P0006 hit | NUMERICAL |
 | O2 | **Half of early dead ends were infrastructure, not mathematics:** X1–X10 converted into `preflight.sh` checks (0 repeats after K4) | Graph: 36 dead; `preflight.sh` 0 FAIL | NUMERICAL |
 | O3 | Brier calibration across resolved predictions tracked via `calibration.md` | `predictions.tsv` | NUMERICAL |

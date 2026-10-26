@@ -298,7 +298,7 @@ Why this proof carries exceptional scientific and reputational weight:
 At **08:28** (`runs/2026-10-19-0745`), our worker thread completed a proof for **`lychrel-new-base-proof`** in our **9th distinct scientific category (`number-hunts`)** (`CONFIRMED_SOLUTION`, passing the 3-Skeptic panel).
 
 1. **What Lychrel numbers are (The famous "196 Problem"):**
-   - Take any positive integer, reverse its digits, and add them together: $F(n) = n + \operatorname{Rev}(n)$ (e.g., $56 + 65 = 121$ — a palindrome!).
+   - Take any positive integer, reverse its digits, and add them together: $F(n) = n + \mathrm{Rev}(n)$ (e.g., $56 + 65 = 121$ — a palindrome!).
    - Almost every number becomes a palindrome after a few steps.
    - A **Lychrel number** is a number that **NEVER forms a palindrome, even after infinitely many steps**.
    - In base 10 ($b=10$), the most famous candidate is **196**, which remains unproved. Across the entire history of mathematics, Lychrel numbers had previously been proven to exist only in powers of two ($b=2^k$) and in **just four other bases**: $b = 11, 17, 20$, and $b = 26$. The last such proof (for $b = 26$) was given by **David Seal in 1996 — 30 years ago!**
@@ -556,59 +556,59 @@ Summary of all **21 verified proofs and world records** (20 open PRs `#366`–`#
 
 ## [2026-10-20] Which unsolved AME States are considered foundational and which ones can PROOFER attack next?
 
-Following our audit of all `1,008` cells of the Huber-Wyderka table ($n = 2..113, D = 2..10$, in `~/v3r1t4s/runs/2026-10-20-0155/claim/huber_wyderka_settled_blanks_audit.json` under PR [`#576`](https://github.com/elder-plinius/V3R1T4S/pull/576)), the landscape of open $\operatorname{AME}(n, D)$ states divides into **4 major groups of quantum-information "Holy Grails"** well-suited for `PROOFER + Gemini-CLSS`:
+Following our audit of all `1,008` cells of the Huber-Wyderka table ($n = 2..113, D = 2..10$, in `~/v3r1t4s/runs/2026-10-20-0155/claim/huber_wyderka_settled_blanks_audit.json` under PR [`#576`](https://github.com/elder-plinius/V3R1T4S/pull/576)), the landscape of open $\mathrm{AME}(n, D)$ states divides into **4 major groups of quantum-information "Holy Grails"** well-suited for `PROOFER + Gemini-CLSS`:
 
 ### 1. Two Famous Small-Dimension Open Problems (where stabilizer states DO NOT exist!)
-1. **$\operatorname{AME}(8, 4)$ ($n = 8$ particles of local dimension $D = 4$, $k = 4$, $\binom{8}{4} = 70$ bipartitions / $35$ bisections):**
-   - **Why it is foundational:** Since the 2022 resolution of Euler's 36 Officers problem via $\operatorname{AME}(4, 6)$, $\operatorname{AME}(8, 4)$ (an 8-quadrit *perfect tensor* / pure `((8, 1, 5))_4` code) is the flagship open problem for dimension $D = 4$ (pairs of qubits).
-   - **Why it is hard:** Grassl's tables (`codetables.de`) prove that an additive stabilizer code `[[8, 0, 5]]_4` **does not exist** (the additive upper bound is $d = 4 < 5$). If $\operatorname{AME}(8, 4)$ exists, it must be a **non-stabilizer (non-additive)** state; if it does not exist, it requires a new SDP / Rains shadow upper bound.
-2. **$\operatorname{AME}(11, 3)$ ($n = 11$ qutrits of dimension $D = 3$, $k = 5$, $\binom{11}{5} = 462$ bipartitions):**
+1. **$\mathrm{AME}(8, 4)$ ($n = 8$ particles of local dimension $D = 4$, $k = 4$, $\binom{8}{4} = 70$ bipartitions / $35$ bisections):**
+   - **Why it is foundational:** Since the 2022 resolution of Euler's 36 Officers problem via $\mathrm{AME}(4, 6)$, $\mathrm{AME}(8, 4)$ (an 8-quadrit *perfect tensor* / pure `((8, 1, 5))_4` code) is the flagship open problem for dimension $D = 4$ (pairs of qubits).
+   - **Why it is hard:** Grassl's tables (`codetables.de`) prove that an additive stabilizer code `[[8, 0, 5]]_4` **does not exist** (the additive upper bound is $d = 4 < 5$). If $\mathrm{AME}(8, 4)$ exists, it must be a **non-stabilizer (non-additive)** state; if it does not exist, it requires a new SDP / Rains shadow upper bound.
+2. **$\mathrm{AME}(11, 3)$ ($n = 11$ qutrits of dimension $D = 3$, $k = 5$, $\binom{11}{5} = 462$ bipartitions):**
    - **Why it is foundational:** The only cell in the entire qutrit column ($D = 3$) where classical Scott and Rains shadow bounds remain inconclusive, highlighted in yellow as **`Unknown`** by Huber and Wyderka.
    - **Why it is hard:** Danielsen's classification and `codetables.de` ($4 \le d \le 5 < 6$) rule out any stabilizer `[[11, 0, 6]]_3` state. The Hilbert space has dimension $3^{11} = 177,147$ (compact enough for direct GPU tensor optimization).
 
 ### 2. Composite Dimension $D = 6 = 2 \times 3$ ("Cousins of Euler's 36 Officers" — no finite field $\mathbb{F}_6$)
-3. **$\operatorname{AME}(8, 6)$ ($n = 8, D = 6, k = 4$, `70` bipartitions) — the second yellow `Unknown` cell in the Huber-Wyderka table:**
-   - Because $6 = 2 \times 3$ is not a prime power, no finite field $\mathbb{F}_6$ exists. Our **Theorem 1 (Stabilizer-MDS Entangled Coupling)** from PR `#576` requires for $n = 8, k = 4$ a binary stabilizer code of dual distance $d^\perp \ge 5$ and logical dimension $2^r \le 3 \implies r = 1$ (`[[8, 1, d^\perp \ge 5]]_2`), which is obstructed by the binary Rains shadow bound ($d^\perp \le 4$ for $n=8, r \ge 1$). Thus $\operatorname{AME}(8, 6)$ requires **non-diagonal 2-unitary / Clifford coupling with $\operatorname{AME}(4, 6)$** or Riemannian optimization.
-4. **$\operatorname{AME}(9, 6)$ ($n = 9, D = 6, k = 4$, `126` bipartitions) and $\operatorname{AME}(10, 6)$ ($n = 10, D = 6, k = 5$, `252` bipartitions):**
-   - In `Run 2026-10-20-0155` we solved $\operatorname{AME}(9, 10)$ because for $D = 10 = 2 \times 5$ the condition $2^r \le q$ allowed $r = 2$ ($2^2 = 4 \le 5$) with code `[[9, 2, 3]]_2` ($d^\perp = 5$). For $D = 6 = 2 \times 3$, $q = 3 < 4 = 2^2$, making non-abelian qutrit coupling a natural target.
+3. **$\mathrm{AME}(8, 6)$ ($n = 8, D = 6, k = 4$, `70` bipartitions) — the second yellow `Unknown` cell in the Huber-Wyderka table:**
+   - Because $6 = 2 \times 3$ is not a prime power, no finite field $\mathbb{F}_6$ exists. Our **Theorem 1 (Stabilizer-MDS Entangled Coupling)** from PR `#576` requires for $n = 8, k = 4$ a binary stabilizer code of dual distance $d^\perp \ge 5$ and logical dimension $2^r \le 3 \implies r = 1$ (`[[8, 1, d^\perp \ge 5]]_2`), which is obstructed by the binary Rains shadow bound ($d^\perp \le 4$ for $n=8, r \ge 1$). Thus $\mathrm{AME}(8, 6)$ requires **non-diagonal 2-unitary / Clifford coupling with $\mathrm{AME}(4, 6)$** or Riemannian optimization.
+4. **$\mathrm{AME}(9, 6)$ ($n = 9, D = 6, k = 4$, `126` bipartitions) and $\mathrm{AME}(10, 6)$ ($n = 10, D = 6, k = 5$, `252` bipartitions):**
+   - In `Run 2026-10-20-0155` we solved $\mathrm{AME}(9, 10)$ because for $D = 10 = 2 \times 5$ the condition $2^r \le q$ allowed $r = 2$ ($2^2 = 4 \le 5$) with code `[[9, 2, 3]]_2` ($d^\perp = 5$). For $D = 6 = 2 \times 3$, $q = 3 < 4 = 2^2$, making non-abelian qutrit coupling a natural target.
 
-### 3. Even $n$ in Composite Dimension $D = 10 = 2 \times 5$: $\operatorname{AME}(8, 10)$ and $\operatorname{AME}(10, 10)$
-5. **$\operatorname{AME}(10, 10)$ ($n = 10, D = 10, k = 5$, `252` bipartitions) and $\operatorname{AME}(8, 10)$ ($n = 8, D = 10, k = 4$, `70` bipartitions):**
-   - Having solved odd $\operatorname{AME}(9, 10)$ and $\operatorname{AME}(11, 10)$ (while $\operatorname{AME}(7, 10)$ was settled in `arXiv:2608.01011`), the even cells $(8, 10)$ and $(10, 10)$ remain open. For $n = 10, k = 5$, a binary stabilizer code `[[10, 2, 4]]_2` exists ($2^r = 4 < 5 = q$) alongside a pure ququint state $\operatorname{AME}(10, 5)$ (`[[10, 0, 6]]_5`) — making $\operatorname{AME}(10, 10)$ a prime candidate for extending Theorem 1 to even $n$!
+### 3. Even $n$ in Composite Dimension $D = 10 = 2 \times 5$: $\mathrm{AME}(8, 10)$ and $\mathrm{AME}(10, 10)$
+5. **$\mathrm{AME}(10, 10)$ ($n = 10, D = 10, k = 5$, `252` bipartitions) and $\mathrm{AME}(8, 10)$ ($n = 8, D = 10, k = 4$, `70` bipartitions):**
+   - Having solved odd $\mathrm{AME}(9, 10)$ and $\mathrm{AME}(11, 10)$ (while $\mathrm{AME}(7, 10)$ was settled in `arXiv:2608.01011`), the even cells $(8, 10)$ and $(10, 10)$ remain open. For $n = 10, k = 5$, a binary stabilizer code `[[10, 2, 4]]_2` exists ($2^r = 4 < 5 = q$) alongside a pure ququint state $\mathrm{AME}(10, 5)$ (`[[10, 0, 6]]_5`) — making $\mathrm{AME}(10, 10)$ a prime candidate for extending Theorem 1 to even $n$!
 
-### 4. Two Cells Exposed by Our Purity Audit in PR `#576`: $\operatorname{AME}(15, 5)$ and $\operatorname{AME}(15, 7)$
-6. **$\operatorname{AME}(15, 5)$ ($n = 15, D = 5, k = 7$, `6,435` bipartitions) and $\operatorname{AME}(15, 7)$ ($n = 15, D = 7, k = 7$, `6,435` bipartitions):**
+### 4. Two Cells Exposed by Our Purity Audit in PR `#576`: $\mathrm{AME}(15, 5)$ and $\mathrm{AME}(15, 7)$
+6. **$\mathrm{AME}(15, 5)$ ($n = 15, D = 5, k = 7$, `6,435` bipartitions) and $\mathrm{AME}(15, 7)$ ($n = 15, D = 7, k = 7$, `6,435` bipartitions):**
    - **Why they are high-priority:** The September 2026 preprint `arXiv:2609.11796` assumed both cells were settled because `codetables.de` lists `[[15, 0, 8]]_5` and `[[15, 0, 8]]_7`. However, our audit in PR `#576` proved that both `codetables.de` codes are **impure** ($w_{\text{pure}} = 7$ and $w_{\text{pure}} = 1$, failing on `190` and `3,003` bipartitions respectively!).
-   - Because $D = 5$ and $D = 7$ are prime powers, searching for a **genuinely pure stabilizer code `[[15, 0, 8]]_5` or `[[15, 0, 8]]_7`** via cyclic/circulant surgery over $\mathbb{F}_{25}$ or $\mathbb{F}_{49}$ is a textbook discrete target for CLSS (and indeed yielded our subsequent constructive proof of $\operatorname{AME}(15, 7)$!).
+   - Because $D = 5$ and $D = 7$ are prime powers, searching for a **genuinely pure stabilizer code `[[15, 0, 8]]_5` or `[[15, 0, 8]]_7`** via cyclic/circulant surgery over $\mathbb{F}_{25}$ or $\mathbb{F}_{49}$ is a textbook discrete target for CLSS (and indeed yielded our subsequent constructive proof of $\mathrm{AME}(15, 7)$!).
 
 **Sources:** `~/v3r1t4s/runs/2026-10-20-0155/claim/CLAIM.md`, `~/v3r1t4s/runs/2026-10-20-0155/claim/huber_wyderka_settled_blanks_audit.json`, `~/v3r1t4s/runs/2026-10-20-0155/claim/huber_wyderka_settled_blanks_audit.tsv`, `wiki/entities/v3r1t4s/physics/ame-states-open-cells-huber-table.md`.
 
 ## [2026-10-20] What remains open in the Huber-Wyderka table (1,008 cells)?
 
-Complete status map of all `1,008` cells ($n = 2..113, D = 2..10$) incorporating 2026 literature, our PR `#576` ($\operatorname{AME}(9, 10)$, $\operatorname{AME}(11, 10)$), and our pure bordered-circulant construction of $\operatorname{AME}(15, 7)$:
+Complete status map of all `1,008` cells ($n = 2..113, D = 2..10$) incorporating 2026 literature, our PR `#576` ($\mathrm{AME}(9, 10)$, $\mathrm{AME}(11, 10)$), and our pure bordered-circulant construction of $\mathrm{AME}(15, 7)$:
 
 1. **$D = 2$ (qubits): `0` open cells (100% closed!).**
    - `Yes`: $n = 2, 3, 5, 6$ (`4` cells). All remaining `108` cells ($n = 4$ and $n = 7..113$) are proven `No` (Scott bound / Rains shadow / Huber-Guhne-Siewert for $n=7$).
 2. **$D = 3$ (qutrits): ONLY `2` open cells in the entire column ($n = 2..113$)!**
    - `Yes`: $n = 2, 3, 4, 5, 6, 7, 9, 10$ (`8` cells). `No`: `102` cells.
-   - **Only open cells:** **$\operatorname{AME}(11, 3)$** (`Unknown`) and **$\operatorname{AME}(15, 3)$** (`Blank`, no stabilizer exists since $d \le 6 < 8$).
+   - **Only open cells:** **$\mathrm{AME}(11, 3)$** (`Unknown`) and **$\mathrm{AME}(15, 3)$** (`Blank`, no stabilizer exists since $d \le 6 < 8$).
 3. **$D = 4$ (quadrits): ONLY `13` open cells in the entire column!**
    - `Yes`: $n = 2..7, 9, 10, 11$ (`9` cells). `No`: `90` cells (all even $n \ge 12$ excluded by Rains shadow bounds, all $n \ge 36$ by the Scott bound).
-   - **Only open cells:** **$n = 8$** ($\operatorname{AME}(8, 4)$) and $12$ larger cells: **$n = 13, 14, 15, 17, 18, 19, 21, 22, 23, 27, 29, 35$**.
-4. **$D = 5$ (ququints): up to $n = 18$, ONLY `2` cells remain open: $\operatorname{AME}(15, 5)$ and $\operatorname{AME}(16, 5)$!**
+   - **Only open cells:** **$n = 8$** ($\mathrm{AME}(8, 4)$) and $12$ larger cells: **$n = 13, 14, 15, 17, 18, 19, 21, 22, 23, 27, 29, 35$**.
+4. **$D = 5$ (ququints): up to $n = 18$, ONLY `2` cells remain open: $\mathrm{AME}(15, 5)$ and $\mathrm{AME}(16, 5)$!**
    - `Yes`: $n = 2..14$ and $n = 17, 18$ (`15` cells). `No`: $n \ge 60$ (`65` cells).
    - **Open ($32$ cells):** the gap **$n = 15, 16$** plus $n = 19..59$.
-5. **$D = 6 = 2 \times 3$ (first composite dimension): up to $n = 12$, ONLY `3` cells remain open: $\operatorname{AME}(8, 6)$, $\operatorname{AME}(9, 6)$, $\operatorname{AME}(10, 6)$!**
+5. **$D = 6 = 2 \times 3$ (first composite dimension): up to $n = 12$, ONLY `3` cells remain open: $\mathrm{AME}(8, 6)$, $\mathrm{AME}(9, 6)$, $\mathrm{AME}(10, 6)$!**
    - `Yes`: $n = 2..7$ and $n = 11$ (`7` cells). `No`: $n \ge 84$ (`36` cells).
    - **Open ($69$ cells):** the gap **$n = 8, 9, 10$** plus $n = 12..83$.
-6. **$D = 7$: thanks to our pure construction of $\operatorname{AME}(15, 7)$, the entire range $n = 2..18$ is now 100% closed as `Yes`!**
+6. **$D = 7$: thanks to our pure construction of $\mathrm{AME}(15, 7)$, the entire range $n = 2..18$ is now 100% closed as `Yes`!**
    - `Yes`: all $n = 2..18$ (`17` cells). `No`: $n \ge 112$.
    - **Open ($86$ cells):** only from **$n = 19..111$** (zero gaps below $n = 19$!).
 7. **$D = 8$: the entire range $n = 2..16$ is closed as `Yes`!**
-   - `Yes`: $n = 2..16$ (`15` cells). **Open ($97$ cells):** $n = 17..113$ (led by $\operatorname{AME}(17, 8)$ and $\operatorname{AME}(18, 8)$).
+   - `Yes`: $n = 2..16$ (`15` cells). **Open ($97$ cells):** $n = 17..113$ (led by $\mathrm{AME}(17, 8)$ and $\mathrm{AME}(18, 8)$).
 8. **$D = 9$: the entire range $n = 2..18$ is 100% closed as `Yes`!**
    - `Yes`: all $n = 2..18$ (`17` cells). **Open ($95$ cells):** $n = 19..113$.
-9. **$D = 10 = 2 \times 5$ (second composite dimension): thanks to our PR `#576` ($\operatorname{AME}(9, 10)$ and $\operatorname{AME}(11, 10)$) and our subsequent solution of $\operatorname{AME}(10, 10)$, up to $n = 12$ only $\operatorname{AME}(8, 10)$ remains open!**
+9. **$D = 10 = 2 \times 5$ (second composite dimension): thanks to our PR `#576` ($\mathrm{AME}(9, 10)$ and $\mathrm{AME}(11, 10)$) and our subsequent solution of $\mathrm{AME}(10, 10)$, up to $n = 12$ only $\mathrm{AME}(8, 10)$ remains open!**
    - `Yes`: $n = 2..7, 9, 10, 11, 12$. **Open:** $n = 8$ and $n = 13..113$.
 
 **Sources:** `~/v3r1t4s/runs/2026-10-20-0155/claim/huber_wyderka_settled_blanks_audit.json`, `wiki/reports/03_quantum_ame_and_mds_certificates/AME_15_7_and_15_5_Purity_and_Circulant_Dossier.md`.

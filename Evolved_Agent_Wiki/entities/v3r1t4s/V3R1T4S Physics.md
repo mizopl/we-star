@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[site-percolation-2-uniform-lattices-thresholds]] | harvest | 4 | open |
 | [[eaqecc-qutrit-codetables-gaps]] | harvest | 3.5 | open |
 | [[kings-hard-core-entropy-a247413-digits]] | harvest | 3.5 | open |

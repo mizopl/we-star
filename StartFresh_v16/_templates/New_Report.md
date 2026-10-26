@@ -38,7 +38,7 @@ _Detail._
 ## Contradictions / Open Questions
 
 | Claim A | Claim B | Source A | Source B | Status |
-|---|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert---|
 | ... | ... | ... | ... | Unresolved |
 
 ---

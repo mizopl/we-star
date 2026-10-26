@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[adderboard-smallest-adder-transformer]] | harvest | 3 | open |
 | [[fmm-additive-complexity-records]] | harvest | 3 | open |
 | [[fmm-catalogue-small-format-rank]] | harvest | 3 | open |

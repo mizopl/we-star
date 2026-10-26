@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[ebl-unidentified-fragment-overlaps]] | harvest | 3 | open |
 | [[akkadian-lacuna-restoration-heldout]] | harvest | 2 | open |
 | [[cuneiform-sign-detection-maicubeda]] | harvest | 2 | open |

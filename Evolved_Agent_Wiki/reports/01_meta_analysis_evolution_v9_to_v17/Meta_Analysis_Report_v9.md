@@ -15,7 +15,7 @@ Trigger: the human's instruction of 2026-10-17 (role PROOFER; shell with autores
 ## Changes
 
 | File | Change |
-|---|---|
+|---\lvert ---\rvert
 | `CONSTITUTION.md` | v9 header; §7.5 ceremony covers the whole shell; new §11 Proof Engine |
 | `CLAUDE.md` | persona PROOFER; rule 9 Proof Mode |
 | `PROOFER.md` | new: the full shell spec (precedence, ratchet, VS, postdiction, wiki↔lab loop) |

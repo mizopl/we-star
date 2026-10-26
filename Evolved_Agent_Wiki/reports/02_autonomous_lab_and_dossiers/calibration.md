@@ -5,7 +5,7 @@
 ## By scope
 
 | Scope | n | Brier | mean p | hit rate |
-|---|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert---|
 | algorithms | 1 | 0.303 | 0.45 | 1.00 |
 | exp | 9 | 0.173 | 0.38 | 0.44 |
 | lens | 29 | 0.237 | 0.66 | 0.69 |
@@ -18,7 +18,7 @@
 ## Calibration bins
 
 | p bin | n | mean p | hit rate | verdict |
-|---|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert---|
 | 0.0–0.2 | 9 | 0.06 | 0.33 | underconfident |
 | 0.2–0.4 | 6 | 0.29 | 0.33 | ok |
 | 0.4–0.6 | 12 | 0.49 | 0.92 | underconfident |

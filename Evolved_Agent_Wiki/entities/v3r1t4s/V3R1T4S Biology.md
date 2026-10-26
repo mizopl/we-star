@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[care-enzyme-reaction-retrieval-hard]] | harvest | 3.5 | open |
 | [[openproblems-scrna-denoising-beat-leaderboard]] | harvest | 3.5 | open |
 | [[openproblems-spatial-decomposition-r2]] | harvest | 3.5 | open |

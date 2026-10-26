@@ -134,7 +134,7 @@ This prevents the pattern where a page exists in source but returns 404 on the l
 `wiki/meta/action_items.md` is a prioritized, concrete task list for human operators. It is distinct from `DECISIONS_NEEDED.md`:
 
 | File | For | Format |
-|---|---|---|
+|---\lvert ---\rvert---|
 | `DECISIONS_NEEDED.md` | Open strategic decisions requiring a founder choice | Choice A vs B, open contradiction, long-lived ambiguity |
 | `action_items.md` | Concrete tasks with a specific action, owner, and contact | Call X, email Y, write Z memo |
 
@@ -142,7 +142,7 @@ This prevents the pattern where a page exists in source but returns 404 on the l
 
 ```
 | Priority | Action | Owner | Contact | Status | First flagged |
-|---|---|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert---\lvert ---\rvert
 | 🔴 | ... | ... | ... | OPEN | Cycle N |
 ```
 

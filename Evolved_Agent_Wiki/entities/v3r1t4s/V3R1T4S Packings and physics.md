@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[packomania-hyperspheres-hsp4-hsp6]] | harvest | 3.5 | open |
 | [[spherical-codes-cohn-table]] | harvest | 3.5 | open |
 | [[packomania-scu-spheres-in-cube]] | harvest | 3 | open |

@@ -39,7 +39,7 @@ Every claimed decomposition, tensor reconstruction, circuit equivalence check, o
 ## 2. Verification Table of Claimed Waring Decompositions
 
 | Tensor ID | Benchmark Circuit | Shape `(r, n)` | Live `docs/tensors.md` Waring | Posted `data/paper/waring/` | Claimed Waring (`r`) | Margin vs Table / Posted | Odd Col / Pair Sums | Standalone Check | `polytof` `verify_waring` | SHA-256 (prefix) |
-|---|---|---|---:|---:|---:|---|---:|---|---|---|
+|---\lvert ---\rvert---|---:|---:|---:|---|---:|---\lvert ---\rvert---|
 | `0732` | $\mathrm{GF}(2^9)$ Mult (primary) | `(139, 27)` | `147` | `147` | **`139`** | **`-8` / `-8`** | `0 / 0` | `PASS` | `PASS` | `fc241396f7286a7c...` |
 | `0732` | $\mathrm{GF}(2^9)$ Mult (secondary) | `(141, 27)` | `147` | `147` | **`141`** | **`-6` / `-6`** | `0 / 0` | `PASS` | `PASS` | `6d0b3549d2d391fa...` |
 | `0732` | $\mathrm{GF}(2^9)$ Mult (tertiary) | `(143, 27)` | `147` | `147` | **`143`** | **`-4` / `-4`** | `0 / 0` | `PASS` | `PASS` | `2dad2e86180c2214...` |

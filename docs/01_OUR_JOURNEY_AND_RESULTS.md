@@ -169,14 +169,14 @@ flowchart TD
 
 ##### 1. Theorem Statement & Carry-Wire Decoupling Lemma ($b \equiv 2 \pmod{24}$)
 
-**Theorem.** *Lychrel numbers (positive integers whose reverse-and-add orbit $n_{t+1} = F_b(n_t) = n_t + \operatorname{Rev}_b(n_t)$ never reaches a base-$b$ palindrome for any $t \ge 0$) exist in the three new bases*
+**Theorem.** *Lychrel numbers (positive integers whose reverse-and-add orbit $n_{t+1} = F_b(n_t) = n_t + \mathrm{Rev}_b(n_t)$ never reaches a base-$b$ palindrome for any $t \ge 0$) exist in the three new bases*
 $$b = 50 = 2 \cdot 5^2, \qquad b = 98 = 2 \cdot 7^2, \qquad b = 146 = 2 \cdot 73,$$
 *none of which belong to the previously proven set $\lbrace 2^k : k \ge 1 \rbrace \cup \lbrace 11, 17, 20, 26 \rbrace$.*
 
 **Proof (Modular Carry-Wire Decomposition).** Consider a Period-4 template family parameterized by $m \ge 1$:
 $$T_1(m) = L_0 \; (b-1)^m \; M_0 \; 0^m \; R_0, \qquad T_2(m) = L_1 \; 0^m \; M_1 \; (b-1)^m \; R_1,$$
 $$T_3(m) = L_0 \; (b-1)^m \; M_2 \; 0^m \; R_0, \qquad T_4(m) = L_1 \; 0^m \; M_3 \; (b-1)^m \; R_1,$$
-where $|L_0| = |R_0| = |L_1| = |R_1| = \ell$. Because the outer wings have equal length $\ell$, the two symbolic blocks $(b-1)^m$ and $0^m$ occupy exact mirror-image offsets $[\ell, \ell + m)$ from the left and right ends of every template $T_i(m)$. When $T_i(m)$ is added to its reversal $\operatorname{Rev}_b(T_i(m))$, every digit pair across both length-$m$ symbolic wires is either $(b-1, 0)$ or $(0, b-1)$, whose sum at every position is identically $(b - 1) + 0 = b - 1$.
+where $|L_0| = |R_0| = |L_1| = |R_1| = \ell$. Because the outer wings have equal length $\ell$, the two symbolic blocks $(b-1)^m$ and $0^m$ occupy exact mirror-image offsets $[\ell, \ell + m)$ from the left and right ends of every template $T_i(m)$. When $T_i(m)$ is added to its reversal $\mathrm{Rev}_b(T_i(m))$, every digit pair across both length-$m$ symbolic wires is either $(b-1, 0)$ or $(0, b-1)$, whose sum at every position is identically $(b - 1) + 0 = b - 1$.
 
 By elementary base-$b$ arithmetic:
 - **Zero-Carry Wire ($c_{\text{in}} = 0$):** A block of $m$ digit pairs each summing to $b - 1$ with incoming carry $c_{\text{in}} = 0$ satisfies $(b - 1) + 0 = b - 1 < b$ at every position, emitting the **uniform digit run $(b-1)^m$** and **uniform outgoing carry $c_{\text{out}} = 0$** for all $m \ge 1$.
@@ -184,13 +184,13 @@ By elementary base-$b$ arithmetic:
 
 Therefore, for every $m \ge 1$, the two symbolic blocks act as **length-independent carry wires ($c_{\text{out}} = c_{\text{in}}$)** that decouple the template into two finite sub-automata coupled solely by the 4-step interface carry sequence:
 1. **The Period-2 Outer Engine $(L_0, R_0) \leftrightarrow (L_1, R_1)$** (solvable via $16b$-state BFS for $b \equiv 2 \pmod 3$):
-   - Steps $1, 3$ ($T_1 \to T_2$ and $T_3 \to T_4$): $R_0 + \operatorname{Rev}(L_0) = R_1$ with outgoing carry $c_{R,0} = 0$, and $L_0 + \operatorname{Rev}(R_0) + 1 = L_1$ with outgoing carry $c_{L,0} = 0$.
-   - Steps $2, 4$ ($T_2 \to T_3$ and $T_4 \to T_1(m+1)$): $R_1 + \operatorname{Rev}(L_1) = R_0$ with outgoing carry $c_{R,1} = 1$, and $L_1 + \operatorname{Rev}(R_1) + 0 = [1] \cdot L_0 \cdot [b-1]$ (a $(\ell+1)$-digit overflow block whose leading $[1]$ becomes $L_0[0] = 1$ and whose trailing $[b-1]$ merges into the left $(b-1)^m$ wire to increment $m \mapsto m+1$).
+   - Steps $1, 3$ ($T_1 \to T_2$ and $T_3 \to T_4$): $R_0 + \mathrm{Rev}(L_0) = R_1$ with outgoing carry $c_{R,0} = 0$, and $L_0 + \mathrm{Rev}(R_0) + 1 = L_1$ with outgoing carry $c_{L,0} = 0$.
+   - Steps $2, 4$ ($T_2 \to T_3$ and $T_4 \to T_1(m+1)$): $R_1 + \mathrm{Rev}(L_1) = R_0$ with outgoing carry $c_{R,1} = 1$, and $L_1 + \mathrm{Rev}(R_1) + 0 = [1] \cdot L_0 \cdot [b-1]$ (a $(\ell+1)$-digit overflow block whose leading $[1]$ becomes $L_0[0] = 1$ and whose trailing $[b-1]$ merges into the left $(b-1)^m$ wire to increment $m \mapsto m+1$).
 2. **The Period-4 Inner Core $M_0 \to M_1 \to M_2 \to M_3 \to M_0 \cdot [0]$** (solvable via $256b^2$-state outside-in BFS for $b \equiv 2 \pmod 8$):
-   - Step $1$: $M_0 + \operatorname{Rev}(M_0) + 0 = M_1$ with outgoing carry $c_{M,0} = 1$.
-   - Step $2$: $M_1 + \operatorname{Rev}(M_1) + 1 = M_2[1..k]$ with outgoing carry $c_{M,1} = 0$ (where the overflow digit $[b-1]$ from $L_1 + \operatorname{Rev}(R_1)$ prepends to form $M_2 = [b-1] \cdot M_2[1..k]$).
-   - Step $3$: $M_2 + \operatorname{Rev}(M_2) + 0 = M_3$ with outgoing carry $c_{M,2} = 1$.
-   - Step $4$: $M_3 + \operatorname{Rev}(M_3) + 1 = M_0 \cdot [0]$ with outgoing carry $c_{M,3} = 0$ (where the trailing $[0]$ merges into the right $0^m$ wire to increment $m \mapsto m+1$).
+   - Step $1$: $M_0 + \mathrm{Rev}(M_0) + 0 = M_1$ with outgoing carry $c_{M,0} = 1$.
+   - Step $2$: $M_1 + \mathrm{Rev}(M_1) + 1 = M_2[1..k]$ with outgoing carry $c_{M,1} = 0$ (where the overflow digit $[b-1]$ from $L_1 + \mathrm{Rev}(R_1)$ prepends to form $M_2 = [b-1] \cdot M_2[1..k]$).
+   - Step $3$: $M_2 + \mathrm{Rev}(M_2) + 0 = M_3$ with outgoing carry $c_{M,2} = 1$.
+   - Step $4$: $M_3 + \mathrm{Rev}(M_3) + 1 = M_0 \cdot [0]$ with outgoing carry $c_{M,3} = 0$ (where the trailing $[0]$ merges into the right $0^m$ wire to increment $m \mapsto m+1$).
 
 ##### 2. Explicit Vectors, Start Integer $n$, and Pre-Template Seed $n_{\text{seed}}$ in Primary Base $b = 50$
 
@@ -218,35 +218,35 @@ $$n_{\text{seed}} = 121690994086842491822584267395884950512989163588675105394276
 ##### 3. Step-by-Step Symbolic Run-Length Carry Proof for All $m \ge 1$ in Base $b = 50$
 
 1. **$F_{50}(T_1(m)) = T_2(m)$:**
-   - Right block: $R_0 + \operatorname{Rev}(L_0) = R_1$ ($36$ digits) with outgoing carry $c_{R,0} = 0$.
+   - Right block: $R_0 + \mathrm{Rev}(L_0) = R_1$ ($36$ digits) with outgoing carry $c_{R,0} = 0$.
    - Right wire: $0^m + 49^m$ with incoming carry $c_{R,0} = 0$ emits $49^m$ with outgoing carry $0$.
-   - Middle block: $M_0 + \operatorname{Rev}(M_0) + 0 = M_1$ ($8$ digits) with outgoing carry $c_{M,0} = 1$.
+   - Middle block: $M_0 + \mathrm{Rev}(M_0) + 0 = M_1$ ($8$ digits) with outgoing carry $c_{M,0} = 1$.
    - Left wire: $49^m + 0^m$ with incoming carry $c_{M,0} = 1$ emits $0^m$ with outgoing carry $1$.
-   - Left block: $L_0 + \operatorname{Rev}(R_0) + 1 = L_1$ ($36$ digits) with outgoing carry $c_{L,0} = 0$.
+   - Left block: $L_0 + \mathrm{Rev}(R_0) + 1 = L_1$ ($36$ digits) with outgoing carry $c_{L,0} = 0$.
    - Concatenating gives $L_1 \; 0^m \; M_1 \; 49^m \; R_1 = T_2(m)$ for all $m \ge 1$.
 2. **$F_{50}(T_2(m)) = T_3(m)$:**
-   - Right block: $R_1 + \operatorname{Rev}(L_1) = R_0$ ($36$ digits) with outgoing carry $c_{R,1} = 1$.
+   - Right block: $R_1 + \mathrm{Rev}(L_1) = R_0$ ($36$ digits) with outgoing carry $c_{R,1} = 1$.
    - Right wire: $49^m + 0^m$ with incoming carry $c_{R,1} = 1$ emits $0^m$ with outgoing carry $1$.
-   - Middle block: $M_1 + \operatorname{Rev}(M_1) + 1 = M_2[1..8] = [24, 31, 45, 15, 14, 44, 31, 25]$ ($8$ digits) with outgoing carry $c_{M,1} = 0$.
+   - Middle block: $M_1 + \mathrm{Rev}(M_1) + 1 = M_2[1..8] = [24, 31, 45, 15, 14, 44, 31, 25]$ ($8$ digits) with outgoing carry $c_{M,1} = 0$.
    - Left wire: $0^m + 49^m$ with incoming carry $c_{M,1} = 0$ emits $49^m$ with outgoing carry $0$.
-   - Left block: $L_1 + \operatorname{Rev}(R_1) + 0$ overflows ($c_{L,1} = 1$) to the $37$-digit block $L_0 \cdot [49]$.
+   - Left block: $L_1 + \mathrm{Rev}(R_1) + 0$ overflows ($c_{L,1} = 1$) to the $37$-digit block $L_0 \cdot [49]$.
    - Since $[49] \; 49^m \; M_2[1..8] = 49^m \; ([49] \cdot M_2[1..8]) = 49^m \; M_2$, concatenating gives $L_0 \; 49^m \; M_2 \; 0^m \; R_0 = T_3(m)$ for all $m \ge 1$.
 3. **$F_{50}(T_3(m)) = T_4(m)$:**
-   - Right block: $R_0 + \operatorname{Rev}(L_0) = R_1$ ($36$ digits) with outgoing carry $c_{R,2} = 0$.
+   - Right block: $R_0 + \mathrm{Rev}(L_0) = R_1$ ($36$ digits) with outgoing carry $c_{R,2} = 0$.
    - Right wire: $0^m + 49^m$ with incoming carry $c_{R,2} = 0$ emits $49^m$ with outgoing carry $0$.
-   - Middle block: $M_2 + \operatorname{Rev}(M_2) + 0 = M_3$ ($9$ digits) with outgoing carry $c_{M,2} = 1$.
+   - Middle block: $M_2 + \mathrm{Rev}(M_2) + 0 = M_3$ ($9$ digits) with outgoing carry $c_{M,2} = 1$.
    - Left wire: $49^m + 0^m$ with incoming carry $c_{M,2} = 1$ emits $0^m$ with outgoing carry $1$.
-   - Left block: $L_0 + \operatorname{Rev}(R_0) + 1 = L_1$ ($36$ digits) with outgoing carry $c_{L,2} = 0$.
+   - Left block: $L_0 + \mathrm{Rev}(R_0) + 1 = L_1$ ($36$ digits) with outgoing carry $c_{L,2} = 0$.
    - Concatenating gives $L_1 \; 0^m \; M_3 \; 49^m \; R_1 = T_4(m)$ for all $m \ge 1$.
 4. **$F_{50}(T_4(m)) = T_1(m + 1)$:**
-   - Right block: $R_1 + \operatorname{Rev}(L_1) = R_0$ ($36$ digits) with outgoing carry $c_{R,3} = 1$.
+   - Right block: $R_1 + \mathrm{Rev}(L_1) = R_0$ ($36$ digits) with outgoing carry $c_{R,3} = 1$.
    - Right wire: $49^m + 0^m$ with incoming carry $c_{R,3} = 1$ emits $0^m$ with outgoing carry $1$.
-   - Middle block: $M_3 + \operatorname{Rev}(M_3) + 1 = M_0 \cdot [0] = [49, 13, 2, 20, 12, 20, 2, 13, 0]$ ($9$ digits) with outgoing carry $c_{M,3} = 0$.
+   - Middle block: $M_3 + \mathrm{Rev}(M_3) + 1 = M_0 \cdot [0] = [49, 13, 2, 20, 12, 20, 2, 13, 0]$ ($9$ digits) with outgoing carry $c_{M,3} = 0$.
    - Left wire: $0^m + 49^m$ with incoming carry $c_{M,3} = 0$ emits $49^m$ with outgoing carry $0$.
-   - Left block: $L_1 + \operatorname{Rev}(R_1) + 0$ overflows ($c_{L,3} = 1$) to the $37$-digit block $L_0 \cdot [49]$.
+   - Left block: $L_1 + \mathrm{Rev}(R_1) + 0$ overflows ($c_{L,3} = 1$) to the $37$-digit block $L_0 \cdot [49]$.
    - Combining $[49]$ with $49^m$ gives $49^{m+1}$ and combining $[0]$ with $0^m$ gives $0^{m+1}$, yielding $L_0 \; 49^{m+1} \; M_0 \; 0^{m+1} \; R_0 = T_1(m + 1)$ for all $m \ge 1$.
 
-##### 4. Symbolic Non-Palindromicity Proof ($T_i(m) \neq \operatorname{Rev}_{50}(T_i(m))$ for all $m \ge 1$)
+##### 4. Symbolic Non-Palindromicity Proof ($T_i(m) \neq \mathrm{Rev}_{50}(T_i(m))$ for all $m \ge 1$)
 
 For every integer $m \ge 1$:
 - In $T_1(m)$ and $T_3(m)$, the first digit is $L_0[0] = 1$ whereas the last digit is $R_0[35] = 47 \neq 1$ (and at mirror offsets $[36, 36 + m)$, the left wire is $49^m$ while the right wire is $0^m$).
@@ -416,7 +416,7 @@ On the evening of `2026-10-25`, a single autonomous `PROOFER` (`we*`) thread sol
   1. **Smearing of the Diagonal *Cis*-Knockdown Impulse Under Low-Rank PCA (`Lens 1`):** When CRISPRi knocks down target gene $p$ and gene $p$ itself belongs to the 1,000 measured readout genes, its own mRNA drops precipitously toward zero ($\Delta_{\text{cis}}(p) \approx -b_p$). Because `lpm_selftrained` compresses all 5,000 genes through a rank-10 PCA bottleneck (`pca_dim = 10`) *before* regression, that sharp diagonal impulse ($g = p$) is smeared across 5,000 coordinates — losing $>80\%$ of the direct knockdown amplitude while simultaneously corrupting the principal components of the *trans*-regulatory response matrix.
   2. **The Diagonal Self-Similarity Trap in Graph/Kernel Regression (`Lens 2` — Hollow Leave-One-Out Resolvent):** In standard kernel or graph ridge regression over gene similarity matrices (Gene Ontology annotations or co-expression), a training perturbation $q \in \mathcal{T}_{\text{train}}$ has self-similarity `1.0` on the diagonal ($K_{qq} = 1$), whereas an unseen test perturbation $p \notin \mathcal{T}_{\text{train}}$ has only off-diagonal similarities ($\le 0.5$) with training neighbors. Standard ridge regression therefore systematically under-scales predictions on held-out genes.
 - **The Closed-Form Solution (`hollow_loo_dual_lens`):**
-  - **Step 1 (`Lens 1` — Pure *Cis*/*Trans* Separation):** Replace the diagonal self-perturbation entries $(i(q), q)$ in $Y_{\text{train}}$ with the non-self training mean $\mu_{\text{trans}, i(q)}$ to form a unconfounded *trans* matrix $Y_{\text{trans}}^{\text{train}}$, and fit a 3-feature ridge attenuation law $\hat{\Delta}_{\text{cis}}(p) = \operatorname{clip}(f_{\text{cis}}(b_p, \mu_{\text{trans}, p}, \sigma_{\text{trans}, p}), -b_p, 0)$ strictly on training perturbations.
+  - **Step 1 (`Lens 1` — Pure *Cis*/*Trans* Separation):** Replace the diagonal self-perturbation entries $(i(q), q)$ in $Y_{\text{train}}$ with the non-self training mean $\mu_{\text{trans}, i(q)}$ to form a unconfounded *trans* matrix $Y_{\text{trans}}^{\text{train}}$, and fit a 3-feature ridge attenuation law $\hat{\Delta}_{\text{cis}}(p) = \mathrm{clip}(f_{\text{cis}}(b_p, \mu_{\text{trans}, p}, \sigma_{\text{trans}, p}), -b_p, 0)$ strictly on training perturbations.
   - **Step 2 (`Lens 2` — Hollow Leave-One-Out Multi-Scale Resolvent):** Form multi-scale similarity channels (IDF-weighted GO cosine, GO Jaccard, and de-spiked training readout co-expression SVD/Pearson) with **strictly zeroed training diagonals ($S_{\text{hollow}}[q, q] = 0$)**, Top-$K$ sparse neighborhood filtering, and exact Hat-Matrix Leave-One-Out (`LOO`) stacking weights fitted in closed form on `train`.
 - **Verified Results (`72.24 s` single-core CPU across 39 splits; `27 min` wall-clock discovery time):**
   - **`replogle_k562_essential` (`Panel A`, `n = 262`):** Mean $L_2$ drops from **`4.097028` to `3.320307` (`-18.96%`, `57.47x SD`, paired Wilcoxon $p = 5.70 \times 10^{-28}$)**; Median $L_2$ drops from `3.805564` to **`3.044310` (`-20.00%`)**; Mean Pearson $\Delta$ jumps from **`0.435544` to `0.620623` (`+42.49%`, $p = 2.95 \times 10^{-37}$)**; Median Pearson $\Delta$ jumps from `0.426480` to **`0.644965` (`+51.23%`)**. Across all 5 seeds (`n = 677`), Mean $L_2$ drops **`-20.05%`** (`4.168029 -> 3.332314`).
@@ -436,7 +436,7 @@ On the evening of `2026-10-25`, a single autonomous `PROOFER` (`we*`) thread sol
 #### 3. Symmetric $\mathbb{F}_2$ Waring Rank & Fault-Tolerant Quantum $T$-Count (`polytof-toffoli-tcount-benchmark-tensors`, [`PR #761`](https://github.com/elder-plinius/V3R1T4S/pull/761), [`solutions/polytof-toffoli-tcount-benchmark-tensors/`](../solutions/polytof-toffoli-tcount-benchmark-tensors/))
 - **The Problem:** Optimizing the fault-tolerant $T$-gate count of reversible Toffoli networks via symmetric cubic $\mathbb{F}_2$ tensor Waring decompositions (`ZIB-IOL/polytof`, `docs/tensors.md`).
 - **What We Certified (`22 min` wall-clock discovery time):**
-  1. **`p2` Exact Optimality Certificates (7 Benchmark Rows):** Proved exact $T$-count optimality (`Waring rank = 7`) across all 7 weight-1 cubic tensor benchmarks (`0301`, `0101`, `0811`, `0819`, `0822`, `0157`, `0725`) by establishing the universal rank-parity step law $\Delta \operatorname{rk}_{\mathbb{F}_2}(A(\pi)) \in \lbrace 0, \pm 2 \rbrace$ (`LP max = 6 < 7`).
+  1. **`p2` Exact Optimality Certificates (7 Benchmark Rows):** Proved exact $T$-count optimality (`Waring rank = 7`) across all 7 weight-1 cubic tensor benchmarks (`0301`, `0101`, `0811`, `0819`, `0822`, `0157`, `0725`) by establishing the universal rank-parity step law $\Delta \mathrm{rk}_{\mathbb{F}_2}(A(\pi)) \in \lbrace 0, \pm 2 \rbrace$ (`LP max = 6 < 7`).
   2. **`p3` Complete 88-Tensor Audit & 4 Repaired `.npy` Schemes:** Audited all 88 benchmark rows in `docs/tensors.md` and reconstructed exact verified `.npy` Waring factorizations for the 4 schemes where upstream `scripts/verify_paper_schemes.py` failed (`0105-00039.npy`, `0108-00073.npy`, `0115-00051.npy`, `0817-00059.npy`).
   3. **New Multi-Kernel $\mathbb{F}_2$ Waring Decompositions (`Law M7`):** By scanning the fiber of stage-1 bilinear CP decompositions and assigning independent nullspace kernels $C^{(r)} \in \ker(\mathcal{L}_{U_r})$ across distinct bilinear blocks, we reduced `GF(2^9)` multiplication (`0732-00139.npy`) from `docs/tensors.md`'s `147` to **`139` in `0.17 s` on 1 CPU core** (matching the `arXiv:2603.29894` LLM-evolution bound instantaneously by pure linear algebra) and `GF(2^{10})` multiplication (`0733-00161.npy`) from `173` to **`161` in `1.42 s`**, complete with synthesized Clifford+$T$ `.qc` circuits verified via exact $\mathbb{Z}_8$ polynomial and $2^{14}$-statevector simulation.
 

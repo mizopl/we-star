@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[robustbench-cifar100-linf-beat-autoattack]] | harvest | 3 | open |
 | [[vnncomp-2026-unsolved-instance-counterexample]] | harvest | 3 | open |
 | [[robustbench-cifar10-l2-beat-autoattack]] | standard | 2 | open |

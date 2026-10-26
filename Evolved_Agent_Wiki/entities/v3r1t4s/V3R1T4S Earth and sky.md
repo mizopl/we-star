@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[climatebench-total-nrmse-cpu]] | harvest | 3 | open |
 | [[iau-mdc-new-meteor-shower-gmn]] | harvest | 3 | open |
 | [[magnet-dst-private-test-rmse]] | harvest | 3 | open |

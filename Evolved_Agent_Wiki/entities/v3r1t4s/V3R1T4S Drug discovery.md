@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[polaris-moleculeace-activity-cliff-mse]] | harvest | 4 | open |
 | [[polaris-novartis-cyp3a4-aafe]] | harvest | 3.5 | open |
 | [[polaris-pkis2-kinase-small-leaderboards]] | harvest | 3.5 | open |

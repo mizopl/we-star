@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[vesuvius-profilometer-ink-dice]] | harvest | 2.5 | commit-only |
 | [[vesuvius-surface-topo-holdout]] | harvest | 2 | commit-only |
 | [[vesuvius-frag4-ink-f05-holdout]] | harvest | 1.5 | commit-only |

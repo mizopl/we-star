@@ -12,7 +12,7 @@
 ## Published Benchmark Numbers vs Our Certified Numbers (`Panel A`, `seeds = 1:2`)
 
 | Dataset | Method | Mean $L_2$ ($\downarrow$) | Across-Split SD ($L_2$) | Median $L_2$ ($\downarrow$) | Mean Pearson $\Delta$ ($\uparrow$) | Across-Split SD ($r_{\Delta}$) | Median Pearson $\Delta$ ($\uparrow$) |
-|---|---|---:|---:|---:|---:|---:|---:|
+|---\lvert ---\rvert---:|---:|---:|---:|---:|---:|
 | `replogle_k562_essential` (`n = 262`) | `scgpt` (published) | `4.437277` | `0.054868` | `3.924462` | `0.316230` | `0.042009` | `0.282557` |
 | `replogle_k562_essential` (`n = 262`) | `geneformer` (published) | `4.235811` | `0.069633` | `3.779902` | `0.403790` | `0.015805` | `0.419822` |
 | `replogle_k562_essential` (`n = 262`) | `uce` (published) | `4.199545` | `0.061493` | `3.766328` | `0.409348` | `0.018043` | `0.414745` |

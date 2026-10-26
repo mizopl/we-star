@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[new-periodic-variables-not-in-vsx]] | harvest | 4 | open |
 | [[asteroid-precovery-arc-extension]] | harvest | 3 | open |
 | [[kepler-k2-new-vetted-transit-candidate]] | harvest | 3 | open |

@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[ghr-sum-difference-c3a]] | harvest | 3 | open |
 | [[erdos-1082i-distinct-distances-general-position]] | harvest | 2 | open |
 | [[erdos-307-barbeau-prime-reciprocals]] | harvest | 2 | open |

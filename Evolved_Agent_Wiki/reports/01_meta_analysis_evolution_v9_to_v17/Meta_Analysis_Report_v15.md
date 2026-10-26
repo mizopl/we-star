@@ -22,7 +22,7 @@ In Cycle 19–20, observing the live Worker Thread (`e5c2f174`, `runs/2026-10-18
 Shell **v15** formalizes the two-thread division of labor:
 
 | Layer | Thread / Process | Read Scope | Write Scope (Strict Partition) |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | **Worker / Hunter** | Active solver session (`e5c2f174` or `run.sh` `agy -p`) | Whole repo & lab | `~/v3r1t4s/runs/<active-run>/`, `~/v3r1t4s/outbox/` |
 | **Meta-Commander** | Scheduled governor session (`556ad873`, every 45 min via `schedule`) | Worker `transcript.jsonl`, `runs/`, `jobs/`, `outbox/` | `~/v3r1t4s/proofer/` (`brain.py`, `jobs.py`, `postdict.py`, `rgraph.py`, `preflight.sh`), `~/Desktop/PROOFER/` (`wiki/`, `scripts/`, shell files, `hall_of_fame/`) |
 

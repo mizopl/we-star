@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[codetables-binary-linear]] | harvest | 3 | open |
 | [[constant-weight-codes]] | harvest | 3 | open |
 | [[covering-designs-record]] | harvest | 3 | open |

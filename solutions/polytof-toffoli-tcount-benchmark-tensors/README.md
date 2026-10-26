@@ -19,7 +19,7 @@ All decompositions, audits, and optimality certificates were discovered and veri
 #### Verified Waring Decompositions (`object/waring/`)
 
 | Tensor ID | Benchmark Circuit | $n$ | `nnz` | `CP` | `docs/tensors.md` Waring | Posted `data/paper/waring/` | Our Waring (`r`) | Margin vs Table / Posted | File in `object/waring/` | SHA-256 Digest |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---|---|
+|---\lvert ---\rvert---:|---:|---:|---:|---:|---:|---:|---\lvert ---\rvert
 | **`0732`** | $\mathrm{GF}(2^9)$ Mult (primary) | 27 | 123 | 30 | 147 | `0732-00147.npy` (147) | **`139`** | **`-8` / `-8`** | `0732-00139.npy` | `fc241396f7286a7ce735432937b1af57acc14a7af5e3dfee58598e3b53fc536a` |
 | **`0732`** | $\mathrm{GF}(2^9)$ Mult (secondary) | 27 | 123 | 30 | 147 | `0732-00147.npy` (147) | **`141`** | **`-6` / `-6`** | `0732-00141.npy` | `6d0b3549d2d391faeb3375c4924354ac923f597662bbce3877d0b0b7de4c5576` |
 | **`0732`** | $\mathrm{GF}(2^9)$ Mult (tertiary) | 27 | 123 | 30 | 147 | `0732-00147.npy` (147) | **`143`** | **`-4` / `-4`** | `0732-00143.npy` | `2dad2e86180c2214fae71f82ca1b85043cd58f57bca33a7976bf23ff2d717b98` |

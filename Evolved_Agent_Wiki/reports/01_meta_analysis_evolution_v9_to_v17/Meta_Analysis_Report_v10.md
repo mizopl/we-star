@@ -13,7 +13,7 @@ last_ingested_sources: ["wiki/entities/BRAIN.md", "hall_of_fame/ancestor_v9.1_no
 Trigger: the human's "go!" (2026-10-17) on the BRAIN proposals K2–K4. Evidence and reasoning are in [[BRAIN]] §1–§5.
 
 | Change | Files | Verified |
-|---|---|---|
+|---\lvert ---\rvert---|
 | K2 job queue + launchd ticker | `~/v3r1t4s/proofer/scripts/jobs.py`, `~/Library/LaunchAgents/com.proofer.v3r1t4s.jobs.plist`, `~/v3r1t4s/jobs/` | scratch test: done / timeout / failed paths all correct; ticker last exit 0; running pool adopted |
 | K3 independent scoring | `postdict.py` (refuses `PROOFER_ROLE=run`, requires `--by`), `run.sh` exports the role, RUN_PROMPT 2b, HEARTBEAT digest | refusal demonstrated |
 | K4 preflight | `~/v3r1t4s/proofer/scripts/preflight.sh` (checks X1, X2, X3, disk, memory, running jobs), called by `run.sh` | blocks correctly before the limit reset (X3) |

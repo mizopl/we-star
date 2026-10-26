@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[ihtp-ihtc2024-hidden-m-instances-upper-bounds]] | harvest | 3 | open |
 | [[ihtp-ihtc2024-upper-bounds]] | harvest | 3 | open |
 | [[cvrplib-vrptw-gh-dimacs-bks]] | harvest | 2.5 | open |

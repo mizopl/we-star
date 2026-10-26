@@ -12,7 +12,7 @@
 ## 2. Extracted Benchmark Rows Compared Against (`docs/tensors.md` & `data/paper/`)
 
 | Tensor ID | Circuit Name | Table $n$ | Posted $n$ | Table `CP` | Table `Waring` | Posted `data/paper/waring/` File (Rank) | Our Result (`p2` / `p3` / Sub-Table Waring) |
-|---|---|---:|---:|---:|---:|---|---|
+|---\lvert ---\rvert---:|---:|---:|---:|---\lvert ---\rvert
 | `0112` / `0812` | `Mod 5_4` | 5 | 5 | 1 | 7 | `0112-00007.npy` (7), `0812-00007.npy` (7) | **`p2` Certified Optimal:** `CP = 1` ($\text{nnz}=1>0$) & `Waring = 7` (`0/126` subsets $\le 6$) |
 | `0101` / `0801` | `Barenco Tof_3` | 8 | 8 | 2 | 13 | `0101-00013.npy` (13), `0801-00013.npy` (13) | **`p2` Certified Optimal:** `CP = 2` ($\text{rank}_{\mathbb{F}_2}(F_1(T)) = 6 > 3$) |
 | `0120` / `0820` | `Tof_3` | 7 | 7 | 2 | 13 | `0120-00013.npy` (13), `0820-00013.npy` (13) | **`p2` Certified Optimal:** `CP = 2` ($\text{rank}_{\mathbb{F}_2}(F_1(T)) = 6 > 3$) |

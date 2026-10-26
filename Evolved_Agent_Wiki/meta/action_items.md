@@ -8,7 +8,7 @@
 ---
 
 | Priority | Action | Owner | Contact | Status | First Flagged |
-|---|---|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert---\lvert ---\rvert
 | _(none yet)_ | | | | | |
 
 See CONSTITUTION.md §10 for format rules (extraction, status updates, 10-cycle cleanup of `[DONE]` items).

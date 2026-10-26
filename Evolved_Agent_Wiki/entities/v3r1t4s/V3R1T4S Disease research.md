@@ -23,7 +23,7 @@ SORT tractability DESC
 ## Problems
 
 | Problem | Kind | Tractability | Disclosure |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | [[iedb-mhci-bd2009-blind-auc]] | harvest | 4 | open |
 | [[immrep22-tcr-epitope-microauc]] | harvest | 4 | open |
 | [[proteingym-cancer-dms-supervised-5fold]] | harvest | 4 | open |

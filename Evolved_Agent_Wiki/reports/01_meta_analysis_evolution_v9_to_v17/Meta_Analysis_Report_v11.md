@@ -13,7 +13,7 @@ last_ingested_sources: ["hall_of_fame/ancestor_v10_note.md", "wiki/entities/BRAI
 Trigger: the human architect's proposal (2026-10-18) to model `DECIDE` as a tug-of-war negotiation between two competing cortical "regions" with structured critique rounds and an explicit `"LOST"` concession token, refined into an `IMPLEMENT` vs. `SEARCH`-for-a-better-hypothesis decision gate.
 
 | Change | Where | Verified |
-|---|---|---|
+|---\lvert ---\rvert---|
 | Agent definition | `.claude/agents/tug-advocate.md` (also copied to `~/v3r1t4s/.claude/agents/`) | — |
 | Orchestrator + mechanical referee | `~/v3r1t4s/proofer/scripts/tug.py` (`new`, `run`, `chain`, `show`) | mock CLI: round order, private-note isolation (no leak, own notes visible in replay), `REPEAT` flags, `LOST`/`WON` decision, `SEARCH → H' → IMPLEMENT` chain |
 | Constitution §13, PROOFER.md §8, AGENTS.md, BRAIN §3a | docs | — |

@@ -21,7 +21,7 @@ To prove that the gains of our **Hollow-LOO Dual-Lens** predictor over `lpm_self
 ## 2. Quantitative Results (`300` Split-Level Permutations)
 
 | Dataset | Split Universe | Real Model Mean $L_2$ | `lpm_selftrained` Mean $L_2$ | Null Permuted Mean $L_2$ ($\mu \pm \sigma$) | Best Null $L_2$ ($\min$) | Worst Null $L_2$ ($\max$) | $Z$-Score ($L_2$ vs Null) | Real Mean Pearson $\Delta$ | Null Mean Pearson $\Delta$ ($\mu \pm \sigma$) | Best Null Pearson $\Delta$ ($\max$) | $Z$-Score ($r_{\Delta}$ vs Null) |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+|---\lvert ---\rvert---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | `replogle_k562_essential` | `Panel A` (`n = 262`, `100` combined / `200` split runs) | **`3.320307`** | `4.097028` | `4.971309 ± 0.067250` | `4.798990` | `5.163161` | **`24.55 σ`** | **`0.620623`** | `0.284854 ± 0.010565` | `0.311606` | **`31.78 σ`** |
 | `replogle_rpe1_essential` | `Panel A` (`n = 413`, `50` combined / `100` split runs) | **`4.777953`** | `5.390179` | `6.231428 ± 0.064759` | `6.085542` | `6.392681` | **`22.44 σ`** | **`0.719286`** | `0.632151 ± 0.002595` | `0.638356` | **`33.57 σ`** |
 

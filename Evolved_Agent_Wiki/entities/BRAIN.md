@@ -19,7 +19,7 @@ last_ingested_sources: ["~/v3r1t4s/proofer/memory/predictions.tsv", "~/v3r1t4s/p
 ## 1. Empirical Observations (Evidence from Cycles 1–19)
 
 | # | Observation | Data | Label |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | O1 | The first confirmed breakthrough came from a **smaller-first** attack on a sibling sequence with a fast deterministic checker (`A054759` torus counts instead of `A006506`) | run 1225 → 1252; P0006 p=0.20 hit; PR #366 | NUMERICAL |
 | O2 | **Half of early dead ends were infrastructure, not mathematics**: `X1–X10` converted into automated `preflight.sh` gates (`0` repeats after `K4`) | graph: 36 dead; `preflight.sh` 0 FAIL | NUMERICAL |
 | O3 | Calibration across the first 32 resolved bets: Brier **0.203** (`target` mean `0.667`, `lens` mean `0.688`, `exp` mean `0.455`) | `calibration.md`, 32 resolved bets | NUMERICAL |
@@ -55,7 +55,7 @@ SENSE (brain.py status) → MODEL (posteriors + costs.tsv + S_CLSS) → DECIDE (
 ## 3a. DECIDE as an Adversarial Tug-of-War (`v11`, §13)
 
 | Biological Brain | PROOFER |
-|---|---|
+|---\lvert ---\rvert
 | Competing neural populations | Two advocates in isolated contexts (`tug-advocate.md`), tool-less (`agy --agent tug-advocate --disable-slash-commands`) |
 | Mutual lateral inhibition | Structured rounds: critique → rebuttal → counter-critique in both directions |
 | Decision threshold crossing | Explicit concession by one side: exactly one `LOST` and one `WON` |
@@ -75,7 +75,7 @@ SENSE (brain.py status) → MODEL (posteriors + costs.tsv + S_CLSS) → DECIDE (
 ## 5. Constitutional Laws of BRAIN (`v10` → `v17`: **K1–K12 & M1–M7 Enacted**)
 
 | # | Constitutional Provision | Status | Enforcing Script |
-|---|---|---|---|
+|---\lvert ---\rvert---\lvert ---\rvert
 | K1 ✅ | **§12.1 Decision Index & Exploration Quota**: `brain.py scan` + `brain.py decide` (`proofer/memory/decisions.tsv`) | Enacted v14 | `proofer/scripts/brain.py` |
 | K2 ✅ | **§12.2 Two Clocks**: compute > 15 min queued in `jobs/` + `launchd` ticker + `X11` pause-aware cap | Enacted v10/v15 | `proofer/scripts/jobs.py` |
 | K3 ✅ | **§12.3 Independent Bet Resolution**: `PROOFER_ROLE=run` blocked from calling `resolve` | Enacted v10 | `proofer/scripts/postdict.py` |

@@ -25,7 +25,7 @@ the *content* starts at zero.
 ## Parentage
 
 | Field | Value |
-|---|---|
+|---\lvert ---\rvert
 | **Parent instance** | EVKing Knowledge Base — an autonomous KB tracking an EV-charging startup (Krakow, Poland) |
 | **Parent location** | `~/Desktop/KNOWLEDGE BASE` (this fork's sibling directory, `STARTFRESH/`, lives inside it) |
 | **Forked at** | Parent Cycle 234, 2026-07-24 |
