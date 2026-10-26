@@ -1,0 +1,10 @@
+{"ev": "node", "key": "Q_DD_14_3", "type": "question", "text": "Can we construct a simple undirected graph of max degree <= 14 and diameter <= 3 on N >= 1,118 vertices, beating Comellas 1,116 and V3R1T4S PR #143 1,117?", "by": "", "run": "2026-10-18-2031", "pred": "", "ts": "2026-10-18T19:19Z"}
+{"ev": "node", "key": "H_SPARE_DEG_SA", "type": "hypothesis", "text": "G_14_3_N1117.edges has 68 deg-13 vertices + 8 diameter-3 redundant edges (84 free slots); inserting vertex 1117 + bit-parallel BFS SA rewiring with z=N0 in ends[] and multi-temp polish drives bad pairs to 0", "by": "", "run": "2026-10-18-2031", "pred": "P0045", "ts": "2026-10-18T19:19Z"}
+{"ev": "edge", "src": "Q_DD_14_3", "dst": "H_SPARE_DEG_SA", "rel": "derives", "ts": "2026-10-18T19:19Z"}
+{"ev": "node", "key": "E_SA2_OPT_1118", "type": "experiment", "text": "sa2_opt restart rs=8 (seed=1) + 10 polish rounds drove bad pairs 49 -> 13 -> 4 -> 2 -> 0, producing G_14_3_N1118.edges (N=1118, E=7809, sha256 cb0a027e)", "by": "", "run": "2026-10-18-2031", "pred": "P0046", "ts": "2026-10-18T19:19Z"}
+{"ev": "edge", "src": "H_SPARE_DEG_SA", "dst": "E_SA2_OPT_1118", "rel": "derives", "ts": "2026-10-18T19:19Z"}
+{"ev": "node", "key": "R_G_14_3_N1118", "type": "result", "text": "CONFIRMED_SOLUTION: G_14_3_N1118.edges (N=1118, max deg 14, diam 3), 3-skeptic panel pass, packaged in outbox/2026-10-18-mizopl-cb0a027e", "by": "", "run": "2026-10-18-2031", "pred": "", "ts": "2026-10-18T19:19Z"}
+{"ev": "edge", "src": "E_SA2_OPT_1118", "dst": "R_G_14_3_N1118", "rel": "derives", "ts": "2026-10-18T19:19Z"}
+{"ev": "close", "key": "Q_DD_14_3", "why": "Solved: constructed explicit (14,3) graph G_14_3_N1118.edges on N=1118 vertices (3-skeptic panel pass + gate CONFIRMED_SOLUTION)", "ts": "2026-10-18T19:19Z"}
+{"ev": "close", "key": "H_SPARE_DEG_SA", "why": "P0045=1: vertex 1117 insertion + bit-parallel BFS SA rewiring produced N=1,118 graph G_14_3_N1118.edges (PR #457)", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "E_SA2_OPT_1118", "why": "P0046=1: CONFIRMED_SOLUTION G_14_3_N1118.edges verified by 3 skeptics and independent reviewer @CannibalKush (PR #457)", "ts": "2026-10-21T16:25Z"}

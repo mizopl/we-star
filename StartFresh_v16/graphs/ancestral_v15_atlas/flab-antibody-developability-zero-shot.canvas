@@ -1,0 +1,124 @@
+{
+ "nodes": [
+  {
+   "id": "M1_universal_zeroshot",
+   "type": "text",
+   "text": "**M1_universal_zeroshot** · hypothesis\n\nSingle universal zero-shot sequence potential beats all 12 released models in score/ by >= 0.05 across >= 2 categories without reading fitness",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M2_thermostability_25ds",
+   "type": "text",
+   "text": "**M2_thermostability_25ds** · hypothesis\n\nZero-shot CPU scorer beats all released models by >= 0.05 on both 15-dataset score/tm and 20/21/25-dataset FLAb thermostability universes with >= 80% positive datasets (p1 + p2)",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M4_length_germline_control",
+   "type": "text",
+   "text": "**M4_length_germline_control** · hypothesis\n\nLength-and-germline confound decomposition (p3) quantifies exact fraction of skill from length and germline distance and proves non-trivial residual biophysical skill",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H1",
+   "type": "text",
+   "text": "**H1** · hypothesis\n\nZero-shot multi-region biophysical & germline antibody developability scorer beats all released zero-shot models in FLAb score/ by >= 0.05 across multiple categories",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M4_param_free_equal_weight",
+   "type": "text",
+   "text": "**M4_param_free_equal_weight** · hypothesis\n\nParameter-free equal-weight (1:1:...:1) rank/z-score composite of published Biopython + IMGT germline descriptors beats all 12 released models in score/ by >= 0.05 across >= 2 categories with zero hand-tuned weights",
+   "x": 1680,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M5_p3_and_null_gate",
+   "type": "text",
+   "text": "**M5_p3_and_null_gate** · hypothesis\n\nExact p3 length-and-germline confound residualization and matched-stratum control plus B=1000 permutation null test confirm p < 0.001 and non-trivial residual skill beyond length and germline distance",
+   "x": 2100,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "M6_regional_fwr_cdr_biophysics",
+   "type": "text",
+   "text": "**M6_regional_fwr_cdr_biophysics** · hypothesis\n\nRegional antibody biophysics (FWR1-4 core stability + Ewert 2003 V-family stability + Raybould 2019 TAP CDR charge/hydrophobicity + SFvCSP VH*VL charge symmetry + CamSol solubility) achieves positive Spearman on large datasets (Wittrup2017 n=137, n>=10 mean, and N-weighted mean) as well as beating score/ by >=0.05 on unweighted category means",
+   "x": 2520,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e5",
+   "fromNode": "M1_universal_zeroshot",
+   "toNode": "M2_thermostability_25ds",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e6",
+   "fromNode": "M2_thermostability_25ds",
+   "toNode": "M4_length_germline_control",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e7",
+   "fromNode": "M4_length_germline_control",
+   "toNode": "H1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e8",
+   "fromNode": "H1",
+   "toNode": "M4_param_free_equal_weight",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e9",
+   "fromNode": "M4_param_free_equal_weight",
+   "toNode": "M5_p3_and_null_gate",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e10",
+   "fromNode": "M5_p3_and_null_gate",
+   "toNode": "M6_regional_fwr_cdr_biophysics",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

@@ -271,7 +271,7 @@ flowchart LR
 
 ## Citations
 - Constitution & Shell: [CONSTITUTION.md](../../CONSTITUTION.md), [PROOFER.md](../../PROOFER.md)
-- Decision Engine: [brain.py](file:///~/v3r1t4s/proofer/scripts/brain.py)
+- Decision Engine: [brain.py](~/v3r1t4s/proofer/scripts/brain.py)
 - Evolutionary Reports: [Meta_Analysis_Report_v14.md](Meta_Analysis_Report_v14.md), [Meta_Analysis_Report_v15.md](Meta_Analysis_Report_v15.md)
 - Domain Results: [[A054759(15) result]], [[C(94,13,5) result]], [[C(68,14,5) result]], [[FMM 9x12x14 ZT result]], [[IHTP i27 result]], [[minimizer-density-record-tables]]
 

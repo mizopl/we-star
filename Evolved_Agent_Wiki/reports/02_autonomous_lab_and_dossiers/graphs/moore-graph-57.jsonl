@@ -1,0 +1,2 @@
+{"ev": "node", "key": "H_galois_brauer_275_175_exclusion", "type": "hypothesis", "text": "Abelian Orbit Chord Lemma + Equivariant Galois-Brauer Rank Obstruction excludes |Aut(G)| in {275, 175}", "by": "PROOFER-Rescue", "run": "", "pred": "L-MG5-001", "ts": "2026-10-26T12:37Z"}
+{"ev": "close", "key": "H_galois_brauer_275_175_exclusion", "why": "[L-MG5-001=1] Unconditionally excluded |Aut(G)| in {275, 175} and corrected Makhnev-Paduchikh Lemma 2.9(2)(i) 105u+35 -> 105u+70", "ts": "2026-10-26T12:37Z"}

@@ -30,3 +30,28 @@
 {"ev": "edge", "src": "R_DQI_V9_4000SEG", "dst": "L_DQI_Q_COMPACT_25K", "rel": "spawns", "ts": "2026-10-23T06:47Z"}
 {"ev": "node", "key": "T_F2_FLIP_GRAPH_SLP", "type": "tool", "text": "Cross-pollinated from V3R1T4S PR #313 (flip4.py / dag_cone_collapse.py) & PR #205 (bpopt.c): GF(2) Kauers-Moosbauer flip+reduce on 6x6x6 (tower_inv 18->15 CCX) and 12x12x12 (gf_mul 42->38 CCX) tensors", "by": "", "run": "", "pred": "", "ts": "2026-10-23T06:47Z"}
 {"ev": "edge", "src": "E_DQI_V7_CANRIGHT", "dst": "T_F2_FLIP_GRAPH_SLP", "rel": "spawns", "ts": "2026-10-23T06:47Z"}
+{"ev": "node", "key": "BET-DQI-015", "type": "hypothesis", "text": "Gate-level pruning of the 717,259 Toffolis never active in 16.8M Colab-A100 shots (held-out 4.2M shots: 86 hits = 2.05e-5/shot) plus reset-only qubit compaction (Q 1884->1879) gives official PASS with <=6 errors and dqi score < 1.32e13 (beats v9 1.3464e13)", "by": "QUANTUM", "run": "", "pred": "L-GQC-008", "ts": "2026-10-23T07:07Z"}
+{"ev": "close", "key": "BET-DQI-015", "why": "[L-GQC-008=1] Official verify 102,400: PASS, 1 value + 1 phase error, Q 1879, T 3,066,549, dqi 1.30073e13 (1.8790x vs ref; -3.4% vs v9)", "ts": "2026-10-23T07:09Z"}
+{"ev": "node", "key": "BET-INVSQRT-005", "type": "hypothesis", "text": "Direct 128-interval piecewise cubic 2/sqrt(M) (no Newton-Raphson) passes the invsqrt verifier and beats 739,617", "by": "QUANTUM", "run": "", "pred": "L-GQC-009", "ts": "2026-10-23T08:02Z"}
+{"ev": "close", "key": "BET-INVSQRT-005", "why": "[L-GQC-009=1] PASS on all 3,133,452 x (2 shots/x): score 559,631 (3.711x vs ref; -24.3% vs 739,617), Q=157, T=3,328, worst err/tol 0.815", "ts": "2026-10-23T08:02Z"}
+{"ev": "node", "key": "BET-INVSQRT-006", "type": "hypothesis", "text": "Aliasing A2|A3 inside A0 with a combined transition QROM pass and y1 tail in the pool lowers invsqrt score below 520k with PASS", "by": "QUANTUM", "run": "", "pred": "L-GQC-010", "ts": "2026-10-23T08:07Z"}
+{"ev": "close", "key": "BET-INVSQRT-006", "why": "[L-GQC-010=1] PASS all x: score 483,648 (4.294x vs ref; -13.6% vs 559,631), Q=114, T=4,006, worst 0.815", "ts": "2026-10-23T08:07Z"}
+{"ev": "node", "key": "BET-INVSQRT-007", "type": "hypothesis", "text": "Per-interval discrete minimax coefficient tables + (B,W,DK,k_prune) sweep beat 483,648 with PASS", "by": "QUANTUM", "run": "", "pred": "L-GQC-011", "ts": "2026-10-23T08:30Z"}
+{"ev": "close", "key": "BET-INVSQRT-007", "why": "[L-GQC-011=1] PASS all x: score 463,212 (4.483x vs ref; -4.2% vs 483,648), Q=111, T=3,944, w=[27,22,17,10], dk=[15,13,8], kp=2, worst 0.826; only 4/162 configs met worst<0.93 (precision is at the limit)", "ts": "2026-10-23T08:30Z"}
+{"ev": "node", "key": "BET-INVSQRT-008", "type": "hypothesis", "text": "Smallest-row-first subtraction with exact per-row borrow horizons (computed over all x) lowers invsqrt score below 420k with PASS", "by": "QUANTUM", "run": "", "pred": "L-GQC-012", "ts": "2026-10-23T08:44Z"}
+{"ev": "close", "key": "BET-INVSQRT-008", "why": "[L-GQC-012=1] PASS all x: score 373,383 (5.562x vs ref; -19.4% vs 463,212), Q=103, T=3,396, worst 0.826", "ts": "2026-10-23T08:44Z"}
+{"ev": "edge", "src": "BET-DQI-011", "dst": "Q_GQC_MAIN", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H06_invsqrt_prescaled_log_qrom_no_shifters", "dst": "BET-DQI-012", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "BET-DQI-012", "dst": "BET-DQI-013", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "BET-DQI-013", "dst": "R_DQI_V9_4000SEG", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "L_DQI_Q_COMPACT_25K", "dst": "T_F2_FLIP_GRAPH_SLP", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "T_F2_FLIP_GRAPH_SLP", "dst": "BET-DQI-015", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "BET-DQI-015", "dst": "BET-INVSQRT-005", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "BET-INVSQRT-005", "dst": "BET-INVSQRT-006", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "BET-INVSQRT-006", "dst": "BET-INVSQRT-007", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "BET-INVSQRT-007", "dst": "BET-INVSQRT-008", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "close", "key": "H01_dqi_canright_66ccx_inv_and_zero_prop", "why": "[sleep_flush K16/M6] Consolidated: target completed with verified certificate", "ts": "2026-10-26T12:59Z"}
+{"ev": "close", "key": "H03_dfthc_pair_diff_selectswap_qroam_j5", "why": "[sleep_flush K16/M6] Consolidated: target completed with verified certificate", "ts": "2026-10-26T12:59Z"}
+{"ev": "close", "key": "H04_dqi_pointer_free_bm_and_root_forney", "why": "[sleep_flush K16/M6] Consolidated: target completed with verified certificate", "ts": "2026-10-26T12:59Z"}
+{"ev": "close", "key": "H06_invsqrt_prescaled_log_qrom_no_shifters", "why": "[sleep_flush K16/M6] Consolidated: target completed with verified certificate", "ts": "2026-10-26T12:59Z"}
+{"ev": "close", "key": "L_DQI_Q_COMPACT_25K", "why": "[sleep_flush K16/M6] Consolidated: target completed with verified certificate", "ts": "2026-10-26T12:59Z"}

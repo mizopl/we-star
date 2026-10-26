@@ -2,7 +2,7 @@
 
 > **Archived for session memory (`2026-10-22`):** Because `submission.zip` consists of **3 completely independent artifacts** (`invsqrt.kmb`, `dqi.kmb`, `dfthcsos/`) and the final leaderboard score is their geometric mean:
 > $$\text{Score} = \left( \frac{2,076,774.23}{\text{Cost}(\text{invsqrt})} \times \frac{1.650447 \times 10^{13}}{\text{Cost}(\text{dqi})} \times \frac{3,355,600,000}{\text{Cost}(\text{dfthcsos})} \right)^{1/3}$$
-> we partition the work across **3 specialized worker threads** (each operating with a compact, clean context window and modifying only its dedicated output slot) plus the **assembly script** [`pack_best_submission.py`](file:///~/Desktop/PROOFER/workspace_google_quantum_kaggle/pack_best_submission.py).
+> we partition the work across **3 specialized worker threads** (each operating with a compact, clean context window and modifying only its dedicated output slot) plus the **assembly script** [`pack_best_submission.py`](~/Desktop/PROOFER/workspace_google_quantum_kaggle/pack_best_submission.py).
 
 ---
 

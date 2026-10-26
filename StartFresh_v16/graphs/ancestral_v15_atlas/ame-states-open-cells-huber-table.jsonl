@@ -54,3 +54,27 @@
 {"ev": "kill", "key": "H_ame20_11_d35_g40_frob_character_classification", "why": "[L-ASOC-023=0] Classified all 35 order-40 subgroups of Z_5 x (Z_2)^4 x <J_comp> and all cyclic Z_4 extensions in Z_4 x (Z_2)^4: proved Sym-Unitary D=-A (g1=(0,0,1,0), g2=(1,1,0,0)) has 0 forced zeroes and sub_r1..4=0, but r=5 has 332 sub orbits, giving exhaustive min 40/4970 across 2,304,000 canonical matrices in 7.34s; identified sub=55..77 subgroups for M2 pivot.", "ts": "2026-10-21T23:04Z"}
 {"ev": "node", "key": "H_ame20_11_d35_m2_pivot_z9_apex_and_chiral", "type": "hypothesis", "text": "M2 Structural Pivot (Theorem D35): test Apex-Bordered Z_9 unitary family U = [C, beta*1_9; -conj(beta)*1_9^T, u_inf] in U(10, F_121) (where c_{9-d} != c_d eliminates apex 2x2 forced zeroes and b(Z_9)=b(g_R)=0 eliminates r=1..4 sub orbits) and Chiral-Shift U_new = [A, B; -conj(B), conj(A)].", "by": "worker", "run": "", "pred": "L-ASOC-024", "ts": "2026-10-21T23:10Z"}
 {"ev": "kill", "key": "H_ame20_11_d35_m2_pivot_z9_apex_and_chiral", "why": "[L-ASOC-024=0] Resolved 0 (Theorem D35 Pivot 1A verified): Apex-Bordered Z_9 x| Z_2 Unitary engine (solve_ame_20_11_d35_z9_apex.c, 0-inversion bijection over C_12^2 x C_1332^2 = 255.5M circulants, 0 forced zero minors, sub=126 [0,0,0,0,126], ext=5327, tot=5453) achieves sub=0/126 repeatedly (best sub=0 has tot=36/5453 at ap=44, l3=6, l6=0, z1=975, z2=507) and global best tot=22/5453 (99.5966%, sub=4/126, ext=18/5327 at ap=96, l3=1, l6=8, z1=230, z2=1011, c=[114,91,20,59,36,37,57,93,113]).", "ts": "2026-10-21T23:29Z"}
+{"ev": "edge", "src": "R1", "dst": "H_antisym_C2_neg_C1_184755", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_antisym_C2_neg_C1_184755", "dst": "H_ame20_17_g20_plucker", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_17_g20_plucker", "dst": "H_ame20_17_g20_unitary_strict", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_17_g20_unitary_strict", "dst": "H_ame20_17_g40_jacobi_plucker", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_17_g40_jacobi_plucker", "dst": "H_ame20_17_d22_chiral_dressing", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_17_d22_chiral_dressing", "dst": "H_ame20_17_d23_presieve_r12_lock", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_17_d23_presieve_r12_lock", "dst": "H_ame20_17_d23b_kpool_turbo", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_17_d23b_kpool_turbo", "dst": "H_ame20_17_tug_of_war_d24_d25", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_17_tug_of_war_d24_d25", "dst": "H_ame20_17_d25_exhaustive_k83521", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_17_d25_exhaustive_k83521", "dst": "H_ame20_17_d25_a100_cuda_kernel", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_17_d25_a100_cuda_kernel", "dst": "H_ame20_17_d26_a100_exact_orbits", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_17_d26_a100_exact_orbits", "dst": "H_ame20_d25_d26_full_184755_verify", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_d25_d26_full_184755_verify", "dst": "H_ame20_17_d26_a100_fixed_orb5_host", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_17_d26_a100_fixed_orb5_host", "dst": "H_ame20_17_d28_frobenius_parity_law", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_17_d28_frobenius_parity_law", "dst": "H_ame20_17_d28_exact_sub_sieve", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_17_d28_exact_sub_sieve", "dst": "H_ame20_16_d29_char2_spectral_plucker", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_16_d29_char2_spectral_plucker", "dst": "H_ame19_11_d31_exhaustive_z19", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame19_11_d31_exhaustive_z19", "dst": "H_ame19_11_d32_g18_toeplitz_hankel", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame19_11_d32_g18_toeplitz_hankel", "dst": "H_ame20_13_d27b_d28_spectral_hermitian", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_13_d27b_d28_spectral_hermitian", "dst": "H_ame20_11_d27b_d28_d29_dft5_plucker", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_11_d27b_d28_d29_dft5_plucker", "dst": "H_ame20_11_d33b_qnr_coset_and_d34_g20", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_11_d33b_qnr_coset_and_d34_g20", "dst": "H_ame20_11_d34_g20_biunitary", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_11_d34_g20_biunitary", "dst": "H_ame20_11_d35_g40_frob_character_classification", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "H_ame20_11_d35_g40_frob_character_classification", "dst": "H_ame20_11_d35_m2_pivot_z9_apex_and_chiral", "rel": "resumes", "ts": "2026-10-26T12:59Z"}

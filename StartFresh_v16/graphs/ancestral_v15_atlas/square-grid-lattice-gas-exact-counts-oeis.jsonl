@@ -174,3 +174,24 @@
 {"ev": "close", "key": "E2213", "why": "Completed in run 2208 (PR #462)", "ts": "2026-10-21T16:25Z"}
 {"ev": "close", "key": "L2208", "why": "Completed: all 40/40 widths of antidiagonal 79 dual-verified across hs_mod and far.py (PR #462)", "ts": "2026-10-21T16:25Z"}
 {"ev": "kill", "key": "L4", "why": "Superseded: A054759(15) (PR #366) and A089980 d=79 (PR #462) already won", "ts": "2026-10-21T16:25Z"}
+{"ev": "edge", "src": "E3", "dst": "X1", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "R3", "dst": "X2", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "R1708C", "dst": "F20", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "F20", "dst": "F21", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "E1913", "dst": "RF1913A", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "RF1913A", "dst": "X3", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "X3", "dst": "F22", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "E1913C", "dst": "F23", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "F23", "dst": "EH2208A", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "EH2208C", "dst": "EH2208D", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "EH2208D", "dst": "EH2208E", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "EH2208E", "dst": "EH2208F", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "EH2208F", "dst": "EH2208G", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "EH2208G", "dst": "X4", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "L2208", "dst": "F2208", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "L4", "dst": "X5", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "X5", "dst": "X6", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "X6", "dst": "X7", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "R2253", "dst": "X11", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "X11", "dst": "R_AD79_40_OF_40", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "R_AD79_40_OF_40", "dst": "R_A089980_AD79_CONFIRMED", "rel": "derives", "ts": "2026-10-26T12:59Z"}

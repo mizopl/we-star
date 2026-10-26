@@ -1,0 +1,34 @@
+{
+ "nodes": [
+  {
+   "id": "H_cadd_free_ensemble_and_maf_shortcut",
+   "type": "text",
+   "text": "**H_cadd_free_ensemble_and_maf_shortcut** · hypothesis\n\nCADD-free open non-human ensemble beats 0.712185 baseline and exposes Freq100bp MAF shortcut in mendelian_traits.smk",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_complex_traits_66x_norm_dilution",
+   "type": "text",
+   "text": "**H_complex_traits_66x_norm_dilution** · hypothesis\n\nIsotropic L2 Ridge on CADD+Borzoi suffers >50:1 norm dilution on complex traits",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "H_cadd_free_ensemble_and_maf_shortcut",
+   "toNode": "H_complex_traits_66x_norm_dilution",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

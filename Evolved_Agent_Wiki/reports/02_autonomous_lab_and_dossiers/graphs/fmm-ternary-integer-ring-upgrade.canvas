@@ -44,8 +44,8 @@
    "id": "H_ftu_subblock_conjugation_zt_gt_z",
    "type": "text",
    "text": "**H_ftu_subblock_conjugation_zt_gt_z** · hypothesis\n\nApplying CLSS Sign-Pure Sub-Block Conjugation (S_2k row-block permutation and sign gauge on the serendipitous s3 block) on the live ZT > Z schemes (10x15x16 Z=1484 vs ZT=1488, 6x12x14 Z=654 vs ZT=666, 9x10x13 Z=763 vs ZT=771, 9x10x16 Z=920 vs ZT=924, 11x15x16 Z=1629 vs ZT=1641, 12x13x16 Z=1544 vs ZT=1548) will eliminate all |x|=2 collisions and yield >= 3 new verified ZT = {-1,0,1} schemes strictly beating live Perminov README ZT ranks.",
-   "x": 0,
-   "y": 220,
+   "x": 1260,
+   "y": 0,
    "width": 380,
    "height": 190,
    "color": "6"
@@ -54,8 +54,8 @@
    "id": "H_ftu_reverse_engineer_z_q_builders",
    "type": "text",
    "text": "**H_ftu_reverse_engineer_z_q_builders** · hypothesis\n\nReverse-engineering the exact SerendipitousProductBuilder / block-partitioning decomposition of 10x15x16_m1482_Q, 6x12x14_m654_Z, 9x10x13_m763_Z, 9x10x16_m920_Z, 11x15x16_m1629_Z, and 12x13x16_m1544_Z and applying signed B_2k sub-block conjugation will upgrade at least 2 more formats (including 10x15x16 to 1482 or 6x12x14/9x10x16 to Z rank) in ZT",
-   "x": 0,
-   "y": 440,
+   "x": 1680,
+   "y": 0,
    "width": 380,
    "height": 190,
    "color": "6"
@@ -64,8 +64,8 @@
    "id": "H_ftu_12x13x16_1541_and_global_serendipitous_scan",
    "type": "text",
    "text": "**H_ftu_12x13x16_1541_and_global_serendipitous_scan** · hypothesis\n\nBuild and verify 6x12x14_m654_ZT, 9x10x13_m763_ZT, 9x10x16_m920_ZT, 11x15x16_m1629_ZT, close the 26th group of 12x13x16 at rank <= 1544 (targeting 1541 in ZT), and scan all status.json formats for additional ZT/Z/Q rank improvements via S_bg serendipitous product conjugation",
-   "x": 0,
-   "y": 660,
+   "x": 2100,
+   "y": 0,
    "width": 380,
    "height": 190,
    "color": "6"
@@ -92,6 +92,30 @@
    "id": "e2",
    "fromNode": "F1320_OBSTACLE",
    "toNode": "L1320_CONJ",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e3",
+   "fromNode": "L1320_CONJ",
+   "toNode": "H_ftu_subblock_conjugation_zt_gt_z",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e4",
+   "fromNode": "H_ftu_subblock_conjugation_zt_gt_z",
+   "toNode": "H_ftu_reverse_engineer_z_q_builders",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e5",
+   "fromNode": "H_ftu_reverse_engineer_z_q_builders",
+   "toNode": "H_ftu_12x13x16_1541_and_global_serendipitous_scan",
    "fromSide": "right",
    "toSide": "left",
    "label": "derives"
