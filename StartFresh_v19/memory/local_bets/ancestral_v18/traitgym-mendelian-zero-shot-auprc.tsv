@@ -1,0 +1,5 @@
+ts	kind	id	target	node_key	p	outcome	text
+2026-10-26T12:37Z	predict	L-TMZS-001	traitgym-mendelian-zero-shot-auprc	H_cadd_free_ensemble_and_maf_shortcut	0.62		CADD-free open non-human ensemble beats 0.712185 baseline and exposes Freq100bp MAF shortcut in mendelian_traits.smk
+2026-10-26T12:37Z	resolve	L-TMZS-001	traitgym-mendelian-zero-shot-auprc	H_cadd_free_ensemble_and_maf_shortcut	0.62	1	CADD-free ensemble achieved 0.789624 (+0.077439) and proved Freq100bp alone gets 0.630563
+2026-10-26T12:37Z	predict	L-TMZS-002	traitgym-mendelian-zero-shot-auprc	H_complex_traits_66x_norm_dilution	0.58		Isotropic L2 Ridge on CADD+Borzoi suffers >50:1 norm dilution on complex traits
+2026-10-26T12:37Z	resolve	L-TMZS-002	traitgym-mendelian-zero-shot-auprc	H_complex_traits_66x_norm_dilution	0.58	1	Exact 66.76:1 L2 norm dilution proven; block-standardized Ridge beats all baselines across 9/9 folds

@@ -1,0 +1,484 @@
+{
+ "nodes": [
+  {
+   "id": "Q2035",
+   "type": "text",
+   "text": "**Q2035** · question\n\nCan we solve a Moonshot milestone on fmm-4x4x4-rank47-3x3x3-rank22: (p2) rank-47 scheme for <4,4,4> over Z/4Z, (p1) rank-48 scheme for <4,4,4> over Z or ZT, or (p3) rank >= 22 lower bound for <3,3,3> over GF(2)?",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "H2035_L1",
+   "type": "text",
+   "text": "**H2035_L1** · hypothesis\n\nLens 1 (p2 - Exact Hensel Linearization + Cascading Bridge-Split Flip-Graph Search): Every rank-47 Z/4Z scheme projects mod 2 to a rank-47 F2 scheme (U0,V0,W0) and lifts to Z/4Z iff the 4096x2256 F2 linear system J(U0,V0,W0)*x = R0 mod 2 is consistent; cascading bridge-splits across coplanar triples escape Kruskal's uniqueness trap to sample new rank-47 F2 orbits and reduce coker_inc to 0",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H2035_L2",
+   "type": "text",
+   "text": "**H2035_L2** · hypothesis\n\nLens 2 (p1 - Rank-48 over Z / ZT via Z-Flip-Graph Reduction from Rank 49 and Triple Rewriting from DPS-48): Reduce rank-49 Z/ZT schemes (Strassen^2, Perminov-49, AlphaTensor-Z-49, Flips-49) to rank 48 over Z/ZT via signed plus-transitions, or clear the remaining eight 1/4-denominator (2,3,3)-coplanar triples of DPS-48 via non-De-Groote flip transitions",
+   "x": 420,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "D2035_DEGROOTE",
+   "type": "text",
+   "text": "✗ **D2035_DEGROOTE** · dead\n\nDirect GL_4(Q)^3 De Groote gauge conjugation of AlphaEvolve/DPS <4,4,4:48> to Z is impossible: by Proposition 1 of Moran-Schwartz-Yuan (arXiv:2602.13171), Tr(M_j1) = Tr(M_j2) = 1 and Tr(M_j1 * M_j2) = 1/2 are similarity invariants across the entire GL_4(C)^3 orbit",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "D2035_NAIVESPLIT",
+   "type": "text",
+   "text": "✗ **D2035_NAIVESPLIT** · dead\n\nUniform random single splits (Moosbauer flip_mm randomsplit) on isolated rank-47 F2 schemes (0 collinear pairs) fail to produce new rank-47 schemes because any split on a non-coplanar pair (r1,r2) stays inside span(u1,u2)xspan(v1,v2)xspan(w1,w2), which is disconnected from the other 45 rows and collapses back to {r1,r2} by Kruskal's uniqueness theorem",
+   "x": 840,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L1_cascading_bridge_split",
+   "type": "text",
+   "text": "✗ **H2035_L1_cascading_bridge_split** · hypothesis\n\nCascading bridge-split explorer on AlphaTensor-47 and Flips-47 reaches new F2 orbits with reduced Hensel obstruction (coker_inc -> 0)\n\n*why dead:* [L-F4R3-001=0] Exhaustive meet-in-the-middle check across all 39+19=58 doubly-dependent 4-row subsets of AlphaTensor-47 and Flips-47 proved 0/58 have alternative rank-4 F2 decompositions (k_U+k_V+k_W = 3+3+4 = 10 >= 2*4+2 by Kruskal's uniqueness theorem), and 1-split perturbations altering 7 rows collapse 100% back to 47/47.",
+   "x": 840,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L1_topdown64_naive",
+   "type": "text",
+   "text": "✗ **H2035_L1_topdown64_naive** · hypothesis\n\nUnconstrained top-down randompath from rank-64 (444-64-mod2.exp) using Moosbauer's unordered_multimap flip walk reaches rank 47/48 over F2\n\n*why dead:* [L-F4R3-002=0] Unconstrained top-down randompath from rank 64 gets trapped at rank 49 in the Strassen^2 Kronecker attractor (coplanar_triples in {84, 105}, 0 collinear pairs) where all coplanar triples stay inside single 7-row Strassen fibers, and std::unordered_multimap heap allocations cause multi-thread lock contention.",
+   "x": 840,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L2_dps48_mod3_hensel",
+   "type": "text",
+   "text": "✗ **H2035_L2_dps48_mod3_hensel** · hypothesis\n\nReducing DPS-48 (arXiv:2603.18699, Z[1/2]) modulo 3 to {-1,0,1} gives an exact F3 rank-48 scheme with consistent 3-adic Hensel system J3*x = R3 mod 3 whose affine solution space or ZT flip-graph neighborhood contains an exact integer rank-48 scheme (p1)\n\n*why dead:* [L-F4R3-003=0] Proved exact decomposition of DPS-48 151D Jacobian kernel into 141D De Groote+torus and a smooth unobstructed 10D variety V_10 = 4D B4 (rational curve s=-tau/(tau-1)^2, u=-tau/(tau+1)^2 on special_16 quadruplets Q1..Q4) + 1D v32 (gl4^3 stabilizer of T_spec on other_32) + 5D TQ1..TQ4 coupling; proved by pair-Hadamard block-diagonalization that rank_F(T_spec)=16 and rank_F(T(TQ_k))=12 over every field F, so V_10 preserves rank 48 and 2-adic valuation.",
+   "x": 840,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L3_v10_integer_trace_locus",
+   "type": "text",
+   "text": "✗ **H2035_L3_v10_integer_trace_locus** · hypothesis\n\nConstruct the exact finite rank-48 rational scheme on the 10D non-De-Groote moduli variety V_10 at c=(+-2,0,0,0,0,0) and (0,+-2,0,0,0,0) where all 1176/1176 pairwise traces Tr(M_i M_j) become integers (eliminating the Moran-Schwartz-Yuan Feb 2026 half-integer trace obstruction) and test whether GL_4(Q)^3 x G_m^96 transforms it into an exact integer Z scheme (p1) or collinear flip reduction.\n\n*why dead:* [L-F4R3-004=0] Proved that the Kuranishi quadratic obstruction map Sym^2(N_10) -> coker(J) vanishes identically (0/55 singular values > 1e-7) so DPS-48 lies on a smooth 10D rational moduli variety V_10 outside the De Groote orbit, and reconstructed exact rational points along v32(tau) (EXACT RATIONAL BRENT MATCH over Q: True at tau=1/2, 1/3, -1/3 with V[0](tau) = tau/(2(1+tau)(2+tau)) and U[0][4](tau) = -(2+2*tau+tau^2)/(2-tau^2)). While the first-order trace gradient on C6 = N_10/B4 has rank 6 and makes all 1176/1176 linearized traces integers at c=(+-2,0,0,0,0,0) and (0,+-2,0,0,0,0), the exact finite rational parameterization on V_10 has 2-adic valuation v_2 < 0 at all rational tau avoiding the poles tau in {-1, -2, +-sqrt(2)}.",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L4_m2_cyclic_z4_or_333_sat",
+   "type": "text",
+   "text": "✗ **H2035_L4_m2_cyclic_z4_or_333_sat** · hypothesis\n\nM2 Structural Pivot from continuous DPS-48 deformation: (A) test cyclic/dihedral symmetry-reduced SAT/ILP/Hensel lifting for <4,4,4> rank 47 over Z/4Z (p2) or integer rank 48 over Z from non-DPS orbits (p1), or (B) symmetry-breaking SAT/CAD lower-bound certificate for <3,3,3> rank 22 over GF(2) (p3).\n\n*why dead:* [L-F4R3-005=0] Proved DPS-48 has a 16-element exact integer subgroup G_16 <= GL_4(Z)^3 partitioning its 48 rows into 4 orbits (16+16+8+8) and 6 free orbits (6x8) under G_8^(A)=(Z_2)^3, while rank_F2(U_0 odot V_0 mod 2) drops from 48 to 28 and nonlinear traces on V_10 acquire quadratic non-integer terms (non_int=192..464); C++ C3 orbit-flip search (50.2M flips) reached k=16 orbits (rank 50/51 on n=4 with 17 Z4 lifts, and k=8/rank 25 on n=3) because Moosbauer-Poole C3xZ2 congruence 6k+|P| skips 47 and 48 and random top-down walks stall at k=16.",
+   "x": 1680,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "P2035_T1_T3_V10_Unobstructed",
+   "type": "text",
+   "text": "**P2035_T1_T3_V10_Unobstructed** · result\n\nTheorems 1-3 (Unobstructed 10D Moduli Variety V_10 & Closed-Form Rational Curves): dim ker(J) = 151 = 141 + 10 (N_10 = B4 + Q*v32 + B55, 10 = 4+1+5), Kuranishi quadratic obstruction Sym^2(N_10) -> coker(J) vanishes identically (max_sv = 2.48e-14), and both B4 (s(tau)=-tau/(tau-1)^2, u(tau)=-tau/(tau+1)^2) and v32 (V[0](tau)=tau/((1+tau)(2+tau)), U[0][4](tau)=-(2+2*tau+tau^2)/(2-tau^2), EXACT RATIONAL BRENT MATCH over Q: True) integrate to exact rational curves.",
+   "x": 1260,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "P2035_T4_T6_Hadamard_Trace_Kruskal",
+   "type": "text",
+   "text": "**P2035_T4_T6_Hadamard_Trace_Kruskal** · result\n\nTheorems 4-6 (Pair-Hadamard 8x8x8 Decomposition of TQ_1..4, C6 Trace-Gradient Rank 6 & 2-Adic Pole Obstruction, and Kruskal Uniqueness on 58 F_2 4-Row Sub-Tensors): certified by verify_dps48_theorems.py (exit code 0).",
+   "x": 1680,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "H2035_L5_m2_z4_syndrome_and_r48_khatri_rao",
+   "type": "text",
+   "text": "✗ **H2035_L5_m2_z4_syndrome_and_r48_khatri_rao** · hypothesis\n\nM2 Representation Pivot: (1) Exact F_2-linear Z_4 Hensel syndrome solver J_S * y = r_2(S) (mod 2) guiding flip/plus-transition walks directly from rank-47 F_2 schemes (alphatensor_F2, flips_mod2) toward Z_4 liftability (p2), and (2) G_16/G_8-equivariant Khatri-Rao lattice saturation & 3-collinear plus-transition search from rank-49 Z schemes toward rank-48 Z (p1).\n\n*why dead:* [L-F4R3-006=0] Proved Theorem 7 (Z_4 Cokernel Invariance under F_2 Flips: Delta r_2 = u1 x (v1^v2) x w1 + u1 x v2 x (w1 + w1^w2) lies in im_F2(J_S) cap im_F2(J_S')) and proved both alphatensor_F2 and flips_mod2 are isolated (0 direct flips) and infinitesimally rigid over F_2 (rank_F2(J_S) = 2117 = 2256 - 139); across 6,536 schemes in guided_z4_hunter.cpp, coker_wt hits a floor of 11 at R=47 and 6 at R=48 because Theorem 7 traps the local F_2 flip basin in a non-zero Z_4-syndrome coset.",
+   "x": 2100,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L6_direct_z_and_z4_from_r49",
+   "type": "text",
+   "text": "✗ **H2035_L6_direct_z_and_z4_from_r49** · hypothesis\n\nM2 Representation Pivot (Direct Ring Walk from Rank 49): By Theorem 7, to guarantee Z / Z_4 validity we must start inside the cw=0 coset (the known rank-49 ternary integer schemes alphatensor_Z and perminov_ZT) and walk directly in the Z-flip / Z_4-flip graph via 3-collinear plus-transitions (49 -> 50 -> 49 -> 48 over Z for p1, and -> 47 over Z_4 for p2).\n\n*why dead:* [L-F4R3-007=0] Across 731,637 direct integer flips over Z from at49_Z and perminov49_ZT, 0/731,637 reductions to R=49 produced a rank-49 state with available Z-flips because sign mismatches like (1,1) vs (1,-1) over Z prevent factor collisions that exist mod 2.",
+   "x": 2520,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L7_cw0_coset_f2_walk_from_r49",
+   "type": "text",
+   "text": "✗ **H2035_L7_cw0_coset_f2_walk_from_r49** · hypothesis\n\nM2 Pivot (Syndrome-Zero Coset Walk over F_2 from R=49): Start at at49_Z mod 2 and perminov49_ZT mod 2 (which lie inside the cw=0 Z_4-liftable coset) and walk in the F_2 flip + 3-collinear plus-transition graph while enforcing/tracking check_z4(S).cw == 0 (by Theorem 7) to reduce R=49 -> R=48 (with Z_4/Z Hensel lift for p1) and -> R=47 (for p2).\n\n*why dead:* [L-F4R3-008=0] Confirmed FastZ4Solver gives cw=0 (liftable=1, rk=2155) on at49_F2, and proved that even over F_2 every 1-step 3-collinear plus-transition walk (49->50->49) from the Kronecker Strassen(x)Strassen basin re-collapses to an isolated R=49 vertex with 0 active F_2 flips.",
+   "x": 2940,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L8_m1_dps48_subtensor_surgery_sat",
+   "type": "text",
+   "text": "✗ **H2035_L8_m1_dps48_subtensor_surgery_sat** · hypothesis\n\nM1+M2 Sub-Tensor Surgery & Exact Solver Pivot: Identify the minimal fractional sub-tensor / De Groote basis of DPS-48 (among Orbit 0..3 / TQ_1..TQ_4) and test whether a small k-row sub-tensor (k in {8, 12, 16, 24}) can be replaced via exact integer/SAT decomposition over Z (for p1: rank 48 over Z) or Z_4 (for p2: rank 47 over Z_4).\n\n*why dead:* [L-F4R3-009=0] In the standard basis no proper non-empty subset of the 2^48 DPS-48 rows sums to an integer tensor, and in the cyclic pairwise-Hadamard basis A=B=C=H_{01,23} the 12-row blocks T_H(TQ_k) are integer {-1,0,1} tensors whose 4 non-special_16 row pairs are isomorphic to the double-number tensor Z[eps]/(eps^2-1) degenerating mod 2 to a rank-3 Jordan block, forcing rk_{F_2}(triple)=4 and rk_{F_2}(two triples)=8; local surgeries around DPS-48 are completely closed.",
+   "x": 1680,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L9_m2_333_c3_s3_lut_rank_sieve",
+   "type": "text",
+   "text": "✗ **H2035_L9_m2_333_c3_s3_lut_rank_sieve** · hypothesis\n\nConstructive M2 pivot on <3,3,3:22>: fast C++ solver with LUT tables and Unfolding-Rank Sieve (rk<=3/rk<=6) for symmetric decompositions 22 = 7x3 + 1 and 6x3 + 4 under C_3^fac, C_3^idx, diagonal C_3 <= C_3^fac x GL_3(F_2), and transpose involution S_2 over F_2 and {-1,0,1}.\n\n*why dead:* [L-F4R3-010=0] Exhaustive MITM for C_3^fac x C_3^idx (order 9, 87 coordinate orbits) proved dim Span(Orb_1 U Orb_3) = 76 and T_<3,3,3> not in Span(Orb_1 U Orb_3), and full MITM across 1.147x10^11 combinations of 2*Orb_9^(tau-sym) + Orb_3 + (<=2)*Orb_1 yields 0 solutions for r<=23; for C_3^fac alone random walk with subspace closure (200/200 test gate) reached Hamming weight wt=20 because C_3^fac mixes modes U->V->W and breaks Khatri-Rao trilinearity.",
+   "x": 840,
+   "y": 1100,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L10_m2_333_khatri_rao_c7_c3_gl3",
+   "type": "text",
+   "text": "✗ **H2035_L10_m2_333_khatri_rao_c7_c3_gl3** · hypothesis\n\nConstructive C++ solver with exact Khatri-Rao linear elimination of the third factor W over F_2 (rk([K(U,V) | T^(3)]) == rk(K(U,V))) for diagonal groups G <= GL_3(F_2): order-7 Singer cycle C_7 (22 = 3x7 + 1, 23 = 3x7 + 2) and C_3^idx / S_3^idx (22 = 7x3 + 1, 6x3 + 4).\n\n*why dead:* [L-F4R3-011=0] Exact linear elimination of W via the Khatri-Rao product K(U,V) in F_2^81 reduced rank-R existence to W_target subset Span(u_1(x)v_1..u_R(x)v_R): for the Singer cycle C_7 <= GL_3(F_2) (3x7 + V_fix^2) the residual stalled at wt=30, whereas for C_3^idx (22 = 7x3 + 1) it reached wt=12 across 9 slices in 4 s (mean 1.33 residual bits per 81-bit slice).",
+   "x": 840,
+   "y": 1320,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L11_m2_333_slice_unfolding_rank_closure",
+   "type": "text",
+   "text": "✗ **H2035_L11_m2_333_slice_unfolding_rank_closure** · hypothesis\n\nConstructive C++ solver directly minimizing unfolding-rank energy (rk(R_(1))+rk(R_(2))+rk(R_(3)) <= 9) and the sum of 27 9x9 slice ranks (instead of Hamming weight) for 6 C_3 orbits + 1 fixed term (19 terms) with exact closure of the 7th orbit in Col(R_(1))xCol(R_(2))xCol(R_(3)) (ranks 22 and 23) for C_3^fac, C_3^diag, and C_3^idx.\n\n*why dead:* [L-F4R3-012=0] Unfolding-rank + 27 9x9 slice-rank energy broke the rk=(9,9,9) barrier from L-F4R3-010, reducing the residual of 6 C_3^fac orbits + 1 fixed term to rk_unfold=(6,6,6) (sum=18), sum_27_slices=36 (mean slice rank 1.33), and wt=14; descent to rk<=4 was blocked by premature restarts every 8000 steps (~2.4 ms) and random bit flips leaving the 6-dimensional subspace Col(R_(1)).",
+   "x": 840,
+   "y": 1540,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L12_m2_333_in_subspace_c3_cascade",
+   "type": "text",
+   "text": "✗ **H2035_L12_m2_333_in_subspace_c3_cascade** · hypothesis\n\nCascaded C++ solver for C_3^fac and C_3^diag (22 = 7x3 + 1 and 22 = 6x3 + 4) with longer elite-reheating trajectories and in-subspace perturbations sampled from Col(R_(1)) whenever rk <= 7 (preventing unfolding-rank blowup when descending from rk=6 to rk<=3).\n\n*why dead:* [L-F4R3-013=0] Monomial lock eliminated the trivial 27-ones basin and descended on the full residual of 7 orbits + 1 fixed term to urk_sum=21 (rk1=7), srk_sum=39, wt=17 (E=2961) for C_3^fac and urk_sum=23 (rk1=7), wt=20 for C_3^diag, but 1-bit mutations are too local relative to the separate linearity of O_m(u,v,w) in each factor.",
+   "x": 840,
+   "y": 1760,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L13_m1_m2_333_gray_code_als_exact_block",
+   "type": "text",
+   "text": "✗ **H2035_L13_m1_m2_333_gray_code_als_exact_block** · hypothesis\n\nExact GF(2)-ALS solver exploiting factorwise linearity of O_m(u,v,w): 511-step Gray-code sweep over all 2^9-1 vectors u_m, v_m, w_m in ~2 us per factor plus 63-dimensional Gaussian elimination of the full block U=(u_1..u_7) for C_3^fac and C_3^diag (ranks 22 = 7x3+1, 22 = 6x3+4, and control 23 = 7x3+2).\n\n*why dead:* [L-F4R3-014=0] 511-step Gray-code GF(2)-ALS sweep over individual factors (u_m, v_m, w_m) descended for C_3^fac (22 = 7x3+1) to wt=11 and slice-rank sum srk1=11 (rk1=8), but without full 63-dimensional block elimination of U=(u_1..u_7) it stalls in blockwise local minima.",
+   "x": 840,
+   "y": 1980,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L14_tug_winner_pairwise_gray_63bit_als",
+   "type": "text",
+   "text": "✗ **H2035_L14_tug_winner_pairwise_gray_63bit_als** · hypothesis\n\nImplementation of the winning Tug-of-War architecture (2026-10-22-fmm-333-l15, IMPLEMENT WON in bout 1): 4-word quotient representation Tensor249 (249 coordinate orbits of C_3^fac/C_3^diag), exact 18-bit pairwise Gray-MITM on orbit pairs (u_m1, u_m2) in F_2^18, and 63-bit linear absorbability oracle Span(B_0..B_62) across all 511 fixed terms u_0 (rank 22) and pairs (u_0, u_1) (rank 23).\n\n*why dead:* [L-F4R3-015=0] 4-word quotient representation Tensor249 accelerated the 63-bit linear absorbability oracle (56,994 calls in 6.5 s) and 18-bit pairwise Gray-MITM (min_orb_wt=9, full_wt=21 for C_3^diag and 23 for C_3^fac from cold start), confirming the Tug-of-War diagnosis that without sideways/rank moves and a warm start from an explicit cyclic rank-23 scheme (7x3+2), cold start stalls at the wt=21 barrier.",
+   "x": 1260,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L15_cyclic_rank23_warmstart_seam_surgery",
+   "type": "text",
+   "text": "✗ **H2035_L15_cyclic_rank23_warmstart_seam_surgery** · hypothesis\n\nWarm start from an explicit cyclic rank-23 decomposition 23 = 7x3 + 2 (and flip-graph walks from Laderman-23 symmetrized under C_3^fac / C_3^diag): removing 1 fixed term (starting at orb_wt = 1..3 instead of 78) and running 18-bit pairwise Gray-MITM with sideways moves, slice-rank criterion srk1, and the 63-bit linear absorbability oracle.\n\n*why dead:* [L-F4R3-016=0] Warm start from the explicit Lille-23 scheme (23 = 6x3 + 5x1), replacing 4 fixed terms from the 2x2 block with a 7th orbit O_6(32,128,176), started at full_wt=5 and via 18-bit pairwise Gray-MITM descended on 22 = 7x3 + 1 to full_wt=2, orb_wt=2 (ZERO off-diagonal errors — 727 of 729 entries of T_<3,3,3> exact, leaving only 2 diagonal bits!).",
+   "x": 1680,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L16_wt2_diagonal_absorption_and_c3_rot",
+   "type": "text",
+   "text": "✗ **H2035_L16_wt2_diagonal_absorption_and_c3_rot** · hypothesis\n\nInspection of the full_wt=2, orb_wt=2 state (0 off-diagonal errors, only 2 diagonal residual bits for 22 = 7x3 + 1), enabling cyclic representative rotations (u_m,v_m,w_m)->(v_m,w_m,u_m) coupling all factor pairs across orbits plus fixed-term u_0 optimization and 18/27-bit seam surgery around full_wt=2.\n\n*why dead:* [L-F4R3-017=0] Anatomy of 17,497 wt=2 states proved that 7 C_3^fac orbits (rank 21) reproduce all 726 off-diagonal entries of T_<3,3,3> exactly (orb3_wt=0), leaving only the 3-element diagonal tensor D_3 = E_00^3 + E_11^3 + E_22^3 (mask 0x111, R7_wt=3); a single fixed term E_ii^3 cancels only 1 of 3 diagonal bits (wt=2), whereas choosing u_0 = I_3 = E_00+E_11+E_22 (0x111) cancels all 3 diagonal bits of D_3 at once at the cost of injecting 8 off-diagonal orbits in {E_00,E_11,E_22}^3.",
+   "x": 2100,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L17_hadamard_diagonal_locked_u0_als",
+   "type": "text",
+   "text": "✗ **H2035_L17_hadamard_diagonal_locked_u0_als** · hypothesis\n\nExact elimination of the fixed term u_0 via the Hadamard diagonal identity u_0 = 0x111 ^ XOR_{m=0..6} (u_m & v_m & w_m), satisfying all 9 diagonal equations identically (diag_wt == 0 at every step!) and reducing <3,3,3:22> to zeroing the 240 off-diagonal bits orb3_wt via 1-factor and 18-bit pairwise Gray-MITM from the Lille-23 warm start.\n\n*why dead:* [L-F4R3-018=0] Hadamard diagonal lock u_0 = 0x111 ^ XOR_{m=0..6} (u_m & v_m & w_m) maintained diag_mask=0x0 identically and in thread T3 forced absorption of the diagonal bit E_11^3 via u_m & v_m & w_m = 0x010, reducing u_0 from 0x111 (3 bits, 8 side-effect orbits) to u_0 = 0x101 = E_00 + E_22 (2 bits, only 2 side-effect orbits) and lowering off-diagonal error to min_orb3_wt = 3 (full_wt = 9, diag_wt = 0).",
+   "x": 2520,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L18_wt1_u0_hadamard_seeded_intra_inter_mitm",
+   "type": "text",
+   "text": "✗ **H2035_L18_wt1_u0_hadamard_seeded_intra_inter_mitm** · hypothesis\n\nEnforcing weight wt(u_0) <= 1 (XOR(u_m & v_m & w_m) in {0x110, 0x101, 0x011, 0x111}, so u_0^3 injects 0 off-diagonal orbits) by seeding diagonal bits E_11 (16) and E_22 (256) into (u_m, v_m, w_m) combined with 18-bit intra-orbit (u_m, v_m) and inter-orbit (u_m1, u_m2) Gray-MITM.\n\n*why dead:* [L-F4R3-019=0] Seeding diagonal bits on the raw starting state (before reaching orb3_wt=0 from L-F4R3-017) inflates u0 to 0x11e (wt=5, +40 off-diagonal orbits, orb3_wt=111), causing 18-bit Gray-MITM to fall into a trivial monomial trap (orb3_wt=7 via orbit duplication O_0=O_2, O_1=O_4 and rank-1 degeneration O_3=(1,1,1), O_6=(16,16,16) since T_<3,3,3> itself has only 8 off-diagonal orbits and 3 diagonal terms).",
+   "x": 2940,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H2035_L19_orb3_wt0_fiber_gl3_conjugation_nondegen",
+   "type": "text",
+   "text": "✗ **H2035_L19_orb3_wt0_fiber_gl3_conjugation_nondegen** · hypothesis\n\nExploration of the non-degenerate orb3_wt=0 fiber (with guards against u_m=v_m=w_m, orbit duplication O_m1=O_m2, and unfolding-rank drop below 8) combined with 18-bit in-fiber MITM and testing all 511^3 rank-1 terms u_0 x v_0 x w_0 and 168 automorphisms of GL_3(F_2).\n\n*why dead:* [L-F4R3-020=0] On the true Lille-23 + O_6(32,128,176) warm start with hard non-degeneracy guards (mode1_rank=9, no duplicates or u=v=w): (1) all 1,973 visited states of the orb3_wt=0 fiber invariantly preserve diag_wt=3 (diag_mask=0x111, bitmask=0x8); (2) under enforced wt(u0)=1 (u0=0x100, diag_mask=0x0), non-degenerate 18-bit Gray-MITM descends from orb3_wt=42 to orb3_wt=4 (full_729_wt=12, mode1_rk=9), and globally to non-degenerate orb3_wt=3 (full_729_wt=9, mode1_rk=9).",
+   "x": 3360,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q2035",
+   "toNode": "H2035_L1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "Q2035",
+   "toNode": "H2035_L2",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e2",
+   "fromNode": "H2035_L2",
+   "toNode": "D2035_DEGROOTE",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e3",
+   "fromNode": "H2035_L1",
+   "toNode": "D2035_NAIVESPLIT",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "refutes"
+  },
+  {
+   "id": "e4",
+   "fromNode": "H2035_L1",
+   "toNode": "H2035_L1_cascading_bridge_split",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e5",
+   "fromNode": "H2035_L1",
+   "toNode": "H2035_L1_topdown64_naive",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e6",
+   "fromNode": "H2035_L2",
+   "toNode": "H2035_L2_dps48_mod3_hensel",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e7",
+   "fromNode": "H2035_L2_dps48_mod3_hensel",
+   "toNode": "H2035_L3_v10_integer_trace_locus",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e8",
+   "fromNode": "H2035_L3_v10_integer_trace_locus",
+   "toNode": "H2035_L4_m2_cyclic_z4_or_333_sat",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e9",
+   "fromNode": "H2035_L2_dps48_mod3_hensel",
+   "toNode": "P2035_T1_T3_V10_Unobstructed",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e10",
+   "fromNode": "H2035_L3_v10_integer_trace_locus",
+   "toNode": "P2035_T4_T6_Hadamard_Trace_Kruskal",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e11",
+   "fromNode": "H2035_L4_m2_cyclic_z4_or_333_sat",
+   "toNode": "H2035_L5_m2_z4_syndrome_and_r48_khatri_rao",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e12",
+   "fromNode": "H2035_L5_m2_z4_syndrome_and_r48_khatri_rao",
+   "toNode": "H2035_L6_direct_z_and_z4_from_r49",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e13",
+   "fromNode": "H2035_L6_direct_z_and_z4_from_r49",
+   "toNode": "H2035_L7_cw0_coset_f2_walk_from_r49",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e14",
+   "fromNode": "H2035_L3_v10_integer_trace_locus",
+   "toNode": "H2035_L8_m1_dps48_subtensor_surgery_sat",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e15",
+   "fromNode": "H2035_L1",
+   "toNode": "H2035_L9_m2_333_c3_s3_lut_rank_sieve",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e16",
+   "fromNode": "H2035_L1",
+   "toNode": "H2035_L10_m2_333_khatri_rao_c7_c3_gl3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e17",
+   "fromNode": "H2035_L1",
+   "toNode": "H2035_L11_m2_333_slice_unfolding_rank_closure",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e18",
+   "fromNode": "H2035_L1",
+   "toNode": "H2035_L12_m2_333_in_subspace_c3_cascade",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e19",
+   "fromNode": "H2035_L1",
+   "toNode": "H2035_L13_m1_m2_333_gray_code_als_exact_block",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e20",
+   "fromNode": "H2035_L13_m1_m2_333_gray_code_als_exact_block",
+   "toNode": "H2035_L14_tug_winner_pairwise_gray_63bit_als",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e21",
+   "fromNode": "H2035_L14_tug_winner_pairwise_gray_63bit_als",
+   "toNode": "H2035_L15_cyclic_rank23_warmstart_seam_surgery",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e22",
+   "fromNode": "H2035_L15_cyclic_rank23_warmstart_seam_surgery",
+   "toNode": "H2035_L16_wt2_diagonal_absorption_and_c3_rot",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e23",
+   "fromNode": "H2035_L16_wt2_diagonal_absorption_and_c3_rot",
+   "toNode": "H2035_L17_hadamard_diagonal_locked_u0_als",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e24",
+   "fromNode": "H2035_L17_hadamard_diagonal_locked_u0_als",
+   "toNode": "H2035_L18_wt1_u0_hadamard_seeded_intra_inter_mitm",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e25",
+   "fromNode": "H2035_L18_wt1_u0_hadamard_seeded_intra_inter_mitm",
+   "toNode": "H2035_L19_orb3_wt0_fiber_gl3_conjugation_nondegen",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

@@ -2,6 +2,16 @@
 
 A clean, self-contained, **Sleep & Memory-Flushed** autonomous Knowledge OS and Scientific Breakthrough Engine (`Shell v18`, `CONSTITUTION.md v18` Laws `M1–M9` + `K14–K16` + Code-First Evolution `H-EVO-01`, `H-EVO-02`, `H-EVO-06`), ready to be copied into any new project directory and initialized on a new scientific or algorithmic domain at `Cycle 0`.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./PROOFER-graph-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="./PROOFER-graph.png">
+    <img alt="PROOFER v18 Archived Obsidian Knowledge & Decision Graph Constellation" src="./PROOFER-graph.png" width="700">
+  </picture>
+  <br>
+  <em><b>Archived <code>v18</code> Obsidian Knowledge & Decision Graph Constellation</b> (<a href="./PROOFER-graph-dark.png">Dark</a> · <a href="./PROOFER-graph.png">Light</a>).</em>
+</p>
+
 ---
 
 ## ⚡ Step-by-Step Quick Start (`PROOFER` + `MONITOR` + `AUDITOR` + `<TARGET>_LAB`)

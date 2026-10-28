@@ -1,0 +1,1238 @@
+{
+ "nodes": [
+  {
+   "id": "H_forced_structure_p2_L1_L5_dual_lrat",
+   "type": "text",
+   "text": "**H_forced_structure_p2_L1_L5_dual_lrat** · hypothesis\n\nDual-encoded Sinz+Totalizer Pure-RUP LRAT certificates for all 5 local structural lemmas L1-L5",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_prime_order_p11_p3fix0_frob21_p5t4_p2fix11",
+   "type": "text",
+   "text": "**H_prime_order_p11_p3fix0_frob21_p5t4_p2fix11** · hypothesis\n\nDual-encoded Pure-RUP LRAT exclusions for p=11, p=3(fix0), Frob(21), p=5(t=4), p=2(fix11)",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_edge_level_cnf_p5t1_p7fix1_direct",
+   "type": "text",
+   "text": "✗ **H_edge_level_cnf_p5t1_p7fix1_direct** · hypothesis\n\nDirect edge-orbit CNF (498-702 primary vars) with partial R4/CEGAR solves p5_t1 and p7_fix1 within 30s\n\n*why dead:* [L-C9G-003=0] Edge-level CDCL times out (>30s) rediscovering quotient degree sums; requires M2 pivot to Orbit-Valency Matrix B",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H_m2_pivot_orbit_matrix_B_p7_fix1",
+   "type": "text",
+   "text": "**H_m2_pivot_orbit_matrix_B_p7_fix1** · hypothesis\n\nM2 Pivot: 12x12 Orbit-Valency Matrix B decomposition [M|Q; Q^T|H] + Cauchy bound proves UNSAT for p7_fix1 with 0-RAT LRAT",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_m2_pivot_spectral_trace_p5_t1",
+   "type": "text",
+   "text": "**H_m2_pivot_spectral_trace_p5_t1** · hypothesis\n\nSubconstituent col(C)+ker(C^T) spectral trace Tr(B)=8 vs fixed-orbit R3/R4 proves UNSAT for p5_t1 with 0-RAT LRAT",
+   "x": 1680,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_p3_18block_and_p2_involution_trace_mod7",
+   "type": "text",
+   "text": "**H_p3_18block_and_p2_involution_trace_mod7** · hypothesis\n\n18-block S2^2xS3^4rtimes(D4xZ2) reduction for p3_t2..t4 and mod-7 spectral trace slicing 8a+3b+4k2=Tr(B) (mod 7) for p=2 involutions",
+   "x": 2100,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_p2_c1_trace_window_and_full_18case_lrat_suite",
+   "type": "text",
+   "text": "**H_p2_c1_trace_window_and_full_18case_lrat_suite** · hypothesis\n\nCertify p2_a1_b4_c1 via unique trace window Tr(B)=9 in both Sinz and Totalizer (<1s) and assemble the 18-case dual-encoded 0-RAT LRAT exclusion suite (36 proofs: p7_fix1, p5_t1, p3_t1, frob21, and 14 p=2 profiles) with all LRAT chunks <750 KB",
+   "x": 2520,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H_claim_and_outbox_46proof_package_verification",
+   "type": "text",
+   "text": "**H_claim_and_outbox_46proof_package_verification** · hypothesis\n\nAssemble 23-theorem (46-proof) claim/ and outbox/ package, pass standalone verify.py, check_run.py, 3-skeptic panel, and outreach auditor",
+   "x": 2940,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "p2_remaining_5_profiles",
+   "type": "text",
+   "text": "✗ **p2_remaining_5_profiles** · hypothesis\n\nCentralizer C_{B_7}(g) symmetry breaking and per-fixed-vertex degree/trace constraints refute all 5 remaining p=2 involution profiles ((0,7,0), (2,2,1), (2,3,0), (3,0,1), (3,1,0)) in < 5s each with kissat.\n\n*why dead:* [L-C9G-009=0] [obstruction=symmetry_trap] W-only R4 subset without full C_{B_7}(g) symmetry breaking timed out at 8s on (2,2,1)..(3,1,0)",
+   "x": 3360,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "asymmetric_2adic_b7_triangle_probe",
+   "type": "text",
+   "text": "**asymmetric_2adic_b7_triangle_probe** · hypothesis\n\nExact algebraic probe of KROK 2A (2-adic/SNF on W_70 = ker(C)), KROK 2B (7-dimensional B_7 commutant / Terwilliger algebra T(x_0)), and KROK 2C (3+36+60 triangle decomposition around T_0={x_0,y_0,z_0}) yields exact invariant identities or constraints on any srg(99,14,1,2).",
+   "x": 3780,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "triangle_T0_equitable_spectrum",
+   "type": "text",
+   "text": "**triangle_T0_equitable_spectrum** · hypothesis\n\nThe 3+36+60 triangle decomposition around T_0={x_0,y_0,z_0} forces exact spectral multiplicities and triangle-counting identities on Gamma[S_x cup S_y cup S_z] (3-regular on 36 vertices) and Gamma[R_60] (8-regular on 60 vertices).",
+   "x": 4200,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "p2_remaining5_global_triangle_bijection",
+   "type": "text",
+   "text": "✗ **p2_remaining5_global_triangle_bijection** · hypothesis\n\nEncoding the Global Flipped-Edge Triangle Bijection per-fixed-vertex degree bounds b_z and orbit-valency symmetry breaking refutes all 5 remaining p=2 involution profiles ((0,7,0), (2,2,1), (2,3,0), (3,0,1), (3,1,0)) in < 10s with 0-RAT LRAT proofs.\n\n*why dead:* [L-C9G-012=0] [obstruction=symmetry_trap] Global Flipped-Edge Triangle Bijection refutes 4 of the 5 remaining p=2 profiles ((2,2,1), (2,3,0), (3,0,1), (3,1,0)) immediately, while central involution (0,7,0) splits E_3 (27+27) and E_{-4} (22+22) evenly with Tr(B)=0.",
+   "x": 4620,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "p2_18_of_19_lrat_certification",
+   "type": "text",
+   "text": "**p2_18_of_19_lrat_certification** · hypothesis\n\nAdding the Global Flipped-Edge Triangle Bijection Theorem to verify_lens2_p1.py certifies the 4 profiles (2,2,1), (2,3,0), (3,0,1), (3,1,0) with dual-encoded 0-RAT Pure-RUP LRAT proofs in < 1s each, expanding the package to 27 theorems (54 proofs).",
+   "x": 0,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "p2_a0_b7_c0_fix1_block_degree_audit",
+   "type": "text",
+   "text": "**p2_a0_b7_c0_fix1_block_degree_audit** · hypothesis\n\nAuditing the 21x21 2x2 block structure Q_alpha x Q_beta of the (0,7,0) centralizer involution under Tr(B)=0 and the KROK 2B degree identities",
+   "x": 420,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k4_s0_matching_pair_gram_and_sat_sieve",
+   "type": "text",
+   "text": "**k4_s0_matching_pair_gram_and_sat_sieve** · hypothesis\n\nQuotienting all 11 x 10,395 pairs (M_0^+, M_0^-) on slice S_0 by B_6 = Z_2^6 x| S_6 and sieving by K_{W_0} >= 0, PSD projections on U_6 and C_-, and SAT on X^(0) determines the exact surviving local matching orbits.",
+   "x": 5040,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k5_g36_schur_nullspace_sieve_and_task1526_core",
+   "type": "text",
+   "text": "**k5_g36_schur_nullspace_sieve_and_task1526_core** · hypothesis\n\nTesting G_36 >= 0, S_12^D >= 0, and exact ker(G_36)/ker(S_12^D) nullspace integrality across all 3,294 surviving B_6-orbits of (M_0^+, E_0), plus extracting the exact algebraic conflict from task-1526 (XW = Delta0 + G_+ + K_{W_0})",
+   "x": 5460,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k6_62_b4_orbits_fixed_me_full_kw0_sieve",
+   "type": "text",
+   "text": "**k6_62_b4_orbits_fixed_me_full_kw0_sieve** · hypothesis\n\nClassify the 62 canonical B_4-orbits of (M_0^+, E_0) for k_type1(S_0) = 2 by M_0^+ partition, c(M_0^+, E_0), and zero counts of Delta_0 / K_{W_0}, and test the fixed-(M_0^+, E_0) SAT formulation with full Delta_0, G_+, K_{W_0}, and column-wise involution bound sum_i P(i, m) <= 1 starting on the 4+1+1 orbit",
+   "x": 5880,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k7_unconditional_k2_closure_and_k1_k0_full_kw0_sieve",
+   "type": "text",
+   "text": "**k7_unconditional_k2_closure_and_k1_k0_full_kw0_sieve** · hypothesis\n\nTest the 10-row simultaneous SAT encoding (fixing only X0=h0, X1=h1) on k_type1(S_0)=2 and k_type1(S_0)=1, classify canonical B_5-orbits for k_type1(S_0)=1, and test the full fixed-(Delta_0, G_+, K_{W_0}, P(i,m), ker(G_36)) solver across k_type1 in {2, 1, 0}",
+   "x": 6300,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k8_nullity3_sieve_and_3block_component_pruning",
+   "type": "text",
+   "text": "**k8_nullity3_sieve_and_3block_component_pruning** · hypothesis\n\nKROK 8A & 8B: Classify all 522 dim ker(G_36)=3 orbits (299 in k_type1=1 with 1+5, 223 in k_type1=0 with 2+4 and 3+3) by diag(K_W0) and zero-density; test 3-block component g-orbit partition law and Kissat/bitmask sieve on nullity=3 orbits.",
+   "x": 6720,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k9_complete_299_nullity3_k1_and_k0_chiral_sieve",
+   "type": "text",
+   "text": "**k9_complete_299_nullity3_k1_and_k0_chiral_sieve** · hypothesis\n\nSTEP 9A & 9B: Certify all remaining 257/299 canonical B5-orbits of dim ker(G_36)=3, k_type1(S_0)=1 UNSAT (completing 299/299 of nullity 3 and 329/329 of k_type1(S_0)=1 on canonical_78_pairs[0]) via parallel Numba bit-trick solver, and apply the Chiral Component Imbalance & Cross-Component Inner Product Law (Law M11-A2) to audit k_type1(S_0)=0 multi-component strata (2+2+2, 4+2, 3+3).",
+   "x": 7140,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k10_component_decomposed_k0_multi_component_strata",
+   "type": "text",
+   "text": "**k10_component_decomposed_k0_multi_component_strata** · hypothesis\n\nProve and verify exact multi-component column-sum & chiral coupling across 2+2+2, 4+2, and 3+3 strata, and execute component-first bitmask solver on the 10 canonical orbits of 2+2+2 (nullity=4, k_type1=0) and 223 orbits of 4+2 / 3+3 (nullity=3, k_type1=0).",
+   "x": 7560,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k10b_42_truncation_130k_and_zrows_grouping_trap",
+   "type": "text",
+   "text": "✗ **k10b_42_truncation_130k_and_zrows_grouping_trap** · hypothesis\n\nDirect 4+2 CUDA sweep with max_rows=130000 buffer and grouping all z_rows at L4..L7 certifies all 168 4+2 orbits without truncation or matching-edge blowup.\n\n*why dead:* [L-C9G-022=0] [obstruction=capacity_floor] AUDITOR caught two structural traps: (1) KW0(r,r)=0 rows generate 131,072 (c2) and 216,576 (c4) vectors, so max_rows=130,000 truncated pools (upgraded to max_rows=250,000 for zero truncation); (2) grouping z_rows at L4..L7 broke m_edges_c4 matching pairs (Gp45=1, Gp67=1 instead of 0), inflating d6/d8 pairs 15-30x.",
+   "x": 7980,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k10c_theorem8_and_42_classAB_112_full250k_closure",
+   "type": "text",
+   "text": "**k10c_theorem8_and_42_classAB_112_full250k_closure** · hypothesis\n\nProve Theorem 8 (Asymmetric Diagonal Inversion Law) in Lean 4 + 3x56=168 Cartesian Product Law (O_{4+2} = {C_{2,0},C_{2,1},C_{2,2}} x {C_{4,0}..C_{4,55}}), and certify all 112/112 Class A & B 4+2 orbits UNSAT with full max_rows=250000 zero-truncation buffers.",
+   "x": 8400,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k10d_42_classC_c4first_v4_6gpu_closure",
+   "type": "text",
+   "text": "**k10d_42_classC_c4first_v4_6gpu_closure** · hypothesis\n\nTwo-Stage c4-first (v4) CUDA kernel (pairing m_edges_c4 with KW0=2, exact L_c4 pool sorting 24752 before 216576, and 3-stage mask_c2 pruning) across 6 GPUs (3x A100 + 3x L4) certifies all 56/56 Class C 4+2 orbits UNSAT (168/168 total) with max_rows=250000.",
+   "x": 8820,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k11_6block_local_pointer_cone_358_and_s3_triality",
+   "type": "text",
+   "text": "**k11_6block_local_pointer_cone_358_and_s3_triality** · hypothesis\n\nLocal Pointer-Cone / Prefix Factorization (collapsing 2,670 6-block orbits into 358 canonical 4-vertex cones at B1, 7.46x compression) + S3-Triality of (F_12, M_0, E_0) short-pool ordering (6912/24752 before 62016/216576) enables complete UNSAT certification of the 2,670 single-component 6-block orbits.",
+   "x": 9240,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k11b_unweighted_b1_kw2222_and_r2_p45_buffer_trap",
+   "type": "text",
+   "text": "✗ **k11b_unweighted_b1_kw2222_and_r2_p45_buffer_trap** · hypothesis\n\nUnweighted lexicographic B1 selection in v1/v2 cone trie (allowing cross-KW0=[2,2,2,2] on 195 orbits and R2 s_p45[2048] buffer overflow on 216,576-row pools in Bundle 32) avoids D6 bottlenecks\n\n*why dead:* [L-C9G-026=0] [obstruction=capacity_floor] Falsified on Bundle 32 (30 orbits): unweighted B1 selection left cross-KW0=[2,2,2,2] on 195/2670 orbits and suboptimal 6-cone pool sums on 1825/2670 orbits; fixed via 64-bit s_m4/s_m5 masks and cost-optimal W4/W6 B1 selection (54/90 4-Cones with |B_k| in {8,48,384})",
+   "x": 9660,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k11c_cost_optimal_4cones_v3_trie_6gpu_closure",
+   "type": "text",
+   "text": "✗ **k11c_cost_optimal_4cones_v3_trie_6gpu_closure** · hypothesis\n\nCost-optimal W4/W6 4-Cone/6-Cone Trie (54/90 canonical B1 cones with 2-3 free (2,2)-blocks |B_k| in {8,48}, 64-bit s_m4&s_m5 D6 masks, and H6/(H6 cap Aut(m)) coset expansion) certifies all 2,670 Class 6 orbits UNSAT across 6 GPUs\n\n*why dead:* [L-C9G-027=0] [obstruction=compute_wall] Certified first 50 Class 6 orbits (sols=0), but hit multi-day wall-clock bottleneck across the 682 bundles of v3: (1) 310/647 bundles placed r2<->r3 before the r0<->r1 swap pair, leaving S1 point-stabilizer inactive on 116 bundles (45,996 reps vs 5,870; Bundle 1 took 4,268s = 533.5s/orbit on A100); (2) unpaired tail rows (r6..r11) left Gp[6,7]=1 or Gp[8,9]=1, exploding d6/d7 node counts.",
+   "x": 10080,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k11d_hierarchical_point_stabilizer_33_42_222_cpu_and_theorems14_19",
+   "type": "text",
+   "text": "**k11d_hierarchical_point_stabilizer_33_42_222_cpu_and_theorems14_19** · hypothesis\n\nHierarchical Point-Stabilizer Tower (D0 + D1 Stab(x0) + D2 Stab(x0,x1)), 54-bit 30-Orbit Full-Key Hash Sandwich, 4x8 Sub-Cone Stabilizer (3x30=90 sub-cones), and Wreath-Product Quotienting (|G|=3072) reduce all three multi-component k_type1=0 strata (3+3, 4+2, 2+2+2) to standalone 8-core M1 CPU verifiers without any GPU, formalized as Theorems 14-19 (Laws M20-M22) in Lean 4 (0 sorryAx).",
+   "x": 10500,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k11e_naive_oracle_c8_rep0_sequential_trap",
+   "type": "text",
+   "text": "✗ **k11e_naive_oracle_c8_rep0_sequential_trap** · hypothesis\n\nSelecting the first root representative (or_idx = 0 fallback) when building the pure-Python naive_reference_check Cross-Check Oracle for 3+3 (C_0..C_9) completes all 10 LEGO classes in <2 min in single-core Python.\n\n*why dead:* [L-C9G-029=0] [obstruction=compute_wall] On C_8, rep_idx=0 had 0 d2 nodes under the <5,000 filter, causing fallback to or_idx=0 (495 d1 branches x 27,828 d2 nodes in single-core pure Python, stalling task-983 for 100 minutes); fixed by selecting candidate roots from the end of reps (reversed) where 1 <= d2 <= 5000.",
+   "x": 10920,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k11f_zero_trust_naive_oracles_and_lean4_section0_master_cascade",
+   "type": "text",
+   "text": "**k11f_zero_trust_naive_oracles_and_lean4_section0_master_cascade** · hypothesis\n\nReverse-indexed root selection in test_naive_oracle_33_and_42.py certifies 100% exact digit-for-digit node-count isomorphism (naive == numba at every depth d1..d8) across C_0..C_9 of 3+3 and 4+2, while Section 0 + Theorems 20a-22 + 4-file lean4-comparator harness formalize the SimpleGraph (Fin 99) SRG(99,14,1,2) master nonexistence cascade in Lean 4 (0 sorryAx).",
+   "x": 11340,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k11g_greedy_level3_we_star_c6_cost_saddle_trap",
+   "type": "text",
+   "text": "✗ **k11g_greedy_level3_we_star_c6_cost_saddle_trap** · hypothesis\n\nPure greedy set-cover on Level III we* 6-row half-loop trunks (C_6) monotonically reduces total Class 6 GPU search cost below Level II (C_4) without creating a trunk-cost saddle.\n\n*why dead:* [L-C9G-031=0] [obstruction=capacity_floor] Pure greedy set-cover on Level III created a non-monotonic cost saddle: selecting high-coverage C_6 trunks with unshared K_4 crystals and wide row pools inflated trunk d0->d6 cost above Level II; required build_saddle_free_ladder.py local swap optimization (replacing expensive C_6 trunks with symmetric half-loops sharing already-opened K_4 crystals) to break the saddle.",
+   "x": 11760,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k11h_saddle_free_we_star_ladder_and_theorems23_31",
+   "type": "text",
+   "text": "**k11h_saddle_free_we_star_ladder_and_theorems23_31** · hypothesis\n\nLocal K_4-sharing half-loop swap (build_saddle_free_ladder.py, 190 hybrid bundles in we_star_saddle_free_remaining_gpu.json) eliminates the Level III/IV cost saddle, while Theorems 23-31 (Domino-Tail Gp[6,7]=Gp[8,9]=Gp[10,11]=0, 9-bit Hole Factorization, Spooky Freckle Entanglements, Seed Dodecagon C_12 at h=0, and 60-Edge Octahedron Bijection) compile in Lean 4 with 0 sorryAx.",
+   "x": 12180,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k11i_paper_only_elimination_and_bundle20001_single_domino_c6_trap",
+   "type": "text",
+   "text": "✗ **k11i_paper_only_elimination_and_bundle20001_single_domino_c6_trap** · hypothesis\n\nThe analytical chain Theorems 1-30 eliminates Class 6 purely on paper without finite GPU tree search, and scheduling we_star_saddle_free_remaining_gpu.json purely by orbit count (51-orbit Bundle 20001 first on Shard 0) avoids GPU batch stalls.\n\n*why dead:* [L-C9G-033=0] [obstruction=compute_wall] Falsified on both clauses: (1) on Seed Orbits 0 and 1670 (h=0, C_12), while Theorems 1-30 compress the tree >10^12x and force sols=0 at d12, Seed Orbit 0 still has 113,567 d8 branches (19.34B d6 nodes) and Seed Orbit 1670 has 90,674 d8 branches before hitting the d10/d12 wall; (2) Bundle 20001 (51 orbits, c6=[0,2,1,6,5,9]) has only 1 full domino in c6 (n_doms_in_c6=1) and r6=42, stalling Shard 0 on batch 1 for >35m vs 45-210s/batch when n_doms_in_c6 >= 2.",
+   "x": 12600,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k11j_r5_lift_register_packed_theorems23_30_kernel_and_ndoms2_queue",
+   "type": "text",
+   "text": "**k11j_r5_lift_register_packed_theorems23_30_kernel_and_ndoms2_queue** · hypothesis\n\nLifting r5 invariants (x5_0, x5_1, m5_bits, a5, u5_m4) above the r6 loop, register-packing d6->d12 via Theorems 23-30 (Domino-Tail Gp[6,7]=Gp[8,9]=Gp[10,11]=0 + 24-var local array), and prioritizing n_doms_in_c6 >= 2 super-bundles (107 bundles covering 1,365 orbits) accelerates GPU execution >5x.",
+   "x": 13020,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k11k_class6_saddle_free_we_star_6gpu_full_closure",
+   "type": "text",
+   "text": "✗ **k11k_class6_saddle_free_we_star_6gpu_full_closure** · hypothesis\n\nFull 6-GPU (3x A100 + 3x L4) sweep of we_star_saddle_free_remaining_gpu.json (190 hybrid super-bundles) using the 6.1x Theorems 23-30 Domino-Tail kernel and n_doms_in_c6 >= 2 queue certifies all remaining Class 6 orbits (from 194/2,670 to 2,670/2,670 = 3,580/3,580 total canonical orbits UNSAT).\n\n*why dead:* [L-C9G-035=0] [obstruction=compute_wall] Campaign paused at 270/2,670 (10.11%) Class-6 orbits (1,180/3,580 = 32.96% total A5-orbits certified UNSAT, sols=0) + 41 active checkpoints and 37 Core Lean 4.35.0 theorems (0 sorryAx, commits 05cbd70 & c06a192); remaining 2,400 Class-6 orbits (~200-350 A100 GPU-hours single-slice S0 or Path T1+T3 7-slice A60 coupling) handed over to open-science external lab collaboration on GitHub (mizopl/conway-99-graph).",
+   "x": 13440,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k11l_seed_orbit_2118_m1_cpu_closure_and_polygonal_theorems31_32",
+   "type": "text",
+   "text": "**k11l_seed_orbit_2118_m1_cpu_closure_and_polygonal_theorems31_32** · hypothesis\n\nCertify the 3rd and final Seed Dodecagon C_12 orbit at h=0 (Seed III: Orbit 2118, Self-Chiral M0=E0) UNSAT on 8-core M1 CPU (completing 3/3 Seed Dodecagon orbits at h=0) and formalize Theorems 31-32 (Polygonal Kempe Pinch & Three-Row Spectra) in Lean 4 (0 sorryAx).",
+   "x": 13440,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k11m_gen5_stage_b1_c_bitslice_and_word_parallel_join",
+   "type": "text",
+   "text": "**k11m_gen5_stage_b1_c_bitslice_and_word_parallel_join** · hypothesis\n\nGen V CUDA kernel (hoisting Stage B1 x4_r2/x5_r2 above q_base, 64-bit vertical bit-slice adder s_col_q[60] in Stage B2, and 0-byte aliased word-parallel mask join s_q_u_mask & ~s_col_i5 in Stage C cutting (i4,i5) pairs by 35.8x-325.5x) accelerates Class 6 GPU bundles by a further 2.0x-3.0x wall-clock (~70x-95x vs Gen I).",
+   "x": 13860,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k11n_15_d6_hexagonal_cages_h6_m1_cpu_direct_sweep",
+   "type": "text",
+   "text": "✗ **k11n_15_d6_hexagonal_cages_h6_m1_cpu_direct_sweep** · hypothesis\n\nRunning the 15 maximally excited D_6-symmetric hexagonal cages at level h=6 (s_FM=s_FE=s_ME=0, |Stab|=12) directly on M1 CPU completes in <45 min each just like the 3 Seed Dodecagon C_12 orbits at h=0 (212 root reps).\n\n*why dead:* [L-C9G-038=0] [obstruction=symmetry_trap] At h=0 (C_12, Orbit 2118), M0=E0 preserves all 2^6=64 independent block flips x 384 = 24,576 trunk symmetries (212 root reps); at h=6, F12, M0, E0 are pairwise disjoint (s_ME=0), breaking independent block flips so |Aut_dec| in {6..24} and each of the 11 bundles has 1,100..6,700 root reps (35-50h on M1 CPU vs ~30m for all 60 shadow-cascaded orbits on the 6-GPU cluster).",
+   "x": 14280,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k11o_conway_family_srg9_4_1_2_seed_c2_positive_control_and_shadow_deficit",
+   "type": "text",
+   "text": "**k11o_conway_family_srg9_4_1_2_seed_c2_positive_control_and_shadow_deficit** · hypothesis\n\nTesting the Seed & Shadow Deficit law c_int(m;r) = 2r((2r-1)(m-1) - 2(m-r)(m-2)) on the smaller Conway sibling SRG(9,4,1,2) (K_3 box K_3 / Paley-9, m=1) reproduces SAT at m=1,r=1 (unique C_2 seed, c_int=0) and proves UNSAT (c_int < 0) for every multi-component split 1 <= r <= m/2 when m >= 3 (m=6 SRG(99,14,1,2), m=10 SRG(243,22,1,2)).",
+   "x": 14700,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k11p_gen5_shared_memory_s_col_q_s_col_i5_atomic_overhead_trap",
+   "type": "text",
+   "text": "✗ **k11p_gen5_shared_memory_s_col_q_s_col_i5_atomic_overhead_trap** · hypothesis\n\nAdding the shared-memory vertical bit-slice tables s_col_q[60] and s_col_i5[60][8] with atomicOr and extra __syncthreads() barriers inside Stage B2 of Gen V accelerates d2->d6 across all A100/L4 bundles without shared-memory contention.\n\n*why dead:* [L-C9G-040=0] [obstruction=compute_wall] On Bundle 10056 (Shard 1 A100, reps=5,460), while Gen V produced 100% identical digit-for-digit node counts (d4=268,575,939,357, d6=6,499,101,009, and all 79 d8_g7 coordinates), the extra __syncthreads() barriers and atomicOr operations on s_col_q[60]/s_col_i5[60][8] created shared-memory contention; fixed in Gen V.1 by dropping s_col_q/s_col_i5 (restoring register-only while(aq!=0ULL) in Stage B2) while keeping Stage B1 hoist and 64-bit s_q_u_mask join in Stage C.",
+   "x": 15120,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k11q_srg243_22_1_2_critical_saturation_and_8bucket_d8_paper_closure_trap",
+   "type": "text",
+   "text": "✗ **k11q_srg243_22_1_2_critical_saturation_and_8bucket_d8_paper_closure_trap** · hypothesis\n\nThe 8-Bucket d8 Partition Law (u1+u2) combined with the Berlekamp-van Lint-Seidel SRG(243,22,1,2) comparison (m=10, 72/144 edges = 50% slack vs SRG(99,14,1,2) m=6, 40/40 edges = 100% critical saturation at h=0) closes the remaining 2,447 freckled Class 6 orbits (h in {1..6}) on paper without GPU tree traversal.\n\n*why dead:* [L-C9G-041=0] [obstruction=capacity_floor] While m=6 critical saturation (40/40 edges of K_{2x5}) explains why pure h=0 Seeds fail on Conway-99 (3/3 UNSAT) and succeed on SRG(9) (m=1, 0/0) and SRG(243) (m=10, 72/144), and the 8-Bucket law explains the d8->d10 hourglass bottleneck, neither law rules out a priori an asymmetric solution among the 2,447 freckled orbits (h in {1..6}) without physical d0->d4->d6->d8 GPU tree traversal or a higher-level d2/d4/d6 algebraic cut.",
+   "x": 15540,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k11r_domino_c_r4_r5_asymmetry_swap_and_stage_a_cascade_gating",
+   "type": "text",
+   "text": "**k11r_domino_c_r4_r5_asymmetry_swap_and_stage_a_cascade_gating** · hypothesis\n\nM2 Structural Pivot on GPU Trunk (d0->d6): exploiting the 31 vs 2,525 Domino-C (r4 vs r5) pool asymmetry in Stage B2/C (keeping the smaller r4 pool in Shared Memory) + cascading Stage A gating by filtering the shortest c0[2] list (2,306 rows) first with s_x2_1_inter sandwich cuts GPU trunk time by a further 1.5x-2.5x.",
+   "x": 15960,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k11s_auditor_partial_2reg_cone_cut_91_9_percent_missing_kw45_trap",
+   "type": "text",
+   "text": "✗ **k11s_auditor_partial_2reg_cone_cut_91_9_percent_missing_kw45_trap** · hypothesis\n\nA 2-register bit-sliced cone cut (h1, h2) covering only the real intersection x4 & x5 (gp45 in {0,1}) eliminates 91.9% of pairs in Stage C (d4->d6) and suffices without covering the 4th imaginary dimension gx4 (kw45 in {0,1,2}) or threshold = 2.\n\n*why dead:* [L-C9G-043=0] [obstruction=capacity_floor] Leaving 8.1% of pairs unfiltered outside the register mask was a half-measure because it omitted the 4th imaginary dimension (gx4 / kw45 in {0,1,2}) and the =2 threshold (and ^= parity flips on >=3 hits).",
+   "x": 16380,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k11t_theorem34_monotone_threshold_ladder_ge1_ge2_ge3_100pct_exact_lean4",
+   "type": "text",
+   "text": "**k11t_theorem34_monotone_threshold_ladder_ge1_ge2_ge3_100pct_exact_lean4** · hypothesis\n\nReplacing 2-register parity with the 3-register Monotone Threshold Ladder (ge1, ge2, ge3: ge3 |= (ge2 & mc); ge2 |= (ge1 & mc); ge1 |= mc) across both real holes h4 = x4 \\ col_u1_012 and the 4th imaginary dimension g(x4) achieves 100.000% exact register separation (0 FP, 0 FN) for all 9 pairs (gp45, kw45) in {0,1,2}^2 and compiles in Core Lean 4.35.0 (Theorem 34, 0 sorryAx).",
+   "x": 16800,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k11u_gen_v2_initial_missing_syncthreads_reuse_g6_and_nq32_zeroing_trap",
+   "type": "text",
+   "text": "✗ **k11u_gen_v2_initial_missing_syncthreads_reuse_g6_and_nq32_zeroing_trap** · hypothesis\n\nInitial Gen V.2 integration (Zero-Copy Pointer Aliasing on reuse_g6/reuse_g7 without a pre-write __syncthreads(), and clearing s_q_u_mask up to 32*8 instead of nq*8 when nq > 32) runs cleanly across all 6 Colab shards without warp-barrier divergence or stale mask bits.\n\n*why dead:* [L-C9G-045=0] [obstruction=compute_wall] On Shard 4 (Bundle 20091, batch 53), missing __syncthreads() before if(tid==0){s_n6_1[g6_idx]=s_n6_1[reuse_g6];} caused Warp 0 to overwrite s_n6_1[g6_idx] before slower warps evaluated if(s_n6_1[g6_idx]<0) (warp barrier divergence); on Shard 2 (Bundle 20008), nq > 32 required zeroing nq*8 entries of s_q_u_mask. Both fixed in Gen V.2-fixed.",
+   "x": 17220,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k11v_gen_v2_fixed_and_theorem34_6gpu_production_deployment",
+   "type": "text",
+   "text": "**k11v_gen_v2_fixed_and_theorem34_6gpu_production_deployment** · hypothesis\n\nAdding pre-write __syncthreads() in reuse_g6/reuse_g7, fixing nq*8 zeroing of s_q_u_mask, and integrating Theorem 34 (ge1,ge2,ge3 Monotone Threshold Ladder on s_col_i5_mask[60][8] + O(1) match_sandwich in Stage B1/C) across all 6/6 GPU shards certifies Bundle 20092 (+11 orbits) and Bundle 10056 (+13 new orbits -> 247/2,670) while accelerating Shards 1, 2, 4 to 4.64-5.45s/batch/orbit on A100 and 84.9-92.4s/batch on L4.",
+   "x": 17640,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k11w_theorem34_partc_monotone_ladder_78x_stagec_live_gpu_reload",
+   "type": "text",
+   "text": "**k11w_theorem34_partc_monotone_ladder_78x_stagec_live_gpu_reload** · hypothesis\n\nHot-reloading Theorem 34 Part C (3-register Monotone Threshold Ladder ge1,ge2,ge3 on s_col_i5_mask[60][8] in Stage C: d4->d6, 13.11x outer-loop and 78.9x inner-loop reduction with 98.73% register rejection, 0 FP/0 FN) onto PROOFER-II Colab shards cuts Stage C wall-clock time without shared-memory barrier stalls.",
+   "x": 18060,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k11x_d0_imaginary_shadow_gram_c_minus_2670_filter_trap",
+   "type": "text",
+   "text": "✗ **k11x_d0_imaginary_shadow_gram_c_minus_2670_filter_trap** · hypothesis\n\nTesting the 4th-dimensional imaginary shadow Gram matrix C_- = Gp0 - KW0 (V V^T = C_- for v_r in {-1,0,+1}^30) at level d0 excludes non-existent Class-6 orbits before row construction.\n\n*why dead:* [L-C9G-048=0] [obstruction=capacity_floor] Falsified across all 2,670 Class-6 orbits at d0 (AUDITOR Steps 9808-9809): every single one of the 2,670 orbits has an exact positive semi-definite imaginary shadow Gram matrix C_- = Gp0 - KW0 (min_eig = -0.0, rank 11) and real shadow Gram C_+ = Gp0 + KW0 (min_eig = 4.354249, rank 12). The 2,670 orbits ARE the exact survivors of the d0 spectral/chiral shadow filter; obstruction only arises from binary integrality across d4->d8.",
+   "x": 18480,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k11y_backward_light_d10_to_d0_freckled_prism_trap",
+   "type": "text",
+   "text": "✗ **k11y_backward_light_d10_to_d0_freckled_prism_trap** · hypothesis\n\nBackpropagating a hypothetical virtual d10/d12 solution up to d0 via Gp0 = 9*I12 + J12 - M0 (4-column K4 buckets H_ab between dominoes) yields a paper contradiction across all 2,670 Class-6 orbits.\n\n*why dead:* [L-C9G-049=0] [obstruction=symmetry_trap] Falsified on the 2,667 freckled orbits (h > 0, M0 != E0, AUDITOR Steps 9812-9823): while on Seed Orbit 2118 (M0=E0) D0 has uniform block sums 22/4, on freckled orbits B @ Gp0 @ B.T splits off-diagonal block sums into {3,4} and B @ KW0 @ B.T into {7,8}, breaking the uniform 2-regular cycle decomposition into a prism of local choices that require the d4->d8 GPU cone cuts (Theorem 34).",
+   "x": 18900,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k11z_srg9_srg243_asymmetric_outer_orbit_reflection_and_adj_w_bijection",
+   "type": "text",
+   "text": "✗ **k11z_srg9_srg243_asymmetric_outer_orbit_reflection_and_adj_w_bijection** · hypothesis\n\nTesting whether an asymmetric/outer-orbit involution choice in SRG(9,4,1,2) or SRG(243,22,1,2) (or the intrinsic 1-regular bipartite matching adj_W between W_r^+ and W_r^-) induces a reflection/collapse from outer orbits (h > 0) to symmetric seed orbits (h = 0).\n\n*why dead:* [L-C9G-050=0] [obstruction=capacity_floor] Falsified on SRG(99) C12 (AUDITOR Step 9884): while on SRG(9) (C4) outer-orbit matchings reflect via M0*E0 = F4 into KW0 = -1 (Theorem 9) and on SRG(243) (C20) graph geometry forces M0 = E0 = F20 (h=0), on SRG(99) (C12) M0*E0 avoids F12 on 2,670 orbits, horizontal B6 reflections stay on the same excitation ring h, vertical superposition (X+X*Pg)/2 leaves fractional 1/2 entries in V_-, and 7-slice Triality Reciprocity gives 0=0 at h=6.",
+   "x": 19320,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k12a_theorem35_6d_orthoplex_d6_momentum_ternary_duality_h3_envelope_lean4",
+   "type": "text",
+   "text": "**k12a_theorem35_6d_orthoplex_d6_momentum_ternary_duality_h3_envelope_lean4** · hypothesis\n\nProjecting S0 onto the 6D orthoplex beta_6 subset R^6 (60 edges = 60 roots Phi(D6), Petrie polygon = C12) yields exact D6 root-momentum conservation, mod-3 E0-independent ternary domino duality, and the Stage E/F H3 Domino-Hole Chiral Envelope (H3 subset S4 cap S5), verifiable in Lean 4 (0 sorryAx).",
+   "x": 19740,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k12b_proofer2_b8_naive_slice_indexing_trap",
+   "type": "text",
+   "text": "✗ **k12b_proofer2_b8_naive_slice_indexing_trap** · hypothesis\n\nDirect slicing of Gp_ord/KW0_ord in we_star_sf without checking M0-domino row alignment yields zero-bound H3 masks B_8(m,r) == 0.\n\n*why dead:* [L-C9G-052=0] [obstruction=metric_artifact] Initial slice check in PROOFER-II (Steps 9575-9580) showed B_8(m,r) in {1,2,3,4} with 0 zeros due to an off-by-one matrix slice on Gp_ord; inspecting M0_pairs across all 5,817 members (171 bundles) revealed 100% of bundles have identical domino alignment M0_pairs=((0,1),(2,3),(4,5),(6,7),(8,9),(10,11)) with gp_05_6=[1,1,1,1,1,1] and gp_06_7=[1,1,1,1,1,1,0].",
+   "x": 20160,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k12c_theorem35_stage_ef_h3_envelope_and_267_10pct_milestone",
+   "type": "text",
+   "text": "**k12c_theorem35_stage_ef_h3_envelope_and_267_10pct_milestone** · hypothesis\n\nImplement Theorem 35 Law III (H3 Domino-Hole Chiral Envelope at Stage E/F) in C++/CUDA and complete Bundle 20082 on Shard 1 (A100) to cross the 267/2,670 (10.00%) Class-6 milestone (reaching 269/2,670 = 10.07% in null2_k0_6_partial.json, 270/2,670 with Orbit 2118).",
+   "x": 20160,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k12d_theorem36_five_graph_d63_diophantine_and_orthoplex_ternary_lean4",
+   "type": "text",
+   "text": "**k12d_theorem36_five_graph_d63_diophantine_and_orthoplex_ternary_lean4** · hypothesis\n\nFormalize Theorem 36 (we_star_five_graph_diophantine_and_orthoplex_ternary_classification) in Core Lean 4.35.0 (0 sorryAx), proving the exact polynomial identity 128m(mu-1) = d(d^2+7)(d^2+9) - 2048u + 1024 and classifying all 5 SRG(2m^2+1,2m,1,2) parameter sets into the F3 branch d in {3,9} vs the factor-7 branch d in {7,21,63} (and killing (0,56,0) on SRG(6273) via half-integer column sum 26.5).",
+   "x": 20160,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k12e_theorem36_single_slice_paper_closure_without_7slice_coupling_trap",
+   "type": "text",
+   "text": "✗ **k12e_theorem36_single_slice_paper_closure_without_7slice_coupling_trap** · hypothesis\n\nTheorem 36 on an isolated slice S0 (12x60) eliminates the 2,670 Class-6 orbits of SRG(99) on paper without coupling all 7 slices S0..S6 or finite GPU traversal.\n\n*why dead:* [L-C9G-055=0] [obstruction=capacity_floor] Falsified (AUDITOR Steps 10058-10076): on an isolated slice S0, each of the 60 columns and 2,460 involution pairs (e+,e-) in beta_6(M0) has uniform local candidate count; eliminating Class 6 without full GPU traversal requires coupling all 7 slices S0..S6 across the 21 shared domino blocks Q_{r,t} (Path T1 + T3).",
+   "x": 20580,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k12f_gen_v4_theorem35_shard2_live_d6_branch_reduction",
+   "type": "text",
+   "text": "**k12f_gen_v4_theorem35_shard2_live_d6_branch_reduction** · hypothesis\n\nDeploying Gen V.4 (Theorem 35 Stage C cu2_5 & g(x_r) + Stage E/F H3 Domino-Hole Chiral Envelope, 0 B extra shared memory, [16,88,160,144 B] struct parity) live on Shard 2 (A100, Bundle 20008) measurably reduces the d6/d4 branching ratio.",
+   "x": 20580,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k12g_global_7slice_t1_t3_triality_and_42x42_orthoplex_coupling",
+   "type": "text",
+   "text": "**k12g_global_7slice_t1_t3_triality_and_42x42_orthoplex_coupling** · hypothesis\n\nCoupling all 7 slices S0..S6 simultaneously via the 42x42 global involution equations (B^2+B-12I=M21 x J2, D^2+D-12I=-C_-*C_-^T, B=2*P_pi+A10, |D|=A10) and Triality Reciprocity M_r^+(x,x_bar)=E_t(x,x_bar) on the 21 shared dominoes Q_{r,t} (Path T1 + T3) yields a global compatibility obstruction.",
+   "x": 21000,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k12h_bench_t1_cone6_lexicographic_first15_r0_sample_trap",
+   "type": "text",
+   "text": "✗ **k12h_bench_t1_cone6_lexicographic_first15_r0_sample_trap** · hypothesis\n\nBenchmarking Cross-Slice Forbidden Mask Laws T1-A..C2 on the first 15 lexicographic rows of P0 (bench_t1_cone6.py, task-10159) gives a representative sample of d3/d4/d6 survival across Bundles 0, 2, 6.\n\n*why dead:* [L-C9G-058=0] [obstruction=metric_artifact] Falsified (AUDITOR Steps 10161-10165): taking the first 15 lexicographic rows of P0 produced d3=0, d4=0 on Bundles 0 & 2 because bt(0) orders rows by identical initial column choices; switching to uniform random sampling (rng.choice(len(P0), 20) in bench_t1_cone6_rand.py, task-10165) yielded true d6 survival rates of 91.9% (Bundle 0), 96.1% (Bundle 1), 90.3% (Bundle 2), 86.5% (Bundle 3), and 71.0% (Bundle 6, with 78.7% at d4).",
+   "x": 21420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k12i_pairwise_t1_masks_and_3slice_box_standalone_paper_unsat_trap",
+   "type": "text",
+   "text": "✗ **k12i_pairwise_t1_masks_and_3slice_box_standalone_paper_unsat_trap** · hypothesis\n\nPairwise Cross-Slice Forbidden Masks (Laws T1-A..C2) and 3-term Box 1-3 triangle inequalities across triples (i,j,k) suffice on their own to reduce d6 or d8 survival to 0 without solving the inner 60x60 adjacency matrix A60 equation.\n\n*why dead:* [L-C9G-059=0] [obstruction=capacity_floor] Falsified (AUDITOR Steps 10144, 10167, 10209): 71.0%-96.1% of d6 states and 79.1%-87.5% of d7/d8 states survive Laws T1-A..C2 and Box 1-3 inequalities because each forbidden mask zeros only 10 or 20 of 60 columns, leaving 40-50 columns of room; full analytical closure requires coupling the inner 60x60 adjacency matrix A60 across all 7 slices.",
+   "x": 0,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k12j_naive_h3_envelope_on_balanced_domino_split_trap",
+   "type": "text",
+   "text": "✗ **k12j_naive_h3_envelope_on_balanced_domino_split_trap** · hypothesis\n\nApplying the Theorem 35 H3 Chiral Envelope bound h3_cnt[r] <= min(A_r, B_r) directly at depth 8 prunes prefix nodes even on balanced domino split members where |A_r - B_r| <= 1 (24.3% of TRIE_B64 and Orbit 2118).\n\n*why dead:* [L-C9G-060=0] [obstruction=symmetry_trap] Falsified (subagent d927d4fa Steps 780-810 & AUDITOR Step 10227): by the Exact Residual Chiral Conservation Identity 2*|g(x_r) cap H3| + |g(x_r) cap U1^(4)| = A_r + B_r, every valid depth-8 node already satisfies |g(x_r) cap H3| <= floor((A_r+B_r)/2), which equals min(A_r,B_r) whenever |A_r - B_r| <= 1; strict H3 pruning holds iff |A_r - B_r| >= 2 (75.7% of TRIE_B64, 100% of Bundle 30) or via Law IV Domino Boundary Saturation (fb_s4, fb_s5, req_s4).",
+   "x": 0,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k12k_colab_6_trie_v6_thm35_envelope_bdim_bugfix_and_bundle30_speedup",
+   "type": "text",
+   "text": "**k12k_colab_6_trie_v6_thm35_envelope_bdim_bugfix_and_bundle30_speedup** · hypothesis\n\nUpgrading colab_6_trie_v5_cone_cut_proto.py to v6 (colab_6_trie_v6_thm35_envelope.py: fixing the bdim=128 vs nq*8=512 shared-memory zeroing bug at line 707, adding Law IV Domino Boundary Saturation fb_s4/fb_s5/req_s4, 9-bucket zero-popcnt pigeonhole filter LAZY_MEM_R8_11_V6, and same_r8 coset cache) preserves 100% exact d4/d6/sols counts and achieves >=1.15x speedup on heavy throat Bundle 30.",
+   "x": 0,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k12l_srg243_golay11_explicit_slice_and_plucker_orthoplex_cadence",
+   "type": "text",
+   "text": "**k12l_srg243_golay11_explicit_slice_and_plucker_orthoplex_cadence** · hypothesis\n\nConstruct SRG(243,22,1,2) (d=9, m=11, D=10) explicitly over GF(3)^5 via the ternary Golay G_11 companion matrix C of g(x)=x^5+x^4+2x^3+x^2+2 mod 3, extract its 20x180 slice matrix X, and verify M0=E0=F20 (h=0 vacuum) and the Plucker-orthoplex cadence D = m-1 = C(u,2).",
+   "x": 0,
+   "y": 1100,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "k12m_theorem37_forb_mask_on_seed1670_e0_eq_f12_orthoplex_incidence_redundancy_trap",
+   "type": "text",
+   "text": "✗ **k12m_theorem37_forb_mask_on_seed1670_e0_eq_f12_orthoplex_incidence_redundancy_trap** · hypothesis\n\nTheorem 37 Forb[a,b] masks prune candidate pairs on Seed 1670 (M0=M_alt, E0=F12) on top of the exact 6D orthoplex vertex-edge incidence generator bt_v_6 (|x_i cap W_j| = Delta0[i,j]).\n\n*why dead:* [L-C9G-063=0] [obstruction=symmetry_trap] Falsified on Seed 1670 (AUDITOR Steps 10338-10342): when E0=F12, Delta0[a,a]=0 automatically forces x_a cap W_a = empty and g(x_b) cap W_{f(b)} = empty inside bt_v_6 (ratio=1.0000); whereas when E0 != F12 (e.g. Seed 2118 with E0=M_alt and Class-6 orbits), Delta0[a,j] > 0 on Forb[a,b], so Theorem 37 prunes 6.75% perKW=1 pair on top of bt_v_6.",
+   "x": 0,
+   "y": 1320,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "k12n_no_cherry_collision_law_mtm_le_2_on_kw2_pairs",
+   "type": "text",
+   "text": "**k12n_no_cherry_collision_law_mtm_le_2_on_kw2_pairs** · hypothesis\n\nSince (M_{36x60}^T M_{36x60})_{c1,c2} <= max(lambda,mu) = 2 for all c1 != c2 in R60, no two columns c1,c2 in x_i cap g(x_{i'}) (at KW0[i,i']=2, where Forb[i,i']=0) can share a throat vertex w_j in W_j (the No-Cherry-Collision Law: |x_i cap g(x_{i'}) cap W_j| <= 1 for all j=0..11), pruning KW0=2 pairs on top of bt_v_6.",
+   "x": 0,
+   "y": 1540,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "class6_condition3_and_commutator_paper_unsat",
+   "type": "text",
+   "text": "✗ **class6_condition3_and_commutator_paper_unsat** · hypothesis\n\nCondition III (Future-Row Compatibility |Compat[a1,c] cap Compat[a2,c]| >= 2) or non-commutativity [G36, B36] != 0 of G36 = M_{36x60} M_{36x60}^T with B36 closes Class 6 analytically on paper without search\n\n*why dead:* [L-C9G-065=0] [obstruction=capacity_floor] Falsified (AUDITOR Steps 10363-10367): |Compat[a1,c] cap Compat[a2,c]| has min=6..8, mean=8.00..8.80 >= 2 across all 36x35 pairs, and G36 = 10 I36 + 2 J36 - B36 - A36^comp commutes identically with B36 ([G36,B36]=0) with positive eigenvalues on the target subspace.",
+   "x": 0,
+   "y": 1760,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "class6_d8_cherry_collision_cascade_pruning",
+   "type": "text",
+   "text": "**class6_d8_cherry_collision_cascade_pruning** · hypothesis\n\nCombined Theorem 37 (Residual Forbidden Mask) + No-Cherry-Collision Law ((M^T M)_{c1,c2}<=2 on KW0[a,b]=2) compounds exponentially with depth, achieving >3x pruning at d7, >10x at d8 on Class 6 bundles, and 8.00x at d4 on Seed 2118",
+   "x": 0,
+   "y": 1980,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "class6_v7_single_member_forb_mask_aut_dec_trap",
+   "type": "text",
+   "text": "✗ **class6_v7_single_member_forb_mask_aut_dec_trap** · hypothesis\n\nComputing Theorem 37 Forb[a,b] masks in multi-member Trie bundles from representative member 0 (E0_0) alone is invariant across all bundle members and Aut_dec canonicalizer permutations\n\n*why dead:* [L-C9G-067=0] [obstruction=symmetry_trap] Falsified by PROOFER-II (Steps 9818-9838): member-0 Forb[a,b] differs across bundle members (diff_mem=12, cone_mismatches=64, r7_mismatches=309) and across Aut_dec canonicalizer permutations (diff_aut=198, 4 bundles where member-intersection is not Aut_dec-invariant because (pi_6, g_perm) preserves M0 and Delta0 on r0..r5 while flipping the partner domino half inside E0).",
+   "x": 0,
+   "y": 2200,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "class6_v7_aut_dec_invariant_forb_and_cherry_cuda_integration",
+   "type": "text",
+   "text": "**class6_v7_aut_dec_invariant_forb_and_cherry_cuda_integration** · hypothesis\n\nIntersecting Forb[a,b] across all bundle members and all Aut_dec canonicalizer images g_perm(Forb[pi(a),pi(b)]) makes Gen V.5 (Theorem 37 + No-Cherry-Collision Law) 100% sound, compiles cleanly in C++/CUDA, and preserves checkpoint batch_size on active bundles",
+   "x": 0,
+   "y": 2420,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "five_graph_srg_odd_and_involutive_fix_seed_classification",
+   "type": "text",
+   "text": "**five_graph_srg_odd_and_involutive_fix_seed_classification** · hypothesis\n\nExtend the spectral-parity and triangle-uniqueness machinery to classify all odd-order (p>=3) and involutive (p=2) fixed-point subgraphs Fix(g) across the entire 5-graph family SRG(v,k,1,2) for v in {9,99,243,6273,494019} (s | 63)",
+   "x": 0,
+   "y": 2640,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "class6_gen_v5_live_a100_ab_benchmark_bundle20008",
+   "type": "text",
+   "text": "**class6_gen_v5_live_a100_ab_benchmark_bundle20008** · hypothesis\n\nLive 1x A100 A/B benchmark on Bundle 20008 (33 orbits, Batch 145/363, 252 reps) confirms >2x wall-clock speedup of Gen V.5 (Theorem 37 + No-Cherry-Collision Law) over Gen V.4 with >80% d8 node reduction",
+   "x": 0,
+   "y": 2860,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "odd_order_star_bundle_bound_alone_kills_g243_in_g494019",
+   "type": "text",
+   "text": "✗ **odd_order_star_bundle_bound_alone_kills_g243_in_g494019** · hypothesis\n\nThe odd-order Disjoint Star Bundle bound f0*(k - k0) <= v - f0 (Theorem 38a) alone eliminates all higher SRG(v,k,1,2) odd-order subgraph seeds including G_243 subset G_494019 for p=3\n\n*why dead:* [L-C9G-071=0] [obstruction=capacity_floor] Falsified (AUDITOR Step 10631): while f0*(k-k0) <= v-f0 eliminates G_243, G_99 subset G_6273 and G_6273 subset G_494019, for G_243 subset G_494019 at p=3 it gives 243*(994-22) = 236,196 <= 493,776 (slack 257,580), requiring the Involutive Bridge (Theorem 38b: f <= k) to close.",
+   "x": 0,
+   "y": 3080,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "theorems_38_41_and_five_master_theorems_cayley_exclusion_lean4",
+   "type": "text",
+   "text": "**theorems_38_41_and_five_master_theorems_cayley_exclusion_lean4** · hypothesis\n\nProve Theorems 38-41 in Core Lean 4 (0 sorryAx) and synthesize Theorems 1-41 into 5 Master Theorems I-V, including the complete exclusion of Cayley graphs whenever 7 | d (v in {99, 6273, 494019})",
+   "x": 0,
+   "y": 3300,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "class6_gen_v6_sm_occupancy_23kb_smem_and_2d_coop_stripes_a100",
+   "type": "text",
+   "text": "**class6_gen_v6_sm_occupancy_23kb_smem_and_2d_coop_stripes_a100** · hypothesis\n\nReducing shared memory from 46.11 KB to 23.09 KB with 0B lmem (BlockScratchTrie), carveout=100, and 756x64 2D Cooperative Warp Stripes (Gen V.6a/b) achieves >1.5x additional speedup on 1x A100 over Gen V.5 (reaching >=4.0x over Gen V.4)",
+   "x": 0,
+   "y": 3520,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "theorem_40b_42ab_and_five_master_theorems_monograph_lean4",
+   "type": "text",
+   "text": "**theorem_40b_42ab_and_five_master_theorems_monograph_lean4** · hypothesis\n\nProve Theorem 40b (Block (R,R) Disjoint-Support Collapse) and Theorems 42a-b (100% analytical elimination of all 5 order-99 Cayley groups via Galois trace & No-Step-in-N1(F)) in Core Lean 4 (42 theorems, 67 declarations, 0 sorryAx) and publish docs/FIVE_MASTER_THEOREMS_AND_5GRAPH_CLASSIFICATION.md.",
+   "x": 420,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "class6_gen_v6d_theorem40b_disjoint_support_collapse_a100",
+   "type": "text",
+   "text": "**class6_gen_v6d_theorem40b_disjoint_support_collapse_a100** · hypothesis\n\nIntegrating Theorem 40b (replacing 64-bit popc(m_a & m_b)==0 with already-computed p_ab==2 when c_a==c_b) and Stage D shared-memory threshold alignment into Gen V.6d further accelerates Bundle 20008 (Batch 145/363) on 1x A100 while preserving 100% bit-exact node counts.",
+   "x": 840,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "class6_gen_v6d_full_orbit_reverification_bundle10135_315",
+   "type": "text",
+   "text": "**class6_gen_v6d_full_orbit_reverification_bundle10135_315** · hypothesis\n\nFull 0%->100% end-to-end re-verification of certified 3-orbit Bundle 10135 ([34, 174, 175], 11,626 reps) and Bundle 315 ([638, 1659, 1666]) with Gen V.6d on 1x A100 achieves >2.5x wall-clock speedup and >60% d6/d8 node reduction vs Gen V.4 with 0 solutions.",
+   "x": 1260,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "H_forced_structure_p2_L1_L5_dual_lrat",
+   "toNode": "H_prime_order_p11_p3fix0_frob21_p5t4_p2fix11",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "H_prime_order_p11_p3fix0_frob21_p5t4_p2fix11",
+   "toNode": "H_edge_level_cnf_p5t1_p7fix1_direct",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e2",
+   "fromNode": "H_edge_level_cnf_p5t1_p7fix1_direct",
+   "toNode": "H_m2_pivot_orbit_matrix_B_p7_fix1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  },
+  {
+   "id": "e3",
+   "fromNode": "H_m2_pivot_orbit_matrix_B_p7_fix1",
+   "toNode": "H_m2_pivot_spectral_trace_p5_t1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e4",
+   "fromNode": "H_m2_pivot_spectral_trace_p5_t1",
+   "toNode": "H_p3_18block_and_p2_involution_trace_mod7",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e5",
+   "fromNode": "H_p3_18block_and_p2_involution_trace_mod7",
+   "toNode": "H_p2_c1_trace_window_and_full_18case_lrat_suite",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e6",
+   "fromNode": "H_p2_c1_trace_window_and_full_18case_lrat_suite",
+   "toNode": "H_claim_and_outbox_46proof_package_verification",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e11",
+   "fromNode": "H_claim_and_outbox_46proof_package_verification",
+   "toNode": "p2_remaining_5_profiles",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e12",
+   "fromNode": "p2_remaining_5_profiles",
+   "toNode": "asymmetric_2adic_b7_triangle_probe",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  },
+  {
+   "id": "e13",
+   "fromNode": "asymmetric_2adic_b7_triangle_probe",
+   "toNode": "triangle_T0_equitable_spectrum",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e14",
+   "fromNode": "triangle_T0_equitable_spectrum",
+   "toNode": "p2_remaining5_global_triangle_bijection",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e16",
+   "fromNode": "p2_18_of_19_lrat_certification",
+   "toNode": "p2_a0_b7_c0_fix1_block_degree_audit",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e17",
+   "fromNode": "p2_remaining5_global_triangle_bijection",
+   "toNode": "k4_s0_matching_pair_gram_and_sat_sieve",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e18",
+   "fromNode": "k4_s0_matching_pair_gram_and_sat_sieve",
+   "toNode": "k5_g36_schur_nullspace_sieve_and_task1526_core",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e19",
+   "fromNode": "k5_g36_schur_nullspace_sieve_and_task1526_core",
+   "toNode": "k6_62_b4_orbits_fixed_me_full_kw0_sieve",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e20",
+   "fromNode": "k6_62_b4_orbits_fixed_me_full_kw0_sieve",
+   "toNode": "k7_unconditional_k2_closure_and_k1_k0_full_kw0_sieve",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e21",
+   "fromNode": "k7_unconditional_k2_closure_and_k1_k0_full_kw0_sieve",
+   "toNode": "k8_nullity3_sieve_and_3block_component_pruning",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e22",
+   "fromNode": "k8_nullity3_sieve_and_3block_component_pruning",
+   "toNode": "k9_complete_299_nullity3_k1_and_k0_chiral_sieve",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e23",
+   "fromNode": "k9_complete_299_nullity3_k1_and_k0_chiral_sieve",
+   "toNode": "k10_component_decomposed_k0_multi_component_strata",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e24",
+   "fromNode": "k10_component_decomposed_k0_multi_component_strata",
+   "toNode": "k10b_42_truncation_130k_and_zrows_grouping_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e25",
+   "fromNode": "k10b_42_truncation_130k_and_zrows_grouping_trap",
+   "toNode": "k10c_theorem8_and_42_classAB_112_full250k_closure",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e26",
+   "fromNode": "k10c_theorem8_and_42_classAB_112_full250k_closure",
+   "toNode": "k10d_42_classC_c4first_v4_6gpu_closure",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e27",
+   "fromNode": "k10d_42_classC_c4first_v4_6gpu_closure",
+   "toNode": "k11_6block_local_pointer_cone_358_and_s3_triality",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e28",
+   "fromNode": "k11_6block_local_pointer_cone_358_and_s3_triality",
+   "toNode": "k11b_unweighted_b1_kw2222_and_r2_p45_buffer_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e29",
+   "fromNode": "k11b_unweighted_b1_kw2222_and_r2_p45_buffer_trap",
+   "toNode": "k11c_cost_optimal_4cones_v3_trie_6gpu_closure",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e30",
+   "fromNode": "k11c_cost_optimal_4cones_v3_trie_6gpu_closure",
+   "toNode": "k11d_hierarchical_point_stabilizer_33_42_222_cpu_and_theorems14_19",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e31",
+   "fromNode": "k11d_hierarchical_point_stabilizer_33_42_222_cpu_and_theorems14_19",
+   "toNode": "k11e_naive_oracle_c8_rep0_sequential_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e32",
+   "fromNode": "k11e_naive_oracle_c8_rep0_sequential_trap",
+   "toNode": "k11f_zero_trust_naive_oracles_and_lean4_section0_master_cascade",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e33",
+   "fromNode": "k11f_zero_trust_naive_oracles_and_lean4_section0_master_cascade",
+   "toNode": "k11g_greedy_level3_we_star_c6_cost_saddle_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e34",
+   "fromNode": "k11g_greedy_level3_we_star_c6_cost_saddle_trap",
+   "toNode": "k11h_saddle_free_we_star_ladder_and_theorems23_31",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e35",
+   "fromNode": "k11h_saddle_free_we_star_ladder_and_theorems23_31",
+   "toNode": "k11i_paper_only_elimination_and_bundle20001_single_domino_c6_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e36",
+   "fromNode": "k11i_paper_only_elimination_and_bundle20001_single_domino_c6_trap",
+   "toNode": "k11j_r5_lift_register_packed_theorems23_30_kernel_and_ndoms2_queue",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e37",
+   "fromNode": "k11j_r5_lift_register_packed_theorems23_30_kernel_and_ndoms2_queue",
+   "toNode": "k11k_class6_saddle_free_we_star_6gpu_full_closure",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e38",
+   "fromNode": "k11j_r5_lift_register_packed_theorems23_30_kernel_and_ndoms2_queue",
+   "toNode": "k11l_seed_orbit_2118_m1_cpu_closure_and_polygonal_theorems31_32",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e39",
+   "fromNode": "k11k_class6_saddle_free_we_star_6gpu_full_closure",
+   "toNode": "k11m_gen5_stage_b1_c_bitslice_and_word_parallel_join",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e40",
+   "fromNode": "k11m_gen5_stage_b1_c_bitslice_and_word_parallel_join",
+   "toNode": "k11n_15_d6_hexagonal_cages_h6_m1_cpu_direct_sweep",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e41",
+   "fromNode": "k11n_15_d6_hexagonal_cages_h6_m1_cpu_direct_sweep",
+   "toNode": "k11o_conway_family_srg9_4_1_2_seed_c2_positive_control_and_shadow_deficit",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e42",
+   "fromNode": "k11o_conway_family_srg9_4_1_2_seed_c2_positive_control_and_shadow_deficit",
+   "toNode": "k11p_gen5_shared_memory_s_col_q_s_col_i5_atomic_overhead_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e43",
+   "fromNode": "k11p_gen5_shared_memory_s_col_q_s_col_i5_atomic_overhead_trap",
+   "toNode": "k11q_srg243_22_1_2_critical_saturation_and_8bucket_d8_paper_closure_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e44",
+   "fromNode": "k11q_srg243_22_1_2_critical_saturation_and_8bucket_d8_paper_closure_trap",
+   "toNode": "k11r_domino_c_r4_r5_asymmetry_swap_and_stage_a_cascade_gating",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e45",
+   "fromNode": "k11r_domino_c_r4_r5_asymmetry_swap_and_stage_a_cascade_gating",
+   "toNode": "k11s_auditor_partial_2reg_cone_cut_91_9_percent_missing_kw45_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e46",
+   "fromNode": "k11s_auditor_partial_2reg_cone_cut_91_9_percent_missing_kw45_trap",
+   "toNode": "k11t_theorem34_monotone_threshold_ladder_ge1_ge2_ge3_100pct_exact_lean4",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e47",
+   "fromNode": "k11t_theorem34_monotone_threshold_ladder_ge1_ge2_ge3_100pct_exact_lean4",
+   "toNode": "k11u_gen_v2_initial_missing_syncthreads_reuse_g6_and_nq32_zeroing_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e48",
+   "fromNode": "k11u_gen_v2_initial_missing_syncthreads_reuse_g6_and_nq32_zeroing_trap",
+   "toNode": "k11v_gen_v2_fixed_and_theorem34_6gpu_production_deployment",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e49",
+   "fromNode": "k11v_gen_v2_fixed_and_theorem34_6gpu_production_deployment",
+   "toNode": "k11w_theorem34_partc_monotone_ladder_78x_stagec_live_gpu_reload",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e50",
+   "fromNode": "k11w_theorem34_partc_monotone_ladder_78x_stagec_live_gpu_reload",
+   "toNode": "k11x_d0_imaginary_shadow_gram_c_minus_2670_filter_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e51",
+   "fromNode": "k11x_d0_imaginary_shadow_gram_c_minus_2670_filter_trap",
+   "toNode": "k11y_backward_light_d10_to_d0_freckled_prism_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e52",
+   "fromNode": "k11y_backward_light_d10_to_d0_freckled_prism_trap",
+   "toNode": "k11z_srg9_srg243_asymmetric_outer_orbit_reflection_and_adj_w_bijection",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e53",
+   "fromNode": "k11z_srg9_srg243_asymmetric_outer_orbit_reflection_and_adj_w_bijection",
+   "toNode": "k12a_theorem35_6d_orthoplex_d6_momentum_ternary_duality_h3_envelope_lean4",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e54",
+   "fromNode": "k12a_theorem35_6d_orthoplex_d6_momentum_ternary_duality_h3_envelope_lean4",
+   "toNode": "k12b_proofer2_b8_naive_slice_indexing_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e55",
+   "fromNode": "k12a_theorem35_6d_orthoplex_d6_momentum_ternary_duality_h3_envelope_lean4",
+   "toNode": "k12c_theorem35_stage_ef_h3_envelope_and_267_10pct_milestone",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e56",
+   "fromNode": "k12a_theorem35_6d_orthoplex_d6_momentum_ternary_duality_h3_envelope_lean4",
+   "toNode": "k12d_theorem36_five_graph_d63_diophantine_and_orthoplex_ternary_lean4",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e57",
+   "fromNode": "k12d_theorem36_five_graph_d63_diophantine_and_orthoplex_ternary_lean4",
+   "toNode": "k12e_theorem36_single_slice_paper_closure_without_7slice_coupling_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e58",
+   "fromNode": "k12c_theorem35_stage_ef_h3_envelope_and_267_10pct_milestone",
+   "toNode": "k12f_gen_v4_theorem35_shard2_live_d6_branch_reduction",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e59",
+   "fromNode": "k12e_theorem36_single_slice_paper_closure_without_7slice_coupling_trap",
+   "toNode": "k12g_global_7slice_t1_t3_triality_and_42x42_orthoplex_coupling",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e60",
+   "fromNode": "k12g_global_7slice_t1_t3_triality_and_42x42_orthoplex_coupling",
+   "toNode": "k12h_bench_t1_cone6_lexicographic_first15_r0_sample_trap",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e76",
+   "fromNode": "class6_gen_v6_sm_occupancy_23kb_smem_and_2d_coop_stripes_a100",
+   "toNode": "theorem_40b_42ab_and_five_master_theorems_monograph_lean4",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e77",
+   "fromNode": "theorem_40b_42ab_and_five_master_theorems_monograph_lean4",
+   "toNode": "class6_gen_v6d_theorem40b_disjoint_support_collapse_a100",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e78",
+   "fromNode": "class6_gen_v6d_theorem40b_disjoint_support_collapse_a100",
+   "toNode": "class6_gen_v6d_full_orbit_reverification_bundle10135_315",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

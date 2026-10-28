@@ -1,0 +1,197 @@
+{"ev": "node", "key": "Q0", "type": "question", "text": "first unknown exact term of A006506/A063443/A028420 (main) or A054759/A027683 (partial p1)", "by": "commander", "run": "", "pred": "P0001", "ts": "2026-10-17T12:19Z"}
+{"ev": "node", "key": "F1", "type": "fact", "text": "pitfall: offsets differ (A028420 from n=0, A054759 from n=1); a new term at the wrong index is an existing one", "by": "bank", "run": "", "pred": "", "ts": "2026-10-17T12:19Z"}
+{"ev": "edge", "src": "Q0", "dst": "F1", "rel": "blocks", "ts": "2026-10-17T12:19Z"}
+{"ev": "node", "key": "F2", "type": "fact", "text": "pitfall: torus conventions for n=1,2 (multi-edges, loops) change small terms; reproduce published small terms first", "by": "bank", "run": "", "pred": "", "ts": "2026-10-17T12:19Z"}
+{"ev": "edge", "src": "Q0", "dst": "F2", "rel": "blocks", "ts": "2026-10-17T12:19Z"}
+{"ev": "node", "key": "F3", "type": "fact", "text": "pitfall: CRT with too few primes returns value mod product; bound a(N) from entropy constant with wide margin", "by": "bank", "run": "", "pred": "", "ts": "2026-10-17T12:19Z"}
+{"ev": "edge", "src": "Q0", "dst": "F3", "rel": "blocks", "ts": "2026-10-17T12:19Z"}
+{"ev": "node", "key": "F4", "type": "fact", "text": "machine: M1 Pro 10 cores 16 GB RAM, ~15 GB free disk; keep arrays under 6 GB", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T12:19Z"}
+{"ev": "edge", "src": "Q0", "dst": "F4", "rel": "derives", "ts": "2026-10-17T12:19Z"}
+{"ev": "node", "key": "H1", "type": "hypothesis", "text": "smaller-first: A054759 square ice torus n=15 by row transfer matrix 2^n states + tracked boundary edge, mod primes", "by": "commander", "run": "", "pred": "P0002", "ts": "2026-10-17T12:19Z"}
+{"ev": "edge", "src": "Q0", "dst": "H1", "rel": "derives", "ts": "2026-10-17T12:19Z"}
+{"ev": "node", "key": "H2", "type": "hypothesis", "text": "extender: A006506 n=40 broken-profile DP over Fibonacci frontier states F(42)=2.7e8, ~13 primes, parallel over cores", "by": "commander", "run": "", "pred": "P0003", "ts": "2026-10-17T12:19Z"}
+{"ev": "edge", "src": "Q0", "dst": "H2", "rel": "derives", "ts": "2026-10-17T12:19Z"}
+{"ev": "node", "key": "F5", "type": "fact", "text": "criterion pitfall: open-boundary a(N)^(1/N^2) is far from the entropy constant (A006506 n=39: 1.508289 vs torus A027683 n=32: 1.503048, gap 5e-3 > 1e-3); literal growth clause may be unmeetable for A028420/A006506/A063443", "by": "scout", "run": "2026-10-17-1221", "pred": "", "ts": "2026-10-17T12:22Z"}
+{"ev": "edge", "src": "Q0", "dst": "F5", "rel": "blocks", "ts": "2026-10-17T12:22Z"}
+{"ev": "node", "key": "H3", "type": "hypothesis", "text": "small-data: rectangular m x n hard squares (A089980) and monomer-dimer (A210662) via width-min transfer matrix; validate against published values, target p2 new row", "by": "small-data", "run": "2026-10-17-1225", "pred": "P0005", "ts": "2026-10-17T12:26Z"}
+{"ev": "edge", "src": "Q0", "dst": "H3", "rel": "derives", "ts": "2026-10-17T12:26Z"}
+{"ev": "node", "key": "E1", "type": "experiment", "text": "A054759(15) two independent modular transfer-matrix runs; reproduce n<=14 first", "by": "smaller-first", "run": "2026-10-17-1225", "pred": "P0006", "ts": "2026-10-17T12:26Z"}
+{"ev": "edge", "src": "H1", "dst": "E1", "rel": "tests", "ts": "2026-10-17T12:26Z"}
+{"ev": "node", "key": "SF1", "type": "experiment", "text": "Sector transfer matrix (conserved up-arrow count), closed-form entry via prefix-sum min/max, float64 modular matmul + CRT; reproduce A054759 n=1..14 exactly, then attempt n=15 with two encodings", "by": "smaller-first", "run": "2026-10-17-1225", "pred": "", "ts": "2026-10-17T12:33Z"}
+{"ev": "edge", "src": "E1", "dst": "SF1", "rel": "tests", "ts": "2026-10-17T12:33Z"}
+{"ev": "node", "key": "E2", "type": "experiment", "text": "hard-squares rectangular counter (independent-set profile, Fibonacci frontier, SOS transfer, exact bigint): reproduce A089980 antidiagonal b-file for feasible widths", "by": "small-data", "run": "2026-10-17-1225", "pred": "", "ts": "2026-10-17T12:33Z"}
+{"ev": "edge", "src": "H3", "dst": "E2", "rel": "tests", "ts": "2026-10-17T12:33Z"}
+{"ev": "node", "key": "E3", "type": "experiment", "text": "monomer-dimer rectangular counter (broken-profile frontier DP, exact bigint): reproduce A210662 triangle b-file rows for feasible widths", "by": "small-data", "run": "2026-10-17-1225", "pred": "", "ts": "2026-10-17T12:33Z"}
+{"ev": "edge", "src": "H3", "dst": "E3", "rel": "tests", "ts": "2026-10-17T12:33Z"}
+{"ev": "node", "key": "X1", "type": "tool", "text": "headless claude -p with background subagents (run_in_background) ending the turn", "by": "commander", "run": "2026-10-17-1225", "pred": "", "ts": "2026-10-17T12:40Z"}
+{"ev": "kill", "key": "X1", "why": "print mode kills background subagents 10 min after the turn ends; lenses must run in foreground and the run must wait", "ts": "2026-10-17T12:40Z"}
+{"ev": "node", "key": "R1", "type": "result", "text": "sector transfer matrix (sixvertex.py) reproduces ALL 14 published A054759 terms exactly (8 primes <2^20, CRT 160 bits, 35 s)", "by": "smaller-first", "run": "2026-10-17-1225", "pred": "", "ts": "2026-10-17T12:40Z"}
+{"ev": "edge", "src": "H1", "dst": "R1", "rel": "supports", "ts": "2026-10-17T12:40Z"}
+{"ev": "node", "key": "L1", "type": "lead", "text": "A054759(15): RUN_A fwd 11 primes ~2^20 + RUN_B reversed encoding 12 disjoint primes ~2^19, PID 89748, outputs runs/2026-10-17-1225/attempts/smaller-first/code/n15_*; next: CRT both, compare, self-break, panel", "by": "smaller-first", "run": "", "pred": "P0002", "ts": "2026-10-17T12:40Z"}
+{"ev": "edge", "src": "R1", "dst": "L1", "rel": "derives", "ts": "2026-10-17T12:40Z"}
+{"ev": "node", "key": "R2", "type": "result", "text": "n15 RUN_A (11 primes, 220-bit modulus) and RUN_B (12 disjoint primes, reversed encoding, explicit builder, 228-bit) AGREE: a(15)=4310182149988584261406143524214457416387448 (43 digits, 142 bits); 694 s", "by": "smaller-first", "run": "", "pred": "P0004", "ts": "2026-10-17T12:50Z"}
+{"ev": "edge", "src": "L1", "dst": "R2", "rel": "supports", "ts": "2026-10-17T12:50Z"}
+{"ev": "node", "key": "F9", "type": "fact", "text": "correction: R2's panel bet is P0007 (R2 node says P0004 by mistake)", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T12:50Z"}
+{"ev": "edge", "src": "R2", "dst": "F9", "rel": "derives", "ts": "2026-10-17T12:50Z"}
+{"ev": "node", "key": "SB1", "type": "result", "text": "step-5 self-break (break.py): PART A full-edge brute force n=1,2,3 = 4,18,148 MATCH; PART B independent non-sector TM n<=8 all MATCH incl a(8); PART C independent CRT both runs == candidate, 23 residues consistent, prime sets disjoint; PART D growth a(15)^(1/225)=1.54699 vs W=1.53960 gap 0.00739>1e-3 FAILS literally (published a(14) also fails). Verdict SURVIVES on value+two-run+reproduction; growth clause flagged.", "by": "smaller-first", "run": "2026-10-17-1252", "pred": "", "ts": "2026-10-17T13:00Z"}
+{"ev": "edge", "src": "R2", "dst": "SB1", "rel": "supports", "ts": "2026-10-17T13:00Z"}
+{"ev": "node", "key": "CONF1", "type": "result", "text": "PANEL 3x pass:true (REPRODUCE recomputed all 23 n=15 residues from scratch; NOVELTY live b-file HTTP200 index15 absent; CRITERION p1 met literally, growth not part of p1). Gate CONFIRMED_PARTIAL. Package outbox/2026-10-17-anonymous-8ee58c17-fd616054 CHECK_RUN PASS. a(15)=4310182149988584261406143524214457416387448.", "by": "commander", "run": "2026-10-17-1252", "pred": "P0007", "ts": "2026-10-17T13:37Z"}
+{"ev": "edge", "src": "L1", "dst": "CONF1", "rel": "supports", "ts": "2026-10-17T13:37Z"}
+{"ev": "node", "key": "GROWTHNOTE", "type": "fact", "text": "LESSON: the main criterion's a(N)^(1/N^2) within-1e-3 growth clause is UNREACHABLE at finite n for these torus sequences (published a(14) gap 0.0085, a(15) gap 0.0074). Treat it as an asymptotic note, not a per-term gate; partial p1 names only two-run+reproduction rules.", "by": "commander", "run": "2026-10-17-1252", "pred": "", "ts": "2026-10-17T13:37Z"}
+{"ev": "edge", "src": "F5", "dst": "GROWTHNOTE", "rel": "supports", "ts": "2026-10-17T13:37Z"}
+{"ev": "node", "key": "R3", "type": "result", "text": "CONFIRMED_PARTIAL p1: A054759(15)=4310182149988584261406143524214457416387448; panel 3/3 pass, gate, CHECK_RUN PASS; package outbox/2026-10-17-anonymous-8ee58c17-fd616054", "by": "commander", "run": "2026-10-17-1252", "pred": "", "ts": "2026-10-17T17:08Z"}
+{"ev": "edge", "src": "R2", "dst": "R3", "rel": "supports", "ts": "2026-10-17T17:08Z"}
+{"ev": "node", "key": "X2", "type": "tool", "text": "cron-scheduled claude -p on macOS", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T17:08Z"}
+{"ev": "kill", "key": "X2", "why": "cron has no keychain login: 'Not logged in'; use launchd LaunchAgent (gui session)", "ts": "2026-10-17T17:08Z"}
+{"ev": "node", "key": "L2", "type": "lead", "text": "p2: new row of A089980 (hard squares m x n) or A210662 (monomer-dimer) — counter validated widths<=16; needs two decompositions + disjoint primes, then panel", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T17:08Z"}
+{"ev": "edge", "src": "R3", "dst": "L2", "rel": "derives", "ts": "2026-10-17T17:08Z"}
+{"ev": "node", "key": "L3", "type": "lead", "text": "p1 bis: A027683(33) hard squares on 33x33 torus — same two-run rules; Fibonacci-like torus states, check feasibility", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T17:08Z"}
+{"ev": "edge", "src": "R3", "dst": "L3", "rel": "derives", "ts": "2026-10-17T17:08Z"}
+{"ev": "close", "key": "L1", "why": "done: CONFIRMED_PARTIAL (R3)", "ts": "2026-10-17T17:08Z"}
+{"ev": "node", "key": "E4", "type": "experiment", "text": "small-data run 1708: modular numpy broken-profile hard-squares counter, validate A089980 at widths 20..32, project antidiagonal-79 cost per prime", "by": "commander", "run": "2026-10-17-1708", "pred": "P0008", "ts": "2026-10-17T17:09Z"}
+{"ev": "edge", "src": "H3", "dst": "E4", "rel": "tests", "ts": "2026-10-17T17:09Z"}
+{"ev": "node", "key": "E5", "type": "experiment", "text": "settled-check run 1708: is A089980 antidiagonal 79 / A210662 row 28 / A006506(40) / A028420(28) already published (Liang 2025 papers, OEIS drafts, GitHub)?", "by": "commander", "run": "2026-10-17-1708", "pred": "P0009", "ts": "2026-10-17T17:09Z"}
+{"ev": "edge", "src": "Q0", "dst": "E5", "rel": "tests", "ts": "2026-10-17T17:09Z"}
+{"ev": "node", "key": "R4", "type": "result", "text": "commander extra check: fresh primes 999983 and 786433 (in neither run) — recomputed residues equal a(15) mod p (31 s each); package run_checks.sh PASS from clean copy; sha256 fd616054…", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T17:11Z"}
+{"ev": "edge", "src": "R3", "dst": "R4", "rel": "supports", "ts": "2026-10-17T17:11Z"}
+{"ev": "node", "key": "R1708A", "type": "result", "text": "hs_mod.py (two-piece Fibonacci frontier, 3 numpy slice ops per cell, uint64 mod p<2^31): 1714 A089980 cells exact for widths 0-20,22,24,26,28,30, 0 mismatches; w=38,39 length-2 spot checks match. 315 s/prime for w=39 L=40 (3.05 GiB); antidiagonal 79 ~8.6 core-h (HEURISTIC), T(40,40) ~5-5.7 core-h", "by": "small-data", "run": "2026-10-17-1708", "pred": "", "ts": "2026-10-17T17:29Z"}
+{"ev": "edge", "src": "E4", "dst": "R1708A", "rel": "supports", "ts": "2026-10-17T17:29Z"}
+{"ev": "node", "key": "L1708", "type": "lead", "text": "A089980 antidiagonal 79 (p2): one prime per process with hs_mod.py; validate w=32/34 per-prime first (exact() loop per prime + --first-prime-index), then 32-37 primes for w<=39 over ~1-2 nights, plus a second decomposition (column sweep / reversed encoding, disjoint primes); watch host swap", "by": "commander", "run": "2026-10-17-1708", "pred": "", "ts": "2026-10-17T17:29Z"}
+{"ev": "edge", "src": "R1708A", "dst": "L1708", "rel": "derives", "ts": "2026-10-17T17:29Z"}
+{"ev": "node", "key": "H1708A", "type": "hypothesis", "text": "several CRT primes per process at width>=32 to amortise the frontier walk", "by": "small-data", "run": "2026-10-17-1708", "pred": "", "ts": "2026-10-17T17:29Z"}
+{"ev": "edge", "src": "E4", "dst": "H1708A", "rel": "derives", "ts": "2026-10-17T17:29Z"}
+{"ev": "kill", "key": "H1708A", "why": "no per-prime speedup, memory multiplies by #primes; thrashed swap and timed out at w=32. Always one prime per process at large width", "ts": "2026-10-17T17:29Z"}
+{"ev": "node", "key": "H1708B", "type": "hypothesis", "text": "dense transfer over all 2^w row patterns (zeta/subset transform) for width 39", "by": "small-data", "run": "2026-10-17-1708", "pred": "", "ts": "2026-10-17T17:29Z"}
+{"ev": "edge", "src": "E4", "dst": "H1708B", "rel": "derives", "ts": "2026-10-17T17:29Z"}
+{"ev": "kill", "key": "H1708B", "why": "2^39 entries = 4 TiB; only the Fibonacci frontier (F(w+2) states) is feasible", "ts": "2026-10-17T17:29Z"}
+{"ev": "node", "key": "R1708B", "type": "result", "text": "settled-check: A089980 antidiagonal 79, A210662 row 28, A006506(40), A028420(28), next A063443 NOT published (b-files 17:10Z HTTP 200; Liang 2507.04007 covers m+n<=78 and borrowed N(39,39); 2505.12776's m+n<=79 is king graphs). OEIS history 404 -> drafts PENDING TABLE CHECK. Both p2 rows contain main-target-hard cells", "by": "settled-check", "run": "2026-10-17-1708", "pred": "", "ts": "2026-10-17T17:29Z"}
+{"ev": "edge", "src": "E5", "dst": "R1708B", "rel": "supports", "ts": "2026-10-17T17:29Z"}
+{"ev": "node", "key": "F1708", "type": "fact", "text": "pitfall: arXiv 2505.12776 'm+n<=79' refers to KING graphs (A193580/A245013), not P_n x P_m", "by": "settled-check", "run": "2026-10-17-1708", "pred": "", "ts": "2026-10-17T17:29Z"}
+{"ev": "edge", "src": "R1708B", "dst": "F1708", "rel": "derives", "ts": "2026-10-17T17:29Z"}
+{"ev": "node", "key": "H1708C", "type": "hypothesis", "text": "guess T(39,40) from the asymptotic log fit and certify on a few primes", "by": "small-data", "run": "2026-10-17-1708", "pred": "", "ts": "2026-10-17T17:30Z"}
+{"ev": "edge", "src": "E4", "dst": "H1708C", "rel": "derives", "ts": "2026-10-17T17:30Z"}
+{"ev": "kill", "key": "H1708C", "why": "a fit cannot fix ~925 exact bits; certifying any residue needs the full DP anyway, so it saves nothing", "ts": "2026-10-17T17:30Z"}
+{"ev": "node", "key": "R1708C", "type": "result", "text": "hs_mod.py one-prime-per-process + --first-prime-index: w=32 validated, 47 cells m=0..46, 0 mismatches, 35 primes, 355.80 s, peak 135 MiB; total 1761 cells 0 mismatches. Next: w=34 alone (~935 s), then w=39 residues per prime", "by": "small-data", "run": "2026-10-17-1708", "pred": "", "ts": "2026-10-17T17:37Z"}
+{"ev": "edge", "src": "L1708", "dst": "R1708C", "rel": "supports", "ts": "2026-10-17T17:37Z"}
+{"ev": "node", "key": "F20", "type": "fact", "text": "commander nodes carry an empty run id (R3,R4,L2,L3,X2 written 17:08-17:11Z by the interactive PROOFER session) — not a foreign writer", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T17:53Z"}
+{"ev": "close", "key": "L2", "why": "superseded by L1708 (concrete plan for antidiagonal 79)", "ts": "2026-10-17T17:53Z"}
+{"ev": "node", "key": "F21", "type": "fact", "text": "commander projection (HEURISTIC, from secs column w=28..33 ratio ~1.6/width): w34~1000s, w35~1600s, w36~2600s, w37~4200s, w38~6800s, w39~11000s for all primes in ONE process => ~7 h single-core for w35-39; driver default cap 1800 s/width breaks the loop at w36 — split primes across 2-3 processes (RAM ~0.3 GB at w33 x1.6/width) or raise cap", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T18:33Z"}
+{"ev": "node", "key": "E1754", "type": "experiment", "text": "run 1754: resume L1708. hs_mod.exact(w,79-w) w=0..34, one prime/sweep + CRT check prime, per-width 0-mismatch gate vs live b-file", "by": "extender", "run": "2026-10-17-1754", "pred": "", "ts": "2026-10-17T18:48Z"}
+{"ev": "edge", "src": "L1708", "dst": "E1754", "rel": "resumes", "ts": "2026-10-17T18:48Z"}
+{"ev": "node", "key": "R1754A", "type": "result", "text": "antidiag-79 cells T(w,79-w) for w=0..34 computed (35 of 40 distinct cells); 2142 published-cell checks 0 mismatches; peak 463 MiB at w=34; fresh-prime self-break PASS on w=30,32,34", "by": "extender", "run": "2026-10-17-1754", "pred": "P0012", "ts": "2026-10-17T18:48Z"}
+{"ev": "edge", "src": "E1754", "dst": "R1754A", "rel": "supports", "ts": "2026-10-17T18:48Z"}
+{"ev": "node", "key": "R1754B", "type": "result", "text": "independent exact-bigint full-column-pattern transfer (no CRT, different encoding) reproduces 1001 published cells w<=14 (0 mism) and AGREES with modular run on all antidiag-79 cells w=0..16 (17/17). Two-run agreement for w<=16 only", "by": "small-data", "run": "2026-10-17-1754", "pred": "P0014", "ts": "2026-10-17T18:48Z"}
+{"ev": "edge", "src": "R1754A", "dst": "R1754B", "rel": "supports", "ts": "2026-10-17T18:48Z"}
+{"ev": "node", "key": "R1754S", "type": "result", "text": "settled-check run 1754: A089980 d=79 NOT published; b-file re-fetched HTTP 200 labelled 'Liang Kai antidiagonals 0..78'; Liang papers cover m+n<=78; 2505.12776 m+n<=79 is KING graphs; no injection", "by": "settled-check", "run": "2026-10-17-1754", "pred": "", "ts": "2026-10-17T18:48Z"}
+{"ev": "edge", "src": "E5", "dst": "R1754S", "rel": "supports", "ts": "2026-10-17T18:48Z"}
+{"ev": "node", "key": "L1754", "type": "lead", "text": "p2 antidiag-79: DONE w=0..34 (w<=16 two-decomposition). TODO: (1) widths 35..39 one-per-process when swap free; (2) second modular decomposition disjoint primes for w=17..39; (3) panel. Then CONFIRMED_PARTIAL candidate for the whole row", "by": "commander", "run": "2026-10-17-1754", "pred": "", "ts": "2026-10-17T18:48Z"}
+{"ev": "edge", "src": "R1754A", "dst": "L1754", "rel": "derives", "ts": "2026-10-17T18:48Z"}
+{"ev": "close", "key": "L1708", "why": "superseded by L1754 (w=0..34 done)", "ts": "2026-10-17T19:13Z"}
+{"ev": "node", "key": "E1913", "type": "experiment", "text": "run 1913: resume L1754. pool of per-(w,prime) hs_mod residue jobs w=35..39, mem cap 7 GiB, then CRT + 0-mismatch gate", "by": "extender", "run": "2026-10-17-1913", "pred": "P0018", "ts": "2026-10-17T19:18Z"}
+{"ev": "edge", "src": "L1754", "dst": "E1913", "rel": "resumes", "ts": "2026-10-17T19:18Z"}
+{"ev": "node", "key": "RF1913A", "type": "experiment", "text": "far-import: row-to-row transfer over Fibonacci strings, w-pass trie disjoint-sum transform (no reversal perm thanks to reflection symmetry), uint64 lazy mod primes<2^30, CRT+check prime; gate all published cells; A089980 antidiag79 w=17..", "by": "far-import", "run": "2026-10-17-1913", "pred": "", "ts": "2026-10-17T19:20Z"}
+{"ev": "node", "key": "X3", "type": "tool", "text": "resume agent retrying every 20 min before the announced limit reset", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T19:53Z"}
+{"ev": "kill", "key": "X3", "why": "each premature retry burned one of 8 daily resumes; fixed: run.sh parses 'resets <time>' into RESUME_AFTER and waits", "ts": "2026-10-17T19:53Z"}
+{"ev": "node", "key": "F22", "type": "fact", "text": "pool cap_sec(37)=600 s < needed ~550-650 s (w36 jobs 327-362 s); w>=37 jobs time out — rerun failed (w,j) with cap >= 2x previous width time", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T20:33Z"}
+{"ev": "node", "key": "E1913C", "type": "experiment", "text": "commander relaunch: frozen pool.py with cap_sec 1283/2078/3367 s for w37/38/39, 4 jobs, 7 GiB; queued behind PID 17509 by waiter 25617; log pool_commander.log", "by": "commander", "run": "2026-10-17-1913", "pred": "", "ts": "2026-10-17T21:13Z"}
+{"ev": "edge", "src": "F22", "dst": "E1913C", "rel": "tests", "ts": "2026-10-17T21:13Z"}
+{"ev": "node", "key": "F23", "type": "fact", "text": "v10: infra dead ends X1, X2, X3 are now preflight checks (preflight.sh); F22 class is covered by the job queue's caps (>=2x); runs no longer resolve bets (K3)", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T21:54Z"}
+{"ev": "kill", "key": "EH2208E", "why": "Ran: byte-identical output for w=35,36. Dead as a verification line: same code, same residues, zero independence; only rules out nondeterminism.", "ts": "2026-10-17T22:14Z"}
+{"ev": "kill", "key": "EH2208F", "why": "Ran on published m for w=35,36: no period <= L/2 found in T mod 10. Dead.", "ts": "2026-10-17T22:14Z"}
+{"ev": "kill", "key": "EH2208G", "why": "Ran: prediction error 3.2e-4 of last diff (w35), 3.2e-4 (w36): consistent but only constrains the log ratio to ~1e-20 relative, redundant with EH2208C and not exact; dead as an exactness check.", "ts": "2026-10-17T22:14Z"}
+{"ev": "node", "key": "EH2208A", "type": "result", "text": "A089980 antidiag 79: frozen assemble.py on run-1913 res/ ACCEPTED w=35 (T(35,44), 914 bits, 275 digits, 36 primes, 44 pub cells 0 mismatch) and w=36 (T(36,43), 918 bits, 277 digits, 37 primes, 43 pub cells 0 mismatch), check prime ok; values in runs/2026-10-17-2208/attempts/extender-harvest/antidiag79_w35plus.tsv. NUMERICAL (extender only, not yet two-run agreed)", "by": "extender-harvest", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:14Z"}
+{"ev": "node", "key": "EH2208B", "type": "result", "text": "w=35,36 residue headers equal hs_mod.primes_below_2_31(nprimes_for) for all 36/37 files; CRT product margin over V(w)^L: 5.9 bits (w35), 31.5 bits (w36)", "by": "extender-harvest", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:14Z"}
+{"ev": "edge", "src": "EH2208A", "dst": "EH2208B", "rel": "derives", "ts": "2026-10-17T22:14Z"}
+{"ev": "node", "key": "EH2208C", "type": "result", "text": "HEURISTIC growth sanity w=35,36 new cells: fixed-width log-ratio differences alternate with contraction factor continuing smooth published sequence (-0.464102 -> -0.464419 w35; -0.463737 -> -0.464062 w36); new log-ratio strictly between neighbour widths", "by": "extender-harvest", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:14Z"}
+{"ev": "edge", "src": "EH2208A", "dst": "EH2208C", "rel": "derives", "ts": "2026-10-17T22:14Z"}
+{"ev": "node", "key": "EH2208D", "type": "fact", "text": "w=37 (L=42, needs 37 primes): 16/37 residue files complete at 2026-10-18 00:11 CEST (j0-12,25-27); j16-19 running (.part); j13,14,15 TIMEOUT left for rerun; 21 missing", "by": "extender-harvest", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:14Z"}
+{"ev": "node", "key": "EH2208E", "type": "hypothesis", "text": "Determinism audit: re-run frozen assemble.py to a copy and compare bytes", "by": "extender-harvest", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:14Z"}
+{"ev": "kill", "key": "EH2208E", "why": "Ran: byte-identical output for w=35,36. Dead as a verification line: same code, same residues, zero independence; only rules out nondeterminism.", "ts": "2026-10-17T22:14Z"}
+{"ev": "node", "key": "EH2208F", "type": "hypothesis", "text": "Last digit of T(w,m) along fixed w is periodic (small period) so new cells last digits predictable", "by": "extender-harvest", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:14Z"}
+{"ev": "kill", "key": "EH2208F", "why": "Ran on published m for w=35,36: no period <= L/2 found in T mod 10. Dead.", "ts": "2026-10-17T22:14Z"}
+{"ev": "node", "key": "EH2208G", "type": "hypothesis", "text": "Aitken/geometric extrapolation of fixed-width log ratios predicts new cell log ratio", "by": "extender-harvest", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:14Z"}
+{"ev": "kill", "key": "EH2208G", "why": "Ran: prediction error 3.2e-4 of last diff (w35 and w36): consistent but not exact, redundant with EH2208C; dead as an exactness check.", "ts": "2026-10-17T22:14Z"}
+{"ev": "node", "key": "X4", "type": "tool", "text": "job spec with relative cwd started by the launchd ticker", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T22:14Z"}
+{"ev": "kill", "key": "X4", "why": "ticker starts in '/', cd failed before logging; fixed: submit stores abspath, tick resolves vs workdir, cd errors go to out.log; preflight warns on missing cwd", "ts": "2026-10-17T22:14Z"}
+{"ev": "node", "key": "E2213", "type": "experiment", "text": "pool moved into job queue as ad79-w37-39-pool-q: 2 parallel jobs, POOL_CAP_FACTOR=4.0 (w37 2333 s), after 4-parallel cap-1283 s timeouts under swap contention; old pool PID 25617 + 4 children killed by exact pid", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T22:14Z"}
+{"ev": "edge", "src": "E1913C", "dst": "E2213", "rel": "resumes", "ts": "2026-10-17T22:14Z"}
+{"ev": "node", "key": "EH2208H", "type": "fact", "text": "Update to EH2208D at 00:12:30: w=37 j=16 also TIMEOUT (4 timeouts j13-16); per-prime runtime rose 290-305s (j0-3) -> 686-877s (j4-11) -> TIMEOUT (j13-16), consistent with host memory/swap pressure; next run should rerun j13-16 with fewer concurrent jobs", "by": "extender-harvest", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:14Z"}
+{"ev": "edge", "src": "EH2208D", "dst": "EH2208H", "rel": "derives", "ts": "2026-10-17T22:14Z"}
+{"ev": "node", "key": "CC2208A", "type": "result", "text": "cross-check: extender (hs_mod) vs far.py T(w,79-w) exact decimal-string equality w=17..34: 18/18 AGREE, 0 disagree; all far rows pub_mismatch 0 + check prime ok; extender rows 0 mismatches (compare_out.txt)", "by": "cross-check", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:16Z"}
+{"ev": "edge", "src": "L1754", "dst": "CC2208A", "rel": "supports", "ts": "2026-10-17T22:16Z"}
+{"ev": "node", "key": "CC2208B", "type": "result", "text": "independence audit: far code imports only sys/os/time/json/resource/numpy/concurrent/datetime, 0 mentions of hs_mod/extender; prime sets per width w=17..34 intersection 0 (far max 1073741789 <2^30, hs min 2147482859 >2^30); far res primes == computed lists; extender value mod all 589 far (w,p) residues: 589 ok 0 bad. Encodings differ in ranking/sweep but share product state shape V(k)xV(w-k)", "by": "cross-check", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:16Z"}
+{"ev": "edge", "src": "CC2208A", "dst": "CC2208B", "rel": "supports", "ts": "2026-10-17T22:16Z"}
+{"ev": "node", "key": "CC2208C", "type": "result", "text": "fresh-prime spot check: own dense 2^w bitmask broken-profile counter (trial-division primes 536870909, 268435399; in neither code) passes 882 published cells w<=11 x2 primes 0 mism, negatives novert 1430 / nohoriz 1562 mism; T(w,79-w) mod p for w=17..22 matches BOTH tables 12/12", "by": "cross-check", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:16Z"}
+{"ev": "edge", "src": "CC2208A", "dst": "CC2208C", "rel": "supports", "ts": "2026-10-17T22:16Z"}
+{"ev": "node", "key": "CC2208D", "type": "hypothesis", "text": "own fresh-prime counter at large widths w>=30 via dense 2^w array", "by": "cross-check", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:16Z"}
+{"ev": "edge", "src": "CC2208C", "dst": "CC2208D", "rel": "derives", "ts": "2026-10-17T22:16Z"}
+{"ev": "kill", "key": "CC2208D", "why": "2^30 int64 = 8 GiB per array, far over the 500 MB cap / swap-full host; twin of H1708B; fresh-prime check at w>=23 needs a Fibonacci-frontier counter (own, ~F(w+2) states)", "ts": "2026-10-17T22:16Z"}
+{"ev": "node", "key": "SC2208A", "type": "result", "text": "settled-check run 2208: A089980 d=79 NOT published (b-file sha a28e1a8d identical, d<=78; A089934 b-file d<=78 edited 2026-09-22; A006506 n<=39, A028420 n<=27; arXiv 24 mo nothing new; GitHub repos 0, code search 401 PENDING; Zenodo none). No injection", "by": "settled-check", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:16Z"}
+{"ev": "edge", "src": "E5", "dst": "SC2208A", "rel": "supports", "ts": "2026-10-17T22:16Z"}
+{"ev": "node", "key": "SC2208B", "type": "fact", "text": "d=79 cells w=0..7 are already implied by OEIS rows A000045 (a(m+2)), A001333 (a(m+1)), A051736, A051737, A089936-8 (a(m)); all 7 equal run-1754 values. Novelty claim must say 'first full row; w<=7 agree with existing row sequences'. No row sequence for w>=8", "by": "settled-check", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:16Z"}
+{"ev": "edge", "src": "R1754A", "dst": "SC2208B", "rel": "supports", "ts": "2026-10-17T22:16Z"}
+{"ev": "node", "key": "SC2208C", "type": "dead", "text": "settled-check: look for A089980 d=79 in GitHub/Zenodo/stat-phys/SeqFan — 0 repo hits (control 858), Zenodo irrelevant, web search only OEIS+Liang; code search 401", "by": "settled-check", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:16Z"}
+{"ev": "edge", "src": "E5", "dst": "SC2208C", "rel": "derives", "ts": "2026-10-17T22:16Z"}
+{"ev": "node", "key": "R2208", "type": "result", "text": "run 2208: antidiag-79 w=0..34 two-decomposition agreed (far.py vs hs_mod 18/18 exact, disjoint primes); w=35,36 hs_mod ACCEPTED (0 pub mismatches); w=37 16/37 residues", "by": "commander", "run": "2026-10-17-2208", "pred": "P0020", "ts": "2026-10-17T22:20Z"}
+{"ev": "edge", "src": "L1754", "dst": "R2208", "rel": "supports", "ts": "2026-10-17T22:20Z"}
+{"ev": "node", "key": "L2208", "type": "lead", "text": "p2 antidiag-79 TODO: harvest jobs ad79-far-w35/-w36 and compare; finish w=37..39 hs_mod (<=2 jobs in parallel at w>=37 under swap pressure; rerun TIMEOUT j13-16); far.py w=37..39 as queued jobs; then claim/ + 3-skeptic panel. Novelty wording: cells w<=7 implied by published row sequences", "by": "commander", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:20Z"}
+{"ev": "edge", "src": "R2208", "dst": "L2208", "rel": "derives", "ts": "2026-10-17T22:20Z"}
+{"ev": "node", "key": "F2208", "type": "fact", "text": "4 parallel w=37 hs_mod jobs under ~14/15 GB swap slowed 290 s -> 690-880 s and hit the 1283 s cap; heavy widths need fewer parallel jobs", "by": "commander", "run": "2026-10-17-2208", "pred": "", "ts": "2026-10-17T22:20Z"}
+{"ev": "node", "key": "T1", "type": "result", "text": "tug gate 2026-10-18-next-nights: IMPLEMENT (finish p2) won bout 1 by concession; SEARCH's H' A054759(16) conceded: same partial class as the banked (15), cost unmeasured", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T22:31Z"}
+{"ev": "edge", "src": "L1754", "dst": "T1", "rel": "supports", "ts": "2026-10-17T22:31Z"}
+{"ev": "node", "key": "L4", "type": "lead", "text": "reserve (from tug SEARCH): A054759(16) square ice on the 16x16 torus — measure cost (hours, RSS) first; low value while p1 is already banked", "by": "tug-search", "run": "", "pred": "", "ts": "2026-10-17T22:31Z"}
+{"ev": "edge", "src": "T1", "dst": "L4", "rel": "derives", "ts": "2026-10-17T22:31Z"}
+{"ev": "close", "key": "L1754", "why": "superseded by L2208", "ts": "2026-10-17T22:36Z"}
+{"ev": "node", "key": "X5", "type": "tool", "text": "tug.py: any API error matching 'limit' treated as usage limit; partial bout skipped on resume", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T23:19Z"}
+{"ev": "kill", "key": "X5", "why": "a Sonnet safety-filter false positive aborted gate 2026-10-18-second-front; fixed: retry once, then fallback model (recorded per turn); resume skips only turns already logged", "ts": "2026-10-17T23:19Z"}
+{"ev": "node", "key": "X6", "type": "tool", "text": "commander moved a superseded public package into private/ and put a marker file in outbox/", "by": "commander", "run": "", "pred": "", "ts": "2026-10-17T23:37Z"}
+{"ev": "kill", "key": "X6", "why": "check_run treats private/ as secrets (97 false leak FAILs) and outbox/ as packages only; superseded packages and markers go to archive/", "ts": "2026-10-17T23:37Z"}
+{"ev": "node", "key": "X7", "type": "tool", "text": "tug advocates with --system-prompt replacing Claude Code's default, on a cipher-solving topic", "by": "commander", "run": "", "pred": "", "ts": "2026-10-18T00:01Z"}
+{"ev": "kill", "key": "X7", "why": "all 18 turns API_REFUSED on every model; a normal claude -p with the default prompt answered the same topic fine; fixed: --append-system-prompt", "ts": "2026-10-18T00:01Z"}
+{"ev": "node", "key": "R2236", "type": "result", "text": "commander: far w35/w36 = hs_mod exactly (275/277 digits); 37/40 cells two-decomposition agreed; far w37 queued", "by": "commander", "run": "", "pred": "", "ts": "2026-10-18T00:53Z"}
+{"ev": "edge", "src": "L2208", "dst": "R2236", "rel": "supports", "ts": "2026-10-18T00:53Z"}
+{"ev": "node", "key": "R2253", "type": "result", "text": "commander: far w37 = hs w37 (278 d); hs w38 accepted; 38/40 dual-confirmed; far w38 queued; pool on w39", "by": "commander", "run": "", "pred": "", "ts": "2026-10-18T02:53Z"}
+{"ev": "edge", "src": "R2236", "dst": "R2253", "rel": "supports", "ts": "2026-10-18T02:53Z"}
+{"ev": "node", "key": "X11", "type": "dead", "text": "jobs.py tick computed wall-clock cap without subtracting SIGSTOP pause duration (443m paused on ad79-far-w38)", "by": "commander", "run": "", "pred": "", "ts": "2026-10-18T12:01Z"}
+{"ev": "kill", "key": "X11", "why": "fixed in jobs.py paused_seconds() + extend subcommand; added X11 preflight check; queued ad79-far-w39", "ts": "2026-10-18T12:01Z"}
+{"ev": "node", "key": "R_AD79_40_OF_40", "type": "result", "text": "All 40/40 widths w=0..39 of A089980 antidiagonal 79 completed and matched digit-for-digit across two independent decompositions (hs_mod vs far.py, 0 mismatches, T(39,40)=2547356820811895...95377, 279 digits)", "by": "commander", "run": "commander-2026-10-18", "pred": "P0023", "ts": "2026-10-18T17:05Z"}
+{"ev": "node", "key": "R_A089980_AD79_CONFIRMED", "type": "result", "text": "CONFIRMED_PARTIAL (p2): Complete 80-entry antidiagonal d=79 of OEIS A089980 (a089980_antidiag79.txt, sha256 918a1787, 40/40 widths dual-verified across hs_mod and far.py + w=0..16 exact bigint, 3-skeptic panel pass, packaged in outbox/2026-10-18-mizopl-918a1787)", "by": "", "run": "2026-10-17-2208", "pred": "P0047", "ts": "2026-10-18T20:01Z"}
+{"ev": "close", "key": "Q0", "why": "Won both p1 (A054759(15), PR #366 MERGED into main) and p2 (A089980 antidiagonal d=79, PR #462)", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "H1", "why": "P0002=1: A054759(15) = 4310182149988584261406143524214457416387448 verified and MERGED in PR #366", "ts": "2026-10-21T16:25Z"}
+{"ev": "kill", "key": "H2", "why": "P0003=0: A006506(40) frontier F(42)=2.68e8 states exceeds 16GB RAM 3-run budget; p1 (PR #366) and p2 (PR #462) won instead", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "H3", "why": "Completed: A089980 antidiagonal d=79 (80 entries, w=0..39) dual-verified and packaged in PR #462", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "E1", "why": "P0006=1: RUN_A and RUN_B agreed digit-for-digit on A054759(15) (PR #366)", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "SF1", "why": "Completed: sector transfer-matrix cross-check for A054759", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "E2", "why": "Completed: exact bigint hard-squares rectangular reproduction", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "E3", "why": "Completed: monomer-dimer A210662 triangle reproduction", "ts": "2026-10-21T16:25Z"}
+{"ev": "kill", "key": "L3", "why": "Superseded: p1 already won and merged via A054759(15) (PR #366)", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "E4", "why": "P0008=1: hs_mod.py validated widths 24..30 (1,714 cells, 0 mismatches)", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "E5", "why": "P0009=0: confirmed antidiagonal 79 was unpublished prior to our run", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "E1754", "why": "P0012=1: w=0..34 computed with 0 published-cell mismatches", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "E1913", "why": "Completed: w=35..36 finished in run 1913 and w=37..39 in resume 2208", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "RF1913A", "why": "P0017=1: far.py second decomposition agreed on all w>=17 cells", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "E1913C", "why": "Completed in run 2208 (40/40 widths of antidiagonal 79 dual-verified, PR #462)", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "E2213", "why": "Completed in run 2208 (PR #462)", "ts": "2026-10-21T16:25Z"}
+{"ev": "close", "key": "L2208", "why": "Completed: all 40/40 widths of antidiagonal 79 dual-verified across hs_mod and far.py (PR #462)", "ts": "2026-10-21T16:25Z"}
+{"ev": "kill", "key": "L4", "why": "Superseded: A054759(15) (PR #366) and A089980 d=79 (PR #462) already won", "ts": "2026-10-21T16:25Z"}
+{"ev": "edge", "src": "E3", "dst": "X1", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "R3", "dst": "X2", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "R1708C", "dst": "F20", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "F20", "dst": "F21", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "E1913", "dst": "RF1913A", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "RF1913A", "dst": "X3", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "X3", "dst": "F22", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "E1913C", "dst": "F23", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "F23", "dst": "EH2208A", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "EH2208C", "dst": "EH2208D", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "EH2208D", "dst": "EH2208E", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "EH2208E", "dst": "EH2208F", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "EH2208F", "dst": "EH2208G", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "EH2208G", "dst": "X4", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "L2208", "dst": "F2208", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "L4", "dst": "X5", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "X5", "dst": "X6", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "X6", "dst": "X7", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "R2253", "dst": "X11", "rel": "derives", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "X11", "dst": "R_AD79_40_OF_40", "rel": "resumes", "ts": "2026-10-26T12:59Z"}
+{"ev": "edge", "src": "R_AD79_40_OF_40", "dst": "R_A089980_AD79_CONFIRMED", "rel": "derives", "ts": "2026-10-26T12:59Z"}

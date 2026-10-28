@@ -1,0 +1,70 @@
+{
+ "nodes": [
+  {
+   "id": "H0110_L1_flat_beam_lns_cse_sieve",
+   "type": "text",
+   "text": "✗ **H0110_L1_flat_beam_lns_cse_sieve** · hypothesis\n\nMulti-threaded C++ CSE reducer (clss_cse_beam_reducer.cpp) combining flat-array representation with Greedy-Potential (gp), Beam-Lookahead, partial LNS destroy-and-repair of fresh variables, and search over alternative ZT schemes from Perminov repository beats cr records on >= 3 formats with max(n,m,p) <= 8 (full win + p3).\n\n*why dead:* [L-FACR-001=0] Purely syntactic CSE (disjoint subsets without algebraic cancellation) stalls at cr=391 on 4x5x6 (vs 380 in ternary_addition_reducer and 345 in 2026-10-19 files) because record files from commit 048b64987b exploit algebraic cancellation (fresh_cancellations=10,16,5 and el_cancellations=9,11,11 in the fresh-variable DAG).",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H0110_L2_dag_vector_cancellation_and_fv_opt",
+   "type": "text",
+   "text": "**H0110_L2_dag_vector_cancellation_and_fv_opt** · hypothesis\n\nAlgebraic-cancellation DAG post-optimizer (residual u,v,w reduction via 64-bit sum/difference hash tables over V_pool, cross-file independent u/v/w block composition, and Boyar-Peralta cancellation on _fv and all 49 exact-SOTA max_dim<=8 formats) lowers cr below the live record on >= 3 formats.",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H0110_L3_export_and_verify_json_certificates",
+   "type": "text",
+   "text": "**H0110_L3_export_and_verify_json_certificates** · hypothesis\n\nExporting full _ZT_reduced.json SLPs with exact Tellegen transposition on W^T and running 1200-trial LNS will produce >= 10 symbolically verified ternary SLP world records over Z with max(n,m,p)<=8",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "R0110_fmm_additive_complexity_confirmed_solution",
+   "type": "text",
+   "text": "**R0110_fmm_additive_complexity_confirmed_solution** · result\n\nCONFIRMED_SOLUTION + p3 on fmm-additive-complexity-records (run 2026-10-22-0110, package 2026-10-22-mizopl-e47a7dd8): 48 verified ternary SLPs over Z beating live addition_reduced_ZT min cr on 9 exact-SOTA formats (2x4x7: 157 vs 168 [-11], 2x5x5: 145 vs 147 [-2], 4x5x8: 447 vs 466 [-19], 4x6x7: 464 vs 468 [-4], 5x5x6: 406 vs 411 [-5], 5x5x8: 548 vs 555 [-7], 5x6x6: 492 vs 499 [-7], 5x6x7: 573 & 576 vs 577 [-4], 5x7x7: 680 vs 694 [-14]), 2 ZT-best formats (4x4x8: 338 vs 339, 3x3x6: 152 vs 153), and 21 newly addition-reduced SOTA-rank ZT formats; 3/3 skeptics pass: true, CHECK_RUN: PASS",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "H0110_L1_flat_beam_lns_cse_sieve",
+   "toNode": "H0110_L2_dag_vector_cancellation_and_fv_opt",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "H0110_L2_dag_vector_cancellation_and_fv_opt",
+   "toNode": "H0110_L3_export_and_verify_json_certificates",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e2",
+   "fromNode": "H0110_L3_export_and_verify_json_certificates",
+   "toNode": "R0110_fmm_additive_complexity_confirmed_solution",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

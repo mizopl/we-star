@@ -1,0 +1,106 @@
+{
+ "nodes": [
+  {
+   "id": "H_lasagna_inner_core_unroll",
+   "type": "text",
+   "text": "✗ **H_lasagna_inner_core_unroll** · hypothesis\n\nFetching Lasagna phase contours (cos/grad_mag) for the inner core inside 5753_-7 (wind_a 10..2, 6.6..15.1 cm past the last column) and unrolling wraps -7..-15 will reveal subscriptio traces\n\n*why dead:* [L-PT-001=0] Straight radial steps across Lasagna ridges (wind_a 10..3) revealed strong S-shaped folding of the inner-core sheets (lasagna_radial_profiles.png), causing polar rays to intersect the same fold multiple times instead of tracking arc-length along the folded sheet.",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H_arclength_contour_inner_core",
+   "type": "text",
+   "text": "✗ **H_arclength_contour_inner_core** · hypothesis\n\nUnrolling the folded inner-core wraps (wind_a=10..2) along true arc-length s of Lasagna phase contours (cos+sin / vctracks) instead of polar rays will remove S-fold distortions and expose continuous eschatokollon sheets\n\n*why dead:* [L-PT-002=0] Global 2D Poisson/FFT phase unwrapping blurs across the medial crease disclination line of the pinched inner core",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H_shard0_raw_mip_inner_core",
+   "type": "text",
+   "text": "✗ **H_shard0_raw_mip_inner_core** · hypothesis\n\nDirect 2D (Z, s) unrolling from shard_0 phase crossings (abs_w = 16..6, snapped along normal rs to the Lasagna_cos ridge) with uncancelled raw 3D MIP ink sampling (student-v12A + v3-78k) will expose ink signal in the inner core\n\n*why dead:* [L-PT-003=0] Geometric 2D (Z,s) unrolling from shard_0 (seed_w=13,10) + Lasagna_cos normal snapping + L4 GPU 4-model inference succeeded (ens4>100 peaked 4.5x at dn=0: 24.8% vs 5.5%/6.1% at dn=+-18), but Thin-Sheet Z-DoG and CT relief prove activations on 5753_-7..-14 are horizontal delamination ridges and flat-face reed fibers, with 0 legible Greek title letters (X11)",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H_l4_gpu_m2_to_m6_eschatokollon",
+   "type": "text",
+   "text": "✗ **H_l4_gpu_m2_to_m6_eschatokollon** · hypothesis\n\nFull 4-model L4 GPU scan (dnative+Hecate+seed42+seed43) + Thin-Sheet Z-DoG (zc=36,54,72) across unexplored eschatokollon wraps 5753_-2..-6 (between column 5753_-1 and inner core 5753_-7) will reveal missing title text\n\n*why dead:* [L-PT-004=0] All 5 eschatokollon wraps 5753_-2 through 5753_-6 scanned on Colab L4 GPU with 4-model ensemble + two-sided Thin-Sheet Z-DoG (zc=36,54,72): 5753_-2 at zc=54 recovers the right continuation of final column Line 6 (>-- ΑΝΑΓΕΓΡΑΦ[...], L3_y=1780..1950, x=1350..1750, zdog>80=17.48%), while the middle/lower eschatokollon zone (y_L3=2000..4992) across 5753_-2..-6 is blank unwritten papyrus (zdog_p99=52..59, zdog>80=0.03%..0.04% on -3..-6).",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H_lower_column_half_y4864_8576",
+   "type": "text",
+   "text": "✗ **H_lower_column_half_y4864_8576** · hypothesis\n\nL4 GPU scan (4 models + Thin-Sheet Z-DoG zc=36,54,72 + dnative mesh-jump detector at zc=18,90) across the lower column half (y_L3=4864..8576, below y=4992 down to lower margin y=8500) on wraps 5753_-1..5753_-6 will reveal subscriptio or lower-line traces\n\n*why dead:* [L-PT-005=0] Lower column half (y_L3=4864..8576) across 5753_-1 through 5753_-6 scanned on Colab L4 GPU with 4-model ensemble + Thin-Sheet Z-DoG (zc=36,54,72) plus wide dnative sweep (zc=18,90): 5753_-1 zc=18/36 picks up bleed-through from the preceding full column on 5753_0 (p99=190 at zc=18, 159 at zc=36), while on the surface zc=54 across all 6 wraps 5753_-1..-6 Thin-Sheet Z-DoG is at blank background (p99=52..64, zdog>80=0.057%..0.140%), confirming no separate subscriptio in the lower half of the eschatokollon.",
+   "x": 1680,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H_dual_energy_137keV_and_top_band",
+   "type": "text",
+   "text": "✗ **H_dual_energy_137keV_and_top_band** · hypothesis\n\nL4 GPU scan of the unexplored upper band (y_L3=0..1792 on 5753_-3..5753_-6) + Dual-Energy Spectral Tomography (78 keV vs 137 keV) and 1.129 um epidermal extraction in the ESRF synchrotron window (y_L3=3350..4300, x_L3=755..1420 on positive control 5753_0 and 5753_-1..5753_-4) will reveal alternative-ink or missing-line traces\n\n*why dead:* [L-PT-006=0] All 3 parts of L-PT-006 executed on L4 GPU with positive controls verified: (1) Top band y_L3=0..1664: positive control 5753_-3 recovers Col 0 lines 1-6 (ens4 p99=205, zdog_p99=100), while 5753_-4..-6 surface zc=54 is blank (zdog_p99=47..50, frac80=0.00..0.04%), proving the dots on 5753_-4 in new_canon were bleed-through from 5753_-3 (zc=18 p99=167 -> zc=54 p99=93); (2) 1.129um epidermal tracker on 5753_-2..-4 is blank (zdog_p99=57..61); (3) Dual-Energy 137keV vs 78keV recovers the exact positive-control Greek words on 5753_0 (ens137 p99=158, ens78 p99=204) while 5753_-1..-4 in the 137keV footprint are blank (thin137 p99=50..55, frac80=0.00..0.02%).",
+   "x": 2100,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "H_lasagna_inner_core_unroll",
+   "toNode": "H_arclength_contour_inner_core",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  },
+  {
+   "id": "e1",
+   "fromNode": "H_arclength_contour_inner_core",
+   "toNode": "H_shard0_raw_mip_inner_core",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  },
+  {
+   "id": "e2",
+   "fromNode": "H_shard0_raw_mip_inner_core",
+   "toNode": "H_l4_gpu_m2_to_m6_eschatokollon",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  },
+  {
+   "id": "e3",
+   "fromNode": "H_l4_gpu_m2_to_m6_eschatokollon",
+   "toNode": "H_lower_column_half_y4864_8576",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  },
+  {
+   "id": "e4",
+   "fromNode": "H_lower_column_half_y4864_8576",
+   "toNode": "H_dual_energy_137keV_and_top_band",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  }
+ ]
+}

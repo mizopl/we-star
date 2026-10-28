@@ -1,0 +1,6 @@
+shape	param_desc	est_active_min	est_ram_gb	verify_min	notes
+exact-count-crt	torus/grid w<=16	45	0.4	15	A054759(15) empirically 46m
+exact-count-crt-tail	grid w=35..39	600	2.8	30	A089980 tail x1.6 per width (K2 job queue)
+clss-record-table	combining+prune/merge C(v,t)<=5e9	60	0.2	20	covering-designs 21 records in 115m + 20m per panel
+clss-sorting-network	bit-slice 0-1 + prefix/SAT n=13..64	45	0.2	10	2^n bit-sliced in C/numpy + Pareto/size/depth check
+clss-graph-cage-schur	template/voltage lift + SAT/local surgery	50	0.3	10	O(N^2) or BFS girth check in <2s

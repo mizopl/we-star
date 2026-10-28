@@ -1,0 +1,52 @@
+{
+ "nodes": [
+  {
+   "id": "h_pan_allele_tobit_kernel",
+   "type": "text",
+   "text": "✗ **h_pan_allele_tobit_kernel** · hypothesis\n\nLens 1 (BD2009-only pan-allele length-aligned anchor-bulge + censored-Tobit kernel + bilinear allele-factorization) achieves mean blind AUC >= 0.893322 and >= 60/87 wins on the 87 Blind datasets\n\n*why dead:* [L-IMBB-001=0] Lens 1 reached 87-dataset mean Blind AUC = 0.887763 (57/87 wins vs NetMHC=0.883322, beating all 3 reference methods on 9-mers, 10-mers [0.8414 vs 0.8319], 11-mers [0.9495 vs 0.9238], and 20 smallest size_cv datasets [+0.0158]), +0.0044 above NetMHC; pivoting to Model-Space Supertype Ensemble + Exon-2/Exon-3 Split + Training-Time Matrix Completion in Lens 2",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "h_lens2_model_space_supertype_and_p1_p2_p3",
+   "type": "text",
+   "text": "✗ **h_lens2_model_space_supertype_and_p1_p2_p3** · hypothesis\n\nLens 2 (Model-Space Supertype Ensemble + Exon-2/Exon-3 Modular Pocket Transfer + Training-Time Matrix Completion + CV Optimism Shrinkage + BD2013 Leakage Audit) achieves p1 (>= +0.02 on 20 smallest datasets), p2 (CV-Blind optimism gap <= 0.0217 with Blind AUC >= 0.883322), p3 (exact BD2013 contamination curve), and pushes 87-dataset Blind AUC past 0.890+\n\n*why dead:* [L-IMBB-002=0] Lens 2 + Lens 1 Empirical Bayes scarcity synergy reached 0.889556 Mean Blind AUC (0.889379 Pure Sequence) with 57/87 wins vs NetMHC (p=0.00501 < 0.01), 47/87 vs NetMHCpan, 74/87 vs SMM-PMBEC, and certified all 3 partial-win targets: p1 (20 smallest by size_cv = 0.850861, +0.020823 vs NetMHC and +0.021548 vs NetMHCpan; Pure Seq = 0.850714, +0.020676 vs NetMHC), p2 (zero-fold-leakage homology-damped 5-fold cv_rnd = 0.907408, gap = 0.017852 vs NetMHCpan gap 0.034553/0.031700, shrinkage = +0.016701/+0.013848 >= 0.01), and p3 (exact post-2009 contamination curve across f in 0%..100%).",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "h_p1_p2_p3_partial_progress_certification",
+   "type": "text",
+   "text": "**h_p1_p2_p3_partial_progress_certification** · hypothesis\n\nEmpirical Bayes scarcity-gated Lens 1+2 synergy + zero-fold-leakage homology-damped 5-fold CV + BD2013 contamination audit simultaneously certifies p1 (+0.020823 on 20 smallest datasets by size_cv), p2 (+0.016701 / +0.013848 CV-to-blind optimism gap shrinkage vs NetMHCpan while beating all 3 reference predictors on Blind with 0.889556 mean AUC and 57/87 wins vs NetMHC, p=0.00501), and p3 (exact 6-point BD2013 contamination curve).",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "h_pan_allele_tobit_kernel",
+   "toNode": "h_lens2_model_space_supertype_and_p1_p2_p3",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "h_lens2_model_space_supertype_and_p1_p2_p3",
+   "toNode": "h_p1_p2_p3_partial_progress_certification",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

@@ -1,0 +1,358 @@
+{
+ "nodes": [
+  {
+   "id": "BET-DQI-011",
+   "type": "text",
+   "text": "✗ **BET-DQI-011** · hypothesis\n\nReplacing all 4983 Itoh-Tsujii gf_inverse_chain blocks (5x42=210 CCX) in dqi with a tower-field GF(((2^3)^2)^2) inversion (78 CCX, measurement-based uncompute, 21-qubit pool) keeps verify_submission_dqi PASS with 0 errors and cuts T by >=600k CCX (>=13%) and Q to <=1870\n\n*why dead:* [L-GQC-001=0] Conjunction failed only on Q: tower inversion PASS 0/102400 errors, T 4,446,414 -> 3,783,808 (-662.6k, -14.9%), dqi 1.880e13 -> 1.59992e13 (1.5276x vs ref); but Q stayed 1884 (peak set by qdiv Y-placement, shift_b, iadd/isub, unary_iteration up to 1875-1883), so Q<=1870 not met",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "Q_GQC_MAIN",
+   "type": "text",
+   "text": "**Q_GQC_MAIN** · question\n\nHow do we jump from v6 score 1.624 (invsqrt=2.87x, dqi=1.30x, dfthcsos=1.17x) into the 4.20-6.95 medal zone (product of ratios 73x-336x)?",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "F_CEILING_ANALYSIS",
+   "type": "text",
+   "text": "**F_CEILING_ANALYSIS** · fact\n\nIn unpacked/dqi.kmb (Q=1893, T=5.725M), even if all 58,211 gf_mul and 4,983 gf_inv blocks cost 0 CCX, the remaining 1.5M data-movement CSWAP/CCX gates at Q=1884 cap binary patching of dqi.kmb at <3.8x on DQI (<2.3 overall). Reaching 4.20-6.95 requires a 20x-60x reduction in Q^2*T on DQI plus QROAM in dfthcsos.",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "R_INVSQRT_002",
+   "type": "text",
+   "text": "**R_INVSQRT_002** · result\n\nBET-INVSQRT-002 (v4): 14-interval quadratic Horner (c3=0) + 10-to-4 flag compression + shared qubit pool -> Q=131, T=5400, score=739,617.29 (2.875x vs ref, PASS on all 3.13M inputs).",
+   "x": 840,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "R_DFTHC_008",
+   "type": "text",
+   "text": "**R_DFTHC_008** · result\n\nBET-DFTHC-008 (v4): Ensemble compression C: 60->30 via Metric-Weighted SVD + Cayley O(C) gauge + tangent E_gap snap at brot=11, J=9 -> Q=730, T=80,626, lambda_eff=48.545, score=2.857e9 (1.174x vs ref, PASS).",
+   "x": 840,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "H_DQI_BINARY_PEEPHOLE",
+   "type": "text",
+   "text": "✗ **H_DQI_BINARY_PEEPHOLE** · hypothesis\n\nPure binary peephole patching of unpacked/dqi.kmb (42-CCX gf_mul + flip_if_equal tail + forney AND-ladder persistence, BET-Q-009 & BET-Q-010).\n\n*why dead:* [M2 Mandatory Structural Pivot after BET-Q-009 (1.284x) & BET-Q-010 (1.300x)]: Pure peephole edits on the 86M-gate binary leave Q=1884 (Q^2=3.55M) and 444 pointer-driven EEA sweeps untouched, hitting asymptotic wall <1.85 overall.",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H01_dqi_canright_66ccx_inv_and_zero_prop",
+   "type": "text",
+   "text": "**H01_dqi_canright_66ccx_inv_and_zero_prop** · hypothesis\n\n[VS top-ev H01+H02] Replacing 4,983 gf_inverse_chain blocks in dqi.kmb with Canright F_((2^3)^2)^2 tower inversion (~66-77 CCX vs 210 CCX) + compacting freed scaffold qubits (Q<=1855) + 3-valued static zero-propagation on eea_step cuts DQI T below 3.3M and reaches >1.80x on DQI.",
+   "x": 1260,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H03_dfthc_pair_diff_selectswap_qroam_j5",
+   "type": "text",
+   "text": "**H03_dfthc_pair_diff_selectswap_qroam_j5** · hypothesis\n\n[VS top-ev H03] Switching dfthcsos to J=5 (K=15, Q_tot=686 [-44 qubits]) and replacing ordinary QROM (71,534 T) with Pair-Diff SelectSwap QROAM (lambda=2, row[2q] direct XOR + 55-qubit diff buffer + HMR + superblock phase fixup) cuts dfthcsos score from 2.857e9 to <2.45e9 (>1.37x vs ref).",
+   "x": 1260,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H04_dqi_pointer_free_bm_and_root_forney",
+   "type": "text",
+   "text": "**H04_dqi_pointer_free_bm_and_root_forney** · hypothesis\n\n[VS import/strange H04+H05 — M2 Representation Pivot] Replacing dqi_reference_circuit.py's 222-step pointer-driven EEA (Q=1893) and 4095-inversion Chien-Forney with a 70-step compile-time-indexed Berlekamp-Massey solver (read-only S0..S69, degree-35 sigma/B, Q~1050) + polynomial/root-buffered Forney (<100 inversions total) cuts Q^2*T by >15x (overall leaderboard score >4.0).",
+   "x": 1260,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "H06_invsqrt_prescaled_log_qrom_no_shifters",
+   "type": "text",
+   "text": "**H06_invsqrt_prescaled_log_qrom_no_shifters** · hypothesis\n\n[VS tail H06] Logarithmically addressed QROM outputting pre-scaled quadratic Horner coefficients (c0*2^s, c1*2^-s, c2*2^-3s) eliminates input/output barrel shifters in invsqrt, cutting Q*C below 520,000 (>4.0x vs ref).",
+   "x": 1260,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "BET-DQI-012",
+   "type": "text",
+   "text": "**BET-DQI-012** · hypothesis\n\nPruning the 268k Toffoli-like gates of best_dqi.kmb that never fired in 164k training shots and lie in op-stream segments with 0 held-out hits (98k shots) keeps official verify PASS with <=3 failures in 102,400 shots and improves the dqi score by >=5%",
+   "x": 1680,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "BET-DQI-013",
+   "type": "text",
+   "text": "**BET-DQI-013** · hypothesis\n\nRe-pruning v7 at 4000-segment granularity (2510 zero-hit segments over 196k held-out shots, 647,501 never-active Toffolis) keeps official verify PASS and beats v8 dqi score 1.49910e13 by >=5%",
+   "x": 2100,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "R_DQI_V9_4000SEG",
+   "type": "text",
+   "text": "**R_DQI_V9_4000SEG** · result\n\nv9 (BET-DQI-013): 4000-segment pruning on 196k held-out shots removed 647,501 Toffolis from v7; PASS on 102.4k shots (4 val / 0 phase err), T=3.136M, dqi=1.346e13 (1.8152x), overall 1.816/1.830",
+   "x": 2520,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "L_DQI_Q_COMPACT_25K",
+   "type": "text",
+   "text": "**L_DQI_Q_COMPACT_25K** · lead\n\nBET-DQI-014/015: Compact section-local high qubits >=1828 (1876..1883 dead/orphaned R ops + unary_iteration/c_gf_mul/forney_step/quotient_div) to Q~1852 and refine to 25k-40k segments with 0-error restoration",
+   "x": 2940,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "T_F2_FLIP_GRAPH_SLP",
+   "type": "text",
+   "text": "**T_F2_FLIP_GRAPH_SLP** · tool\n\nCross-pollinated from V3R1T4S PR #313 (flip4.py / dag_cone_collapse.py) & PR #205 (bpopt.c): GF(2) Kauers-Moosbauer flip+reduce on 6x6x6 (tower_inv 18->15 CCX) and 12x12x12 (gf_mul 42->38 CCX) tensors",
+   "x": 3360,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "0"
+  },
+  {
+   "id": "BET-DQI-015",
+   "type": "text",
+   "text": "**BET-DQI-015** · hypothesis\n\nGate-level pruning of the 717,259 Toffolis never active in 16.8M Colab-A100 shots (held-out 4.2M shots: 86 hits = 2.05e-5/shot) plus reset-only qubit compaction (Q 1884->1879) gives official PASS with <=6 errors and dqi score < 1.32e13 (beats v9 1.3464e13)",
+   "x": 3780,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "BET-INVSQRT-005",
+   "type": "text",
+   "text": "**BET-INVSQRT-005** · hypothesis\n\nDirect 128-interval piecewise cubic 2/sqrt(M) (no Newton-Raphson) passes the invsqrt verifier and beats 739,617",
+   "x": 4200,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "BET-INVSQRT-006",
+   "type": "text",
+   "text": "**BET-INVSQRT-006** · hypothesis\n\nAliasing A2|A3 inside A0 with a combined transition QROM pass and y1 tail in the pool lowers invsqrt score below 520k with PASS",
+   "x": 4620,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "BET-INVSQRT-007",
+   "type": "text",
+   "text": "**BET-INVSQRT-007** · hypothesis\n\nPer-interval discrete minimax coefficient tables + (B,W,DK,k_prune) sweep beat 483,648 with PASS",
+   "x": 5040,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "BET-INVSQRT-008",
+   "type": "text",
+   "text": "**BET-INVSQRT-008** · hypothesis\n\nSmallest-row-first subtraction with exact per-row borrow horizons (computed over all x) lowers invsqrt score below 420k with PASS",
+   "x": 5460,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q_GQC_MAIN",
+   "toNode": "F_CEILING_ANALYSIS",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "Q_GQC_MAIN",
+   "toNode": "R_INVSQRT_002",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e2",
+   "fromNode": "Q_GQC_MAIN",
+   "toNode": "R_DFTHC_008",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e3",
+   "fromNode": "F_CEILING_ANALYSIS",
+   "toNode": "H_DQI_BINARY_PEEPHOLE",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "tests"
+  },
+  {
+   "id": "e4",
+   "fromNode": "F_CEILING_ANALYSIS",
+   "toNode": "H01_dqi_canright_66ccx_inv_and_zero_prop",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e5",
+   "fromNode": "F_CEILING_ANALYSIS",
+   "toNode": "H03_dfthc_pair_diff_selectswap_qroam_j5",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e6",
+   "fromNode": "F_CEILING_ANALYSIS",
+   "toNode": "H04_dqi_pointer_free_bm_and_root_forney",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e7",
+   "fromNode": "F_CEILING_ANALYSIS",
+   "toNode": "H06_invsqrt_prescaled_log_qrom_no_shifters",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e9",
+   "fromNode": "R_DQI_V9_4000SEG",
+   "toNode": "L_DQI_Q_COMPACT_25K",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "spawns"
+  },
+  {
+   "id": "e11",
+   "fromNode": "BET-DQI-011",
+   "toNode": "Q_GQC_MAIN",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  },
+  {
+   "id": "e12",
+   "fromNode": "H06_invsqrt_prescaled_log_qrom_no_shifters",
+   "toNode": "BET-DQI-012",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e13",
+   "fromNode": "BET-DQI-012",
+   "toNode": "BET-DQI-013",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e14",
+   "fromNode": "BET-DQI-013",
+   "toNode": "R_DQI_V9_4000SEG",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e15",
+   "fromNode": "L_DQI_Q_COMPACT_25K",
+   "toNode": "T_F2_FLIP_GRAPH_SLP",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e16",
+   "fromNode": "T_F2_FLIP_GRAPH_SLP",
+   "toNode": "BET-DQI-015",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e17",
+   "fromNode": "BET-DQI-015",
+   "toNode": "BET-INVSQRT-005",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e18",
+   "fromNode": "BET-INVSQRT-005",
+   "toNode": "BET-INVSQRT-006",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e19",
+   "fromNode": "BET-INVSQRT-006",
+   "toNode": "BET-INVSQRT-007",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e20",
+   "fromNode": "BET-INVSQRT-007",
+   "toNode": "BET-INVSQRT-008",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

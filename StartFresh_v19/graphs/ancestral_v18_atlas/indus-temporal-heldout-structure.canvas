@@ -1,0 +1,70 @@
+{
+ "nodes": [
+  {
+   "id": "H1",
+   "type": "text",
+   "text": "**H1** · hypothesis\n\nBidirectional Kneser-Ney + positional/allograph class + site/object conditioned CLSS seam surgery trained strictly on M77 (1977) corpus improves sign prediction on later-excavated post-1977 Indus inscriptions",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "E1",
+   "type": "text",
+   "text": "**E1** · experiment\n\nReproduce KN3-Left and KN3-Bidir M77 CV baselines and evaluate CLSS bidirectional seam-surgery model on post-1977 temporal held-out inscriptions in run 2026-10-19-2058",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "3"
+  },
+  {
+   "id": "R1",
+   "type": "text",
+   "text": "**R1** · result\n\nFrozen M77-CLSS (5-zone positional slot-class + bilateral frame grammar + intra-inscription anti-repetition) achieves 20.06% (749/3734) top-1 restoration on 1000 deduplicated post-1977 inscriptions vs KN3-Left 14.70% (549/3734), KN3-Bidir 18.91% (706/3734), KN3-BlanketF 19.47% (727/3734), and 400 SIGIL matched-null controls (max 9.64%, p < 0.0025)",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "C1",
+   "type": "text",
+   "text": "**C1** · claim\n\nCONFIRMED_SOLUTION (+p1, +p3) on indus-temporal-heldout-structure (3/3 skeptics pass: true, Draft PR #570, commit 2022a65): frozen M77-CLSS achieves 20.05% Mode 1 / 22.67% Mode 2 top-1 accuracy on 999 deduplicated post-1977 inscriptions (p=0.0001 across Pooled, Mohenjo-daro, Harappa, Dholavira, and Cohort B Strict) and 30 shared parallel frames on 25 frozen M77 telescoping composite/bigram pairs (p=0.0001)",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "0"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "H1",
+   "toNode": "E1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "tests"
+  },
+  {
+   "id": "e1",
+   "fromNode": "E1",
+   "toNode": "R1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "proves"
+  },
+  {
+   "id": "e2",
+   "fromNode": "R1",
+   "toNode": "C1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  }
+ ]
+}

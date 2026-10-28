@@ -1,0 +1,142 @@
+{
+ "nodes": [
+  {
+   "id": "Q_vesuvius_p1",
+   "type": "text",
+   "text": "**Q_vesuvius_p1** · question\n\nCan we reproduce PHerc. 343 w047/w048 bit-identically against SHA256SUMS, re-render the 66-layer surface from S3 PHerc0343 8.64 um volume, run all 4 public 9 um ink models, and achieve Pearson r >= 0.90 in the credited 4 cm^2 window (p1)?",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "H_mesh_ct_render",
+   "type": "text",
+   "text": "**H_mesh_ct_render** · hypothesis\n\nC++ native tifxyz surface renderer (render_tifxyz_66.cpp) + build_concat.py reproduces all 5 SHA256SUMS files bit-for-bit and achieves CT layer-34 Pearson r >= 0.99999 against published CT image",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "R_mesh_ct_render",
+   "type": "text",
+   "text": "**R_mesh_ct_render** · result\n\nCONFIRMED: 5/5 SHA256SUMS bit-identical + CT layer-34 Pearson r = 0.9999973 inside credited 4 cm^2 window",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "H_four_model_ensemble",
+   "type": "text",
+   "text": "**H_four_model_ensemble** · hypothesis\n\nTile-phase merge (w047 padded + w048 plain) and z-score ensemble of dnative, hecate 9.6um, and ink_9um seeds 42 & 43 achieves Pearson r >= 0.90 against published award ink channel with 0 PHerc0343 leak_audit overlap",
+   "x": 420,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "R_four_model_ensemble_p1",
+   "type": "text",
+   "text": "**R_four_model_ensemble_p1** · result\n\nCONFIRMED_PARTIAL p1 (2026-10-19-mizopl-abd283e3): ink Pearson r = 0.968341 (pooled) and r = 0.930987 (standalone) >= 0.90, RGB r = 0.982008, null z = 76.3 sigma, 3/3 skeptics PASS",
+   "x": 840,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "L_unread_a100_colab_scan",
+   "type": "text",
+   "text": "**L_unread_a100_colab_scan** · lead\n\nActive Google Colab NVIDIA A100 scan (proofer-e75799, colab_a100_master_scan.py) across eligible unread Vesuvius scrolls under K11 Cloud GPU Offload",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "4"
+  },
+  {
+   "id": "H_core_spiral_wraps_0_neg7_mip",
+   "type": "text",
+   "text": "✗ **H_core_spiral_wraps_0_neg7_mip** · hypothesis\n\nUncancelled MIP statistical voxel scan across inner core spiral wraps 0..-7 isolates coherent ink stroke clusters above background\n\n*why dead:* [L-VFLU-001=0] thin_wrap00..05 in PHerc. 1203 had dz=20 wrap-hopping bug (m7 drop 0..27.4%) producing vertical wood-grain multi-wrap stripes without readable letters.",
+   "x": 1680,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  },
+  {
+   "id": "H_pherc1203_xz_lasagna_77kev_upper_z_zscore",
+   "type": "text",
+   "text": "✗ **H_pherc1203_xz_lasagna_77kev_upper_z_zscore** · hypothesis\n\nCoupling S3 77keV normal-grids/xz+yz vertical sheet trajectories (dx/dz=-0.27..+0.38) with Lasagna v2 cos/nx/ny phase field in the untouched upper 60% of PHerc1203_77keV (z_HI_L2=1400..3300 / z_LO=9370..11320, where zero auto_grown segments exist) + Nieuwlaar 31-depth pooled Z-score & (40,200) tile-phase ensemble will eliminate the dz=20 wrap-hopping artifact (19 vox vs true 450 vox radial shift) and isolate >=1 single-sheet papyrus region with z_ens >= +2.2 sigma and depth drop >= 35% at d=+-4\n\n*why dead:* [L-VFLU-002=0] Option C (8/8 sheets in z_HI_L2=1250..3550 on A100) fixed the central sheet weave and lifted Nieuwlaar Z-score to +3.9..+5.5 sigma (drop 36.5..47.0%, Hecate drop up to 54.5%), but 1D-coupled xz/yz+xy tracking still crosses S-folds at patch margins and ink detections remain fragmentary blobs without naked-eye Greek letters (confirming Dr Paul Henderson review).",
+   "x": 2100,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "1"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "Q_vesuvius_p1",
+   "toNode": "H_mesh_ct_render",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "H_mesh_ct_render",
+   "toNode": "R_mesh_ct_render",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e2",
+   "fromNode": "Q_vesuvius_p1",
+   "toNode": "H_four_model_ensemble",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e3",
+   "fromNode": "H_four_model_ensemble",
+   "toNode": "R_four_model_ensemble_p1",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "supports"
+  },
+  {
+   "id": "e4",
+   "fromNode": "R_four_model_ensemble_p1",
+   "toNode": "L_unread_a100_colab_scan",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e6",
+   "fromNode": "L_unread_a100_colab_scan",
+   "toNode": "H_core_spiral_wraps_0_neg7_mip",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e7",
+   "fromNode": "H_core_spiral_wraps_0_neg7_mip",
+   "toNode": "H_pherc1203_xz_lasagna_77kev_upper_z_zscore",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "resumes"
+  }
+ ]
+}

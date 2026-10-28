@@ -1,0 +1,15 @@
+{
+ "nodes": [
+  {
+   "id": "H_galois_brauer_275_175_exclusion",
+   "type": "text",
+   "text": "**H_galois_brauer_275_175_exclusion** · hypothesis\n\nAbelian Orbit Chord Lemma + Equivariant Galois-Brauer Rank Obstruction excludes |Aut(G)| in {275, 175}",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  }
+ ],
+ "edges": []
+}

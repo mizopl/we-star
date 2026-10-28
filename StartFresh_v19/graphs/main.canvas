@@ -1,0 +1,196 @@
+{
+ "nodes": [
+  {
+   "id": "F_ANCESTRAL_ATLAS",
+   "type": "text",
+   "text": "**F_ANCESTRAL_ATLAS** · fact\n\nAncestral Atlas (Parent PROOFER v18 -> v19): 30 stitched reasoning graphs (.jsonl & .canvas, 350+ nodes, 0 orphans) in graphs/ancestral_v18_atlas/ + 76 Conway-99 micro-bets + 36 verified V3R1T4S wins across all 18/18 categories + Terence Tao [M2026] merge + 42 Lean 4 theorems compressed into 5 Master Theorems + Gen V.6d 4.17x live A100 speedup",
+   "x": 0,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "2"
+  },
+  {
+   "id": "Q_META",
+   "type": "text",
+   "text": "**Q_META** · question\n\nRoot Meta, Oracle & Operator Seed (v19): How do we combine the Three-Layer Architecture (Operators Op-M1..Op-M7, Automated Guardrails CLSS-E1..E6, and Governance K10-K19) with the Sub-Second Exact Oracle (K9) to solve the new domain targets in this instance?",
+   "x": 420,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "5"
+  },
+  {
+   "id": "T_ORACLE_GATE",
+   "type": "text",
+   "text": "**T_ORACLE_GATE** · tool\n\nStage I Sub-Second Exact Oracle Gate (< 5s deterministic verifier + 1 positive baseline test + 1 negative shuffled/corrupted test + Stage-0.5 CLSS-E3 spec/metric check + CLSS-E5 PDF-to-txt guard; mandatory before any search)",
+   "x": 840,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "0"
+  },
+  {
+   "id": "OP_M1_SEAM_LEGO_COUPLING",
+   "type": "text",
+   "text": "**OP_M1_SEAM_LEGO_COUPLING** · hypothesis\n\nOp-M1 (Boundary Seam Surgery, Three-Block Schur-Fiber Coupling & Universal LEGO Socket, M1/M7/M11.5/M31): Partition into Seed S and Exterior R, couple all three blocks (S,S)<->(S,R)<->(R,R), and decouple disconnected components via a Standardized LEGO Plug.",
+   "x": 1260,
+   "y": 0,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "OP_M2_HIGHER_DIM_LADDERS",
+   "type": "text",
+   "text": "**OP_M2_HIGHER_DIM_LADDERS** · hypothesis\n\nOp-M2 (Looking in Other / Higher Dimensions & Parameter-Ladder Embedding, M3/M8/M29/M30): Lift lower-dimensional slices into their parent higher-dimensional regular polytope or root lattice (beta_6 / D_6 -> C_12) and embed isolated targets into their complete Diophantine parameter family (d | 63).",
+   "x": 1260,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "OP_M3_OUTSIDE_IN_SEED_CORE",
+   "type": "text",
+   "text": "**OP_M3_OUTSIDE_IN_SEED_CORE** · hypothesis\n\nOp-M3 (Looking Inside and Outside — Matryoshka Sieve & Seed Core, M10/M26/M27): Quotient symmetries from the outermost invariant inward while excavating down to the h=0 ground-state seed core (C_12, V_core, H_3) and grading configurations by excitation distance h=0,1,2... (freckles).",
+   "x": 1260,
+   "y": 440,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "OP_M4_SYMMETRY_AND_INVERSION",
+   "type": "text",
+   "text": "**OP_M4_SYMMETRY_AND_INVERSION** · hypothesis\n\nOp-M4 (Looking in Symmetries, Decoupled Compasses & Asymmetric Inversion, M14/M16/M18/M19/M32): Eliminate Cayley groups via Galois traces, decouple G_row x G_col + free-block stabilizers, fold Symmetric Trunks with Rotated Leaves, and in |Stab|=1 strata invert symmetry so forbidden 2-cycles force exact positive equations (K_{W_0}(i,i)=2).",
+   "x": 1260,
+   "y": 660,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "OP_M5_MULTI_ANGLE_DOMINO",
+   "type": "text",
+   "text": "**OP_M5_MULTI_ANGLE_DOMINO** · hypothesis\n\nOp-M5 (Looking from Different Angles — Multi-Axis Rotation, Domino Markov Ladders & Horizon-Shadow Meta-Symmetry, M13/M15/M17/M24/M25): Rotate between Row, Column, Self-Similar Domino Markov Ladder, 9-Bit Keyhole, and Spectral bases; apply Horizon-Shadow Meta-Symmetry and Water-Balloon Conservation.",
+   "x": 1260,
+   "y": 880,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "OP_M6_BOUNDARY_PHASE_CRYSTAL",
+   "type": "text",
+   "text": "**OP_M6_BOUNDARY_PHASE_CRYSTAL** · hypothesis\n\nOp-M6 (Boundary Phase-Transition Diagnosis: Gas -> Liquid -> Glass -> Crystal, M11.1-M11.4): Re-inject severed global conservation loops (Galois trace, Odd-Vertex Euler Handshaking, Chiral Nullspace ker_+-) to freeze a frustrated Glass boundary (b~1) into a Crystal.",
+   "x": 1260,
+   "y": 1100,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "OP_M7_INSPIRING_METAPHORS",
+   "type": "text",
+   "text": "**OP_M7_INSPIRING_METAPHORS** · hypothesis\n\nOp-M7 (Seeking Real-World Metaphors That Inspire — Generative Isomorphism & Three-Handle Rule, K17): Actively seek physical/geometric metaphors (LEGO Plugs, Water Balloons, Symmetric Trunks, 6D Crystal Shadows, 9-Bit Keyholes, Domino Ladders, Freckles) anchored by Three Handles (Metaphor + Domain-Agnostic Law + Zero-Trust Certificate).",
+   "x": 1260,
+   "y": 1320,
+   "width": 380,
+   "height": 190,
+   "color": "6"
+  },
+  {
+   "id": "T_CLSS_E1_E6_GUARDRAILS",
+   "type": "text",
+   "text": "**T_CLSS_E1_E6_GUARDRAILS** · tool\n\nLayer II Automated Guardrails (CLSS-E1..E6): E1 p<=0.65 Clamp; E2 Two-Miss Structural Pivot & Three-Restart Floor; E3 Spec/Metric Falsification & >=200 Nulls; E4 Obstruction-Tagged Causal Stitching; E5 Binary PDF Guard; E6 GPU Occupancy & Bit-Parallelism Gate (<=24 KB smem, 4-sample early-stop, dead-mask purge, zero-copy aliasing).",
+   "x": 840,
+   "y": 220,
+   "width": 380,
+   "height": 190,
+   "color": "0"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e0",
+   "fromNode": "F_ANCESTRAL_ATLAS",
+   "toNode": "Q_META",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e1",
+   "fromNode": "Q_META",
+   "toNode": "T_ORACLE_GATE",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "blocks"
+  },
+  {
+   "id": "e2",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "OP_M1_SEAM_LEGO_COUPLING",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e3",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "OP_M2_HIGHER_DIM_LADDERS",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e4",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "OP_M3_OUTSIDE_IN_SEED_CORE",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e5",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "OP_M4_SYMMETRY_AND_INVERSION",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e6",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "OP_M5_MULTI_ANGLE_DOMINO",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e7",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "OP_M6_BOUNDARY_PHASE_CRYSTAL",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e8",
+   "fromNode": "T_ORACLE_GATE",
+   "toNode": "OP_M7_INSPIRING_METAPHORS",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  },
+  {
+   "id": "e9",
+   "fromNode": "Q_META",
+   "toNode": "T_CLSS_E1_E6_GUARDRAILS",
+   "fromSide": "right",
+   "toSide": "left",
+   "label": "derives"
+  }
+ ]
+}

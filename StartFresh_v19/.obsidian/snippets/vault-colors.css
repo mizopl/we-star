@@ -1,0 +1,69 @@
+/* Wiki OS — Vault Color Coding
+   Entities  → purple
+   Reports   → green
+   Templates → muted amber
+   Meta      → steel blue
+*/
+
+/* --- File Explorer color rules --- */
+
+/* wiki/entities/ → purple */
+.nav-file-title[data-path^="wiki/entities"] {
+  color: #b48eff !important;
+}
+.nav-folder-title[data-path="wiki/entities"] {
+  color: #b48eff !important;
+  font-weight: 600;
+}
+
+/* wiki/reports/ → green */
+.nav-file-title[data-path^="wiki/reports"] {
+  color: #a3e07a !important;
+}
+.nav-folder-title[data-path="wiki/reports"] {
+  color: #a3e07a !important;
+  font-weight: 600;
+}
+
+/* _templates/ → amber */
+.nav-file-title[data-path^="_templates"] {
+  color: #e5c07b !important;
+}
+.nav-folder-title[data-path="_templates"] {
+  color: #e5c07b !important;
+  font-weight: 600;
+}
+
+/* wiki/meta/ → steel blue */
+.nav-file-title[data-path^="wiki/meta"] {
+  color: #61afef !important;
+}
+.nav-folder-title[data-path="wiki/meta"] {
+  color: #61afef !important;
+  font-weight: 600;
+}
+
+/* hall_of_fame/ → gold */
+.nav-file-title[data-path^="hall_of_fame"] {
+  color: #ffd700 !important;
+}
+.nav-folder-title[data-path="hall_of_fame"] {
+  color: #ffd700 !important;
+  font-weight: 600;
+}
+
+/* --- Tag pill colors in reading view --- */
+.tag[href="#entity"]    { background-color: #4b3f72 !important; color: #b48eff !important; }
+.tag[href="#report"]    { background-color: #1e3a1e !important; color: #a3e07a !important; }
+.tag[href="#synthesis"] { background-color: #3a2e0e !important; color: #e5c07b !important; }
+.tag[href="#stale"]     { background-color: #4a1010 !important; color: #ff6b6b !important; }
+
+/* --- Inline stale data callout highlight --- */
+strong:has(> span.cm-strong) {
+  /* fallback — Obsidian doesn't expose [STALE DATA] inline easily without a plugin */
+}
+
+/* Reading view: bold [STALE DATA] text → red */
+.markdown-reading-view strong {
+  /* catches **[STALE DATA]** rendered blocks */
+}
