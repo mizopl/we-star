@@ -1,0 +1,260 @@
+{
+  "10x15x15": {
+    "ranks": {
+      "ZT": 1389
+    },
+    "omegas": {
+      "ZT": 2.8125278639436053
+    },
+    "schemes": {
+      "ZT": [
+        {
+          "rank": 1389,
+          "omega": 2.8125278639436053,
+          "values": [
+            -1,
+            0,
+            1
+          ],
+          "source": "mizopl/we-star (10x15x15_m1389_ZT.json)",
+          "path": "solutions/fast-matrix-multiplication/zt_rank_schemes/10x15x15_m1389_ZT.json",
+          "url": "https://raw.githubusercontent.com/mizopl/we-star/main/solutions/fast-matrix-multiplication/zt_rank_schemes/10x15x15_m1389_ZT.json"
+        }
+      ]
+    }
+  },
+  "10x15x16": {
+    "ranks": {
+      "ZT": 1484
+    },
+    "omegas": {
+      "ZT": 2.814706248361968
+    },
+    "schemes": {
+      "ZT": [
+        {
+          "rank": 1484,
+          "omega": 2.814706248361968,
+          "values": [
+            -1,
+            0,
+            1
+          ],
+          "source": "mizopl/we-star (10x15x16_m1484_ZT.json)",
+          "path": "solutions/fast-matrix-multiplication/zt_rank_schemes/10x15x16_m1484_ZT.json",
+          "url": "https://raw.githubusercontent.com/mizopl/we-star/main/solutions/fast-matrix-multiplication/zt_rank_schemes/10x15x16_m1484_ZT.json"
+        }
+      ]
+    }
+  },
+  "11x15x16": {
+    "ranks": {
+      "ZT": 1629
+    },
+    "omegas": {
+      "ZT": 2.816153902927206
+    },
+    "schemes": {
+      "ZT": [
+        {
+          "rank": 1629,
+          "omega": 2.816153902927206,
+          "values": [
+            -1,
+            0,
+            1
+          ],
+          "source": "mizopl/we-star (11x15x16_m1629_ZT.json)",
+          "path": "solutions/fast-matrix-multiplication/zt_rank_schemes/11x15x16_m1629_ZT.json",
+          "url": "https://raw.githubusercontent.com/mizopl/we-star/main/solutions/fast-matrix-multiplication/zt_rank_schemes/11x15x16_m1629_ZT.json"
+        }
+      ]
+    }
+  },
+  "12x13x16": {
+    "ranks": {
+      "Z": 1541,
+      "ZT": 1546
+    },
+    "omegas": {
+      "Z": 2.8150483982260033,
+      "ZT": 2.816290744042154
+    },
+    "schemes": {
+      "Z": [
+        {
+          "rank": 1541,
+          "omega": 2.8150483982260033,
+          "values": [
+            -2,
+            -1,
+            0,
+            1,
+            2
+          ],
+          "source": "mizopl/we-star (12x13x16_m1541_Z.json)",
+          "path": "solutions/fast-matrix-multiplication/zt_rank_schemes/12x13x16_m1541_Z.json",
+          "url": "https://raw.githubusercontent.com/mizopl/we-star/main/solutions/fast-matrix-multiplication/zt_rank_schemes/12x13x16_m1541_Z.json"
+        }
+      ],
+      "ZT": [
+        {
+          "rank": 1546,
+          "omega": 2.816290744042154,
+          "values": [
+            -1,
+            0,
+            1
+          ],
+          "source": "mizopl/we-star (12x13x16_m1546_ZT.json)",
+          "path": "solutions/fast-matrix-multiplication/zt_rank_schemes/12x13x16_m1546_ZT.json",
+          "url": "https://raw.githubusercontent.com/mizopl/we-star/main/solutions/fast-matrix-multiplication/zt_rank_schemes/12x13x16_m1546_ZT.json"
+        }
+      ]
+    }
+  },
+  "12x15x15": {
+    "ranks": {
+      "ZT": 1640
+    },
+    "omegas": {
+      "ZT": 2.810699245845457
+    },
+    "schemes": {
+      "ZT": [
+        {
+          "rank": 1640,
+          "omega": 2.810699245845457,
+          "values": [
+            -1,
+            0,
+            1
+          ],
+          "source": "mizopl/we-star (12x15x15_m1640_ZT.json)",
+          "path": "solutions/fast-matrix-multiplication/zt_rank_schemes/12x15x15_m1640_ZT.json",
+          "url": "https://raw.githubusercontent.com/mizopl/we-star/main/solutions/fast-matrix-multiplication/zt_rank_schemes/12x15x15_m1640_ZT.json"
+        }
+      ]
+    }
+  },
+  "14x15x15": {
+    "ranks": {
+      "ZT": 1894
+    },
+    "omegas": {
+      "ZT": 2.8105394797928795
+    },
+    "schemes": {
+      "ZT": [
+        {
+          "rank": 1894,
+          "omega": 2.8105394797928795,
+          "values": [
+            -1,
+            0,
+            1
+          ],
+          "source": "mizopl/we-star (14x15x15_m1894_ZT.json)",
+          "path": "solutions/fast-matrix-multiplication/zt_rank_schemes/14x15x15_m1894_ZT.json",
+          "url": "https://raw.githubusercontent.com/mizopl/we-star/main/solutions/fast-matrix-multiplication/zt_rank_schemes/14x15x15_m1894_ZT.json"
+        }
+      ]
+    }
+  },
+  "6x12x14": {
+    "ranks": {
+      "ZT": 654
+    },
+    "omegas": {
+      "ZT": 2.8123336913104584
+    },
+    "schemes": {
+      "ZT": [
+        {
+          "rank": 654,
+          "omega": 2.8123336913104584,
+          "values": [
+            -1,
+            0,
+            1
+          ],
+          "source": "mizopl/we-star (6x12x14_m654_ZT.json)",
+          "path": "solutions/fast-matrix-multiplication/zt_rank_schemes/6x12x14_m654_ZT.json",
+          "url": "https://raw.githubusercontent.com/mizopl/we-star/main/solutions/fast-matrix-multiplication/zt_rank_schemes/6x12x14_m654_ZT.json"
+        }
+      ]
+    }
+  },
+  "9x10x13": {
+    "ranks": {
+      "ZT": 763
+    },
+    "omegas": {
+      "ZT": 2.8184647226498676
+    },
+    "schemes": {
+      "ZT": [
+        {
+          "rank": 763,
+          "omega": 2.8184647226498676,
+          "values": [
+            -1,
+            0,
+            1
+          ],
+          "source": "mizopl/we-star (9x10x13_m763_ZT.json)",
+          "path": "solutions/fast-matrix-multiplication/zt_rank_schemes/9x10x13_m763_ZT.json",
+          "url": "https://raw.githubusercontent.com/mizopl/we-star/main/solutions/fast-matrix-multiplication/zt_rank_schemes/9x10x13_m763_ZT.json"
+        }
+      ]
+    }
+  },
+  "9x10x16": {
+    "ranks": {
+      "ZT": 920
+    },
+    "omegas": {
+      "ZT": 2.815181444273725
+    },
+    "schemes": {
+      "ZT": [
+        {
+          "rank": 920,
+          "omega": 2.815181444273725,
+          "values": [
+            -1,
+            0,
+            1
+          ],
+          "source": "mizopl/we-star (9x10x16_m920_ZT.json)",
+          "path": "solutions/fast-matrix-multiplication/zt_rank_schemes/9x10x16_m920_ZT.json",
+          "url": "https://raw.githubusercontent.com/mizopl/we-star/main/solutions/fast-matrix-multiplication/zt_rank_schemes/9x10x16_m920_ZT.json"
+        }
+      ]
+    }
+  },
+  "9x12x14": {
+    "ranks": {
+      "ZT": 954
+    },
+    "omegas": {
+      "ZT": 2.8112909338195133
+    },
+    "schemes": {
+      "ZT": [
+        {
+          "rank": 954,
+          "omega": 2.8112909338195133,
+          "values": [
+            -1,
+            0,
+            1
+          ],
+          "source": "mizopl/we-star (9x12x14_m954_ZT.json)",
+          "path": "solutions/fast-matrix-multiplication/zt_rank_schemes/9x12x14_m954_ZT.json",
+          "url": "https://raw.githubusercontent.com/mizopl/we-star/main/solutions/fast-matrix-multiplication/zt_rank_schemes/9x12x14_m954_ZT.json"
+        }
+      ]
+    }
+  }
+}
