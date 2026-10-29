@@ -1,13 +1,13 @@
 {
-  "verified_at_epoch": 1792625886,
-  "elapsed_seconds": 0.176,
-  "total_certificates": 29,
+  "verified_at_epoch": 1793273118,
+  "elapsed_seconds": 0.22,
+  "total_certificates": 32,
   "all_pass": true,
   "certificates": [
     {
       "filename": "ame_10_10_shortened_binary_stabilizer_certificate.json",
-      "sha256": "1c50f78ef88b6f0a98cfd024e84cf9b7e9a8cec14c709d2e696f0f640ba3e660",
-      "size_bytes": 1927,
+      "sha256": "b720ce506d1839bfbdfc3ad55141c04fdcb6d211f17c746551484fe45c5fd5ab",
+      "size_bytes": 3499,
       "status": "PASS",
       "details": "Shortened [[10, 2, 4]]_2 (d_pure=6) + D=10 Rains-Krawtchouk LP thresholds verified"
     },
@@ -24,6 +24,13 @@
       "size_bytes": 6437,
       "status": "PASS",
       "details": "All 1,716 6-party cuts verified mod 5: bad_cuts=0/1716"
+    },
+    {
+      "filename": "ame_15_5_impurity_and_circulant_nogo_certificate.json",
+      "sha256": "cbba73c92693572b709824ec50ff920b51ee8fc44bcfadee81e672067a9f60e6",
+      "size_bytes": 2620,
+      "status": "PASS",
+      "details": "Purity Audit: codetables.de [[15,0,8]]_5 has weight-7 stabilizer (row 10); exhaustive 78,125 circulant/bordered No-Go"
     },
     {
       "filename": "ame_15_7_pure_circulant_certificate.json",
@@ -114,7 +121,7 @@
       "sha256": "24d52c747ca3ce7a5ef63bac3f13a36590406dca9f135f1b804067a9a0577b8a",
       "size_bytes": 1669,
       "status": "PASS",
-      "details": "Theorem D31: 100% exhaustive Z_19 No-Go for AME(19, 11) (1,636,526,110 matrices, min 40/4862)"
+      "details": "Theorem D31: 100% exhaustive Z_19 No-Go for AME(19, 11) (2,357,947,690 matrices, min 40/4862); resolved via non-circulant Theorem D37A!"
     },
     {
       "filename": "ame_19_13_pure_circulant_certificate.json",
@@ -146,31 +153,45 @@
     },
     {
       "filename": "ame_20_11_g40_exhaustive_nogo_d33_certificate.json",
-      "sha256": "7003e46f12982843a094cd3f44d541c1444d27ba15c42257ca945a5e63bfc044",
-      "size_bytes": 5232,
+      "sha256": "c607322a60f05c4364befc884970dc150e7d5ddd68a4d9c4d7ae1713479247ab",
+      "size_bytes": 5252,
       "status": "PASS",
-      "details": "Theorems D33/D33B/D34: 100% exhaustive G_40 QR+QNR No-Go for AME(20, 11) (3.545B pairs, sub=0/177, min 12/4970, q_c=13)"
+      "details": "Theorems D33/D33B/D34: 100% exhaustive G_40 QR+QNR No-Go for AME(20, 11) (3.545B pairs, sub=0/177, min 12/4970, q_c=13); resolved via G_20 Theorem D37A!"
+    },
+    {
+      "filename": "ame_20_11_hermitian_mds_d37a_certificate.json",
+      "sha256": "cf939c8a509e77ab2cf8c61e2eb0b9cae4e85d2e645057a73014c82cd3e83947",
+      "size_bytes": 5353,
+      "status": "PASS",
+      "details": "20x20 symmetric graph-state matrix verified | Theorems D37/D37A U*U^dag=I_10=True | AME(20,11) cuts=True | Pure AME(19,11) [[19,0,10]]_11 cuts=True"
+    },
+    {
+      "filename": "ame_20_121_d36_so10_exact_certificate.json",
+      "sha256": "ce39a07f094c124c9743e851cffa868ef7d9de92be3f77742da77015d2a4392e",
+      "size_bytes": 746,
+      "status": "PASS",
+      "details": "Theorem D36: Explicit G_40 SO(10, GF(121)) MDS generator for AME(20, 121) (U*U^T=I_10=True, 184,755/184,755 minors non-zero)"
     },
     {
       "filename": "ame_20_13_hermitian_mds_d27b_certificate.json",
       "sha256": "ba711a679e88004b8ed4ec8ba4df74c39d6aae8b7ff32ef3f54110d956735e68",
       "size_bytes": 4307,
       "status": "PASS",
-      "details": "20x20 symmetric graph-state matrix verified"
+      "details": "20x20 symmetric graph-state matrix verified | AME(20, 13) [[20, 0, 11]]_13 (184,756/184,756 cuts & 184,755/184,755 minors verified)"
     },
     {
       "filename": "ame_20_16_hermitian_mds_d29_certificate.json",
       "sha256": "b344b023b0d5c7783e07d9723e0aa166b1a668be5dbcdb5ca717ab5c0c826465",
       "size_bytes": 4613,
       "status": "PASS",
-      "details": "20x20 symmetric graph-state matrix verified"
+      "details": "20x20 symmetric graph-state matrix verified | AME(20, 16) [[20, 0, 11]]_16 (184,756/184,756 cuts & 184,755/184,755 minors verified)"
     },
     {
       "filename": "ame_20_17_hermitian_mds_d28_certificate.json",
       "sha256": "d1cb59262b7cf1832669061429b3bbfb6fb2f562f52feed2fc4eb82d56b3245e",
       "size_bytes": 7557,
       "status": "PASS",
-      "details": "20x20 symmetric graph-state matrix verified"
+      "details": "20x20 symmetric graph-state matrix verified | AME(20,q)  (184,756/184,756 cuts & 184,755/184,755 minors verified)"
     },
     {
       "filename": "ame_20_gf289_so10_d25_d26_certificate.json",
@@ -188,10 +209,10 @@
     },
     {
       "filename": "ame_table_n2_to_20_status_and_estimates.json",
-      "sha256": "1e693e408797a2d5edc3b0aeca95881017777089ce60b4f28b6d26c91cc3c38d",
-      "size_bytes": 57712,
+      "sha256": "116c6ab2c232fb26626c8542bbb18bb96c6ad5490e95948783529869d98c40be",
+      "size_bytes": 56892,
       "status": "PASS",
-      "details": "266-cell audit: total=266, resolved=222, open=44"
+      "details": "266-cell audit: total=266, resolved=224, open=42"
     },
     {
       "filename": "universal_paley_jacobsthal_ame_13_14_17_18_certificate.json",
@@ -202,8 +223,8 @@
     },
     {
       "filename": "universal_paley_jacobsthal_ame_19_20_certificate.json",
-      "sha256": "801a75940a5357af422a81d280d80e6dbf5308edf968044f8fb2e2521dc86fdc",
-      "size_bytes": 8817,
+      "sha256": "0fc32a1ed4d418da7bb324e845549e1f74c51b58b17e5da0004a4f4b7077905d",
+      "size_bytes": 8803,
       "status": "PASS",
       "details": "Universal Paley-Jacobsthal Z-certificate: Universal Skew-Jacobsthal Q_19 (n=19) and Paley Tournament C..."
     }

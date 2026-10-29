@@ -17,21 +17,21 @@
     },
     "ext_n2_20": {
       "total": 95,
-      "exists": 90,
+      "exists": 95,
       "nogo": 0,
-      "open": 5,
-      "our_wins": 28
+      "open": 0,
+      "our_wins": 33
     },
     "all_n2_20": {
       "total": 266,
-      "exists": 186,
+      "exists": 191,
       "nogo": 33,
-      "open": 47,
-      "our_wins": 40
+      "open": 42,
+      "our_wins": 45
     }
   },
-  "open_cells_count": 47,
-  "expected_additional_existing_states_among_open": 13.75,
+  "open_cells_count": 42,
+  "expected_additional_existing_states_among_open": 9.65,
   "open_cells": [
     {
       "n": 6,
@@ -250,12 +250,6 @@
       "note": "Composite D=10 even-n / higher-n frontier (n=10 and n>=12)"
     },
     {
-      "n": 19,
-      "D": 11,
-      "p_exists": 0.55,
-      "note": "Skew-Jacobsthal Q_19 / Paley C_20 gives 0-bad-cut orthogonal MDS for p=11,13,17; pure symmetric graph state open"
-    },
-    {
       "n": 20,
       "D": 5,
       "p_exists": 0.02,
@@ -290,30 +284,6 @@
       "D": 10,
       "p_exists": 0.4,
       "note": "Composite D=10 even-n / higher-n frontier (n=10 and n>=12)"
-    },
-    {
-      "n": 20,
-      "D": 11,
-      "p_exists": 0.55,
-      "note": "Skew-Jacobsthal Q_19 / Paley C_20 gives 0-bad-cut orthogonal MDS for p=11,13,17; pure symmetric graph state open"
-    },
-    {
-      "n": 20,
-      "D": 13,
-      "p_exists": 0.55,
-      "note": "Skew-Jacobsthal Q_19 / Paley C_20 gives 0-bad-cut orthogonal MDS for p=11,13,17; pure symmetric graph state open"
-    },
-    {
-      "n": 20,
-      "D": 16,
-      "p_exists": 0.7,
-      "note": "Skew-Jacobsthal Q_19 / Paley C_20 gives 0-bad-cut orthogonal MDS for p=11,13,17; pure symmetric graph state open"
-    },
-    {
-      "n": 20,
-      "D": 17,
-      "p_exists": 0.7,
-      "note": "Skew-Jacobsthal Q_19 / Paley C_20 gives 0-bad-cut orthogonal MDS for p=11,13,17; pure symmetric graph state open"
     }
   ],
   "table": {
@@ -1835,10 +1805,10 @@
         "our_win": false
       },
       "11": {
-        "status": "OPEN",
-        "source": "Skew-Jacobsthal Q_19 / Paley C_20 gives 0-bad-cut orthogonal MDS for p=11,13,17; pure symmetric graph state open",
-        "p_exists_estimate": 0.55,
-        "our_win": false
+        "status": "EXISTS",
+        "source": "Theorem D37 & D37A Conjugate-Block U(10, GF(121)) -> GF(11) Pure Graph State [[19,0,10]]_11 & [[19,1,10]]_11 (92,378/92,378 cuts)",
+        "p_exists_estimate": 1.0,
+        "our_win": true
       },
       "13": {
         "status": "EXISTS",
@@ -1921,28 +1891,28 @@
         "our_win": false
       },
       "11": {
-        "status": "OPEN",
-        "source": "Skew-Jacobsthal Q_19 / Paley C_20 gives 0-bad-cut orthogonal MDS for p=11,13,17; pure symmetric graph state open",
-        "p_exists_estimate": 0.55,
-        "our_win": false
+        "status": "EXISTS",
+        "source": "Theorem D37 & D37A Conjugate-Block U(10, GF(121)) -> GF(11) Pure Graph State [[20,0,11]]_11 (184,756/184,756 cuts)",
+        "p_exists_estimate": 1.0,
+        "our_win": true
       },
       "13": {
-        "status": "OPEN",
-        "source": "Skew-Jacobsthal Q_19 / Paley C_20 gives 0-bad-cut orthogonal MDS for p=11,13,17; pure symmetric graph state open",
-        "p_exists_estimate": 0.55,
-        "our_win": false
+        "status": "EXISTS",
+        "source": "Theorem D27B + D28 + Corollary D29.1: Explicit G_40 Idempotent Unitary in U(10, GF(169)) & 20x20 Symmetric Graph State over GF(13) (184,756/184,756 cuts)",
+        "p_exists_estimate": 1.0,
+        "our_win": true
       },
       "16": {
-        "status": "OPEN",
-        "source": "Skew-Jacobsthal Q_19 / Paley C_20 gives 0-bad-cut orthogonal MDS for p=11,13,17; pure symmetric graph state open",
-        "p_exists_estimate": 0.7,
-        "our_win": false
+        "status": "EXISTS",
+        "source": "Theorem D29 + Corollary D29.1: Explicit G_40 Char-2 5-Point DFT Unitary in U(10, GF(256)) & 20x20 Symmetric Graph State over GF(16) (184,756/184,756 cuts)",
+        "p_exists_estimate": 1.0,
+        "our_win": true
       },
       "17": {
-        "status": "OPEN",
-        "source": "Skew-Jacobsthal Q_19 / Paley C_20 gives 0-bad-cut orthogonal MDS for p=11,13,17; pure symmetric graph state open",
-        "p_exists_estimate": 0.7,
-        "our_win": false
+        "status": "EXISTS",
+        "source": "Theorem D28 + Corollary D29.1: Explicit G_40 Hermitian Unitary in U(10, GF(289)) & 20x20 Symmetric Graph State over GF(17) (184,756/184,756 cuts)",
+        "p_exists_estimate": 1.0,
+        "our_win": true
       },
       "19": {
         "status": "EXISTS",

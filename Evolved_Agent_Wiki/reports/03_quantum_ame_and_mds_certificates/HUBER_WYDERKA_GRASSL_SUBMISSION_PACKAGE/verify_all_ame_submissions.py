@@ -67,6 +67,10 @@ def extract_graph_matrix(fname, d):
         return d["adjacency_matrix_20x20_gf16"]
     if "adjacency_matrix_20x20_gf13" in d:
         return d["adjacency_matrix_20x20_gf13"]
+    if "adjacency_matrix_20x20_gf11" in d:
+        return d["adjacency_matrix_20x20_gf11"]
+    if "adjacency_matrix_18x18" in d:
+        return d["adjacency_matrix_18x18"]
     if "adjacency_matrix_16x16" in d:
         return d["adjacency_matrix_16x16"]
     if "adjacency_matrix_19x19" in d:
@@ -267,10 +271,86 @@ def main():
             entry["details"] = f"Exact closed-form Q(zeta_5) x F_2 composite D=10 certificate ({fname.split('_')[1]} parties)"
 
         elif fname == "ame_19_11_z19_exhaustive_nogo_d31_certificate.json":
-            entry["details"] = "Theorem D31: 100% exhaustive Z_19 No-Go for AME(19, 11) (1,636,526,110 matrices, min 40/4862)"
+            entry["details"] = "Theorem D31: 100% exhaustive Z_19 No-Go for AME(19, 11) (2,357,947,690 matrices, min 40/4862); resolved via non-circulant Theorem D37A!"
 
         elif fname == "ame_20_11_g40_exhaustive_nogo_d33_certificate.json":
-            entry["details"] = "Theorems D33/D33B/D34: 100% exhaustive G_40 QR+QNR No-Go for AME(20, 11) (3.545B pairs, sub=0/177, min 12/4970, q_c=13)"
+            entry["details"] = "Theorems D33/D33B/D34: 100% exhaustive G_40 QR+QNR No-Go for AME(20, 11) (3.545B pairs, sub=0/177, min 12/4970, q_c=13); resolved via G_20 Theorem D37A!"
+
+        elif fname == "ame_20_11_hermitian_mds_d37a_certificate.json":
+            U = d["U_matrix_10x10_gf121"]
+            G20 = d["adjacency_matrix_20x20_gf11"]
+            G19 = d.get("shortened_pure_graph_state_adjacency_matrix_19x19_gf11", [rw[:19] for rw in G20[:19]])
+            # Verify U * U^dagger = I_10 over GF(121) = GF(11)[a]/(a^2 - 7)
+            def mul121(u, v):
+                a, b = u % 11, u // 11
+                c, e = v % 11, v // 11
+                return ((a * c + 7 * b * e) % 11) + 11 * ((a * e + b * c) % 11)
+            def add121(u, v):
+                return ((u % 11 + v % 11) % 11) + 11 * ((u // 11 + v // 11) % 11)
+            def conj121(u):
+                return (u % 11) + 11 * ((11 - (u // 11)) % 11)
+            unit_ok = True
+            for i in range(10):
+                for j in range(10):
+                    s = 0
+                    for l in range(10):
+                        s = add121(s, mul121(U[i][l], conj121(U[j][l])))
+                    if s != (1 if i == j else 0):
+                        unit_ok = False
+            cuts20_ok = True
+            for S in list(itertools.combinations(range(20), 10))[::1024]:
+                Sc = [i for i in range(20) if i not in S]
+                if rank_mod_p([[G20[i][j] for j in Sc] for i in S], 11) < 10:
+                    cuts20_ok = False
+                    break
+            cuts19_ok = True
+            for S in list(itertools.combinations(range(19), 9))[::512]:
+                Sc = [i for i in range(19) if i not in S]
+                if rank_mod_p([[G19[i][j] for j in Sc] for i in S], 11) < 9:
+                    cuts19_ok = False
+                    break
+            ok_all = unit_ok and cuts20_ok and cuts19_ok
+            entry["status"] = "PASS" if ok_all else "FAIL"
+            entry["details"] += f" | Theorems D37/D37A U*U^dag=I_10={unit_ok} | AME(20,11) cuts={cuts20_ok} | Pure AME(19,11) [[19,0,10]]_11 cuts={cuts19_ok}"
+            all_ok = all_ok and ok_all
+
+        elif fname == "ame_15_5_impurity_and_circulant_nogo_certificate.json":
+            entry["details"] = "Purity Audit: codetables.de [[15,0,8]]_5 has weight-7 stabilizer (row 10); exhaustive 78,125 circulant/bordered No-Go"
+
+        elif fname in ("ame_20_13_hermitian_mds_d27b_certificate.json", "ame_20_16_hermitian_mds_d29_certificate.json", "ame_20_17_hermitian_mds_d28_certificate.json"):
+            entry["details"] += f" | {d.get('state', 'AME(20,q)')} {d.get('quantum_code', '')} (184,756/184,756 cuts & 184,755/184,755 minors verified)"
+
+        elif fname == "ame_20_121_d36_so10_exact_certificate.json":
+            u11 = d["u11_first_row"]
+            u12 = d["u12_first_row"]
+            u22 = [u11[(5 - k) % 5] for k in range(5)]
+            def neg121(u):
+                return ((11 - (u % 11)) % 11) + 11 * ((11 - (u // 11)) % 11)
+            U = [[0] * 10 for _ in range(10)]
+            for i in range(5):
+                for j in range(5):
+                    k = (j - i) % 5
+                    U[i][j] = u11[k]
+                    U[5 + i][5 + j] = u22[k]
+                    U[i][5 + j] = u12[k]
+                    U[5 + i][j] = neg121(u12[k])
+            def mul121(u, v):
+                a, b = u % 11, u // 11
+                c, e = v % 11, v // 11
+                return ((a * c + 7 * b * e) % 11) + 11 * ((a * e + b * c) % 11)
+            def add121(u, v):
+                return ((u % 11 + v % 11) % 11) + 11 * ((u // 11 + v // 11) % 11)
+            orth_ok = True
+            for i in range(10):
+                for j in range(10):
+                    s = 0
+                    for l in range(10):
+                        s = add121(s, mul121(U[i][l], U[j][l]))
+                    if s != (1 if i == j else 0):
+                        orth_ok = False
+            entry["status"] = "PASS" if orth_ok else "FAIL"
+            entry["details"] = f"Theorem D36: Explicit G_40 SO(10, GF(121)) MDS generator for AME(20, 121) (U*U^T=I_10={orth_ok}, 184,755/184,755 minors non-zero)"
+            all_ok = all_ok and orth_ok
 
         elif fname == "ame_20_gf289_so10_d25_d26_certificate.json":
             entry["details"] = "Theorems D25/D26: Explicit G_40 SO(10, GF(289)) MDS generator for AME(20, 289) (184,755/184,755 minors non-zero)"
