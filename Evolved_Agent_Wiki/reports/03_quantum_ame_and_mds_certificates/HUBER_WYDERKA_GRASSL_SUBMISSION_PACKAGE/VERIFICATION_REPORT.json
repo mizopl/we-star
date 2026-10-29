@@ -1,6 +1,6 @@
 {
-  "verified_at_epoch": 1793273118,
-  "elapsed_seconds": 0.22,
+  "verified_at_epoch": 1793277769,
+  "elapsed_seconds": 5.946,
   "total_certificates": 32,
   "all_pass": true,
   "certificates": [
@@ -9,203 +9,210 @@
       "sha256": "b720ce506d1839bfbdfc3ad55141c04fdcb6d211f17c746551484fe45c5fd5ab",
       "size_bytes": 3499,
       "status": "PASS",
-      "details": "Shortened [[10, 2, 4]]_2 (d_pure=6) + D=10 Rains-Krawtchouk LP thresholds verified"
+      "details": "Shortened [[10,2,4]]_2: commute=True, weight_dist={'0': 1, '6': 90, '8': 135, '10': 30} (d_pure=6), 252/252 5-party cuts rank=8 (bad=0)"
     },
     {
       "filename": "ame_11_10_certificate.json",
       "sha256": "2939f47d71d26b1844bfac1b67d12503eec5e801e5c82a7e73b556b3a2938f9c",
       "size_bytes": 168341,
       "status": "PASS",
-      "details": "Exact closed-form Q(zeta_5) x F_2 composite D=10 certificate (11 parties)"
+      "details": "AME(11,10) Q(zeta_5)xGF(2): binary_commute=True (10 gens), quinary_11x11_sym=True, 462/462 full-rank-6 augmented cuts (bad=0)"
     },
     {
       "filename": "ame_13_5_quantum_mds_13_1_7_certificate.json",
-      "sha256": "87f2c3d21cf8eb399cd86e24ea59f7e474ec3f5b2bf6cc38786bd7f75a7a40fd",
-      "size_bytes": 6437,
+      "sha256": "b1be2c79898bb1d602f29785e8e6f41a0b63072d53b63a96901cf9a0ffa7693a",
+      "size_bytes": 6578,
       "status": "PASS",
-      "details": "All 1,716 6-party cuts verified mod 5: bad_cuts=0/1716"
+      "details": "[[13,1,7]]_5 stabilizer: symplectic_commute=True, 1716/1716 6-party cuts have rank(X_S|Z_S)=12 (bad=0) & rank(X_Sc|Z_Sc)=12 (bad=0)"
     },
     {
       "filename": "ame_15_5_impurity_and_circulant_nogo_certificate.json",
-      "sha256": "cbba73c92693572b709824ec50ff920b51ee8fc44bcfadee81e672067a9f60e6",
-      "size_bytes": 2620,
+      "sha256": "6f427746d897e0c14bc4eb5fd21dc0cc70556f8094f7307be672a21c2c42f2be",
+      "size_bytes": 9573,
       "status": "PASS",
-      "details": "Purity Audit: codetables.de [[15,0,8]]_5 has weight-7 stabilizer (row 10); exhaustive 78,125 circulant/bordered No-Go"
+      "details": "[[15,0,8]]_5 Row-10 weight=7<8; best Z_15 circulant bad_cuts=105/6435; best bordered Z_14 bad_cuts=161/6435"
     },
     {
       "filename": "ame_15_7_pure_circulant_certificate.json",
-      "sha256": "0f52a39f008990cc838d37ccea061405387f7c0be5b641bc12f709e735e07575",
-      "size_bytes": 1459,
+      "sha256": "98b6776593e9b78d0cf27384872fa248ca0d871711b53673c78c9a2c7dadfccf",
+      "size_bytes": 1880,
       "status": "PASS",
-      "details": "15x15 symmetric graph-state matrix verified | All 429 cyclic orbits (6,435 cuts) mod 7: bad=0"
+      "details": "15x15 symmetric graph over GF(7): 6435/6435 full-rank-7 cuts (bad=0)"
     },
     {
       "filename": "ame_15_8_pure_circulant_certificate.json",
       "sha256": "5748900e8ca81df578ab6d502db90c9ca3e8853f9a7d0f290d066d0d56985ecd",
       "size_bytes": 3293,
       "status": "PASS",
-      "details": "15x15 symmetric graph-state matrix verified"
+      "details": "15x15 symmetric graph over GF(8): 6435/6435 full-rank-7 cuts (bad=0)"
     },
     {
       "filename": "ame_15_9_pure_circulant_certificate.json",
       "sha256": "86551558a3a4077551d953f71638a319497b427f61681b4c2cc7403ff024c266",
       "size_bytes": 551,
       "status": "PASS",
-      "details": "15x15 symmetric graph-state matrix verified"
+      "details": "15x15 symmetric graph over GF(9): 6435/6435 full-rank-7 cuts (bad=0)"
     },
     {
       "filename": "ame_16_11_pure_hermitian_constacyclic_graph_certificate.json",
       "sha256": "0ea466b6539da517aae44d2551799fd70af0571e62e84b831b7001572fb3aa4f",
       "size_bytes": 3554,
       "status": "PASS",
-      "details": "16x16 symmetric graph-state matrix verified | All F_{p^2} Hermitian unitary and minor orbit checks PASS | F_11 graph cuts PASS=True"
+      "details": "16x16 symmetric graph over GF(11): 12870/12870 cuts (bad=0) | A*A^dag=-I_8 & 12869/12869 minors non-zero over GF(121)"
     },
     {
       "filename": "ame_16_13_pure_hermitian_constacyclic_graph_certificate.json",
       "sha256": "c344aec0c2f38aeed16e18ac3ed69dbb4d124b91b81f74e1979c3a82ef81d23b",
       "size_bytes": 3474,
       "status": "PASS",
-      "details": "16x16 symmetric graph-state matrix verified | All F_{p^2} Hermitian unitary and minor orbit checks PASS | F_13 graph cuts PASS=True"
+      "details": "16x16 symmetric graph over GF(13): 12870/12870 cuts (bad=0) | A*A^dag=-I_8 & 12869/12869 minors non-zero over GF(169)"
     },
     {
       "filename": "ame_16_16_pure_d8_double_circulant_certificate.json",
       "sha256": "4a23dd161482a2457337811515591b51a0d8f03516169bb5c2e4a956ba776f74",
       "size_bytes": 3655,
       "status": "PASS",
-      "details": "16x16 symmetric graph-state matrix verified"
+      "details": "16x16 symmetric graph over GF(16): 12870/12870 full-rank-8 cuts (bad=0)"
     },
     {
       "filename": "ame_16_17_pure_d8_double_circulant_certificate.json",
-      "sha256": "24d0e8d97217f3201275b4333d2352dac3b4b52fab88745b5e80374242271a81",
-      "size_bytes": 3776,
+      "sha256": "1b9ce7705ad3c4e32cb4a30f70b5b2c557a91daa33b86ce789f8f114680e6c2a",
+      "size_bytes": 3808,
       "status": "PASS",
-      "details": "16x16 symmetric graph-state matrix verified"
+      "details": "16x16 symmetric graph over GF(17): 12870/12870 full-rank-8 cuts (bad=0)"
     },
     {
       "filename": "ame_16_19_pure_d8_double_circulant_certificate.json",
-      "sha256": "c868b813122ccb1efc78d7cd19e7a9ebee0a82c4c6c9be33643318958df617d4",
-      "size_bytes": 3727,
+      "sha256": "3d4e026565d969fa5c16198b28797c42c08765aace4d836538e0e310f82a35f1",
+      "size_bytes": 3759,
       "status": "PASS",
-      "details": "16x16 symmetric graph-state matrix verified"
+      "details": "16x16 symmetric graph over GF(19): 12870/12870 full-rank-8 cuts (bad=0)"
     },
     {
       "filename": "ame_17_7_pure_circulant_certificate.json",
       "sha256": "b68f2aac4f1d72977309f0eb08c761e1f122e6b8f395e8e0a4484647ac2232f4",
       "size_bytes": 1030,
       "status": "PASS",
-      "details": "17x17 symmetric graph-state matrix verified"
+      "details": "17x17 symmetric graph over GF(7): 24310/24310 full-rank-8 cuts (bad=0)"
     },
     {
       "filename": "ame_17_8_pure_circulant_certificate.json",
       "sha256": "0bc632480b2bfb3a90117f0676e8894dc5972ea32cb315cd47e1d04077f20a28",
       "size_bytes": 4176,
       "status": "PASS",
-      "details": "17x17 symmetric graph-state matrix verified"
+      "details": "17x17 symmetric graph over GF(8): 24310/24310 full-rank-8 cuts (bad=0)"
     },
     {
       "filename": "ame_18_16_pure_circulant_certificate.json",
       "sha256": "ff4ecacde996416017fb46a4cdcbd71461823766631321f7b0975c2d76d44025",
       "size_bytes": 4033,
       "status": "PASS",
-      "details": "18x18 symmetric graph-state matrix verified"
+      "details": "18x18 symmetric graph over GF(16): 48620/48620 full-rank-9 cuts (bad=0)"
     },
     {
       "filename": "ame_18_7_pure_circulant_certificate.json",
       "sha256": "59b3292f2583484c47300497e74dd5f50d682377a75349de1646ec3c4d660081",
       "size_bytes": 557,
       "status": "PASS",
-      "details": "18x18 symmetric graph-state matrix verified"
+      "details": "18x18 symmetric graph over GF(7): 48620/48620 full-rank-9 cuts (bad=0)"
     },
     {
       "filename": "ame_19_11_z19_exhaustive_nogo_d31_certificate.json",
-      "sha256": "24d52c747ca3ce7a5ef63bac3f13a36590406dca9f135f1b804067a9a0577b8a",
-      "size_bytes": 1669,
+      "sha256": "a512522ac615720ddea2fc3986c1724293165b79e556e1c8ffd08f1a6e34d4bb",
+      "size_bytes": 6261,
       "status": "PASS",
-      "details": "Theorem D31: 100% exhaustive Z_19 No-Go for AME(19, 11) (2,357,947,690 matrices, min 40/4862); resolved via non-circulant Theorem D37A!"
+      "details": "Theorem D31 Z_19 No-Go optimal circulant a=[1,0,7,1,3,2,4,3,7] verified across all 92378 cuts: bad_cuts=209/92378 (6/2,494 dihedral orbits)"
     },
     {
       "filename": "ame_19_13_pure_circulant_certificate.json",
       "sha256": "274159da339c820b8b15ca26cd2665c1ee5a46d89ecdec6a40d380502b9ebf71",
       "size_bytes": 4263,
       "status": "PASS",
-      "details": "19x19 symmetric graph-state matrix verified"
+      "details": "19x19 symmetric graph over GF(13): 92378/92378 full-rank-9 cuts (bad=0)"
     },
     {
       "filename": "ame_19_16_pure_circulant_certificate.json",
       "sha256": "5dac5fa4efd3dc93d077fe1e81e8b8edef3af5a3e97c487719ba72887fa3e369",
       "size_bytes": 4517,
       "status": "PASS",
-      "details": "19x19 symmetric graph-state matrix verified"
+      "details": "19x19 symmetric graph over GF(16): 92378/92378 full-rank-9 cuts (bad=0)"
     },
     {
       "filename": "ame_19_17_pure_circulant_certificate.json",
       "sha256": "496c619a046592cddf0a8ab925825885c08ac7e534822d1ddadd39004439800c",
       "size_bytes": 4458,
       "status": "PASS",
-      "details": "19x19 symmetric graph-state matrix verified"
+      "details": "19x19 symmetric graph over GF(17): 92378/92378 full-rank-9 cuts (bad=0)"
     },
     {
       "filename": "ame_19_19_pure_circulant_certificate.json",
       "sha256": "afa20e21fc44d632dbe6cb3206a8aab3f5b5dbb488e67170848c84e1bb74227b",
       "size_bytes": 4462,
       "status": "PASS",
-      "details": "19x19 symmetric graph-state matrix verified"
+      "details": "19x19 symmetric graph over GF(19): 92378/92378 full-rank-9 cuts (bad=0)"
     },
     {
       "filename": "ame_20_11_g40_exhaustive_nogo_d33_certificate.json",
-      "sha256": "c607322a60f05c4364befc884970dc150e7d5ddd68a4d9c4d7ae1713479247ab",
-      "size_bytes": 5252,
+      "sha256": "4d33ff5cbb76913895daf85a6d6c3ae859a1e983d7024cef6aca760ea96f6982",
+      "size_bytes": 8029,
       "status": "PASS",
-      "details": "Theorems D33/D33B/D34: 100% exhaustive G_40 QR+QNR No-Go for AME(20, 11) (3.545B pairs, sub=0/177, min 12/4970, q_c=13); resolved via G_20 Theorem D37A!"
+      "details": "Theorems D33/D33B G_40 No-Go: QR & QNR optimal U in U(10,GF(121)) unitary=True, all 184755 minors checked (QR bad_minors=1060, QNR bad_minors=440)"
     },
     {
       "filename": "ame_20_11_hermitian_mds_d37a_certificate.json",
       "sha256": "cf939c8a509e77ab2cf8c61e2eb0b9cae4e85d2e645057a73014c82cd3e83947",
       "size_bytes": 5353,
       "status": "PASS",
-      "details": "20x20 symmetric graph-state matrix verified | Theorems D37/D37A U*U^dag=I_10=True | AME(20,11) cuts=True | Pure AME(19,11) [[19,0,10]]_11 cuts=True"
+      "details": "AME(20,11) & AME(19,11) (Thm D37A): U*U^dag=I_10=True, det=1, minors=184755/184755 (bad=0), G20 cuts=184756/184756 (bad=0), G19 cuts=92378/92378 (bad=0)"
     },
     {
       "filename": "ame_20_121_d36_so10_exact_certificate.json",
-      "sha256": "ce39a07f094c124c9743e851cffa868ef7d9de92be3f77742da77015d2a4392e",
-      "size_bytes": 746,
+      "sha256": "b948094e7215d86e857a5213b5ce0999fc7cad0031af5ae4b6061538ecc1b042",
+      "size_bytes": 2302,
       "status": "PASS",
-      "details": "Theorem D36: Explicit G_40 SO(10, GF(121)) MDS generator for AME(20, 121) (U*U^T=I_10=True, 184,755/184,755 minors non-zero)"
+      "details": "AME(20,121) SO(10,GF(121)): U*U^T=I_10=True, det=1, all minors=184755/184755 non-zero (bad=0)"
     },
     {
       "filename": "ame_20_13_hermitian_mds_d27b_certificate.json",
       "sha256": "ba711a679e88004b8ed4ec8ba4df74c39d6aae8b7ff32ef3f54110d956735e68",
       "size_bytes": 4307,
       "status": "PASS",
-      "details": "20x20 symmetric graph-state matrix verified | AME(20, 13) [[20, 0, 11]]_13 (184,756/184,756 cuts & 184,755/184,755 minors verified)"
+      "details": "AME(20,13): U*U^dag=I_10=True over GF(169), det=1, minors=184755/184755 (bad=0), 20x20 GF(13) graph cuts=184756/184756 (bad=0)"
     },
     {
       "filename": "ame_20_16_hermitian_mds_d29_certificate.json",
       "sha256": "b344b023b0d5c7783e07d9723e0aa166b1a668be5dbcdb5ca717ab5c0c826465",
       "size_bytes": 4613,
       "status": "PASS",
-      "details": "20x20 symmetric graph-state matrix verified | AME(20, 16) [[20, 0, 11]]_16 (184,756/184,756 cuts & 184,755/184,755 minors verified)"
+      "details": "AME(20,16): U*U^dag=I_10=True over GF(256), det=1, minors=184755/184755 (bad=0), 20x20 GF(16) graph cuts=184756/184756 (bad=0)"
     },
     {
       "filename": "ame_20_17_hermitian_mds_d28_certificate.json",
       "sha256": "d1cb59262b7cf1832669061429b3bbfb6fb2f562f52feed2fc4eb82d56b3245e",
       "size_bytes": 7557,
       "status": "PASS",
-      "details": "20x20 symmetric graph-state matrix verified | AME(20,q)  (184,756/184,756 cuts & 184,755/184,755 minors verified)"
+      "details": "AME(20,17): U*U^dag=I_10=True over GF(289), det=1, minors=184755/184755 (bad=0), 20x20 GF(17) graph cuts=184756/184756 (bad=0)"
+    },
+    {
+      "filename": "ame_20_81_d36_so10_exact_certificate.json",
+      "sha256": "c78a4529adfd9f918d25ceaecc217490fd87d225309484d5abbc5d8b831d1217",
+      "size_bytes": 2245,
+      "status": "PASS",
+      "details": "AME(20,81) SO(10,GF(81)): U*U^T=I_10=True, det=1, all minors=184755/184755 non-zero (bad=0)"
     },
     {
       "filename": "ame_20_gf289_so10_d25_d26_certificate.json",
       "sha256": "81c81257fcb23097c26876eb38a83a29b7aed5d1ba94eddecf87ad1aa23ab09d",
       "size_bytes": 4859,
       "status": "PASS",
-      "details": "Theorems D25/D26: Explicit G_40 SO(10, GF(289)) MDS generator for AME(20, 289) (184,755/184,755 minors non-zero)"
+      "details": "AME(20,289) SO(10,GF(289)): U*U^T=I_10=True, det=1, all minors=184755/184755 non-zero (bad=0)"
     },
     {
       "filename": "ame_9_10_certificate.json",
       "sha256": "9a17cd1e6d7fb1017aaa7880fac09cac1515ec3a2b4f55677b95317ed7ecd47c",
       "size_bytes": 55497,
       "status": "PASS",
-      "details": "Exact closed-form Q(zeta_5) x F_2 composite D=10 certificate (9 parties)"
+      "details": "AME(9,10) Q(zeta_5)xGF(2): binary_commute=True (7 gens), quinary_9x9_sym=True, 126/126 full-rank-5 augmented cuts (bad=0)"
     },
     {
       "filename": "ame_table_n2_to_20_status_and_estimates.json",
@@ -216,17 +223,10 @@
     },
     {
       "filename": "universal_paley_jacobsthal_ame_13_14_17_18_certificate.json",
-      "sha256": "a442249dde030b73dc17e87675962b2dc1600fd558d46289c89a40fc8ade8615",
-      "size_bytes": 2234,
+      "sha256": "e97afb9a72765e3ee1115bbb74ed7c43e5ae5a0991f1b84652b9e3b611f053ae",
+      "size_bytes": 25098,
       "status": "PASS",
-      "details": "Universal Paley-Jacobsthal Z-certificate: Universal Paley-Jacobsthal Graph State Theorem over Z for n ..."
-    },
-    {
-      "filename": "universal_paley_jacobsthal_ame_19_20_certificate.json",
-      "sha256": "0fc32a1ed4d418da7bb324e845549e1f74c51b58b17e5da0004a4f4b7077905d",
-      "size_bytes": 8803,
-      "status": "PASS",
-      "details": "Universal Paley-Jacobsthal Z-certificate: Universal Skew-Jacobsthal Q_19 (n=19) and Paley Tournament C..."
+      "details": "Universal Paley-Jacobsthal (n=13,14,17,18): P13 (1716 cuts), P14/C14 (3432 cuts, primes=[2, 3]), P17 (24310 cuts), P18/C18 (48620 cuts, P18 primes=[2, 3, 13, 19], C18 primes=[2, 3, 13, 19]) -> 0 singular cuts"
     }
   ]
 }
