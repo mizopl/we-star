@@ -20,7 +20,7 @@ Independently computed SHA-256 digests of the official `PyTDC` (`1.1.15`) `Bindi
 | `test_drug_target_keys_sha256` ($49,028$ `(Drug, Target)` keys) | `b28e09b01f7990c55ede2facbe7b9831c6dc9203d140dc575814361ae649b674` | **PASS** |
 | `object/certificate.json` | `d0d5d2a2b38f124aa802a1bdb4da440800626bf2936e945b8067085e9e3d2c98` | **PASS** |
 | `object/certificate_phase1_cpu_p1_p2.json` | `b37d6be07df1da22e36283cefb2b6ca8d29cf7c8995ab6cf3fa8511cc11fa5c3` | **PASS** |
-| `object/test_labels_and_strata.csv` | `7064ea001d959643611fe6a51fef76a6a3e5bdc0b0e7d0b9f3d9a0d05f57bea3` | **PASS** |
+| `object/test_labels_and_strata.csv` | `a85c43bc162a9725832a307d1cf6686266c8a2232ca5ad824ceac4a7b5a61039` | **PASS** |
 
 ---
 

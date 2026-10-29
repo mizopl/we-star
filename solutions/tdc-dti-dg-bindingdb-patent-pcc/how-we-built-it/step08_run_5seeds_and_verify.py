@@ -24,7 +24,7 @@ from step07_test_full_modular_stack_splits import (
     fit_predict_two_regime_ensemble_v3,
 )
 
-BASE_DIR = Path("/Users/blister/Desktop/PROOFER/DTI_DG_BINDINGDB_PATENT_CAMPAIGN")
+BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 CACHE_DIR = BASE_DIR / "cache"
 PRED_DIR = BASE_DIR / "predictions"

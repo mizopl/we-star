@@ -46,7 +46,7 @@ from step05b_test_homology_tkrr import (
     multiview_tanimoto_cross,
 )
 
-BASE_DIR = Path("/Users/blister/Desktop/PROOFER/DTI_DG_BINDINGDB_PATENT_CAMPAIGN")
+BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 CACHE_DIR = BASE_DIR / "cache"
 
