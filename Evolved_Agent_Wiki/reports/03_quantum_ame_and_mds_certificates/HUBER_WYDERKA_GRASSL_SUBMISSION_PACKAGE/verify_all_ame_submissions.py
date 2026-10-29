@@ -19,19 +19,36 @@ import json
 import math
 import os
 import subprocess
+import tempfile
 import time
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CERT_DIR = os.path.join(BASE_DIR, "certificates")
-REPORTS_DIR = CERT_DIR if os.path.isdir(CERT_DIR) else BASE_DIR
-OUT_REPORT = os.path.join(BASE_DIR, "VERIFICATION_REPORT.json")
-C_SRC = os.path.join(BASE_DIR, "src", "fast_cut_and_minor_verifier.c")
-C_BIN = "/tmp/fast_cut_and_minor_verifier"
+if os.path.isdir(os.path.join(BASE_DIR, "certificates")):
+    REPORTS_DIR = os.path.join(BASE_DIR, "certificates")
+elif os.path.isdir(os.path.join(BASE_DIR, "object")):
+    REPORTS_DIR = os.path.join(BASE_DIR, "object")
+elif os.path.isdir(os.path.join(BASE_DIR, "..", "object")):
+    REPORTS_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "object"))
+else:
+    REPORTS_DIR = BASE_DIR
+OUT_REPORT = (
+    os.path.join(tempfile.gettempdir(), "VERIFICATION_REPORT.json")
+    if os.path.basename(BASE_DIR) == "verify-it-yourself"
+    else os.path.join(BASE_DIR, "VERIFICATION_REPORT.json")
+)
+C_SRC = (
+    os.path.join(BASE_DIR, "src", "fast_cut_and_minor_verifier.c")
+    if os.path.exists(os.path.join(BASE_DIR, "src", "fast_cut_and_minor_verifier.c"))
+    else os.path.join(BASE_DIR, "fast_cut_and_minor_verifier.c")
+)
+C_BIN = os.path.join(tempfile.gettempdir(), "fast_cut_and_minor_verifier")
 
 
 def compile_c_verifier():
     if not os.path.exists(C_SRC):
         raise RuntimeError(f"Missing C verifier source: {C_SRC}")
+    if os.path.exists(C_BIN) and os.path.getmtime(C_BIN) >= os.path.getmtime(C_SRC):
+        return
     for compiler_prefix in [["cc"], ["arch", "-x86_64", "cc"]]:
         cmd = compiler_prefix + ["-O3", "-pthread", C_SRC, "-o", C_BIN]
         res = subprocess.run(cmd, capture_output=True, text=True)
@@ -307,8 +324,11 @@ def main():
     t0 = time.time()
     compile_c_verifier()
     files = sorted(glob.glob(os.path.join(REPORTS_DIR, "*.json")))
+    single_target = os.environ.get("ZERO_TRUST_SINGLE_OBJECT", "").strip()
+    if single_target:
+        files = [f for f in files if os.path.basename(f) == single_target]
     results = []
-    all_ok = True
+    all_ok = len(files) > 0
 
     # Map graph-state certificates to (n, k, field_id)
     graph_cut_specs = {
@@ -426,7 +446,11 @@ def main():
                 M_Sc = [[G[r][j] for j in Sc] + [G[r][10 + j] for j in Sc] for r in range(8)]
                 if rank_mod_p(M_Sc, 2) < 8:
                     bad_cuts += 1
-            ok = comm_ok and wt_ok and (bad_cuts == 0)
+            lp_ok = len(d.get("rains_krawtchouk_lp_thresholds_n9_to_15", {})) > 0 and all(
+                2 ** v.get("r_min", -1) == v.get("logical_dim_2_pow_r", -2)
+                for v in d.get("rains_krawtchouk_lp_thresholds_n9_to_15", {}).values()
+            )
+            ok = comm_ok and wt_ok and (bad_cuts == 0) and lp_ok
             entry["status"] = "PASS" if ok else "FAIL"
             entry["details"] = (
                 f"Shortened [[10,2,4]]_2: commute={comm_ok}, weight_dist={wts} (d_pure=6), "
@@ -621,24 +645,35 @@ def main():
         elif fname == "ame_table_n2_to_20_status_and_estimates.json":
             sc = d["summary_counts"]
             tot = sc.get("total_cells", 266)
+            ok = (tot == 266) and (d.get("open_cells_count", 0) > 0)
+            entry["status"] = "PASS" if ok else "FAIL"
             entry["details"] = f"266-cell audit: total={tot}, resolved={tot - d['open_cells_count']}, open={d['open_cells_count']}"
+            all_ok = all_ok and ok
+
+        else:
+            entry["status"] = "FAIL"
+            entry["details"] = f"Unhandled certificate file {fname}"
+            all_ok = False
 
         print(f"  [{entry['status']}] {fname} (sha256={sha[:12]}...) -> {entry['details']}")
         results.append(entry)
 
     elapsed = time.time() - t0
-    summary = {
-        "verified_at_epoch": int(time.time()),
-        "elapsed_seconds": round(elapsed, 3),
-        "total_certificates": len(results),
-        "all_pass": all_ok,
-        "certificates": results,
-    }
-    with open(OUT_REPORT, "w") as f:
-        json.dump(summary, f, indent=2)
+    if not os.environ.get("ZERO_TRUST_SINGLE_OBJECT"):
+        summary = {
+            "verified_at_epoch": int(time.time()),
+            "elapsed_seconds": round(elapsed, 3),
+            "total_certificates": len(results),
+            "all_pass": all_ok,
+            "certificates": results,
+        }
+        with open(OUT_REPORT, "w") as f:
+            json.dump(summary, f, indent=2)
     print(f"\n=== ALL {len(results)} CERTIFICATES EXHAUSTIVELY VERIFIED: all_pass={all_ok} in {elapsed:.2f}s ===")
     if not all_ok:
+        print("FAIL")
         raise SystemExit(1)
+    print("PASS")
 
 
 if __name__ == "__main__":
