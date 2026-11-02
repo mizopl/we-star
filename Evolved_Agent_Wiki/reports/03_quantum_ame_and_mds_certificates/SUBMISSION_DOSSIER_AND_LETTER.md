@@ -2,7 +2,7 @@
 
 **Prepared:** 2026-10-21  
 **Recipients:**
-- **Dr. Felix Huber & Dr. Henrik Wyderka** — Maintainers of the *Table of AME and $k$-Uniform States* (`tp.if.uj.edu.pl/~ame` / `k-uniform-states`)
+- **Dr. Felix Huber & Dr. Nikolai Wyderka** — Maintainers of the *Table of AME and $k$-Uniform States* (`tp.if.uj.edu.pl/~ame` / `k-uniform-states`)
 - **Dr. Markus Grassl** — Maintainer of *Bounds on the Minimum Distance of Linear and Quantum Codes* (`codetables.de`)
 
 **Verification Suite:** Run `/opt/homebrew/bin/python3 verify_all_ame_submissions.py` (`19/19 PASS` in `0.17s`, output saved to [`VERIFICATION_REPORT.json`](file://~/Desktop/PROOFER/wiki/reports/HUBER_WYDERKA_GRASSL_SUBMISSION_PACKAGE/VERIFICATION_REPORT.json)).
@@ -13,7 +13,7 @@
 
 > **Subject:** New explicit AME states (`AME(9,10)`, `AME(11,10)`, `AME(15,7..9)`, `AME(16,11..19)`, `AME(17,7..19)`, `AME(18,7..19)`, `AME(19,16..19)`), purity correction for `AME(15,5)` & `AME(15,7)`, and pure `[[13, 1, 7]]_5` quantum MDS code
 >
-> Dear Felix, Henrik, and Markus,
+> Dear Felix, Nikolai, and Markus,
 >
 > We are writing to share a collection of explicit, machine-verified constructions and a purity audit for the online Table of Absolutely Maximally Entangled (AME) States ($n \le 20, D \le 20$) and `codetables.de`.
 >
@@ -71,7 +71,7 @@
 | 13 | **`AME(19, 17)`** | `[[19, 0, 10]]_{17}` ($d_{\text{pure}}=10$) | Pure Circulant Graph State over $\mathbb{F}_{17}$: $a = [1,6,12,3,3,15,8,9,0]$ | `0 / 92,378` cuts (`4,862` orbits) | [`ame_19_17_pure_circulant_certificate.json`](file://~/Desktop/PROOFER/wiki/reports/ame_19_17_pure_circulant_certificate.json) (`496c619a046592cd`) |
 | 14 | **`AME(19, 19)`** | `[[19, 0, 10]]_{19}` ($d_{\text{pure}}=10$) | Pure Circulant Graph State over $\mathbb{F}_{19}$: $a = [1,12,14,7,9,8,15,17,15]$ | `0 / 92,378` cuts (`4,862` orbits) | [`ame_19_19_pure_circulant_certificate.json`](file://~/Desktop/PROOFER/wiki/reports/ame_19_19_pure_circulant_certificate.json) (`afa20e21fc44d632`) |
 | 15 | **Universal Paley ($n=13,14,17,18$)** | `AME(13..18, q)` | Universal Integer Paley Graph $P_{13}/C_{14}$ and $P_{17}/C_{18}$ over $\mathbb{Z}$ | $\Delta_{13}, \Delta_{17}$ exact over $\mathbb{Z}$ | [`universal_paley_jacobsthal_ame_13_14_17_18_certificate.json`](file://~/Desktop/PROOFER/wiki/reports/universal_paley_jacobsthal_ame_13_14_17_18_certificate.json) (`a442249dde030b73`) |
-| 16 | **Universal Skew-Paley ($n=19,20$)** | `AME(19..20, q >= 23)` | Universal Skew-Jacobsthal $Q_{19}$ & Conference $C_{20}$ over $\mathbb{Z}$ | $\Delta_{19}, \Delta_{20}$ coprime to $p \ge 23$ | [`universal_paley_jacobsthal_ame_19_20_certificate.json`](file://~/Desktop/PROOFER/wiki/reports/universal_paley_jacobsthal_ame_19_20_certificate.json) (`0fc32a1ed4d418da`) |
+| 16 | **Chiral Unitary ($n=19,20$)** | `AME(19..20, q >= 11)` | Chiral Constacyclic & Bi-Spectral Unitary Factorization (`Theorems D22, D36–D37A`) | `0 / 92,378` & `0 / 184,755` cuts | [`ame_20_11_conjugate_block_bispectral_unitary_certificate.json`](../../solutions/ame-states-open-cells-huber-table/object/ame_20_11_conjugate_block_bispectral_unitary_certificate.json) (`d98643df2588524b`) |
 | 17 | **Quantum MDS `[[13, 1, 7]]_5`** | `[[13, 1, 7]]_5` ($d_{\text{pure}}=7$) | Punctured & Deleted Paley $C_{14}$ over $\mathbb{F}_5$ (**beats `codetables.de` `[[13, 1, 6]]_5`**) | `0 / 1,716` 6-party cuts mod 5 | [`ame_13_5_quantum_mds_13_1_7_certificate.json`](file://~/Desktop/PROOFER/wiki/reports/ame_13_5_quantum_mds_13_1_7_certificate.json) (`87f2c3d21cf8eb39`) |
 | 18 | **Shortened `[[10, 2, 4]]_2` ($D=10$)** | `[[10, 2, 4]]_2` ($d_{\text{pure}}=6$) | 2-Qubit Shortening of `[[12, 0, 6]]_2` + $D=10$ Rains LP Thresholds | `252 / 252` 5-party cuts exact $64 I_{32}$ | [`ame_10_10_shortened_binary_stabilizer_certificate.json`](file://~/Desktop/PROOFER/wiki/reports/ame_10_10_shortened_binary_stabilizer_certificate.json) (`b720ce506d1839bf`) |
 | 19 | **266-Cell Status & Probability Audit** | $n \in [2,20], D \in [2,20]$ | Complete 4-Regime Structural Classification (`222/266` resolved, `44` open) | `266 / 266` cells audited | [`ame_table_n2_to_20_status_and_estimates.json`](file://~/Desktop/PROOFER/wiki/reports/ame_table_n2_to_20_status_and_estimates.json) (`116c6ab2c232fb26`) |

@@ -34,7 +34,7 @@ while true; do
     PROMPT="MONITOR HEARTBEAT #$HB_COUNT: Read wiki/meta/HEARTBEAT.md, wiki/meta/hot.md, wiki/meta/AUDITOR_INBOX.md, and wiki/log.md (last 15 lines). Run 'python3 scripts/brain.py status', 'python3 scripts/rgraph.py show main', 'python3 scripts/micro_bet.py status', 'python3 scripts/postdict.py report', and 'python3 scripts/sleep_flush.py'. Audit the worker's current progress, check if any micro-bets or graph nodes are missing or if Law M1/M2/M6 requires a representation pivot, write clear and encouraging strategic coaching directives into wiki/meta/AUDITOR_INBOX.md (never overwrite the worker's active Python solver files!), and append a 1-line summary to wiki/meta/heartbeat.log."
 
     if [ "$MODEL" = "agy" ]; then
-        /Users/blister/.local/bin/agy -p "$PROMPT" || echo "⚠️ agy heartbeat exited with non-zero code"
+        "$HOME/.local/bin/agy" -p "$PROMPT" || echo "⚠️ agy heartbeat exited with non-zero code"
     else
         claude --model "$MODEL" -p "$PROMPT" || echo "⚠️ claude heartbeat exited with non-zero code"
     fi
