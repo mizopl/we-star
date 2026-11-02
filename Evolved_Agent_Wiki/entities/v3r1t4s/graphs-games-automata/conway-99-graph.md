@@ -59,6 +59,7 @@ Exact integer matrix identity check in numpy (int32). For non-existence or UNSAT
 
 ## Citations
 
+- **Canonical Full Verification Repository (`we*star`):** [`https://github.com/mizopl/conway-99-graph`](https://github.com/mizopl/conway-99-graph) ([`SIGN_OFF_TABLE.md`](https://github.com/mizopl/conway-99-graph/blob/main/SIGN_OFF_TABLE.md) · [`V3R1T4S PR #774`](https://github.com/elder-plinius/V3R1T4S/pull/774) · [`V3R1T4S PR #840`](https://github.com/elder-plinius/V3R1T4S/pull/840))
 - [Problem page](../../../../.raw/V3R1T4S/known-unknowns/graphs-games-automata/conway-99-graph.md)
 - [Bank entry](../../../../.raw/V3R1T4S/bank/targets.json) (id `conway-99-graph`, commit `7dd4480`)
 
