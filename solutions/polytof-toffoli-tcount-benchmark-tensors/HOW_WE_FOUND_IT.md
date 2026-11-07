@@ -2,22 +2,28 @@
 
 *Note: contributor text, unverified.*
 
-## 1. Open-Source Engine: `we*` (`https://github.com/mizopl/we-star`, Law `M7`)
+## 1. Complete `p3` Re-Verification Audit of `ZIB-IOL/polytof` (`data/paper/`)
 
-All experiments were executed single-threaded on a **16 GB M1 MacBook Air** (`35 minutes` total end-to-end session wall-clock time) using our open-source **`we*` (`we-star`)** methodology (`https://github.com/mizopl/we-star`, **Law `M7`: Interface Gauge Freedom & Solution-Fiber Scan**).
+We built a standalone, bitpacked $\mathbb{F}_2$ verification pipeline (`verify-it-yourself/verify.py`) to audit every decomposition and basis-change matrix in `ZIB-IOL/polytof` (`commit 0dcac107d15adc34dc646242d222f21ae7d32699`) against `docs/tensors.md` (`sha256: f83839d0589888d75fb0ac357f8e251bc3f743d5c1749757cb51beec26676dc3`) and `data/tensors/*.npy`:
 
-In two-stage non-Clifford gate synthesis (`circuit -> cubic phase tensor T -> Stage-1 CP decomposition -> Stage-2 TOHPE + FastTODD Waring reduction`), the upstream `ZIB-IOL/polytof` pipeline stores a single canonical CP decomposition per tensor in `data/paper/cpd/topp/*.npy` and inside `tohpe()` (`src/waring/todd.h`) extracts only a single pivot column from the $\mathbb{F}_2$-nullspace (`kernel()`). By **Law `M7`**, the Stage-1 CP decomposition of a symmetric cubic tensor $T$ (and the local 7-to-6 TOHPE nullspace reduction of each Toffoli triple) has a massive internal gauge fiber under which Stage-1 Toffoli count is invariant (`CP = 30` for `0732` $\mathrm{GF}(2^9)$, `CP = 33` for `0733` $\mathrm{GF}(2^{10})$), but the downstream Stage-2 `FastTODD` Waring rank varies by $8$ to $12$ $T$-gates.
+1. **Full Pool & Base Coverage (`185` Decomposition Files, `13,537` CP Schemes + `88` Waring Schemes):**
+   - Upstream's `scripts/verify_paper_schemes.py` checks only `row = data[0]` of each `data/paper/cpd/topp/*.npy` file, skipping the `13,440` additional schemes stored in rows `1..` of the `14` multi-row pool files (`13 x 1,000 + 454 = 13,454` pool schemes, `13,528` total `cpd/topp` schemes), and does not read `data/paper/cpd/base/*.npy` (`9` bilinear $\mathrm{GF}(2^k)$ multiplication files `0525`..`0533`).
+   - By packing 64 CP schemes at a time into `uint64` bitwise words, `verify-it-yourself/verify.py` verifies all `13,528` `cpd/topp` schemes, all `9` `cpd/base` schemes, and all `88` `waring` schemes (under the full linear, quadratic, and cubic phase-polynomial signature in both BCO and original bases) in `~4.3` seconds single-thread CPU time on a 16 GB M1 laptop.
+2. **Discrepancies Uncovered (`5` Waring Rank Discrepancies & `2` Qubit-Dimension Discrepancies):**
+   - While all `97 / 97` CP files (`88` `cpd/topp` + `9` `cpd/base`) match the `CP` column of `docs/tensors.md`, **5 posted Waring files in `data/paper/waring/` have strictly higher row counts than the `Waring` value claimed in `docs/tensors.md`** despite their variant prefix (`01`, `07`, or `08`) being listed in the `data/paper/` column:
+     - `0105` (`CSLA MUX_3`): `0105-00041.npy` has rank `41` vs table `39` (`+2`),
+     - `0108` (`Ham15 (low)`): `0108-00077.npy` has rank `77` vs table `73` (`+4`),
+     - `0115` (`Mod Red_21`): `0115-00055.npy` has rank `55` vs table `51` (`+4`),
+     - `0728` (`GF(2^5) Mult`): `0728-00061.npy` has rank `61` vs table `59` (`+2`; `0128-00059.npy` achieves `59`),
+     - `0817` (`QCLA Com_7`): `0817-00063.npy` has rank `63` vs table `59` (`+4`).
+   - In addition, **2 `01xx` tensors have different qubit counts $n$ from the shared `Circuit Benchmarks` table row**:
+     - `0108` (`Ham15 (low)`): actual $n = 42$ in `data/tensors/0108.npy` vs table $n = 46$ (`0808` has $n = 46$),
+     - `0114` (`Mod Mult_55`): actual $n = 11$ in `data/tensors/0114.npy` vs table $n = 12$ (`0814` has $n = 12$).
 
-## 2. Two-Stage Law `M7` Fiber Scan & Single-Thread Runtimes
+## 2. Repairing the Four Circuit Waring Schemes (`how-we-built-it/hunt_all_benchmarks.py`)
 
-1. **Stage-1 4-Symmetry Gauge Fiber (`how-we-built-it/hunt_gf_4sym_m7.py` & `generate_m7_gf_fiber.py`):**
-   - Starting from the optimal bilinear multiplication decompositions of $\mathrm{GF}(2^9)$ ($r = 30$) and $\mathrm{GF}(2^{10})$ ($r = 33$), we generated distinct minimal-rank symmetric cubic CP decompositions in `07xx` coordinates via:
-     - $\mathbb{F}_{2^k}$-linear automorphisms and invertible field multipliers $(\lambda, \mu, (\lambda\mu)^{-1}) \in (\mathbb{F}_{2^k}^\times)^3$ (`(511)^2` and `(1023)^2` exact bilinear-preserving gauges),
-     - Frobenius automorphisms $x \mapsto x^{2^s}$,
-     - factor triple permutations, and
-     - rank-preserving flip-graph plateau walks (`--fgs`).
-2. **Stage-2 Full-Nullspace `tohpe()` (`kernel_all`) + `FastTODD`:**
-   - Upgrading `tohpe()` to scan all basis vectors $z_a$ and pairwise XOR combinations $z_a \oplus z_b$ of $\ker_{\mathbb{F}_2}(P)$ for each triple pair reduced the post-TOHPE starting rank on `0732` from `179` to `169` before a single step of TODD ran.
-   - Running single-thread `FastTODD` across the Law `M7` CP fiber found **`0732-00139.npy` (`139` $T$-gates, `-8` vs `docs/tensors.md` `147`) in `0.17 s` single-thread CPU time** (`0.221 s` mean per scheme; `0 / 139` row overlap with `arXiv:2603.29894`'s LLM-evolutionary scheme), and **`0733-00161.npy` (`161` $T$-gates, `-12` vs `docs/tensors.md` `173`) in `1.42 s` single-thread CPU time**.
-3. **Complete 88-Tensor `p3` Audit, `4` Repaired Schemes, and `7` `p2` Optimality Proofs:**
-   - Auditing all 88 tensors in `data/paper/` uncovered 5 posted Waring rank discrepancies (`0105`, `0108`, `0115`, `0817`, `0728`) and 2 qubit-dimension discrepancies (`0108`, `0114`). Multi-seed `FastTODD` (`how-we-built-it/hunt_all_benchmarks.py`) repaired all 4 circuit discrepancies (`0105-00039.npy`, `0108-00073.npy`, `0115-00051.npy`, `0817-00059.npy`), and mode-1 flattening $\mathbb{F}_2$-rank + exhaustive subset/pair checks certified optimality (`p2`) for 7 benchmark rows in `< 0.15 s` single-thread CPU time.
+Using our open-source **`we*` (`we-star`)** framework (`https://github.com/mizopl/we-star`, **Law `M7`: Interface Gauge Freedom & Solution-Fiber Scan**), `how-we-built-it/hunt_all_benchmarks.py` generated diverse minimal-rank Stage-1 CP pools via $\mathrm{GL}(3, \mathbb{F}_2)$ factor gauges and symmetric flip-graph walks and ran Stage-2 `FastTODD` across the fiber, recovering explicit full-signature Waring decompositions matching `docs/tensors.md` for all four circuit variants:
+- `object/waring/0105-00039.npy` (`41 -> 39`),
+- `object/waring/0108-00073.npy` (`77 -> 73`),
+- `object/waring/0115-00051.npy` (`55 -> 51`), and
+- `object/waring/0817-00059.npy` (`63 -> 59`).

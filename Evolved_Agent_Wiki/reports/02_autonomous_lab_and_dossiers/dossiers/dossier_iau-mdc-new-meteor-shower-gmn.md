@@ -6,9 +6,11 @@
   - `https://www.ta3.sk/IAUC22DB/MDC2022/Etc/streamfulldata2026.txt` (fetched `2026-10-20T18:50:19Z` and `2026-10-20T18:57:50Z`, HTTP `200`, `374,974` bytes, `sha256: 08409111125e83ef2f033b27e215fb4383e0f15f6e6a3d202f7dda3a27f027fe`, `2,192` data rows across `1,152` distinct IAU shower numbers, last updated `Oct 19, 20:00:00 UTC, 2026`).
 - **GMN Trajectory Archives:** `https://globalmeteornetwork.org/data/traj_summary_data/yearly/` (`traj_summary_yearly_2018.txt` through `traj_summary_yearly_2026.txt`).
 
-## Best Verified So Far (Run `2026-10-20-0343` — `CONFIRMED_SOLUTION` + `p1` + `p2`, `outbox/2026-10-20-mizopl-56ac1336`)
-- **Main `success_criterion` (`4` primary multi-year unassigned `IAU No == -1` showers + `7` additional strict per-meteor multi-country clusters):**
-  1. **`M2_Hercules` ("February $\mu$-Herculids", `claim/new_shower_gmn_lines.txt`, `sha256: 753edff9...`):**
+## Best Verified So Far (Updated `2026-11-07` in [`V3R1T4S PR #597`](https://github.com/elder-plinius/V3R1T4S/pull/597) `051e52a` — Scoped to Single Multi-Country Shower `M1_Cepheus_MC`)
+> **2026-11-07 Review Update (`PR #597` commit `051e52a`):** Following `@elder-plinius`'s domain review noting that `M2_Hercules` ($\beta_{\text{ecl}} = +66.4^\circ$), `M3_Camelopardalis` ($\beta_{\text{ecl}} = +60.1^\circ$), and `P1_2025_Sep01_Outburst` sit inside the high-ecliptic-latitude Northern Toroidal sporadic background ($i \approx 65^\circ\text{--}73^\circ$) and that `p2` recurrences (`M2025-S1` `#1263`, `M2025-U1` `#1265`, `AAQ` `#927`, `KCA` `#793`, `FDR` `#1206`) overlap with CAMS / SonotaCo multi-year detections, `PR #597` is scoped strictly to **`M1_Cepheus_MC` ("September $\delta$-Cepheids Multi-Country", $N = 16$ unassigned `IAU No == -1` multi-station, per-meteor multi-country GMN trajectories across $4$ consecutive years `2023–2026`, `100%` per-meteor `n_countries >= 2`, audited against the live `2,197`-row `streamfulldata2026.txt` with $0$ matches at $D_{\text{SH}} < 0.20$)**.
+
+- **Original Exploration Sweep (`2026-10-20-0343`):**
+  1. **`M2_Hercules` ("February $\mu$-Herculids", excluded in `051e52a` as Northern Toroidal sporadic background):**
      - **$N = 20$** multi-station (`Num stat >= 3`), multi-country (`7` countries: `BE, DE, FR, NL, RO, UK, US`) unassigned (`IAU No == -1`) GMN trajectories across **5 consecutive years (`2022–2026`)**.
      - Mean radiant & orbit: $\lambda_\odot = 339.070^\circ$, $\alpha_g = 240.175^\circ$, $\delta_g = +46.342^\circ$, $V_g = 42.315\text{ km/s}$, $q = 0.77935\text{ AU}$, $e = 0.73307$, $i = 69.927^\circ$, $\omega = 239.840^\circ$, $\Omega = 339.070^\circ$.
      - Internal compactness: $\max D_{\text{SH}}(\text{mean}) = 0.0491 < 0.10$, $\max D_{\text{SH}}(\text{median}) = 0.0566 < 0.10$, all-pairs $\max \text{pairwise } D_{\text{SH}} = 0.0829 < 0.10$.
