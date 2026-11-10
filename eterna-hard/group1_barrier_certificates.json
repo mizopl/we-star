@@ -1,0 +1,1162 @@
+{
+  "campaign": "V20-02B: eterna-hard (Invited by Prof. Rhiju Das, Stanford University / HHMI)",
+  "generated_at_epoch": 1794297626.657,
+  "verification_wall_time_sec": 22.018,
+  "counts": {
+    "verified_full_solves_dbp0": 12,
+    "verified_exact_mfe_ties_de0": 4,
+    "group1_dbp1_minimax_certificates": 18
+  },
+  "verified_full_solves": [
+    {
+      "group": "master_vienna2",
+      "puzzle_id": "6158733",
+      "title": "[VRNA_2]The Alternate Eterna100: Mat \u2013 Martian 2 by mat747",
+      "folder": "Vienna2",
+      "length_nt": 213,
+      "constraints": "SHAPE,0,GU,12,GC,4",
+      "d_bp": 0,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -25.5,
+      "e_mfe_kcal": -25.5,
+      "sequence": "UGCUGCAAAGUAAAAUGGUUUAAUUAAUAGAGAAAAAAUUUAUUGUGAAUUAAAAUUAUGUCUAACAAAAAUAUUACUUUAUGUGAAAAAAAUAUAAAUAGUAUUAAAAUUGAUUUGAGUUUGAAAAAAAAAUUUGCGAUUGAUAAAAAAGGAUGUGAAACUAUAUGAAUUGAUAGAAAAAAUAUUGGUAAUUAUGUGACAACGAGGAAUCGU",
+      "sha256": "be138e04bdf36b722da5de47692ee0b2ef51e638668b710142cc03c97b19b78a"
+    },
+    {
+      "group": 1,
+      "puzzle_id": "3058243",
+      "title": "2 GU",
+      "folder": "Vienna",
+      "length_nt": 81,
+      "constraints": "SHAPE,0,GU,2",
+      "d_bp": 0,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -6.2,
+      "e_mfe_kcal": -6.2,
+      "sequence": "CGGGGAGGGACGAGGAGGGAAACUACGGGACGCACGAAAAAAAAGCACAGGACACAGUAAAAAGCGGGGGGGACGGGGGGC",
+      "sha256": "07146d419486af5b3e2d11f672714b7945080c68c1412ee475375fcfa7c26433"
+    },
+    {
+      "group": 1,
+      "puzzle_id": "3497795",
+      "title": "1-1 with triloop",
+      "folder": "Vienna",
+      "length_nt": 74,
+      "constraints": "SHAPE,0",
+      "d_bp": 0,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -12.6,
+      "e_mfe_kcal": -12.6,
+      "sequence": "CUGGGGGCAAGGAAACACGGCGGGCAAAGAAACAAAGGCGGCGGAAACACGGGCAAAGGCGGGCAAGGCGCGAG",
+      "sha256": "b5228c4a2503ab0b419f9a5ea120f6f9b58417f4ef5c6b1db715e1c49b26c24a"
+    },
+    {
+      "group": 1,
+      "puzzle_id": "3620224",
+      "title": "Based on Brourd's puzzle",
+      "folder": "Vienna",
+      "length_nt": 68,
+      "constraints": "SHAPE,0",
+      "d_bp": 0,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -13.7,
+      "e_mfe_kcal": -13.7,
+      "sequence": "GGCAGGGAAGACGAAAGCACGCGAAAGACAGGUAGGACGAAAGCAAAGACCCCCACCUUCGGCGGGCC",
+      "sha256": "24fe47cdaa8d325657595f6b63cbec344ecc47385b09ffacb49126144bf7f5e5"
+    },
+    {
+      "group": 1,
+      "puzzle_id": "3714598",
+      "title": "Verity",
+      "folder": "Vienna",
+      "length_nt": 126,
+      "constraints": "SHAPE,0",
+      "d_bp": 0,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -34.8,
+      "e_mfe_kcal": -34.8,
+      "sequence": "AGUGGCAGGACCCAGACCCACCCGGGGAAGUCGGCGAGUGGGAAACCCAAGGAAAACUAACGCCGCUCGGGCUGAAAAGACAACCCACGAGGAGAGGCAAGACGGGAAACGGCAAGGGCGGACGGC",
+      "sha256": "bd5b5a4f4cbdf380f10ab5dd6979d7d72403095ae56857255c98d11e930d4ce7"
+    },
+    {
+      "group": 1,
+      "puzzle_id": "3720758",
+      "title": "Flux",
+      "folder": "Vienna",
+      "length_nt": 78,
+      "constraints": "SHAPE,0,AU,5",
+      "d_bp": 0,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -16.3,
+      "e_mfe_kcal": -16.3,
+      "sequence": "CGAGAGGAAACCUGGGGAGGGAAACACUGCAGCCUACGAAAGAGAGCACGAGGGAAACACUGGCGUCACGAAAGGAGG",
+      "sha256": "5a8508259d307c31831743fe203f47ebdfc4c16c5e3b53038233a67c235a796c"
+    },
+    {
+      "group": 3,
+      "puzzle_id": "5741038",
+      "title": "Choo's sequence extension",
+      "folder": "Vienna",
+      "length_nt": 50,
+      "constraints": "SHAPE,0",
+      "d_bp": 0,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -11.3,
+      "e_mfe_kcal": -11.3,
+      "sequence": "GGGGACGUAGGGCAGGGGAGACGGAAACGCCGCACGAGACGCAGGGACCC",
+      "sha256": "c6a41dc57774b1e9d6e5c4691a44659e134064cd5d324a707fe237ac9e035377"
+    },
+    {
+      "group": 3,
+      "puzzle_id": "5811869",
+      "title": "Another Jerky",
+      "folder": "Vienna",
+      "length_nt": 40,
+      "constraints": "SHAPE,0",
+      "d_bp": 0,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -4.2,
+      "e_mfe_kcal": -4.2,
+      "sequence": "CGACGCGGGACAGGGAGCGGAAACACGACGGACGAGGGCA",
+      "sha256": "2decf7135d18d7f2666944ba023d53139dfd34a1997b94b0cb93a718b29bb80a"
+    },
+    {
+      "group": 3,
+      "puzzle_id": "5868257",
+      "title": "NUNZIO's Mind's Eye",
+      "folder": "Vienna",
+      "length_nt": 97,
+      "constraints": "SHAPE,0",
+      "d_bp": 0,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -6.07,
+      "e_mfe_kcal": -6.07,
+      "sequence": "GGACGAAAAUGGCAGGGAAAAAAAAAAAAAAAAAAAAAAAAAACCACCAGCAAAGCAGAGGCGCGAAACGGGACCCAGGGAAAAGCAAAAAAAGGAC",
+      "sha256": "1887e3ad89a58785f10e6018d28684591e0865f502020f41532d41edf29366c0"
+    },
+    {
+      "group": 3,
+      "puzzle_id": "5881353",
+      "title": "Loop 1-...",
+      "folder": "Vienna",
+      "length_nt": 71,
+      "constraints": "SHAPE,0",
+      "d_bp": 0,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -5.3,
+      "e_mfe_kcal": -5.3,
+      "sequence": "GCAAACAAACGAGGAAAGGACAAAAGGAAGGCAAAACCAAACGAAAAGGGGGGCACGGGACGCACGGGGGC",
+      "sha256": "c1fe5c40a0fa5988563a56bfe2aa0b09be16dfec49c5cb7a56f76d08efffc905"
+    },
+    {
+      "group": 3,
+      "puzzle_id": "5887125",
+      "title": "1-...Loop 3",
+      "folder": "Vienna",
+      "length_nt": 106,
+      "constraints": "SHAPE,0",
+      "d_bp": 0,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -2.99,
+      "e_mfe_kcal": -2.99,
+      "sequence": "GCAUCAAAAGGGGGAAAAGCAGCAGGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACGAGCAAAAGGCGCCAAAAACCGGAGAAAGGC",
+      "sha256": "fdcab6f4e382d64cc51fc1d7ef3e5268240949c601168d02c3352b9f8eed9b76"
+    },
+    {
+      "group": 3,
+      "puzzle_id": "6104928",
+      "title": "Tesla's Hook",
+      "folder": "Vienna",
+      "length_nt": 78,
+      "constraints": "SHAPE,0",
+      "d_bp": 0,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -11.1,
+      "e_mfe_kcal": -11.1,
+      "sequence": "GCGGCAAAGGACGGGGCAGCAGGAAACGGGACGAGACAGCGGGACAAAGGGAAAAGGCGAAGGCACCAGCAAAAAGCA",
+      "sha256": "8423823cf1c50050bc2e0277e4be75d2619fed98d04d91772b60054acb4f6592"
+    }
+  ],
+  "verified_exact_thermodynamic_ties": [
+    {
+      "group": 1,
+      "puzzle_id": "3357791",
+      "title": "Some loops",
+      "folder": "Vienna",
+      "length_nt": 127,
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -41.5,
+      "e_mfe_kcal": -41.5,
+      "missing_bps": [
+        [
+          5,
+          15
+        ]
+      ],
+      "extra_bps": [],
+      "target_structure": ".(((.(((....)).).((((.(.(.((....))).(((.(.(.(((...))).).(((...))).(.(((...)))).).))).(.((....)).).).)))).(((....)).).))).......",
+      "mfe_tie_structure": ".(((..((....))...((((.(.(.((....))).(((.(.(.(((...))).).(((...))).(.(((...)))).).))).(.((....)).).).)))).(((....)).).))).......",
+      "sequence": "AUCCAGCGGAAACGACGGCGCGCAGACGGAAACGCAGGGUCAGUCCGAUACGGUCAGCGAAACGCAGAGGCAAAGCCCAGUCCCAGGGCGAAAGCGCAGGGCGCACCCGAAAGGCGGGGAAAAAAAA",
+      "sha256": "e32fb75f47ebc246316812a591b87387dae0d3d736000e85dba7d696e2f3aa1b"
+    },
+    {
+      "group": 1,
+      "puzzle_id": "3151424",
+      "title": "Brourd's Small and Crazy",
+      "folder": "Vienna",
+      "length_nt": 73,
+      "constraints": "SHAPE,0",
+      "d_bp": 2,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -15.2,
+      "e_mfe_kcal": -15.2,
+      "missing_bps": [
+        [
+          21,
+          29
+        ],
+        [
+          57,
+          65
+        ]
+      ],
+      "extra_bps": [],
+      "target_structure": "..((((...(..(...)..).((....).).)))).((((...(.(........)).((....).).))))..",
+      "mfe_tie_structure": "..((((...(..(...)..)..(....)...)))).((((...(.(........))..(....)...))))..",
+      "sequence": "AAGGGCAACGGACAAAGGACAGCGAAAGACGGCCCACCGCAACGACGAAAAAAAGCAGCGAAAGACGGCGGAA",
+      "sha256": "e441b7b7d50add1fc8eb68236433826b0b7a47bc0936bd3132b977d1bbce6254"
+    },
+    {
+      "group": 2,
+      "puzzle_id": "3161590",
+      "title": "Interesting Intelligence",
+      "folder": "Vienna",
+      "length_nt": 54,
+      "constraints": "SHAPE,0,GU,4,GC,11",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -5.3,
+      "e_mfe_kcal": -5.3,
+      "missing_bps": [
+        [
+          9,
+          44
+        ]
+      ],
+      "extra_bps": [],
+      "target_structure": "(((...)))(((((((((((...)))..(((...)))))))))))(((...)))",
+      "mfe_tie_structure": "(((...))).((((((((((...)))..(((...)))))))))).(((...)))",
+      "sequence": "CCCGUAGGGACUAUAUACUCAAAGAGAAGCGAAACGUUGUGUGGUGGCAAAGCC",
+      "sha256": "d60611620b12ed5300bdc756e28faaa7efba10174fe9d1e3616bd9832d3ee733"
+    },
+    {
+      "group": 2,
+      "puzzle_id": "4627086",
+      "title": "Easy Tesla's Particular",
+      "folder": "Vienna",
+      "length_nt": 108,
+      "constraints": "SHAPE,0,GU,3",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "e_target_kcal": -23.0,
+      "e_mfe_kcal": -23.0,
+      "missing_bps": [
+        [
+          30,
+          43
+        ]
+      ],
+      "extra_bps": [],
+      "target_structure": ".(((.((((.(..(.(....)...).(((.(...((....)).)..(......((.....))......)..))).)...)))).(...((....))....).)))...",
+      "mfe_tie_structure": ".(((.((((.(..(.(....)...).(((.....((....))....(......((.....))......)..))).)...)))).(...((....))....).)))...",
+      "sequence": "AGGGACCGUGCAAGGCGAAAGAAACGGGCAGAAAGCGAAAGUGCAAGAAAAAGCCGAAAAGGAAAAAGCAAGCCAGAAAGCGGAGAAUGCGAAAGUUAAGCGCCCAAA",
+      "sha256": "7fe1144761492d78589d8f992bab53f3447665d7f3985f0434120a4fbac07b1b"
+    }
+  ],
+  "group1_dbp1_local_minimax_certificates": [
+    {
+      "puzzle_id": "3357791",
+      "title": "Some loops",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.0,
+      "missing_bps": [
+        [
+          5,
+          15
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          5,
+          15
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          3,
+          117
+        ]
+      ],
+      "window_unpaired": [
+        14,
+        4,
+        16
+      ],
+      "states_enumerated": 13824,
+      "rivals_tested_count": 22,
+      "initial_5rival_minimax_delta_e_kcal": -0.7,
+      "cutting_plane_minimax_delta_e_kcal": 0.0,
+      "dominant_rival": "mfe_rival",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(5,15)": "GC",
+          "(6,13)": "CG",
+          "(3,117)": "CG"
+        },
+        "unpaired": {
+          "14": "A",
+          "4": "A",
+          "16": "G"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3307926",
+      "title": "Bent hook",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.4,
+      "missing_bps": [
+        [
+          11,
+          31
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          11,
+          31
+        ],
+        [
+          13,
+          28
+        ],
+        [
+          10,
+          36
+        ]
+      ],
+      "window_unpaired": [
+        12,
+        30,
+        32
+      ],
+      "states_enumerated": 13824,
+      "rivals_tested_count": 5,
+      "initial_5rival_minimax_delta_e_kcal": 0.4,
+      "cutting_plane_minimax_delta_e_kcal": 0.4,
+      "dominant_rival": "open_13_28",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(11,31)": "CG",
+          "(13,28)": "CG",
+          "(10,36)": "CG"
+        },
+        "unpaired": {
+          "12": "A",
+          "30": "G",
+          "32": "A"
+        }
+      }
+    },
+    {
+      "puzzle_id": "5204902",
+      "title": "Plunge",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.4,
+      "missing_bps": [
+        [
+          51,
+          65
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          51,
+          65
+        ],
+        [
+          52,
+          63
+        ],
+        [
+          4,
+          50
+        ]
+      ],
+      "window_unpaired": [
+        64,
+        66,
+        67
+      ],
+      "states_enumerated": 13824,
+      "rivals_tested_count": 8,
+      "initial_5rival_minimax_delta_e_kcal": -0.1,
+      "cutting_plane_minimax_delta_e_kcal": 0.1,
+      "dominant_rival": "open_both_51_65_and_52_63",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(51,65)": "CG",
+          "(52,63)": "CG",
+          "(4,50)": "CG"
+        },
+        "unpaired": {
+          "64": "C",
+          "66": "G",
+          "67": "A"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3193338",
+      "title": "Brourd's Combination",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.7,
+      "missing_bps": [
+        [
+          61,
+          74
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          61,
+          74
+        ],
+        [
+          62,
+          72
+        ],
+        [
+          45,
+          59
+        ]
+      ],
+      "window_unpaired": [
+        73,
+        60,
+        75
+      ],
+      "states_enumerated": 13824,
+      "rivals_tested_count": 11,
+      "initial_5rival_minimax_delta_e_kcal": -0.4,
+      "cutting_plane_minimax_delta_e_kcal": 0.4,
+      "dominant_rival": "mfe_rival",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(61,74)": "GC",
+          "(62,72)": "CG",
+          "(45,59)": "GC"
+        },
+        "unpaired": {
+          "73": "G",
+          "60": "A",
+          "75": "A"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3513139",
+      "title": "ET3 mod again",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0,GU,3,AU,2",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.7,
+      "missing_bps": [
+        [
+          46,
+          59
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          46,
+          59
+        ],
+        [
+          48,
+          57
+        ],
+        [
+          27,
+          44
+        ]
+      ],
+      "window_unpaired": [
+        47,
+        58,
+        45
+      ],
+      "states_enumerated": 13824,
+      "rivals_tested_count": 14,
+      "initial_5rival_minimax_delta_e_kcal": -0.5,
+      "cutting_plane_minimax_delta_e_kcal": 0.2,
+      "dominant_rival": "cp_rival_12",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(46,59)": "CG",
+          "(48,57)": "CG",
+          "(27,44)": "CG"
+        },
+        "unpaired": {
+          "47": "G",
+          "58": "G",
+          "45": "G"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3308813",
+      "title": "Straight hook",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 0.8,
+      "missing_bps": [
+        [
+          15,
+          30
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          15,
+          30
+        ],
+        [
+          18,
+          28
+        ],
+        [
+          12,
+          32
+        ]
+      ],
+      "window_unpaired": [
+        16,
+        17,
+        14
+      ],
+      "states_enumerated": 13824,
+      "rivals_tested_count": 12,
+      "initial_5rival_minimax_delta_e_kcal": -0.6,
+      "cutting_plane_minimax_delta_e_kcal": 0.2,
+      "dominant_rival": "open_12_32",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(15,30)": "GC",
+          "(18,28)": "CG",
+          "(12,32)": "CG"
+        },
+        "unpaired": {
+          "16": "G",
+          "17": "C",
+          "14": "C"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3340229",
+      "title": "Easy Hooklahoo",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0,GU,2",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 1.0,
+      "missing_bps": [
+        [
+          8,
+          47
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          8,
+          47
+        ],
+        [
+          9,
+          45
+        ],
+        [
+          5,
+          49
+        ]
+      ],
+      "window_unpaired": [
+        46,
+        7,
+        6
+      ],
+      "states_enumerated": 13824,
+      "rivals_tested_count": 9,
+      "initial_5rival_minimax_delta_e_kcal": -0.1,
+      "cutting_plane_minimax_delta_e_kcal": 0.4,
+      "dominant_rival": "open_both_8_47_and_9_45",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(8,47)": "GC",
+          "(9,45)": "GC",
+          "(5,49)": "CG"
+        },
+        "unpaired": {
+          "46": "G",
+          "7": "G",
+          "6": "G"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3342887",
+      "title": "Easier Hooklahoo 2",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 1.0,
+      "missing_bps": [
+        [
+          12,
+          39
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          12,
+          39
+        ],
+        [
+          14,
+          36
+        ],
+        [
+          10,
+          40
+        ]
+      ],
+      "window_unpaired": [
+        13,
+        38,
+        11
+      ],
+      "states_enumerated": 13824,
+      "rivals_tested_count": 9,
+      "initial_5rival_minimax_delta_e_kcal": -0.1,
+      "cutting_plane_minimax_delta_e_kcal": 0.1,
+      "dominant_rival": "open_14_36",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(12,39)": "GC",
+          "(14,36)": "GC",
+          "(10,40)": "GC"
+        },
+        "unpaired": {
+          "13": "A",
+          "38": "G",
+          "11": "A"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3636685",
+      "title": "Idle",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0,GC,8",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 1.1,
+      "missing_bps": [
+        [
+          19,
+          31
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          19,
+          31
+        ],
+        [
+          20,
+          29
+        ],
+        [
+          17,
+          32
+        ]
+      ],
+      "window_unpaired": [
+        30,
+        18
+      ],
+      "states_enumerated": 3456,
+      "rivals_tested_count": 34,
+      "initial_5rival_minimax_delta_e_kcal": -1.1,
+      "cutting_plane_minimax_delta_e_kcal": 0.1,
+      "dominant_rival": "mfe_rival",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(19,31)": "GC",
+          "(20,29)": "GC",
+          "(17,32)": "CG"
+        },
+        "unpaired": {
+          "30": "G",
+          "18": "C"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3618845",
+      "title": "Wormy",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0,GU,6,GC,4",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 1.2,
+      "missing_bps": [
+        [
+          17,
+          32
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          17,
+          32
+        ],
+        [
+          18,
+          30
+        ],
+        [
+          15,
+          33
+        ]
+      ],
+      "window_unpaired": [
+        31,
+        16
+      ],
+      "states_enumerated": 3456,
+      "rivals_tested_count": 16,
+      "initial_5rival_minimax_delta_e_kcal": -0.5,
+      "cutting_plane_minimax_delta_e_kcal": 0.1,
+      "dominant_rival": "open_18_30",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(17,32)": "GC",
+          "(18,30)": "CG",
+          "(15,33)": "GC"
+        },
+        "unpaired": {
+          "31": "A",
+          "16": "C"
+        }
+      }
+    },
+    {
+      "puzzle_id": "4304065",
+      "title": "Variance",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 1.5,
+      "missing_bps": [
+        [
+          58,
+          82
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          58,
+          82
+        ],
+        [
+          60,
+          81
+        ],
+        [
+          57,
+          84
+        ]
+      ],
+      "window_unpaired": [
+        59,
+        83
+      ],
+      "states_enumerated": 3456,
+      "rivals_tested_count": 10,
+      "initial_5rival_minimax_delta_e_kcal": -1.0,
+      "cutting_plane_minimax_delta_e_kcal": 0.1,
+      "dominant_rival": "mfe_rival",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(58,82)": "GC",
+          "(60,81)": "GC",
+          "(57,84)": "GC"
+        },
+        "unpaired": {
+          "59": "A",
+          "83": "G"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3343790",
+      "title": "More loops",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 2.0,
+      "missing_bps": [
+        [
+          9,
+          59
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          9,
+          59
+        ],
+        [
+          11,
+          56
+        ],
+        [
+          6,
+          61
+        ]
+      ],
+      "window_unpaired": [
+        10,
+        58,
+        8
+      ],
+      "states_enumerated": 13824,
+      "rivals_tested_count": 5,
+      "initial_5rival_minimax_delta_e_kcal": 1.1,
+      "cutting_plane_minimax_delta_e_kcal": 1.1,
+      "dominant_rival": "mfe_rival",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(9,59)": "GC",
+          "(11,56)": "CG",
+          "(6,61)": "CG"
+        },
+        "unpaired": {
+          "10": "A",
+          "58": "G",
+          "8": "G"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3349978",
+      "title": "Less loops",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 2.3,
+      "missing_bps": [
+        [
+          15,
+          43
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          15,
+          43
+        ],
+        [
+          17,
+          42
+        ],
+        [
+          12,
+          45
+        ]
+      ],
+      "window_unpaired": [
+        16,
+        14,
+        13
+      ],
+      "states_enumerated": 13824,
+      "rivals_tested_count": 12,
+      "initial_5rival_minimax_delta_e_kcal": -0.6,
+      "cutting_plane_minimax_delta_e_kcal": 0.3,
+      "dominant_rival": "mfe_rival",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(15,43)": "CG",
+          "(17,42)": "GC",
+          "(12,45)": "GC"
+        },
+        "unpaired": {
+          "16": "G",
+          "14": "G",
+          "13": "A"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3439296",
+      "title": "1 Locked nt",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 2.4,
+      "missing_bps": [
+        [
+          8,
+          49
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          8,
+          49
+        ],
+        [
+          10,
+          21
+        ],
+        [
+          7,
+          51
+        ]
+      ],
+      "window_unpaired": [
+        9,
+        48,
+        50
+      ],
+      "states_enumerated": 4608,
+      "rivals_tested_count": 8,
+      "initial_5rival_minimax_delta_e_kcal": -0.2,
+      "cutting_plane_minimax_delta_e_kcal": 1.5,
+      "dominant_rival": "cp_rival_7",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(8,49)": "CG",
+          "(10,21)": "GC",
+          "(7,51)": "CG"
+        },
+        "unpaired": {
+          "9": "U",
+          "48": "A",
+          "50": "U"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3321286",
+      "title": "Loop & Bulge",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 2.5,
+      "missing_bps": [
+        [
+          8,
+          39
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          8,
+          39
+        ],
+        [
+          11,
+          38
+        ],
+        [
+          6,
+          41
+        ]
+      ],
+      "window_unpaired": [
+        9,
+        10,
+        7
+      ],
+      "states_enumerated": 13824,
+      "rivals_tested_count": 38,
+      "initial_5rival_minimax_delta_e_kcal": -2.0,
+      "cutting_plane_minimax_delta_e_kcal": 0.2,
+      "dominant_rival": "cp_rival_14",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(8,39)": "GC",
+          "(11,38)": "CG",
+          "(6,41)": "GC"
+        },
+        "unpaired": {
+          "9": "A",
+          "10": "U",
+          "7": "G"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3480541",
+      "title": "Zanna : Wizzen",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0,GU,5,GC,7",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 2.5,
+      "missing_bps": [
+        [
+          61,
+          71
+        ]
+      ],
+      "extra_bps": [],
+      "window_pairs": [
+        [
+          61,
+          71
+        ],
+        [
+          64,
+          69
+        ],
+        [
+          59,
+          74
+        ]
+      ],
+      "window_unpaired": [
+        62,
+        63,
+        60
+      ],
+      "states_enumerated": 13824,
+      "rivals_tested_count": 5,
+      "initial_5rival_minimax_delta_e_kcal": 0.4,
+      "cutting_plane_minimax_delta_e_kcal": 0.4,
+      "dominant_rival": "mfe_rival",
+      "minimax_optimal_window_assignment": {
+        "pairs": {
+          "(61,71)": "CG",
+          "(64,69)": "GC",
+          "(59,74)": "CG"
+        },
+        "unpaired": {
+          "62": "U",
+          "63": "C",
+          "60": "A"
+        }
+      }
+    },
+    {
+      "puzzle_id": "3664347",
+      "title": "Cut & Paste puzzles",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 3.6,
+      "missing_bps": [],
+      "extra_bps": [
+        [
+          22,
+          91
+        ]
+      ],
+      "law_r7_parasitic_prop": true,
+      "unpropped_min_dbp_when_extra_broken": 4,
+      "unpropped_de_mfe_kcal": 2.3,
+      "unpropped_best_mismatch": "AG"
+    },
+    {
+      "puzzle_id": "3555373",
+      "title": "Some bulges & loops",
+      "folder": "Vienna",
+      "constraints": "SHAPE,0",
+      "d_bp": 1,
+      "v_budget": 0,
+      "de_mfe_kcal": 6.1,
+      "missing_bps": [],
+      "extra_bps": [
+        [
+          36,
+          66
+        ]
+      ],
+      "law_r7_parasitic_prop": true,
+      "unpropped_min_dbp_when_extra_broken": 14,
+      "unpropped_de_mfe_kcal": 5.7,
+      "unpropped_best_mismatch": "CA"
+    }
+  ]
+}

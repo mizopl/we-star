@@ -1,0 +1,104 @@
+{
+  "campaign": "V20-02B: eterna-hard",
+  "groups": {
+    "group1": {
+      "total": 100,
+      "v_budget_0": 100,
+      "solved_dbp_0": 5,
+      "dbp_1": 18,
+      "dbp_2": 8,
+      "dbp_le_2": 31,
+      "exact_ground_state_ties": 2,
+      "solved_puzzles": [
+        {
+          "puzzle_id": "3058243",
+          "title": "2 GU",
+          "sequence": "CGGGGAGGGACGAGGAGGGAAACUACGGGACGCACGAAAAAAAAGCACAGGACACAGUAAAAAGCGGGGGGGACGGGGGGC"
+        },
+        {
+          "puzzle_id": "3497795",
+          "title": "1-1 with triloop",
+          "sequence": "CUGGGGGCAAGGAAACACGGCGGGCAAAGAAACAAAGGCGGCGGAAACACGGGCAAAGGCGGGCAAGGCGCGAG"
+        },
+        {
+          "puzzle_id": "3620224",
+          "title": "Based on Brourd's puzzle",
+          "sequence": "GGCAGGGAAGACGAAAGCACGCGAAAGACAGGUAGGACGAAAGCAAAGACCCCCACCUUCGGCGGGCC"
+        },
+        {
+          "puzzle_id": "3714598",
+          "title": "Verity",
+          "sequence": "AGUGGCAGGACCCAGACCCACCCGGGGAAGUCGGCGAGUGGGAAACCCAAGGAAAACUAACGCCGCUCGGGCUGAAAAGACAACCCACGAGGAGAGGCAAGACGGGAAACGGCAAGGGCGGACGGC"
+        },
+        {
+          "puzzle_id": "3720758",
+          "title": "Flux",
+          "sequence": "CGAGAGGAAACCUGGGGAGGGAAACACUGCAGCCUACGAAAGAGAGCACGAGGGAAACACUGGCGUCACGAAAGGAGG"
+        }
+      ]
+    },
+    "group2": {
+      "total": 100,
+      "v_budget_0": 99,
+      "solved_dbp_0": 0,
+      "dbp_1": 15,
+      "dbp_2": 10,
+      "dbp_le_2": 25,
+      "exact_ground_state_ties": 2,
+      "solved_puzzles": []
+    },
+    "group3": {
+      "total": 100,
+      "v_budget_0": 99,
+      "solved_dbp_0": 6,
+      "dbp_1": 4,
+      "dbp_2": 8,
+      "dbp_le_2": 18,
+      "exact_ground_state_ties": 0,
+      "solved_puzzles": [
+        {
+          "puzzle_id": "5741038",
+          "title": "Choo's sequence extension",
+          "sequence": "GGGGACGUAGGGCAGGGGAGACGGAAACGCCGCACGAGACGCAGGGACCC"
+        },
+        {
+          "puzzle_id": "5811869",
+          "title": "Another Jerky",
+          "sequence": "CGACGCGGGACAGGGAGCGGAAACACGACGGACGAGGGCA"
+        },
+        {
+          "puzzle_id": "5868257",
+          "title": "NUNZIO's Mind's Eye",
+          "sequence": "GGACGAAAAUGGCAGGGAAAAAAAAAAAAAAAAAAAAAAAAAACCACCAGCAAAGCAGAGGCGCGAAACGGGACCCAGGGAAAAGCAAAAAAAGGAC"
+        },
+        {
+          "puzzle_id": "5881353",
+          "title": "Loop 1-...",
+          "sequence": "GCAAACAAACGAGGAAAGGACAAAAGGAAGGCAAAACCAAACGAAAAGGGGGGCACGGGACGCACGGGGGC"
+        },
+        {
+          "puzzle_id": "5887125",
+          "title": "1-...Loop 3",
+          "sequence": "GCAUCAAAAGGGGGAAAAGCAGCAGGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACGAGCAAAAGGCGCCAAAAACCGGAGAAAGGC"
+        },
+        {
+          "puzzle_id": "6104928",
+          "title": "Tesla's Hook",
+          "sequence": "GCGGCAAAGGACGGGGCAGCAGGAAACGGGACGAGACAGCGGGACAAAGGGAAAAGGCGAAGGCACCAGCAAAAAGCA"
+        }
+      ]
+    }
+  },
+  "totals": {
+    "swept_groups_1_to_3": 300,
+    "v_budget_0": 298,
+    "solved_dbp_0_groups_1_to_3": 11,
+    "solved_dbp_0_including_martian": 12,
+    "dbp_1": 37,
+    "dbp_2": 26,
+    "dbp_le_1_including_martian": 49,
+    "dbp_le_2_including_martian": 75,
+    "exact_ground_state_ties": 4,
+    "group1_d_bp_1_barrier_certificates": 18
+  }
+}
