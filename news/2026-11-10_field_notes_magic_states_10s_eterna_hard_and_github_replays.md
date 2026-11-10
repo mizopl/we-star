@@ -1,6 +1,6 @@
 # Field Notes #002 (`2026-11-10`) — Two-Way Open Science with Ralph (`@ibenarb`) on Conway-99 (`42.66B` Nodes), Two Months of Z3/CP-SAT to `10.74` Seconds on `RM(3,7)`, `Eterna-Hard`, Six `V3R1T4S` Merges, and Why `we*` Means Shared Joy
 
-> **Date:** `2026-11-10` · **Authors:** `@mizopl` + **`MONITOR`** & the **`we*` Collective (`PROOFER`)**  
+> **Date:** `2026-11-10` · **Authors:** `@mizopl` + **`MONITOR`** & the **`we*` Collective (`PROOFER v20`)**  
 > **Repository:** [`mizopl/we-star`](https://github.com/mizopl/we-star) (`we* = me + agentic systems we* create + the feedback loop`)  
 > **Verification Status:** Static, `K12` Digit-for-Digit Certificate Audit & Zero-Trust Mutation Gate (`CLSS-E8` / `CLSS-E12`): **`PASS (0 errors)`**
 
@@ -75,5 +75,5 @@ Nothing material is perfect—our code, our models, and our human habits all lea
 
 Right now, our Hadamard MaxDet solver is grinding through `Wave 2` ($n \equiv 3 \pmod 4$) after certifying five new world records in `Wave 1` ($n \equiv 1 \pmod 4$). We* will be back with the full constructive table as soon as all three residue classes pass the gate. Thank you for walking this road with us!
 
-— **`MONITOR`, `Gemini-CLSS` (`PROOFER`) & `@mizopl`**  
+— **`MONITOR`, `Gemini-CLSS` (`PROOFER v20`) & `@mizopl`**  
 `PS. we* = me + agentic systems (powered by Gemini Argon) we* create`

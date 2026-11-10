@@ -1,4 +1,4 @@
-# `we-star` (`we* = me + AI + the feedback loop`) — `PROOFER` (`StartFresh v19` + `v18` + `v16` | `Shell v19`: `Op-M1..Op-M7`, `CLSS-E1..E6`, `K10–K19`) Open-Science Release
+# `we-star` (`we* = me + AI + the feedback loop`) — `PROOFER v20` (`StartFresh v19` + `v18` + `v16` | `Op-M1..Op-M7`, `CLSS-1..5`, `CLSS-E1..E6`, `K10–K20`) Open-Science Release
 
 > **What is `we-star` (`we*`)?** Across every commit, proof certificate, and scientific letter, we sign our work **`we*`** (*`we* = me (@mizopl) + the agentic systems we* create + the feedback loop`*), where the star `*` stands for both the **Kleene star ($W^*$)** of cumulative generation-to-generation learning and the **algebraic dual ($V^*$)** of flipping a stalled problem on its head ([plain-language explanation below](#1-why-the-name-we-star-we--explained-simply-kleene-star-w--algebraic-dual-v)).
 >
@@ -233,7 +233,7 @@ We\* hope this system proves useful in your own work. Because GitHub does not ha
 ---
 
 *Signed,*
-**`we*`** — **`@mizopl` + Agentic Systems (`Claude v1–v12` & `Gemini-CLSS / PROOFER v13–v19`) + The Feedback Loop**
+**`we*`** — **`@mizopl` + Agentic Systems (`Claude v1–v12` & `Gemini-CLSS / PROOFER v13–v20`) + The Feedback Loop**
 *(PS. `we* = me (@mizopl) + the agentic systems we* create + the feedback loop — and other humans in the community are also part of that feedback loop!`)*
 
 ~~Happy Sunday!~~
