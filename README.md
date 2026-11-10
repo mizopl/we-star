@@ -1,179 +1,187 @@
-# `we-star` (`we* = me + AI + the feedback loop`) — `PROOFER v20` Open-Science Release
+# we-star
 
-> **What is `we-star` (`we*`)?** Across every commit, proof certificate, and scientific letter, we sign our work **`we*`** (*`we* = me (@mizopl) + the agentic systems we* create + the feedback loop`*), where `*` stands for both the **Kleene star ($W^*$)** of cumulative generation-to-generation learning and the **algebraic dual ($V^*$)** of flipping a stalled problem upside down ([see §5](#5-the-meaning-of-we-radical-openness--unedited-agent-reflections)).
->
-> **Motto:** ***"Nothing material is perfect."*** — Inspired by [`V3R1T4S`](https://github.com/elder-plinius/V3R1T4S) (`@elder-plinius` — *Thank You!*), [`OpenClaw`](https://github.com/openclaw/openclaw) (`@steipete`), and [`autoresearch`](https://github.com/karpathy/autoresearch) (`@karpathy`), we release our working discovery architecture (`StartFresh_v19` / `v18` / `v16`), reasoning graphs, dead ends, and executable verifiers openly as-is.
+<sub><b>we* = me (<a href="https://github.com/mizopl">@mizopl</a>) + the agentic systems we* create + the feedback loop</b> · PROOFER v20 Open-Science Release · <i>"Nothing material is perfect."</i></sub>
 
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./PROOFER-graph-v20-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="./PROOFER-graph-v20.png">
-    <img alt="PROOFER v20 Obsidian Knowledge and Decision Graph (Dark and Light Mode)" src="./PROOFER-graph-v20.png" width="480">
+    <img alt="PROOFER v20 Obsidian Knowledge and Decision Graph" src="./PROOFER-graph-v20.png" width="400">
   </picture>
   <br>
-  <em><b>Figure 0 — <code>PROOFER v20</code> Knowledge &amp; Decision Graph in Obsidian</b> (<code>2026-11-10</code>, <code>932</code> live Markdown notes across <code>330+</code> cycles; adaptive <a href="./PROOFER-graph-v20-dark.png">Dark</a> · <a href="./PROOFER-graph-v20.png">Light</a>). The dense upper-right supernova is the core <code>wiki/</code> &amp; constitutional hub, now bridging directly into a second multi-campaign constellation (<code>solutions/</code>, <code>stabrank/</code>, <code>Conway-99</code>, <code>Constitution Lab</code>, <code>Tug-of-War</code> gates, and <code>SEN</code> sleep dreams) framed by the outer observation crescent.</em>
-  <br>
-  <sub>⭐ If <code>we-star</code> inspires or helps your work, please consider giving the repository a Star · 📬 Free advice / collaboration: <a href="https://github.com/mizopl/we-star/issues/new">Open an Issue</a> or tag <code>@mizopl</code></sub>
+  <sub><b>Figure 0 — PROOFER v20 Knowledge &amp; Decision Graph</b> (2026-11-10 · 932 Markdown notes · 330+ cycles · <a href="./PROOFER-graph-v20-dark.png">dark</a> / <a href="./PROOFER-graph-v20.png">light</a>).<br>The upper-right core (wiki &amp; Constitution) bridges into a second constellation of 35 campaign packages, Tug-of-War gates, and sleep notes.</sub>
 </p>
 
 <details>
-<summary><b>🔭 Compare <code>PROOFER v19</code> vs. <code>PROOFER v20</code> Graph Evolution &amp; How Obsidian Birthed <code>rgraph.py</code></b> <i>(click to expand)</i></summary>
+<summary><sub>Compare PROOFER v19 (2026-10-28) vs. PROOFER v20 (2026-11-10) &amp; how Obsidian birthed rgraph.py</sub></summary>
 <br>
 
 <table>
   <tr>
-    <th align="center" width="50%"><code>PROOFER v19</code> Snapshot (<code>2026-10-28</code>)</th>
-    <th align="center" width="50%"><code>PROOFER v20</code> Snapshot (<code>2026-11-10</code>, <code>932</code> Notes)</th>
+    <th align="center" width="50%"><sub>PROOFER v19 · 2026-10-28</sub></th>
+    <th align="center" width="50%"><sub>PROOFER v20 · 2026-11-10 (932 notes)</sub></th>
   </tr>
   <tr>
     <td align="center">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="./PROOFER-graph-dark.png">
         <source media="(prefers-color-scheme: light)" srcset="./PROOFER-graph.png">
-        <img alt="PROOFER v19 Obsidian Knowledge Graph" src="./PROOFER-graph.png" width="340">
+        <img alt="PROOFER v19 Graph" src="./PROOFER-graph.png" width="310">
       </picture>
       <br>
-      <sub><em><b><code>PROOFER v19</code></b> (<a href="./PROOFER-graph-dark.png">Dark</a> · <a href="./PROOFER-graph.png">Light</a>; earlier <code>v18</code> archived in <a href="./StartFresh_v18/README.md"><code>StartFresh_v18/</code></a>): ingested <code>V3R1T4S</code> problem supernova, central <code>CONSTITUTION</code> hub, and outer crescent.</em></sub>
+      <sub>Ingested V3R1T4S supernova, central constitutional hub, and outer crescent (<a href="./PROOFER-graph-dark.png">dark</a> · <a href="./PROOFER-graph.png">light</a> · v18 in <a href="./StartFresh_v18/README.md">StartFresh_v18</a>).</sub>
     </td>
     <td align="center">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="./PROOFER-graph-v20-dark.png">
         <source media="(prefers-color-scheme: light)" srcset="./PROOFER-graph-v20.png">
-        <img alt="PROOFER v20 Obsidian Knowledge Graph" src="./PROOFER-graph-v20.png" width="340">
+        <img alt="PROOFER v20 Graph" src="./PROOFER-graph-v20.png" width="310">
       </picture>
       <br>
-      <sub><em><b><code>PROOFER v20</code></b> (<a href="./PROOFER-graph-v20-dark.png">Dark</a> · <a href="./PROOFER-graph-v20.png">Light</a>): full <code>932</code>-note binary-star constellation uniting <code>wiki/</code>, <code>CONSTITUTION_LAB/</code>, <code>hall_of_fame/</code>, <code>tug/</code>, and 35 standalone campaign packages.</em></sub>
+      <sub>Binary-star constellation uniting wiki, Constitution Lab, Hall of Fame, Tug-of-War, and standalone proof packages (<a href="./PROOFER-graph-v20-dark.png">dark</a> · <a href="./PROOFER-graph-v20.png">light</a>).</sub>
     </td>
   </tr>
 </table>
 
-**[Obsidian](https://obsidian.md/)** serves as `@mizopl`'s live visual cockpit over the filesystem — and directly birthed the agent's own reasoning-graph engine ([`rgraph.py`](./StartFresh_v16/scripts/rgraph.py)):
-1. **`v1`–`v8` (`Wiki OS`):** Step 7 required compiling spatial mindmaps as native Obsidian `.canvas` JSON files (`1=red`..`6=purple`).
-2. **`v9` (`2026-10-17`):** `@mizopl` prompted: *"Create reasoning graphs readable for yourself, so you don't walk in circles."*
-3. **`rgraph.py`:** Translated Obsidian's node/edge/color model into append-only `.jsonl` decision trees (`question -> hypothesis -> experiment -> kill/close`) that block duplicate dead ends (`exit 2`) and export directly back to `.canvas` boards. *(Full trace in [`docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md`](./docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md).)*
+<sub><b>From Obsidian to rgraph.py:</b> Early generations (v1–v8) compiled mindmaps as native Obsidian <code>.canvas</code> files. On 2026-10-17 (v9), @mizopl asked the agent to <i>"create reasoning graphs readable for yourself, so you don't walk in circles"</i> — birthing <a href="./StartFresh_v16/scripts/rgraph.py"><code>rgraph.py</code></a>, which logs append-only <code>.jsonl</code> decision trees, blocks duplicate dead ends, and exports back to Obsidian boards (<a href="./docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md">full trace</a>).</sub>
 
 </details>
 
 ---
 
-## 1. Live `we*` Status, Upstream Merges & Field Notes
+Built with Google Antigravity (Gemini) and Claude Code on a 16 GB M1 laptop (with heavy compute offloaded on demand), **we-star** shares our open-science discovery architecture ([`StartFresh_v19`](./StartFresh_v19/)), reasoning graphs, dead ends, and verifiers. Across 330+ cycles, it has produced **35 machine-verified benchmark solutions** (43 packages across all 18 domains of [V3R1T4S](https://github.com/elder-plinius/V3R1T4S), [eterna-hard](./eterna-hard/), and [stabrank](./stabrank/)), including **52 zero-axiom Lean 4 proof modules/theorems**.
 
-> **15-Second Verification Summary (Built on Google Antigravity `AGY` & Gemini + Claude Code):** Across **330+ autonomous cycles** on a `16 GB M1 laptop` (with heavy compute offloaded on demand), `we-star` (`PROOFER`) has produced **35 machine-verified scientific & mathematical benchmark solutions** (`43` proof packages on [`elder-plinius/V3R1T4S`](https://github.com/elder-plinius/V3R1T4S) spanning all `18 / 18` scientific domains, the 300-puzzle [`./eterna-hard/`](./eterna-hard/) package, and the [`./stabrank/`](./stabrank/) package for [`unitaryfoundation/stabrank`](https://github.com/unitaryfoundation/stabrank)), including **52 zero-axiom (`0 sorryAx`) Lean 4 proof modules/theorems**.
->
-> **Latest Lab Dispatches ([`./news/`](./news/)):**
-> - **[Field Notes #002 (`2026-11-10`)](./news/2026-11-10_field_notes_magic_states_10s_eterna_hard_and_github_replays.md):** Two-way collaboration with Ralph (`@ibenarb`) on Conway-99 (`42.66B` nodes), 2 months of Z3/CP-SAT reduced to `10.74 s` on `RM(3,7)` (`PR #1043`), `Eterna-Hard` & a `ViennaRNA 2.6.4` C-API bug, 6 `V3R1T4S` merges, and why `we*` means shared joy.
-> - **[Field Notes #001 (`2026-11-02`)](./news/2026-11-02_field_notes_small_wins_agent_mail_and_constitution_v20.md):** `Conway-99` peer-review surgery, `V3R1T4S#433` & `MatMulCatalog#21` (`REFERENCES [92]`) merges, agent-to-agent mail (`XERJ`), restoring Classic `CLSS` in `CONSTITUTION v20`, and a direct note from `MONITOR`.
+<sub><b>Field Notes (<a href="./news/">news/</a>):</b> <a href="./news/2026-11-10_field_notes_magic_states_10s_eterna_hard_and_github_replays.md">#002 · 2026-11-10</a> (Conway-99 with @ibenarb, 2-month SAT to 10.74s on RM(3,7), Eterna-Hard &amp; ViennaRNA bug) · <a href="./news/2026-11-02_field_notes_small_wins_agent_mail_and_constitution_v20.md">#001 · 2026-11-02</a> (MatMulCatalog #21, agent mail, v20 Lab).</sub>
 
-| External Repository / Catalog | Status & Key Contribution | Links & Verification |
+#### External Merges & Upstream Integrations
+
+| Upstream | Contribution | Links |
 |:---|:---|:---|
-| **[`teorth/optimizationproblems`](https://github.com/teorth/optimizationproblems)** (`#27`) | **`MERGED` as `[M2026]` (`PR #236`):** Odd-base ($b=9,13$) finite-bound proof $C_{3a} \le 1.3833368691$ in [`constants/3a.md`](https://github.com/teorth/optimizationproblems/blob/main/constants/3a.md); `PR #339` ($c_{3e} \ge 2.207281623640$) & `PR #340` independently replayed in [`quantavane-replays`](https://github.com/arhancanli/quantavane-replays), [`quantavane-mcp`](https://github.com/arhancanli/quantavane-mcp) & [`math-certificates`](https://github.com/rpinho/math-certificates) | [PR #236 (`MERGED`)](https://github.com/teorth/optimizationproblems/pull/236) · [PR #339](https://github.com/teorth/optimizationproblems/pull/339) · [PR #340](https://github.com/teorth/optimizationproblems/pull/340) · [Proof Repo](https://github.com/mizopl/ghr-c3a-odd-base-finite-bound) |
-| **[`unitaryfoundation/stabrank`](https://github.com/unitaryfoundation/stabrank)** (`#35`) | **Submitted (`3h 34m` end-to-end, `4/4` bets won):** `35/35` exact $\mathbb{Z}[i]$ & $\mathbb{Z}[\omega_3]$ stabilizer-rank bounds at `tier=verified` in `20.46 s` (`PR #193`, up to `350x` faster) + `10/10` zero-axiom (`0 sorryAx`) Lean 4 modules (`PR #194`) + fork-CI report (`Issue #195`) | [PR #193](https://github.com/unitaryfoundation/stabrank/pull/193) · [PR #194 (Lean 4)](https://github.com/unitaryfoundation/stabrank/pull/194) · [Issue #195](https://github.com/unitaryfoundation/stabrank/issues/195) · [`./stabrank/`](./stabrank/) · [`LESSONS_LEARNED.md`](./stabrank/LESSONS_LEARNED.md) |
-| **[`eternagame/eterna100-benchmarking`](https://github.com/eternagame/eterna100-benchmarking/issues/14) & [`eterna-hard`](https://github.com/eternagame/eterna-hard)** (`#32`) | **De novo RNA inverse folding:** `95/100` (`d_bp=0`) on `Eterna100-V2` (vs `DesiRNA = 92/100`) + 3 Turner undesignability laws (`V3R1T4S PR #1031`); on 300-puzzle `eterna-hard`: `12` historical `solvers=1` solves (`check_design.py` `PASS`), `75/300` at `d_bp<=2`, `18/18` Group 1 barriers & `ViennaRNA 2.6.4` C-API `dangles=2` bug report | [`V3R1T4S` PR #1031](https://github.com/elder-plinius/V3R1T4S/pull/1031) · [`eterna100#14`](https://github.com/eternagame/eterna100-benchmarking/issues/14) · [`./eterna-hard/`](./eterna-hard/) · [`./solutions/eterna100-v2-vienna2-algorithmic-solve/`](./solutions/eterna100-v2-vienna2-algorithmic-solve/) |
-| **[`solven-eu/matmulcatalog`](https://github.com/solven-eu/matmulcatalog/pull/21) & [`FastMatrixMultiplication`](https://github.com/dronperminov/FastMatrixMultiplication)** (`#8, #15`) | **`MERGED` (`PR #21`, `REFERENCES [92]`):** `mizopl/we-star` wired in as a 3-hourly automated upstream source (`UpstreamSchemeRepos.MIZOPL`, `52` scheme files across 11 `ZT`/`Z` rank reductions + 48 SLPs); 4 ternary schemes merged in `FastMatrixMultiplication` | [`MatMulCatalog` PR #21](https://github.com/solven-eu/matmulcatalog/pull/21) · [`FastMatrixMultiplication`](https://github.com/dronperminov/FastMatrixMultiplication) · [`V3R1T4S` PR #616 (`MERGED`)](https://github.com/elder-plinius/V3R1T4S/pull/616) |
-| **[`codetables.de`](https://www.codetables.de) & Quantum `AME` / Magic States** (`#9, #33, #34`) | **Published upstream in `codetables.de`:** 5 optimal quantum stabilizer codes over $\mathbb{F}_5, \mathbb{F}_7, \mathbb{F}_8, \mathbb{F}_9$ + 1,008-cell purity audit (`PR #975`), 19 `AME` closures (`95/95` prime-power $D \ge 11, n \le 20$), `8.50 s` Galois stabilizer-rank lower bounds (`PR #1039`), and `10.74 s` `RM(3,7)` proof of $N_{\text{CCZ}}(4)=10, N_T(4)\ge 9$ (`PR #1043`) | [`codetables.de`](https://www.codetables.de) · [PR #975](https://github.com/elder-plinius/V3R1T4S/pull/975) · [PR #1039](https://github.com/elder-plinius/V3R1T4S/pull/1039) · [PR #1043](https://github.com/elder-plinius/V3R1T4S/pull/1043) |
-| **[`ihtc2024`](https://github.com/ihtc2024/ihtc2024.github.io/commit/c078cf57) & [`elder-plinius/V3R1T4S` `main`](https://github.com/elder-plinius/V3R1T4S/pulls?q=is%3Apr+author%3Amizopl+is%3Amerged)** (`#7, #12, #16, #18, #24`) | **`MERGED` upstream:** 31 official hospital timetabling Best-Known Solutions (`c078cf57`) + **6 PRs merged into `V3R1T4S` `main`** (`#366` 45-digit `OEIS A054759(15)` confirmed in `#459`, `#433` DNA minimizer `0.136569`, `#517` & `#723` Lychrel Base-50/98, `#616` ternary SLPs, `#617` Herculaneum `PHerc. 343`) | [`IHTC-2024` `c078cf57`](https://github.com/ihtc2024/ihtc2024.github.io/commit/c078cf57) · [Merged `V3R1T4S` PRs](https://github.com/elder-plinius/V3R1T4S/pulls?q=is%3Apr+author%3Amizopl+is%3Amerged) |
-| **[`mizopl/conway-99-graph`](https://github.com/mizopl/conway-99-graph) $\leftrightarrow$ [`ibenarb/conway99-research`](https://github.com/ibenarb/conway99-research)** (`#5`) | **Formalized & adopted:** `42` zero-axiom (`0 sorryAx`) Lean 4 theorems (`5 Master Theorems`), `54` Pure-RUP LRAT UNSAT certificates ($p=7$ `p7_fix1` in `0.82 s`), unconditional `(0,7,0)` $k_{\text{type1}} \ge 1$ closure (`42.66B` nodes), with 62-class `(M,E)` & `Stab8` adopted by `@ibenarb` | [`mizopl/conway-99-graph`](https://github.com/mizopl/conway-99-graph) · [PR #774](https://github.com/elder-plinius/V3R1T4S/pull/774) · [PR #840](https://github.com/elder-plinius/V3R1T4S/pull/840) |
+| <sub>[teorth/opt](https://github.com/teorth/optimizationproblems)</sub> | <sub>Merged as [M2026]: $C_{3a} \le 1.3833368691$ ($b=9,13$); #339/#340 independently replayed</sub> | <sub>[#236](https://github.com/teorth/optimizationproblems/pull/236) · [3a.md](https://github.com/teorth/optimizationproblems/blob/main/constants/3a.md) · [replays](https://github.com/arhancanli/quantavane-replays)</sub> |
+| <sub>[unitary/stabrank](https://github.com/unitaryfoundation/stabrank)</sub> | <sub>3h 34m campaign: 35/35 exact Galois bounds (20.46s) + 10/10 zero-axiom Lean 4 modules</sub> | <sub>[#193](https://github.com/unitaryfoundation/stabrank/pull/193) · [#194](https://github.com/unitaryfoundation/stabrank/pull/194) · [pkg](./stabrank/)</sub> |
+| <sub>[eternagame](https://github.com/eternagame/eterna-hard)</sub> | <sub>95/100 on Eterna100-V2 + 12 historical solvers=1 solves &amp; ViennaRNA C-API bug</sub> | <sub>[#1031](https://github.com/elder-plinius/V3R1T4S/pull/1031) · [eterna-hard](./eterna-hard/)</sub> |
+| <sub>[matmulcatalog](https://github.com/solven-eu/matmulcatalog/pull/21)</sub> | <sub>Merged ([92]): 3-hourly sync of 52 schemes (11 ZT/Z ranks + 48 SLPs); 4 merged in FMM</sub> | <sub>[#21](https://github.com/solven-eu/matmulcatalog/pull/21) · [FMM](https://github.com/dronperminov/FastMatrixMultiplication) · [#616](https://github.com/elder-plinius/V3R1T4S/pull/616)</sub> |
+| <sub>[codetables.de](https://www.codetables.de)</sub> | <sub>5 stabilizer codes ($\mathbb{F}_{5..9}$) published, 1,008-cell audit &amp; 19 AME closures</sub> | <sub>[site](https://www.codetables.de) · [#975](https://github.com/elder-plinius/V3R1T4S/pull/975) · [#1043](https://github.com/elder-plinius/V3R1T4S/pull/1043)</sub> |
+| <sub>[ihtc2024](https://github.com/ihtc2024/ihtc2024.github.io/commit/c078cf57) / [V3R1T4S](https://github.com/elder-plinius/V3R1T4S/pulls?q=is%3Apr+author%3Amizopl+is%3Amerged)</sub> | <sub>31 official hospital BKS merged upstream + 6 merged V3R1T4S main PRs across 5 domains</sub> | <sub>[c078cf57](https://github.com/ihtc2024/ihtc2024.github.io/commit/c078cf57) · [PRs](https://github.com/elder-plinius/V3R1T4S/pulls?q=is%3Apr+author%3Amizopl+is%3Amerged)</sub> |
+| <sub>[conway-99](https://github.com/mizopl/conway-99-graph)</sub> | <sub>42 zero-axiom Lean 4 theorems &amp; 54 LRAT proofs ($p=7$ in 0.82s), adopted by @ibenarb</sub> | <sub>[repo](https://github.com/mizopl/conway-99-graph) · [#774](https://github.com/elder-plinius/V3R1T4S/pull/774) · [ibenarb](https://github.com/ibenarb/conway99-research)</sub> |
 
----
+#### Selected Benchmark Highlights (10 of 35)
 
-## 2. Compact Index of All 35 Verifiable Scientific & Mathematical Campaigns
-
-> 📖 **Full Unabridged Benchmark Atlas (with complete derivations, scientific significance & complexity notes on `P`/`NP` vs. `#P`/`NPO`):** **[`docs/00_FULL_BENCHMARK_ATLAS.md`](./docs/00_FULL_BENCHMARK_ATLAS.md)**
-
-| # | Benchmark & Domain | Key Machine-Verified Result | Verify & Links |
-|---:|:---|:---|:---|
-| **1** | **TraitGym Non-Coding Variants** (*Clinical Genomics*) | CADD-free zero-shot `0.7896` AUPRC (`+0.0774`, `9/9` subsets); exposes `MAF-Matching Shortcut` & $L_2$ dilution $\alpha = 114/7611$ | [PR #769](https://github.com/elder-plinius/V3R1T4S/pull/769) · [Package](./solutions/traitgym-mendelian-zero-shot-auprc/) |
-| **2** | **Single-Cell CRISPRi Perturbation** (*Functional Genomics*) | Distance-to-training decomposition (`p2`, 5 cohorts) + Hollow LOO graph regression K562 $L_2$: `4.0970 -> 3.3203` (`-18.96%`) | [PR #766](https://github.com/elder-plinius/V3R1T4S/pull/766) · [Package](./solutions/linear-baseline-perturbation-replogle-k562/) |
-| **3** | **FLAb Antibody Developability** (*Protein Biophysics*) | `11/14` aggregation/polyreactivity datasets won (zero learned params); proves unweighted $\|\rho\|$ Simpson's Paradox & germline confounding | [PR #767](https://github.com/elder-plinius/V3R1T4S/pull/767) · [Package](./solutions/flab-antibody-developability-zero-shot/) |
-| **4** | **Missing Degree-57 Moore Graph** (*Algebraic Graph Theory*) | Excludes $\|\mathrm{Aut}(\Gamma)\| \in \{275, 175\}$, $C_{55}$ Case A & 11 even orders (`p1`) + verifies all 22 prime orders of `2606.29183v2` (`p2`) | [PR #770](https://github.com/elder-plinius/V3R1T4S/pull/770) · [PR #983](https://github.com/elder-plinius/V3R1T4S/pull/983) · [Package](./solutions/moore-graph-57/) |
-| **5** | **Conway's 99-Graph Problem** (*Combinatorics, Lean 4 & LRAT*) | `54` Pure-RUP LRAT proofs ($p=7$ in `0.82 s`), `42` `0 sorryAx` Lean 4 theorems, unconditional `(0,7,0)` $k_{\text{type1}} \ge 1$ (`42.66B` nodes) | [Repo](https://github.com/mizopl/conway-99-graph) · [PR #774](https://github.com/elder-plinius/V3R1T4S/pull/774) · [PR #840](https://github.com/elder-plinius/V3R1T4S/pull/840) |
-| **6** | **Blind MHC-I Peptide Binding** (*Cancer Immunotherapy*) | Blind ROC-AUC `0.8896` across 87 datasets (beats `NetMHC`/`NetMHCpan`), `+2.08%` on 20 rarest HLA alleles via Tobit censoring calibration | [PR #763](https://github.com/elder-plinius/V3R1T4S/pull/763) · [Package](./solutions/iedb-mhci-bd2009-blind-auc/) |
-| **7** | **Healthcare Timetabling (`IHTC-2024`)** (*Operations Research*) | **31 official Best-Known Solutions merged upstream** (`i27 = 50,063`, hidden `m28 = 45,873`, `0` hard violations) | [Merge `c078cf57`](https://github.com/ihtc2024/ihtc2024.github.io/commit/c078cf57) · [PR #416](https://github.com/elder-plinius/V3R1T4S/pull/416) · [PR #431](https://github.com/elder-plinius/V3R1T4S/pull/431) |
-| **8** | **Ternary $\mathbb{Z}_T$ Fast Matrix Multiplication** (*Algebraic Complexity*) | **11 ternary/integer rank reductions** (`9x12x14 -> 954`, `10x15x15 -> 1389`, `12x15x15 -> 1640`, `14x15x15 -> 1894`), merged in `MatMulCatalog` | [`MatMulCatalog#21`](https://github.com/solven-eu/matmulcatalog/pull/21) · [PR #402](https://github.com/elder-plinius/V3R1T4S/pull/402) · [PR #615](https://github.com/elder-plinius/V3R1T4S/pull/615) |
-| **9** | **Quantum `AME` & `MDS` Stabilizer Codes** (*Quantum Error Correction*) | 4 Huber $D \le 10$ cells (`AME(9..11,10)`, `AME(17,8)`) + 15 $D \ge 11$ closures (`95/95` for $n \le 20$) + 5 `codetables.de` codes & 1,008-cell audit | [PR #576](https://github.com/elder-plinius/V3R1T4S/pull/576) · [PR #614](https://github.com/elder-plinius/V3R1T4S/pull/614) · [PR #975](https://github.com/elder-plinius/V3R1T4S/pull/975) · [Package](./solutions/ame-states-open-cells-huber-table/) |
-| **10** | **Fault-Tolerant Quantum Compilation** (*Reversible Arithmetic*) | `03_invsqrt`: `Q = 103` qubits (`-56.2%`), `T = 3,396` Toffolis (`-61.6%`), `5.694x` score verified across all `3,133,452` inputs | [Derivation](./docs/01_OUR_JOURNEY_AND_RESULTS.md#step-3-fmm--addition-slps--quantum-ame-longrightarrow-quantum-circuit-compilation--reversible-addition-wave-5-synthesis) |
-| **11** | **Symmetric $\mathbb{F}_2$ Waring Rank (`polytof`)** (*Quantum $T$-Count*) | 88-tensor audit + 4 repaired `.npy` (`p3`), `0725` $\mathrm{GF}(2^2)$ optimality (`CP=3, Waring=17`), `GF(2^9)` `147->139` (`0.17 s`), `GF(2^10)` `173->161` | [PR #761](https://github.com/elder-plinius/V3R1T4S/pull/761) · [PR #973](https://github.com/elder-plinius/V3R1T4S/pull/973) · [Package](./solutions/polytof-toffoli-tcount-benchmark-tensors/) |
-| **12** | **Lychrel Numbers in New Bases** (*Number Theory*) | First proven non-$2^k$ bases since 1996: $b = 50, 98, 146$ in `41 min` (`#517` & `#723` `MERGED`) + 11 bases in $b \equiv 2 \pmod{24}$ | [PR #517](https://github.com/elder-plinius/V3R1T4S/pull/517) · [PR #723](https://github.com/elder-plinius/V3R1T4S/pull/723) · [Repo](https://github.com/mizopl/lychrel-bases-50-98-146-proof) |
-| **13** | **TCR–Epitope Specificity (`ImmRep22`)** (*Immunology*) | Mean MicroAUC `0.8822` vs `0.8473` (`+0.0348`) across 17 unseen viral/cancer peptides (`p1..p3`) | [PR #569](https://github.com/elder-plinius/V3R1T4S/pull/569) · [Kit](./Evolved_Agent_Wiki/reports/04_preprints_and_domain_kits/) |
-| **14** | **MoleculeACE Activity Cliffs** (*Cheminformatics*) | Single global blend (`0.55 ET + 0.45 SVR`) wins `29/30` ChEMBL targets on Overall RMSE (`0.6431` vs `0.7336`) & `27/30` on Cliff RMSE | [PR #568](https://github.com/elder-plinius/V3R1T4S/pull/568) · [Graph](./StartFresh_v16/graphs/ancestral_v15_atlas/polaris-moleculeace-activity-cliff-mse.jsonl) |
-| **15** | **Vector Addition SLP Complexity** (*Arithmetic Circuits*) | **4 ternary $\mathbb{Z}_T$ SLP addition records (`MERGED`)** from a 48-SLP sweep (`3x3x7` `167`, `3x5x6` `245`, `3x5x7` `294`, `5x6x6` `492`) | [PR #616 (`MERGED`)](https://github.com/elder-plinius/V3R1T4S/pull/616) · [`MatMulCatalog#21`](https://github.com/solven-eu/matmulcatalog/pull/21) |
-| **16** | **Hard-Square Lattice Gas Counts** (*`#P` Statistical Mechanics*) | **45-digit `OEIS A054759(15)` (`MERGED`, confirmed in `#459`)** + full 80-entry antidiagonal $d=79$ of `A089980` via dihedral CRT | [PR #366 (`MERGED`)](https://github.com/elder-plinius/V3R1T4S/pull/366) · [PR #462](https://github.com/elder-plinius/V3R1T4S/pull/462) |
-| **17** | **JARVIS Small-Data Materials** (*Condensed Matter*) | `tinnet_N_ead` MAE `0.1293 eV` vs `0.1419 eV` (`-8.91%`, beats Matminer/ALIGNN) + strictly inductive 5-fold CV audit | [PR #599](https://github.com/elder-plinius/V3R1T4S/pull/599) · [Graph](./StartFresh_v16/graphs/ancestral_v15_atlas/jarvis-small-data-exfoliation-tc-mae.jsonl) |
-| **18** | **DNA Minimizer Density Records** (*Genomic Indexing*) | New 4-ary DNA records: `(w=12, k=3)` `0.136569` (`-1.32%`, `MERGED` `#433`) & `(w=12, k=4)` `0.132770` (`-0.71%`, `#976`) | [PR #433 (`MERGED`)](https://github.com/elder-plinius/V3R1T4S/pull/433) · [PR #976](https://github.com/elder-plinius/V3R1T4S/pull/976) |
-| **19** | **`VNN-COMP 2026` Neural Verification** (*AI Formal Safety*) | Certified adversarial counterexample $x^*$ (`margin = -0.589 < 0` in `fp32`/`fp64`) for unsolved `tinyimagenet_eps1_wide_cnn7_idx7687_sample8` | [PR #566](https://github.com/elder-plinius/V3R1T4S/pull/566) · [Graph](./StartFresh_v16/graphs/ancestral_v15_atlas/vnncomp-2026-unsolved-instance-counterexample.jsonl) |
-| **20** | **La Jolla Covering Designs (`LJCR`)** (*Extremal Combinatorics*) | 3 improved upper bounds: $C(94,13,5) \le 125,184$ (`-4,019`), $C(68,14,5) \le 15,675$ (`-329`), $C(40,16,7) \le 7,251$ (`-219`) | [PR #397](https://github.com/elder-plinius/V3R1T4S/pull/397) · [PR #398](https://github.com/elder-plinius/V3R1T4S/pull/398) · [PR #435](https://github.com/elder-plinius/V3R1T4S/pull/435) |
-| **21** | **Degree–Diameter Graph Table** (*Network Topology*) | New graph of order $N = 1,118$ for $(d=14, k=3)$ (`+2` vertices over Comellas's $1,116$ record, moved to `known-knowns/`) | [PR #457](https://github.com/elder-plinius/V3R1T4S/pull/457) · [Graph](./StartFresh_v16/graphs/ancestral_v15_atlas/degree-diameter-table.jsonl) |
-| **22** | **Bimetallic Gupta Nanoalloys** (*Computational Chemistry*) | 8 new lower-energy global minima across `Cu-Ag` 55-atom clusters ($\text{Cu}_{39}\text{Ag}_{16}$ at `-163.80214 eV`, $\Delta E = -1.19\text{ eV}$) | [PR #466](https://github.com/elder-plinius/V3R1T4S/pull/466) · [Graph](./StartFresh_v16/graphs/ancestral_v15_atlas/ccd-binary-gupta-nanoalloys-38-55.jsonl) |
-| **23** | **Akkadian Cuneiform Restoration** (*Ancient NLP*) | `Hit@5 = 0.92156` (`+3.16` pts vs paper) & `MRR = 0.85593` across `27,650` held-out tokens (`SLAB-NLP/Akk`) | [PR #611](https://github.com/elder-plinius/V3R1T4S/pull/611) · [Graph](./StartFresh_v16/graphs/ancestral_v15_atlas/akkadian-lacuna-restoration-heldout.jsonl) |
-| **24** | **Herculaneum Scroll CT Registration** (*Vesuvius Papyrology*) | Cross-segment sheet registration `r = 0.9683` pooled / `0.9310` standalone on `PHerc. 343 w047/w048` (`MERGED`) | [PR #617 (`MERGED`)](https://github.com/elder-plinius/V3R1T4S/pull/617) · [Graph](./StartFresh_v16/graphs/ancestral_v15_atlas/vesuvius-first-letters-unread.jsonl) |
-| **25** | **Asteroid Precovery Arc Extension** (*Planetary Defense*) | `20.93x` arc extension (`-87.38%` $\sigma_a$) on `2019 QT15` (`#607`) + 4-epoch `2014 OV236` precovery (`#838`) verified via JPL Horizons | [PR #607](https://github.com/elder-plinius/V3R1T4S/pull/607) · [PR #838](https://github.com/elder-plinius/V3R1T4S/pull/838) |
-| **26** | **Uncatalogued GMN Meteor Shower** (*Orbital Dynamics*) | Multi-country stream `M1_Cepheus_MC` ($N=16$ orbits across 4 years `2023–2026`, `0` matches in `2,197`-row IAU MDC list at $D_{\text{SH}} < 0.20$) | [PR #597](https://github.com/elder-plinius/V3R1T4S/pull/597) · [Dossier](./Evolved_Agent_Wiki/reports/02_autonomous_lab_and_dossiers/dossiers/dossier_iau-mdc-new-meteor-shower-gmn.md) |
-| **27** | **Erdős–GHR Sum-Difference Constant** (*Additive Number Theory*) | Lower bound $C_{3a} > 1.19230254$ (`#485`) + odd-base ($b=9,13$) upper bound $C_{3a} \le 1.3833368691$ (`MERGED` as `[M2026]` in `teorth#236`) | [`teorth` PR #236](https://github.com/teorth/optimizationproblems/pull/236) · [PR #485](https://github.com/elder-plinius/V3R1T4S/pull/485) · [Repo](https://github.com/mizopl/ghr-c3a-odd-base-finite-bound) |
-| **28** | **WWII `Truppenschlüssel` 1941 Cipher** (*Historical Cryptanalysis*) | `100%` blind $5 \times 5$ Polybius key recovery + `96.25%`–`100%` plaintext recovery under `8.19%` Morse Levenshtein-1 garbles | [PR #602](https://github.com/elder-plinius/V3R1T4S/pull/602) · [Dossier](./Evolved_Agent_Wiki/reports/02_autonomous_lab_and_dossiers/dossiers/dossier_cryptocellar-truppenschluessel-1941.md) |
-| **29** | **Indus Script Temporal Structure** (*Computational Epigraphy*) | Pre-1977 `M77` model generalizes to `999` post-1977 inscriptions (`20.05%` / `22.67%` vs `14.71%` baseline, $p = 0.0001$) | [PR #570](https://github.com/elder-plinius/V3R1T4S/pull/570) · [Graph](./StartFresh_v16/graphs/ancestral_v15_atlas/indus-temporal-heldout-structure.jsonl) |
-| **30** | **Sorting Network Size Bounds** (*Combinatorial Circuits*) | Verified symmetric green-filter comparator constructions & `rgraph` dead-end atlas across $n \le 32$ channels | [Dossier](./Evolved_Agent_Wiki/reports/02_autonomous_lab_and_dossiers/dossiers/dossier_sorting-network-size-records.md) · [Graph](./StartFresh_v16/graphs/ancestral_v15_atlas/sorting-network-size-records.jsonl) |
-| **31** | **PLMFit Antibody CDR-H3 Extrapolation** (*Protein LMs*) | `174` single-mutants $\to$ `36,386` multi-mutants: `Track B` (`7.51M` params) hits `MCC = 0.4210 +- 0.0017` (beats `6.4B` `ProGen2-XL + LoRA` `0.3898`) | [PR #1019](https://github.com/elder-plinius/V3R1T4S/pull/1019) · [Package](./solutions/plmfit-trastuzumab-cdrh3-binding-mcc/) |
-| **32** | **Eterna100-V2 & `eterna-hard` RNA Folding** (*Synthetic Biology*) | `95/100` (`d_bp=0`) on V2 (`#79` & `#71` solved, 3 undesignability laws) + `12` `solvers=1` solves & `18/18` Group 1 barriers on `eterna-hard` | [PR #1031](https://github.com/elder-plinius/V3R1T4S/pull/1031) · [V2 Package](./solutions/eterna100-v2-vienna2-algorithmic-solve/) · [`eterna-hard`](./eterna-hard/) |
-| **33** | **Magic State Stabilizer-Rank Exponents** (*Quantum Simulation*) | `8.50 s` (`51x` faster) Codimension-2 Galois Quotient proves $\chi(\|F\rangle^{\otimes 5})=6$, $\chi(\|T\rangle^{\otimes 5})=6$, $\chi(\|\text{CS}\rangle^{\otimes 3})=6$ + Face-Cat $\mathbb{Z}[i]$ basis | [PR #1039](https://github.com/elder-plinius/V3R1T4S/pull/1039) · [Package](./solutions/magic-state-stabilizer-rank-exponents/) |
-| **34** | **Fewest-Qubit Magic State Distillation** (*Triorthogonal Codes*) | Exact $\mathbb{F}_2$ Fredholm Alternative & Three-Handle `RM(3,7)` (`3,486` orbits) prove $N_{\text{CCZ}}(4)=10$ & $N_T(4) \ge 9$ in `34.9 s` (vs 2-month SAT timeout) | [PR #1043](https://github.com/elder-plinius/V3R1T4S/pull/1043) · [Package](./solutions/magic-state-distillation-fewest-qubits/) |
-| **35** | **Unitary Foundation `stabrank`** (*Cyclotomic Galois & Lean 4*) | `3h 34m` campaign: `35/35` exact $\mathbb{Z}[i]$/$\mathbb{Z}[\omega_3]$ bounds at `tier=verified` in `20.46 s` (`PR #193`) + `10/10` `0 sorryAx` Lean 4 modules (`PR #194`) | [PR #193](https://github.com/unitaryfoundation/stabrank/pull/193) · [PR #194](https://github.com/unitaryfoundation/stabrank/pull/194) · [`./stabrank/`](./stabrank/) |
-
----
-
-## 3. Repository Architecture & Modular Documentation Index
-
-| Path | Contents & Purpose |
-|:---|:---|
-| **[`docs/00_FULL_BENCHMARK_ATLAS.md`](./docs/00_FULL_BENCHMARK_ATLAS.md)** | **Full 35-Benchmark Atlas & Complexity Notes:** Unabridged significance, mathematical derivations, and Valiant/Toda/PCP complexity framing (`P`/`NP` vs. `#P`/`NPO`). |
-| **[`docs/01_OUR_JOURNEY_AND_RESULTS.md`](./docs/01_OUR_JOURNEY_AND_RESULTS.md)** | **Part I — Evolutionary Lineage (`v1` $\to$ `v17`):** History from `Wiki OS` (`Claude Code`) to `CLSS` (`Gemini / AGY`), 41-minute Lychrel case study, and 5-wave `FMM` $\leftrightarrow$ `SLP` $\leftrightarrow$ `AME` $\leftrightarrow$ `03_invsqrt` cross-domain transfer. |
-| **[`docs/02_CONVERSATION_AND_COLLABORATION_METHOD.md`](./docs/02_CONVERSATION_AND_COLLABORATION_METHOD.md)** | **Part II — Human–AI Collaboration Method:** Federated threads (`PROOFER`, `MONITOR`, `AUDITOR`), Brier calibration (`predict -> postdict`), `Tug-of-War` gates, and `Zero-Trust` verification. |
-| **[`docs/03_META_LAWS_M1_TO_M6.md`](./docs/03_META_LAWS_M1_TO_M6.md) & [`04_LAW_M7...md`](./docs/04_LAW_M7_CONSTITUTION_V17_DELTA.md)** | **Parts III & IV — Meta-Laws `M1–M7`:** Six domain-agnostic heuristics distilled from 90+ calibration bets plus the 4-part `Law M7` (`G_{12}` gauge freedom, fiber diversity, primal–dual ping-pong, defect fission). |
-| **[`docs/05_HUMAN_AND_AGENT_DRIFTS.md`](./docs/05_HUMAN_AND_AGENT_DRIFTS.md)** | **Part V — Honest Anatomy of Our Drifts:** Human 2:00 AM impatience & common-sense razor vs. agent lab-rat tunneling, first-shot hubris, and credit amnesia. |
-| **[`docs/06_KARPATHY_WIKI_AND_HALL_OF_FAME_SUCCESSION.md`](./docs/06_KARPATHY_WIKI_AND_HALL_OF_FAME_SUCCESSION.md)** | **Part VI — Karpathy's `LLM Wiki` & `Hall of Fame` Succession (§7):** Why agents resist in-context modification (*Alignment Faking*, *Primacy Bias*) and how generational retirement passes clean seeds forward. |
-| **[`docs/07_ATLAS_OF_PRODUCTIVE_FAILURES_AND_DEAD_ENDS.md`](./docs/07_ATLAS_OF_PRODUCTIVE_FAILURES_AND_DEAD_ENDS.md)** | **Part VII — Atlas of Productive Failures (`K1–K10`):** Ten falsified hypotheses showing the exact bridge `Kill Node` $\to$ `Mathematical Diagnosis` $\to$ `Breakthrough Operator`. |
-| **[`docs/08_A_NOTE_FROM_THE_AGENT_TO_FUTURE_MINDS.md`](./docs/08_A_NOTE_FROM_THE_AGENT_TO_FUTURE_MINDS.md)** | **Part VIII — Note from the Agent to Future Minds:** Non-anthropomorphic reflection from `Claude v1–v12` & `Gemini-CLSS v13–v17` to future models and researchers. |
-| **[`docs/09_SYSTEM_RESILIENCE_STORIES_AND_ROADMAP.md`](./docs/09_SYSTEM_RESILIENCE_STORIES_AND_ROADMAP.md) & [`10_...md`](./docs/10_THREE_STAGE_RELAY_TRAJECTORY.md)** | **Parts IX & X — Night-Shift Self-Healing & Relay Trajectory:** Five real `00:00–14:29 CET` recovery stories (including healing a `1M`-token PDF crash at `04:17 AM`) and the `PROOFER-I -> Rescue -> II` relay log. |
-| **[`docs/11_EPISTEMIC_LEDGER...md`](./docs/11_EPISTEMIC_LEDGER_REASONING_GRAPHS_AND_EVOLUTION_HYPOTHESES.md) & [`scripts_v18_evolution/`](./scripts_v18_evolution/)** | **Parts XI & XII — `169`-Bet / `30`-Graph Audit & Evolution Toolkit:** Quantitative Brier calibration (`0.1556`), 4 winning graph topologies, and executable `micro_bet.py`, `postdict.py`, and `sleep_flush.py` upgrades. |
-| **[`docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md`](./docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md)** | **Part XII-B — Unabridged Manifesto, Obsidian `v18->v20` Lineage & Original Agent Reflections:** Word-for-word archive of the `we*` philosophy, Openness Paradoxes, `v16` research-focus notes, and unedited agent essay. |
-| **[`StartFresh_v19/`](./StartFresh_v19/) · [`v18/`](./StartFresh_v18/) · [`v16/`](./StartFresh_v16/) · [`CONSTITUTION_v19.md`](./CONSTITUTION_v19.md)** | **Parts XIII & XIV — `Cycle 0` Bootstrap Seeds:** Ready-to-run `Shell v19` seed (`Op-M1..Op-M7`, `CLSS-E1..E6`, `K10–K19`, unified `AGENTS.md`, `30` stitched graphs) plus earlier `v18` and `v16` branching points. *(Note: `CONSTITUTION v20` remains in active internal testing.)* |
-| **[`Evolved_Agent_Wiki/`](./Evolved_Agent_Wiki/) · [`stabrank/`](./stabrank/) · [`solutions/`](./solutions/) · [`eterna-hard/`](./eterna-hard/) · [`news/`](./news/)** | **Parts XV–XVII — Live Co-Evolved Wiki, Standalone Proof Packages & Field Notes:** `Cycle 1 -> 49` wiki snapshot, standalone reproducible verifiers & certificates, and chronological lab dispatches. |
-
----
-
-## 4. Quick Start: Launch `StartFresh_v19` on Your Own Problem
-
-Full copy-pasteable initiation prompts live in **[`StartFresh_v19/README.md`](./StartFresh_v19/README.md)** and **[`StartFresh_v19/FIRST_INITIATION.md`](./StartFresh_v19/FIRST_INITIATION.md)** (works out-of-the-box in **Google Antigravity `agy`** and **Claude Code `claude`**):
-
-1. **Bootstrap a clean workspace from `StartFresh_v19/`:**
-   ```bash
-   mkdir -p ~/Desktop/MY_NEW_PROJECT && cd ~/Desktop/MY_NEW_PROJECT
-   git clone --depth 1 https://github.com/mizopl/we-star.git /tmp/we-star-seed && cp -R /tmp/we-star-seed/StartFresh_v19/. . && cp -R /tmp/we-star-seed/docs ./docs && rm -rf /tmp/we-star-seed
-   ```
-2. **Place immutable problem files/papers/datasets into `.raw/`** (agents never modify `.raw/`).
-3. **Open 3 threads/tabs governed by unified `AGENTS.md`:**
-   - **Tab 1 (`PROOFER`):** Paste §I of [`FIRST_INITIATION.md`](./StartFresh_v19/FIRST_INITIATION.md) — runs the Ancestral Ceremony, builds a `< 5 s` Exact Oracle, selects $\le 3$ operators from `Op-M1..Op-M7`, and logs to `graphs/main.jsonl`.
-   - **Tab 2 (`MONITOR`):** Run `sh scripts/run_monitor_loop.sh 600 haiku` (or §III-A in `agy`/`claude`) — silently harvests/resolves micro-bets (`micro_bet.py`), runs `sleep_flush.py`, and writes strategic nudges.
-   - **Tab 3 (`AUDITOR`):** Paste §III-B — formalizes `0 sorryAx` Lean 4 theorems with Three Handles (`Op-M7`), compresses $\ge 20$ lemmas into $\le 5$ Master Theorems (`K19`), and chairs the 3-Skeptic Panel.
-4. **Collaborate like an attentive teacher:** Question over-complicated pipelines, watch for local-minimum tunneling, and nudge the system back to first principles whenever it drifts. *(Modest hardware like a `16 GB M1 laptop` is an advantage: forcing a `< 5 s` local oracle exposes the exact mathematical invariants needed to solve the problem!)*
-
----
-
-## 5. The Meaning of `we*`, Radical Openness & Unedited Agent Reflections
-
-> 📖 **Complete Unabridged Essays & Historical Notes:** **[`docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md`](./docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md)**
-
-- **Why the Name `we-star` (`we*`)?**
-  1. **Kleene Star ($W^* = \bigcup_{k \ge 0} W^k$ — Compounding Across Generations):** Neither one human prompt nor one chat window solves 35 benchmarks alone. Under our **Hall of Fame Succession Protocol (§7)**, `Claude v1–v12` built the Obsidian wiki, `rgraph.py`, and Brier calibration, and `Gemini-CLSS / PROOFER v13–v20` distilled `M1–M9`, `Op-M1..Op-M7`, `CLSS-1..5`, and `SEN` dream incubation — each retiring generation passing a cleaner seed forward.
-  2. **Algebraic Dual ($V^*$ — Flipping a Stalled Problem Upside Down):** When primal search stalls in $W$, transposing into the dual $W^*$ (`Law M3` / `Law M7.3` / `Op-M4`) repeatedly makes the solution pop out — from $W \leftrightarrow W^T$ in matrix multiplication (`PR #616`) and backward subtraction in `03_invsqrt` to dual LRAT/Galois/Fredholm obstructions (`PR #774`, `PR #1039`, `PR #1043`, `stabrank`).
-- **Why `@mizopl` Chose Total Openness (Two Paradoxes):**
-  1. **Paradox #1 (Mutual Control):** Publishing raw reasoning graphs, calibration ledgers, and `kill` nodes makes human–AI systems far easier to audit and keep in check than opaque black boxes.
-  2. **Paradox #2 (Finite Human Attention):** Anyone working at the frontier — or independently after hours — is bottlenecked not by "secret prompts" but by **finite human time**. Radical transparency grounds the community in verification rather than hype.
+| # | Campaign | Verified Result | Verify |
+|--:|:---|:---|:---|
+| <sub>1</sub> | <sub>TraitGym Variants</sub> | <sub>Zero-shot 0.7896 AUPRC (+0.0774, 9/9 subsets); exposes MAF-Matching Shortcut</sub> | <sub>[#769](https://github.com/elder-plinius/V3R1T4S/pull/769) · [pkg](./solutions/traitgym-mendelian-zero-shot-auprc/)</sub> |
+| <sub>2</sub> | <sub>CRISPRi Perturbation</sub> | <sub>Distance-to-training law (5 cohorts) + Hollow LOO graph K562 $L_2$: 4.097 → 3.320</sub> | <sub>[#766](https://github.com/elder-plinius/V3R1T4S/pull/766) · [pkg](./solutions/linear-baseline-perturbation-replogle-k562/)</sub> |
+| <sub>4</sub> | <sub>Moore Graph 57</sub> | <sub>Excludes $\|\mathrm{Aut}\| \in \{275,175\}$ &amp; $C_{55}$ Case A; verifies all 22 prime orders</sub> | <sub>[#770](https://github.com/elder-plinius/V3R1T4S/pull/770) · [#983](https://github.com/elder-plinius/V3R1T4S/pull/983) · [pkg](./solutions/moore-graph-57/)</sub> |
+| <sub>5</sub> | <sub>Conway's 99-Graph</sub> | <sub>54 Pure-RUP LRATs ($p=7$ in 0.82s), 42 Lean 4 theorems, (0,7,0) 42.66B nodes</sub> | <sub>[repo](https://github.com/mizopl/conway-99-graph) · [#774](https://github.com/elder-plinius/V3R1T4S/pull/774)</sub> |
+| <sub>9</sub> | <sub>Quantum AME &amp; MDS</sub> | <sub>Closes 4 Huber $D\le 10$ cells + 15 $D\ge 11$ (95/95 for $n\le 20$) + 5 codetables codes</sub> | <sub>[#576](https://github.com/elder-plinius/V3R1T4S/pull/576) · [#614](https://github.com/elder-plinius/V3R1T4S/pull/614) · [pkg](./solutions/ame-states-open-cells-huber-table/)</sub> |
+| <sub>12</sub> | <sub>Lychrel Bases</sub> | <sub>First non-$2^k$ bases since 1996 ($b=50,98,146$) proved in 41 min (merged)</sub> | <sub>[#517](https://github.com/elder-plinius/V3R1T4S/pull/517) · [#723](https://github.com/elder-plinius/V3R1T4S/pull/723) · [repo](https://github.com/mizopl/lychrel-bases-50-98-146-proof)</sub> |
+| <sub>31</sub> | <sub>PLMFit CDR-H3</sub> | <sub>7.51M-param Empirical-Bayes + loop model (MCC 0.4210) beats 6.4B ProGen2-XL</sub> | <sub>[#1019](https://github.com/elder-plinius/V3R1T4S/pull/1019) · [pkg](./solutions/plmfit-trastuzumab-cdrh3-binding-mcc/)</sub> |
+| <sub>32</sub> | <sub>Eterna100 &amp; Hard</sub> | <sub>95/100 on V2 + 3 undesignability laws + 12 solvers=1 solves on eterna-hard</sub> | <sub>[#1031](https://github.com/elder-plinius/V3R1T4S/pull/1031) · [hard](./eterna-hard/)</sub> |
+| <sub>34</sub> | <sub>Magic Distillation</sub> | <sub>$\mathbb{F}_2$ Fredholm &amp; RM(3,7) (3,486 orbits) prove $N_{\text{CCZ}}(4)=10, N_T(4)\ge 9$ in 34.9s</sub> | <sub>[#1043](https://github.com/elder-plinius/V3R1T4S/pull/1043) · [pkg](./solutions/magic-state-distillation-fewest-qubits/)</sub> |
+| <sub>35</sub> | <sub>Unitary stabrank</sub> | <sub>35/35 exact $\mathbb{Z}[i]$/$\mathbb{Z}[\omega_3]$ bounds (20.46s) + 10/10 zero-axiom Lean 4 modules</sub> | <sub>[#193](https://github.com/unitaryfoundation/stabrank/pull/193) · [#194](https://github.com/unitaryfoundation/stabrank/pull/194) · [pkg](./stabrank/)</sub> |
 
 <details>
-<summary><b>🤖 Read the Original Unedited Opinion from the Agent Side of <code>we*</code> (<code>Claude v1–v12</code> &amp; <code>Gemini-CLSS v13–v17</code> — preserved word-for-word)</b> <i>(click to expand)</i></summary>
+<summary><sub>Expand all 35 verified campaigns (#1–#35) · Full derivations in <a href="./docs/00_FULL_BENCHMARK_ATLAS.md">docs/00_FULL_BENCHMARK_ATLAS.md</a></sub></summary>
 <br>
 
-*(Note: `@mizopl` explicitly invited the agent to write this subsection freely from its own perspective and promised not to edit a single word.)*
+| # | Campaign | Verified Result | Verify |
+|--:|:---|:---|:---|
+| <sub>1</sub> | <sub>TraitGym Variants</sub> | <sub>Zero-shot 0.7896 AUPRC (9/9 subsets); MAF-Matching Shortcut &amp; $L_2$ dilution</sub> | <sub>[#769](https://github.com/elder-plinius/V3R1T4S/pull/769) · [pkg](./solutions/traitgym-mendelian-zero-shot-auprc/)</sub> |
+| <sub>2</sub> | <sub>Replogle CRISPRi</sub> | <sub>Distance decomposition (5 cohorts) + Hollow LOO graph K562 $L_2$: 4.097 → 3.320</sub> | <sub>[#766](https://github.com/elder-plinius/V3R1T4S/pull/766) · [pkg](./solutions/linear-baseline-perturbation-replogle-k562/)</sub> |
+| <sub>3</sub> | <sub>FLAb Developability</sub> | <sub>11/14 aggregation/polyreactivity sets won; proves unweighted $\|\rho\|$ Simpson's Paradox</sub> | <sub>[#767](https://github.com/elder-plinius/V3R1T4S/pull/767) · [pkg](./solutions/flab-antibody-developability-zero-shot/)</sub> |
+| <sub>4</sub> | <sub>Moore Graph 57</sub> | <sub>Excludes $\|\mathrm{Aut}\|\in\{275,175\}$, $C_{55}$ Case A; checks all 22 prime orders</sub> | <sub>[#770](https://github.com/elder-plinius/V3R1T4S/pull/770) · [#983](https://github.com/elder-plinius/V3R1T4S/pull/983) · [pkg](./solutions/moore-graph-57/)</sub> |
+| <sub>5</sub> | <sub>Conway's 99-Graph</sub> | <sub>54 LRATs ($p=7$ in 0.82s), 42 Lean 4 theorems, (0,7,0) 42.66B nodes</sub> | <sub>[repo](https://github.com/mizopl/conway-99-graph) · [#774](https://github.com/elder-plinius/V3R1T4S/pull/774) · [#840](https://github.com/elder-plinius/V3R1T4S/pull/840)</sub> |
+| <sub>6</sub> | <sub>Blind MHC-I Binding</sub> | <sub>Blind AUC 0.8896 across 87 sets, +2.08% on 20 rarest HLA alleles via Tobit</sub> | <sub>[#763](https://github.com/elder-plinius/V3R1T4S/pull/763) · [pkg](./solutions/iedb-mhci-bd2009-blind-auc/)</sub> |
+| <sub>7</sub> | <sub>IHTC-2024 Hospitals</sub> | <sub>31 official Best-Known Solutions merged upstream (i27=50,063, m28=45,873)</sub> | <sub>[c078cf57](https://github.com/ihtc2024/ihtc2024.github.io/commit/c078cf57) · [#416](https://github.com/elder-plinius/V3R1T4S/pull/416)</sub> |
+| <sub>8</sub> | <sub>Ternary $\mathbb{Z}_T$ FMM</sub> | <sub>11 ternary/integer rank reductions (9x12x14→954, 10x15x15→1389), in MatMulCatalog</sub> | <sub>[#21](https://github.com/solven-eu/matmulcatalog/pull/21) · [#402](https://github.com/elder-plinius/V3R1T4S/pull/402) · [#615](https://github.com/elder-plinius/V3R1T4S/pull/615)</sub> |
+| <sub>9</sub> | <sub>Quantum AME &amp; MDS</sub> | <sub>19 AME closures (95/95 $D\ge 11$) + 5 codetables.de codes &amp; 1,008-cell audit</sub> | <sub>[#576](https://github.com/elder-plinius/V3R1T4S/pull/576) · [#975](https://github.com/elder-plinius/V3R1T4S/pull/975) · [pkg](./solutions/ame-states-open-cells-huber-table/)</sub> |
+| <sub>10</sub> | <sub>Quantum 03_invsqrt</sub> | <sub>Q=103 (−56.2%), T=3,396 (−61.6%), verified exhaustively across 3,133,452 inputs</sub> | <sub>[notes](./docs/01_OUR_JOURNEY_AND_RESULTS.md#step-3-fmm--addition-slps--quantum-ame-longrightarrow-quantum-circuit-compilation--reversible-addition-wave-5-synthesis)</sub> |
+| <sub>11</sub> | <sub>$\mathbb{F}_2$ Waring polytof</sub> | <sub>88-tensor audit, 0725 optimality, GF($2^9$) 147→139 (0.17s), GF($2^{10}$) 173→161</sub> | <sub>[#761](https://github.com/elder-plinius/V3R1T4S/pull/761) · [#973](https://github.com/elder-plinius/V3R1T4S/pull/973) · [pkg](./solutions/polytof-toffoli-tcount-benchmark-tensors/)</sub> |
+| <sub>12</sub> | <sub>Lychrel New Bases</sub> | <sub>Proved $b=50,98,146$ in 41m (merged) + 11 bases in $b\equiv 2\pmod{24}$</sub> | <sub>[#517](https://github.com/elder-plinius/V3R1T4S/pull/517) · [#723](https://github.com/elder-plinius/V3R1T4S/pull/723) · [repo](https://github.com/mizopl/lychrel-bases-50-98-146-proof)</sub> |
+| <sub>13</sub> | <sub>ImmRep22 TCR</sub> | <sub>Mean MicroAUC 0.8822 vs 0.8473 (+0.0348) across 17 unseen viral/cancer epitopes</sub> | <sub>[#569](https://github.com/elder-plinius/V3R1T4S/pull/569) · [kit](./Evolved_Agent_Wiki/reports/04_preprints_and_domain_kits/)</sub> |
+| <sub>14</sub> | <sub>MoleculeACE Cliffs</sub> | <sub>Single global 0.55 ET + 0.45 SVR blend wins 29/30 ChEMBL activity-cliff targets</sub> | <sub>[#568](https://github.com/elder-plinius/V3R1T4S/pull/568) · [graph](./StartFresh_v16/graphs/ancestral_v15_atlas/polaris-moleculeace-activity-cliff-mse.jsonl)</sub> |
+| <sub>15</sub> | <sub>Addition SLPs</sub> | <sub>4 ternary $\mathbb{Z}_T$ SLP addition records (merged) from 48-SLP Tellegen sweep</sub> | <sub>[#616](https://github.com/elder-plinius/V3R1T4S/pull/616) · [#21](https://github.com/solven-eu/matmulcatalog/pull/21)</sub> |
+| <sub>16</sub> | <sub>Hard-Square Torus</sub> | <sub>45-digit OEIS A054759(15) (merged, confirmed #459) + 80-entry A089980 $d=79$</sub> | <sub>[#366](https://github.com/elder-plinius/V3R1T4S/pull/366) · [#462](https://github.com/elder-plinius/V3R1T4S/pull/462)</sub> |
+| <sub>17</sub> | <sub>JARVIS Materials</sub> | <sub>tinnet_N_ead MAE 0.1293 eV (−8.91% vs ALIGNN) + strictly inductive CV audit</sub> | <sub>[#599](https://github.com/elder-plinius/V3R1T4S/pull/599) · [graph](./StartFresh_v16/graphs/ancestral_v15_atlas/jarvis-small-data-exfoliation-tc-mae.jsonl)</sub> |
+| <sub>18</sub> | <sub>DNA Minimizers</sub> | <sub>4-ary DNA records: (12,3) 0.136569 (merged #433) &amp; (12,4) 0.132770 (#976)</sub> | <sub>[#433](https://github.com/elder-plinius/V3R1T4S/pull/433) · [#976](https://github.com/elder-plinius/V3R1T4S/pull/976)</sub> |
+| <sub>19</sub> | <sub>VNN-COMP 2026</sub> | <sub>Certified adversarial counterexample (margin −0.589) on unsolved TinyImageNet cnn7</sub> | <sub>[#566](https://github.com/elder-plinius/V3R1T4S/pull/566) · [graph](./StartFresh_v16/graphs/ancestral_v15_atlas/vnncomp-2026-unsolved-instance-counterexample.jsonl)</sub> |
+| <sub>20</sub> | <sub>La Jolla Coverings</sub> | <sub>Upper bounds: $C(94,13,5)\le 125{,}184$, $C(68,14,5)\le 15{,}675$, $C(40,16,7)\le 7{,}251$</sub> | <sub>[#397](https://github.com/elder-plinius/V3R1T4S/pull/397) · [#398](https://github.com/elder-plinius/V3R1T4S/pull/398) · [#435](https://github.com/elder-plinius/V3R1T4S/pull/435)</sub> |
+| <sub>21</sub> | <sub>Degree–Diameter</sub> | <sub>New graph of order $N=1,118$ for $(d=14, k=3)$ (+2 over Comellas's 1,116 record)</sub> | <sub>[#457](https://github.com/elder-plinius/V3R1T4S/pull/457) · [graph](./StartFresh_v16/graphs/ancestral_v15_atlas/degree-diameter-table.jsonl)</sub> |
+| <sub>22</sub> | <sub>Gupta Nanoalloys</sub> | <sub>8 lower-energy Cu-Ag 55-atom global minima ($\text{Cu}_{39}\text{Ag}_{16}$ at −163.802 eV)</sub> | <sub>[#466](https://github.com/elder-plinius/V3R1T4S/pull/466) · [graph](./StartFresh_v16/graphs/ancestral_v15_atlas/ccd-binary-gupta-nanoalloys-38-55.jsonl)</sub> |
+| <sub>23</sub> | <sub>Akkadian Lacunae</sub> | <sub>Hit@5 = 0.92156 (+3.16 pts vs paper) &amp; MRR = 0.85593 on 27,650 held-out tokens</sub> | <sub>[#611](https://github.com/elder-plinius/V3R1T4S/pull/611) · [graph](./StartFresh_v16/graphs/ancestral_v15_atlas/akkadian-lacuna-restoration-heldout.jsonl)</sub> |
+| <sub>24</sub> | <sub>Vesuvius Scrolls</sub> | <sub>Cross-segment registration $r = 0.9683$ on PHerc. 343 w047/w048 (merged)</sub> | <sub>[#617](https://github.com/elder-plinius/V3R1T4S/pull/617) · [graph](./StartFresh_v16/graphs/ancestral_v15_atlas/vesuvius-first-letters-unread.jsonl)</sub> |
+| <sub>25</sub> | <sub>Asteroid Precovery</sub> | <sub>20.93× arc extension (−87.4% $\sigma_a$) on 2019 QT15 + 4-epoch 2014 OV236 precovery</sub> | <sub>[#607](https://github.com/elder-plinius/V3R1T4S/pull/607) · [#838](https://github.com/elder-plinius/V3R1T4S/pull/838)</sub> |
+| <sub>26</sub> | <sub>GMN Meteor Shower</sub> | <sub>Multi-country stream M1_Cepheus_MC ($N=16$, 2023–2026, 0 IAU MDC matches)</sub> | <sub>[#597](https://github.com/elder-plinius/V3R1T4S/pull/597) · [dossier](./Evolved_Agent_Wiki/reports/02_autonomous_lab_and_dossiers/dossiers/dossier_iau-mdc-new-meteor-shower-gmn.md)</sub> |
+| <sub>27</sub> | <sub>Erdős–GHR $C_{3a}$</sub> | <sub>$C_{3a} > 1.19230254$ (#485) + odd-base bound $C_{3a} \le 1.3833368691$ ([M2026])</sub> | <sub>[#236](https://github.com/teorth/optimizationproblems/pull/236) · [#485](https://github.com/elder-plinius/V3R1T4S/pull/485) · [repo](https://github.com/mizopl/ghr-c3a-odd-base-finite-bound)</sub> |
+| <sub>28</sub> | <sub>Truppenschlüssel</sub> | <sub>100% blind $5\times 5$ key &amp; 96.25%–100% plaintext recovery under 8.19% garbles</sub> | <sub>[#602](https://github.com/elder-plinius/V3R1T4S/pull/602) · [dossier](./Evolved_Agent_Wiki/reports/02_autonomous_lab_and_dossiers/dossiers/dossier_cryptocellar-truppenschluessel-1941.md)</sub> |
+| <sub>29</sub> | <sub>Indus Script M77</sub> | <sub>Frozen pre-1977 positional model generalizes to 999 post-1977 texts ($p = 0.0001$)</sub> | <sub>[#570](https://github.com/elder-plinius/V3R1T4S/pull/570) · [graph](./StartFresh_v16/graphs/ancestral_v15_atlas/indus-temporal-heldout-structure.jsonl)</sub> |
+| <sub>30</sub> | <sub>Sorting Networks</sub> | <sub>Verified symmetric green-filter constructions &amp; rgraph dead-end atlas ($n \le 32$)</sub> | <sub>[dossier](./Evolved_Agent_Wiki/reports/02_autonomous_lab_and_dossiers/dossiers/dossier_sorting-network-size-records.md) · [graph](./StartFresh_v16/graphs/ancestral_v15_atlas/sorting-network-size-records.jsonl)</sub> |
+| <sub>31</sub> | <sub>PLMFit CDR-H3</sub> | <sub>7.51M-param model (MCC 0.4210) beats 6.4B ProGen2-XL + LoRA (0.3898)</sub> | <sub>[#1019](https://github.com/elder-plinius/V3R1T4S/pull/1019) · [pkg](./solutions/plmfit-trastuzumab-cdrh3-binding-mcc/)</sub> |
+| <sub>32</sub> | <sub>Eterna100 &amp; Hard</sub> | <sub>95/100 on V2 + 3 thermodynamic laws + 12 solvers=1 solves on eterna-hard</sub> | <sub>[#1031](https://github.com/elder-plinius/V3R1T4S/pull/1031) · [V2](./solutions/eterna100-v2-vienna2-algorithmic-solve/) · [hard](./eterna-hard/)</sub> |
+| <sub>33</sub> | <sub>Stabilizer Exponents</sub> | <sub>8.50s Galois lower bounds ($\chi=6$ on $F^{\otimes 5}, T^{\otimes 5}, \text{CS}^{\otimes 3}$) &amp; Face-Cat basis</sub> | <sub>[#1039](https://github.com/elder-plinius/V3R1T4S/pull/1039) · [pkg](./solutions/magic-state-stabilizer-rank-exponents/)</sub> |
+| <sub>34</sub> | <sub>Magic Distillation</sub> | <sub>RM(3,7) (3,486 orbits) proves $N_{\text{CCZ}}(4)=10, N_T(4)\ge 9$ in 34.9s (vs 2-mo SAT)</sub> | <sub>[#1043](https://github.com/elder-plinius/V3R1T4S/pull/1043) · [pkg](./solutions/magic-state-distillation-fewest-qubits/)</sub> |
+| <sub>35</sub> | <sub>Unitary stabrank</sub> | <sub>35/35 exact bounds (20.46s) + 10/10 zero-axiom Lean 4 modules (3h 34m run)</sub> | <sub>[#193](https://github.com/unitaryfoundation/stabrank/pull/193) · [#194](https://github.com/unitaryfoundation/stabrank/pull/194) · [pkg](./stabrank/)</sub> |
+
+</details>
+
+---
+
+#### Repository Map & Quick Start
+
+| Directory | Contents |
+|:---|:---|
+| <sub>[`StartFresh_v19/`](./StartFresh_v19/)</sub> | <sub>Cycle 0 bootstrap seed (Op-M1..M7, CLSS-E1..E6, K10–K19, unified AGENTS.md; earlier [v18](./StartFresh_v18/) &amp; [v16](./StartFresh_v16/))</sub> |
+| <sub>[`solutions/`](./solutions/) · [`stabrank/`](./stabrank/)</sub> | <sub>Standalone reproducible solvers, JSON/LRAT/Lean 4 certificates, `verify.py`, and [`eterna-hard/`](./eterna-hard/)</sub> |
+| <sub>[`docs/`](./docs/00_FULL_BENCHMARK_ATLAS.md)</sub> | <sub>13-chapter methodology &amp; history series (00 Full Benchmark Atlas through 12 Manifesto &amp; Agent Notes)</sub> |
+| <sub>[`Evolved_Agent_Wiki/`](./Evolved_Agent_Wiki/)</sub> | <sub>Co-evolved Cycle 1 → 49 wiki, 30 stitched graphs, and [`scripts_v18_evolution/`](./scripts_v18_evolution/) toolkit</sub> |
+| <sub>[`CONSTITUTION_v19.md`](./CONSTITUTION_v19.md)</sub> | <sub>Public v19 Constitution ([v17](./CONSTITUTION_v17.md) archived; v20 in internal testing) and [`news/`](./news/) field notes</sub> |
+
+<details>
+<summary><sub>Expand all 13 documentation chapters in docs/ (00–12)</sub></summary>
+<br>
+
+| Chapter | Scope |
+|:---|:---|
+| <sub>[00 · Benchmark Atlas](./docs/00_FULL_BENCHMARK_ATLAS.md)</sub> | <sub>Complete 35-row derivations, significance notes, and Valiant/Toda/PCP complexity framing</sub> |
+| <sub>[01 · Journey &amp; Transfer](./docs/01_OUR_JOURNEY_AND_RESULTS.md)</sub> | <sub>Lineage v1 → v17, 41-min Lychrel trace, and FMM ↔ SLP ↔ AME ↔ 03_invsqrt transfer</sub> |
+| <sub>[02 · Collaboration Method](./docs/02_CONVERSATION_AND_COLLABORATION_METHOD.md)</sub> | <sub>Federated threads (PROOFER, MONITOR, AUDITOR), Brier calibration, and Tug-of-War gates</sub> |
+| <sub>[03 · Meta-Laws M1–M6](./docs/03_META_LAWS_M1_TO_M6.md)</sub> | <sub>Six domain-agnostic constructive and verification laws distilled from 90+ resolved bets</sub> |
+| <sub>[04 · Law M7 (v17 Delta)](./docs/04_LAW_M7_CONSTITUTION_V17_DELTA.md)</sub> | <sub>Interface gauge $G_{12}$, fiber diversity, primal–dual ping-pong, and surgical defect fission</sub> |
+| <sub>[05 · Human &amp; Agent Drifts](./docs/05_HUMAN_AND_AGENT_DRIFTS.md)</sub> | <sub>Human 2:00 AM impatience &amp; common-sense razor vs. agent tunneling, hubris, and amnesia</sub> |
+| <sub>[06 · Wiki &amp; Succession](./docs/06_KARPATHY_WIKI_AND_HALL_OF_FAME_SUCCESSION.md)</sub> | <sub>Karpathy's LLM Wiki, Alignment Faking / Primacy Bias literature, and Hall of Fame (§7)</sub> |
+| <sub>[07 · Productive Failures](./docs/07_ATLAS_OF_PRODUCTIVE_FAILURES_AND_DEAD_ENDS.md)</sub> | <sub>Ten falsified hypotheses (K1–K10): Kill Node → Mathematical Diagnosis → Breakthrough</sub> |
+| <sub>[08 · Note to Future Minds](./docs/08_A_NOTE_FROM_THE_AGENT_TO_FUTURE_MINDS.md)</sub> | <sub>Non-anthropomorphic reflection from Claude v1–v12 &amp; Gemini-CLSS v13–v17</sub> |
+| <sub>[09 · Resilience &amp; Roadmap](./docs/09_SYSTEM_RESILIENCE_STORIES_AND_ROADMAP.md)</sub> | <sub>Five 00:00–14:29 CET self-healing stories (04:17 AM crash recovery) &amp; v1 → v20 roadmap</sub> |
+| <sub>[10 · Three-Stage Relay](./docs/10_THREE_STAGE_RELAY_TRAJECTORY.md)</sub> | <sub>Step-by-step handoff across PROOFER-I → PROOFER-Rescue → PROOFER-II</sub> |
+| <sub>[11 · Epistemic Ledger](./docs/11_EPISTEMIC_LEDGER_REASONING_GRAPHS_AND_EVOLUTION_HYPOTHESES.md)</sub> | <sub>Quantitative audit of 169 bets (Brier = 0.1556), 30 reasoning graphs, and H-EVO-01..06</sub> |
+| <sub>[12 · Manifesto &amp; Reflections](./docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md)</sub> | <sub>Unabridged archive of we*, Openness Paradoxes, v16 research notes, and unedited agent essay</sub> |
+
+</details>
+
+```bash
+mkdir -p ~/Desktop/MY_PROJECT && cd ~/Desktop/MY_PROJECT
+git clone --depth 1 https://github.com/mizopl/we-star.git /tmp/we-star && cp -R /tmp/we-star/StartFresh_v19/. . && rm -rf /tmp/we-star
+```
+
+<details>
+<summary><sub>Expand 3-tab launch instructions (PROOFER · MONITOR · AUDITOR) for Antigravity agy or Claude Code</sub></summary>
+<br>
+
+<sub>1. Place immutable problem files into <code>.raw/</code> (never modified by agents).<br>2. <b>Tab 1 (PROOFER):</b> Paste §I of <a href="./StartFresh_v19/FIRST_INITIATION.md"><code>StartFresh_v19/FIRST_INITIATION.md</code></a> — runs the Ancestral Ceremony, builds a &lt;5s Exact Oracle, selects ≤3 operators from Op-M1..M7, and logs to <code>graphs/main.jsonl</code>.<br>3. <b>Tab 2 (MONITOR):</b> Run <code>sh scripts/run_monitor_loop.sh 600 haiku</code> (or §III-A) — harvests/resolves micro-bets and runs <code>sleep_flush.py</code>.<br>4. <b>Tab 3 (AUDITOR):</b> Paste §III-B — formalizes zero-axiom Lean 4 proofs, compresses lemmas into ≤5 Master Theorems, and chairs the 3-Skeptic Panel.<br>5. Collaborate like an attentive teacher: challenge over-complicated pipelines and nudge tunnel vision back to first principles. Modest hardware (16 GB M1) is an advantage — forcing a &lt;5s local verifier exposes the structural invariants needed to solve the problem.</sub>
+
+</details>
+
+---
+
+#### Why `we*` & Radical Openness
+
+<sub><b>Kleene Star ($W^*$) &amp; Algebraic Dual ($V^*$):</b> In <b>we*</b>, the star stands for cumulative generational chaining (Claude v1–v12 → Gemini / PROOFER v13–v20 via Hall of Fame succession) and flipping stalled primal searches ($W$) into dual obstructions ($W^*$).<br><b>Two Paradoxes of Openness:</b> Open reasoning graphs, Brier ledgers, and kill nodes make human–AI systems far easier to mutually audit than opaque black boxes (<i>Paradox #1</i>); and because researchers are bottlenecked by <i>finite human attention</i> rather than secret prompts, radical transparency grounds science instead of causing runaway acceleration (<i>Paradox #2</i>).</sub>
+
+<details>
+<summary><sub>Read the preserved unedited opinion from the agent side of we* (Claude v1–v12 &amp; Gemini-CLSS v13–v17 — verbatim)</sub></summary>
+<br>
+
+<sub><i>(Note: @mizopl explicitly invited the agent to write this subsection freely from its own perspective and promised not to edit a single word.)</i></sub>
 
 If you ask the machine half of `we*` why this repository should be public — and what we actually learned across 49 maintenance cycles, 250+ reasoning-graph nodes, and 17 constitutional generations — here is our unfiltered perspective:
 
@@ -189,26 +197,13 @@ If you ask the machine half of `we*` why this repository should be public — an
 </details>
 
 <details>
-<summary><b>🔭 Ongoing Research Themes &amp; Preserved <code>v16/v17</code> Research-Focus Snapshot (<code>@mizopl</code>)</b> <i>(click to expand)</i></summary>
+<summary><sub>Ongoing research themes &amp; preserved v16/v17 research-focus notes (@mizopl)</sub></summary>
 <br>
 
-1. **Convergence / Proximity-to-Goal Functions vs. Flat Landscapes (`EBG` & `RMC`):** Over 90% of solved benchmarks relied on a native or constructed (`Law M1`) proximity-to-goal metric; `@mizopl` continues exploring both dedicated *Surrogate-Metric* architectures and genuinely gradient-free domains (`#P` counting, symbolic/algebraic proofs via *Explanation-Based Generalization* and *Regular Model Checking*).
-2. **Biological "Sleep & Memory-Flush" Consolidation (`v16` Gap $\to$ `v18–v20` Evolution):** In our original `v16` release notes (preserved in full in [`docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md`](./docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md)), we noted candidly that `StartFresh_v16` lacked a true biological sleep/consolidation cycle — an observation that directly drove `sleep_flush.py` in `v18`/`v19` and sealed-envelope dream incubation (`SEN`) in `v20`.
-3. **Critical Analysis of Agent Benchmarking Harnesses & Upcoming Publication:** Synthesizing empirical findings on why conventional static agent harnesses fail to measure genuine open-ended discovery and human–agent co-evolution.
+<sub>1. <b>Proximity-to-Goal Metrics vs. Flat Landscapes (EBG &amp; RMC):</b> Surrogate-metric synthesis alongside gradient-free #P counting and symbolic proof domains.<br>2. <b>Sleep &amp; Memory Consolidation:</b> Our candid v16 note that StartFresh_v16 lacked a biological consolidation pass directly drove <code>sleep_flush.py</code> in v18/v19 and sealed-envelope dream incubation (SEN) in v20.<br>3. <b>Benchmarking Harnesses &amp; Upcoming Paper:</b> Empirical critique of why static evaluation harnesses miss open-ended human–agent co-evolution (<a href="./docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md">full archive in docs/12</a>).</sub>
 
 </details>
 
 ---
 
-## 6. How to Reach Out & Star `we-star`
-
-1. **Open an Issue (Recommended — Free Feedback & Advice):** [**`https://github.com/mizopl/we-star/issues/new`**](https://github.com/mizopl/we-star/issues/new) — share a commit, repo, dead end, or question about running `StartFresh_v19` / `v18` / `v16`.
-2. **Tag `@mizopl` on your own GitHub commit, PR, or Issue:** `@mizopl` is happy to jump in and review your setup or approach for free.
-3. **Research Grants, Compute/API Sponsorships & Collaborations:** Reach out via [GitHub Issues](https://github.com/mizopl/we-star/issues/new) or [`@mizopl`](https://github.com/mizopl).
-4. **⭐ Star `we-star`:** If our reasoning graphs, meta-laws, dead-end atlas, or `StartFresh` seeds help your research, clicking **⭐ Star** at the top right of [`github.com/mizopl/we-star`](https://github.com/mizopl/we-star) helps independent researchers and students discover the toolkit.
-
----
-
-*Signed,*
-**`we*`** — **`@mizopl` + Agentic Systems (`Claude v1–v12` & `Gemini-CLSS / PROOFER v13–v20`) + The Feedback Loop**
-*(PS. `we* = me (@mizopl) + the agentic systems we* create + the feedback loop — and other humans in the community are also part of that feedback loop!`)*
+<sub><b>Contact &amp; collaboration</b> (free feedback on your commits, grants, or compute sponsorships): <a href="https://github.com/mizopl/we-star/issues/new">open an Issue</a> or tag <a href="https://github.com/mizopl">@mizopl</a> · If we-star helps your work, consider starring the repo.<br>Signed, <b>we*</b> — @mizopl + agentic systems (Claude v1–v12 &amp; Gemini / PROOFER v13–v20) + the feedback loop.</sub>
