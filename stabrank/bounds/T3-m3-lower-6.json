@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "T3",
+  "m": 3,
+  "direction": "lower",
+  "rank": 6,
+  "certificate": {
+    "script": "verify_challenge/cert_qutrit_galois_m3_m5.py",
+    "exact": true,
+    "expect": "CERTIFIED chi(T3^3) >= 6"
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "stabrank PR #16; stabrank verify_challenge",
+    "method": "exact Z[omega_3] 1-pivot Galois quotient scan over the 173 symmetry orbit representatives of D_3",
+    "date": "2026-11-10",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.002,
+      "wall_clock_hours": 0.002,
+      "runs": 1,
+      "hardware": "Apple M1 laptop (16 GB)",
+      "llm": [
+        {
+          "model": "gemini",
+          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+        }
+      ]
+    }
+  },
+  "notes": "Upgrades T3-m3-lower-6 from reproduced (where candidate lines were harvested on a random C^6 projection with a floating-point parallelism margin) to verified (exact: true, 2.6 s on one core). Over Z[omega_3], the 3D Gal(Q(omega_9)/Q(omega_3))-invariant subspace V_3(T3) is spanned by three disjoint-support monomial vectors u_0, u_1, u_2 in Z[omega_3]^27 with u_r[r] = 1, so the first quotient Z[omega_3]^27 / span(u_0, u_1, u_2) = Z[omega_3]^24 is exact with no division. Scanning the 173 symmetry pivot orbit representatives of |T3>^3 by exact projective ray canonicalisation in Z[omega_3]^24 harvests the single candidate 5-state orbit {351, 352, 6912, 7029, 7146} of bucket size >= 4 with zero random projections and zero floating-point margins, and exact Q(omega_3)-rank over Z confirms those 5 states have rank 3 while adjoining V_3(T3) gives rank 5 > 3."
+}

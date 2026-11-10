@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "H3",
+  "m": 3,
+  "direction": "lower",
+  "rank": 4,
+  "certificate": {
+    "script": "verify_challenge/cert_qutrit_galois_m3_m5.py",
+    "exact": true,
+    "expect": "CERTIFIED chi(H3^3) >= 4"
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "arXiv:2605.28586 (Labib and Russo); stabrank verify_challenge",
+    "method": "0-pivot tau-Galois descent over Q(omega_3, sqrt(3)) / Q(omega_3) in exact Z[omega_3] arithmetic",
+    "date": "2026-11-10",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.002,
+      "wall_clock_hours": 0.002,
+      "runs": 1,
+      "hardware": "Apple M1 laptop (16 GB)",
+      "llm": [
+        {
+          "model": "gemini",
+          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+        }
+      ]
+    }
+  },
+  "notes": "Upgrades the m=3 bound of arXiv:2605.28586 from reproduced to verified (exact: true). Unnormalised |H3> = (1 + sqrt(3))|0> + |1> + |2> lies in Z[sqrt(3)]^3, while every qutrit stabilizer state has coordinates in Z[omega_3] subset Q(sqrt(-3)). Since [Q(omega_3, sqrt(3)) : Q(omega_3)] = 2, the Galois automorphism tau(sqrt(3)) = -sqrt(3), tau(omega_3) = omega_3 fixes every qutrit stabilizer state and forces any rank-3 decomposition of |H3>^3 to contain the 2D subspace V_3(H3) = span(v_0, v_1) subset Z^27. Thus all 3 stabilizer states would project to a single ray modulo V_3(H3). Across all 30,240 three-qutrit stabilizer states in exact Z[omega_3] arithmetic, no state lies in V_3(H3) and the maximum ray bucket size modulo V_3(H3) is 1 (0 pivots needed, 0.11 s). Positive control: at m=2, 3 buckets of size >= 3 are found."
+}

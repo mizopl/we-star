@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "CS",
+  "m": 3,
+  "direction": "lower",
+  "rank": 4,
+  "certificate": {
+    "script": "verify_challenge/cert_cs_m3_m4_exact.py",
+    "exact": true,
+    "expect": "CERTIFIED chi(CS^3) >= 4"
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "stabrank verify_challenge",
+    "method": "even-qubit (<0|_2 (I (x) H))^3 Clifford postselection to |Psi_3> = (2|0> + (1+i)|1>)^3 in Z[i]^8 + two-handle exact Z[i] rank-3 exclusion on D_2 and D_3",
+    "date": "2026-10-21",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.001,
+      "wall_clock_hours": 0.001,
+      "runs": 1,
+      "hardware": "Apple M1 laptop (16 GB)",
+      "llm": [
+        {
+          "model": "gemini",
+          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+        }
+      ]
+    }
+  },
+  "notes": "Upgraded from reproduced (45 s numerical block slice-and-lift on D_4) to verified (exact: true, 2.6 s on a single core, zero floating-point arithmetic). Applying the local Clifford I (x) H to each copy of |CS> = (|00> + |01> + |10> + i|11>)/2 and projecting the second qubit onto <0| gives (<0|_2 (I (x) H))|CS> = (2 sqrt(2))^{-1} (2|0> + (1+i)|1>) = (2 sqrt(2))^{-1} |Psi_1> (verified symbolically against stabrank_verify.target_vector). Since Clifford unitaries and <0| projections cannot increase stabilizer rank (Lean: stabRank_projection), chi(|CS>^m) >= chi(|Psi_m>) for all m. On D_2 (60 states) and D_3 (1,080 states), verify_challenge/cert_cs_m3_m4_exact.py certifies chi(|Psi_3>) = 4 in exact Z[i] arithmetic by two independent handles: (Handle A) enumerating all 483 exact rank-3 decompositions of |Psi_2> on D_2 and verifying 0 Pauli slice-and-lift matches to |Psi_3>; and (Handle B) an unconditional 1-pivot exact Z[i] quotient sweep over all 1,080 pivots of D_3 (with zero symmetry assumptions) finding 0 rank-3 decompositions of |Psi_3>, paired with the explicit rank-4 positive control {(|0> + i^k |1>)^3}_{k=0}^3."
+}

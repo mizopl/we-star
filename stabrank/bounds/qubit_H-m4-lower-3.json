@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "qubit_H",
+  "m": 4,
+  "direction": "lower",
+  "rank": 3,
+  "certificate": {
+    "script": "verify_challenge/cert_qubit_galois_m3_m4.py",
+    "exact": true,
+    "expect": "CERTIFIED chi(qubit_H^4) >= 3"
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "stabrank verify_challenge",
+    "method": "exact Z[i] codimension-2 Galois quotient over Q(i, sqrt(2)) on all 36,720 4-qubit stabilizer states",
+    "date": "2026-11-10",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.001,
+      "wall_clock_hours": 0.001,
+      "runs": 1,
+      "hardware": "Apple M1 laptop (16 GB)",
+      "llm": [
+        {
+          "model": "gemini",
+          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+        }
+      ]
+    }
+  },
+  "notes": "Upgraded from reproduced (floating-point margin) to verified (exact: true) via the exact Z[i] codimension-2 Galois quotient q(s) in Z[i]^14 modulo P_4 = span_{Q(i)}(A_4, B_4), where (1 + sqrt(2))^4 |H>^4 = A_4 + sqrt(2) B_4. Across all 36,720 4-qubit stabilizer states in Z[i]^16, 0 states lie in P_4 and the maximum parallel ray group size in Q(i)^16 / P_4 is 2 (< 3), excluding both rank 2 and rank 3 in exact integer arithmetic without floating-point tolerances."
+}

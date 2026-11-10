@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "qubit_T",
+  "m": 5,
+  "direction": "lower",
+  "rank": 4,
+  "certificate": {
+    "script": "verify_challenge/cert_qubit_galois_m3_m4.py",
+    "exact": true,
+    "expect": "CERTIFIED chi(qubit_T^5) >= 4"
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "stabrank verify_challenge",
+    "method": "exact Z[i] codimension-2 Galois quotient enumeration of all 9 rank-3 decompositions of |T>^4 and exact 1-qubit Pauli slice-and-lift exclusion",
+    "date": "2026-11-10",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.001,
+      "wall_clock_hours": 0.001,
+      "runs": 1,
+      "hardware": "Apple M1 laptop (16 GB)",
+      "llm": [
+        {
+          "model": "gemini",
+          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+        }
+      ]
+    }
+  },
+  "notes": "Upgraded from reproduced to verified (exact: true) in 0.5 s without floating-point arithmetic. The exact Z[i] codimension-2 Galois quotient on all 36,720 4-qubit stabilizer states enumerates all 9 exact rank-3 decompositions of |T>^4 (the full symmetry orbit of the QubitTM4 witness), and an exact integer check over all (4 * 2^4)^3 = 262,144 phased 4-qubit Pauli assignments proves that 0 of the 9 decompositions satisfy the slice-1 identity sum_{j=1}^3 d_j w_j = ratio_T * D * psi_4 over Q(i, sqrt(3))."
+}

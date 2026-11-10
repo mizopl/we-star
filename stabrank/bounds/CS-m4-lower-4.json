@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "CS",
+  "m": 4,
+  "direction": "lower",
+  "rank": 4,
+  "certificate": {
+    "script": "verify_challenge/cert_cs_m3_m4_exact.py",
+    "exact": true,
+    "expect": "CERTIFIED chi(CS^4) >= 4"
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "stabrank verify_challenge",
+    "method": "projection monotonicity (<00|_{7,8} |CS>^4 = (1/2) |CS>^3) applied to the exact Z[i] even-qubit postselection bound chi(CS^3) >= 4",
+    "date": "2026-11-10",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.001,
+      "wall_clock_hours": 0.001,
+      "runs": 1,
+      "hardware": "Apple M1 laptop (16 GB)",
+      "llm": [
+        {
+          "model": "gemini",
+          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+        }
+      ]
+    }
+  },
+  "notes": "chi(|CS>^4) >= chi(|CS>^3) >= 4 by computational-basis projection monotonicity (<00|_{7,8} (x) I_6)|CS>^4 = (1/2)|CS>^3 (verified symbolically in verify_challenge/cert_cs_m3_m4_exact.py before the claim is printed), paired with the two-handle exact Z[i] exclusion chi(|CS>^3) >= chi(|Psi_3>) = 4 re-run in the same script. With bounds/CS-m4-upper-9.json this places the m=4 cell at 4 <= chi(|CS>^4) <= 9."
+}

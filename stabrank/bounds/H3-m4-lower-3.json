@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "H3",
+  "m": 4,
+  "direction": "lower",
+  "rank": 3,
+  "certificate": {
+    "script": "verify_challenge/cert_qutrit_galois_m3_m5.py",
+    "exact": true,
+    "expect": "CERTIFIED chi(H3^4) >= 3"
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "stabrank verify_challenge",
+    "method": "projection monotonicity from the exact Z[omega_3] tau-Galois exclusion chi(H3^3) >= 4",
+    "date": "2026-11-10",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.002,
+      "wall_clock_hours": 0.002,
+      "runs": 1,
+      "hardware": "Apple M1 laptop (16 GB)",
+      "llm": [
+        {
+          "model": "gemini",
+          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+        }
+      ]
+    }
+  },
+  "notes": "Upgrades H3-m4-lower-3 from reproduced (2-minute numerical rank-2 scan on D_4) to verified (exact: true) via projection monotonicity (<0| (x) I^3)|H3>^4 prop |H3>^3 applied to the exact Z[omega_3] tau-Galois exclusion chi(H3^3) >= 4 > 3."
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "N",
+  "m": 4,
+  "direction": "lower",
+  "rank": 4,
+  "certificate": {
+    "script": "verify_challenge/cert_qutrit_galois_m3_m5.py",
+    "exact": true,
+    "expect": "CERTIFIED chi(N^4) >= 4"
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "stabrank verify_challenge",
+    "method": "projection monotonicity from the exact Z[omega_3] exclusion chi(N^3) >= 4",
+    "date": "2026-11-10",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.002,
+      "wall_clock_hours": 0.002,
+      "runs": 1,
+      "hardware": "Apple M1 laptop (16 GB)",
+      "llm": [
+        {
+          "model": "gemini",
+          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+        }
+      ]
+    }
+  },
+  "notes": "First verified-tier rank-4 lower bound for the Norrell state at m=4. Since (<0| (x) I^3)|N>^4 = (-1/3)|N>^3, projection monotonicity gives chi(N^4) >= chi(N^3) >= 4 immediately from the exact Z[omega_3] m=3 exclusion without enumerating the 7,439,040 four-qutrit stabilizer states."
+}

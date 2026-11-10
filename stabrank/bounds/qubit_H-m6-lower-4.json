@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "qubit_H",
+  "m": 6,
+  "direction": "lower",
+  "rank": 4,
+  "certificate": {
+    "script": "verify_challenge/cert_qubit_galois_m3_m4.py",
+    "exact": true,
+    "expect": "CERTIFIED chi(qubit_H^6) >= 4"
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "arXiv:2605.28586 (Labib and Russo); stabrank verify_challenge",
+    "method": "projection monotonicity applied to the exact Z[i] codimension-2 Galois quotient rank-3 exclusion at m=4",
+    "date": "2026-05-27",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.001,
+      "wall_clock_hours": 0.001,
+      "runs": 1,
+      "hardware": "Apple M1 laptop (16 GB)",
+      "llm": [
+        {
+          "model": "gemini",
+          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+        }
+      ]
+    }
+  },
+  "notes": "Projection monotonicity from m=4 (Lean: qubit_h_stabRankP_mono in LeanProofs/QubitProjection.lean), upgraded from reproduced to verified (exact: true) by re-running the exact Z[i] codimension-2 Galois quotient exclusion of rank 3 at m=4 inside verify_challenge/cert_qubit_galois_m3_m4.py."
+}

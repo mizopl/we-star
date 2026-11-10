@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "qubit_H",
+  "m": 5,
+  "direction": "lower",
+  "rank": 5,
+  "certificate": {
+    "script": "verify_challenge/cert_qubit_galois_m5_m6_rank4.py",
+    "exact": true,
+    "expect": "CERTIFIED chi(qubit_H^5) >= 5"
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "stabrank verify_challenge",
+    "method": "exact Z[i] 1-pivot codimension-2 Galois quotient on D_3 (1,080 states) + orthogonal Pauli destabilizer basis + 2-qubit slice matching",
+    "date": "2026-11-10",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.002,
+      "wall_clock_hours": 0.002,
+      "runs": 1,
+      "hardware": "Apple M1 laptop (16 GB)",
+      "llm": [
+        {
+          "model": "gemini",
+          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+        }
+      ]
+    }
+  },
+  "notes": "Upgraded from reproduced (1,649 s numerical pivot enumeration on D_4 with 3,600 s declared budget) to verified (exact: true, 4.7 s on a single core under the default budget, zero floating-point arithmetic). Slicing along qubits 1, 2: (1) Fact 1 (every term full along every qubit) holds because chi(H^4) = 4 is verified in exact Z[i] arithmetic in the same run; (2) Fact 2 (at most 1 absent term at any 2-qubit point) holds because chi(H^3) = 3; (3) the flat lemma forces every term's 2-qubit support to be F_2^2, A = {00, 11}, or B = {01, 10}, with at most one A-line and at most one B-line, and exact integer residual tables on the 2 G_3-orbits of rank-3 decompositions of |H>^3 at ratio^{+-2} have 0 exact hits, excluding any B-line (n_B = 0) and forcing all 4 terms to be visible at x_0 = 00; (4) the 1-pivot codimension-2 Galois quotient on D_3 (1,080 states, |G_3| = 48) enumerates all 2,406 Kind-A independent 4-cover orbits, 0 Kind-B dependent 4-cover orbits (max parallel ray group in Q(i)^8 / P_3 is 3 < 4), and 6 Kind-C repeated-state 4-cover orbits; (5) every Kind-C orbit is eliminated by projecting the 1,089 slice-11 residuals onto the 8 orthogonal Pauli classes {P_k u_blk}_{k=0}^7 (minimum non-zero Pauli support is 4 > 2); (6) exact integer meet-in-the-middle slice matching across x in {01, 10, 11} leaves 30 slice-01 survivors and 0 5-qubit survivors."
+}

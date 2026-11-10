@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "T3",
+  "m": 5,
+  "direction": "lower",
+  "rank": 6,
+  "certificate": {
+    "script": "verify_challenge/cert_qutrit_galois_m3_m5.py",
+    "exact": true,
+    "expect": "CERTIFIED chi(T3^5) >= 6"
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "stabrank verify_challenge",
+    "method": "projection monotonicity applied twice to the exact Z[omega_3] Galois quotient exclusion chi(T3^3) >= 6",
+    "date": "2026-11-10",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.002,
+      "wall_clock_hours": 0.002,
+      "runs": 1,
+      "hardware": "Apple M1 laptop (16 GB)",
+      "llm": [
+        {
+          "model": "gemini",
+          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+        }
+      ]
+    }
+  },
+  "notes": "Upgrades T3-m5-lower-6 from reproduced to verified (exact: true) via projection monotonicity (<00| (x) I^3)|T3>^5 = (1/3)|T3>^3 applied to the exact Z[omega_3] 1-pivot Galois quotient exclusion chi(T3^3) >= 6."
+}

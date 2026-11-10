@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "cat",
+  "m": 7,
+  "direction": "lower",
+  "rank": 3,
+  "certificate": {
+    "script": "verify_challenge/cert_cat_m7_to_m10_lift.py",
+    "exact": true,
+    "expect": "CERTIFIED chi(cat_7) >= 3"
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "arXiv:2106.07740 (Qassim, Pashayan, and Gosset); stabrank verify_challenge",
+    "date": "2026-11-10",
+    "github": [
+      "mizopl"
+    ],
+    "method": "exact Z[i] 2-step slice-and-lift on D_4 plus projection monotonicity from chi(cat_5) = 3",
+    "compute": {
+      "cpu_hours": 0.05,
+      "wall_clock_hours": 0.05,
+      "runs": 1,
+      "hardware": "Apple M1 laptop (16 GB)",
+      "llm": [
+        {
+          "model": "gemini",
+          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+        }
+      ]
+    }
+  },
+  "notes": "Upgrades the cited bound chi(cat_7) >= 3 of Qassim, Pashayan, and Gosset (arXiv:2106.07740) to the verified tier via verify_challenge/cert_cat_m7_to_m10_lift.py (exact: true, 3.7 s on one core), which certifies chi(cat_5) = chi(cat_6) = 3 and chi(cat_7) >= 4 in exact Gaussian-integer arithmetic."
+}
