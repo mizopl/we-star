@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Exact Thermodynamic Tie & Local Finite-State Minimax Barrier Certifier (`certify_group1_barriers.py`)
-Campaign: V20-02B (`eterna-hard`, Stanford Das Lab challenge — Step 4)
+Benchmark: `eternagame/eterna-hard` (Groups 1-3, Stanford Das Lab challenge)
 
 Produces `group1_barrier_certificates.json`:
   1. Verifies all `d_bp = 0, v_budget = 0, de_mfe = 0.00 kcal/mol` full solves across Groups 1–3

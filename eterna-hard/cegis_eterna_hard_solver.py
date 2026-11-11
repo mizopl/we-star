@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """
 CEGIS + Kempe Budget-Manifold RNA Inverse-Folding Solver for Eterna-Hard (`cegis_eterna_hard_solver.py`, v3)
-Campaign: V20-02B (`eterna-hard`, Groups 1..3, Stanford Das Lab challenge)
+Benchmark: `eternagame/eterna-hard` (Groups 1..3, Stanford Das Lab challenge)
 
 Key Algorithmic Architecture:
-  1. Dual-Engine Exact Parity (`Law M38`):
+  1. Dual-Engine Exact Parity:
      - `folder in ('Vienna', 'Vienna1')`: loads Turner 1999 (`RNA.params_load_RNA_Turner1999()`, `RNA.cvar.dangles = 1`)
        for microsecond C-extension folding/evaluation, coupled with a persistent pipe to the official compiled
        `ViennaRNA-1.8.5/Progs/RNAfold -T 37 -noPS` binary for exact MFE tie-breaking parity with `check_design.py`.
      - `folder == 'Vienna2'`: loads Turner 2004 (`RNA.params_load_RNA_Turner2004()`, `RNA.cvar.dangles = 2`).
-  2. Non-Zipping Pure-Purine Turner 1999 Loop-Motif Dictionary (`Law M38` + `CLSS-4`):
+  2. Non-Zipping Pure-Purine Turner 1999 Loop-Motif Dictionary:
      - Lonely base-pair cascades separated by `2x2` internal loops (`(..(..`) use `p0 = GC -> p_{k>=1} = CG` with
        pure-purine `GA / GA`, `AA / GG`, `GG / AA`, `AG / AG` loops so loop bases can never zip into wobble stems.
      - `1x2` internal loops use `A / GG`, `2x1` loops use `GG / A`, and `1x1` loops use `G / G`.
-  3. Three-Stage Dual-Compass Solver (`Op-M1` + `Op-M4` + `Op-M5` + `Law M37`):
+  3. Three-Stage Dual-Objective Solver:
      - Stage 1: Multi-seed budget-manifold initialization + guarded `RNA.inverse_fold` (`L <= 105`) + Kempe projection.
      - Stage 2: Constrained CEGIS Rival-Set Minimax (`12 us` `RNA.eval_structure_simple` separable coordinate descent).
      - Stage 3: Dual-Compass Fast MFE Seam + 2-Pair Kempe Swap Climber (`strict_manifold=True` & `False` -> projection).

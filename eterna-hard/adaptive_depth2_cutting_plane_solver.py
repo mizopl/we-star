@@ -2,9 +2,9 @@
 """
 Adaptive Depth-2 Boundary-Expansion & Coupled Multi-Defect Cutting-Plane Solver
 (`adaptive_depth2_cutting_plane_solver.py`)
-Campaign: V20-02B (`eterna-hard`, Bet `L-EVVA-012`)
+Benchmark: `eternagame/eterna-hard` (Groups 1-3)
 
-Implements the 4 `[L0-ALGO]` upgrades with `< 0.5 s` `CLSS-1` per-window complexity:
+Implements 4 fast (`< 0.5 s` per window) structural upgrades:
   1. `Law R11` (`2-Stage Depth-2 Expanded Window W_2`):
      - `Stage 1`: `w1_pairs[:3]` x `w1_unp[:2]` (`<= 3,456` states) scored against `<= 4` core rivals (`< 0.12 s`).
      - `Stage 2`: top `B_1 <= 128` states from `W_1` crossed with `d2_pairs[:2]` x `d2_unp[:2]`

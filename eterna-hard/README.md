@@ -79,7 +79,7 @@ Full 100-row per-group frontier sweeps (`designs_group1.tsv`, `designs_group2.ts
 
 ## 3. 300-Puzzle Benchmark Statistics (`eterna-hard` `Groups 1-3`, `Vienna 1.8.5`)
 
-- **Constraint satisfaction (`v_budget = 0`, all locked `x` bases and `GC`/`AU`/`GU`/`CONSECUTIVE_X` quotas satisfied):** **`299 / 300` (`99.7%`)** (`100/100` in Group 1, `100/100` in Group 2, `99/100` in Group 3; the sole positive-violation outlier is `#5905008 Mat - Lot of Locks 2` in Group 3 with 74 locked positions).
+- **Constraint satisfaction (`v_budget = 0`, all locked `x` bases and `GC`/`AU`/`GU`/`CONSECUTIVE_X` quotas satisfied):** **`299 / 300` (`99.7%`)** (`100/100` in Group 1, `100/100` in Group 2, `99/100` in Group 3; the sole positive-violation outlier is `#5687609 Buah Sukun` in Group 3 with `L = 407`, `SHAPE,0,GC,23`, at `v_budget = 1`).
 - **Base-pair symmetric-difference distance distribution (`d_bp` at `v_budget = 0`, `N = 300`):**
   - `d_bp = 0` (`check_design.py == PASS`): **`37 / 300` (`12.3%`)** (`11` Group 1, `12` Group 2, `14` Group 3; `38 / 301` including `martian.csv`)
   - `d_bp <= 1`: **`96 / 300` (`32.0%`)** (`37` at `d_bp = 0` + **`59` at `d_bp = 1`**: `28` Group 1, `19` Group 2, `12` Group 3; `97 / 301` including `martian.csv`)
@@ -90,7 +90,7 @@ Full 100-row per-group frontier sweeps (`designs_group1.tsv`, `designs_group2.ts
 - **Thermodynamic ground-state gap (`de_mfe = E(target) - E(MFE)` at `v_budget = 0`, `N = 300`):**
   - `de_mfe == 0.00 kcal/mol`: **`43 / 300`** (`37` solved at `d_bp = 0` + **`6` exact MFE ground-state degeneracies at `d_bp = 1`**: `#3151424 Brourd's Small and Crazy` [`E=-14.40`], `#3193338 Brourd's Combination` [`E=-22.20`], `#3439296 1 Locked nt` [`E=-11.10`], `#4627086 Easy Tesla's Particular` [`GU>=3, E=-23.00`], `#5404194 Sinker` [`E=-13.30`], and `#5877182 Stack & Loop` [`E=-15.95`]; see [`exact_ground_state_ties_de0.tsv`](./exact_ground_state_ties_de0.tsv)). Note that two Phase I ground-state ties (`#3357791 Some loops` and `#3161590 Interesting Intelligence`) were promoted to strict `--unique-mfe` full solves in Phase II.
   - `de_mfe <= 0.50 kcal/mol`: **`77 / 300`**; `de_mfe <= 1.00 kcal/mol`: **`95 / 300`**.
-  - **Phase I local minimax barrier certificates (`Group 1`, `d_bp = 1`):** [`group1_barrier_certificates.json`](./group1_barrier_certificates.json) archives local cutting-plane minimax barrier certificates (`[0.00, +1.10] kcal/mol`) from the Phase I Group 1 `d_bp = 1` snapshot (`5` of those `18` puzzles were subsequently solved globally in Phase II once C-accelerated global coupling + Kempe swaps were enabled).
+  - **Phase I local minimax barrier certificates (`Group 1`, `d_bp = 1`):** [`group1_barrier_certificates.json`](./group1_barrier_certificates.json) archives local cutting-plane minimax barrier certificates (`[0.00, +1.50] kcal/mol` across `16` missing-pair seams plus `2` extra-pair parasitic-prop seams) from the Phase I Group 1 `d_bp = 1` snapshot (`4` of those `18` puzzles: `#3321286`, `#3349978`, `#3357791`, and `#3480541` were subsequently solved globally in Phase II once C-accelerated global coupling + Kempe swaps were enabled).
 
 ---
 
