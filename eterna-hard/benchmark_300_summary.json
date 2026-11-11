@@ -1,104 +1,335 @@
 {
-  "campaign": "V20-02B: eterna-hard",
+  "benchmark": "eternagame/eterna-hard (Groups 1-3) + eternagame/eterna-validator (martian.csv)",
   "groups": {
     "group1": {
       "total": 100,
       "v_budget_0": 100,
-      "solved_dbp_0": 5,
-      "dbp_1": 18,
-      "dbp_2": 8,
-      "dbp_le_2": 31,
-      "exact_ground_state_ties": 2,
+      "solved_dbp_0": 11,
+      "solved_unique_mfe": 9,
+      "dbp_1": 28,
+      "dbp_2": 14,
+      "dbp_le_1": 39,
+      "dbp_le_2": 53,
+      "exact_ground_state_ties": 3,
       "solved_puzzles": [
         {
           "puzzle_id": "3058243",
           "title": "2 GU",
+          "unique_mfe": true,
+          "solve_sec": 0.2,
           "sequence": "CGGGGAGGGACGAGGAGGGAAACUACGGGACGCACGAAAAAAAAGCACAGGACACAGUAAAAAGCGGGGGGGACGGGGGGC"
+        },
+        {
+          "puzzle_id": "3263351",
+          "title": "3 AU",
+          "unique_mfe": true,
+          "solve_sec": 1.25,
+          "sequence": "CGUGCCUGCUUGCUUGAGGAAACCUAUUGAACGUGACUGUGGACUGUGC"
+        },
+        {
+          "puzzle_id": "3321286",
+          "title": "Loop & Bulge",
+          "unique_mfe": true,
+          "solve_sec": 12.12,
+          "sequence": "ACUGGAGGGAAUUGGAAUGGGAGCGAUACGCACGACUGACGCGCAGG"
+        },
+        {
+          "puzzle_id": "3349978",
+          "title": "Less loops",
+          "unique_mfe": true,
+          "solve_sec": 25.3,
+          "sequence": "CACCCCACGGGACGGGACAGGGGGCUCCCAAAGGGAGGCGCGGCAGGCGGGAGAGGGUG"
+        },
+        {
+          "puzzle_id": "3357791",
+          "title": "Some loops",
+          "unique_mfe": true,
+          "solve_sec": 16.46,
+          "sequence": "AUCCAGUGGAAACGUCGGCACGCAGACGGAAACGCAGGGUCAGUCCGAUACGGUCAGCGAAACGCAGAGGCAAAGCCCAGUCCCAGGGCGAAAGCGCAGGGUGCACCCGAAAGGCGGGGAAAAAAAA"
+        },
+        {
+          "puzzle_id": "3480541",
+          "title": "Zanna : Wizzen",
+          "unique_mfe": false,
+          "solve_sec": 11.78,
+          "sequence": "GACAAAGUCAAGUUAAAAGUCAAAUGAGAGUAAAAUGAAAGAAAAAAAUAGAUGGACAGUAGGAGGAGACACGCGCAA"
         },
         {
           "puzzle_id": "3497795",
           "title": "1-1 with triloop",
+          "unique_mfe": true,
+          "solve_sec": 7.5,
           "sequence": "CUGGGGGCAAGGAAACACGGCGGGCAAAGAAACAAAGGCGGCGGAAACACGGGCAAAGGCGGGCAAGGCGCGAG"
         },
         {
           "puzzle_id": "3620224",
           "title": "Based on Brourd's puzzle",
+          "unique_mfe": true,
+          "solve_sec": 10.11,
           "sequence": "GGCAGGGAAGACGAAAGCACGCGAAAGACAGGUAGGACGAAAGCAAAGACCCCCACCUUCGGCGGGCC"
+        },
+        {
+          "puzzle_id": "3654075",
+          "title": "Move Along",
+          "unique_mfe": false,
+          "solve_sec": 76.85,
+          "sequence": "CUAAGAACGAAAGUCGGAAAAGUGUGAUAUCGAAAGAGCGAAGUCGAAGGAUGCAAGUUUAGAAAUAGAAUUCAGGAAAAAACAGUUAUGGGUGAAAAUGUAAACAAUUUAGAA"
         },
         {
           "puzzle_id": "3714598",
           "title": "Verity",
+          "unique_mfe": true,
+          "solve_sec": 10.16,
           "sequence": "AGUGGCAGGACCCAGACCCACCCGGGGAAGUCGGCGAGUGGGAAACCCAAGGAAAACUAACGCCGCUCGGGCUGAAAAGACAACCCACGAGGAGAGGCAAGACGGGAAACGGCAAGGGCGGACGGC"
         },
         {
           "puzzle_id": "3720758",
           "title": "Flux",
+          "unique_mfe": true,
+          "solve_sec": 4.3,
           "sequence": "CGAGAGGAAACCUGGGGAGGGAAACACUGCAGCCUACGAAAGAGAGCACGAGGGAAACACUGGCGUCACGAAAGGAGG"
         }
       ]
     },
     "group2": {
       "total": 100,
-      "v_budget_0": 99,
-      "solved_dbp_0": 0,
-      "dbp_1": 15,
-      "dbp_2": 10,
-      "dbp_le_2": 25,
+      "v_budget_0": 100,
+      "solved_dbp_0": 12,
+      "solved_unique_mfe": 8,
+      "dbp_1": 19,
+      "dbp_2": 6,
+      "dbp_le_1": 31,
+      "dbp_le_2": 37,
       "exact_ground_state_ties": 2,
-      "solved_puzzles": []
+      "solved_puzzles": [
+        {
+          "puzzle_id": "3161590",
+          "title": "Interesting Intelligence",
+          "unique_mfe": true,
+          "solve_sec": 18.28,
+          "sequence": "CCCACAGGGUCUAGAUAGAGUUACUCACGCCAAUGGUUGUUUGGAGGCAUCGCC"
+        },
+        {
+          "puzzle_id": "3163385",
+          "title": "II2L",
+          "unique_mfe": true,
+          "solve_sec": 97.27,
+          "sequence": "GGCUAAGCCGAUAUAUAGAGAUUCUCAGGCCAAAGGUUGUGUGUCCCCAAUGGG"
+        },
+        {
+          "puzzle_id": "4115808",
+          "title": "Easy 4GU",
+          "unique_mfe": true,
+          "solve_sec": 66.78,
+          "sequence": "GCCAGGAAACAGCGUUGCGUGGGACGGGAAACGAGGAAUUGCAAAUUUCGAGCGGGGAAACAGAAGGGGGUGGGGUGGGAAACAGGC"
+        },
+        {
+          "puzzle_id": "4718738",
+          "title": "Based on Hog's Owl",
+          "unique_mfe": true,
+          "solve_sec": 110.66,
+          "sequence": "GCGAGACAAAGCAGCUGCCCCGAAAGGGCCCGAAAAAGAAGAAAAAAAUAAAAAAAGGGUCGAAAGAGGCGAAAAUAAAAAAAUAAACAAAUAGCCGCGAAAGCGCAGCACCGAAAAAGG"
+        },
+        {
+          "puzzle_id": "4732033",
+          "title": "Easier Hog's BoostMe 28 mod",
+          "unique_mfe": false,
+          "solve_sec": 27.53,
+          "sequence": "ACGCACGUCGAAAGUUCAGCCGCAAGGGGUCAGAGGAAACCGGUCAGGGG"
+        },
+        {
+          "puzzle_id": "4762862",
+          "title": "Based on Tesla's Zoso",
+          "unique_mfe": false,
+          "solve_sec": 25.32,
+          "sequence": "CCAUAGAGUAGAGAGACGAGGACUUCGGAUUGAAAAAUCGGAGCAGAGGAGAGAGAGACGAAAGCCCCCCCGCAAAGCCAGCAUGUACG"
+        },
+        {
+          "puzzle_id": "4809779",
+          "title": "Daniel B : Habit using Red mod",
+          "unique_mfe": true,
+          "solve_sec": 30.15,
+          "sequence": "GGCGGGCGGGGGUGGGAGAAAUGUGAGCGGCGAGGGAGACGUGGGCACGGGUGGGC"
+        },
+        {
+          "puzzle_id": "5028220",
+          "title": "VirgieP3 : Squeek partial",
+          "unique_mfe": false,
+          "solve_sec": 26.42,
+          "sequence": "AAAAAUAUAAAAAAAUAUGAAAAUAAUUGACGACUCACAGCUAGGUACUUUAAAUAUGAAAAUAGAAAUAAUAAUGGAUCUUAAUACAAUAUGUAAAA"
+        },
+        {
+          "puzzle_id": "5097853",
+          "title": "Boost it right",
+          "unique_mfe": true,
+          "solve_sec": 1.61,
+          "sequence": "GGGUCCUGGAAGAAAUGAAAGCUGGGUGGAAUUGGAAACUGCUGCGGUCC"
+        },
+        {
+          "puzzle_id": "5404826",
+          "title": "Random Loops",
+          "unique_mfe": true,
+          "solve_sec": 43.12,
+          "sequence": "GCUGAAGUGGUGUGAUACUGACUGGAUGGGAAACGACUGGCCCUCUGCGAUUGGC"
+        },
+        {
+          "puzzle_id": "8711679",
+          "title": "Partial of \"Kid on a Sky-Ride\"",
+          "unique_mfe": false,
+          "solve_sec": 65.61,
+          "sequence": "AAAAAAAAAAAAAAAAAAAGCUGGGUCGGUGCGUGGGACGGCGGUGCGUAGAUUAUAUUUAUGCACGAGAGGCGAGGUGUGGUCGAAGUUUAGCGAAGUUAAACUUCGAGCCCAGA"
+        },
+        {
+          "puzzle_id": "8718936",
+          "title": "Tightened Tom",
+          "unique_mfe": true,
+          "solve_sec": 2.92,
+          "sequence": "CGAGGUGUUUUCGAAAGGGAUUGUGAGAGUGAGUGUCUGG"
+        }
+      ]
     },
     "group3": {
       "total": 100,
       "v_budget_0": 99,
-      "solved_dbp_0": 6,
-      "dbp_1": 4,
-      "dbp_2": 8,
-      "dbp_le_2": 18,
-      "exact_ground_state_ties": 0,
+      "solved_dbp_0": 14,
+      "solved_unique_mfe": 10,
+      "dbp_1": 12,
+      "dbp_2": 12,
+      "dbp_le_1": 26,
+      "dbp_le_2": 38,
+      "exact_ground_state_ties": 1,
       "solved_puzzles": [
+        {
+          "puzzle_id": "5583495",
+          "title": "Unrestricted parachute man",
+          "unique_mfe": false,
+          "solve_sec": 43.15,
+          "sequence": "AACGGGGGACGGAAGGGGAGACGCAAGGGGAAAACGCACGGGGAAACGCAAGGGAAUAUCGCAA"
+        },
         {
           "puzzle_id": "5741038",
           "title": "Choo's sequence extension",
+          "unique_mfe": false,
+          "solve_sec": 3.3,
           "sequence": "GGGGACGUAGGGCAGGGGAGACGGAAACGCCGCACGAGACGCAGGGACCC"
         },
         {
           "puzzle_id": "5811869",
           "title": "Another Jerky",
+          "unique_mfe": true,
+          "solve_sec": 4.26,
           "sequence": "CGACGCGGGACAGGGAGCGGAAACACGACGGACGAGGGCA"
+        },
+        {
+          "puzzle_id": "5819498",
+          "title": "4X4 L",
+          "unique_mfe": true,
+          "solve_sec": 56.06,
+          "sequence": "GUCUUGGUGUCCUUGCUGGUAAUGGAAUUGUGGUGCCCUUGUUGCUAAAAUGUGAUGAAUCUGGAAAAGUGCUGCCCCUGGUGAAAAUGGUUAAAUGUUGAAGC"
+        },
+        {
+          "puzzle_id": "5823364",
+          "title": "Square",
+          "unique_mfe": true,
+          "solve_sec": 37.03,
+          "sequence": "GUGCUGGAAUUGUGAAACUGUGGAACUGGAAUGCUUUAUGCCCCUGCUUGCCUGGUGC"
+        },
+        {
+          "puzzle_id": "5835186",
+          "title": "NUNZIO'S Candle Stick",
+          "unique_mfe": true,
+          "solve_sec": 71.41,
+          "sequence": "GUAGGGGGUUGGGCUGUAAAAUAGUGUCAUUAAGUGAUUUGAGUGUGUAU"
+        },
+        {
+          "puzzle_id": "5837236",
+          "title": "NUNZIO'S Long Candle Stick",
+          "unique_mfe": true,
+          "solve_sec": 90.6,
+          "sequence": "GUGUGUGUGUGGGAGAGUGGUAUGAUGAAGUUAUAGUUCUAGGGUAGGAUCGAGUGUGUGGGGGGGGGGC"
+        },
+        {
+          "puzzle_id": "5848426",
+          "title": "Dmeyer : I can c you",
+          "unique_mfe": true,
+          "solve_sec": 36.32,
+          "sequence": "GAUCAAUGAGUAUAAAAUACAGGAAUAUAAAAUAUAUAGCGCAGCAUCCAUAAUCAGUCAGCCAAAGGC"
         },
         {
           "puzzle_id": "5868257",
           "title": "NUNZIO's Mind's Eye",
+          "unique_mfe": true,
+          "solve_sec": 4.94,
           "sequence": "GGACGAAAAUGGCAGGGAAAAAAAAAAAAAAAAAAAAAAAAAACCACCAGCAAAGCAGAGGCGCGAAACGGGACCCAGGGAAAAGCAAAAAAAGGAC"
         },
         {
           "puzzle_id": "5881353",
           "title": "Loop 1-...",
+          "unique_mfe": true,
+          "solve_sec": 4.5,
           "sequence": "GCAAACAAACGAGGAAAGGACAAAAGGAAGGCAAAACCAAACGAAAAGGGGGGCACGGGACGCACGGGGGC"
         },
         {
           "puzzle_id": "5887125",
           "title": "1-...Loop 3",
+          "unique_mfe": true,
+          "solve_sec": 6.6,
           "sequence": "GCAUCAAAAGGGGGAAAAGCAGCAGGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACGAGCAAAAGGCGCCAAAAACCGGAGAAAGGC"
+        },
+        {
+          "puzzle_id": "5967883",
+          "title": "Sequence Combination",
+          "unique_mfe": false,
+          "solve_sec": 20.07,
+          "sequence": "GGACCAGAGCCCGCCUGGCGAGGGAAUUGGAAUGGGAAUGGAAACAUACGACUGACGCGGCUGGGCGAGAGACGACGAGGCCU"
         },
         {
           "puzzle_id": "6104928",
           "title": "Tesla's Hook",
+          "unique_mfe": false,
+          "solve_sec": 0.7,
           "sequence": "GCGGCAAAGGACGGGGCAGCAGGAAACGGGACGAGACAGCGGGACAAAGGGAAAAGGCGAAGGCACCAGCAAAAAGCA"
+        },
+        {
+          "puzzle_id": "6184676",
+          "title": "G Minor",
+          "unique_mfe": true,
+          "solve_sec": 4.95,
+          "sequence": "CCACGGGGGGAACGAUACGGGGAGACAACGCACGCAGGAAACAGGG"
         }
       ]
     }
   },
+  "martian_validator_example": {
+    "puzzle_id": "6158733",
+    "title": "Mat - Martian 2",
+    "folder": "Vienna2",
+    "d_bp": 0,
+    "v_budget": 0,
+    "de_mfe": 0.0,
+    "unique_mfe": true,
+    "solve_sec": 5.29,
+    "sequence": "UGCUGCAAAGUAAAAUGGUUUAAUUAAUAGAGAAAAAAUUUAUUGUGAAUUAAAAUUAUGUCUAACAAAAAUAUUACUUUAUGUGAAAAAAAUAUAAAUAGUAUUAAAAUUGAUUUGAGUUUGAAAAAAAAAUUUGCGAUUGAUAAAAAAGGAUGUGAAACUAUAUGAAUUGAUAGAAAAAAUAUUGGUAAUUAUGUGACAACGAGGAAUCGU"
+  },
   "totals": {
     "swept_groups_1_to_3": 300,
-    "v_budget_0": 298,
-    "solved_dbp_0_groups_1_to_3": 11,
-    "solved_dbp_0_including_martian": 12,
-    "dbp_1": 37,
-    "dbp_2": 26,
-    "dbp_le_1_including_martian": 49,
-    "dbp_le_2_including_martian": 75,
-    "exact_ground_state_ties": 4,
-    "group1_d_bp_1_barrier_certificates": 18
+    "v_budget_0": 299,
+    "solved_dbp_0_groups_1_to_3": 37,
+    "solved_dbp_0_including_martian": 38,
+    "solved_unique_mfe_groups_1_to_3": 27,
+    "solved_unique_mfe_including_martian": 28,
+    "dbp_1": 59,
+    "dbp_2": 32,
+    "dbp_le_1_groups_1_to_3": 96,
+    "dbp_le_1_including_martian": 97,
+    "dbp_le_2_groups_1_to_3": 128,
+    "dbp_le_2_including_martian": 129,
+    "dbp_le_3_groups_1_to_3": 148,
+    "dbp_le_5_groups_1_to_3": 171,
+    "dbp_le_10_groups_1_to_3": 198,
+    "exact_ground_state_ties_dbp_gt_0": 6,
+    "total_ground_states_de_0_groups_1_to_3": 43,
+    "de_mfe_le_0_50_groups_1_to_3": 77,
+    "de_mfe_le_1_00_groups_1_to_3": 95
   }
 }
