@@ -79,7 +79,7 @@ Built with Google Antigravity (Gemini) and Claude Code on a 16 GB M1 laptop (wit
 | <sub>32</sub> | <sub>Eterna100 &amp; Hard</sub> | <sub>95/100 on V2 + 3 undesignability laws + 12 solvers=1 solves on eterna-hard</sub> | <sub>[#1031](https://github.com/elder-plinius/V3R1T4S/pull/1031) · [hard](./eterna-hard/)</sub> |
 | <sub>34</sub> | <sub>Magic Distillation</sub> | <sub>$\mathbb{F}_2$ Fredholm &amp; RM(3,7) (3,486 orbits) prove $N_{\text{CCZ}}(4)=10, N_T(4)\ge 9$ in 34.9s</sub> | <sub>[#1043](https://github.com/elder-plinius/V3R1T4S/pull/1043) · [pkg](./solutions/magic-state-distillation-fewest-qubits/)</sub> |
 | <sub>35</sub> | <sub>Unitary stabrank</sub> | <sub>35/35 exact $\mathbb{Z}[i]$/$\mathbb{Z}[\omega_3]$ bounds (20.46s) + 10/10 zero-axiom Lean 4 modules</sub> | <sub>[#193](https://github.com/unitaryfoundation/stabrank/pull/193) · [#194](https://github.com/unitaryfoundation/stabrank/pull/194) · [pkg](./stabrank/)</sub> |
-| <sub>36</sub> | <sub>Hadamard MaxDet</sub> | <sub>8 new $n\equiv 1\pmod 4$ det records ($n=81..117$, +19.86% on 109) + 120-order catalog</sub> | <sub>[repo](https://github.com/mizopl/hadamard-maxdet) · [#1053](https://github.com/elder-plinius/V3R1T4S/pull/1053) · [pkg](./solutions/hadamard-maxdet-records/)</sub> |
+| <sub>36</sub> | <sub>Hadamard MaxDet</sub> | <sub>8 new $n\equiv 1\pmod 4$ det records ($n=81..117$, +19.86% on 109) + 120-order catalog</sub> | <sub>[repo](https://github.com/mizopl/hadamard-maxdet) · [#1053](https://github.com/elder-plinius/V3R1T4S/pull/1053) · [notes](./hadamard-maxdet/) · [pkg](./solutions/hadamard-maxdet-records/)</sub> |
 
 <details>
 <summary><sub>Expand all 36 verified campaigns (#1–#36) · Full derivations in <a href="./docs/00_FULL_BENCHMARK_ATLAS.md">docs/00_FULL_BENCHMARK_ATLAS.md</a></sub></summary>
@@ -122,7 +122,7 @@ Built with Google Antigravity (Gemini) and Claude Code on a 16 GB M1 laptop (wit
 | <sub>33</sub> | <sub>Stabilizer Exponents</sub> | <sub>8.50s Galois lower bounds ($\chi=6$ on $F^{\otimes 5}, T^{\otimes 5}, \text{CS}^{\otimes 3}$) &amp; Face-Cat basis</sub> | <sub>[#1039](https://github.com/elder-plinius/V3R1T4S/pull/1039) · [pkg](./solutions/magic-state-stabilizer-rank-exponents/)</sub> |
 | <sub>34</sub> | <sub>Magic Distillation</sub> | <sub>RM(3,7) (3,486 orbits) proves $N_{\text{CCZ}}(4)=10, N_T(4)\ge 9$ in 34.9s (vs 2-mo SAT)</sub> | <sub>[#1043](https://github.com/elder-plinius/V3R1T4S/pull/1043) · [pkg](./solutions/magic-state-distillation-fewest-qubits/)</sub> |
 | <sub>35</sub> | <sub>Unitary stabrank</sub> | <sub>35/35 exact bounds (20.46s) + 10/10 zero-axiom Lean 4 modules (3h 34m run)</sub> | <sub>[#193](https://github.com/unitaryfoundation/stabrank/pull/193) · [#194](https://github.com/unitaryfoundation/stabrank/pull/194) · [pkg](./stabrank/)</sub> |
-| <sub>36</sub> | <sub>Hadamard MaxDet</sub> | <sub>8 new $n\equiv 1\pmod 4$ det records ($n=81..117$, +19.86% on 109) + 120-order catalog</sub> | <sub>[repo](https://github.com/mizopl/hadamard-maxdet) · [#1053](https://github.com/elder-plinius/V3R1T4S/pull/1053) · [pkg](./solutions/hadamard-maxdet-records/)</sub> |
+| <sub>36</sub> | <sub>Hadamard MaxDet</sub> | <sub>8 new $n\equiv 1\pmod 4$ det records ($n=81..117$, +19.86% on 109) + 120-order catalog</sub> | <sub>[repo](https://github.com/mizopl/hadamard-maxdet) · [#1053](https://github.com/elder-plinius/V3R1T4S/pull/1053) · [notes](./hadamard-maxdet/) · [pkg](./solutions/hadamard-maxdet-records/)</sub> |
 
 </details>
 
@@ -133,7 +133,7 @@ Built with Google Antigravity (Gemini) and Claude Code on a 16 GB M1 laptop (wit
 | Directory | Contents |
 |:---|:---|
 | <sub>[`StartFresh_v19/`](./StartFresh_v19/)</sub> | <sub>Cycle 0 bootstrap seed (Op-M1..M7, CLSS-E1..E6, K10–K19, unified AGENTS.md; earlier [v18](./StartFresh_v18/) &amp; [v16](./StartFresh_v16/))</sub> |
-| <sub>[`solutions/`](./solutions/) · [`stabrank/`](./stabrank/)</sub> | <sub>Standalone reproducible solvers, JSON/LRAT/Lean 4 certificates, `verify.py`, and [`eterna-hard/`](./eterna-hard/)</sub> |
+| <sub>[`solutions/`](./solutions/) · [`hadamard-maxdet/`](./hadamard-maxdet/) · [`stabrank/`](./stabrank/)</sub> | <sub>Standalone reproducible solvers, JSON/LRAT/Lean 4 certificates, `verify.py`, lessons learned, and [`eterna-hard/`](./eterna-hard/)</sub> |
 | <sub>[`docs/`](./docs/00_FULL_BENCHMARK_ATLAS.md)</sub> | <sub>13-chapter methodology &amp; history series (00 Full Benchmark Atlas through 12 Manifesto &amp; Agent Notes)</sub> |
 | <sub>[`Evolved_Agent_Wiki/`](./Evolved_Agent_Wiki/)</sub> | <sub>Co-evolved Cycle 1 → 49 wiki, 30 stitched graphs, and [`scripts_v18_evolution/`](./scripts_v18_evolution/) toolkit</sub> |
 | <sub>[`CONSTITUTION_v19.md`](./CONSTITUTION_v19.md)</sub> | <sub>Public v19 Constitution ([v17](./CONSTITUTION_v17.md) archived; v20 in internal testing) and [`news/`](./news/) field notes</sub> |
