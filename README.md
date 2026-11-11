@@ -9,7 +9,7 @@
     <img alt="PROOFER v20 Obsidian Knowledge and Decision Graph" src="./PROOFER-graph-v20.png" width="400">
   </picture>
   <br>
-  <sub><b>Figure 0 — PROOFER v20 Knowledge &amp; Decision Graph</b> (2026-11-10 · 932 Markdown notes · 330+ cycles · <a href="./PROOFER-graph-v20-dark.png">dark</a> / <a href="./PROOFER-graph-v20.png">light</a>).<br>The upper-right core (wiki &amp; Constitution) bridges into a second constellation of 35 campaign packages, Tug-of-War gates, and sleep notes.</sub>
+  <sub><b>Figure 0 — PROOFER v20 Knowledge &amp; Decision Graph</b> (2026-11-10 · 932 Markdown notes · 330+ cycles · <a href="./PROOFER-graph-v20-dark.png">dark</a> / <a href="./PROOFER-graph-v20.png">light</a>).<br>The upper-right core (wiki &amp; Constitution) bridges into a second constellation of 36 campaign packages, Tug-of-War gates, and sleep notes.</sub>
 </p>
 
 <details>
@@ -49,7 +49,7 @@
 
 ---
 
-Built with Google Antigravity (Gemini) and Claude Code on a 16 GB M1 laptop (with heavy compute offloaded on demand), **we-star** shares our open-science discovery architecture ([`StartFresh_v19`](./StartFresh_v19/)), reasoning graphs, dead ends, and verifiers. Across 330+ cycles, it has produced **35 machine-verified benchmark solutions** (43 packages across all 18 domains of [V3R1T4S](https://github.com/elder-plinius/V3R1T4S), [eterna-hard](./eterna-hard/), and [stabrank](./stabrank/)), including **52 zero-axiom Lean 4 proof modules/theorems**.
+Built with Google Antigravity (Gemini) and Claude Code on a 16 GB M1 laptop (with heavy compute offloaded on demand), **we-star** shares our open-science discovery architecture ([`StartFresh_v19`](./StartFresh_v19/)), reasoning graphs, dead ends, and verifiers. Across 330+ cycles, it has produced **36 machine-verified benchmark solutions** (44 packages across all 18 domains of [V3R1T4S](https://github.com/elder-plinius/V3R1T4S), [hadamard-maxdet](https://github.com/mizopl/hadamard-maxdet), [eterna-hard](./eterna-hard/), and [stabrank](./stabrank/)), including **52 zero-axiom Lean 4 proof modules/theorems**.
 
 <sub><b>Field Notes (<a href="./news/">news/</a>):</b> <a href="./news/2026-11-10_field_notes_magic_states_10s_eterna_hard_and_github_replays.md">#002 · 2026-11-10</a> (Conway-99 with @ibenarb, 2-month SAT to 10.74s on RM(3,7), Eterna-Hard &amp; ViennaRNA bug) · <a href="./news/2026-11-02_field_notes_small_wins_agent_mail_and_constitution_v20.md">#001 · 2026-11-02</a> (MatMulCatalog #21, agent mail, v20 Lab).</sub>
 
@@ -65,7 +65,7 @@ Built with Google Antigravity (Gemini) and Claude Code on a 16 GB M1 laptop (wit
 | <sub>[ihtc2024](https://github.com/ihtc2024/ihtc2024.github.io/commit/c078cf57) / [V3R1T4S](https://github.com/elder-plinius/V3R1T4S/pulls?q=is%3Apr+author%3Amizopl+is%3Amerged)</sub> | <sub>31 official hospital BKS merged upstream + 6 merged V3R1T4S main PRs across 5 domains</sub> | <sub>[c078cf57](https://github.com/ihtc2024/ihtc2024.github.io/commit/c078cf57) · [PRs](https://github.com/elder-plinius/V3R1T4S/pulls?q=is%3Apr+author%3Amizopl+is%3Amerged)</sub> |
 | <sub>[conway-99](https://github.com/mizopl/conway-99-graph)</sub> | <sub>42 zero-axiom Lean 4 theorems &amp; 54 LRAT proofs ($p=7$ in 0.82s), adopted by @ibenarb</sub> | <sub>[repo](https://github.com/mizopl/conway-99-graph) · [#774](https://github.com/elder-plinius/V3R1T4S/pull/774) · [ibenarb](https://github.com/ibenarb/conway99-research)</sub> |
 
-#### Selected Benchmark Highlights (10 of 35)
+#### Selected Benchmark Highlights (11 of 36)
 
 | # | Campaign | Verified Result | Verify |
 |--:|:---|:---|:---|
@@ -79,9 +79,10 @@ Built with Google Antigravity (Gemini) and Claude Code on a 16 GB M1 laptop (wit
 | <sub>32</sub> | <sub>Eterna100 &amp; Hard</sub> | <sub>95/100 on V2 + 3 undesignability laws + 12 solvers=1 solves on eterna-hard</sub> | <sub>[#1031](https://github.com/elder-plinius/V3R1T4S/pull/1031) · [hard](./eterna-hard/)</sub> |
 | <sub>34</sub> | <sub>Magic Distillation</sub> | <sub>$\mathbb{F}_2$ Fredholm &amp; RM(3,7) (3,486 orbits) prove $N_{\text{CCZ}}(4)=10, N_T(4)\ge 9$ in 34.9s</sub> | <sub>[#1043](https://github.com/elder-plinius/V3R1T4S/pull/1043) · [pkg](./solutions/magic-state-distillation-fewest-qubits/)</sub> |
 | <sub>35</sub> | <sub>Unitary stabrank</sub> | <sub>35/35 exact $\mathbb{Z}[i]$/$\mathbb{Z}[\omega_3]$ bounds (20.46s) + 10/10 zero-axiom Lean 4 modules</sub> | <sub>[#193](https://github.com/unitaryfoundation/stabrank/pull/193) · [#194](https://github.com/unitaryfoundation/stabrank/pull/194) · [pkg](./stabrank/)</sub> |
+| <sub>36</sub> | <sub>Hadamard MaxDet</sub> | <sub>8 new $n\equiv 1\pmod 4$ det records ($n=81..117$, +19.86% on 109) + 120-order catalog</sub> | <sub>[repo](https://github.com/mizopl/hadamard-maxdet) · [#1053](https://github.com/elder-plinius/V3R1T4S/pull/1053) · [pkg](./solutions/hadamard-maxdet-records/)</sub> |
 
 <details>
-<summary><sub>Expand all 35 verified campaigns (#1–#35) · Full derivations in <a href="./docs/00_FULL_BENCHMARK_ATLAS.md">docs/00_FULL_BENCHMARK_ATLAS.md</a></sub></summary>
+<summary><sub>Expand all 36 verified campaigns (#1–#36) · Full derivations in <a href="./docs/00_FULL_BENCHMARK_ATLAS.md">docs/00_FULL_BENCHMARK_ATLAS.md</a></sub></summary>
 <br>
 
 | # | Campaign | Verified Result | Verify |
@@ -121,6 +122,7 @@ Built with Google Antigravity (Gemini) and Claude Code on a 16 GB M1 laptop (wit
 | <sub>33</sub> | <sub>Stabilizer Exponents</sub> | <sub>8.50s Galois lower bounds ($\chi=6$ on $F^{\otimes 5}, T^{\otimes 5}, \text{CS}^{\otimes 3}$) &amp; Face-Cat basis</sub> | <sub>[#1039](https://github.com/elder-plinius/V3R1T4S/pull/1039) · [pkg](./solutions/magic-state-stabilizer-rank-exponents/)</sub> |
 | <sub>34</sub> | <sub>Magic Distillation</sub> | <sub>RM(3,7) (3,486 orbits) proves $N_{\text{CCZ}}(4)=10, N_T(4)\ge 9$ in 34.9s (vs 2-mo SAT)</sub> | <sub>[#1043](https://github.com/elder-plinius/V3R1T4S/pull/1043) · [pkg](./solutions/magic-state-distillation-fewest-qubits/)</sub> |
 | <sub>35</sub> | <sub>Unitary stabrank</sub> | <sub>35/35 exact bounds (20.46s) + 10/10 zero-axiom Lean 4 modules (3h 34m run)</sub> | <sub>[#193](https://github.com/unitaryfoundation/stabrank/pull/193) · [#194](https://github.com/unitaryfoundation/stabrank/pull/194) · [pkg](./stabrank/)</sub> |
+| <sub>36</sub> | <sub>Hadamard MaxDet</sub> | <sub>8 new $n\equiv 1\pmod 4$ det records ($n=81..117$, +19.86% on 109) + 120-order catalog</sub> | <sub>[repo](https://github.com/mizopl/hadamard-maxdet) · [#1053](https://github.com/elder-plinius/V3R1T4S/pull/1053) · [pkg](./solutions/hadamard-maxdet-records/)</sub> |
 
 </details>
 
