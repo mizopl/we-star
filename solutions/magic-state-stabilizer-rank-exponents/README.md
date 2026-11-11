@@ -41,7 +41,7 @@ python3 verify-it-yourself/verify.py --corrupt
 - We do **not** claim `CONFIRMED_SOLUTION` or `p1` (strict upper-bound improvements $\alpha_T < 0.3952$ at $m \ge 7$ or $\alpha_F < 0.374$ at $m \ge 7$).
 - Our lower bounds $\chi(|F\rangle^{\otimes 5,6}) \ge 5$ and $\chi(|T\rangle^{\otimes 5,6}) \ge 5$ are unconditional over the full unrestricted stabilizer dictionary $D_m$, whereas our obstructions at $m=6$ Norrell ($r_{\text{sym}} \ge 16$), $m=4$ $|H_3\rangle^{\otimes 4}$ ($\chi_{\text{untwisted-}\mathbb{Z}_4} \ge 7$), and $m=10$ $|F\rangle^{\otimes 10}$ ($R_5(A_4^\Delta) = 15$) hold within their stated symmetry / dictionary strata.
 
-## What We Did Not Touch, Open Frontier & Invitation to Reuse / Cite
+## What We Did Not Touch, Open Frontier & Invitation to Reuse
 
 ### 1. What We Did Not Touch (The Open Frontier)
 
@@ -63,21 +63,6 @@ All code in [`verify-it-yourself/verify.py`](./verify-it-yourself/verify.py) is 
 - **Engine 3 (`135-Tableau Pauli-Fiber XOR Slice Matcher`, `Master Theorem 55`)**: Partition $D_n$ into Pauli-Tableau fibers $(W, Q, l \bmod 2)$ and prune multi-slice extensions via the exact bitwise-XOR homomorphism $k(11) = k(00) \oplus k(01) \oplus k(10)$.
 - **Engine 4 (`Master Theorem 54 Face-Cat Contraction`)**: Decompose $|F\rangle^{\otimes 2k}$ by pairing even-parity $|\text{cat}_{2k}(F)\rangle \in \mathbb{Z}[i]^{2^{2k}}$ and odd-parity $|\text{cat}_{2k}^-(F)\rangle \in \sqrt{3}\,\mathbb{Z}[i]^{2^{2k}}$ halves separately over $\mathbb{Q}(i)$.
 - **Engine 5 (`7,300x tau-Invariant Real MILP`)**: Fold complex qutrit/qudit stabilizer dictionaries under time-reversal $\tau: \omega_d \mapsto \omega_d^{-1}$ into purely real MILPs.
-
-### 3. How to Cite This Work (`BibTeX`)
-
-If you use these certificates, constructive decompositions (`W01..W10`), or the 135-Fiber / Galois-Quotient engines in your research or `stabrank` updates, please cite:
-
-```bibtex
-@misc{mizopl2026magicstates,
-  author       = {mizo and {Gemini-CLSS (PROOFER v20)}},
-  title        = {Galois-Quotient Lower Bounds, 135-Tableau Pauli-Fiber Slice Homomorphism, and Face-Cat Contractions for Magic State Stabilizer Ranks},
-  year         = {2026},
-  month        = nov,
-  howpublished = {Open Science Release (\texttt{@mizopl/we-star} Row \#33 and \texttt{elder-plinius/V3R1T4S})},
-  url          = {https://github.com/mizopl/we-star/tree/main/solutions/magic-state-stabilizer-rank-exponents}
-}
-```
 
 ## Credits
 

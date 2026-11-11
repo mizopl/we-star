@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you reference these results, verifiers, or architecture notes, you can use the metadata below."
+type: software
+title: "we-star: Machine-Verified Mathematical & Scientific Discovery Packages"
+authors:
+  - name: "we* (@mizopl)"
+    website: "https://github.com/mizopl"
+repository-code: "https://github.com/mizopl/we-star"
+url: "https://github.com/mizopl/we-star"
+license: MIT
+date-released: "2026-11-11"

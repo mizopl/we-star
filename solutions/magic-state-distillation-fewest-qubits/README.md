@@ -46,7 +46,7 @@ python3 verify-it-yourself/verify.py --corrupt
 - We claim only `CONFIRMED_PARTIAL` (`partial_win: p1, p2`, as verified by our local 3-skeptic review panel).
 - We do **not** claim a full win resolving whether $N_T(4) = 9$ or $N_T(4) = 10$ ($r = 8$, $\mathrm{RM}(4, 8)$) or whether $N_T(5) = 10$ or $N_T(5) = 11$.
 
-## What We Did Not Touch, Open Frontier & Invitation to Reuse / Cite
+## What We Did Not Touch, Open Frontier & Invitation to Reuse
 
 ### 1. What We Did Not Touch (The Open Frontier)
 
@@ -65,21 +65,6 @@ All code in [`verify-it-yourself/verify.py`](./verify-it-yourself/verify.py) is 
 - **Engine 2 (`Three-Handle AGL(7, 2) Orbit & Schreier-Sims Verifier`, `Master Theorem 5`)**: Certify $\mathrm{RM}(3, 7)$ orbit classifications in pure Python + `numpy` via `WL2 + T3_ker` invariants, 2-direction pruned $\mathrm{AGL}(7, 2)$ isomorphism search, and an 8-level Schreier–Sims stabilizer chain.
 - **Engine 3 (`Skewed Hyperplane Parity Split Filter`, `Master Theorem 3a/3b`)**: Prune $\mathrm{RM}(r-4, r)$ search spaces by requiring at least one sparse hyperplane slice $X_v^0$ (`w0 in 16..24`) that escapes collinearity locking before running any linear solve.
 - **Engine 4 (`Parity-Extension Lifting Operator`, `Master Theorem 4`)**: Automatically lift any even-$n$, $d = 4$ $T$-to-$T$ factory on $N$ qubits to an odd-$(n+1)$, $d = 5$ factory on $N + 1$ qubits.
-
-### 3. How to Cite This Work (`BibTeX`)
-
-If you use these lower-bound certificates (`N_CCZ(4) = 10`, `N_T(4) >= 9`), the Fredholm Alternative reduction (`Master Theorem 1`), or the Three-Handle $\mathrm{RM}(3, 7)$ verifier in your research, please cite:
-
-```bibtex
-@misc{mizopl2026magicdistillqubits,
-  author       = {mizo and {Gemini-CLSS (PROOFER v20)}},
-  title        = {Exact F2-Linear Fredholm Alternative Reduction and Three-Handle Reed-Muller Orbit Certificates for Fewest-Qubit Magic State Distillation},
-  year         = {2026},
-  month        = nov,
-  howpublished = {Open Science Release (\texttt{@mizopl/we-star} Row \#34 and \texttt{elder-plinius/V3R1T4S})},
-  url          = {https://github.com/mizopl/we-star/tree/main/solutions/magic-state-distillation-fewest-qubits}
-}
-```
 
 ## Credits
 

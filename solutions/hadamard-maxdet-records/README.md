@@ -41,7 +41,7 @@ Exact full-integer decimal expansions of `D_norm` and `|det(X)|` are stored in `
 - **Other residue classes and orders:** No new strict record above the live table is claimed here for `n = 2 (mod 4)` or `n = 3 (mod 4)` (including the six orders `51, 103, 107, 111, 115, 119` improved in `arXiv:2608.22518v3`).
 - **Peer review:** Not peer-reviewed; verified mechanically by `verify-it-yourself/verify.py` and audited by our local three-skeptic panel (`panel/`).
 
-## What We Did Not Touch, Open Frontier & Invitation to Reuse / Cite
+## What We Did Not Touch, Open Frontier & Invitation to Reuse
 
 ### 1. What We Did Not Touch (The Open Frontier)
 
@@ -60,19 +60,6 @@ All verification code in [`verify-it-yourself/verify.py`](./verify-it-yourself/v
 - **Engine 2 (`Closed-Four Hadamard Switching + [OS-1] Triplet Border`)**: Apply invariant-changing `Closed-Four` $2 \times 4$ quartet switches on $H_{4k}$ (`n = 81`) and Kronecker cores $\mathrm{Paley}(43) \otimes H_2$ (`n = 89`) prior to `[OS-1]` triplet extraction.
 - **Engine 3 (`Doubly 3-Normalized [OS-2] Extraction + Coupled Rank-2 Ascent`)**: Combine `(3, 3)` minor extraction on $H_{100}$ with unfrozen two-sided rank-2 Sherman-Morrison updates (`n = 101`, `+7.2574%`, $R = 0.860635$).
 - **Engine 4 (`Zero-Dependency Triple-Engine Exact Integer Verifier`)**: Certify arbitrary sign matrices via fraction-free Bareiss elimination, 14-prime 61-bit Chinese Remainder Theorem modular elimination, and optional `SymPy` Bareiss cross-check in ~0.6–1.2s.
-
-### 3. How to Cite This Work (`BibTeX`)
-
-```bibtex
-@misc{westar2026hadamardmaxdet,
-  author       = {{we* (@mizopl and Gemini-powered agentic systems)}},
-  title        = {Eight New Constructive Determinant Records for Orders $n \equiv 1 \pmod 4$ and a Unified $1 \le n \le 120$ {Hadamard} Maximal Determinant Catalog},
-  year         = {2026},
-  month        = nov,
-  howpublished = {\url{https://github.com/mizopl/hadamard-maxdet} and \url{https://github.com/mizopl/we-star/tree/main/solutions/hadamard-maxdet-records}},
-  note         = {Upstream submission: elder-plinius/V3R1T4S PR \#1053}
-}
-```
 
 ## Credits
 

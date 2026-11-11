@@ -70,19 +70,9 @@ Together with upstream upper bounds, Wave 3 settles $\chi(|H_3\rangle^{\otimes 3
 
 ---
 
-## 5. What We Did Not Touch, Open Frontier & Invitation to Reuse / Cite
+## 5. What We Did Not Touch, Open Frontier & License
 
 - **What Remains Open (`Honest Scope Boundary`):**
   1. **`qubit_H` and `qubit_T` at $m=5, \text{rank}=6$ (`attested` $\to$ `verified`):** Our Wave 1C audit confirmed that after 2-qubit Pauli flat reduction to $D_3$, the 1D-kernel 5-cover search spans `5,939,465` (`qubit_H`) and `6,115,136` (`qubit_T`) orbits (~`36.4–37.2` CPU-hours in Python), exceeding `stabrank`'s `3600 s` single-core `verified` budget unless compressed via a new invariant or formalized directly as a Lean 4 proof (`tier = lean`).
   2. **Higher-$m$ Qubit & Qutrit Upper Bounds ($m \ge 6$ for `Norrell`/`H3`, $m \ge 9$ for `qubit_H`/`qubit_T`):** As shown in our companion package [`../solutions/magic-state-stabilizer-rank-exponents/`](../solutions/magic-state-stabilizer-rank-exponents/) (`V3R1T4S PR #1039`), every pure tensor-box subspace $V_A \otimes V_B$ is algebraically obstructed below current records across all 9 open strata (`qubit_T` $m=7..10$, `qubit_H` $m=7,8$, `Norrell` $m=6$, `H3` $m=4,6$), meaning any strict exponent improvement must use genuinely entangled stabilizer dictionary vectors across tensor splits.
 - **License & Upstream Credit:** All files in this directory are released under **Apache License 2.0** ([`LICENSE`](./LICENSE)), matching [`unitaryfoundation/stabrank`](https://github.com/unitaryfoundation/stabrank). Bundled unmodified verification helpers (`schema/bound.schema.json`, `stabrank_verify.py`, `validate_bounds.py`, `qutrit_codes.py`, `rank_exclusion.py`, `rank_exclusion_codes.py`) are copyright the [`unitaryfoundation/stabrank`](https://github.com/unitaryfoundation/stabrank) authors (Vincent Russo et al., Unitary Foundation).
-
-```bibtex
-@misc{westar2026stabrank,
-  author       = {{we* (@mizopl and Gemini-powered agentic systems)}},
-  title        = {Exact Cyclotomic Galois Certificates and Zero-Axiom {Lean 4} Proofs for {unitaryfoundation/stabrank}},
-  year         = {2026},
-  howpublished = {\url{https://github.com/mizopl/we-star/tree/main/stabrank}},
-  note         = {Upstream PRs \#193 and \#194 on unitaryfoundation/stabrank}
-}
-```

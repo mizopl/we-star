@@ -51,7 +51,7 @@ Rather than running a single long-context chatbot or an unstructured evolutionar
          │         ├──► Adversarial Tug-of-War Arena (2-advocate debate triggered automatically upon stalling)
          │         └──► Zero-Context Cold-Check Panel (3 independent blind verifiers + adversarial mutation gate)
          │
-         └──► Parallel Catalog Thread (curating 1 <= n <= 120 historical baselines, BibTeX & open-science release)
+         └──► Parallel Catalog Thread (curating 1 <= n <= 120 historical baselines, provenance & open-science release)
 ```
 
 Five operational mechanisms govern every campaign:
@@ -93,7 +93,7 @@ Tokens are measured directly from untruncated JSONL session logs (at `3.8 chars/
 | **3. Cyclotomic Scout Subagent** *(`n = 51, 55`)* | `22:45 – 23:21` (`35.7m`) | `135` / `54` / `73` | `1` | `~176k` | `~17k` | `~50k` | **`~0.24M`** (`244k`) | `~3.9M` | `0` (`0 tok`) |
 | **4. Tug-of-War & 3x Blind Cold-Check Gates** | `19:27–19:37` + `01:35–01:48` | `43` / `21` / `21` | `0` | `~71k` | `~6k` | `~12k` | **`~0.09M`** (`89k`) | `~0.7M` | `0` (`0 tok`) |
 | **Subtotal — Core Discovery & Audit Fleet** | **`13h 05m`** | **`3,675` / `1,473` / `2,025`** | **`39`** | **`~3.55M`** | **`~403k`** | **`~920k`** | **`~4.87M`** | **`~101.1M`** | **`22` (`~642 tok`)** |
-| **5. Parallel `1 <= n <= 120` Catalog & BibTeX Thread** | `13:00 – 02:08` *(parallel)* | `819` / `342` / `567` | `14` | `~0.91M` | `~66k` | `~337k` | **`~1.32M`** | `~26.3M` | `5` (`~228 tok`) |
+| **5. Parallel `1 <= n <= 120` Catalog & Provenance Thread** | `13:00 – 02:08` *(parallel)* | `819` / `342` / `567` | `14` | `~0.91M` | `~66k` | `~337k` | **`~1.32M`** | `~26.3M` | `5` (`~228 tok`) |
 | **Grand Total (Discovery + `1 <= n <= 120` Catalog)** | **`13h 05m`** | **`4,494` / `1,815` / `2,592`** | **`53`** | **`~4.47M`** | **`~469k`** | **`~1.26M`** | **`~6.19M`** | **`~127.3M`** | **`27` (`~870 tok`)** |
 
 ### 3.3 Hardware Ledger: Local `16 GB` Apple M1 CPU vs. Google Colab
@@ -116,18 +116,3 @@ Full algebraic derivations and equations are documented in **[`LESSONS_LEARNED.m
 4. **Enforce Exact Integer Gates Against `float64` Sherman–Morrison Drift:** Above $n \approx 80$, thousands of incremental `float64` rank-1 inverse updates near ill-conditioned Fourier blocks produced phantom determinant spikes (`4.6e9`), caught immediately by mandatory exact Bareiss elimination and fixed via periodic full `slogdet` resets every $\le 64$ steps.
 5. **Convert Search Stalls into Exact Impossibility Theorems (`n = 51, 55`):** Six dead ends were logged explicitly — including $16/16$ 1-flip local optimality of known $n \equiv 3 \pmod 4$ 2-circulants, cold $B \ge 4$ spin-glass freezing ($R \le 0.51$), and $c = 9$ root-of-unity border cancellation ($\sum_{t \in \{1,4,7\}} \zeta_9^t = 0$) — turning unyielding strata into 5 machine-checked `CP-SAT INFEASIBLE` theorems.
 6. **Human-in-the-Loop Leverage (`~870` Tokens Steering `~4.87M` Discovery Tokens):** `27` brief human interventions (`< 0.02%` of session tokens) prevented premature settlement after the first 3 records at minute 38, commissioned the unified `1 <= n <= 120` public catalog, synchronized the parallel $n = 51$ scout, and enforced strict scholarly separation between the **8 strictly higher determinant records** and the **19 Hadamard-inequivalent record-tying classes**.
-
----
-
-## 5. Citation (`BibTeX`)
-
-```bibtex
-@misc{westar2026hadamardmaxdet,
-  author       = {{we* (@mizopl and Gemini-powered agentic systems)}},
-  title        = {Eight New Constructive Determinant Records for Orders $n \equiv 1 \pmod 4$ and a Unified $1 \le n \le 120$ {Hadamard} Maximal Determinant Catalog},
-  year         = {2026},
-  month        = nov,
-  howpublished = {\url{https://github.com/mizopl/hadamard-maxdet} and \url{https://github.com/mizopl/we-star/tree/main/hadamard-maxdet}},
-  note         = {Upstream submission: elder-plinius/V3R1T4S PR \#1053}
-}
-```
