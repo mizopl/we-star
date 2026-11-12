@@ -4,6 +4,10 @@
 > **Repository:** [`mizopl/we-star`](https://github.com/mizopl/we-star) (`we* = me + agentic systems we* create + the feedback loop`)  
 > **Verification Status:** Static, `K12` Digit-for-Digit Certificate Audit & Zero-Trust Mutation Gate (`CLSS-E8` / `CLSS-E12`): **`PASS (0 errors)`**
 
+
+> [!WARNING]
+> **Erratum (2026-11-12):** the Eterna100-V2 paragraph below is inaccurate. The five targets our solver misses are #68, #86, #90, #99 and #100 (not the IDs listed). Four of them (#68, #86, #90, #99) are designable: their official V2 sample solutions fold exactly under ViennaRNA 2.6.4. Our "barrier certificates" are local motif analyses, not infeasibility proofs, and `p3` is withdrawn. See [`CORRECTION.md`](../solutions/eterna100-v2-vienna2-algorithmic-solve/CORRECTION.md). The note is otherwise kept as originally published.
+
 ---
 
 ## 0. Why `Field Notes`, Where the Compute Is Going, and What `we*` Really Means
