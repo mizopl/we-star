@@ -10,25 +10,14 @@
     "expect": "CERTIFIED chi(S^4) >= 4"
   },
   "provenance": {
-    "author": "we* + @mizopl",
-    "reference": "arXiv:2605.28586 (Labib and Russo); stabrank verify_challenge",
-    "method": "projection monotonicity from the exact Z[omega_3] exclusion chi(S^3) >= 4",
-    "date": "2026-11-10",
+    "author": "Labib and Russo",
+    "reference": "arXiv:2605.28586",
+    "method": "literature",
+    "date": "2026-05-27",
     "github": [
-      "mizopl"
-    ],
-    "compute": {
-      "cpu_hours": 0.05,
-      "wall_clock_hours": 0.05,
-      "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
-      "llm": [
-        {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
-        }
-      ]
-    }
+      "FarLab",
+      "vprusso"
+    ]
   },
-  "notes": "Upgrades S-m4-lower-4 from reproduced to verified (exact: true) via projection monotonicity (<1| (x) I^3)|S>^4 = 2^{-1/2}|S>^3 applied to the exact Z[omega_3] exclusion chi(S^3) >= 4. Together with the Lean rank-4 witness this settles chi(|S>^4) = 4 at the verified/lean tier in both directions."
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-10) via verify_challenge/cert_qutrit_galois_m3_m5.py: projection monotonicity (<1| (x) I^3)|S>^4 = 2^(-1/2)|S>^3 applied to the exact Z[omega_3] 12-pivot exclusion chi(S^3) >= 4, settling chi(|S>^4) = 4 at verified/lean tier in both directions. Prior reproduced record (verify_challenge/cert_s_m4_from_m3.py): Projection monotonicity from m=3, with the m=3 exclusion re-run inside the certificate rather than taken from the board: chi(psi (x) phi) >= chi(psi) whenever phi has a nonzero computational amplitude, since applying I (x) <x| to a decomposition of psi (x) phi maps each stabilizer state to a stabilizer state or zero (the lemma is written out in the certificate). With the rank-4 upper bound this settles chi(|S>^4) = 4."
 }

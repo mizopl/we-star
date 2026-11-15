@@ -18,17 +18,17 @@
       "mizopl"
     ],
     "compute": {
-      "cpu_hours": 0.002,
-      "wall_clock_hours": 0.002,
-      "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
+      "cpu_hours": 0.08,
+      "wall_clock_hours": 0.12,
+      "runs": 2,
+      "hardware": "Apple M1 laptop (16 GB), one core; Z[omega_3] tau-Galois quotient search and exact verification",
       "llm": [
         {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+          "model": "gemini-4-argon",
+          "role": "we* (PROOFER v19) heuristic search and exact certificate synthesis"
         }
       ]
     }
   },
-  "notes": "First verified-tier rank-4 lower bound for H3 at m=4. Since (<0| (x) I^3)|H3>^4 is a non-zero scalar multiple of |H3>^3, projection monotonicity gives chi(H3^4) >= chi(H3^3) >= 4, where chi(H3^3) >= 4 is certified in exact Z[omega_3] arithmetic by 0-pivot tau-Galois descent over Q(omega_3, sqrt(3)) / Q(omega_3)."
+  "notes": "Verified-tier rank-4 lower bound for H3 at m=4, raising the verified-tier floor from 3 to 4 (4 <= chi(|H3>^4) <= 8 at verified tier with bounds/H3-m4-upper-8.json; note bounds/H3-m4-lower-5.json is reproduced and bounds/H3-m4-lower-6.json, bounds/H3-m4-lower-7.json are attested). Since (<0| (x) I^3)|H3>^4 = sqrt((3 + sqrt(3))/6) |H3>^3 (verified symbolically against stabrank_verify.orbit_state('H3')), projection monotonicity gives chi(H3^4) >= chi(H3^3) >= 4, where chi(H3^3) >= 4 is certified in exact Z[omega_3] arithmetic by 0-pivot tau-Galois descent over Q(omega_3, sqrt(3)) / Q(omega_3) inside verify_challenge/cert_qutrit_galois_m3_m5.py."
 }

@@ -10,25 +10,19 @@
     "expect": "CERTIFIED chi(qubit_H^5) >= 5"
   },
   "provenance": {
-    "author": "we* + @mizopl",
-    "reference": "stabrank verify_challenge",
-    "method": "exact Z[i] 1-pivot codimension-2 Galois quotient on D_3 (1,080 states) + orthogonal Pauli destabilizer basis + 2-qubit slice matching",
-    "date": "2026-11-10",
+    "author": "this repository",
+    "reference": "stabrank slice_lift.py",
+    "method": "slice-and-lift: none of the 30 rank-4 decompositions of |H>^4 up to symmetry extends to |H>^5",
+    "date": "2026-09-18",
     "github": [
-      "mizopl"
+      "vprusso"
     ],
     "compute": {
-      "cpu_hours": 0.002,
-      "wall_clock_hours": 0.002,
+      "cpu_hours": 1.9,
+      "wall_clock_hours": 0.46,
       "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
-      "llm": [
-        {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
-        }
-      ]
+      "hardware": "Apple silicon laptop, four workers at low priority under a load average near 12: 1649 s for the enumeration and lift"
     }
   },
-  "notes": "Upgraded from reproduced (1,649 s numerical pivot enumeration on D_4 with 3,600 s declared budget) to verified (exact: true, 4.7 s on a single core under the default budget, zero floating-point arithmetic). Slicing along qubits 1, 2: (1) Fact 1 (every term full along every qubit) holds because chi(H^4) = 4 is verified in exact Z[i] arithmetic in the same run; (2) Fact 2 (at most 1 absent term at any 2-qubit point) holds because chi(H^3) = 3; (3) the flat lemma forces every term's 2-qubit support to be F_2^2, A = {00, 11}, or B = {01, 10}, with at most one A-line and at most one B-line, and exact integer residual tables on the 2 G_3-orbits of rank-3 decompositions of |H>^3 at ratio^{+-2} have 0 exact hits, excluding any B-line (n_B = 0) and forcing all 4 terms to be visible at x_0 = 00; (4) the 1-pivot codimension-2 Galois quotient on D_3 (1,080 states, |G_3| = 48) enumerates all 2,406 Kind-A independent 4-cover orbits, 0 Kind-B dependent 4-cover orbits (max parallel ray group in Q(i)^8 / P_3 is 3 < 4), and 6 Kind-C repeated-state 4-cover orbits; (5) every Kind-C orbit is eliminated by projecting the 1,089 slice-11 residuals onto the 8 orthogonal Pauli classes {P_k u_blk}_{k=0}^7 (minimum non-zero Pauli support is 4 > 2); (6) exact integer meet-in-the-middle slice matching across x in {01, 10, 11} leaves 30 slice-01 survivors and 0 5-qubit survivors."
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-10, 7.2 s on one core under the default 900 s budget, zero floating-point arithmetic) via verify_challenge/cert_qubit_galois_m5_m6_rank4.py: slicing along qubits 1, 2 uses chi(H^4) = 4 (Fact 1) and chi(H^3) = 3 (Fact 2), excludes B-line terms (0 exact hits at ratio^(+-2) on the 2 G_3-orbits of |H>^3 rank-3 decompositions), enumerates all 4-covers of |H>^3 on D_3 (|G_3| = 48: 2,406 Kind-A orbits, 0 Kind-B, 6 Kind-C excluded by orthogonal Pauli support >= 4 > 2 at slice 11), and finds 30 slice-01 survivors and 0 5-qubit completions. Prior reproduced record (verify_challenge/cert_qubit_h_m5_lift.py, budget_s: 3600): chi(H^4) = 4 exactly (Lean tensor-square witness and the rank-3 exclusion over 36720 states). A rank-4 decomposition of |H>^5 sliced along one qubit has slice 0 a rank-4 decomposition of |H>^4 and slice 1 a Pauli image of it, term by term, times a fourth root of unity. |H>^4 has 30 rank-4 decompositions up to its unitary symmetries (group of order 384, 246 pivot orbits) and no Pauli assignment satisfies the slice-1 equation for any of them. Bravyi, Smith, and Smolin's rank-6 decomposition is the upper bound, so the cell is 5 <= chi <= 6; whether chi(H^5) is 5 or 6 is open, and a rank-5 witness would give exponent log2(5)/5 = 0.464. The certificate declares the 3600 s budget: the qubit H-type symmetry group is small and the enumeration ran 1649 s on four loaded cores."
 }

@@ -10,25 +10,13 @@
     "expect": "CERTIFIED chi(qubit_T^4) >= 3"
   },
   "provenance": {
-    "author": "we* + @mizopl",
-    "reference": "stabrank verify_challenge",
-    "method": "exact Z[i] codimension-2 Galois quotient over Q(i, sqrt(3)) on all 36,720 4-qubit stabilizer states",
-    "date": "2026-11-10",
+    "author": "this repository",
+    "reference": "stabrank PR #18",
+    "method": "exhaustion over all pairs of stabilizer states, via the quotient by the target",
+    "date": "2026-09-12",
     "github": [
-      "mizopl"
-    ],
-    "compute": {
-      "cpu_hours": 0.001,
-      "wall_clock_hours": 0.001,
-      "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
-      "llm": [
-        {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
-        }
-      ]
-    }
+      "vprusso"
+    ]
   },
-  "notes": "Pairs with the Lean rank-3 upper bound to settle chi(|T>^4) = 3 with zero floating-point margins in either direction. Upgraded from reproduced to verified (exact: true) via the exact Z[i] codimension-2 Galois quotient modulo P_4 = span_{Q(i)}(A_4, B_4) over all 36,720 4-qubit stabilizer states, which also enumerates all 9 exact rank-3 decompositions of |T>^4 in the same pass."
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-10) via verify_challenge/cert_qubit_galois_m3_m4.py: scaling |T>^4 by (2 / cos(beta))^4 gives (2|0> + (1 + i)(sqrt(3) - 1)|1>)^4 = A_4 + sqrt(3) B_4 with A_4, B_4 in Z[i]^16; across all 36,720 4-qubit stabilizer states, 0 states lie in P_4 = span_{Q(i)}(A_4, B_4) (while 9 triples form rank-3 decompositions of |T>^4). Prior reproduced record (verify_challenge/cert_qubit_rank2.py): Pairs with the rank-3 upper bound to settle this cell at chi = 3 exactly. Closes it as a route to the published exponent log_2(3)/4, which would need rank 2 here. The stabilizer states are enumerated by closing the Clifford orbit of |0...0> rather than from a phase parametrisation, since the verifier's witness format uses w_2 = -1 and so reaches only the real stabilizer states, missing the Y eigenstates; the count is checked against 2^n prod (2^k + 1). The exclusion rests on a margin rather than exact arithmetic: the closest any two candidate directions come to parallel is 0.76 to 0.78 against a threshold of 1 - 1e-6, so no rounding at the 1e-15 level of these inputs can close the gap. The H-type state at m=2 has a known rank-2 decomposition, which the same code finds as a positive control."
 }

@@ -18,14 +18,14 @@
       "mizopl"
     ],
     "compute": {
-      "cpu_hours": 0.002,
-      "wall_clock_hours": 0.002,
-      "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
+      "cpu_hours": 0.45,
+      "wall_clock_hours": 0.72,
+      "runs": 6,
+      "hardware": "Apple M1 laptop (16 GB), one core; includes aborted D_4 pair-bucket search superseded by D_3 1-pivot Galois quotient",
       "llm": [
         {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+          "model": "gemini-4-argon",
+          "role": "we* (PROOFER v19) heuristic search and exact certificate synthesis"
         }
       ]
     }

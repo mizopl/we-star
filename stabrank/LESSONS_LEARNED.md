@@ -50,8 +50,8 @@ Before opening a PR from an external fork, read `.github/workflows/` line by lin
 
 ---
 
-## Lesson 5 — Audit Static-Site Leaderboard Aggregators Before Finalizing `provenance.author`
+## Lesson 5 — Preserve Discovery Provenance on Tier Upgrades & Assert Symbolic `orbit_state` Parity
 
-Automated scientific benchmarks frequently build contributor leaderboards straight from JSON provenance metadata. Inspecting `site_challenge/build.py` (`contributors()`) revealed that entries are grouped by the **exact `provenance.author` string** (`agg.setdefault(who, ...)` $\to$ `people/<slug>.html`), rather than by GitHub handle alone:
-- Upgrading an existing literature or baseline bound without updating `provenance.author` (or mixing `"@handle"` and `"Team + @handle"` across waves) splits a single campaign into multiple fragmented rows on the public leaderboard.
-- Auditing `site_challenge/build.py` before maintainer review allowed us to unify all `35` bounds in [`PR #193`](https://github.com/unitaryfoundation/stabrank/pull/193) under a single canonical string (`"author": "we* + @mizopl"`, `"github": ["mizopl"]`, `"llm": [{"model": "gemini", ...}]`).
+Maintainer review on [`PR #193`](https://github.com/unitaryfoundation/stabrank/pull/193) highlighted two essential provenance and verification rules for community-maintained mathematical leaderboards:
+1. **Layer exact certificates onto existing cells without overwriting discovery `provenance`:** When upgrading an existing `cited`, `reproduced`, or `attested` bound to `tier = verified`, keep the original discoverer's `provenance` (`author`, `date`, `github`, and search `compute`) intact, preserve the prior certificate script path and tier in `notes`, and reserve `"author": "we* + @mizopl"` (with provider-specific `llm.model` identifiers such as `gemini-4-argon` and real search `compute`) strictly for newly added cells.
+2. **Always assert symbolic projective equality against the benchmark's canonical `orbit_state`:** Checking $2 \times 2$ minors symbolically against `stabrank_verify.orbit_state` (not only on qubit `target_vector` calls, but across all qutrit orbits as well) immediately catches non-Clifford-equivalent state-convention mismatches (such as `(-1, 2, 2)/3` vs the board's canonical `(1, 1, -2)/\sqrt{6}` Norrell vector) before submission.

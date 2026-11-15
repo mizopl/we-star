@@ -18,17 +18,17 @@
       "mizopl"
     ],
     "compute": {
-      "cpu_hours": 0.001,
-      "wall_clock_hours": 0.001,
-      "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
+      "cpu_hours": 0.12,
+      "wall_clock_hours": 0.15,
+      "runs": 3,
+      "hardware": "Apple M1 laptop (16 GB), one core; Clifford postselection search and two-handle D_2/D_3 exact verification",
       "llm": [
         {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+          "model": "gemini-4-argon",
+          "role": "we* (PROOFER v19) heuristic search and exact certificate synthesis"
         }
       ]
     }
   },
-  "notes": "chi(|CS>^4) >= chi(|CS>^3) >= 4 by computational-basis projection monotonicity (<00|_{7,8} (x) I_6)|CS>^4 = (1/2)|CS>^3 (verified symbolically in verify_challenge/cert_cs_m3_m4_exact.py before the claim is printed), paired with the two-handle exact Z[i] exclusion chi(|CS>^3) >= chi(|Psi_3>) = 4 re-run in the same script. With bounds/CS-m4-upper-9.json this places the m=4 cell at 4 <= chi(|CS>^4) <= 9."
+  "notes": "Verified-tier floor chi(|CS>^4) >= 4 (note: bounds/CS-m3-lower-5.json on main is verified under budget_s: 3600 and gives chi(|CS>^4) >= 5 by projection monotonicity; this file records a fast self-contained single-script verified-tier floor running in 2.6 s under the default budget). Symbolically (<00|_{7,8} (x) I_6)|CS>^4 = (1/2)|CS>^3 is verified in verify_challenge/cert_cs_m3_m4_exact.py before the claim is printed, paired with the two-handle exact Z[i] exclusion chi(|CS>^3) >= chi(|Psi_3>) = 4 re-run in the same script. With bounds/CS-m4-upper-9.json this places the single-script m=4 interval at 4 <= chi(|CS>^4) <= 9 (5 <= chi(|CS>^4) <= 9 with bounds/CS-m3-lower-5.json monotonicity)."
 }

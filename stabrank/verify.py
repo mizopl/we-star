@@ -3,14 +3,15 @@
 
 Verifies:
 1. Schema conformance & filename/claim bijective parity across all 35 bounds/*.json
-   files from unitaryfoundation/stabrank PR #193 (commit fc1495d).
+   files from unitaryfoundation/stabrank PR #193 (commit 043bc30a: 9 new cells by
+   "we* + @mizopl" + 26 tier upgrades preserving upstream discovery provenance).
 2. Exact execution of all 5 Cyclotomic / Galois certificate scripts
    (cert_qubit_galois_m3_m4.py, cert_qubit_galois_m5_m6_rank4.py,
    cert_cat_m7_to_m10_lift.py, cert_cs_m3_m4_exact.py, cert_qutrit_galois_m3_m5.py)
    and exact symbolic witness checking via stabrank_verify.py, requiring 35/35 PASS
-   at tier == "verified" (~20.5 s on a single Apple M1 core).
+   at tier == "verified" (~22.9 s on a single Apple M1 core).
 3. Static zero-sorry / zero-axiom audit and theorem-signature verification across
-   all 10 Lean 4 modules from unitaryfoundation/stabrank PR #194 (commit 6fc15c5).
+   all 10 Lean 4 modules from unitaryfoundation/stabrank PR #194 (merged at 6be0c833).
 """
 
 from __future__ import annotations
@@ -32,6 +33,18 @@ import stabrank_verify  # noqa: E402
 import validate_bounds  # noqa: E402
 
 EXPECTED_BOUND_COUNT = 35
+
+NEW_WE_STAR_BOUNDS: set[str] = {
+    "CS-m4-lower-4.json",
+    "CS-m4-upper-9.json",
+    "H3-m4-lower-4.json",
+    "N-m4-lower-4.json",
+    "cat-m9-lower-4.json",
+    "cat-m9-upper-9.json",
+    "cat-m10-lower-4.json",
+    "cat-m10-upper-9.json",
+    "qubit_H-m6-lower-5.json",
+}
 
 EXPECTED_LEAN_THEOREMS: dict[str, list[str]] = {
     "lean_proofs/LeanProofs/ReflectQutrit.lean": [
@@ -89,6 +102,19 @@ def expected_claim_line(orbit: str, m: int, rank: int) -> str:
 
 
 def main() -> int:
+    if "--corrupt" in sys.argv:
+        # Negative mutation control: verify that corrupting a bound rank or witness fails.
+        sample_path = os.path.join(ROOT, "bounds", "CS-m4-upper-9.json")
+        with open(sample_path, encoding="utf-8") as fh:
+            bad_sub = json.load(fh)
+        bad_sub["witness"]["terms"][0]["x0"][0] ^= 1
+        res = stabrank_verify.verify(bad_sub)
+        if not res.ok:
+            print(f"CORRUPT CONTROL REJECTED AS EXPECTED: {res.detail}")
+            return 1
+        print("ERROR: corrupted witness unexpectedly passed!")
+        return 0
+
     t0 = time.monotonic()
     schema_path = os.path.join(ROOT, "schema", "bound.schema.json")
     with open(schema_path, encoding="utf-8") as fh:
@@ -125,9 +151,14 @@ def main() -> int:
             return 1
 
         prov = sub.get("provenance", {})
-        if prov.get("author") != "we* + @mizopl":
-            print(f"FAIL {base}: unexpected provenance.author {prov.get('author')!r}")
-            return 1
+        if base in NEW_WE_STAR_BOUNDS:
+            if prov.get("author") != "we* + @mizopl":
+                print(f"FAIL {base}: new bound must have provenance.author='we* + @mizopl', got {prov.get('author')!r}")
+                return 1
+        else:
+            if not prov.get("author") or "we* + @mizopl" not in sub.get("notes", ""):
+                print(f"FAIL {base}: upgraded bound must preserve original provenance.author and credit upgrade in notes")
+                return 1
 
         if direction == "lower":
             cert = sub.get("certificate", {})

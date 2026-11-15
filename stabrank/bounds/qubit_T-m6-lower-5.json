@@ -10,25 +10,19 @@
     "expect": "CERTIFIED chi(qubit_T^6) >= 5"
   },
   "provenance": {
-    "author": "we* + @mizopl",
-    "reference": "stabrank verify_challenge",
-    "method": "projection monotonicity applied to the exact Z[i] 1-pivot Galois quotient rank-4 exclusion chi(T^5) >= 5",
-    "date": "2026-11-10",
+    "author": "this repository",
+    "reference": "stabrank research/t5_rank4",
+    "method": "projection monotonicity applied to the attested exact rank-4 exclusion at m=5",
+    "date": "2026-09-24",
     "github": [
-      "mizopl"
+      "vprusso"
     ],
     "compute": {
-      "cpu_hours": 0.002,
-      "wall_clock_hours": 0.002,
-      "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
-      "llm": [
-        {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
-        }
-      ]
+      "cpu_hours": 0.0,
+      "wall_clock_hours": 0.0,
+      "runs": 0,
+      "hardware": "none beyond the m=5 certificate, which this cell re-runs"
     }
   },
-  "notes": "Upgraded from attested to verified (exact: true) by projection monotonicity chi(psi (x) phi) >= chi(psi) (Lean: qubit_t_stabRankP_mono in LeanProofs/QubitProjection.lean) applied to the self-contained exact Z[i] rank-4 exclusion chi(T^5) >= 5 in verify_challenge/cert_qubit_galois_m5_m6_rank4.py."
+  "notes": "Upgraded from attested to verified (exact: true, we* + @mizopl, 2026-11-10, 7.2 s on one core under the default budget, zero external batch files) via verify_challenge/cert_qubit_galois_m5_m6_rank4.py, which re-runs the self-contained exact Z[i] rank-4 exclusion chi(T^5) >= 5 and applies projection monotonicity (Lean: qubit_t_stabRankP_mono / stabRankP_powVecP_mono). Prior attested record (verify_challenge/cert_qubit_t_m5_rank4_attested.py, budget_s: 1800, research/t5_rank4/batch_manifest.json, 6 stored batches in research/t5_rank4/results/, 2 recomputed, runner research/t5_rank4/batch.py): chi(psi (x) phi) >= chi(psi) when phi has a nonzero computational amplitude, applied 1 time to chi(T^5) >= 5 (Lean: stabRankP_powVecP_mono in lean_proofs/LeanProofs/Stabilizer/SliceP.lean). The certificate is the m=5 attested one, which prints this line after certifying the rank-4 exclusion; the cell inherits the attested tier. Puts the cell at 5 <= chi(T^6) <= 6 (bounds/qubit_T-m6-upper-6.json), replacing the lower bound of 4 from the slice-and-lift argument."
 }

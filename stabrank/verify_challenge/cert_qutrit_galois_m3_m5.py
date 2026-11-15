@@ -1,5 +1,5 @@
 """Exact Z[omega_3] Galois & quotient lower-bound certificates for qutrit orbits
-H3 (m=2..4), N (m=2..4), S (m=3..5), and T3 (m=1..5).
+H3 (m=2..4), N (m=2..4), S (m=3..5), and T3 (m=2..5).
 
 Every n-qutrit stabilizer state has exact coordinates (after clearing the
 normalisation factor sqrt(3)^k and fixing the first non-zero entry to 1) in
@@ -41,13 +41,16 @@ Q(omega_3)-subspace W = span_{Q(omega_3)}(s_1, ..., s_r) of dimension at most r.
      (no two stabilizer states are even collinear modulo V_3(H3)), proving
      chi(|H3>^3) >= 4 in 0.1s with zero pivots and zero symmetry assumptions.
    - S (m=3..5) and N (m=2..4): Unnormalised |S> = (0, 1, -1) and
-     |N> = (-1, 2, 2) lie in Z^3. At m = 3 (30,240 states), scanning the 12 (S)
+     |N> = (1, 1, -2) lie in Z^3 (projectively verified in exact symbolic
+     arithmetic against stabrank_verify.orbit_state, where |N> = (1, 1, -2)/sqrt(6)).
+     At m = 2 (positive control), scanning the symmetry pivot orbits of |N>^2
+     finds 8 rank-3 decompositions; at m = 3 (30,240 states), scanning the 12 (S)
      and 74 (N) symmetry pivot orbit representatives in exact Z[omega_3]
      arithmetic shows that every collinear bucket of size >= 2 in the second
      quotient Q(omega_3)^27 / span(psi, s_piv) is already collinear modulo s_piv
      alone in Z[omega_3]^27 (dependent stabilizer triples in a 2D stabilizer
      subspace), and exact rational rank confirms psi is not in their span.
-   - T3 (m=1..5): Unnormalised |T3> = (1, omega_9, omega_9^2) has Gal(Q(omega_9)/Q(omega_3))
+   - T3 (m=2..5): Unnormalised |T3> = (1, omega_9, omega_9^2) has Gal(Q(omega_9)/Q(omega_3))
      orbit of dimension 3, spanned over Z[omega_3] by the three disjoint-support
      monomial vectors u_0, u_1, u_2 in Z[omega_3]^{3^m} grouping indices by
      digit sum mod 3. At m = 3, a rank-5 decomposition projects modulo
@@ -56,9 +59,10 @@ Q(omega_3)-subspace W = span_{Q(omega_3)}(s_1, ..., s_r) of dimension at most r.
      Z[omega_3]^24 arithmetic yields a single 5-state orbit
      {351, 352, 6912, 7029, 7146} of bucket size >= 4, whose exact Q(omega_3)-rank
      is 3 while adjoining V_3(T3) gives rank 5 > 3, proving chi(|T3>^3) >= 6.
-   - Projection monotonicity (<x| (x) I)|psi>^{ot m} prop |psi>^{ot (m-1)} is
-     verified symbolically over Q(omega_3, sqrt(3), omega_9) to lift the lower
-     bounds to m = 4, 5.
+   - Projective equivalence against stabrank_verify.orbit_state for all four
+     single-qutrit states and projection monotonicity (<x| (x) I)|psi>^{ot m} prop
+     |psi>^{ot (m-1)} are verified symbolically over Q(omega_3, sqrt(3), omega_9)
+     before any bound is decided.
 
 Printed claims:
   CERTIFIED chi(H3^2) >= 3
@@ -72,8 +76,6 @@ Printed claims:
   CERTIFIED chi(S^3) >= 4
   CERTIFIED chi(S^4) >= 4
   CERTIFIED chi(S^5) >= 4
-  CERTIFIED chi(T3^1) >= 3
-  CERTIFIED chi(T3^m) >= 3
   CERTIFIED chi(T3^3) >= 6
   CERTIFIED chi(T3^4) >= 6
   CERTIFIED chi(T3^5) >= 6
@@ -94,6 +96,7 @@ import sympy as sp
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from qutrit_codes import all_codes  # noqa: E402
 from rank_exclusion_codes import symmetry_orbit_reps_codes  # noqa: E402
+from stabrank_verify import orbit_state, target_vector  # noqa: E402
 
 
 LUT_A = np.array([0, 1, 0, -1], dtype=np.int64)
@@ -288,12 +291,12 @@ def verify_s_and_n(codes2: np.ndarray, ks2: np.ndarray, A2: np.ndarray, B2: np.n
     if int(np.sum(cnt_s2 >= 2)) == 0:
         raise AssertionError("S m=2 positive control FAILED: rank-2 decomposition not found")
 
-    # Positive control 2 & exclusion: N at m=2 has rank > 2 and rank-3 decompositions exist
-    n_amp2 = np.prod(np.where(digs2 == 0, -1, 2), axis=1)  # n_amp2[0] == +1
+    # Positive control 2 & exclusion: N = (1, 1, -2)/sqrt(6) at m=2 has rank > 2 and 8 rank-3 decompositions
+    n_amp2 = np.prod(np.where(digs2 == 2, -2, 1), axis=1)  # n_amp2[0] == +1
     reps_n2, _ = symmetry_orbit_reps_codes("N", 2, codes2, ks2)
     decs_n2 = _scan_1pivot_exact(A2, B2, n_amp2, 0, reps_n2, expect_decs=True)
-    if decs_n2 == 0:
-        raise AssertionError("N m=2 positive control FAILED: no rank-3 decomposition found")
+    if decs_n2 != 8:
+        raise AssertionError(f"N m=2 positive control FAILED: expected 8 rank-3 decompositions, got {decs_n2}")
 
     # S at m=3 (12 pivot orbits, p0 = 13 -> (1, 1, 1))
     s_amp3 = np.prod(np.where(digs3 == 0, 0, np.where(digs3 == 1, 1, -1)), axis=1)
@@ -304,8 +307,8 @@ def verify_s_and_n(codes2: np.ndarray, ks2: np.ndarray, A2: np.ndarray, B2: np.n
     if decs_s3 != 0:
         raise AssertionError(f"S m=3: unexpected rank-3 decomposition found ({decs_s3})")
 
-    # N at m=3 (74 pivot orbits, p0 = 0 -> (0, 0, 0), negated so amp[0] == +1)
-    n_amp3 = -np.prod(np.where(digs3 == 0, -1, 2), axis=1)
+    # N = (1, 1, -2)/sqrt(6) at m=3 (74 pivot orbits, p0 = 0 -> (0, 0, 0), n_amp3[0] == +1)
+    n_amp3 = np.prod(np.where(digs3 == 2, -2, 1), axis=1)
     reps_n3, _ = symmetry_orbit_reps_codes("N", 3, codes3, ks3)
     if len(reps_n3) != 74:
         raise AssertionError(f"Expected 74 pivot orbits for N m=3, got {len(reps_n3)}")
@@ -409,22 +412,45 @@ def verify_t3(codes2: np.ndarray, A2: np.ndarray, B2: np.ndarray,
         raise AssertionError("T3 m=3: expected candidate lines of size >= 4 were not harvested")
 
 
-def check_projection_monotonicity() -> None:
-    """Verify symbolically that each qutrit state |psi> has a non-zero computational
-    basis amplitude psi_x != 0 so (<x| (x) I^{ot (m-1)})|psi>^{ot m} = psi_x |psi>^{ot (m-1)},
+def check_orbit_states_and_monotonicity() -> None:
+    """Verify symbolically against stabrank_verify.orbit_state and target_vector
+    that each unnormalised single-qutrit vector v is projectively identical to
+    orbit_state(name) (all 2x2 minors vanish symbolically and v[idx], ref[idx] != 0),
+    that v^{ot 2} is projectively identical to target_vector(name, 2), and that
+    (<x| (x) I^{ot (m-1)})|psi>^{ot m} = psi_x |psi>^{ot (m-1)} with psi_x != 0,
     making chi(|psi>^{ot m}) >= chi(|psi>^{ot (m-1)}) exact."""
     s3 = sp.sqrt(3)
     w9 = sp.exp(2 * sp.pi * sp.I / 9)
     states = {
         "H3": (sp.Matrix([1 + s3, 1, 1]), 0),
-        "N": (sp.Matrix([-1, 2, 2]), 0),
+        "N": (sp.Matrix([1, 1, -2]), 0),
         "S": (sp.Matrix([0, 1, -1]), 1),
         "T3": (sp.Matrix([1, w9, w9 ** 2]), 0),
     }
     for name, (v, idx) in states.items():
-        if sp.simplify(v[idx]) == 0:
+        ref = orbit_state(name)
+        if sp.simplify(v[idx]) == 0 or sp.simplify(ref[idx]) == 0:
             raise AssertionError(f"Projection coordinate {idx} vanishes for {name}")
+        for j in range(3):
+            for k in range(j + 1, 3):
+                minor = sp.simplify(sp.expand((v[j] * ref[k] - v[k] * ref[j]).rewrite(sp.exp)))
+                if minor != 0:
+                    raise AssertionError(
+                        f"Single-qutrit vector for {name} is not projectively equal to "
+                        f"orbit_state({name!r}): minor ({j},{k}) = {minor}"
+                    )
         v2 = [v[a] * v[b] for a in range(3) for b in range(3)]
+        ref2 = target_vector(name, 2)
+        p2 = 3 * idx + idx
+        if sp.simplify(v2[p2]) == 0 or sp.simplify(ref2[p2]) == 0:
+            raise AssertionError(f"m=2 reference coordinate {p2} vanishes for {name}")
+        for j in range(9):
+            minor2 = sp.simplify(sp.expand((v2[j] * ref2[p2] - v2[p2] * ref2[j]).rewrite(sp.exp)))
+            if minor2 != 0:
+                raise AssertionError(
+                    f"m=2 tensor vector for {name} disagrees projectively with "
+                    f"target_vector({name!r}, 2) at index {j}: {minor2}"
+                )
         sliced = sp.Matrix([v2[3 * idx + j] for j in range(3)])
         if sp.expand(sliced - v[idx] * v) != sp.zeros(3, 1):
             raise AssertionError(f"Symbolic slice identity failed for {name}")
@@ -432,7 +458,7 @@ def check_projection_monotonicity() -> None:
 
 def main() -> int:
     t0 = time.time()
-    check_projection_monotonicity()
+    check_orbit_states_and_monotonicity()
     codes2, ks2 = all_codes(2)
     A2, B2 = codes_to_zw3(codes2)
     codes3, ks3 = all_codes(3)
@@ -455,8 +481,6 @@ def main() -> int:
     print("CERTIFIED chi(S^3) >= 4")
     print("CERTIFIED chi(S^4) >= 4")
     print("CERTIFIED chi(S^5) >= 4")
-    print("CERTIFIED chi(T3^1) >= 3")
-    print("CERTIFIED chi(T3^m) >= 3")
     print("CERTIFIED chi(T3^3) >= 6")
     print("CERTIFIED chi(T3^4) >= 6")
     print("CERTIFIED chi(T3^5) >= 6")

@@ -10,25 +10,13 @@
     "expect": "CERTIFIED chi(qubit_H^4) >= 3"
   },
   "provenance": {
-    "author": "we* + @mizopl",
-    "reference": "stabrank verify_challenge",
-    "method": "exact Z[i] codimension-2 Galois quotient over Q(i, sqrt(2)) on all 36,720 4-qubit stabilizer states",
-    "date": "2026-11-10",
+    "author": "this repository",
+    "reference": "stabrank PR #18",
+    "method": "exhaustion over all pairs of stabilizer states, via the quotient by the target",
+    "date": "2026-09-12",
     "github": [
-      "mizopl"
-    ],
-    "compute": {
-      "cpu_hours": 0.001,
-      "wall_clock_hours": 0.001,
-      "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
-      "llm": [
-        {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
-        }
-      ]
-    }
+      "vprusso"
+    ]
   },
-  "notes": "Upgraded from reproduced (floating-point margin) to verified (exact: true) via the exact Z[i] codimension-2 Galois quotient q(s) in Z[i]^14 modulo P_4 = span_{Q(i)}(A_4, B_4), where (1 + sqrt(2))^4 |H>^4 = A_4 + sqrt(2) B_4. Across all 36,720 4-qubit stabilizer states in Z[i]^16, 0 states lie in P_4 and the maximum parallel ray group size in Q(i)^16 / P_4 is 2 (< 3), excluding both rank 2 and rank 3 in exact integer arithmetic without floating-point tolerances."
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-10) via verify_challenge/cert_qubit_galois_m3_m4.py: scaling |H>^4 by cos(pi/8)^(-4) gives (|0> + (sqrt(2) - 1)|1>)^4 = A_4 + sqrt(2) B_4 with A_4, B_4 in Z[i]^16; across all 36,720 4-qubit stabilizer states in Z[i]^16, 0 states lie in P_4 = span_{Q(i)}(A_4, B_4) and the maximum parallel ray group size in Q(i)^16 / P_4 is 2 (< 3), excluding rank <= 3 in exact Z[i] arithmetic. Prior reproduced record (verify_challenge/cert_qubit_rank2.py): Leaves this cell at 3 <= chi <= 4. Closes it as a route to the published exponent log_2(3)/4, which would need rank 2 here. The stabilizer states are enumerated by closing the Clifford orbit of |0...0> rather than from a phase parametrisation, since the verifier's witness format uses w_2 = -1 and so reaches only the real stabilizer states, missing the Y eigenstates; the count is checked against 2^n prod (2^k + 1). The exclusion rests on a margin rather than exact arithmetic: the closest any two candidate directions come to parallel is 0.76 to 0.78 against a threshold of 1 - 1e-6, so no rounding at the 1e-15 level of these inputs can close the gap. The H-type state at m=2 has a known rank-2 decomposition, which the same code finds as a positive control."
 }

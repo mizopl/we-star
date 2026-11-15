@@ -12,7 +12,7 @@ Mathematical summary (100% exact Gaussian-integer arithmetic, ~2.5 s on 1 core):
        (<0|_2 (I (x) H)) |CS> = (2 |0> + (1 + i) |1>) / (2 sqrt(2)) = (2 sqrt(2))^{-1} |Psi_1>.
    Because I (x) H is a Clifford unitary (preserving stabilizer rank) and
    computational-basis projection <0| maps every stabilizer state to a stabilizer
-   state or zero (Lean: stabRank_projection in LeanProofs/Stabilizer/SliceP.lean),
+   state or zero (Lean: IsStabP.slice / stabRankP_sliceP_le in LeanProofs/Stabilizer/SliceP.lean),
    for every m >= 1:
        chi(|CS>^{ot m}) >= chi(|Psi_m>),   where |Psi_m> = (2 |0> + (1 + i) |1>)^{ot m} in Z[i]^{2^m}.
    This identity is checked symbolically against stabrank_verify.target_vector("CS", m)

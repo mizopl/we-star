@@ -10,25 +10,19 @@
     "expect": "CERTIFIED chi(T3^5) >= 6"
   },
   "provenance": {
-    "author": "we* + @mizopl",
-    "reference": "stabrank verify_challenge",
-    "method": "projection monotonicity applied twice to the exact Z[omega_3] Galois quotient exclusion chi(T3^3) >= 6",
-    "date": "2026-11-10",
+    "author": "this repository",
+    "reference": "stabrank cert_t3m3_rank6.py",
+    "method": "projection monotonicity applied twice to the certified chi(T3^3) >= 6",
+    "date": "2026-09-18",
     "github": [
-      "mizopl"
+      "vprusso"
     ],
     "compute": {
-      "cpu_hours": 0.002,
-      "wall_clock_hours": 0.002,
+      "cpu_hours": 0.15,
+      "wall_clock_hours": 0.03,
       "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
-      "llm": [
-        {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
-        }
-      ]
+      "hardware": "Apple silicon laptop, 6 worker processes"
     }
   },
-  "notes": "Upgrades T3-m5-lower-6 from reproduced to verified (exact: true) via projection monotonicity (<00| (x) I^3)|T3>^5 = (1/3)|T3>^3 applied to the exact Z[omega_3] 1-pivot Galois quotient exclusion chi(T3^3) >= 6."
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-10) via verify_challenge/cert_qutrit_galois_m3_m5.py: projection monotonicity (<00| (x) I^3)|T3>^5 = (1/3)|T3>^3 applied to the exact Z[omega_3] 173-pivot Galois quotient exclusion chi(T3^3) >= 6. Prior reproduced record (verify_challenge/cert_t3_m5_from_m3.py): Puts the cell at 6 <= chi <= 18. The certificate re-runs the m=3 rank-6 exclusion (Galois descent cutting the search to 45 candidate lines, then exhaustion with every candidate rejected in exact arithmetic over Q(w9)) and applies projection monotonicity: chi(psi (x) phi) >= chi(psi) whenever phi has a nonzero computational amplitude. The sector decomposition behind the upper bound gives no better lower bound, since max_j chi(c_j) <= chi(T3^5) and the sectors are only known to have rank between 5 and 6. Beating the published exponent 1/2 at m=5 needs rank 15, which is rank 5 in every sector."
 }

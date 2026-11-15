@@ -14,13 +14,13 @@
     ],
     "compute": {
       "cpu_hours": 0.05,
-      "wall_clock_hours": 0.05,
-      "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
+      "wall_clock_hours": 0.08,
+      "runs": 2,
+      "hardware": "Apple M1 laptop (16 GB), one core; stabilizer contraction and exact tableau verification",
       "llm": [
         {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+          "model": "gemini-4-argon",
+          "role": "we* (PROOFER v19) heuristic search and exact witness construction"
         }
       ]
     }

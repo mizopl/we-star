@@ -10,25 +10,11 @@
     "expect": "CERTIFIED chi(cat_8) >= 3"
   },
   "provenance": {
-    "author": "we* + @mizopl",
-    "reference": "arXiv:2106.07740 (Qassim, Pashayan, and Gosset); stabrank verify_challenge",
-    "date": "2026-11-10",
-    "github": [
-      "mizopl"
-    ],
-    "method": "exact Z[i] 2-step slice-and-lift on D_4 plus projection monotonicity from chi(cat_5) = 3",
-    "compute": {
-      "cpu_hours": 0.05,
-      "wall_clock_hours": 0.05,
-      "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
-      "llm": [
-        {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
-        }
-      ]
-    }
+    "author": "Qassim, Pashayan, and Gosset",
+    "reference": "arXiv:2106.07740",
+    "date": "2021-06-14",
+    "github": [],
+    "method": "literature"
   },
-  "notes": "Upgrades the cited bound chi(cat_8) >= 3 of Qassim, Pashayan, and Gosset (arXiv:2106.07740) to the verified tier via verify_challenge/cert_cat_m7_to_m10_lift.py (exact: true, 3.7 s on one core), which certifies chi(cat_5) = chi(cat_6) = 3 and chi(cat_8) >= 4 in exact Gaussian-integer arithmetic."
+  "notes": "Upgraded from cited to verified (exact: true, we* + @mizopl, 2026-11-10, 3.7 s on one core) via verify_challenge/cert_cat_m7_to_m10_lift.py, which checks (<0|_1 (x) I)|cat_m> = 2^(-1/2)|cat_{m-1}> symbolically and certifies chi(cat_5) = chi(cat_6) = 3 and chi(cat_8) >= 4 in exact Gaussian-integer arithmetic. Prior cited record (Qassim, Pashayan, and Gosset, arXiv:2106.07740): chi(cat_8) >= 3 by monotonicity from chi(cat_5) > 2 (Qassim, Pashayan, and Gosset, arXiv:2106.07740, appendix: <0|_m |cat_m> is proportional to |cat_{m-1}>, so chi(cat_m) >= chi(cat_{m-1}) for all m). Their Table 1 lists chi(cat_8) <= 6 and no lower bound beyond this. The board's attested chi(H^8) >= 6 gives the same 3 through chi(T^m)/2 <= chi(cat_m). Cited."
 }

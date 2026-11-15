@@ -10,25 +10,19 @@
     "expect": "CERTIFIED chi(H3^4) >= 3"
   },
   "provenance": {
-    "author": "we* + @mizopl",
-    "reference": "stabrank verify_challenge",
-    "method": "projection monotonicity from the exact Z[omega_3] tau-Galois exclusion chi(H3^3) >= 4",
-    "date": "2026-11-10",
+    "author": "this repository",
+    "reference": "stabrank rank_exclusion_codes.py",
+    "method": "rank-2 exclusion over all 7,439,040 four-qutrit stabilizer states, held as phase codes",
+    "date": "2026-09-18",
     "github": [
-      "mizopl"
+      "vprusso"
     ],
     "compute": {
-      "cpu_hours": 0.002,
-      "wall_clock_hours": 0.002,
+      "cpu_hours": 0.05,
+      "wall_clock_hours": 0.03,
       "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
-      "llm": [
-        {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
-        }
-      ]
+      "hardware": "Apple silicon laptop, one core"
     }
   },
-  "notes": "Upgrades H3-m4-lower-3 from reproduced (2-minute numerical rank-2 scan on D_4) to verified (exact: true) via projection monotonicity (<0| (x) I^3)|H3>^4 prop |H3>^3 applied to the exact Z[omega_3] tau-Galois exclusion chi(H3^3) >= 4 > 3."
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-10) via verify_challenge/cert_qutrit_galois_m3_m5.py: projection monotonicity (<0| (x) I^3)|H3>^4 = sqrt((3 + sqrt(3))/6) |H3>^3 (checked symbolically against orbit_state('H3')) applied to the exact 0-pivot Z[omega_3] tau-Galois exclusion chi(H3^3) >= 4 > 3. Prior reproduced record (verify_challenge/cert_h3_m4_rank2.py): Closes this cell as a route to the published exponent, which would need rank 2 here. The dictionary is enumerated as int8 phase codes in about 30 s and 600 MB (the complex form is 4.8 GB), and the rank-2 test is one canonicalise-and-sort over quotient directions, so the certificate runs in about two minutes against the 2.2 hours of the streaming version proposed in PR #20, which this supersedes. The exclusion is numerical and rests on a margin: the closest any two key-adjacent quotient directions come to parallel is reported by the script and must clear 1 - 1e-6 by 0.01. A rank-3 exclusion for the same cell has also been run here (chi >= 4) and exceeds the default certificate budget."
 }

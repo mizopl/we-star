@@ -18,17 +18,17 @@
     ],
     "method": "projection monotonicity (<0|_1 |cat_m> = 2^{-1/2} |cat_{m-1}>) applied to 2-step exact Z[i] slice-and-lift c_5 -> c_6 -> c_7 on D_4",
     "compute": {
-      "cpu_hours": 0.001,
-      "wall_clock_hours": 0.001,
-      "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
+      "cpu_hours": 0.15,
+      "wall_clock_hours": 0.2,
+      "runs": 3,
+      "hardware": "Apple M1 laptop (16 GB), one core; exploratory D_4 2-step slice-and-lift search and exact verification",
       "llm": [
         {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+          "model": "gemini-4-argon",
+          "role": "we* (PROOFER v19) heuristic search and exact certificate synthesis"
         }
       ]
     }
   },
-  "notes": "chi(cat_9) >= ... >= chi(cat_7) >= 4: (<0|_1 (x) I)|cat_k> = 2^{-1/2}|cat_{k-1}> is verified symbolically for k = 5..10 before the claim is printed, and chi(cat_7) >= 4 is re-established from scratch in 3.7 s inside verify_challenge/cert_cat_m7_to_m10_lift.py by a compositional 2-step exact Z[i] slice-and-lift c_5 -> c_6 -> c_7 on D_4 (36,720 four-qubit stabilizer states, 100 pivot orbits under I_2 (x) G_4): because chi(c_5) = chi(c_6) = 3, every rank-3 decomposition of c_6 has all three terms non-zero on both slices along qubit 1 and is therefore obtained by lifting the unique rank-3 decomposition orbit of c_5 on D_4, which admits 1 exact lift to c_6 and 0 exact lifts to c_7. With bounds/cat-m9-upper-9.json this places the cell at 4 <= chi(cat_9) <= 9."
+  "notes": "Verified-tier floor chi(cat_9) >= 4 (note: bounds/cat-m7-lower-4.json and bounds/cat-m8-lower-4.json by Michel de Messieres are already verified on the board, and the attested rank-4 exclusions bounds/cat-m7-lower-5.json and bounds/cat-m8-lower-5.json give chi(cat_9) >= 5 by projection monotonicity; this file records a fast self-contained verified-tier floor running in 3.7 s without external batch files). Symbolically (<0|_1 (x) I)|cat_k> = 2^(-1/2)|cat_{k-1}> is verified against stabrank_verify.target_vector for k = 5..10 before the claim is printed, and chi(cat_7) >= 4 is re-established from scratch inside verify_challenge/cert_cat_m7_to_m10_lift.py by a 2-step exact Z[i] slice-and-lift c_5 -> c_6 -> c_7 on D_4 (36,720 four-qubit stabilizer states, 100 pivot orbits under I_2 (x) G_4, vs 460 s on D_5): since chi(c_5) = chi(c_6) = 3, every rank-3 decomposition of c_6 lifts from the single rank-3 orbit of c_5 on D_4, which admits 1 exact lift to c_6 and 0 exact lifts to c_7. With bounds/cat-m9-upper-9.json the verified-tier interval on this cell is 4 <= chi(cat_9) <= 9 (5 <= chi(cat_9) <= 9 including attested monotonicity)."
 }

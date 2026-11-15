@@ -6,7 +6,7 @@ Printed claims (when all checks pass):
     CERTIFIED chi(cat_9) >= 4
     CERTIFIED chi(cat_10) >= 4
 
-Mathematical summary (100% exact Gaussian-integer / rational arithmetic, ~15 s on 1 core):
+Mathematical summary (100% exact Gaussian-integer / rational arithmetic, ~3.7 s on 1 core):
 1. Even-weight compression and <0| projection monotonicity:
    For m >= 2, |cat_m> = 2^{-(m-1)/2} sum_{|x| even} i^{|x|/2} |x> is supported on
    even-weight strings. Applying CNOTs from qubits 1..m-1 into qubit m maps |cat_m>

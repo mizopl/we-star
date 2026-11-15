@@ -10,25 +10,19 @@
     "expect": "CERTIFIED chi(qubit_H^4) >= 4"
   },
   "provenance": {
-    "author": "we* + @mizopl",
-    "reference": "stabrank verify_challenge",
-    "method": "exact Z[i] codimension-2 Galois quotient over Q(i, sqrt(2)) on all 36,720 4-qubit stabilizer states",
-    "date": "2026-11-10",
+    "author": "this repository",
+    "reference": "stabrank rank_exclusion.py",
+    "method": "exhaustion over all triples of 4-qubit stabilizer states, via a pivot and two quotients",
+    "date": "2026-09-16",
     "github": [
-      "mizopl"
+      "vprusso"
     ],
     "compute": {
-      "cpu_hours": 0.001,
-      "wall_clock_hours": 0.001,
+      "cpu_hours": 0.3,
+      "wall_clock_hours": 0.08,
       "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
-      "llm": [
-        {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
-        }
-      ]
+      "hardware": "Apple silicon laptop, 8 worker processes"
     }
   },
-  "notes": "Settles chi(|H>^4) = 4 with the Lean rank-4 upper bound, with both directions now free of floating-point margins. Upgraded from reproduced (8.69M numerical pivot-quotient triples with cosine clearance 0.9877) to verified (exact: true) in 0.5 s by a 0-pivot codimension-2 Galois quotient: because |H>^4 lies in Q(i, sqrt(2))^16 while every 4-qubit stabilizer state lies in Q(i)^16, any 3-term decomposition must span the 2D Q(i)-plane P_4 = span_{Q(i)}(A_4, B_4) and therefore project to a single 1D ray in Q(i)^16 / P_4. Exact primitive Z[i]-ray canonicalization across all 36,720 states of D_4 finds 0 states in P_4 and a maximum parallel ray group size of 2 (< 3), so no 3 states can even be collinear in Q(i)^16 / P_4."
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-10, 0.5 s) via verify_challenge/cert_qubit_galois_m3_m4.py: scaling |H>^4 by cos(pi/8)^(-4) gives (|0> + (sqrt(2) - 1)|1>)^4 = A_4 + sqrt(2) B_4 in Z[i]^16 + sqrt(2) Z[i]^16; by Galois descent over Q(i, sqrt(2)) / Q(i), any rank-3 decomposition must contain P_4 = span_{Q(i)}(A_4, B_4) and project to a single 1D ray in Q(i)^16 / P_4, whereas exact primitive Z[i]-ray canonicalisation across all 36,720 4-qubit stabilizer states finds 0 states in P_4 and maximum ray group size 2 (< 3). Prior reproduced record (verify_challenge/cert_qubit_h_m4_rank3.py): Settles chi(|H>^4) = 4 with the verified rank-4 decomposition, both directions machine-checked, and reproduces the value of Bravyi, Smith, and Smolin from scratch. Every rank-3 triple over the 36720 four-qubit stabilizer states is excluded: 8.69 million collinear-in-quotient candidates arise and every one is three states of a single two-dimensional stabilizer subspace, whose span cannot contain the target once rank 2 is excluded in the same pass; no independent collinear triple exists at all. The exclusion is numerical and rests on a margin: the closest any two key-adjacent non-parallel quotient directions come to parallel is 0.9877 against a threshold of 1 - 1e-6, and the certificate refuses to print its claim if that clearance falls under 0.01. The H-type state at m=3, whose rank-3 decomposition is verified on the board, is the positive control."
 }

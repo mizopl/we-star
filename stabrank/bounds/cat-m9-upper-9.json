@@ -13,14 +13,14 @@
       "mizopl"
     ],
     "compute": {
-      "cpu_hours": 0.05,
-      "wall_clock_hours": 0.05,
+      "cpu_hours": 0.02,
+      "wall_clock_hours": 0.03,
       "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
+      "hardware": "Apple M1 laptop (16 GB), one core; computational-basis projection of cat-m10-upper-9 witness and exact verification",
       "llm": [
         {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+          "model": "gemini-4-argon",
+          "role": "we* (PROOFER v19) heuristic search and exact witness construction"
         }
       ]
     }

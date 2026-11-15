@@ -18,10 +18,11 @@ arithmetic and zero external batch files:
 2. Fact 1 & Two-Qubit Flat Reduction (m = 5 = 3 + 2):
    - By the 0-pivot Galois quotient on D_3 (1,080 states) and D_4 (36,720 states),
      chi(qubit_H^3) = 3, chi(qubit_T^3) = 3, chi(qubit_H^4) = 4, and |T>^4 has
-     exactly 9 rank-3 decompositions (1 orbit under G_4).
+     9 rank-3 decompositions, verified in code to form a single orbit under the
+     order-1,944 unitary Clifford symmetry group G_4 of |T>^4.
    - Fact 1 (every term in a rank-4 decomposition of psi_5 is full along every
      qubit): immediate for qubit_H since chi(H^4) = 4; for qubit_T, a 1-qubit
-     slice with 3 visible terms must use the unique G_4-orbit of rank-3
+     slice with 3 visible terms must use the single G_4-orbit of rank-3
      decompositions of |T>^4, and checking all 65^3 = 274,625 slice combinations
      at ratios tau^{+-1} in exact Z[i] arithmetic gives (exact, stabilizer) = (0, 0).
    - Flat reduction along qubits 1, 2: by Fact 1 and chi(psi_3) = 3, each term's
@@ -81,7 +82,6 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cert_qubit_galois_m3_m4 import (  # noqa: E402
     canonical_ray_groups,
     check_symbolic_target_consistency,
-    dictionary_zi,
     exact_qi_solve,
     fail,
     galois_quotient_rays,
@@ -165,6 +165,115 @@ def build_g3_group(E3: np.ndarray, Sr3: np.ndarray, Si3: np.ndarray, orbit: str)
                 G3.append(nxt)
                 q.append(nxt)
     return np.asarray(G3, dtype=np.int32)
+
+
+def verify_t4_g4_single_orbit(
+    E4: np.ndarray,
+    Sr4: np.ndarray,
+    Si4: np.ndarray,
+    Ar4_T: np.ndarray,
+    Ai4_T: np.ndarray,
+    Br4_T: np.ndarray,
+    Bi4_T: np.ndarray,
+    decs4_T: list[tuple[tuple[int, int, int], tuple]],
+) -> int:
+    """Build the exact unitary Clifford symmetry group G_4 of |T>^4 on D_4 (order 1,944),
+    verify in exact Z[i, sqrt(3)] arithmetic that its generators fix |T>^4 up to phase
+    and permute D_4, and verify that all 9 rank-3 decompositions of |T>^4 form a single G_4-orbit."""
+    N4 = len(E4)
+    k4 = keys_of(E4)
+    ord_k4 = np.argsort(k4, kind="stable")
+    ks4 = k4[ord_k4]
+
+    def lookup4(E_mat: np.ndarray) -> np.ndarray:
+        km = keys_of(E_mat)
+        pos = np.searchsorted(ks4, km)
+        if not np.all(ks4[pos] == km):
+            fail("G_4 symmetry image not found in D_4")
+        out = ord_k4[pos].astype(np.int32)
+        if len(np.unique(out)) != N4:
+            fail("G_4 generator is not a bijection on D_4")
+        return out
+
+    xs4 = np.array(list(itertools.product((0, 1), repeat=4)), dtype=np.int64)
+    w4 = np.array([8, 4, 2, 1], dtype=np.int64)
+    idx_swap01 = xs4[:, [1, 0, 2, 3]] @ w4
+    idx_cyc4 = xs4[:, [1, 2, 3, 0]] @ w4
+    for p_idx in (idx_swap01, idx_cyc4):
+        if not (
+            np.array_equal(Ar4_T[p_idx], Ar4_T)
+            and np.array_equal(Ai4_T[p_idx], Ai4_T)
+            and np.array_equal(Br4_T[p_idx], Br4_T)
+            and np.array_equal(Bi4_T[p_idx], Bi4_T)
+        ):
+            fail("coordinate permutation does not fix |T>^4")
+    perm_swap01 = lookup4(renormalize(E4[:, idx_swap01]))
+    perm_cyc4 = lookup4(renormalize(E4[:, idx_cyc4]))
+
+    # Exact Z[i, sqrt(3)] check that sqrt(2) * (U_0 (x) I_8) maps psi_4 = A_4 + sqrt(3)*B_4
+    # to ((1 - i) + (1 + i)*sqrt(3)) / 2 * psi_4, where U_0 = (1/sqrt(2)) [[1, 1], [i, -i]] = S H.
+    gAr = np.concatenate([Ar4_T[:8] + Ar4_T[8:], -(Ai4_T[:8] - Ai4_T[8:])])
+    gAi = np.concatenate([Ai4_T[:8] + Ai4_T[8:], Ar4_T[:8] - Ar4_T[8:]])
+    gBr = np.concatenate([Br4_T[:8] + Br4_T[8:], -(Bi4_T[:8] - Bi4_T[8:])])
+    gBi = np.concatenate([Bi4_T[:8] + Bi4_T[8:], Br4_T[:8] - Br4_T[8:]])
+    want_2Ar = (Ar4_T + Ai4_T) + 3 * (Br4_T - Bi4_T)
+    want_2Ai = (Ai4_T - Ar4_T) + 3 * (Br4_T + Bi4_T)
+    want_2Br = (Ar4_T - Ai4_T) + (Br4_T + Bi4_T)
+    want_2Bi = (Ar4_T + Ai4_T) + (Bi4_T - Br4_T)
+    if not (
+        np.array_equal(2 * gAr, want_2Ar)
+        and np.array_equal(2 * gAi, want_2Ai)
+        and np.array_equal(2 * gBr, want_2Br)
+        and np.array_equal(2 * gBi, want_2Bi)
+    ):
+        fail("U_0 = S H does not fix |T>^4 up to phase in exact Z[i, sqrt(3)] arithmetic")
+
+    Gr, Gi = Sr4.copy(), Si4.copy()
+    Gr[:, :8] = Sr4[:, :8] + Sr4[:, 8:]
+    Gi[:, :8] = Si4[:, :8] + Si4[:, 8:]
+    dr = Sr4[:, :8] - Sr4[:, 8:]
+    di = Si4[:, :8] - Si4[:, 8:]
+    Gr[:, 8:] = -di
+    Gi[:, 8:] = dr
+    mag2 = Gr * Gr + Gi * Gi
+    first_nz = np.argmax(mag2 > 0, axis=1)
+    r_idx = np.arange(N4)
+    cr, ci = Gr[r_idx, first_nz][:, None], Gi[r_idx, first_nz][:, None]
+    denom = cr * cr + ci * ci
+    Nr = (cr * Gr + ci * Gi) // denom
+    Ni = (cr * Gi - ci * Gr) // denom
+    E_g0 = np.full_like(E4, -1)
+    E_g0[(Nr == 1) & (Ni == 0)] = 0
+    E_g0[(Nr == 0) & (Ni == 1)] = 1
+    E_g0[(Nr == -1) & (Ni == 0)] = 2
+    E_g0[(Nr == 0) & (Ni == -1)] = 3
+    perm_g0 = lookup4(E_g0)
+
+    probe_idx = np.array([0, 1, 2, 4, 8, 16, 100, 1000, 5000, 10000, 20000, 30000], dtype=np.int32)
+    gens4 = [perm_g0, perm_swap01, perm_cyc4]
+    id4 = np.arange(N4, dtype=np.int32)
+    seen_p = {id4[probe_idx].tobytes(): id4}
+    q = [id4]
+    while q:
+        cur = q.pop(0)
+        for g in gens4:
+            nxt = cur[g]
+            key = nxt[probe_idx].tobytes()
+            if key not in seen_p:
+                seen_p[key] = nxt
+                q.append(nxt)
+            elif not np.array_equal(seen_p[key], nxt):
+                fail("probe indices were not faithful on G_4")
+
+    if len(seen_p) != 1944:
+        fail(f"expected |G_4| = 1944 for qubit_T m=4, got {len(seen_p)}")
+
+    base_trip = decs4_T[0][0]
+    orb_trips = {tuple(sorted(int(perm[c]) for c in base_trip)) for perm in seen_p.values()}
+    all_trips = {tuple(sorted(t)) for t, _ in decs4_T}
+    if orb_trips != all_trips:
+        fail(f"rank-3 decompositions of |T>^4 do not form one G_4-orbit: orbit={len(orb_trips)}, total={len(all_trips)}")
+    return len(seen_p)
 
 
 def precompute_pauli_classes(Sr: np.ndarray, Si: np.ndarray, m: int):
@@ -568,7 +677,9 @@ def main() -> int:
     lut_i = np.array([0, 1, 0, -1, 0], dtype=np.int64)
     idx3 = np.where(E3 >= 0, E3, 4)
     Sr3, Si3 = lut_r[idx3], lut_i[idx3]
-    Sr4, Si4 = dictionary_zi(4)
+    E4 = stabilizer_exponents(4)
+    idx4 = np.where(E4 >= 0, E4, 4)
+    Sr4, Si4 = lut_r[idx4], lut_i[idx4]
 
     Br_p, Bi_p, Opts_r, Opts_i, _ = precompute_pauli_classes(Sr3, Si3, 3)
     print(f"D_3 (1,080 states) and 8-element orthogonal Pauli bases verified [{time.time()-t0:.2f}s]")
@@ -597,12 +708,16 @@ def main() -> int:
     decs4_T = [(t, s) for (t, s) in decs4_T if s is not None]
     if len(decs4_T) != 9:
         fail(f"expected 9 rank-3 decompositions of |T>^4, got {len(decs4_T)}")
+    g4_order = verify_t4_g4_single_orbit(E4, Sr4, Si4, Ar4_T, Ai4_T, Br4_T, Bi4_T, decs4_T)
     res_t4 = exact_residual_table_rank3(
         decs4_T[0][0], decs4_T[0][1], Sr4, Si4, Ar4_T, Ai4_T, Br4_T, Bi4_T, "qubit_T", 4, (-1, 0, 1)
     )
     if res_t4[-1] != (0, 0) or res_t4[1] != (0, 0) or res_t4[0] != (1, 192):
         fail(f"Fact 1 residual table mismatch on |T>^4: {res_t4}")
-    print(f"Fact 1 verified in exact Z[i] arithmetic: chi(H^4) = 4 and |T>^4 table {res_t4} [{time.time()-t0:.2f}s]")
+    print(
+        f"Fact 1 verified in exact Z[i] arithmetic: chi(H^4) = 4, |G_4| = {g4_order} "
+        f"(all 9 |T>^4 decompositions form 1 G_4-orbit), and |T>^4 table {res_t4} [{time.time()-t0:.2f}s]"
+    )
 
     for orbit, want_g3, want_r3, want_ka, want_kc, want_surv1 in (
         ("qubit_H", 48, 2, 2406, 6, 30),

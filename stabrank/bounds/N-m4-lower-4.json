@@ -18,17 +18,21 @@
       "mizopl"
     ],
     "compute": {
-      "cpu_hours": 0.002,
-      "wall_clock_hours": 0.002,
-      "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
+      "cpu_hours": 0.18,
+      "wall_clock_hours": 0.25,
+      "runs": 4,
+      "hardware": "Apple M1 laptop (16 GB), one core; Z[omega_3] 1-pivot quotient search and canonical (1, 1, -2)/sqrt(6) verification",
       "llm": [
         {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+          "model": "gemini-4-argon",
+          "role": "we* (PROOFER v19) heuristic search and exact certificate synthesis"
+        },
+        {
+          "model": "gemini-4-carbon",
+          "role": "we* (PROOFER v19) heuristic verification for canonical Norrell vector"
         }
       ]
     }
   },
-  "notes": "First verified-tier rank-4 lower bound for the Norrell state at m=4. Since (<0| (x) I^3)|N>^4 = (-1/3)|N>^3, projection monotonicity gives chi(N^4) >= chi(N^3) >= 4 immediately from the exact Z[omega_3] m=3 exclusion without enumerating the 7,439,040 four-qutrit stabilizer states."
+  "notes": "Verified-tier rank-4 lower bound for the Norrell state |N> = (|0> + |1> - 2|2>)/sqrt(6) at m=4, raising the verified-tier floor from 3 to 4 (4 <= chi(|N>^4) <= 7 at verified tier with bounds/N-m4-upper-7.json; note bounds/N-m4-lower-5.json is reproduced and bounds/N-m4-lower-6.json, bounds/N-m4-lower-7.json are attested). Since (<0| (x) I^3)|N>^4 = (1/sqrt(6))|N>^3 (verified symbolically against stabrank_verify.orbit_state('N') and target_vector('N', 2)), projection monotonicity gives chi(N^4) >= chi(N^3) >= 4 immediately from the exact Z[omega_3] 74-pivot exclusion at m=3 inside verify_challenge/cert_qutrit_galois_m3_m5.py without enumerating the 7,439,040 four-qutrit stabilizer states."
 }

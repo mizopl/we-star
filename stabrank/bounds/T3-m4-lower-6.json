@@ -10,25 +10,19 @@
     "expect": "CERTIFIED chi(T3^4) >= 6"
   },
   "provenance": {
-    "author": "we* + @mizopl",
-    "reference": "stabrank verify_challenge",
-    "method": "projection monotonicity applied to the exact Z[omega_3] Galois quotient exclusion chi(T3^3) >= 6",
-    "date": "2026-11-10",
+    "author": "this repository",
+    "reference": "stabrank cert_t3m3_rank6.py",
+    "method": "projection monotonicity applied to the certified chi(T3^3) >= 6",
+    "date": "2026-09-16",
     "github": [
-      "mizopl"
+      "vprusso"
     ],
     "compute": {
-      "cpu_hours": 0.002,
-      "wall_clock_hours": 0.002,
+      "cpu_hours": 0.2,
+      "wall_clock_hours": 0.05,
       "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
-      "llm": [
-        {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
-        }
-      ]
+      "hardware": "Apple silicon laptop, 6 worker processes"
     }
   },
-  "notes": "Upgrades T3-m4-lower-6 from reproduced to verified (exact: true) via projection monotonicity (<0| (x) I^3)|T3>^4 = 3^{-1/2}|T3>^3 applied to the exact Z[omega_3] 1-pivot Galois quotient exclusion chi(T3^3) >= 6."
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-10) via verify_challenge/cert_qutrit_galois_m3_m5.py: projection monotonicity (<0| (x) I^3)|T3>^4 = 3^(-1/2)|T3>^3 (verified symbolically against orbit_state('T3')) applied to the exact Z[omega_3] 173-pivot Galois quotient exclusion chi(T3^3) >= 6. Prior reproduced record (verify_challenge/cert_t3_m4_from_m3.py): The first lower bound on this cell, which previously had none and so still counted as a route to the published exponent at every rank. Puts it at 6 <= chi <= 9. The certificate re-runs the m=3 rank-6 exclusion (Galois descent cutting the search to 45 candidate lines, then exhaustion with every candidate rejected in exact arithmetic over Q(w9)) and applies projection monotonicity: chi(psi (x) phi) >= chi(psi) whenever phi has a nonzero computational amplitude, since I (x) <x| maps a decomposition of psi (x) phi to one of psi with no more terms. Beating the published exponent 1/2 at m=4 needs rank 8, so this does not close the cell as a route; any rank from 6 to 8 at m=4 would beat it, and rank 9 is the product witness that matches it."
 }

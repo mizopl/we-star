@@ -10,25 +10,25 @@
     "expect": "CERTIFIED chi(CS^3) >= 4"
   },
   "provenance": {
-    "author": "we* + @mizopl",
-    "reference": "stabrank verify_challenge",
-    "method": "even-qubit (<0|_2 (I (x) H))^3 Clifford postselection to |Psi_3> = (2|0> + (1+i)|1>)^3 in Z[i]^8 + two-handle exact Z[i] rank-3 exclusion on D_2 and D_3",
+    "author": "Vincent Russo",
+    "reference": "stabrank slice_lift.py",
+    "method": "slice-and-lift along a whole copy: the slice equations of every rank-3 decomposition of |CS>^2 admit only the identity assignment, and the assembled terms |CS> (x) u_i are not stabilizer states",
     "date": "2026-10-21",
     "github": [
-      "mizopl"
+      "vprusso"
     ],
     "compute": {
-      "cpu_hours": 0.001,
-      "wall_clock_hours": 0.001,
-      "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
+      "cpu_hours": 0.03,
+      "wall_clock_hours": 0.03,
+      "runs": 2,
+      "hardware": "Apple silicon laptop, one core, under load from other jobs; about 45 s for the certificate",
       "llm": [
         {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
+          "model": "claude-fable-5-1",
+          "role": "wrote the block slice-and-lift and the certificate"
         }
       ]
     }
   },
-  "notes": "Upgraded from reproduced (45 s numerical block slice-and-lift on D_4) to verified (exact: true, 2.6 s on a single core, zero floating-point arithmetic). Applying the local Clifford I (x) H to each copy of |CS> = (|00> + |01> + |10> + i|11>)/2 and projecting the second qubit onto <0| gives (<0|_2 (I (x) H))|CS> = (2 sqrt(2))^{-1} (2|0> + (1+i)|1>) = (2 sqrt(2))^{-1} |Psi_1> (verified symbolically against stabrank_verify.target_vector). Since Clifford unitaries and <0| projections cannot increase stabilizer rank (Lean: stabRank_projection), chi(|CS>^m) >= chi(|Psi_m>) for all m. On D_2 (60 states) and D_3 (1,080 states), verify_challenge/cert_cs_m3_m4_exact.py certifies chi(|Psi_3>) = 4 in exact Z[i] arithmetic by two independent handles: (Handle A) enumerating all 483 exact rank-3 decompositions of |Psi_2> on D_2 and verifying 0 Pauli slice-and-lift matches to |Psi_3>; and (Handle B) an unconditional 1-pivot exact Z[i] quotient sweep over all 1,080 pivots of D_3 (with zero symmetry assumptions) finding 0 rank-3 decompositions of |Psi_3>, paired with the explicit rank-4 positive control {(|0> + i^k |1>)^3}_{k=0}^3."
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-10, 2.6 s on one core, zero floating-point arithmetic) via verify_challenge/cert_cs_m3_m4_exact.py: applying (<0|_2 (I (x) H))^m to |CS>^m gives (2 sqrt(2))^(-m) |Psi_m> with |Psi_1> = 2|0> + (1+i)|1> in Z[i]^2 (checked symbolically against stabrank_verify.target_vector), so chi(|CS>^3) >= chi(|Psi_3>) = 4, certified both by D_2 slice-and-lift (483 rank-3 decompositions of |Psi_2>, 0 lifts) and by an unconditional 1,080-pivot Z[i] quotient sweep on D_3 (0 rank-3 decompositions, 4-state symmetric product positive control). Prior reproduced record (verify_challenge/cert_cs_m3_lift.py, ~45 s): puts 4 <= chi(|CS>^3) <= 6 (bounds/CS-m3-upper-6.json; note bounds/CS-m3-lower-5.json on main also certifies chi(|CS>^3) >= 5 at verified tier under budget_s: 3600). Slicing a rank-3 decomposition of |CS>^3 along its first copy (slice_lift.lifts_qubit_block) gives at each of the 4 slice values one of the 16 rank-3 decompositions of |CS>^2 (1 orbit under the order-1152 unitary symmetry group, 3 pivot orbits); each nonzero slice equation admits only the identity Pauli assignment with mu = alpha_a/alpha_00 = 1, 1, i, leaving |CS> (x) u_i which to_witness.term_from_vector rejects (numerical thresholds 1 - 1e-6 and 1e-7; controls on |T>^3 -> |T>^4, |H>^2 -> |H>^3, Bravyi-Kitaev T-type with |+>, and 15 rank-2 |CS> decompositions)."
 }

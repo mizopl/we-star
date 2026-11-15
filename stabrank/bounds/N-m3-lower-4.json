@@ -10,25 +10,20 @@
     "expect": "CERTIFIED chi(N^3) >= 4"
   },
   "provenance": {
-    "author": "we* + @mizopl",
-    "reference": "arXiv:2605.28586 (Labib and Russo); stabrank verify_challenge",
-    "method": "exact Z[omega_3] 1-pivot quotient exclusion over the 74 symmetry orbit representatives of D_3",
-    "date": "2026-11-10",
+    "author": "Labib and Russo",
+    "reference": "arXiv:2605.28586",
+    "method": "literature",
+    "date": "2026-05-27",
     "github": [
-      "mizopl"
+      "FarLab",
+      "vprusso"
     ],
     "compute": {
-      "cpu_hours": 0.002,
-      "wall_clock_hours": 0.002,
+      "cpu_hours": 0.05,
+      "wall_clock_hours": 0.05,
       "runs": 1,
-      "hardware": "Apple M1 laptop (16 GB)",
-      "llm": [
-        {
-          "model": "gemini",
-          "role": "we* multi-agent algebraic quotient and exact certificate synthesis"
-        }
-      ]
+      "hardware": "Apple silicon laptop, 8 worker processes"
     }
   },
-  "notes": "Upgrades the m=3 bound of arXiv:2605.28586 from reproduced to verified (exact: true). Unnormalised |N> = (-1, 2, 2) lies in Z^3, and all 30,240 three-qutrit stabilizer states lie in Z[omega_3]^27. Scanning the 74 symmetry pivot orbit representatives of |N>^3 in exact Z[omega_3] arithmetic via projective ray canonicalisation (multiplying by bar(z) = (a - b) - b*omega_3 and dividing by the row GCD) shows that every collinear bucket in the second quotient Q(omega_3)^27 / span(|N>^3, s_piv) is already collinear modulo s_piv alone in Z[omega_3]^27 (dependent stabilizer triples in a 2D stabilizer subspace), with zero floating-point margins. Together with the Lean rank-4 witness this settles chi(|N>^3) = 4 at the verified/lean tier in both directions."
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-10) via verify_challenge/cert_qutrit_galois_m3_m5.py: unnormalised |N> = |0> + |1> - 2|2> (verified projectively in exact symbolic arithmetic against stabrank_verify.orbit_state('N') = (1, 1, -2)/sqrt(6)) lies in Z^3, and all 30,240 three-qutrit stabilizer states lie in Z[omega_3]^27. Scanning the 74 symmetry pivot orbit representatives of |N>^3 by exact projective ray canonicalisation (multiplying by bar(z) = (a - b) - b*omega_3 and dividing by row GCD) shows every collinear bucket in Q(omega_3)^27 / span(|N>^3, s_piv) is already collinear modulo s_piv alone (dependent stabilizer triples in a 2D stabilizer subspace), with m=2 positive control finding 8 rank-3 decompositions. Prior reproduced record (verify_challenge/cert_n_m3_rank3.py): The exhaustive m=3 value of arXiv:2605.28586, reproduced here from scratch: every rank-3 triple over the 30240 three-qutrit stabilizer states is excluded by the pivot-and-quotient search of rank_exclusion.py, with rank 2 excluded in the same pass. Together with the Lean-checked rank-4 decomposition this settles chi(|N>^3) = 4 with both directions machine-checked. The exclusion is numerical and rests on a margin: the certificate reports the closest any two non-parallel quotient directions come to the parallel threshold and refuses to print its claim if that margin is under 0.01. The Norrell state at m=2, whose rank-3 decomposition is proved in Lean, is the positive control."
 }
