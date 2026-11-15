@@ -8,6 +8,36 @@
 
 ---
 
+## In Plain Language
+
+Classical computers can simulate quantum circuits made only of "Clifford" gates efficiently, whereas universal quantum computers need non-Clifford "magic states" (such as $|T\rangle$ on qubits or the Norrell/Strange states on 3-level qutrits). The **stabilizer rank** $\chi(|\psi\rangle^{\otimes m})$ asks: *what is the smallest number of easy-to-simulate stabilizer states whose sum equals $m$ copies of a magic state?* Finding an upper bound means exhibiting an explicit sum that adds up to $|\psi\rangle^{\otimes m}$; proving a lower bound is much harder because you must rule out *every* possible combination of stabilizer states without trusting floating-point rounding.
+
+Here we replace slow, approximate floating-point searches with exact number-theoretic symmetries (Galois automorphisms over Gaussian and Eisenstein integers $\mathbb{Z}[i]$ and $\mathbb{Z}[\omega_3]$), certifying **35 exact bounds in `20.46 s`** on one laptop core and formalizing **10 theorem modules in Lean 4 (`0 sorryAx`)**. Higher copy counts (such as $m = 5, \text{rank} = 6$ for `qubit_H`/`qubit_T` and $m \ge 6$ qutrit upper bounds) remain open and are documented explicitly in Section 5.
+
+- **Central File (`Start Here`):** [`verify.py`](./verify.py) — the single-command standalone auditor that validates all 35 JSON bounds, runs all 5 exact cyclotomic scripts, and checks all 10 Lean 4 modules in `~21 s`.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_constellation_light.svg">
+    <img alt="Unitary stabrank constellation and central file verify.py" src="./assets/we_star_constellation_light.svg" width="560">
+  </picture>
+  <br>
+  <sub><b>Knowledge Constellation &amp; Central File:</b> <code>verify.py</code> pinpointed inside the 4,078-node <code>we*</code> research galaxy (<a href="./assets/we_star_constellation_dark.svg">dark</a> · <a href="./assets/we_star_constellation_light.svg">light</a>).</sub>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_tree_teaser_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_tree_teaser_light.svg">
+    <img alt="Magic-state stabilizer rank reasoning-tree branch close-up" src="./assets/we_star_tree_teaser_light.svg" width="860">
+  </picture>
+  <br>
+  <sub><b>Epistemic Bet-Tree Branch (Excerpt):</b> close-up of the three magic-state boughs (<code>Unitary stabrank PRs</code>, <code>Magic Distillation Qubits</code>, and <code>Magic Stabilizer Exponents</code>) — showing how earlier pruned attempts (<code>✗</code>) and pivots (<code>↩</code>) on stabilizer rank fed directly into a clean <code>4✓ / 0✗</code> Galois-descent run (<a href="./assets/we_star_tree_teaser_dark.svg">dark</a> · <a href="./assets/we_star_tree_teaser_light.svg">light</a>).</sub>
+</p>
+
+---
+
 ## 1. One-Command Standalone Verification (`~21 s` on 1 CPU Core)
 
 This directory bundles all `35` `bounds/*.json` submissions and `5` `verify_challenge/cert_*.py` scripts from [`PR #193`](https://github.com/unitaryfoundation/stabrank/pull/193), all `12` `lean_proofs/` files from [`PR #194`](https://github.com/unitaryfoundation/stabrank/pull/194), and the minimal Apache-2.0 upstream schema and verification helpers (`schema/bound.schema.json`, `stabrank_verify.py`, `validate_bounds.py`, `qutrit_codes.py`, `rank_exclusion.py`, `rank_exclusion_codes.py`) from [`unitaryfoundation/stabrank`](https://github.com/unitaryfoundation/stabrank) (`commit edde871`).

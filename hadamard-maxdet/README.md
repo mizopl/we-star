@@ -35,6 +35,33 @@ python3 ../solutions/hadamard-maxdet-records/verify-it-yourself/verify.py
 python3 ../solutions/hadamard-maxdet-records/verify-it-yourself/verify.py --corrupt   # adversarial 1-sign flip (must exit 1)
 ```
 
+### In Plain Language
+
+Fill an $n \times n$ grid using only $+1$ and $-1$ signs so the spanned $n$-dimensional box has the largest possible volume $|\det X|$. When $n$ is a multiple of $4$, orthogonal Hadamard matrices achieve maximum volume, but when $n$ leaves a remainder modulo $4$ ($n \equiv 1, 2, 3 \pmod 4$), columns cannot all meet at right angles, turning the search into a combinatorial design puzzle studied since Sylvester (1867) and Hadamard (1893). By dissecting archived optimal matrices first (`Stage 0`) and relaxing hidden symmetry assumptions (`A^T != A`) on order-$(n-1)$ Hadamard cores, our `13 h 05 min` session constructed larger-volume $\{\pm 1\}$ matrices on eight orders ($n = 81, 89, 93, 97, 101, 105, 109, 117$) plus 19 Hadamard-inequivalent record-tying classes.
+
+- **Central File (`Start Here`):** [`LESSONS_LEARNED.md`](./LESSONS_LEARNED.md) — full algebraic derivations, dead-end post-mortems, and seam-unfreezing equations (paired with the standalone executable verifier [`../solutions/hadamard-maxdet-records/verify-it-yourself/verify.py`](../solutions/hadamard-maxdet-records/verify-it-yourself/verify.py) and living catalog [`mizopl/hadamard-maxdet`](https://github.com/mizopl/hadamard-maxdet)).
+- **Scope & Limitations First:** All `8` new $n \equiv 1 \pmod 4$ matrices certify explicit constructive lower bounds on $\max\det\{\pm 1\}^{n \times n}$; they do not prove global optimality across all $2^{n^2}$ sign matrices outside the `5` restricted cyclotomic subclasses proved `CP-SAT INFEASIBLE` on $n = 51, 55$.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_constellation_light.svg">
+    <img alt="Hadamard MaxDet constellation and central file LESSONS_LEARNED.md" src="./assets/we_star_constellation_light.svg" width="560">
+  </picture>
+  <br>
+  <sub><b>Knowledge Constellation &amp; Central File:</b> <code>LESSONS_LEARNED.md</code> pinpointed inside the 4,078-node <code>we*</code> research galaxy (<a href="./assets/we_star_constellation_dark.svg">dark</a> · <a href="./assets/we_star_constellation_light.svg">light</a>).</sub>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_tree_teaser_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_tree_teaser_light.svg">
+    <img alt="Hadamard MaxDet reasoning-tree branch close-up" src="./assets/we_star_tree_teaser_light.svg" width="860">
+  </picture>
+  <br>
+  <sub><b>Epistemic Bet-Tree Branch (Excerpt):</b> organic trajectory from our internal pre-registered bet tree — verified steps (<code>✓</code>), falsified hypotheses pruned on the way (<code>✗</code>), and structural pivots (<code>↩</code>) (<a href="./assets/we_star_tree_teaser_dark.svg">dark</a> · <a href="./assets/we_star_tree_teaser_light.svg">light</a>).</sub>
+</p>
+
 ---
 
 ## 2. How the `we*` Discovery System Works (Architecture Overview)
@@ -73,10 +100,10 @@ Five operational mechanisms govern every campaign:
 
 ### 3.1 Chronological Stage-by-Stage Stopwatch (`2026-11-10` to `2026-11-11`)
 
-| Stage | Window (`UTC` / `CET`) | Duration | Pre-Registered Bets | Compute Used | Key Milestones, Dead Ends & Breakthroughs |
+| Stage | Window (`UTC` / `CET`) | Duration | Pre-Registered Bets | Compute Used | Key Milestones, Dead Ends & Structural Gains |
 | :--- | :---: | :---: | :---: | :--- | :--- |
 | **0. Literature X-Ray & `[OS]` Dissection** | `11:49–12:10 UTC`<br>(`12:49–13:10 CET`) | **`21 min`** | Pre-Bet X-Ray | Local M1 (`< 3 min` CPU) | Cached 50 archived `MaxDet` pages, Rokicki's 2005 logs (`105, 109, 117`), and `Math-AI-Caltech/hadamard-maxdet`. Mapped the Barba ratio cliff above $n = 101$ and reconstructed `[OS-1]`/`[OS-2]` algebra from $G = M M^T$ on `d49, d85, d101`. |
-| **1. Initial `[OS-1]/[OS-2]` & Seam-Unfreezing Sprint** | `12:10–13:07 UTC`<br>(`13:10–14:07 CET`) | **`57 min`** | `Bet #1` (`0.65` $\to$ **WIN**)<br>`Bet #2` (`0.75` $\to$ **WIN**)<br>`Bet #3` (`0.50` $\to$ **WIN**) | Local M1 (`~22 min` CPU) | **5 world records within 78 minutes of start:** `n = 105, 109 (+15.20%), 117` at minute `38` (`12:27 UTC`); `n = 101` (`+7.2574%`, $R = 0.8606$) via 6-entry rank-2 core/border flip at minute `53`; `n = 89` (first archived $89 \times 89$ witness) at minute `78`. |
+| **1. Initial `[OS-1]/[OS-2]` & Seam-Unfreezing Sprint** | `12:10–13:07 UTC`<br>(`13:10–14:07 CET`) | **`57 min`** | `Bet #1` (`0.65` $\to$ **WIN**)<br>`Bet #2` (`0.75` $\to$ **WIN**)<br>`Bet #3` (`0.50` $\to$ **WIN**) | Local M1 (`~22 min` CPU) | **5 new lower-bound records within 78 minutes of start:** `n = 105, 109 (+15.20%), 117` at minute `38` (`12:27 UTC`); `n = 101` (`+7.2574%`, $R = 0.8606$) via 6-entry rank-2 core/border flip at minute `53`; `n = 89` (first archived $89 \times 89$ witness) at minute `78`. |
 | **2. Valley of Dead Ends, Tug-of-War & `Closed-Four` Escape** | `13:07–20:06 UTC`<br>(`14:07–21:06 CET`) | **`6 h 59 min`** | `Bet #4` (`0.65` $\to$ `0`)<br>`Bet #5` (`0.65` $\to$ `0`)<br>`Bet #6` (`0.50` $\to$ `0*`)<br>`Bet #7` (`0.65` $\to$ `0*`) | Local M1 (`~145 min` wall / `~260` core-min) | Isolated 4 obstructions ($16/16$ 1-flip local optimality on $3 \pmod 4$; symmetric GS ceiling; cold $B \ge 4$ spin glass $R \le 0.51$; $c = 9$ root-of-unity cancellation) + ran adversarial **Tug-of-War** (`18:27–18:37 UTC`). Mining Orrick's footnotes showed `n = 81` was a 1987 `[FK]` holdout; 18 `Closed-Four` switches broke **6th record `n = 81` (`+2.0408%`)** and upgraded **`n = 89` (`+2.7273%`)** at `18:09 UTC`. |
 | **3. Warm Asymmetric GS & 32-Fold Chirality Harvest** | `20:06–22:28 UTC`<br>(`21:06–23:28 CET`) | **`2 h 22 min`** | `Bet #8` (`0.65` $\to$ **WIN**)<br>`Bet #9` (`0.65` $\to$ **WIN**)<br>`Bet #10` (`0.65` $\to$ `0*`) | Local M1 (`~68 min` wall / `~205` core-min) | Relaxed Williamson symmetry ($A^T \ne A$) via Asymmetric & Even-$k$ Negacyclic GS cores and fixed the $S R = R S^{-1}$ anti-diagonal shift-gauge blind spot (~90% hidden column triplets): **7th record `n = 93`** in **`19.8 s`** (`20:26 UTC`); **8th record `n = 97` (`+3.1250%`)** + `n = 93` (`+1.6736%`) + `n = 109` (**`+19.8565%`**) at `21:38 UTC`; final `n = 105` (**`+8.0164%`**) & `n = 117` (**`+5.3179%`**) upgrades at `22:28 UTC`. |
 | **4. Cyclotomic Scout, Colab `CP-SAT` & Inequivalent Ties** | `21:45–00:03 UTC`<br>(`22:45–01:03 CET`) | **`1 h 35 min`** *(overlapping)* | Parallel Scout +<br>`Bet #11` (`0.55` $\to$ `0*`) | Colab (`27.4 min` wall) + Local M1 (`~24 min`) | Scout derived Gaussian-period & PAF equations on $n = 51, 55$; 12-worker `CP-SAT` on Colab proved **5 exact `INFEASIBLE` theorems** (`0.29–1.64 s`); exported closed-form `generator_params` for all `8` records + **`27` record-tying witnesses (`19` Hadamard-inequivalent, incl. Type 2 `n = 51`)**. |
@@ -100,7 +127,7 @@ Tokens are measured directly from untruncated JSONL session logs (at `3.8 chars/
 
 - **Local Apple M1 Laptop (`16 GB` unified RAM, capped at `<= 4` single-threaded CPU workers, `OMP_NUM_THREADS=1`):**
   - **`4 h 31 min` (`271.4 min`) active wall-clock compute** (`255.8 min` background compute union + `15.6 min` synchronous algebraic probes), totaling **`8.70` M1 CPU core-hours** (`~1.92` average active cores) across `50` iterative Python / Numba / BLAS scripts (`16,045` lines of code).
-  - **100% (`8 / 8`) of the new world records and 100% (`27 / 27`) of the record-tying witnesses were discovered, optimized, and certified entirely on the local M1 CPU.** Replacing black-box matrix evaluation with exact algebraic projections (`32.4 ms` `Nullspace-4` linear projection, `20 us` bit-parallel `uint64` closed-four switching, and `@njit` zero-allocation scalar-DFT screening) provided a `100x–15,000x` per-move speedup over naive determinant updates.
+  - **100% (`8 / 8`) of the new lower-bound records and 100% (`27 / 27`) of the record-tying witnesses were discovered, optimized, and certified entirely on the local M1 CPU.** Replacing black-box matrix evaluation with exact algebraic projections (`32.4 ms` `Nullspace-4` linear projection, `20 us` bit-parallel `uint64` closed-four switching, and `@njit` zero-allocation scalar-DFT screening) provided a `100x–15,000x` per-move speedup over naive determinant updates.
 - **Google Colab Cloud Offload (`27.4 min` total wall-clock, `0` GPU minutes used for matrix search):**
   - Invoked **only once** in Stage 4 (`Bet #11`, `23:35–00:27 CET`): **`13.0 min` (`781 s`)** of active 12-vCPU `OR-Tools CP-SAT` execution (plus `14.4 min` container spin-up/retry) to prove the **5 exact `CP-SAT INFEASIBLE` cyclotomic / Gaussian-period non-existence theorems** on $n = 51$ and $n = 55$.
 

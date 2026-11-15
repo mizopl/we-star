@@ -10,6 +10,36 @@ Total verified by unmodified [`eternagame/eterna-validator/check_design.py`](htt
 
 ---
 
+## In Plain Language
+
+An RNA molecule is a single strand of four chemical letters (`A`, `U`, `G`, `C`) that folds back on itself into stems and loops according to thermodynamic free-energy rules. **Inverse RNA folding** asks the reverse question: *given a desired 2D target shape — plus strict budgets on `GC`, `AU`, or `GU` base pairs and locked nucleotides — can you write a sequence whose lowest-energy natural fold is that exact shape, rather than one of trillions of competing misfolds?*
+
+The 300 puzzles in `eternagame/eterna-hard` were curated from community puzzles that resisted nearly all automated algorithms and left only a single human solver (`solvers = 1`). Our solver plays an iterative game against the exact physics engine (`ViennaRNA 1.8.5` / `2.x`): whenever a candidate sequence misfolds into a rival shape, that rival is added to a growing list of "forbidden decoys" and neutralized via local pair swaps until the target becomes the true thermodynamic ground state. **Scope & Limitations First:** `37 / 300` (`12.3%`) `eterna-hard` targets (`+ 1 / 1` `martian.csv`) reach exact `d_bp = 0` (`PASS`), and `96 / 300` reach within a single base pair (`d_bp <= 1`), while the remaining `263 / 300` constrained motifs remain open frontier benchmarks (`frontier_300_summary.tsv`).
+
+- **Central File (`Start Here`):** [`cegis_eterna_hard_solver.py`](./cegis_eterna_hard_solver.py) — the self-contained Counterexample-Guided Inductive Synthesis (`CEGIS`) inverse-folding engine (paired with the native C cutting-plane kernel [`libR35_fast.c`](./libR35_fast.c) and verified designs in [`all_38_solved_designs.tsv`](./all_38_solved_designs.tsv)).
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_constellation_light.svg">
+    <img alt="Eterna-Hard constellation and central file cegis_eterna_hard_solver.py" src="./assets/we_star_constellation_light.svg" width="560">
+  </picture>
+  <br>
+  <sub><b>Knowledge Constellation &amp; Central File:</b> <code>cegis_eterna_hard_solver.py</code> pinpointed inside the 4,078-node <code>we*</code> research galaxy (<a href="./assets/we_star_constellation_dark.svg">dark</a> · <a href="./assets/we_star_constellation_light.svg">light</a>).</sub>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_tree_teaser_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_tree_teaser_light.svg">
+    <img alt="Eterna-Hard and Eterna100-V2 reasoning-tree branch close-up" src="./assets/we_star_tree_teaser_light.svg" width="860">
+  </picture>
+  <br>
+  <sub><b>Epistemic Bet-Tree Branch (Excerpt):</b> close-up of the <code>Eterna-Hard 300</code> and <code>Eterna100-V2</code> boughs — showing 30+ stepping-stone gains (<code>✓</code>), 9 falsified thermodynamic heuristics pruned cleanly along the climb (<code>✗</code>), and multi-branch C-kernel grafts (<a href="./assets/we_star_tree_teaser_dark.svg">dark</a> · <a href="./assets/we_star_tree_teaser_light.svg">light</a>).</sub>
+</p>
+
+---
+
 ## 1. One-Command Verification (`eterna-validator/check_design.py`)
 
 Given local clones of [`eternagame/eterna-hard`](https://github.com/eternagame/eterna-hard) and [`eternagame/eterna-validator`](https://github.com/eternagame/eterna-validator), with `RNAFOLD_V1` pointing to `ViennaRNA-1.8.5/Progs/RNAfold` and `RNAFOLD_V2` pointing to `ViennaRNA 2.x` `RNAfold`:

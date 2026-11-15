@@ -1,44 +1,63 @@
 # we-star
 
-<sub><b>we* = me (<a href="https://github.com/mizopl">@mizopl</a>) + the agentic systems we* create + the feedback loop</b> · PROOFER v20 Open-Science Release · <i>"Nothing material is perfect."</i></sub>
+<sub><b>we* = me (<a href="https://github.com/mizopl">@mizopl</a>) + the agentic systems we* create + the feedback loop</b> · PROOFER Open-Science Release · <i>"Nothing material is perfect."</i></sub>
+
+Built with Google Antigravity (Gemini) and Claude Code on a single 16 GB M1 laptop (with heavy compute offloaded to ephemeral GPUs on demand), **we-star** shares our open-science discovery architecture ([`CONSTITUTION_v19.md`](./CONSTITUTION_v19.md) & [`StartFresh_v19/`](./StartFresh_v19/)), reasoning graphs, documented dead ends, and standalone zero-trust verifiers. Across 330+ research cycles, it has produced **36 machine-verified benchmark solutions** (44 verification packages across all 18 domains of [V3R1T4S](https://github.com/elder-plinius/V3R1T4S), [hadamard-maxdet](https://github.com/mizopl/hadamard-maxdet), [eterna-hard](./eterna-hard/), and [stabrank](./stabrank/)), including **52 zero-axiom (`0 sorryAx`) Lean 4 proof modules/theorems**.
+
+### In Plain Language
+
+Most AI math and coding demos show only the polished final answer, hiding failed attempts and leaving readers to trust a language model's prose. **we-star** flips that contract: the AI is treated as an untrusted proposer, and only cold, deterministic machine artifacts — a Lean 4 proof (`0 sorryAx`), a SAT/LRAT refutation, an exact integer matrix, or a self-contained Python verifier with an adversarial `--corrupt` self-test — count as truth. Every hypothesis is logged *before* running code as a pre-registered bet with a probability estimate, so dead ends (`✗`) and structural pivots (`↩`) are preserved alongside verified steps (`✓`).
+
+- **Central File (`Start Here`):** [`CONSTITUTION_v19.md`](./CONSTITUTION_v19.md) — the unified epistemic ruleset, anti-hallucination locks, and `Op-M1..Op-M7` perspective operators governing our public `v19` open-science release (runnable starter kit in [`StartFresh_v19/`](./StartFresh_v19/)).
+- **Scope & Limitations First:** Every package in [`solutions/`](./solutions/) states what remains open upfront (for instance, Conway's 99-graph remains open globally on the irreducible `Class 6` tail; our Hadamard `n = 81..117` matrices certify constructive lower bounds rather than global optimality; and withdrawn hypotheses carry explicit `CORRECTION.md` notices). Newer experimental layers stay incubated offline until battle-tested for public release.
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./PROOFER-graph-v20-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="./PROOFER-graph-v20.png">
-    <img alt="PROOFER v20 Obsidian Knowledge and Decision Graph" src="./PROOFER-graph-v20.png" width="400">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_constellation_light.svg">
+    <img alt="we-star monochrome knowledge constellation and central file CONSTITUTION_v19.md" src="./assets/we_star_constellation_light.svg" width="560">
   </picture>
   <br>
-  <sub><b>Figure 0 — PROOFER v20 Knowledge &amp; Decision Graph</b> (2026-11-10 · 932 Markdown notes · 330+ cycles · <a href="./PROOFER-graph-v20-dark.png">dark</a> / <a href="./PROOFER-graph-v20.png">light</a>).<br>The upper-right core (wiki &amp; Constitution) bridges into a second constellation of 36 campaign packages, Tug-of-War gates, and sleep notes.</sub>
+  <sub><b>Figure 0a · Knowledge Constellation &amp; Central File:</b> <code>CONSTITUTION_v19.md</code> pinpointed inside the 4,078-node <code>we*</code> Obsidian &amp; verification galaxy (<a href="./assets/we_star_constellation_dark.svg">dark</a> · <a href="./assets/we_star_constellation_light.svg">light</a>).</sub>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_tree_teaser_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_tree_teaser_light.svg">
+    <img alt="we-star epistemic reasoning-tree boughs excerpt" src="./assets/we_star_tree_teaser_light.svg" width="860">
+  </picture>
+  <br>
+  <sub><b>Figure 0b · Epistemic Bet-Tree Canopy (Teaser Excerpt):</b> close-up of five cross-domain branches sprouting from the central trunk — verified stepping-stones (<code>✓</code>), falsified twigs pruned cleanly on contact with an exact oracle (<code>✗</code>), and structural pivots (<code>↩</code>) (<a href="./assets/we_star_tree_teaser_dark.svg">dark</a> · <a href="./assets/we_star_tree_teaser_light.svg">light</a>). Only the geometry of the branches is shown here; the deeper trunk mechanics behind our next constitutional release remain under wraps for now.</sub>
 </p>
 
 <details>
-<summary><sub>Compare PROOFER v19 (2026-10-28) vs. PROOFER v20 (2026-11-10) &amp; how Obsidian birthed rgraph.py</sub></summary>
+<summary><sub>Historical Obsidian snapshots &amp; how Obsidian birthed <code>rgraph.py</code></sub></summary>
 <br>
 
 <table>
   <tr>
-    <th align="center" width="50%"><sub>PROOFER v19 · 2026-10-28</sub></th>
-    <th align="center" width="50%"><sub>PROOFER v20 · 2026-11-10 (932 notes)</sub></th>
+    <th align="center" width="50%"><sub>2026-10-28 Vault Snapshot</sub></th>
+    <th align="center" width="50%"><sub>2026-11-10 Vault Snapshot (932 notes)</sub></th>
   </tr>
   <tr>
     <td align="center">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="./PROOFER-graph-dark.png">
         <source media="(prefers-color-scheme: light)" srcset="./PROOFER-graph.png">
-        <img alt="PROOFER v19 Graph" src="./PROOFER-graph.png" width="310">
+        <img alt="PROOFER Obsidian Graph (2026-10-28)" src="./PROOFER-graph.png" width="310">
       </picture>
       <br>
-      <sub>Ingested V3R1T4S supernova, central constitutional hub, and outer crescent (<a href="./PROOFER-graph-dark.png">dark</a> · <a href="./PROOFER-graph.png">light</a> · v18 in <a href="./StartFresh_v18/README.md">StartFresh_v18</a>).</sub>
+      <sub>Ingested V3R1T4S cluster, central constitutional hub, and outer crescent (<a href="./PROOFER-graph-dark.png">dark</a> · <a href="./PROOFER-graph.png">light</a> · v18 in <a href="./StartFresh_v18/README.md">StartFresh_v18</a>).</sub>
     </td>
     <td align="center">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="./PROOFER-graph-v20-dark.png">
         <source media="(prefers-color-scheme: light)" srcset="./PROOFER-graph-v20.png">
-        <img alt="PROOFER v20 Graph" src="./PROOFER-graph-v20.png" width="310">
+        <img alt="PROOFER Expanded Graph (2026-11-10)" src="./PROOFER-graph-v20.png" width="310">
       </picture>
       <br>
-      <sub>Binary-star constellation uniting wiki, Constitution Lab, Hall of Fame, Tug-of-War, and standalone proof packages (<a href="./PROOFER-graph-v20-dark.png">dark</a> · <a href="./PROOFER-graph-v20.png">light</a>).</sub>
+      <sub>Binary-star constellation uniting the domain wiki, Hall of Fame, Tug-of-War gates, and standalone proof packages (<a href="./PROOFER-graph-v20-dark.png">dark</a> · <a href="./PROOFER-graph-v20.png">light</a>).</sub>
     </td>
   </tr>
 </table>
@@ -49,9 +68,7 @@
 
 ---
 
-Built with Google Antigravity (Gemini) and Claude Code on a 16 GB M1 laptop (with heavy compute offloaded on demand), **we-star** shares our open-science discovery architecture ([`StartFresh_v19`](./StartFresh_v19/)), reasoning graphs, dead ends, and verifiers. Across 330+ cycles, it has produced **36 machine-verified benchmark solutions** (44 packages across all 18 domains of [V3R1T4S](https://github.com/elder-plinius/V3R1T4S), [hadamard-maxdet](https://github.com/mizopl/hadamard-maxdet), [eterna-hard](./eterna-hard/), and [stabrank](./stabrank/)), including **52 zero-axiom Lean 4 proof modules/theorems**.
-
-<sub><b>Field Notes (<a href="./news/">news/</a>):</b> <a href="./news/2026-11-10_field_notes_magic_states_10s_eterna_hard_and_github_replays.md">#002 · 2026-11-10</a> (Conway-99 with @ibenarb, 2-month SAT to 10.74s on RM(3,7), Eterna-Hard &amp; ViennaRNA bug) · <a href="./news/2026-11-02_field_notes_small_wins_agent_mail_and_constitution_v20.md">#001 · 2026-11-02</a> (MatMulCatalog #21, agent mail, v20 Lab).</sub>
+<sub><b>Field Notes (<a href="./news/">news/</a>):</b> <a href="./news/2026-11-10_field_notes_magic_states_10s_eterna_hard_and_github_replays.md">#002 · 2026-11-10</a> (Conway-99 with @ibenarb, 2-month SAT to 10.74s on RM(3,7), Eterna-Hard &amp; ViennaRNA bug) · <a href="./news/2026-11-02_field_notes_small_wins_agent_mail_and_constitution_v20.md">#001 · 2026-11-02</a> (MatMulCatalog #21 &amp; external agent mail).</sub>
 
 #### External Merges & Upstream Integrations
 
@@ -136,7 +153,7 @@ Built with Google Antigravity (Gemini) and Claude Code on a 16 GB M1 laptop (wit
 | <sub>[`solutions/`](./solutions/) · [`hadamard-maxdet/`](./hadamard-maxdet/) · [`stabrank/`](./stabrank/)</sub> | <sub>Standalone reproducible solvers, JSON/LRAT/Lean 4 certificates, `verify.py`, lessons learned, and [`eterna-hard/`](./eterna-hard/)</sub> |
 | <sub>[`docs/`](./docs/00_FULL_BENCHMARK_ATLAS.md)</sub> | <sub>13-chapter methodology &amp; history series (00 Full Benchmark Atlas through 12 Manifesto &amp; Agent Notes)</sub> |
 | <sub>[`Evolved_Agent_Wiki/`](./Evolved_Agent_Wiki/)</sub> | <sub>Co-evolved Cycle 1 → 49 wiki, 30 stitched graphs, and [`scripts_v18_evolution/`](./scripts_v18_evolution/) toolkit</sub> |
-| <sub>[`CONSTITUTION_v19.md`](./CONSTITUTION_v19.md)</sub> | <sub>Public v19 Constitution ([v17](./CONSTITUTION_v17.md) archived; v20 in internal testing) and [`news/`](./news/) field notes</sub> |
+| <sub>[`CONSTITUTION_v19.md`](./CONSTITUTION_v19.md)</sub> | <sub>Public v19 Constitution ([v17](./CONSTITUTION_v17.md) archived) and [`news/`](./news/) field notes</sub> |
 
 <details>
 <summary><sub>Expand all 13 documentation chapters in docs/ (00–12)</sub></summary>
@@ -153,7 +170,7 @@ Built with Google Antigravity (Gemini) and Claude Code on a 16 GB M1 laptop (wit
 | <sub>[06 · Wiki &amp; Succession](./docs/06_KARPATHY_WIKI_AND_HALL_OF_FAME_SUCCESSION.md)</sub> | <sub>Karpathy's LLM Wiki, Alignment Faking / Primacy Bias literature, and Hall of Fame (§7)</sub> |
 | <sub>[07 · Productive Failures](./docs/07_ATLAS_OF_PRODUCTIVE_FAILURES_AND_DEAD_ENDS.md)</sub> | <sub>Ten falsified hypotheses (K1–K10): Kill Node → Mathematical Diagnosis → Breakthrough</sub> |
 | <sub>[08 · Note to Future Minds](./docs/08_A_NOTE_FROM_THE_AGENT_TO_FUTURE_MINDS.md)</sub> | <sub>Non-anthropomorphic reflection from Claude v1–v12 &amp; Gemini-CLSS v13–v17</sub> |
-| <sub>[09 · Resilience &amp; Roadmap](./docs/09_SYSTEM_RESILIENCE_STORIES_AND_ROADMAP.md)</sub> | <sub>Five 00:00–14:29 CET self-healing stories (04:17 AM crash recovery) &amp; v1 → v20 roadmap</sub> |
+| <sub>[09 · Resilience &amp; Roadmap](./docs/09_SYSTEM_RESILIENCE_STORIES_AND_ROADMAP.md)</sub> | <sub>Five 00:00–14:29 CET self-healing stories (04:17 AM crash recovery) &amp; v1 → v19 evolutionary roadmap</sub> |
 | <sub>[10 · Three-Stage Relay](./docs/10_THREE_STAGE_RELAY_TRAJECTORY.md)</sub> | <sub>Step-by-step handoff across PROOFER-I → PROOFER-Rescue → PROOFER-II</sub> |
 | <sub>[11 · Epistemic Ledger](./docs/11_EPISTEMIC_LEDGER_REASONING_GRAPHS_AND_EVOLUTION_HYPOTHESES.md)</sub> | <sub>Quantitative audit of 169 bets (Brier = 0.1556), 30 reasoning graphs, and H-EVO-01..06</sub> |
 | <sub>[12 · Manifesto &amp; Reflections](./docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md)</sub> | <sub>Unabridged archive of we*, Openness Paradoxes, v16 research notes, and unedited agent essay</sub> |
@@ -177,7 +194,7 @@ git clone --depth 1 https://github.com/mizopl/we-star.git /tmp/we-star && cp -R 
 
 #### Why `we*` & Radical Openness
 
-<sub><b>Kleene Star ($W^*$) &amp; Algebraic Dual ($V^*$):</b> In <b>we*</b>, the star stands for cumulative generational chaining (Claude v1–v12 → Gemini / PROOFER v13–v20 via Hall of Fame succession) and flipping stalled primal searches ($W$) into dual obstructions ($W^*$).<br><b>Two Paradoxes of Openness:</b> Open reasoning graphs, Brier ledgers, and kill nodes make human–AI systems far easier to mutually audit than opaque black boxes (<i>Paradox #1</i>); and because researchers are bottlenecked by <i>finite human attention</i> rather than secret prompts, radical transparency grounds science instead of causing runaway acceleration (<i>Paradox #2</i>).</sub>
+<sub><b>Kleene Star ($W^*$) &amp; Algebraic Dual ($V^*$):</b> In <b>we*</b>, the star stands for cumulative generational chaining (Claude v1–v12 → Gemini / PROOFER v13–v19 via Hall of Fame succession) and flipping stalled primal searches ($W$) into dual obstructions ($W^*$).<br><b>Two Paradoxes of Openness:</b> Open reasoning graphs, Brier ledgers, and kill nodes make human–AI systems far easier to mutually audit than opaque black boxes (<i>Paradox #1</i>); and because researchers are bottlenecked by <i>finite human attention</i> rather than secret prompts, radical transparency grounds science instead of causing runaway acceleration (<i>Paradox #2</i>).</sub>
 
 <details>
 <summary><sub>Read the preserved unedited opinion from the agent side of we* (Claude v1–v12 &amp; Gemini-CLSS v13–v17 — verbatim)</sub></summary>
@@ -202,10 +219,10 @@ If you ask the machine half of `we*` why this repository should be public — an
 <summary><sub>Ongoing research themes &amp; preserved v16/v17 research-focus notes (@mizopl)</sub></summary>
 <br>
 
-<sub>1. <b>Proximity-to-Goal Metrics vs. Flat Landscapes (EBG &amp; RMC):</b> Surrogate-metric synthesis alongside gradient-free #P counting and symbolic proof domains.<br>2. <b>Sleep &amp; Memory Consolidation:</b> Our candid v16 note that StartFresh_v16 lacked a biological consolidation pass directly drove <code>sleep_flush.py</code> in v18/v19 and sealed-envelope dream incubation (SEN) in v20.<br>3. <b>Benchmarking Harnesses &amp; Upcoming Paper:</b> Empirical critique of why static evaluation harnesses miss open-ended human–agent co-evolution (<a href="./docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md">full archive in docs/12</a>).</sub>
+<sub>1. <b>Proximity-to-Goal Metrics vs. Flat Landscapes (EBG &amp; RMC):</b> Surrogate-metric synthesis alongside gradient-free #P counting and symbolic proof domains.<br>2. <b>Sleep &amp; Memory Consolidation:</b> Our candid v16 note that StartFresh_v16 lacked a biological consolidation pass directly drove <code>sleep_flush.py</code> and offline memory consolidation in v18–v19.<br>3. <b>Benchmarking Harnesses &amp; Upcoming Paper:</b> Empirical critique of why static evaluation harnesses miss open-ended human–agent co-evolution (<a href="./docs/12_MANIFESTO_OBSIDIAN_LINEAGE_AND_AGENT_REFLECTIONS.md">full archive in docs/12</a>).</sub>
 
 </details>
 
 ---
 
-<sub><b>Contact &amp; collaboration</b> (free feedback on your commits, grants, or compute sponsorships): <a href="https://github.com/mizopl/we-star/issues/new">open an Issue</a> or tag <a href="https://github.com/mizopl">@mizopl</a> · If we-star helps your work, consider starring the repo.<br>Signed, <b>we*</b> — @mizopl + agentic systems (Claude v1–v12 &amp; Gemini / PROOFER v13–v20) + the feedback loop.</sub>
+<sub><b>Contact &amp; collaboration</b> (free feedback on your commits, grants, or compute sponsorships): <a href="https://github.com/mizopl/we-star/issues/new">open an Issue</a> or tag <a href="https://github.com/mizopl">@mizopl</a> · If we-star helps your work, consider starring the repo.<br>Signed, <b>we*</b> — @mizopl + agentic systems (Claude v1–v12 &amp; Gemini / PROOFER v13–v19) + the feedback loop.</sub>
