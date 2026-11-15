@@ -227,7 +227,25 @@ def _verify() -> int:
         assert abs(auprc - cert_val) < 1e-5, f"Mendelian {col} mismatch: {auprc:.6f} vs {cert_val:.6f}"
         for chrom, c_entry in track_b_m[col]["per_chrom"].items():
             n_c, ap_c = per_c[chrom]
+            assert n_c == c_entry["n"], f"Mendelian {col} chrom {chrom} count mismatch"
             assert abs(ap_c - c_entry["auprc"]) < 1e-5
+            if "ref_auprc" in c_entry and "delta" in c_entry:
+                assert abs((c_entry["auprc"] - c_entry["ref_auprc"]) - c_entry["delta"]) < 1e-4
+
+    track_b_c = cert["track_b_p1_alignment_free_zero_shot"]["complex_traits_matched_9"]
+    for col in ("AF_Closed_4", "AF_Closed_3", "AF_4P", "AF_HumanOnly"):
+        auprc, per_c = compute_weighted_auprc(c_chroms, col)
+        cert_val = track_b_c[col]["auprc"]
+        assert abs(auprc - cert_val) < 1e-5, f"Complex {col} mismatch: {auprc:.6f} vs {cert_val:.6f}"
+        for chrom, c_entry in track_b_c[col]["per_chrom"].items():
+            n_c, ap_c = per_c[chrom]
+            assert n_c == c_entry["n"], f"Complex {col} chrom {chrom} count mismatch"
+            assert abs(ap_c - c_entry["auprc"]) < 1e-5
+            if "ref_auprc" in c_entry and "delta" in c_entry:
+                assert abs((c_entry["auprc"] - c_entry["ref_auprc"]) - c_entry["delta"]) < 1e-4
+    if "AF_SeqReg_cadd_free" in track_b_c:
+        for chrom, c_entry in track_b_c["AF_SeqReg_cadd_free"]["per_chrom"].items():
+            assert abs((c_entry["auprc"] - c_entry["ref_auprc"]) - c_entry["delta"]) < 1e-4
 
     for col in ("AF_Closed_4", "AF_Closed_3", "AF_4P", "AF_HumanOnly"):
         assert track_b_m[col]["auprc"] >= 0.715964, f"{col} must beat phyloP-241m + 0.02 (0.715964)"
