@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1",
+  "orbit": "cat",
+  "m": 2,
+  "direction": "lower",
+  "rank": 1,
+  "certificate": {
+    "script": "verify_challenge/cert_cat_m2_rank1.py",
+    "expect": "CERTIFIED chi(cat_2) >= 1",
+    "exact": true
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "arXiv:2106.07740 (Qassim, Pashayan, and Gosset, Table 1); stabrank verify_challenge",
+    "method": "exact: |cat_2> = (|00> + i|11>)/sqrt(2) is non-zero (|||cat_2>||^2 = 1 > 0), excluding rank 0",
+    "date": "2026-11-16",
+    "github": [
+      "mizopl"
+    ]
+  },
+  "notes": "Closes the m = 2 cell of the magic-cat family at chi(|cat_2>) = 1 on both sides alongside bounds/cat-m2-upper-1.json (verified), as in Qassim, Pashayan, and Gosset (arXiv:2106.07740, Table 1). verify_challenge/cert_cat_m2_rank1.py checks symbolically against stabrank_verify.target_vector('cat', 2) that all 2 x 2 projective minors with |00> + i|11> vanish and |||cat_2>||^2 = 1 > 0, so the empty sum of zero stabilizer states cannot represent |cat_2>."
+}

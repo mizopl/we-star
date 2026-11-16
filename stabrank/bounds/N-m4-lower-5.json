@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "orbit": "N",
+  "m": 4,
+  "direction": "lower",
+  "rank": 5,
+  "certificate": {
+    "script": "verify_challenge/cert_s_n_rank5_exact.py",
+    "expect": "CERTIFIED chi(N^4) >= 5",
+    "exact": true
+  },
+  "provenance": {
+    "author": "this repository",
+    "reference": "stabrank slice_lift.py",
+    "method": "slice-and-lift: the single rank-4 decomposition of |N>^3 up to symmetry does not extend to |N>^4",
+    "date": "2026-09-18",
+    "github": [
+      "vprusso"
+    ],
+    "compute": {
+      "cpu_hours": 7.6,
+      "wall_clock_hours": 7.6,
+      "runs": 3,
+      "hardware": "Apple silicon laptop at low priority for the 6.4-hour first enumeration; the certificate ran in 43 minutes on the 4-core CI runner with the numpy search, and re-runs here with the compiled kernel"
+    }
+  },
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-16, ~50 s for the N stage inside the ~100 s unified S+N run on 4 workers under the default 900 s budget, zero floating-point operations) via verify_challenge/cert_s_n_rank5_exact.py: exact zero-float F_P Clifford orbit construction (74 pivot orbits, 198,631 stabilizer-reduced pairs), F_65521 2-pivot harvest with unprojected 27-column Hadamard independence check (256 < 65521) + Hadamard-certified F_P (P = 1,000,000,021 > 135,000) and SymPy Z[omega_3] rank confirmation recovering the unique rank-4 orbit of |N>^3, and exact Z[omega_3] meet-in-the-middle Pauli slice-2/slice-0 exclusion (note bounds/N-m4-lower-6.json and bounds/N-m4-lower-7.json are attested on main). Prior reproduced record (verify_challenge/cert_n_m4_lift.py, budget_s: 3600): chi(N^3) = 4 exactly (Lean witness and rank-3 exclusion). A rank-4 decomposition of |N>^4 sliced along one qutrit gives a rank-4 decomposition of |N>^3 whose terms are related slice to slice by a Pauli and cube roots of unity. |N>^3 has one rank-4 decomposition up to its unitary symmetries, the Lean witness of M3StabRank, and no Pauli assignment satisfies the other two slices: every one misses by at least 1e-4. The pivot-pair search searches the two remaining members above the partner, which is the least non-pivot member, runs in the compiled kernel, and cuts each pivot's stabilizer transversal by the stabilizer's known order, of cpp/src/pivot_pair.cpp when stabrank_core provides it, with the numpy loop as the checked reference. Supersedes the rank-3 exclusion at m=4 (chi >= 4, 63 CPU-minutes), which never fit the certificate budget. Puts the cell at 5 <= chi <= 7."
+}

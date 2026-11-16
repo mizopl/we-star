@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "orbit": "S",
+  "m": 8,
+  "direction": "lower",
+  "rank": 5,
+  "certificate": {
+    "script": "verify_challenge/cert_s_n_rank5_exact.py",
+    "expect": "CERTIFIED chi(S^8) >= 5",
+    "exact": true
+  },
+  "provenance": {
+    "author": "this repository",
+    "reference": "stabrank verify_challenge",
+    "method": "projection monotonicity applied to the slice-and-lift bound at m=5",
+    "date": "2026-10-17",
+    "github": [
+      "vprusso"
+    ],
+    "compute": {
+      "cpu_hours": 0.0,
+      "wall_clock_hours": 0.0,
+      "runs": 0,
+      "hardware": "none beyond the m=5 certificate, which this cell re-runs"
+    }
+  },
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-16, zero floating-point operations) via verify_challenge/cert_s_n_rank5_exact.py, applying symbolic (<1| (x) I) projection monotonicity three times to chi(|S>^5) >= 5 (note bounds/S-m8-lower-6.json is attested on main). Prior reproduced record (verify_challenge/cert_s_m5_lift.py): chi(psi (x) phi) >= chi(psi) when phi has a nonzero computational amplitude, applied 3 times to chi(S^5) >= 5 (<1| on one qutrit of S^(m+1) leaves S^m up to a scalar). The certificate is the m=5 slice-and-lift one, which prints this line as well, so the cell inherits the reproduced tier. Puts the cell at 5 <= chi <= 16; the cell had no lower bound before."
+}

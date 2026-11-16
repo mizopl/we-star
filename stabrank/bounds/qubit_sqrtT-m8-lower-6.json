@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "orbit": "qubit_sqrtT",
+  "m": 8,
+  "direction": "lower",
+  "rank": 6,
+  "certificate": {
+    "script": "verify_challenge/cert_sqrtt_galois_census.py",
+    "expect": "CERTIFIED chi(qubit_sqrtT^8) >= 6",
+    "exact": true
+  },
+  "provenance": {
+    "author": "Vincent Russo",
+    "reference": "stabrank verify_challenge",
+    "method": "projection monotonicity applied to the exact rank-5 exclusion at m=5",
+    "date": "2026-10-23",
+    "github": [
+      "vprusso",
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.0,
+      "wall_clock_hours": 0.0,
+      "runs": 0,
+      "hardware": "none beyond qubit_sqrtT-m6-lower-6.json, which runs the same certificate"
+    }
+  },
+  "notes": "Verified-tier lower bound chi(|sqrtT>^8) >= 6 (filed by we* + @mizopl after PR #198 added bounds/qubit_sqrtT-m8-upper-15.json; note verify_challenge/cert_sqrtt_m6_rank6_attested.py on main also prints CERTIFIED chi(qubit_sqrtT^8) >= 7 at the attested tier by projection monotonicity from m = 6). (<0|^{ot 3} (x) I^5)|sqrtT>^8 = 2^{-3/2}|sqrtT>^5, and verify_challenge/cert_sqrtt_galois_census.py on main already proves chi(|sqrtT>^5) = 6 in exact Q(zeta_16) / two-prime modular arithmetic over the 4D Galois-forced subspace V_4 and prints CERTIFIED chi(qubit_sqrtT^8) >= 6. With bounds/qubit_sqrtT-m8-upper-15.json (verified), the verified-tier interval at m = 8 is 6 <= chi(|sqrtT>^8) <= 15."
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1",
+  "orbit": "qubit_T",
+  "m": 1,
+  "direction": "upper",
+  "rank": 2,
+  "witness": {
+    "terms": [
+      {
+        "k": 0,
+        "x0": [
+          0
+        ],
+        "W": [],
+        "Q": [],
+        "l": []
+      },
+      {
+        "k": 0,
+        "x0": [
+          1
+        ],
+        "W": [],
+        "Q": [],
+        "l": []
+      }
+    ],
+    "coeffs": [
+      "sqrt(sqrt(3)/6 + 1/2)",
+      "sqrt(1/4 - sqrt(3)/12) + I*sqrt(1/4 - sqrt(3)/12)"
+    ]
+  },
+  "provenance": {
+    "author": "this repository",
+    "reference": "stabrank research/constructions/data",
+    "method": "direct construction: the single-copy state as a combination of two stabilizer states",
+    "date": "2026-10-17",
+    "github": [
+      "vprusso"
+    ],
+    "compute": {
+      "cpu_hours": 0.001,
+      "wall_clock_hours": 0.001,
+      "runs": 1,
+      "hardware": "Apple silicon laptop, one core; direct construction, no search"
+    }
+  },
+  "notes": "The single-copy cell. |qubit_T> is not a stabilizer state (its nonzero amplitudes have two different moduli, the lower-bound certificate of the same cell), and it lies in the span of two stabilizer states; this is one of the 9 rank-2 decompositions listed in research/constructions/data/qubit_T_m1_rank2.json, with coefficients fitted exactly. The implied exponent log_2(2) = 1 is the trivial one and moves nothing; the cell is filed so the orbit page shows chi = 2 at m = 1 as it does for S, T3, and T5. Also proved in Lean 4 (PR #194, 0 sorryAx): qubit_t_m1_stabRankP_le_two in LeanProofs.QubitTM1StabRank proves stabRankP 2 (tVec 1) <= 2 from this witness via coordinate reflection over Z[i, sqrt(2), sqrt(3)].",
+  "lean": {
+    "module": "LeanProofs.QubitTM1StabRank",
+    "theorem": "qubit_t_m1_stabRankP_le_two"
+  }
+}

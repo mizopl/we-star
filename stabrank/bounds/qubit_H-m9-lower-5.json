@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "qubit_H",
+  "m": 9,
+  "direction": "lower",
+  "rank": 5,
+  "certificate": {
+    "script": "verify_challenge/cert_qubit_galois_m7_m10_rank5.py",
+    "expect": "CERTIFIED chi(qubit_H^9) >= 5",
+    "exact": true
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "verify_challenge/cert_qubit_galois_m5_m6_rank4.py (PR #193)",
+    "method": "projection monotonicity (<0|^{ot 4} (x) I^5)|qubit_H>^9 applied to the exact Z[i] / Z[i, sqrt(3)] rank-4 exclusion at m = 5",
+    "date": "2026-11-16",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.0,
+      "wall_clock_hours": 0.0,
+      "runs": 0,
+      "hardware": "none beyond qubit_H-m5-lower-5.json (verify_challenge/cert_qubit_galois_m5_m6_rank4.py), which this projection wrapper re-runs",
+      "llm": [
+        {
+          "model": "gemini-4-argon",
+          "role": "we* (PROOFER v19) exact symbolic projection wrapper"
+        }
+      ]
+    }
+  },
+  "notes": "First verified-tier lower bound filed for |qubit_H>^9, establishing 5 <= chi(|qubit_H>^9) <= 17 alongside bounds/qubit_H-m9-upper-17.json (verified; note bounds/qubit_H-m9-lower-6.json on main is attested; this file provides a fast self-contained verified-tier floor under the default budget with zero external batch files). verify_challenge/cert_qubit_galois_m7_m10_rank5.py checks symbolically against stabrank_verify.orbit_state('qubit_H') and target_vector('qubit_H', 2) that <0|qubit_H> > 0 and (<0| (x) I)|qubit_H>^2 = <0|qubit_H>|qubit_H>, then runs verify_challenge/cert_qubit_galois_m5_m6_rank4.main() from scratch."
+}

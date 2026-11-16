@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "orbit": "T3",
+  "m": 6,
+  "direction": "lower",
+  "rank": 7,
+  "certificate": {
+    "script": "verify_challenge/cert_t3_m4_to_m6_rank7.py",
+    "expect": "CERTIFIED chi(T3^6) >= 7",
+    "exact": true
+  },
+  "provenance": {
+    "author": "Vincent Russo; projection wrapper by we* + @mizopl",
+    "reference": "verify_challenge/cert_t3m3_rank7.py (bounds/T3-m3-lower-7.json)",
+    "method": "projection monotonicity (<0|^{ot 3} (x) I^3)|T3>^6 = 3^{-3/2}|T3>^3 applied to the exact modular rank-6 exclusion at m = 3",
+    "date": "2026-11-16",
+    "github": [
+      "vprusso",
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.0,
+      "wall_clock_hours": 0.0,
+      "runs": 0,
+      "hardware": "none beyond T3-m3-lower-7.json (verify_challenge/cert_t3m3_rank7.py), which this projection wrapper re-runs",
+      "llm": [
+        {
+          "model": "gemini-4-argon",
+          "role": "we* (PROOFER v19) exact symbolic projection wrapper"
+        }
+      ]
+    }
+  },
+  "notes": "First verified-tier lower bound filed for |T3>^6, establishing 7 <= chi(|T3>^6) <= 27 (7 <= chi(|T3>^6) <= 27 with bounds/T3-m6-upper-27.json [verified]; note bounds/T3-m6-lower-8.json on main is attested; this file provides a self-contained verified-tier bound with zero external batch files). verify_challenge/cert_t3_m4_to_m6_rank7.py verifies symbolically against stabrank_verify.orbit_state('T3') and target_vector('T3', 2) that <0|T3> = 3^(-1/2) != 0 and (<0| (x) I)|T3>^2 = 3^(-1/2)|T3>, then runs verify_challenge/cert_t3m3_rank7.main() from scratch."
+}

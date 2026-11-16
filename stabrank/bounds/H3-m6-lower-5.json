@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "H3",
+  "m": 6,
+  "direction": "lower",
+  "rank": 5,
+  "certificate": {
+    "script": "verify_challenge/cert_h3_m4_to_m6_rank5_exact.py",
+    "expect": "CERTIFIED chi(H3^6) >= 5",
+    "exact": true
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "stabrank verify_challenge",
+    "method": "projection monotonicity applied 2 time(s) to the exact 2D tau-Galois + Z[omega_3, sqrt(3)] slice-and-lift bound chi(|H3>^4) >= 5",
+    "date": "2026-11-16",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.0,
+      "wall_clock_hours": 0.0,
+      "runs": 0,
+      "hardware": "none beyond H3-m4-lower-5.json (verify_challenge/cert_h3_m4_to_m6_rank5_exact.py), which this cell re-runs",
+      "llm": [
+        {
+          "model": "gemini-4-argon",
+          "role": "we* (PROOFER v19) exact Galois-plane slice-lift synthesis and projection bound wiring"
+        }
+      ]
+    }
+  },
+  "notes": "First verified-tier lower bound filed for |H3>^6, establishing 5 <= chi(|H3>^6) <= 16 alongside bounds/H3-m6-upper-16.json (verified; note bounds/H3-m6-lower-7.json on main is attested; this file provides a fast self-contained verified-tier floor with zero external batch files). Symbolically <0|H3> != 0 and (<0| (x) I)|H3>^2 = <0|H3>|H3> are checked against stabrank_verify.orbit_state('H3') and target_vector('H3', 2) inside verify_challenge/cert_h3_m4_to_m6_rank5_exact.py before lifting chi(|H3>^4) >= 5."
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "orbit": "S",
+  "m": 6,
+  "direction": "lower",
+  "rank": 5,
+  "certificate": {
+    "script": "verify_challenge/cert_s_n_rank5_exact.py",
+    "expect": "CERTIFIED chi(S^6) >= 5",
+    "exact": true
+  },
+  "provenance": {
+    "author": "this repository",
+    "reference": "stabrank verify_challenge",
+    "method": "projection monotonicity applied to the slice-and-lift bound at m=5",
+    "date": "2026-09-20",
+    "github": [
+      "vprusso"
+    ],
+    "compute": {
+      "cpu_hours": 0.05,
+      "wall_clock_hours": 0.04,
+      "runs": 1,
+      "hardware": "the m=5 certificate, four cores"
+    }
+  },
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-16, zero floating-point operations) via verify_challenge/cert_s_n_rank5_exact.py, applying symbolic (<1| (x) I) projection monotonicity to the exact Z[omega_3] two-step slice-and-lift exclusion chi(|S>^5) >= 5 (note bounds/S-m6-lower-6.json is attested on main). Prior reproduced record (verify_challenge/cert_s_m5_lift.py): chi(psi (x) phi) >= chi(psi) when phi has a nonzero computational amplitude, applied to chi(S^5) >= 5, whose certificate prints this line as well. Puts the cell at 5 <= chi <= 8; the m=6 upper bound is the Lean tensor cube of the two-copy witness."
+}

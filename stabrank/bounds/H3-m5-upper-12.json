@@ -1,0 +1,849 @@
+{
+  "schema_version": "0.1",
+  "orbit": "H3",
+  "m": 5,
+  "direction": "upper",
+  "rank": 12,
+  "provenance": {
+    "author": "this repository",
+    "reference": "stabrank research/constructions/product_witness.py",
+    "method": "structured construction",
+    "date": "2026-09-23",
+    "github": [
+      "vprusso"
+    ],
+    "compute": {
+      "cpu_hours": 0.001,
+      "wall_clock_hours": 0.001,
+      "runs": 1,
+      "hardware": "Apple silicon laptop, one core; direct construction, no search"
+    }
+  },
+  "notes": "Tensor product of the exact decompositions research/constructions/data/H3_m2_rank3.json (decomposition 0 of 9, coefficients fitted exactly by fit_coeffs.fit), research/constructions/data/H3_m3_rank4.json (decomposition 0 of 1, coefficients fitted exactly by fit_coeffs.fit): chi(|H3>^2) <= 3 x chi(|H3>^3) <= 4 gives chi(|H3>^5) <= 12, exponent 0.4524. First witness for this cell; it is the sub-multiplicative value the board already implied and does not move the exponent. Terms are the exact products (x0 and l concatenated, W and Q block diagonal) and coefficients the exact products, built by research/constructions/product_witness.py. Also proved in Lean 4 (PR #194, 0 sorryAx): h3_m5_stabRankP_le_twelve in LeanProofs.H3M5StabRank proves stabRankP 3 (h3Vec 5) <= 12 (and h3_m5_stabRank_le_twelve) from this witness via coordinate reflection in Z[omega_3, sqrt(3)].",
+  "witness": {
+    "terms": [
+      {
+        "k": 0,
+        "x0": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "W": [],
+        "Q": [],
+        "l": []
+      },
+      {
+        "k": 3,
+        "x0": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "W": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "Q": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "l": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "k": 3,
+        "x0": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "W": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "Q": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "l": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "k": 3,
+        "x0": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "W": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "Q": [
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            2
+          ]
+        ],
+        "l": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "k": 2,
+        "x0": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "W": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        "Q": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "l": [
+          0,
+          0
+        ]
+      },
+      {
+        "k": 5,
+        "x0": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "W": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "Q": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "l": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "k": 5,
+        "x0": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "W": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "Q": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "l": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "k": 5,
+        "x0": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "W": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "Q": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "l": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "k": 2,
+        "x0": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "W": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        "Q": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "l": [
+          0,
+          0
+        ]
+      },
+      {
+        "k": 5,
+        "x0": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "W": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "Q": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "l": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "k": 5,
+        "x0": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "W": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "Q": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "l": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "k": 5,
+        "x0": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "W": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "Q": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        ],
+        "l": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "coeffs": [
+      "sqrt(2)*(sqrt(3)*sqrt(3*sqrt(3) + 9) + 3*sqrt(3*sqrt(3) + 9) - sqrt(3)*I*sqrt(3*sqrt(3) + 9) + 3*I*sqrt(3*sqrt(3) + 9))/64",
+      "sqrt(2)*(sqrt(3)*sqrt(3*sqrt(3) + 9) + 3*sqrt(3*sqrt(3) + 9) - sqrt(3)*I*sqrt(3*sqrt(3) + 9) + 3*I*sqrt(3*sqrt(3) + 9))/64",
+      "(-5*sqrt(3)*sqrt(9 - 3*sqrt(3)) - 3*sqrt(6*sqrt(3) + 18) + 3*sqrt(3)*I*sqrt(-6 - 2*sqrt(3)) - 3*sqrt(3)*sqrt(3 - sqrt(3)) + 3*sqrt(9 - 3*sqrt(3)) + 9*sqrt(3 - sqrt(3)) + 2*sqrt(3)*sqrt(6*sqrt(3) + 18) - 15*I*sqrt(9 - 3*sqrt(3)) - 9*sqrt(-6 - 2*sqrt(3)) - 9*I*sqrt(3 - sqrt(3)) - 3*sqrt(3)*I*sqrt(3 - sqrt(3)) - sqrt(3)*I*sqrt(9 - 3*sqrt(3)) + sqrt(3)*I*sqrt(6*sqrt(3) + 18) + 6*I*sqrt(6*sqrt(3) + 18))/192",
+      "(-15*sqrt(9 - 3*sqrt(3)) - 9*sqrt(2*sqrt(3) + 6) - 9*sqrt(3 - sqrt(3)) - sqrt(3)*sqrt(6*sqrt(3) + 18) + sqrt(3)*sqrt(9 - 3*sqrt(3)) + 3*sqrt(3)*sqrt(3 - sqrt(3)) + 6*sqrt(6*sqrt(3) + 18) - 2*sqrt(3)*I*sqrt(6*sqrt(3) + 18) - 3*I*sqrt(6*sqrt(3) + 18) + 3*I*sqrt(9 - 3*sqrt(3)) + 3*sqrt(3)*I*sqrt(3 - sqrt(3)) + 9*I*sqrt(3 - sqrt(3)) + 3*sqrt(3)*I*sqrt(2*sqrt(3) + 6) + 5*sqrt(3)*I*sqrt(9 - 3*sqrt(3)))/192",
+      "sqrt(2)*(sqrt(3)*sqrt(3*sqrt(3) + 9) + 3*sqrt(3*sqrt(3) + 9) - 3*I*sqrt(3*sqrt(3) + 9) + sqrt(3)*I*sqrt(3*sqrt(3) + 9))/64",
+      "sqrt(2)*(sqrt(3)*sqrt(3*sqrt(3) + 9) + 3*sqrt(3*sqrt(3) + 9) - 3*I*sqrt(3*sqrt(3) + 9) + sqrt(3)*I*sqrt(3*sqrt(3) + 9))/64",
+      "(-15*sqrt(9 - 3*sqrt(3)) + 9*I*sqrt(-6 - 2*sqrt(3)) - 9*sqrt(3 - sqrt(3)) - sqrt(3)*sqrt(6*sqrt(3) + 18) + sqrt(3)*sqrt(9 - 3*sqrt(3)) + 3*sqrt(3)*sqrt(3 - sqrt(3)) + 6*sqrt(6*sqrt(3) + 18) - 5*sqrt(3)*I*sqrt(9 - 3*sqrt(3)) - 3*sqrt(3)*sqrt(-6 - 2*sqrt(3)) - 9*I*sqrt(3 - sqrt(3)) - 3*sqrt(3)*I*sqrt(3 - sqrt(3)) - 3*I*sqrt(9 - 3*sqrt(3)) + 3*I*sqrt(6*sqrt(3) + 18) + 2*sqrt(3)*I*sqrt(6*sqrt(3) + 18))/192",
+      "(-5*sqrt(3)*sqrt(9 - 3*sqrt(3)) - 3*sqrt(6*sqrt(3) + 18) - 3*sqrt(3)*sqrt(2*sqrt(3) + 6) - 3*sqrt(3)*sqrt(3 - sqrt(3)) + 3*sqrt(9 - 3*sqrt(3)) + 9*sqrt(3 - sqrt(3)) + 2*sqrt(3)*sqrt(6*sqrt(3) + 18) - 6*I*sqrt(6*sqrt(3) + 18) - sqrt(3)*I*sqrt(6*sqrt(3) + 18) + sqrt(3)*I*sqrt(9 - 3*sqrt(3)) + 3*sqrt(3)*I*sqrt(3 - sqrt(3)) + 9*I*sqrt(3 - sqrt(3)) + 9*I*sqrt(2*sqrt(3) + 6) + 15*I*sqrt(9 - 3*sqrt(3)))/192",
+      "sqrt(2)*(-3*I*sqrt(3*sqrt(3) + 9) + sqrt(3)*I*sqrt(3*sqrt(3) + 9))/32",
+      "sqrt(2)*(-3*I*sqrt(3*sqrt(3) + 9) + sqrt(3)*I*sqrt(3*sqrt(3) + 9))/32",
+      "(-18*sqrt(9 - 3*sqrt(3)) - 3*sqrt(3)*sqrt(6*sqrt(3) + 18) + 9*I*sqrt(-6 - 2*sqrt(3)) - 18*sqrt(3 - sqrt(3)) + 6*sqrt(3)*sqrt(3 - sqrt(3)) - 3*sqrt(3)*I*sqrt(-6 - 2*sqrt(3)) + 6*sqrt(3)*sqrt(9 - 3*sqrt(3)) + 9*sqrt(6*sqrt(3) + 18) - 3*I*sqrt(6*sqrt(3) + 18) - 3*sqrt(3)*sqrt(-6 - 2*sqrt(3)) - 4*sqrt(3)*I*sqrt(9 - 3*sqrt(3)) + sqrt(3)*I*sqrt(6*sqrt(3) + 18) + 12*I*sqrt(9 - 3*sqrt(3)) + 9*sqrt(-6 - 2*sqrt(3)))/192",
+      "(-9*sqrt(6*sqrt(3) + 18) - 6*sqrt(3)*sqrt(9 - 3*sqrt(3)) - 3*sqrt(3)*sqrt(2*sqrt(3) + 6) - 6*sqrt(3)*sqrt(3 - sqrt(3)) + 18*sqrt(3 - sqrt(3)) + 9*sqrt(2*sqrt(3) + 6) + 3*sqrt(3)*sqrt(6*sqrt(3) + 18) + 18*sqrt(9 - 3*sqrt(3)) - 3*I*sqrt(6*sqrt(3) + 18) - 3*sqrt(3)*I*sqrt(2*sqrt(3) + 6) - 4*sqrt(3)*I*sqrt(9 - 3*sqrt(3)) + sqrt(3)*I*sqrt(6*sqrt(3) + 18) + 12*I*sqrt(9 - 3*sqrt(3)) + 9*I*sqrt(2*sqrt(3) + 6))/192"
+    ]
+  },
+  "lean": {
+    "module": "LeanProofs.H3M5StabRank",
+    "theorem": "h3_m5_stabRankP_le_twelve"
+  }
+}

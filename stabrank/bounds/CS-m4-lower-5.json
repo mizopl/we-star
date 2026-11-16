@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "CS",
+  "m": 4,
+  "direction": "lower",
+  "rank": 5,
+  "certificate": {
+    "script": "verify_challenge/cert_cs_m4_rank5_exact.py",
+    "expect": "CERTIFIED chi(CS^4) >= 5",
+    "exact": true
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "stabrank verify_challenge (extending cert_cs_m3_m4_exact.py)",
+    "method": "even-qubit (<0|_2 (I (x) H))^4 Clifford postselection to |Psi_4> = (2|0> + (1+i)|1>)^4 in Z[i]^16 + exact F_P S_3-reduced D_3 rank-4 enumeration and 32^2 x 32^2 Pauli slice-and-lift exclusion",
+    "date": "2026-11-16",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.18,
+      "wall_clock_hours": 0.22,
+      "runs": 3,
+      "hardware": "Apple M1 laptop (16 GB), one core; 4-qubit Clifford postselection discovery and S_3-reduced D_3 rank-4 lift search",
+      "llm": [
+        {
+          "model": "gemini-4-argon",
+          "role": "we* (PROOFER v19) heuristic postselection discovery and exact Z[i]/F_P certificate synthesis"
+        }
+      ]
+    }
+  },
+  "notes": "Tightens the verified lower bound on |CS>^4 from 4 (bounds/CS-m4-lower-4.json) to 5 (5 <= chi(|CS>^4) <= 9 with bounds/CS-m4-upper-9.json, matching the monotonicity floor implied by bounds/CS-m3-lower-5.json under budget_s: 3600 while certifying m=4 directly in ~8 s warm / ~24 s cold with Numba JIT on 1 core under the default 900 s budget). Applying (<0|_2 (I (x) H))^4 to |CS>^4 yields (1/64)|Psi_4> with |Psi_4> = (2|0> + (1+i)|1>)^4 in Z[i]^16 (verified symbolically on all 256 -> 16 amplitudes against stabrank_verify.target_vector('CS', 4)), so chi(|CS>^4) >= chi(|Psi_4>). On D_3 (1,080 states), verify_challenge/cert_cs_m4_rank5_exact.py enumerates all 2,297 S_3-reduced minimal rank-4 decompositions of |Psi_3> over Hadamard-certified F_P (P = 1,000,000,009 > 2,000,000 Cramer/Hadamard norm bound) and checks all 32^2 x 32^2 phased 3-qubit Pauli slice-1 matches, finding 0 lifts, paired with the explicit 5-term Z[i]^16 tightness witness showing chi(|Psi_4>) = 5."
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "0.1",
+  "orbit": "H3",
+  "m": 1,
+  "direction": "upper",
+  "rank": 2,
+  "witness": {
+    "terms": [
+      {
+        "k": 0,
+        "x0": [
+          0
+        ],
+        "W": [],
+        "Q": [],
+        "l": []
+      },
+      {
+        "k": 1,
+        "x0": [
+          0
+        ],
+        "W": [
+          [
+            1
+          ]
+        ],
+        "Q": [
+          [
+            0
+          ]
+        ],
+        "l": [
+          0
+        ]
+      }
+    ],
+    "coeffs": [
+      "sqrt(3/4 - sqrt(3)/4)",
+      "sqrt(3/4 - sqrt(3)/4)"
+    ]
+  },
+  "provenance": {
+    "author": "this repository",
+    "reference": "stabrank research/constructions/data",
+    "method": "direct construction: the single-copy state as a combination of two stabilizer states",
+    "date": "2026-10-17",
+    "github": [
+      "vprusso"
+    ],
+    "compute": {
+      "cpu_hours": 0.001,
+      "wall_clock_hours": 0.001,
+      "runs": 1,
+      "hardware": "Apple silicon laptop, one core; direct construction, no search"
+    }
+  },
+  "notes": "The single-copy cell. |H3> is not a stabilizer state (its nonzero amplitudes have two different moduli, the lower-bound certificate of the same cell), and it lies in the span of two stabilizer states; this is the first of the 5 rank-2 decompositions listed in research/constructions/data/H3_m1_rank2.json, with coefficients fitted exactly. The implied exponent log_p(2) is the trivial one and moves nothing; the cell is filed so the orbit page shows chi = 2 at m = 1 as it does for S, T3, and T5. Also proved in Lean 4 (PR #194, 0 sorryAx): h3_m1_stabRankP_le_two in LeanProofs.H3M1StabRank proves stabRankP 3 (h3Vec 1) <= 2 (and h3_m1_stabRank_le_two) from this witness via coordinate reflection over Z[omega_3, sqrt(3)].",
+  "lean": {
+    "module": "LeanProofs.H3M1StabRank",
+    "theorem": "h3_m1_stabRankP_le_two"
+  }
+}

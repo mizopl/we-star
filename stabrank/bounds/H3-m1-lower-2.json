@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "orbit": "H3",
+  "m": 1,
+  "direction": "lower",
+  "rank": 2,
+  "certificate": {
+    "script": "verify_challenge/cert_rank1_moduli.py",
+    "expect": "CERTIFIED chi(H3^1) >= 2",
+    "exact": true
+  },
+  "provenance": {
+    "author": "this repository",
+    "reference": "stabrank verify_challenge",
+    "method": "exact: the state is not a stabilizer state (the moduli sqrt((3 + sqrt3)/6) and sqrt((3 - sqrt3)/12) differ)",
+    "date": "2026-10-17",
+    "github": [
+      "vprusso"
+    ]
+  },
+  "notes": "Settles chi(H3) = 2 with the rank-2 witness of the same cell. Exact throughout: a stabilizer state has one modulus on its support, and the moduli sqrt((3 + sqrt3)/6) and sqrt((3 - sqrt3)/12) differ, decided in sympy. The single-copy cell carries the trivial exponent and moves nothing; it is filed so the orbit page shows chi = 2 at m = 1 as it does for S, T3, and T5. Also proved in Lean 4 (PR #194, 0 sorryAx): LeanProofs.M1Lower.h3_m1_stabRankP_gt_one (and h3_m1_stabRank_eq_two against IsStab).",
+  "lean": {
+    "module": "LeanProofs.M1Lower",
+    "theorem": "h3_m1_stabRankP_gt_one"
+  }
+}

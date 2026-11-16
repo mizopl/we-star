@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "orbit": "S",
+  "m": 5,
+  "direction": "lower",
+  "rank": 5,
+  "certificate": {
+    "script": "verify_challenge/cert_s_n_rank5_exact.py",
+    "expect": "CERTIFIED chi(S^5) >= 5",
+    "exact": true
+  },
+  "provenance": {
+    "author": "this repository",
+    "reference": "stabrank slice_lift.py",
+    "method": "slice-and-lift twice: every rank-4 decomposition of |S>^3 up to symmetry, lifted to |S>^4, none extends to |S>^5",
+    "date": "2026-09-18",
+    "github": [
+      "vprusso"
+    ],
+    "compute": {
+      "cpu_hours": 2.7,
+      "wall_clock_hours": 2.6,
+      "runs": 3,
+      "hardware": "Apple silicon laptop at low priority; the first enumeration ran 2.2 hours on one core, the certificate takes about two minutes on four"
+    }
+  },
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-16, ~45 s for the S stage inside the ~100 s unified S+N run on 4 workers, zero floating-point operations) via verify_challenge/cert_s_n_rank5_exact.py: exact F_P Clifford symmetry reduction (12 pivot orbits, 4,934 stabilizer-reduced pairs), unprojected 27-column F_65521 + F_P + SymPy Z[omega_3] rank-4 enumeration on D_3 (15 conjugate-closed reps), exact Z[omega_3]^81 Pauli slice lift to the 69 rank-4 decompositions of |S>^4 (internal positive control), and exact 243^2 x 243^2 Z[omega_3]^81 meet-in-the-middle exclusion at m=5 (note bounds/S-m5-lower-6.json is attested on main). Prior reproduced record (verify_challenge/cert_s_m5_lift.py): chi(S^3) = chi(S^4) = 4 exactly. A rank-4 decomposition of |S>^5 sliced along one qutrit gives, at the |1> slice, a rank-4 decomposition of |S>^4, itself a lift of one of |S>^3, with terms related slice to slice by a Pauli and cube roots of unity; the slice-0 equation is homogeneous because |S> has no |0> component. |S>^3 has 2160 rank-4 decompositions, listed through five representatives under its unitary symmetries (fifteen before the partner-index restriction; same orbits), they lift to 27 decompositions of |S>^4, and none of those extends to |S>^5: every Pauli assignment misses the slice-2 equation by at least 1e-4 (the closest one by 0.25). The first enumeration, without the stabilizer reduction of the partner loop, took 2.2 hours and agreed orbit for orbit with the reduced one. Puts the cell at 5 <= chi <= 8."
+}

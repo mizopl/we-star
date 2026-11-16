@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "orbit": "qubit_T",
+  "m": 1,
+  "direction": "lower",
+  "rank": 2,
+  "certificate": {
+    "script": "verify_challenge/cert_rank1_moduli.py",
+    "expect": "CERTIFIED chi(qubit_T^1) >= 2",
+    "exact": true
+  },
+  "provenance": {
+    "author": "this repository",
+    "reference": "stabrank verify_challenge",
+    "method": "exact: the state is not a stabilizer state (the moduli cos(beta) and sin(beta), cos(2 beta) = 1/sqrt3, differ)",
+    "date": "2026-10-17",
+    "github": [
+      "vprusso"
+    ]
+  },
+  "notes": "Settles chi(qubit_T) = 2 with the rank-2 witness of the same cell. Exact throughout: a stabilizer state has one modulus on its support, and the moduli cos(beta) and sin(beta), cos(2 beta) = 1/sqrt3, differ, decided in sympy. The single-copy cell carries the trivial exponent and moves nothing; it is filed so the orbit page shows chi = 2 at m = 1 as it does for S, T3, and T5. Also proved in Lean 4 (PR #194, 0 sorryAx): LeanProofs.M1Lower.qubit_t_m1_stabRankP_gt_one (paired with qubit_t_m1_stabRankP_eq_two).",
+  "lean": {
+    "module": "LeanProofs.M1Lower",
+    "theorem": "qubit_t_m1_stabRankP_gt_one"
+  }
+}

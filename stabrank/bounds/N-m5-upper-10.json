@@ -1,0 +1,690 @@
+{
+ "schema_version": "0.1",
+ "orbit": "N",
+ "m": 5,
+ "direction": "upper",
+ "rank": 10,
+ "witness": {
+  "terms": [
+   {
+    "k": 2,
+    "x0": [
+     0,
+     2,
+     0,
+     2,
+     2
+    ],
+    "W": [
+     [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0,
+      0
+     ]
+    ],
+    "Q": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "l": [
+     2,
+     2
+    ]
+   },
+   {
+    "k": 3,
+    "x0": [
+     0,
+     2,
+     2,
+     0,
+     0
+    ],
+    "W": [
+     [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "Q": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      2,
+      0
+     ],
+     [
+      0,
+      0,
+      2
+     ]
+    ],
+    "l": [
+     2,
+     1,
+     1
+    ]
+   },
+   {
+    "k": 4,
+    "x0": [
+     0,
+     2,
+     0,
+     0,
+     0
+    ],
+    "W": [
+     [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "Q": [
+     [
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "l": [
+     2,
+     1,
+     2,
+     2
+    ]
+   },
+   {
+    "k": 3,
+    "x0": [
+     2,
+     0,
+     0,
+     2,
+     0
+    ],
+    "W": [
+     [
+      0,
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "Q": [
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      2
+     ]
+    ],
+    "l": [
+     1,
+     2,
+     1
+    ]
+   },
+   {
+    "k": 3,
+    "x0": [
+     2,
+     0,
+     2,
+     0,
+     0
+    ],
+    "W": [
+     [
+      0,
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "Q": [
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      2,
+      0
+     ],
+     [
+      0,
+      0,
+      1
+     ]
+    ],
+    "l": [
+     1,
+     1,
+     2
+    ]
+   },
+   {
+    "k": 3,
+    "x0": [
+     2,
+     0,
+     0,
+     0,
+     2
+    ],
+    "W": [
+     [
+      0,
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      0
+     ]
+    ],
+    "Q": [
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      2,
+      0
+     ],
+     [
+      0,
+      0,
+      1
+     ]
+    ],
+    "l": [
+     1,
+     1,
+     2
+    ]
+   },
+   {
+    "k": 5,
+    "x0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "W": [
+     [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "Q": [
+     [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "l": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "k": 4,
+    "x0": [
+     0,
+     0,
+     0,
+     2,
+     0
+    ],
+    "W": [
+     [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "Q": [
+     [
+      2,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "l": [
+     1,
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "k": 3,
+    "x0": [
+     0,
+     0,
+     2,
+     0,
+     2
+    ],
+    "W": [
+     [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      0
+     ]
+    ],
+    "Q": [
+     [
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      2
+     ]
+    ],
+    "l": [
+     1,
+     2,
+     1
+    ]
+   },
+   {
+    "k": 5,
+    "x0": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "W": [
+     [
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "Q": [
+     [
+      2,
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      2,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      0,
+      2
+     ]
+    ],
+    "l": [
+     1,
+     2,
+     1,
+     2,
+     1
+    ]
+   }
+  ],
+  "coeffs": [
+   "(-sqrt(6) + 3*sqrt(2)*I)/16",
+   "(3*sqrt(2) + sqrt(6)*I)/16",
+   "(-sqrt(6) + 3*sqrt(2)*I)/16",
+   "(3*sqrt(2) + sqrt(6)*I)/16",
+   "(3*sqrt(2) + sqrt(6)*I)/16",
+   "(3*sqrt(2) + sqrt(6)*I)/16",
+   "(-sqrt(2) - sqrt(6)*I)/16",
+   "(-sqrt(6) + 3*sqrt(2)*I)/16",
+   "(3*sqrt(2) + sqrt(6)*I)/16",
+   "(3*sqrt(2) + sqrt(6)*I)/16"
+  ]
+ },
+ "provenance": {
+  "author": "Vincent Russo",
+  "reference": "this repository (stabrank-research, round 28 letter lifts)",
+  "method": "sparsest word representation of |N>^5 over (four-ray stabilizer-spanned three-space through |N>^2) x (same) x (four-ray plane through |N>), HiGHS MILP, coefficients solved exactly over Q(omega_3)",
+  "date": "2026-10-16",
+  "github": [
+   "vprusso"
+  ],
+  "compute": {
+   "cpu_hours": 6,
+   "wall_clock_hours": 5,
+   "runs": 6,
+   "hardware": "Apple silicon laptop, one core per solve; one confirming solve on a Perlmutter CPU node",
+   "llm": [
+    {
+     "model": "claude-fable-5-1",
+     "role": "designed and ran the search and the exact refit"
+    }
+   ]
+  }
+ },
+ "notes": "Two-copy census: among the 360 two-qutrit stabilizer states, the three-term decompositions of |N>^2 span 13 distinct three-spaces, three of which contain four stabilizer rays rather than three, and the plane through |N> itself contains four rays. The sparsest representation of |N>^5 as a combination of products (ray of such a space) x (ray of the same space) x (ray of the plane) has exactly 10 terms on each of the three four-ray spaces (HiGHS, optimal; 64 words per cell), against 12 by tensoring 4 x 3. The ten terms are products of two two-qutrit and one one-qutrit stabilizer state; the coefficients were solved exactly over Q(omega_3) after factoring the term normalizations sqrt(3^k) and 36 sqrt 6 out, and are of the forms (+-sqrt 6 +- 3 sqrt 2 I)/16 and (-sqrt 2 - sqrt 6 I)/16. Implied exponent log_3(10)/5 = 0.4192, below log_3(4)/3 = 0.4206 from chi(N^3) <= 4. Barren routes recorded: the record span at three copies is a basis dictionary (3+3 words give exactly 16); the same construction gives nothing for H3 (exactly 8 words at four copies over every four-ray span), T3 (its two-copy decomposition is unique with a basis span), or S (no span with extra rays through S, S^2, or the three-copy record). Word ranks at six copies capped at 15 were undecided after 900 s locally and are running longer elsewhere. Also proved in Lean 4 (PR #194, 0 sorryAx): norrell_m5_stabRankP_le_ten in LeanProofs.NorrellM5StabRank proves stabRankP 3 (norrellVec 5) <= 10 (and norrell_m5_stabRank_le_ten, gamma = log_3(10)/5 = 0.4192) from this witness via Norrell coordinate reflection in Z[omega_3, sqrt(3)].",
+ "lean": {
+  "module": "LeanProofs.NorrellM5StabRank",
+  "theorem": "norrell_m5_stabRankP_le_ten"
+ }
+}

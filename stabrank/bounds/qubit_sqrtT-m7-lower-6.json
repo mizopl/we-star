@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "orbit": "qubit_sqrtT",
+  "m": 7,
+  "direction": "lower",
+  "rank": 6,
+  "certificate": {
+    "script": "verify_challenge/cert_sqrtt_galois_census.py",
+    "expect": "CERTIFIED chi(qubit_sqrtT^7) >= 6",
+    "exact": true
+  },
+  "provenance": {
+    "author": "Vincent Russo",
+    "reference": "stabrank verify_challenge",
+    "method": "projection monotonicity applied to the exact rank-5 exclusion at m=5",
+    "date": "2026-10-23",
+    "github": [
+      "vprusso",
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.0,
+      "wall_clock_hours": 0.0,
+      "runs": 0,
+      "hardware": "none beyond qubit_sqrtT-m6-lower-6.json, which runs the same certificate"
+    }
+  },
+  "notes": "Verified-tier lower bound chi(|sqrtT>^7) >= 6 (filed by we* + @mizopl alongside bounds/qubit_sqrtT-m7-lower-7.json, which is attested under budget_s: 3600; this file records the fast self-contained verified-tier floor already printed by cert_sqrtt_galois_census.py). (<0|^{ot 2} (x) I^5)|sqrtT>^7 = 2^{-2/2}|sqrtT>^5, and verify_challenge/cert_sqrtt_galois_census.py on main already proves chi(|sqrtT>^5) = 6 in exact Q(zeta_16) / two-prime modular arithmetic over the 4D Galois-forced subspace V_4 and prints CERTIFIED chi(qubit_sqrtT^7) >= 6. With bounds/qubit_sqrtT-m7-upper-12.json (verified), the verified-tier interval at m = 7 is 6 <= chi(|sqrtT>^7) <= 12."
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "orbit": "T5",
+  "m": 3,
+  "direction": "lower",
+  "rank": 5,
+  "certificate": {
+    "script": "verify_challenge/cert_t5_m2_to_m5_exact.py",
+    "expect": "CERTIFIED chi(T5^3) >= 5",
+    "exact": true
+  },
+  "provenance": {
+    "author": "this repository",
+    "reference": "stabrank verify_challenge",
+    "method": "projection monotonicity applied to the exact rank-4 exclusion at m=2",
+    "date": "2026-09-24",
+    "github": [
+      "vprusso"
+    ],
+    "compute": {
+      "cpu_hours": 0.0,
+      "wall_clock_hours": 0.0,
+      "runs": 0,
+      "hardware": "none beyond the m=2 certificate, which this cell re-runs"
+    }
+  },
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-16, zero floating-point operations) via verify_challenge/cert_t5_m2_to_m5_exact.py, which certifies chi(|T5>^2) >= 5 over Hadamard-certified F_P (P = 1,000,000,021 > 5^10) and verifies (<0| (x) I)|T5>^(k+1) = 5^(-1/2)|T5>^k symbolically (note bounds/T5-m3-lower-6.json is attested on main). Prior reproduced record (verify_challenge/cert_t5_m2_rank4.py): chi(psi (x) phi) >= chi(psi) when phi has a nonzero computational amplitude, applied 1 time(s) to chi(T5^2) >= 5 (Lean: stabRankP_powVecP_mono in lean_proofs/LeanProofs/Stabilizer/SliceP.lean); every amplitude of |T5> is nonzero. The certificate is the m=2 rank-4 exclusion, which prints this line after certifying chi(T5^2) >= 5. Puts the cell at 5 <= chi(T5^3) <= 15 (bounds/T5-m3-upper-15.json), the first lower bound on the board for this cell. Whether chi(T5^3) < 15 is open: no Z-type sector route exists at m = 3 (docs/notes/t5q_m2_rank5_exclusion.md, section 8)."
+}

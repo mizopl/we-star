@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "orbit": "H3",
+  "m": 4,
+  "direction": "lower",
+  "rank": 5,
+  "certificate": {
+    "script": "verify_challenge/cert_h3_m4_to_m6_rank5_exact.py",
+    "expect": "CERTIFIED chi(H3^4) >= 5",
+    "exact": true
+  },
+  "provenance": {
+    "author": "this repository",
+    "reference": "stabrank slice_lift.py",
+    "method": "slice-and-lift: the single rank-4 decomposition of |H3>^3 up to symmetry does not extend to |H3>^4",
+    "date": "2026-09-18",
+    "github": [
+      "vprusso"
+    ],
+    "compute": {
+      "cpu_hours": 1.4,
+      "wall_clock_hours": 0.35,
+      "runs": 1,
+      "hardware": "Apple silicon laptop, four workers at low priority under a load average near 12: 1183 s for the enumeration and lift"
+    }
+  },
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-16, ~4 s on one core under the default 900 s budget, zero floating-point operations) via verify_challenge/cert_h3_m4_to_m6_rank5_exact.py: quotienting by the 2D tau-Galois target plane V_3(H3) cuts the m=3 rank-4 search from 2 pivots to 1 pivot over Hadamard-certified F_P (P = 1,000,000,021 > 4,478,976, confirmed over Z in SymPy), followed by exact Z[omega_3, sqrt(3)] meet-in-the-middle Pauli slice-1 exclusion (note bounds/H3-m4-lower-6.json and bounds/H3-m4-lower-7.json are attested on main). Prior reproduced record (verify_challenge/cert_h3_m4_lift.py, budget_s: 3600): chi(H3^3) = 4 exactly (Lean witness and rank-3 exclusion). A rank-4 decomposition of |H3>^4 sliced along one qutrit gives a rank-4 decomposition of |H3>^3 whose terms are related slice to slice by a Pauli and cube roots of unity. |H3>^3 has one rank-4 decomposition up to its unitary symmetries (group of order 384, 170 pivot orbits) and no Pauli assignment satisfies the other two slices. Supersedes the rank-2 exclusion at m=4 (chi >= 3). The enumeration runs in the compiled pivot-pair kernel with the stabilizer reductions; it is over the default budget because the symmetry group is small, so the certificate declares 3600 s. Puts the cell at 5 <= chi <= 8."
+}

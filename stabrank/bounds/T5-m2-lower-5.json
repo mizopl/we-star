@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "orbit": "T5",
+  "m": 2,
+  "direction": "lower",
+  "rank": 5,
+  "certificate": {
+    "script": "verify_challenge/cert_t5_m2_to_m5_exact.py",
+    "expect": "CERTIFIED chi(T5^2) >= 5",
+    "exact": true
+  },
+  "provenance": {
+    "author": "this repository",
+    "reference": "stabrank docs/notes/new_orbits_design.md",
+    "method": "rank-3 exclusion by pivot-and-quotient from 66 symmetry representatives, then rank-4 exclusion by the pivot-pair search of slice_lift.py from 98 representatives, over the 3,900 two-ququint stabilizer states",
+    "date": "2026-09-21",
+    "github": [
+      "vprusso"
+    ],
+    "compute": {
+      "cpu_hours": 0.04,
+      "wall_clock_hours": 0.04,
+      "runs": 2,
+      "hardware": "Apple silicon laptop, one core: 82 s for the first rank-4 run, 51 s for the certificate"
+    }
+  },
+  "notes": "Upgraded from reproduced to verified (exact: true, we* + @mizopl, 2026-11-16, ~19 s on 4 workers, zero floating-point operations) via verify_challenge/cert_t5_m2_to_m5_exact.py: exact rank-3 and rank-4 pivot-pair exclusion over Hadamard-certified F_P (P = 1,000,000,021 > 5^10 = 9,765,625) across the 38 pivot orbits (40,124 stabilizer-reduced pairs) of the closed order-200 Gal(Q(omega_5)/Q) x Clifford symmetry group on D(5, 2), settling chi(|T5>^2) = 5 at verified/lean in both directions. Prior reproduced record (verify_challenge/cert_t5_m2_rank4.py): With the rank-5 witness of T5-m2-upper-5.json (the five Z(x)Z eigensectors of |T5>^2, found 2026-09-24 by the census of research/t5q_m2_rank5) this settles chi(|T5>^2) = 5, against the product bound 9. Rank 3 (and rank 2 in the same pass) is excluded over the 3,900 two-ququint stabilizer states from one pivot per orbit of the order-100 symmetry group of |T5>^2 (the order-5 Clifford stabilizer of |T5> on each copy, the copy swap and one antiunitary symmetry; 66 orbits), with no collinear candidate at all and a closest approach to parallel of 0.9337 against the threshold 1 - 1e-6. Rank 4 is excluded by the pivot-pair search of slice_lift.decompositions_with_pivot from the 98 representatives of the unitary symmetry group of order 50, with partners reduced by each pivot's stabilizer; since rank 3 is excluded first, every rank-4 decomposition would be minimal and the listing is complete. Both exclusions are numerical and rest on margins, so the bound is reproduced rather than verified. Controls: the same pivot search finds the five rank-3 decompositions of |T5>, and the rank-4 search from the pivot |00> finds the product decomposition of |N5>^2 = (|+> - |0>)^2, whose rank is 4."
+}

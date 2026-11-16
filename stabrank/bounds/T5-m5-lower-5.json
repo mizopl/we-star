@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "orbit": "T5",
+  "m": 5,
+  "direction": "lower",
+  "rank": 5,
+  "certificate": {
+    "script": "verify_challenge/cert_t5_m2_to_m5_exact.py",
+    "expect": "CERTIFIED chi(T5^5) >= 5",
+    "exact": true
+  },
+  "provenance": {
+    "author": "we* + @mizopl",
+    "reference": "stabrank verify_challenge",
+    "method": "projection monotonicity applied 3 times to the exact F_P Galois-Clifford rank-4 exclusion chi(|T5>^2) >= 5",
+    "date": "2026-11-16",
+    "github": [
+      "mizopl"
+    ],
+    "compute": {
+      "cpu_hours": 0.0,
+      "wall_clock_hours": 0.0,
+      "runs": 0,
+      "hardware": "none beyond T5-m2-lower-5.json (verify_challenge/cert_t5_m2_to_m5_exact.py), which this cell re-runs",
+      "llm": [
+        {
+          "model": "gemini-4-argon",
+          "role": "we* (PROOFER v19) Galois-Clifford quotient synthesis and projection bound wiring"
+        }
+      ]
+    }
+  },
+  "notes": "First verified-tier lower bound filed for |T5>^5, establishing 5 <= chi(|T5>^5) <= 75 at the verified tier alongside bounds/T5-m5-upper-75.json (note bounds/T5-m5-lower-6.json on main is attested; this file provides a self-contained verified-tier floor with zero external batch files). Symbolically <0|T5> = 5^(-1/2) != 0 and (<0| (x) I)|T5>^2 = 5^(-1/2)|T5> are checked against stabrank_verify.orbit_state('T5') and target_vector('T5', 2) inside verify_challenge/cert_t5_m2_to_m5_exact.py."
+}
