@@ -2,7 +2,7 @@
 
 <sub><b>we* = me (<a href="https://github.com/mizopl">@mizopl</a>) + the agentic systems we* create + the feedback loop</b> · PROOFER Open-Science Release · <i>"Nothing material is perfect."</i></sub>
 
-Built with Google Antigravity (Gemini) and Claude Code on a single 16 GB M1 laptop (with heavy compute offloaded to ephemeral GPUs on demand), **we-star** shares our open-science discovery architecture ([`CONSTITUTION_v19.md`](./CONSTITUTION_v19.md) & [`StartFresh_v19/`](./StartFresh_v19/)), reasoning graphs, documented dead ends, and standalone zero-trust verifiers. Across 330+ research cycles, it has produced **37 machine-verified benchmark solutions** (45 verification packages across all 18 domains of [V3R1T4S](https://github.com/elder-plinius/V3R1T4S), [openproblems-bio](https://github.com/openproblems-bio/task_spatially_variable_genes), [hadamard-maxdet](https://github.com/mizopl/hadamard-maxdet), [eterna-hard](./eterna-hard/), and [stabrank](./stabrank/)), including **52 zero-axiom (`0 sorryAx`) Lean 4 proof modules/theorems**.
+Built with Google Antigravity (Gemini) and Claude Code on a single 16 GB M1 laptop (with heavy compute offloaded to ephemeral GPUs on demand), **we-star** shares our open-science discovery architecture ([`CONSTITUTION_v19.md`](./CONSTITUTION_v19.md) & [`StartFresh_v19/`](./StartFresh_v19/)), reasoning graphs, documented dead ends, and standalone zero-trust verifiers. Across 330+ research cycles, it has produced **38 machine-verified benchmark solutions** (46 verification packages across all 18 domains of [V3R1T4S](https://github.com/elder-plinius/V3R1T4S), [openproblems-bio](https://github.com/openproblems-bio/task_spatially_variable_genes), [hadamard-maxdet](https://github.com/mizopl/hadamard-maxdet), [eterna-hard](./eterna-hard/), and [stabrank](./stabrank/)), including **52 zero-axiom (`0 sorryAx`) Lean 4 proof modules/theorems**.
 
 ### In Plain Language
 
@@ -82,7 +82,7 @@ Most AI math and coding demos show only the polished final answer, hiding failed
 | <sub>[ihtc2024](https://github.com/ihtc2024/ihtc2024.github.io/commit/c078cf57) / [V3R1T4S](https://github.com/elder-plinius/V3R1T4S/pulls?q=is%3Apr+author%3Amizopl+is%3Amerged)</sub> | <sub>31 official hospital BKS merged upstream + 7 merged V3R1T4S main PRs across 5 domains</sub> | <sub>[c078cf57](https://github.com/ihtc2024/ihtc2024.github.io/commit/c078cf57) · [PRs](https://github.com/elder-plinius/V3R1T4S/pulls?q=is%3Apr+author%3Amizopl+is%3Amerged)</sub> |
 | <sub>[conway-99](https://github.com/mizopl/conway-99-graph)</sub> | <sub>42 zero-axiom Lean 4 theorems &amp; 54 LRAT proofs ($p=7$ in 0.82s), adopted by @ibenarb</sub> | <sub>[repo](https://github.com/mizopl/conway-99-graph) · [#774](https://github.com/elder-plinius/V3R1T4S/pull/774) · [ibenarb](https://github.com/ibenarb/conway99-research)</sub> |
 
-#### Selected Benchmark Highlights (12 of 37)
+#### Selected Benchmark Highlights (13 of 38)
 
 | # | Campaign | Verified Result | Verify |
 |--:|:---|:---|:---|
@@ -98,9 +98,10 @@ Most AI math and coding demos show only the polished final answer, hiding failed
 | <sub>35</sub> | <sub>Unitary stabrank</sub> | <sub>Merged: 35/35 exact bounds (20.46s) + 10/10 Lean 4 modules; open #200 (12 Lean wirings, reproduced: 9→0, +22 cells)</sub> | <sub>[#193](https://github.com/unitaryfoundation/stabrank/pull/193) · [#194](https://github.com/unitaryfoundation/stabrank/pull/194) · [#200](https://github.com/unitaryfoundation/stabrank/pull/200) · [pkg](./stabrank/)</sub> |
 | <sub>36</sub> | <sub>Hadamard MaxDet</sub> | <sub>8 new $n\equiv 1\pmod 4$ det records ($n=81..117$, +19.86% on 109) + 120-order catalog</sub> | <sub>[repo](https://github.com/mizopl/hadamard-maxdet) · [#1053](https://github.com/elder-plinius/V3R1T4S/pull/1053) · [notes](./hadamard-maxdet/) · [pkg](./solutions/hadamard-maxdet-records/)</sub> |
 | <sub>37</sub> | <sub>OpenProblems SVG</sub> | <sub>scDesign3/Zenodo 18193366 (s3 403): pure-CPU AMS-SVG mean $\tau=0.9460$ vs 0.8848 SPARK-X (50/50 within 0.02; open PRs)</sub> | <sub>[#7](https://github.com/openproblems-bio/task_spatially_variable_genes/pull/7) · [#1113](https://github.com/elder-plinius/V3R1T4S/pull/1113) · [pkg](./solutions/openproblems-spatially-variable-genes-correlation/)</sub> |
+| <sub>38</sub> | <sub>Phenopacket `p2`</sub> | <sub>`p2` unannotated causal genes (19,296 HGNC): pre-corpus `MARG-P2` lifts `MRR` 13.2× (`P2-Raw` 0.001089 vs 0.000083 `LIRICAL`, Top-1=0/127, Top-50=2/127) &amp; 99.4× (`P2-Holdout` 0.008803, Top-1=5/988; open PR)</sub> | <sub>[#1125](https://github.com/elder-plinius/V3R1T4S/pull/1125) · [pkg](./solutions/phenopacket-store-rare-disease-gene-prioritization/)</sub> |
 
 <details>
-<summary><sub>Expand all 37 verified campaigns (#1–#37) · Full derivations in <a href="./docs/00_FULL_BENCHMARK_ATLAS.md">docs/00_FULL_BENCHMARK_ATLAS.md</a></sub></summary>
+<summary><sub>Expand all 38 verified campaigns (#1–#38) · Full derivations in <a href="./docs/00_FULL_BENCHMARK_ATLAS.md">docs/00_FULL_BENCHMARK_ATLAS.md</a></sub></summary>
 <br>
 
 | # | Campaign | Verified Result | Verify |
@@ -142,6 +143,7 @@ Most AI math and coding demos show only the polished final answer, hiding failed
 | <sub>35</sub> | <sub>Unitary stabrank</sub> | <sub>Merged: 35/35 exact bounds (20.46s) + 10/10 Lean 4 modules; open #200 (12 Lean wirings, reproduced: 9→0, +22 cells)</sub> | <sub>[#193](https://github.com/unitaryfoundation/stabrank/pull/193) · [#194](https://github.com/unitaryfoundation/stabrank/pull/194) · [#200](https://github.com/unitaryfoundation/stabrank/pull/200) · [pkg](./stabrank/)</sub> |
 | <sub>36</sub> | <sub>Hadamard MaxDet</sub> | <sub>8 new $n\equiv 1\pmod 4$ det records ($n=81..117$, +19.86% on 109) + 120-order catalog</sub> | <sub>[repo](https://github.com/mizopl/hadamard-maxdet) · [#1053](https://github.com/elder-plinius/V3R1T4S/pull/1053) · [notes](./hadamard-maxdet/) · [pkg](./solutions/hadamard-maxdet-records/)</sub> |
 | <sub>37</sub> | <sub>OpenProblems SVG</sub> | <sub>scDesign3/Zenodo 18193366 (s3 403): pure-CPU AMS-SVG mean $\tau=0.9460$ vs 0.8848 SPARK-X (50/50 within 0.02; open PRs)</sub> | <sub>[#7](https://github.com/openproblems-bio/task_spatially_variable_genes/pull/7) · [#1113](https://github.com/elder-plinius/V3R1T4S/pull/1113) · [pkg](./solutions/openproblems-spatially-variable-genes-correlation/)</sub> |
+| <sub>38</sub> | <sub>Phenopacket `p2`</sub> | <sub>`p2` unannotated causal genes (19,296 HGNC): pre-corpus `MARG-P2` lifts `MRR` 13.2× (`P2-Raw` 0.001089 vs 0.000083 `LIRICAL`, Top-1=0/127, Top-50=2/127) &amp; 99.4× (`P2-Holdout` 0.008803, Top-1=5/988; open PR)</sub> | <sub>[#1125](https://github.com/elder-plinius/V3R1T4S/pull/1125) · [pkg](./solutions/phenopacket-store-rare-disease-gene-prioritization/)</sub> |
 
 </details>
 
