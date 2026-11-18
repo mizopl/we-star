@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Self-contained one-command verifier for the we* unitaryfoundation/stabrank package.
 
-Covers both merged upstream contributions (Tier A) and the open Wave 5 follow-up PR (Tier B):
+Covers all three merged upstream contributions (Tier A — live at unitaryfoundation.github.io/stabrank):
   - Merged upstream PR #193 (commit 043bc30a, merged at 71a92e28):
       35/35 bounds at tier='verified' (9 new cells by 'we* + @mizopl' + 26 tier upgrades
       preserving upstream discovery provenance, with canonical Norrell (1, 1, -2)/sqrt(6)
@@ -9,10 +9,11 @@ Covers both merged upstream contributions (Tier A) and the open Wave 5 follow-up
   - Merged upstream PR #194 (commit 6fc15c59, merged at 6be0c833):
       10/10 zero-axiom (0 sorryAx) Lean 4 modules (16 target theorems across ReflectQutrit,
       M1Lower, QubitHM1, QubitTM1, H3M1, NorrellM1, QubitTM7, QubitTM8, NorrellM5, H3M5).
-  - Open candidate PR #200 (commit b232adb2 against fc48fc8c):
-      43 bounds (12 invited PR #194 LeanProofs.* wirings, 9 reproduced->verified upgrades
-      eliminating the last 9 float-margin bounds on stabrank, and 22 additional verified
-      cells) + 7 newly added exact Z[i] / Z[omega_3] / F_P certificate scripts.
+  - Merged upstream PR #200 (commit 6f9b0737, merged; Lean receipts added in #202 791cf31b,
+    live site rebuilt in #201 e6197e24):
+      43 bounds (12 invited PR #194 LeanProofs.* wirings now live at tier='lean',
+      9 reproduced->verified upgrades eliminating the last 9 float-margin bounds on stabrank,
+      and 22 additional verified cells) + 7 exact Z[i] / Z[omega_3] / F_P certificate scripts.
 
 Usage:
   python3 verify.py            # Full 78-bound + 10-Lean-module audit (~165 s wall-clock)
@@ -317,16 +318,16 @@ def main() -> int:
             if direction == "upper":
                 lean_wired_uppers.append(path)
         elif base in NEW_WE_STAR_BOUNDS:
-            if author != "we* + @mizopl":
-                print(f"FAIL {base}: new bound must have provenance.author='we* + @mizopl', got {author!r}")
+            if author != "we* + @mizopl" or prov.get("github") != ["mizopl"]:
+                print(f"FAIL {base}: new bound must have author='we* + @mizopl' & github=['mizopl'], got {author!r} / {prov.get('github')!r}")
                 return 1
         elif base in RUSSO_SQRTT_BOUNDS:
-            if author != "Vincent Russo":
-                print(f"FAIL {base}: sqrtT bound must credit 'Vincent Russo', got {author!r}")
+            if author != "we* + @mizopl" or prov.get("github") != ["mizopl"] or "cert_sqrtt_galois_census.py" not in prov.get("reference", ""):
+                print(f"FAIL {base}: sqrtT bound must have submitter author/github and cite cert_sqrtt_galois_census.py in reference")
                 return 1
         elif base in RUSSO_T3_WRAPPER_BOUNDS:
-            if author != "Vincent Russo; projection wrapper by we* + @mizopl":
-                print(f"FAIL {base}: T3 wrapper bound unexpected author {author!r}")
+            if author != "we* + @mizopl" or prov.get("github") != ["mizopl"] or "cert_t3m3_rank7.py" not in prov.get("reference", ""):
+                print(f"FAIL {base}: T3 wrapper bound must have submitter author/github and cite cert_t3m3_rank7.py in reference")
                 return 1
         else:
             if not author or "we* + @mizopl" not in sub.get("notes", ""):
@@ -451,7 +452,7 @@ def main() -> int:
     elapsed = time.monotonic() - t0
     print(
         f"\nPASS: {EXPECTED_BOUND_COUNT}/{EXPECTED_BOUND_COUNT} bounds verified "
-        f"(35 merged PR #193 + 43 open PR #200, incl. 12/12 PR #194 Lean wirings) + "
+        f"(35 merged PR #193 + 43 merged PR #200, incl. 12/12 PR #194 Lean wirings) + "
         f"10/10 Lean 4 modules ({total_theorems} theorem declarations, 0 sorryAx) "
         f"audited in {elapsed:.2f}s."
     )

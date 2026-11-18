@@ -26,7 +26,8 @@ Mathematical guarantees (100% integer / Z[omega_3] / F_P arithmetic):
          N_{Q(omega_3)/Q}(det M) <= 5^4 * 216 = 135,000 << P,
      so F_P-rank equals Q(omega_3)-rank on every <= 5-subset; surviving 4-tuples
      are additionally confirmed in SymPy over Z.
-   - 1-pivot exact ray canonicalisation mod P proves chi(|S>^3) >= 4 and
+   - 1-pivot canonical ray bucketing (deterministic int64 matmul filter followed
+     by exact `rank_mod_p` verification) proves chi(|S>^3) >= 4 and
      chi(|N>^3) >= 4 (with positive controls finding the rank-2 pairs of |S>^2
      and all 48 rank-3 triples of |N>^2), so every rank-4 decomposition at m = 3
      is minimal.
@@ -47,10 +48,11 @@ Mathematical guarantees (100% integer / Z[omega_3] / F_P arithmetic):
      chi(|N>^{ot m}) >= 5 for m = 4, 5, 6.
    - Strange (m = 3 -> 4 -> 5): lifting all unitary-closed rank-4 reps of |S>^3
      to |S>^4 recovers 69 exact rank-4 decompositions of |S>^4 in Z[omega_3]^81
-     (internal positive control, verified entrywise against |S>^4), and testing
-     all 243^2 x 243^2 four-qutrit Pauli-and-phase assignments on slice k = 2
-     (-|S>^4) and homogeneous slice k = 0 (0) finds 0 lifts to |S>^5, proving
-     chi(|S>^{ot m}) >= 5 for m = 5, 6, 7, 8.
+     (a count depending on the `all_codes(3)` dictionary ordering and the
+     `unitary_reps` representative set; internal positive control, verified
+     entrywise against |S>^4), and testing all 243^2 x 243^2 four-qutrit
+     Pauli-and-phase assignments on slice k = 2 (-|S>^4) and homogeneous slice
+     k = 0 (0) finds 0 lifts to |S>^5, proving chi(|S>^{ot m}) >= 5 for m = 5, 6, 7, 8.
 
 Printed claims:
   CERTIFIED chi(N^4) >= 5
@@ -352,6 +354,7 @@ def verify_m2_and_m3_rank3_exclusions(
             act, Wn = canon_rows_p(W)
             if len(act) < len(Q1) - 1:
                 raise AssertionError(f"Rank-2 decomposition found for {name}^3")
+            # Deterministic int64 matmul filter (wraps in int64), followed by exact rank_mod_p check
             h = (Wn @ hw25) % P
             order = np.argsort(h, kind="mergesort")
             hs = h[order]
@@ -710,7 +713,8 @@ def exact_lifts_zw3(
         R = (R[:, None, :] + arr[None, :, :]).reshape(-1, 2 * dim)
     R_need = rhs2[None, :] - R
 
-    # Exact integer hash mod P followed by full 2*dim int64 equality verification
+    # Deterministic int64 matmul filter (wraps in int64; equal vectors map identically),
+    # followed by exact full 2*dim int64 np.array_equal verification below.
     hL = ((L % P) @ hw) % P
     hR = ((R_need % P) @ hw) % P
     ordL = np.argsort(hL, kind="mergesort")

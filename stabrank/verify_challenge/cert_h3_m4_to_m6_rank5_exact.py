@@ -13,15 +13,21 @@ Key mathematical & algorithmic guarantees (zero floating-point operations):
    stabilizer states containing h^{ot 3} must contain the 2D Q(omega_3)-plane
    V_3(H3) = span(v_0, v_1). Modulo V_3(H3), a 4-state decomposition spans at
    most 4 - 2 = 2 dimensions, so fixing a single pivot reduces the quotient to
-   dimension <= 1 (exact ray hashing across 116 symmetry pivot orbits).
+   dimension <= 1 across 116 symmetry pivot orbits (grouped via a deterministic
+   two's-complement int64 matmul hash filter — which wraps in int64 while
+   mapping identical canonical rows to identical buckets — followed by exact
+   F_P `rank_mod_p` and exact Z `zw3_rank` checks).
 2. Hadamard algebraic norm certificate at split prime P = 1,000,000,021:
-   In Q(omega_3) (degree 2 over Q), every 6 x 6 minor formed by 4 stabilizer
-   row segments in {0, 1, omega_3, omega_3^2}^6 (squared Euclidean norm <= 6)
-   and the 6-column segments of (v_0, v_1) (full squared norms 48 and 72)
-   satisfies
-       N_{Q(omega_3)/Q}(det M) = |det M|^2 <= 6^4 * 48 * 72 = 4,478,976 < P.
-   Every surviving 4-tuple is also confirmed over Z via the exact 2k x 2d
-   regular representation in SymPy.
+   In Q(omega_3) (degree 2 over Q), eliminating V_3(H3) = span(v_0, v_1) (squared
+   norms 48 and 72) in `Q0` and checking pairwise ray distinctness (`m = 3` rank-3
+   exclusion) tests 3 x 3 and 4 x 4 minors of <= 2 stabilizer rows with (v_0, v_1)
+   (|det M|^2 <= 4^2 * 48 * 72 = 55,296 < P). In the 1-pivot m = 3 rank-4 harvest,
+   non-zero entries of `W` are 4 x 4 minors (<= 55,296 < P), 4-state independence
+   uses 4 x 4 stabilizer minors (<= 4^4 = 256 < P), and 1-pivot collinearity /
+   rank-4 span checks mod P involve at most 5 x 5 minors (<= 5^3 * 48 * 72 =
+   432,000 < P), with every surviving quadruple also confirmed over Z via SymPy
+   `zw3_rank`; the 6 x 6 constant 6^4 * 48 * 72 = 4,478,976 asserted in `main()`
+   is a conservative sanity guard on P not used by the argument.
 3. Exact Z[omega_3, sqrt(3)] meet-in-the-middle Pauli slice lift at m = 4:
    Up to the order-384 symmetry group of |H3>^{ot 3} (with explicit complex
    conjugate closure so all unitary orbits are covered without assuming
@@ -426,6 +432,8 @@ def main() -> int:
             invs[k] = (inv_all * pref[k - 1]) % P
             inv_all = (inv_all * int(lead[k])) % P
         invs[0] = inv_all
+        # Deterministic int64 matmul filter (wraps in int64; equal rows map identically),
+        # followed by exact rank_mod_p and SymPy zw3_rank checks below.
         h = (((Wa * invs[:, None]) % P) @ hw) % P
         order = np.argsort(h, kind="mergesort")
         hs = h[order]

@@ -25,7 +25,10 @@ Mathematical guarantees (zero floating-point arithmetic):
    U_a |x> = omega_5^{(x+a)^3 - x^3} |x+a>, and copy swap preserves both D(5, 2)
    and span_{Q(omega_5)}(|T5>^{ot 2}), forming an exact permutation group G_200
    of order 200 (verified explicitly on both D(5, 2) and |T5>^{ot 2}) with 38
-   pivot orbits and 40,124 stabilizer-reduced (pivot, partner) pairs.
+   pivot orbits and 40,124 stabilizer-reduced (pivot, partner) pairs. Canonical
+   quotient rays are bucketed via a deterministic int64 matmul filter (wrapping
+   in int64 while preserving row equality) and then verified by exact row
+   matching (`np.unique(..., axis=0)`) and exact `rank_mod_p` checks.
 4. Positive controls (fatal if violated):
    - Exact 1-ququint search finds the 10 rank-3 decompositions of |T5> (2 orbits of 5).
    - Exact 2-ququint rank-4 search from pivot |00> recovers the product
@@ -192,6 +195,7 @@ def _scan_pivot_r4(piv: int) -> tuple[int, list[tuple[int, ...]]]:
                 cand_hits.append((int(piv), int(j), int(z)))
         if len(act_loc) < 2:
             continue
+        # Deterministic int64 matmul filter (wraps in int64), followed by exact subW row equality
         h = (Wn @ hw22) % P
         order = np.argsort(h, kind="mergesort")
         hs = h[order]
@@ -404,7 +408,7 @@ def main() -> int:
         print(f"RANK-4 DECOMPOSITION FOUND: {true_r4[0]}", file=sys.stderr)
         return 1
 
-    print(f"exact F_P check (P={P} > 5^10={hadamard_bound}): 38 Galois-Clifford orbits, "
+    print(f"exact F_P check (P={P} > 5^10={hadamard_bound}): {len(reps)} Galois-Clifford orbits, "
           f"{total_pairs} (pivot, partner) pairs, 0 rank <= 4 decompositions [{time.time() - t0:.2f}s]")
     for m in (2, 3, 4, 5):
         print(f"CERTIFIED chi(T5^{m}) >= 5")

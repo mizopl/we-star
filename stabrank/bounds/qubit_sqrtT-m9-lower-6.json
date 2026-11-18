@@ -10,12 +10,11 @@
     "exact": true
   },
   "provenance": {
-    "author": "Vincent Russo",
-    "reference": "stabrank verify_challenge",
+    "author": "we* + @mizopl",
+    "reference": "verify_challenge/cert_sqrtt_galois_census.py (bounds/qubit_sqrtT-m6-lower-6.json)",
     "method": "projection monotonicity applied to the exact rank-5 exclusion at m=5",
-    "date": "2026-10-23",
+    "date": "2026-11-16",
     "github": [
-      "vprusso",
       "mizopl"
     ],
     "compute": {

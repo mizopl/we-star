@@ -21,15 +21,18 @@ Mathematical summary (zero floating-point operations, ~8 s warm / ~24 s cold wit
    3-qubit Pauli translates sum_{r=1}^4 c_r mu_r P_r u_r = (1+i)|Psi_3> with
    mu_r in {1, i, -1, -i} and P_r among the 8 Pauli classes of u_r.
    At split prime P = 1,000,000,009 == 1 (mod 4), every 4 x 4 minor M of U in
-   {0, +-1, +-i}^{8 x 4} has |det M| <= 16 (norm <= 256 < P), and after clearing
-   Delta = det(U_piv) in Cramer's rule, every coordinate of
-   sum_r d_r mu_r P_r u_r - (1+i) Delta |Psi_3> in Z[i] has algebraic norm
-   < 2,000,000 << P. Exhaustive S_3-reduced enumeration of all minimal rank-4
-   decompositions of |Psi_3> on D_3 (2,297 orbit-filtered quadruples across 270
-   S_3 pivot orbits, after re-verifying 0 rank <= 3 decompositions) followed by
-   exact 32^2 x 32^2 meet-in-the-middle Pauli matching mod P finds 0 lifts
-   (with positive controls on both |Psi_3> rank-4 recovery and a synthetic
-   4-term Pauli-lifted state).
+   {0, +-1, +-i}^{8 x 4} has |det M| <= 2^4 = 16 (norm <= 256 < P), and after
+   clearing Delta = det(U_piv) in Cramer's rule, |d_r| <= 2^3 * ||2|Psi_3>_piv||_2
+   < 8 * 29.4 < 236, so each coordinate of sum_r d_r mu_r P_r u_r - (1+i) Delta |Psi_3>
+   in Z[i] has modulus < 4*236 + sqrt(2)*16*8 < 1,126 and algebraic norm
+   < 1,268,000 << P (the 2,000,000 check in `main()` is a conservative sanity
+   ceiling not otherwise used by the code). Exhaustive S_3-reduced enumeration
+   of all minimal rank-4 decompositions of |Psi_3> on D_3 (2,297 orbit-filtered
+   quadruples across 270 S_3 pivot orbits — a count depending on the `E3`
+   dictionary ordering and the `orb_s3[j] >= i` representative filter — after
+   re-verifying 0 rank <= 3 decompositions) followed by exact 32^2 x 32^2
+   meet-in-the-middle Pauli matching mod P finds 0 lifts (with positive controls
+   on both |Psi_3> rank-4 recovery and a synthetic 4-term Pauli-lifted state).
 
 Printed claim:
   CERTIFIED chi(CS^4) >= 5

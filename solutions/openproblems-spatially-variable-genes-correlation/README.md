@@ -23,6 +23,26 @@ Spatial transcriptomics measures gene activity together with `(x, y)` coordinate
 
 [`code/method.py`](./code/method.py) (`score_svg(counts, coords)`) scores each gene column via dual variance-stabilizing transforms (`log1p(y)` and Freeman-Tukey `sqrt(y) + sqrt(y + 1) - 1`) across three tie-free locally density-adapted biweight kNN operators and three `O(2)`-invariant low-rank Mercer polynomial-Gaussian operators, standardized on the unbounded real line by exact Cliff & Ord (1981) kurtosis-adjusted analytical permutation moments. Companion module [`code/ams_svg_eb_v2.py`](./code/ams_svg_eb_v2.py) adds Hilbert-sphere geodesic arc-length scale quadrature (`arccos(R_{s,s+1})`) and a scale-separated Wiener + deflated-spectral Empirical-Bayes high-pass capture gate that removes sub-compartment technical spot-capture dropout while preserving smooth tissue compartments. Running [`verify.py`](./verify.py) executes blind column-permuted recomputation across a 12-dataset, 9-technology panel plus full row-by-row semantic checks across all five JSON certificates in ~25 seconds on CPU with zero bytecode side effects.
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_constellation_light.svg">
+    <img alt="OpenProblems Spatially Variable Genes (AMS-SVG) constellation and central file spotlight" src="./assets/we_star_constellation_light.svg" width="560">
+  </picture>
+  <br>
+  <sub><b>Knowledge Constellation &amp; Central File:</b> <code>code/method.py</code> pinpointed inside the <code>we*</code> research galaxy (<a href="./assets/we_star_constellation_dark.svg">dark</a> · <a href="./assets/we_star_constellation_light.svg">light</a>).</sub>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_tree_teaser_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_tree_teaser_light.svg">
+    <img alt="OpenProblems Spatially Variable Genes (AMS-SVG) reasoning-tree branch close-up" src="./assets/we_star_tree_teaser_light.svg" width="860">
+  </picture>
+  <br>
+  <sub><b>Epistemic Bet-Tree Branch (Excerpt):</b> organic trajectory from our pre-registered bet tree — verified steps (<code>✓</code>), falsified hypotheses pruned on the way (<code>✗</code>), and structural pivots (<code>↩</code>) (<a href="./assets/we_star_tree_teaser_dark.svg">dark</a> · <a href="./assets/we_star_tree_teaser_light.svg">light</a>).</sub>
+</p>
+
 ---
 
 ## Milestone Evaluation Summary (`50` Datasets: `4` Dev + `46` Blind Holdout)
