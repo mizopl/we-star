@@ -2,7 +2,7 @@
 
 ## Scope, Limitations First & Verification Summary
 
-- **Validation Tier:** `Tier B` (local exact-oracle verified candidate package awaiting independent review; zero upstream commits, pull requests, or emails sent prior to human sign-off).
+- **Validation Tier:** `Tier B` (local exact-oracle verified candidate package; submitted upstream in [`usnistgov/Circuits PR #2`](https://github.com/usnistgov/Circuits/pull/2) and [`elder-plinius/V3R1T4S PR #1161`](https://github.com/elder-plinius/V3R1T4S/pull/1161), awaiting independent maintainer review).
 - **Limitations & Unsolved Frontier (`What This Does NOT Solve`):**
   1. **Construction Upper Bounds Only (`0 / 6` Live CSRC Wish-List Targets Solved):** None of the `6` live `2026-11-17` NIST CSRC wish-list targets are solved. Specifically, `InvS-box` `33/4/111/14` stops **`+1` gate above Wish-List `(c)` (`G <= 110` at `GD <= 14` across both zero-`NOT` and official `%NCFF` `NOT`-permitted models)**, `MixColumns` at `GD = 3` held at `97@3` (`Root LP = 92.00`) vs. Wish-List `(e)` (`<= 93@3`), and `InvMixColumns` at `GD <= 5` held at `118@5` vs. Wish-List `(f)` (`G <= 105` at `GD <= 5`). Wish-List `(a)` `A <= 27`, `(b)` `G <= 100`, and `(d)` `MixColumns <= 86` also remain open.
   2. **Unbeaten Sibling Milestones (`p1`, `p2`, and `p4` Route 2):** Minimum total gates `p1` (`S-box` `103`, `InvS-box` `105`), minimum gates at `A = 28` `p2` (`S-box` `124`, `InvS-box` `126`), and `AD = 3` with `A <= 34` (`p4` Route 2, currently `A = 35`) remain unbeaten. On `InvMixColumns`, depths `GD = 5..9` (`118, 104, 99, 96, 94`) and `GD >= 12` (`90@12`, `89@15`, `88@16`) were not improved.
