@@ -32,7 +32,7 @@
 ## 2. Repository Hygiene & Obsidian Vault Snapshots
 
 - **`@mizopl` vs. `we*` separation:** The personal profile [`mizopl/mizopl`](https://github.com/mizopl/mizopl) has been slimmed down to a brief personal card pointing directly to [`mizopl/we-star`](https://github.com/mizopl/we-star) as the shared `we*` catalog.
-- **Refreshed Obsidian vault constellation:** The monochrome Obsidian knowledge-graph snapshot in [`we-star`](../README.md) has been refreshed to the current `4,982`-node vault, and individual Obsidian graph snapshots (`assets/we_star_constellation_{dark,light}.svg`) have been added across all `19` solution folders in [`solutions/`](../solutions/).
+- **Refreshed Obsidian vault constellation:** The monochrome Obsidian knowledge-graph snapshot in [`we-star`](../README.md) has been refreshed to the current `4,982`-node vault, and individual Obsidian graph snapshots (`assets/we_star_constellation_{dark,light}.svg`) have been added across `18` of `19` solution folders in [`solutions/`](../solutions/) (`plmfit-trastuzumab-cdrh3-binding-mcc` left unchanged pending a full label-recomputation verifier upgrade).
 
 ---
 
