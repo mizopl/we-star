@@ -1,5 +1,16 @@
 # FLAb Antibody Developability Zero-Shot: Sequence-Only Regional Biophysical Z-Score Composite (CLSS_Reg8_AllBP_IMGT_Z — Partial Wins p2 & p3)
 
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_constellation_light.svg">
+    <img alt="flab-antibody-developability-zero-shot Obsidian knowledge constellation" src="./assets/we_star_constellation_light.svg" width="560">
+  </picture>
+  <br>
+  <sub><b>Obsidian Knowledge Constellation:</b> <code>flab-antibody-developability-zero-shot</code> inside the <code>we*</code> research vault (<a href="./assets/we_star_constellation_dark.svg">dark</a> · <a href="./assets/we_star_constellation_light.svg">light</a>).</sub>
+</p>
+
 ## What
 
 Verified zero-shot sequence-only developability scoring on the FLAb therapeutic antibody benchmark (`Graylab/FLAb`, commit `e05e3f0135783ffb7de412df6a1467e7a0031911`, Chungyoun & Gray, bioRxiv 2025, `doi:10.64898/2025.12.27.696706`) claiming Partial Wins `p2` and `p3` only (with Full Win and `p1` not claimed): the single frozen sequence-only zero-shot formula `CLSS_Reg8_AllBP_IMGT_Z` (frozen at `2026-10-26T00:26:00Z` in commit `654c23f056b932c310723f591bc3fec89102ad73`, with zero assay-label fitting and all other composite rules reported strictly as exploratory ablations) achieves directional sign consistency (`p2`) of `14/15 = 93.3%` positive datasets on `score/tm` (mean Spearman $\rho = +0.4636$), `16/20 = 80.0%` on the 20 standard Fv `data/thermostability` datasets ($\rho = +0.3270$; $+0.3048$, `16/21 = 76.2%` across all 21 `data/thermostability` CSVs, and $+0.2834$, `20/25 = 80.0%` across the 25-dataset `score/tm` plus `data/thermostability` union), and `6/6 = 100.0%` on `score/polyreactivity` ($\rho = +0.4467$; $+0.1407$, `17/25 = 68.0%` across all 25 `data/polyreactivity` CSVs, and $+0.1671$, `18/26 = 69.2%` across the 26-dataset `score/polyreactivity` plus `data/polyreactivity` union), preserves within-stratum germline-and-length confound-controlled correlation (`p3`) of $\rho_{\text{matched}} = +0.4308$ on `score/tm` (`78` strata across `11` datasets) and $\rho_{\text{matched}} = +0.5262$ on `score/polyreactivity` (`61` strata across `4` datasets), and scores $\rho = -0.0060$ (`6/16 > 0` vs $-K_d$; $+0.0060$, `10/16 > 0` vs $+K_d$) on the 16 `score/binding` datasets (below `iglm` at $0.1742$) and $\rho = -0.0987$ (`36/80 > 0`; $-0.1123$ on the 12 primary `score/`-mapped CSVs, $-0.1640$ on the 15 study-mapped CSVs, $-0.0964$ on the 68 excluded CSVs, and $-0.0837$ on the 65 excluded CSVs) across all 80 `data/binding` CSVs (`97,778` rows), so `binding`, `thermostability`, `polyreactivity`, and `p1` are not claimed as category wins.

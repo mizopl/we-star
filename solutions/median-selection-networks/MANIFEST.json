@@ -1,0 +1,372 @@
+{
+  "upstream_repo": "bertdobbelaere/SorterHunter",
+  "upstream_commit": "a18ee17",
+  "upstream_date": "2026-11-08",
+  "records_count": 8,
+  "records": [
+    {
+      "file": "Median_23_81_12.json",
+      "sha256": "43903a7b0745625629271e8aeb336190d2a5163dd255fbc3f035fb42c7fe5104",
+      "N": 23,
+      "L": 81,
+      "D": 12,
+      "symmetric": false,
+      "live_a18ee17_pareto": [
+        [
+          77,
+          16
+        ],
+        [
+          78,
+          14
+        ],
+        [
+          79,
+          13
+        ],
+        [
+          83,
+          12
+        ]
+      ],
+      "classification": "PARETO_WR (81,12)",
+      "verification": {
+        "slices": {
+          "pass": true,
+          "errs": 0,
+          "ms": 3.964
+        },
+        "slices3": {
+          "pass": true,
+          "errs": 0,
+          "ms": 3.944
+        },
+        "full_2n": {
+          "pass": true,
+          "errs": 0,
+          "ms": 16.328
+        },
+        "random_int_trials": {
+          "pass": true,
+          "trials": 100000,
+          "sec": 0.942
+        }
+      }
+    },
+    {
+      "file": "Median_24_84_11.json",
+      "sha256": "67577e4a7ef5f8f3adc0a4b1a2b2ea3bc5d515d72c38a31979766cab83079096",
+      "N": 24,
+      "L": 84,
+      "D": 11,
+      "symmetric": true,
+      "live_a18ee17_pareto": [
+        [
+          82,
+          13
+        ],
+        [
+          83,
+          12
+        ],
+        [
+          86,
+          11
+        ]
+      ],
+      "classification": "PARETO_WR (84,11)",
+      "verification": {
+        "slices": {
+          "pass": true,
+          "errs": 0,
+          "ms": 7.725
+        },
+        "slices3": {
+          "pass": true,
+          "errs": 0,
+          "ms": 11.779
+        },
+        "full_2n": {
+          "pass": true,
+          "errs": 0,
+          "ms": 33.85
+        },
+        "random_int_trials": {
+          "pass": true,
+          "trials": 100000,
+          "sec": 0.986
+        }
+      }
+    },
+    {
+      "file": "Median_28_103_17.json",
+      "sha256": "6c66711258161558d74483abc0f341414baab4f9d6153014549d9c124d3b9112",
+      "N": 28,
+      "L": 103,
+      "D": 17,
+      "symmetric": true,
+      "live_a18ee17_pareto": [
+        [
+          104,
+          14
+        ],
+        [
+          105,
+          13
+        ],
+        [
+          111,
+          12
+        ]
+      ],
+      "classification": "UNCONSTRAINED_MIN_SIZE_WR (103 < 104)",
+      "verification": {
+        "slices": {
+          "pass": true,
+          "errs": 0,
+          "ms": 145.728
+        },
+        "slices3": {
+          "pass": true,
+          "errs": 0,
+          "ms": 221.716
+        },
+        "full_2n": {
+          "skipped_reason": "N>24; exact equivalence proved by monotonicity on critical slices"
+        },
+        "random_int_trials": {
+          "pass": true,
+          "trials": 100000,
+          "sec": 1.23
+        }
+      }
+    },
+    {
+      "file": "Median_28_109_12.json",
+      "sha256": "f29da0d93856c80e402a3f8c6fa6adc6a49e894a229c8c98cc7a16d579dd4a01",
+      "N": 28,
+      "L": 109,
+      "D": 12,
+      "symmetric": true,
+      "live_a18ee17_pareto": [
+        [
+          104,
+          14
+        ],
+        [
+          105,
+          13
+        ],
+        [
+          111,
+          12
+        ]
+      ],
+      "classification": "PARETO_WR (109,12)",
+      "verification": {
+        "slices": {
+          "pass": true,
+          "errs": 0,
+          "ms": 146.459
+        },
+        "slices3": {
+          "pass": true,
+          "errs": 0,
+          "ms": 222.444
+        },
+        "full_2n": {
+          "skipped_reason": "N>24; exact equivalence proved by monotonicity on critical slices"
+        },
+        "random_int_trials": {
+          "pass": true,
+          "trials": 100000,
+          "sec": 1.495
+        }
+      }
+    },
+    {
+      "file": "Median_29_106_20.json",
+      "sha256": "d02fda4ebba9d5320301c3776a1122ced516a26ee328dcde4b5ba1b6b8e289a3",
+      "N": 29,
+      "L": 106,
+      "D": 20,
+      "symmetric": false,
+      "live_a18ee17_pareto": [
+        [
+          107,
+          17
+        ],
+        [
+          108,
+          16
+        ],
+        [
+          114,
+          15
+        ],
+        [
+          118,
+          14
+        ]
+      ],
+      "classification": "UNCONSTRAINED_MIN_SIZE_WR (106 < 107)",
+      "verification": {
+        "slices": {
+          "pass": true,
+          "errs": 0,
+          "ms": 307.646
+        },
+        "slices3": {
+          "pass": true,
+          "errs": 0,
+          "ms": 308.268
+        },
+        "full_2n": {
+          "skipped_reason": "N>24; exact equivalence proved by monotonicity on critical slices"
+        },
+        "random_int_trials": {
+          "pass": true,
+          "trials": 100000,
+          "sec": 1.168
+        }
+      }
+    },
+    {
+      "file": "Median_29_112_15.json",
+      "sha256": "4da713a0aecbfe26c3e8b1faed53140fc0e199e369a73007880292b6026a4abd",
+      "N": 29,
+      "L": 112,
+      "D": 15,
+      "symmetric": false,
+      "live_a18ee17_pareto": [
+        [
+          107,
+          17
+        ],
+        [
+          108,
+          16
+        ],
+        [
+          114,
+          15
+        ],
+        [
+          118,
+          14
+        ]
+      ],
+      "classification": "PARETO_WR (112,15)",
+      "verification": {
+        "slices": {
+          "pass": true,
+          "errs": 0,
+          "ms": 305.627
+        },
+        "slices3": {
+          "pass": true,
+          "errs": 0,
+          "ms": 305.464
+        },
+        "full_2n": {
+          "skipped_reason": "N>24; exact equivalence proved by monotonicity on critical slices"
+        },
+        "random_int_trials": {
+          "pass": true,
+          "trials": 100000,
+          "sec": 1.176
+        }
+      }
+    },
+    {
+      "file": "Median_30_117_18.json",
+      "sha256": "301e4ece04acbf8009bc6623811e8627ca581c49d5df981d10499459aaf4a166",
+      "N": 30,
+      "L": 117,
+      "D": 18,
+      "symmetric": true,
+      "live_a18ee17_pareto": [
+        [
+          118,
+          16
+        ],
+        [
+          119,
+          14
+        ],
+        [
+          122,
+          13
+        ]
+      ],
+      "classification": "UNCONSTRAINED_MIN_SIZE_WR (117 < 118)",
+      "verification": {
+        "slices": {
+          "pass": true,
+          "errs": 0,
+          "ms": 636.784
+        },
+        "slices3": {
+          "pass": true,
+          "errs": 0,
+          "ms": 962.492
+        },
+        "full_2n": {
+          "skipped_reason": "N>24; exact equivalence proved by monotonicity on critical slices"
+        },
+        "random_int_trials": {
+          "pass": true,
+          "trials": 100000,
+          "sec": 1.246
+        }
+      }
+    },
+    {
+      "file": "Median_31_120_21.json",
+      "sha256": "eae0ef69fe03acd8a69cab45137bdb8f99969e2404eadd2f4963c6e9669ebf58",
+      "N": 31,
+      "L": 120,
+      "D": 21,
+      "symmetric": false,
+      "live_a18ee17_pareto": [
+        [
+          121,
+          19
+        ],
+        [
+          122,
+          17
+        ],
+        [
+          124,
+          15
+        ],
+        [
+          128,
+          14
+        ]
+      ],
+      "classification": "UNCONSTRAINED_MIN_SIZE_WR (120 < 121)",
+      "verification": {
+        "slices": {
+          "pass": true,
+          "errs": 0,
+          "ms": 1353.771
+        },
+        "slices3": {
+          "pass": true,
+          "errs": 0,
+          "ms": 1337.905
+        },
+        "full_2n": {
+          "skipped_reason": "N>24; exact equivalence proved by monotonicity on critical slices"
+        },
+        "random_int_trials": {
+          "pass": true,
+          "trials": 100000,
+          "sec": 1.269
+        }
+      }
+    }
+  ]
+}

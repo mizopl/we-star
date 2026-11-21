@@ -9,6 +9,17 @@
 
 ---
 
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_constellation_light.svg">
+    <img alt="linear-baseline-perturbation-replogle-k562 Obsidian knowledge constellation" src="./assets/we_star_constellation_light.svg" width="560">
+  </picture>
+  <br>
+  <sub><b>Obsidian Knowledge Constellation:</b> <code>linear-baseline-perturbation-replogle-k562</code> inside the <code>we*</code> research vault (<a href="./assets/we_star_constellation_dark.svg">dark</a> · <a href="./assets/we_star_constellation_light.svg">light</a>).</sub>
+</p>
+
 ## What
 
 Confirmed Partial Progress (p2) on linear-baseline-perturbation-replogle-k562: saved plain-text per-perturbation predictions for every held-out K562 perturbation across seeds 1..2 (n = 262 Panel A perturbations: 134 in seed 1, 128 in seed 2) and seeds 1..5 (n = 677 in-readout perturbations) stratify the performance gap between Hollow-LOO Dual-Lens and the paper's self-trained linear baseline (lpm_selftrained, K = 10 PCA, lambda = 0.1) by nearest-training-perturbation functional distance, showing that the gap is concentrated in close/in-distribution functional neighborhoods (Q1 delta L2 = -1.404930 or -32.33%, delta R_delta = +0.224525) and narrows monotonically for out-of-distribution perturbations (Q4 delta L2 = -0.404255 or -10.40%, delta R_delta = +0.123755; Spearman r_s = +0.345058, p = 9.7126e-09 on hybrid distance; Spearman r_s = +0.420798, p = 1.1506e-12 on static 2023 gene2go_all.pkl Gene Ontology distance).

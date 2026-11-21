@@ -7,6 +7,17 @@ To avoid duplicating ~40 MB of `.lrat`/`.cnf` SAT certificates, Lean 4 formaliza
 
 ---
 
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_constellation_light.svg">
+    <img alt="conway-99-graph Obsidian knowledge constellation" src="./assets/we_star_constellation_light.svg" width="560">
+  </picture>
+  <br>
+  <sub><b>Obsidian Knowledge Constellation:</b> <code>conway-99-graph</code> inside the <code>we*</code> research vault (<a href="./assets/we_star_constellation_dark.svg">dark</a> · <a href="./assets/we_star_constellation_light.svg">light</a>).</sub>
+</p>
+
 ## Quick Links into [`mizopl/conway-99-graph`](https://github.com/mizopl/conway-99-graph)
 
 - **[`README.md`](https://github.com/mizopl/conway-99-graph/blob/main/README.md):** Overview of all **27 theorems (`54` dual-encoded Sinz vs. Totalizer Pure-RUP LRAT `0 RAT` certificates)** across Track `p2` ([`V3R1T4S PR #774`](https://github.com/elder-plinius/V3R1T4S/pull/774): 5 forced-structure reductions / 10 certificates, `r4_s6_p3_fix9` `n_clauses = 442`) and Track `p1` ([`V3R1T4S PR #840`](https://github.com/elder-plinius/V3R1T4S/pull/840): 22 automorphism exclusions / 44 certificates), the **42 zero-axiom (`0 sorryAx`) Lean 4 theorems compressed into `5 Master Theorems`**, and the `(0, 7, 0)` involution sector reduction.

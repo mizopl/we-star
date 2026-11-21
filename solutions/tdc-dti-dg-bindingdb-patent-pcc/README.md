@@ -1,5 +1,16 @@
 # TDC DTI Domain-Generalization (`BindingDB_Patent`): CPU-Only Partial Win `p1` (`0.580 ± 0.003` Pearson $r$)
 
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_constellation_light.svg">
+    <img alt="tdc-dti-dg-bindingdb-patent-pcc Obsidian knowledge constellation" src="./assets/we_star_constellation_light.svg" width="560">
+  </picture>
+  <br>
+  <sub><b>Obsidian Knowledge Constellation:</b> <code>tdc-dti-dg-bindingdb-patent-pcc</code> inside the <code>we*</code> research vault (<a href="./assets/we_star_constellation_dark.svg">dark</a> · <a href="./assets/we_star_constellation_light.svg">light</a>).</sub>
+</p>
+
 ## What
 
 Partial Win p1 on TDC DTI Domain-Generalization (BindingDB patent-year split: 2013-2018 train_val -> 2019-2021 test, N = 49,028 across official seeds 1..5): 100% CPU-only 4-Level Matryoshka Functional ANOVA + Universal Kriging Tanimoto Kernel Ridge Regression (TKRR) + Homology-Gated Stacker (Track A, zero PLM, zero GPU, zero external data, with all architectural and hyperparameter choices fixed on train_val inner temporal validation splits 2013-2016 -> 2017-2018 and 2013-2017 -> 2018 prior to the first test-set evaluation in step08) achieves official group.evaluate_many test Pearson r = 0.580 ± 0.003 (exact 5-seed mean 0.57942 ± 0.00299; seeds 0.57856, 0.58064, 0.58094, 0.58287, 0.57410), surpassing Rank #2 OrangeBalls-ProtBertMorgan (0.538 ± 0.008) by +0.04142 (>= +0.010 margin, 100.00% 10,000-resample bootstrap win rate) and reproduced 5-seed ERM (0.51310 ± 0.00270) by +0.06632.

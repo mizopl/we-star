@@ -6,6 +6,17 @@
 - **Checked scope:** `24,310 / 24,310` eight-party cuts over $\mathbb{F}_8$ (`0` rank-deficient cuts) and `24,310 / 24,310` eight-qudit (`24`-qubit) cuts of the $51$-qubit binary trace-symplectic graph state over $\mathbb{F}_2$ (`0` rank-deficient cuts)
 - **Certificate file:** `object/ame_17_8_pure_circulant_certificate.json` (`4,176` bytes, `sha256: 0bc632480b2bfb3a90117f0676e8894dc5972ea32cb315cd47e1d04077f20a28`)
 
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_constellation_light.svg">
+    <img alt="ame-states-open-cells-huber-table Obsidian knowledge constellation" src="./assets/we_star_constellation_light.svg" width="560">
+  </picture>
+  <br>
+  <sub><b>Obsidian Knowledge Constellation:</b> <code>ame-states-open-cells-huber-table</code> inside the <code>we*</code> research vault (<a href="./assets/we_star_constellation_dark.svg">dark</a> · <a href="./assets/we_star_constellation_light.svg">light</a>).</sub>
+</p>
+
 ## What
 
 Single-cell certificate for the open Huber-Wyderka table entry AME(17, 8) (quantum MDS code [[17, 0, 9]]_8, n = 17 parties of local dimension D = 8 = 2^3, sitting in the table's D in {2..10} column range where cell (n = 17, D = 8) is Blank at https://tp.nt.uni-siegen.de/ame/table.html), constructed as a symmetric 17x17 circulant graph state over GF(8) = GF(2)[w]/(w^3 + w + 1) with palindromic chord vector a = (1, 2, 5, 1, 5, 2, 2, 2) = (1, w, w^2+1, 1, w^2+1, w, w, w) and verified exhaustively across all C(17, 8) = 24,310 eight-party cuts over GF(8) (24,310 / 24,310 full rank 8, 0 rank-deficient cuts) and across all 24,310 eight-qudit (24-qubit) cuts of the 51-qubit binary trace-symplectic graph state [I_51 | B_51] over GF(2) (24,310 / 24,310 full rank 24).

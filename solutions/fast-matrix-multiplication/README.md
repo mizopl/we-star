@@ -4,6 +4,17 @@ Machine-verified Fast Matrix Multiplication (`FMM`) schemes discovered using the
 
 - **Machine-readable status index (Perminov `status.json` format):** [`status.json`](status.json)
 
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_constellation_light.svg">
+    <img alt="fast-matrix-multiplication Obsidian knowledge constellation" src="./assets/we_star_constellation_light.svg" width="560">
+  </picture>
+  <br>
+  <sub><b>Obsidian Knowledge Constellation:</b> <code>fast-matrix-multiplication</code> inside the <code>we*</code> research vault (<a href="./assets/we_star_constellation_dark.svg">dark</a> · <a href="./assets/we_star_constellation_light.svg">light</a>).</sub>
+</p>
+
 ## 1. Ten Ternary (`ZT`, $\{-1, 0, +1\}$) & Integer (`Z`) Rank Schemes (`zt_rank_schemes/`)
 
 | Shape $\langle m, n, p \rangle$ | Ring | New Rank | Previous `ZT` Rank (`matmulcatalog` / `FMM-Lille`) | $\Delta_{\text{ZT}}$ | File |

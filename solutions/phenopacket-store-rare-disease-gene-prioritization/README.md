@@ -1,5 +1,16 @@
 # Rare-Disease Unannotated Causal Gene Prioritization (`phenopacket-store-rare-disease-gene-prioritization`, Milestone `p2`): Symmetric Multi-Route Inference (`MARG-P2`)
 
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_constellation_light.svg">
+    <img alt="phenopacket-store-rare-disease-gene-prioritization Obsidian knowledge constellation" src="./assets/we_star_constellation_light.svg" width="560">
+  </picture>
+  <br>
+  <sub><b>Obsidian Knowledge Constellation:</b> <code>phenopacket-store-rare-disease-gene-prioritization</code> inside the <code>we*</code> research vault (<a href="./assets/we_star_constellation_dark.svg">dark</a> · <a href="./assets/we_star_constellation_light.svg">light</a>).</sub>
+</p>
+
 ## Scope, Limitations First & Verification Summary
 
 1. **Milestone `p2` Scope Boundary (`Limitations First`):** Scoped strictly to **Milestone `p2`** on pinned `monarch-initiative/phenopacket-store` release `0.1.27` (`2026-06-09`, `all_phenopackets.zip` `sha256: d0c70005bb09b87035087516252b6b539fbc0415be7c664b73c9cde7eedf205a`): prioritizing causal genes that have **zero** HPO annotations in pinned pre-corpus `HPOA v2026-06-06` (`2026-06-08`, deriving all OMIM and Orphanet links strictly from `genes_to_disease.txt` `sha256: 81e8d2e0bc1c1052c383614ad85388325deeacb4b9478c6d9585597f45602bac`) across the fixed `19,296` HGNC protein-coding gene space (`2026-05-01` monthly snapshot, verified `max date_modified == 2026-05-01`). Does **not** claim the full-corpus `Main Goal`, `p1` (`<= 3` HPO terms), or `p3` (temporal leakage audit). Note that `CONFIRMED_PARTIAL` in our companion submission records our own local three-skeptic review summary check (not upstream maintainer acceptance).

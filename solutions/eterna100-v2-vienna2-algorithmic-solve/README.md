@@ -8,6 +8,17 @@
 >
 > **Still stands:** the Full Win + `p1` (de novo `d_bp = 0` on #79 and #71) and `p2` (95/100 against DesiRNA's 92/100 in the public `results.tsv`). Files in `object/` are unchanged.
 
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/we_star_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/we_star_constellation_light.svg">
+    <img alt="eterna100-v2-vienna2-algorithmic-solve Obsidian knowledge constellation" src="./assets/we_star_constellation_light.svg" width="560">
+  </picture>
+  <br>
+  <sub><b>Obsidian Knowledge Constellation:</b> <code>eterna100-v2-vienna2-algorithmic-solve</code> inside the <code>we*</code> research vault (<a href="./assets/we_star_constellation_dark.svg">dark</a> · <a href="./assets/we_star_constellation_light.svg">light</a>).</sub>
+</p>
+
 ## What
 
 - **Target ID:** `eterna100-v2-vienna2-algorithmic-solve`
