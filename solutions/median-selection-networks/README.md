@@ -2,7 +2,7 @@
 
 ## Scope, Limitations First & Verification Summary
 
-- **Validation Tier:** `Tier B` (exact zero-error locally verified package; submitted upstream in [`bertdobbelaere/SorterHunter#17`](https://github.com/bertdobbelaere/SorterHunter/pull/17), awaiting maintainer review).
+- **Validation Tier:** `Tier A` (independently verified and **MERGED** upstream in [`bertdobbelaere/SorterHunter#17`](https://github.com/bertdobbelaere/SorterHunter/pull/17) on `2026-11-21` by `@bertdobbelaere`: *"All networks independently verified. Thanks for your contribution!"*).
 - **Limitations & Scope (`What This Does NOT Claim`):**
   1. **Depth Trade-Offs on the Four Minimum-Size Additions (`N = 28..31`):** `Median_28_103_17.json` (`-1` CE vs `104`) and `Median_29_106_20.json` (`-1` CE vs `107`) add `+3` layers (`D = 17` vs `14`, `D = 20` vs `17`), while `Median_30_117_18.json` (`-1` CE vs `118`) and `Median_31_120_21.json` (`-1` CE vs `121`) add `+2` layers (`D = 18` vs `16`, `D = 21` vs `19`). All prior lower-depth networks (`(104, 14)`, `(107, 17)`, `(118, 16)`, `(121, 19)`) remain undominated on the `(L, D)` Pareto frontier.
   2. **Dependent Odd-`N` Constructions:** `Median_23_81_12.json` is derived deterministically from `Median_24_84_11.json` (fixing wire `0` to `0`, propagating constants, appending `[11, 12]`, standardizing, and pruning dead gates). `Median_29_106_20.json`, `Median_29_112_15.json`, and `Median_31_120_21.json` are `+3` CE / `+3` D median-of-3 extensions of `Median_28_103_17.json`, `Median_28_109_12.json`, and `Median_30_117_18.json`.
@@ -45,5 +45,5 @@ Opening the **Central File** [`verify.py`](./verify.py) checks all `8` JSON netw
 
 ## Upstream Submission
 
-- Pull Request: [`bertdobbelaere/SorterHunter#17`](https://github.com/bertdobbelaere/SorterHunter/pull/17) (`8bb21b50`, `8` JSON files only under `Networks/Median/`).
+- Pull Request: [`bertdobbelaere/SorterHunter#17`](https://github.com/bertdobbelaere/SorterHunter/pull/17) (`8bb21b50`, **MERGED** `2026-11-21`, `8` JSON files only under `Networks/Median/`).
 - Machine-readable metadata: [`MANIFEST.json`](./MANIFEST.json) and [`SHA256SUMS`](./SHA256SUMS).
