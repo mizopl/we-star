@@ -7,12 +7,22 @@
 
 <p align="center">
   <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/fei_c71_obsidian_constellation_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/fei_c71_obsidian_constellation_light.svg">
+    <img alt="FEI C_71 location inside the 5,015-node we* Obsidian Vault knowledge constellation" src="./assets/fei_c71_obsidian_constellation_light.svg" width="560">
+  </picture>
+  <br>
+  <sub><b>Figure 1 · Obsidian Vault Constellation:</b> <code>FEI C_71</code> pinpointed inside the 5,015-node <code>we*</code> Obsidian knowledge galaxy (52 illuminated nodes &amp; 130 synapses across the <code>teorth/optimizationproblems</code> neighborhood) (<a href="./assets/fei_c71_obsidian_constellation_dark.svg">dark</a> · <a href="./assets/fei_c71_obsidian_constellation_light.svg">light</a>).</sub>
+</p>
+
+<p align="center">
+  <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/fei_c71_system_graph_dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/fei_c71_system_graph_light.svg">
     <img alt="FEI C_71 location on the we* epistemic system graph" src="./assets/fei_c71_system_graph_light.svg" width="880">
   </picture>
   <br>
-  <sub><b>System Graph Position:</b> <code>fei-c71</code> pinpointed near the living apex of the <code>we*</code> public epistemic trunk (<code>L-FC-001 -> 0 + PARETO_STEP</code>, cross-linked to sibling <code>teorth/optimizationproblems</code> branches <code>C_3a / C_3e</code>) (<a href="./assets/fei_c71_system_graph_dark.svg">dark</a> · <a href="./assets/fei_c71_system_graph_light.svg">light</a>).</sub>
+  <sub><b>Figure 2 · Epistemic System Graph:</b> <code>fei-c71</code> pinpointed near the living apex of the <code>we*</code> public chronological trunk (<code>L-FC-001 -> 0 + PARETO_STEP</code>, cross-linked to sibling <code>teorth/optimizationproblems</code> branches <code>C_3a / C_3e</code>) (<a href="./assets/fei_c71_system_graph_dark.svg">dark</a> · <a href="./assets/fei_c71_system_graph_light.svg">light</a>).</sub>
 </p>
 
 ---
