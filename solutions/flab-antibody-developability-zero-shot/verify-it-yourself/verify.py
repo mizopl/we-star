@@ -516,14 +516,14 @@ def verify_all(pkg_root: str) -> None:
     p3_poly = cert["p3_length_and_germline_confound_control"]["polyreactivity"][CLAIMED_METHOD]
     assert p3_tm["mean_matched_stratum"] == 0.4308
     assert p3_poly["mean_matched_stratum"] == 0.5262
-    print("  [PASS] Claimed Partial Wins p2 and p3 verified for single frozen method CLSS_Reg8_AllBP_IMGT_Z (Full Win and p1 not claimed).")
+    print("  [OK] Stored JSON summary audit for p2/p3 matches frozen certificate (full dataset recomputation lives in how-we-built-it/verify_full_benchmark.py).")
 
-    print("\n=== [6/6] Auditing B=1,000 Permutation Null Battery for CLSS_Reg8_AllBP_IMGT_Z ===")
+    print("\n=== [6/6] Auditing Stored B=1,000 Permutation Null Summary for CLSS_Reg8_AllBP_IMGT_Z ===")
     null_reg8 = cert["permutation_null_battery_reg8"]
     assert null_reg8["tm"]["method"] == CLAIMED_METHOD
     assert null_reg8["tm"]["n_permutations"] == 1000 and null_reg8["tm"]["empirical_p_value"] == 0.000999
     assert null_reg8["polyreactivity"]["n_permutations"] == 1000 and null_reg8["polyreactivity"]["empirical_p_value"] == 0.000999
-    print("  [PASS] Permutation null battery (B=1,000, p=0.000999) verified.")
+    print("  [OK] Stored permutation null summary (B=1,000, p=0.000999) consistent with SHA-256 bundle (see how-we-built-it/ for raw recomputation).")
     print("\nPASS")
 
 

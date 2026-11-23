@@ -394,34 +394,28 @@ def main() -> int:
         print("FAIL: verified bound count mismatch")
         return 1
 
-    # Verify post-receipt tier='lean' resolution on all 12 PR #194 Lean-wired bounds
-    certs_dir = os.path.join(ROOT, "certs")
-    had_certs_dir = os.path.isdir(certs_dir)
-    created_receipts: list[str] = []
-    try:
-        os.makedirs(certs_dir, exist_ok=True)
-        for lpath in lean_wired_paths:
-            with open(lpath, encoding="utf-8") as fh:
-                lsub = json.load(fh)
-            mod = lsub["lean"]["module"]
-            rec_path = os.path.join(certs_dir, f"lean-{mod.replace('.', '-')}.json")
-            if not os.path.exists(rec_path):
-                with open(rec_path, "w", encoding="utf-8") as rfh:
-                    json.dump({"module": mod, "ok": True, "log": ["verified"]}, rfh)
-                created_receipts.append(rec_path)
-        for lpath in lean_wired_paths:
-            with open(lpath, encoding="utf-8") as fh:
-                lsub = json.load(fh)
-            lres = stabrank_verify.verify_lean(lsub)
-            if lres is None or not lres.ok or lres.tier != "lean":
-                print(f"FAIL {os.path.basename(lpath)}: verify_lean returned {lres}")
-                return 1
-    finally:
-        for rp in created_receipts:
-            if os.path.exists(rp):
-                os.remove(rp)
-        if not had_certs_dir and os.path.isdir(certs_dir) and not os.listdir(certs_dir):
-            os.rmdir(certs_dir)
+    # Verify Lean-wired bound metadata against the bundled Lean 4 source modules (zero fabricated receipts)
+    mod_to_rel = {
+        "LeanProofs." + os.path.splitext(os.path.basename(rp))[0]: rp
+        for rp in EXPECTED_LEAN_THEOREMS
+    }
+    for lpath in lean_wired_paths:
+        with open(lpath, encoding="utf-8") as fh:
+            lsub = json.load(fh)
+        mod = lsub["lean"]["module"]
+        thm = lsub["lean"]["theorem"]
+        rel_path = mod_to_rel.get(mod)
+        if not rel_path or thm not in EXPECTED_LEAN_THEOREMS.get(rel_path, []):
+            print(f"FAIL {os.path.basename(lpath)}: Lean wiring ({mod}.{thm}) not in audited Lean 4 module registry")
+            return 1
+        full_lean_path = os.path.join(ROOT, rel_path)
+        if not os.path.isfile(full_lean_path):
+            print(f"FAIL {os.path.basename(lpath)}: missing Lean source {rel_path}")
+            return 1
+        src_clean = strip_lean_comments(open(full_lean_path, encoding="utf-8").read())
+        if not re.search(rf"\btheorem\s+{re.escape(thm)}\b", src_clean):
+            print(f"FAIL {os.path.basename(lpath)}: theorem {thm} not declared in {rel_path}")
+            return 1
 
     print("[4/4] Auditing 10 zero-axiom Lean 4 proof modules (PR #194, 0 sorryAx)...")
     total_theorems = 0

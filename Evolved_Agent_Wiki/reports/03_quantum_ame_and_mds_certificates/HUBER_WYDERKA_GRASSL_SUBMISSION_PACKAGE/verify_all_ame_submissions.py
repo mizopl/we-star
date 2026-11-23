@@ -644,10 +644,26 @@ def main():
 
         elif fname == "ame_table_n2_to_20_status_and_estimates.json":
             sc = d["summary_counts"]
-            tot = sc.get("total_cells", 266)
-            ok = (tot == 266) and (d.get("open_cells_count", 0) > 0)
+            all_b = sc["all_n2_20"]
+            tot = int(all_b["total"])
+            ex_c = int(all_b["exists"])
+            ng_c = int(all_b["nogo"])
+            op_c = int(all_b["open"])
+            tbl = d["table"]
+            tbl_cells = sum(len(row) for row in tbl.values())
+            open_list = d["open_cells"]
+            ok = (
+                tot == 266
+                and ex_c + ng_c + op_c == tot
+                and tbl_cells == tot
+                and len(open_list) == int(d["open_cells_count"]) == op_c
+            )
+            entry["kind"] = "status_table_audit"
             entry["status"] = "PASS" if ok else "FAIL"
-            entry["details"] = f"266-cell audit: total={tot}, resolved={tot - d['open_cells_count']}, open={d['open_cells_count']}"
+            entry["details"] = (
+                f"Status-table consistency audit (non-certificate summary): "
+                f"table_cells={tbl_cells}/{tot}, exists={ex_c}, nogo={ng_c}, open={op_c}"
+            )
             all_ok = all_ok and ok
 
         else:
@@ -659,17 +675,24 @@ def main():
         results.append(entry)
 
     elapsed = time.time() - t0
+    math_certs = sum(1 for r in results if r.get("kind") != "status_table_audit")
+    meta_tables = len(results) - math_certs
     if not os.environ.get("ZERO_TRUST_SINGLE_OBJECT"):
         summary = {
             "verified_at_epoch": int(time.time()),
             "elapsed_seconds": round(elapsed, 3),
-            "total_certificates": len(results),
+            "total_files": len(results),
+            "mathematical_certificates": math_certs,
+            "status_table_audits": meta_tables,
             "all_pass": all_ok,
             "certificates": results,
         }
         with open(OUT_REPORT, "w") as f:
             json.dump(summary, f, indent=2)
-    print(f"\n=== ALL {len(results)} CERTIFICATES EXHAUSTIVELY VERIFIED: all_pass={all_ok} in {elapsed:.2f}s ===")
+    print(
+        f"\n=== VERIFIED {math_certs} MATHEMATICAL CERTIFICATES + {meta_tables} STATUS-TABLE AUDIT(S): "
+        f"all_pass={all_ok} in {elapsed:.2f}s ==="
+    )
     if not all_ok:
         print("FAIL")
         raise SystemExit(1)

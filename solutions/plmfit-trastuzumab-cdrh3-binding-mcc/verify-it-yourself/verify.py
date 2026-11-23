@@ -327,8 +327,7 @@ def verify_track(
 
 
 def main():
-    if "--corrupt" in sys.argv:
-        fail("Simulated corruption flag (--corrupt) triggered rejection.")
+    corrupt_mode = "--corrupt" in sys.argv
 
     print("========================================================================")
     print("V3R1T4S Verification — plmfit-trastuzumab-cdrh3-binding-mcc (Full Win)")
@@ -344,6 +343,12 @@ def main():
 
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     cert = json.loads(cert_path.read_text(encoding="utf-8"))
+
+    if corrupt_mode:
+        # Adversarial negative control: mutate real split counts and let verify_manifest reject it
+        manifest["split_row_counts"] = [0, 0, 0]
+        verify_manifest(manifest)
+        fail("Adversarial --corrupt mutation unexpectedly passed verify_manifest")
 
     verify_manifest(manifest)
     print("[OK] object/manifest_sha256.json commitments and split counts [173, 1, 36386] verified.")
@@ -403,6 +408,7 @@ def main():
     data_env = os.environ.get("HERH3_DATA_PATH", "")
     cand_paths = [Path(data_env)] if data_env else []
     cand_paths.append(PKG_ROOT / "how-we-built-it" / "data" / "herH3_data_full.csv")
+    live_checked = False
     for cp in cand_paths:
         if cp.is_file():
             raw_d = cp.read_bytes()
@@ -429,7 +435,14 @@ def main():
             if abs(float(np.mean(mccs_b)) - 0.421004) > 1e-5:
                 fail("Live recomputed Track B MCC against herH3_data_full.csv did not match 0.421004")
             print(f"[OK] Live ground-truth recomputation against herH3_data_full.csv verified (MCC = {np.mean(mccs_b):.6f}).")
+            live_checked = True
             break
+
+    if not live_checked:
+        print(
+            "[NOTE] External herH3_data_full.csv not mounted (set HERH3_DATA_PATH for raw ground-truth MCC recomputation); "
+            "offline SHA-256 & prediction-matrix consistency audit passed."
+        )
 
     print("PASS")
 

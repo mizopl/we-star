@@ -342,8 +342,7 @@ def verify_p3_certificates(p3: dict, cert: dict, ckpt: dict) -> None:
 
 
 def main() -> None:
-    if "--corrupt" in sys.argv:
-        fail("Simulated corruption flag (--corrupt) triggered rejection.")
+    corrupt_mode = "--corrupt" in sys.argv
 
     print("========================================================================")
     print("V3R1T4S Verification — eterna100-v2-vienna2-algorithmic-solve (Full Win)")
@@ -358,7 +357,13 @@ def main() -> None:
         ckpt = json.loads((OBJ_DIR / "ckpt_best.json").read_text(encoding="utf-8"))
         p3 = json.loads((OBJ_DIR / "p3_undesignability_certificates.json").read_text(encoding="utf-8"))
     except Exception as e:
-        fail(f"JSON parse failure in object/: {e}")
+        fail(f"Failed loading JSON artifacts: {e}")
+
+    if corrupt_mode:
+        # Adversarial negative control: mutate real puzzle data and let verify_manifest reject it
+        manifest["unsolved_7_v2_puzzle_ids"] = [-1]
+        verify_manifest(manifest, ckpt)
+        fail("Adversarial --corrupt mutation unexpectedly passed verify_manifest")
 
     verify_manifest(manifest, ckpt)
     print("[OK] object/manifest_sha256.json commitments and 100-puzzle structural vectors verified.")

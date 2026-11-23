@@ -151,7 +151,7 @@ def run_verification():
     print(f"                              Variant B = {aucs_full[idx_cv20].mean():.6f} (+{delta_vb_net:.6f} >= 0.02 vs NetMHC, +{delta_vb_pan:.6f} vs NetMHCpan) -> PASS")
     print(f"Partial Win p2 (Gap Shrink) : cv_rnd = {cv_oof.mean():.6f}, blind = {aucs_full.mean():.6f}, gap = {gap_vb:.6f}")
     print(f"                              Shrinkage vs NetMHCpan = +{shrink_table_vb:.6f} (table) / +{shrink_paper_vb:.6f} (paper) >= 0.01 -> PASS")
-    print(f"Partial Win p3 (Leakage)    : 42,038 post-2009 rows audited; f=0% (0.888874) -> f=10% (0.902231) -> f=100% (0.980744, +0.091869) -> PASS")
+    print(f"Partial Win p3 (Leakage)    : 42,038 post-2009 rows stored-audit summary (f=0%: 0.888874 -> 10%: 0.902231 -> 100%: 0.980744; raw recomputation in how-we-built-it/verify_p2_optimism_gap.py)")
     print("PASS")
 
 

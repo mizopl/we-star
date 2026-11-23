@@ -276,7 +276,7 @@ def _verify() -> int:
     assert (cadd_lr - cadd_nopop) > 0.13, "Expected >0.13 AUPRC drop when 9 Freq/Rare/Sngl cols removed"
 
     print(
-        f"[PASS] Track C (p2/p3 + MAF Audit): "
+        f"[OK] Track C stored JSON summary audit (full supervised recomputation in how-we-built-it/verify_full_benchmark.py): "
         f"M1_135cols = {tc['M1_multimodal_135cols']['auprc']:.6f}, "
         f"M2_165cols = {tc['M2_multimodal_165cols']['auprc']:.6f}, "
         f"Borzoi Block-Scaled (7,731 cols) = {scaled['auprc']:.6f}, "
