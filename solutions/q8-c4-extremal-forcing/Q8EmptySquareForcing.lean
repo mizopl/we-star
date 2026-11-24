@@ -1,24 +1,27 @@
 /-
   Q8EmptySquareForcing.lean
-  Self-contained, zero-dependency Lean 4 formalization of:
-    1. Exact Empty-Square Forcing Identity for any C_4-free subgraph of Q_n:
+  Self-contained, zero-dependency Lean 4 formalization on the ABSTRACT incidence
+  structure `C4FreeCounts` (whose double-counting hypotheses `h_tot`, `h_inc`, `h_wedge`
+  are assumed as structure fields rather than derived from a concrete graph object):
+    1. Exact Empty-Square Forcing Identity:
          n2_opp + total_sq + W = n0 + (n - 1) * m.
     2. Exact Convexity Defect Identity on Q_8:
          W + 3840 = 10 * m + sumDefect ds,
        with sumDefect ds = 0 <-> every vertex has degree 5 or 6.
     3. Mandatory Empty-Square Theorems for Q_8 at m = 683 (n0 = 1 + n2_opp + sumDefect ds >= 1)
        and m >= 684 (n0 >= 4 + n2_opp + sumDefect ds >= 4).
-    4. Exact upper bound g(8) <= 682 for all odd-square C_4-free subgraphs of Q_8
-       (in fact for all C_4-free subgraphs with n0 = 0 and n2_opp = 0).
+    4. Exact upper bound g(8) <= 682 for any `C4FreeCounts` with n0 = 0 and n2_opp = 0
+       (in particular any odd-square subgraph).
     5. Exact dichotomy at m = 682:
-       - Every odd-square (or n0 = n2_opp = 0) 682-edge subgraph has sumDefect = 2 (W = 2982),
+       - Any `C4FreeCounts` at m = 682 with n0 = n2_opp = 0 has sumDefect = 2 (W = 2982),
          so cannot have all degrees in {5, 6}.
-       - Every {5, 6}-degree 682-edge subgraph (sumDefect = 0, W = 2980) must satisfy
-         n2_opp = 2 + n0 >= 2 and therefore cannot be odd-square.
+       - Any `C4FreeCounts` at m = 682 with all degrees in {5, 6} (sumDefect = 0, W = 2980)
+         must satisfy n2_opp = 2 + n0 >= 2 and therefore cannot be odd-square.
 
   Verification guarantees:
-    - Zero external dependencies (pure Lean 4 core).
-    - Zero `sorryAx`, zero `native_decide`, zero `@[implemented_by]`, `autoImplicit := false`.
+    - Zero external dependencies (pure Lean 4 core; tested on Lean 4.36.0).
+    - Standard Lean 4 axioms only (`propext`, `Classical.choice`, `Quot.sound`);
+      zero `sorryAx`, zero `native_decide`, zero `@[implemented_by]`, `autoImplicit := false`.
 -/
 
 set_option autoImplicit false
@@ -133,8 +136,10 @@ theorem q8_convexity_identity (ds : List Nat) (m : Nat)
   omega
 
 /-- Abstract C_4-free square & wedge double-counting invariants for Q_n.
-    Any C_4-free subgraph H of Q_n with m edges, total_sq = C(n,2) * 2^(n-2) 4-cycles,
-    and wedge sum W = sum_v C(deg(v), 2) satisfies:
+    Motivation: a C_4-free subgraph H of Q_n with m edges, total_sq = C(n,2) * 2^(n-2)
+    4-cycles, and wedge sum W = sum_v C(deg(v), 2) satisfies the three equations below.
+    In this file those equations are ASSUMED as abstract structure fields (not derived
+    from a concrete graph representation):
       h_tot:   n0 + n1 + n2_opp + n2_adj + n3 = total_sq
       h_inc:   n1 + 2 * (n2_opp + n2_adj) + 3 * n3 = (n - 1) * m
       h_wedge: n2_adj + 2 * n3 = W
@@ -149,7 +154,8 @@ structure C4FreeCounts (n total_sq m W : Nat) where
   h_inc   : n1 + 2 * (n2_opp + n2_adj) + 3 * n3 = (n - 1) * m
   h_wedge : n2_adj + 2 * n3 = W
 
-/-- Theorem 1: Exact Empty-Square Forcing Identity in Nat for any C_4-free subgraph of Q_n:
+/-- Theorem 1 (abstract `C4FreeCounts`): every `C4FreeCounts n total_sq m W` instance
+    satisfies the exact Empty-Square Forcing Identity in Nat:
       n2_opp + total_sq + W = n0 + (n - 1) * m. -/
 theorem empty_square_forcing_identity {n total_sq m W : Nat}
     (c : C4FreeCounts n total_sq m W) :
@@ -159,8 +165,8 @@ theorem empty_square_forcing_identity {n total_sq m W : Nat}
   have h3 := c.h_wedge
   omega
 
-/-- Theorem 2 (Q_8 at m = 683): Every 683-edge C_4-free subgraph of Q_8 satisfies
-    n0 = 1 + n2_opp + sumDefect ds >= 1 (at least one completely empty 4-cycle!). -/
+/-- Theorem 2 (Q_8 at m = 683, abstract `C4FreeCounts`): Every `C4FreeCounts` instance
+    at m = 683 on 256 vertices satisfies n0 = 1 + n2_opp + sumDefect ds >= 1. -/
 theorem q8_683_forces_empty_square (ds : List Nat)
     (hlen : ds.length = 256) (hhand : ds.sum = 2 * 683)
     (c : C4FreeCounts 8 1792 683 (sumChoose2 ds)) :
@@ -169,8 +175,8 @@ theorem q8_683_forces_empty_square (ds : List Nat)
   have hid := empty_square_forcing_identity c
   omega
 
-/-- Theorem 3 (Q_8 at m >= 684): Every C_4-free subgraph of Q_8 with m >= 684 edges
-    satisfies n0 >= 4 + n2_opp + sumDefect ds >= 4. -/
+/-- Theorem 3 (Q_8 at m >= 684, abstract `C4FreeCounts`): Every `C4FreeCounts` instance
+    at m >= 684 on 256 vertices satisfies n0 >= 4 + n2_opp + sumDefect ds >= 4. -/
 theorem q8_ge684_forces_empty_squares (ds : List Nat) (m : Nat)
     (hlen : ds.length = 256) (hhand : ds.sum = 2 * m) (hm : m ≥ 684)
     (c : C4FreeCounts 8 1792 m (sumChoose2 ds)) :
@@ -179,9 +185,9 @@ theorem q8_ge684_forces_empty_squares (ds : List Nat) (m : Nat)
   have hid := empty_square_forcing_identity c
   omega
 
-/-- Theorem 4 (Exact Upper Bound g(8) <= 682 for Odd-Square Subgraphs of Q_8):
-    Any C_4-free subgraph of Q_8 with n0 = 0 and n2_opp = 0 (in particular, any odd-square
-    subgraph) has at most 682 edges. -/
+/-- Theorem 4 (Exact Upper Bound g(8) <= 682, abstract `C4FreeCounts`):
+    Any `C4FreeCounts` instance on 256 vertices with n0 = 0 and n2_opp = 0
+    (in particular, any odd-square incidence count) satisfies m <= 682. -/
 theorem q8_odd_square_upper_682 (ds : List Nat) (m : Nat)
     (hlen : ds.length = 256) (hhand : ds.sum = 2 * m)
     (c : C4FreeCounts 8 1792 m (sumChoose2 ds))
@@ -191,9 +197,9 @@ theorem q8_odd_square_upper_682 (ds : List Nat) (m : Nat)
   have hid := empty_square_forcing_identity c
   omega
 
-/-- Theorem 5a (682 Odd-Square Defect Forcing):
-    Every odd-square (or n0 = n2_opp = 0) 682-edge subgraph of Q_8 MUST have
-    sumDefect ds = 2 (W = 2982), so it CANNOT have all vertex degrees in {5, 6}. -/
+/-- Theorem 5a (682 Odd-Square Defect Forcing, abstract `C4FreeCounts`):
+    Any `C4FreeCounts` instance at m = 682 with n0 = n2_opp = 0 MUST have
+    sumDefect ds = 2 (W = 2982), so not all entries of ds lie in {5, 6}. -/
 theorem q8_682_odd_square_forces_defect_2 (ds : List Nat)
     (hlen : ds.length = 256) (hhand : ds.sum = 2 * 682)
     (c : C4FreeCounts 8 1792 682 (sumChoose2 ds))
@@ -209,9 +215,9 @@ theorem q8_682_odd_square_forces_defect_2 (ds : List Nat)
     omega
   exact ⟨hdef, hW, hnot56⟩
 
-/-- Theorem 5b (682 Zero-Defect {5,6} Dichotomy):
-    Any 682-edge C_4-free subgraph of Q_8 with all vertex degrees in {5, 6}
-    MUST satisfy n2_opp = 2 + n0 >= 2 and therefore CANNOT be odd-square. -/
+/-- Theorem 5b (682 Zero-Defect {5,6} Dichotomy, abstract `C4FreeCounts`):
+    Any `C4FreeCounts` instance at m = 682 with all entries of ds in {5, 6}
+    MUST satisfy n2_opp = 2 + n0 >= 2 and therefore cannot have n2_opp = 0. -/
 theorem q8_682_deg56_forces_n2_opp_ge_2 (ds : List Nat)
     (hlen : ds.length = 256) (hhand : ds.sum = 2 * 682)
     (h56 : ∀ x ∈ ds, x = 5 ∨ x = 6)

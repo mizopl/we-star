@@ -2,50 +2,71 @@
 """Cold-verifiable standalone exact oracle for C4-free subgraphs of hypercubes Q_n (n=4..8)
 plus exact F2 gauge-defect Degree-Blocking Identity & exhaustive 14-orbit Case 5A exclusion.
 
-Checks (zero external dependencies, Python 3.10+ stdlib only):
+Requires Python >= 3.10 (zero external dependencies; stdlib only).
+
+Checks:
   1. Valid hypercube edges (0 <= u < v < 2^n, popcount(u ^ v) == 1, no duplicates).
-  2. Exact C4-freeness via BOTH square enumeration AND common-neighbor counting (dual independent check).
+  2. Exact C4-freeness via BOTH square enumeration AND common-neighbor counting (dual check).
   3. Exact structural invariants: degree histogram, parity-split profiles (P0, P1),
      square-edge counts (n0, n1, n2_opp, n2_adj, n3, n4), inclusion maximality,
+     min_x7 (minimum number of blocking 3-paths over all missing hypercube edges),
      and the exact Empty-Square Forcing Identity:
          n2_opp - n0 == (n - 1) * |E| - C(n, 2) * 2^(n - 2) - sum_v C(d(v), 2).
-  4. On every odd-square Q_8 witness: exact F2 Degree-Blocking Identity across all missing edges:
+  4. In default atlas mode: requires the exact set of all 10 expected atlas/*.edges files
+     and verifies every file against its pinned edge count, odd-square flag, square counts,
+     wedge sum W, convexity defect Delta_deg, min_x7, and canonical SHA-256.
+  5. On every odd-square Q_8 witness: exact F2 Degree-Blocking Identity across all missing edges:
          deg(u) + deg(v) == 7 + b_{H_0}(e) - q_opp(e).
-  5. Exhaustive 14-orbit Stab_{Aut(Q_8)}(f_1) verification of Case 5A:
-     NO 683-edge C_4-free subgraph of Q_8 lies at Hamming distance |delta| = 5 (a=3, r=2)
-     from ANY 682-edge odd-square graph H_0 in O_8 (0 survivors across all 1,023 pairs).
-  6. Built-in `--corrupt` negative self-test that injects a C4 into an edge file and exits with rc=1.
+  6. Exhaustive 14-orbit Stab_{Aut(Q_8)}(f_1) elimination of the 31 candidate Case 5A triples
+     (given the paper reduction in README §1.B.5 for |delta| = 5 minimal, a=3, r=2, |E(H_0)| = 682:
+     0 survivors across all 1,023 pairs).
+  7. Built-in `--corrupt` negative self-test that injects a C4 (causing C4 > 0) and exits with rc=1.
 
 Usage:
-  env -i PATH=/usr/bin:/bin:/opt/homebrew/bin python3 verify.py
-  env -i PATH=/usr/bin:/bin:/opt/homebrew/bin python3 verify.py --corrupt
-  env -i PATH=/usr/bin:/bin:/opt/homebrew/bin python3 verify.py --min-edges 682 atlas/q8_682_*.edges
+  env -i PATH=/opt/homebrew/bin:/usr/bin:/bin python3 verify.py
+  env -i PATH=/opt/homebrew/bin:/usr/bin:/bin python3 verify.py --corrupt
+  env -i PATH=/opt/homebrew/bin:/usr/bin:/bin python3 verify.py --min-edges 682 atlas/q8_682_*.edges
 """
 from __future__ import annotations
+
+import sys
+
+if sys.version_info < (3, 10):
+    sys.stderr.write(
+        f"ERROR: Python >= 3.10 required (found {sys.version_info.major}.{sys.version_info.minor}).\n"
+    )
+    raise SystemExit(2)
 
 import argparse
 import hashlib
 import json
 import math
-import sys
 import time
 from collections import Counter
 from itertools import combinations
 from pathlib import Path
 
 
-EXPECTED_ATLAS_EDGES: dict[str, int] = {
-    "q8_675_maximal_phantom_n0_4_n2a_94.edges": 675,
-    "q8_678_maximal_blocked_n0_5_n2a_21.edges": 678,
-    "q8_678_maximal_high_n2a_78_n0_0.edges": 678,
-    "q8_680_maximal_blocked_n0_2_n2a_24.edges": 680,
-    "q8_681_maximal_blocked_empty_sq_n0_1.edges": 681,
-    "q8_682_deg41_nonodd_n2o1_n2a11.edges": 682,
-    "q8_682_deg42_nonodd_n2o0_n2a12.edges": 682,
-    "q8_682_deg56_zero_defect_n2o2_n2a10.edges": 682,
-    "q8_682_odd_deg7_vertex.edges": 682,
-    "q8_682_odd_x7min1_pivot_bridge.edges": 682,
+# Pinned invariants for all 10 inclusion-maximal witnesses in atlas/
+# Tuple: (edges, odd_square, (n0, n1, n2_opp, n2_adj, n3), w_sum, delta_deg, min_x7, full_sha256)
+EXPECTED_ATLAS: dict[str, tuple[int, bool, tuple[int, int, int, int, int], int, int, int, str]] = {
+    "q8_675_maximal_phantom_n0_4_n2a_94.edges": (675, False, (4, 265, 15, 94, 1414), 2922, 12, 1, "6e484827d5433367784eb8514d0a62cff20c297e8c67d10799a8618e858fc2eb"),
+    "q8_678_maximal_blocked_n0_5_n2a_21.edges": (678, False, (5, 293, 8, 21, 1465), 2951, 11, 1, "0068718824c46a7799e693cdb1b56bc22cd10dd1bb72bdcb5abda7ef7e5c3448"),
+    "q8_678_maximal_high_n2a_78_n0_0.edges": (678, False, (0, 273, 6, 78, 1435), 2948, 8, 1, "7e5ad9fb2310b74fc0ae79830689a3905d7b26ff9443cd90ec3af321aaebe049"),
+    "q8_680_maximal_blocked_n0_2_n2a_24.edges": (680, False, (2, 291, 4, 24, 1471), 2966, 6, 1, "a9a21b8bf56fa13a863246abba071c7047364a20102a14e7fa2d67c81baa8d2e"),
+    "q8_681_maximal_blocked_empty_sq_n0_1.edges": (681, False, (1, 295, 2, 14, 1480), 2974, 4, 1, "0af37457926621817a9b22f905eaedeaffb4b14ebf310bde0e750da5a98b03e0"),
+    "q8_682_deg41_nonodd_n2o1_n2a11.edges": (682, False, (0, 295, 1, 11, 1485), 2981, 1, 1, "d9f494b089a67932cadde3c1b092e9722cbb638fdec225bf73e8bffebe4ba94c"),
+    "q8_682_deg42_nonodd_n2o0_n2a12.edges": (682, False, (0, 295, 0, 12, 1485), 2982, 2, 1, "133531616e98dfa59786c6432a7e5807ba452e154b4df60d9f0bde42c1f182bf"),
+    "q8_682_deg56_zero_defect_n2o2_n2a10.edges": (682, False, (0, 295, 2, 10, 1485), 2980, 0, 1, "31b3bdf85cfbf573f9817e0c74b0d5ef2951910006d75d59909176a84b025855"),
+    "q8_682_odd_deg7_vertex.edges": (682, True, (0, 301, 0, 0, 1491), 2982, 2, 3, "eb026494fedc1c79fb53a690e15805e22cae17bcbd0ec3007d62e1a02a670d22"),
+    "q8_682_odd_x7min1_pivot_bridge.edges": (682, True, (0, 301, 0, 0, 1491), 2982, 2, 1, "e08abf55234db28da008f9ec95bf1a1f1c82793a4186534cb68a432960ed7814"),
 }
+
+
+def _require(cond: bool, msg: str) -> None:
+    """Unstrippable invariant check (remains active under python3 -O)."""
+    if not cond:
+        raise ValueError(msg)
 
 
 def load_edges(path: Path, n: int) -> list[tuple[int, int]]:
@@ -57,18 +78,14 @@ def load_edges(path: Path, n: int) -> list[tuple[int, int]]:
         if not line or line.startswith("#"):
             continue
         parts = line.replace(",", " ").split()
-        if len(parts) < 2:
-            raise ValueError(f"{path}:{lineno}: malformed edge line {raw!r}")
+        _require(len(parts) == 2, f"{path}:{lineno}: expected exactly 2 vertex tokens, got {raw!r}")
         u, v = int(parts[0]), int(parts[1])
         if u > v:
             u, v = v, u
-        if not (0 <= u < n_verts and 0 <= v < n_verts):
-            raise ValueError(f"{path}:{lineno}: vertex out of range for Q_{n}: ({u}, {v})")
+        _require(0 <= u < n_verts and 0 <= v < n_verts, f"{path}:{lineno}: vertex out of range for Q_{n}: ({u}, {v})")
         diff = u ^ v
-        if diff == 0 or (diff & (diff - 1)) != 0:
-            raise ValueError(f"{path}:{lineno}: non-hypercube edge ({u}, {v})")
-        if (u, v) in seen:
-            raise ValueError(f"{path}:{lineno}: duplicate edge ({u}, {v})")
+        _require(diff != 0 and (diff & (diff - 1)) == 0, f"{path}:{lineno}: non-hypercube edge ({u}, {v})")
+        _require((u, v) not in seen, f"{path}:{lineno}: duplicate edge ({u}, {v})")
         seen.add((u, v))
         edges.append((u, v))
     return edges
@@ -78,18 +95,15 @@ def analyze_edges(edges: list[tuple[int, int]], n: int) -> dict:
     t0 = time.perf_counter()
     n_verts = 1 << n
     edge_set = set(edges)
-    if len(edge_set) != len(edges):
-        raise ValueError("Duplicate edges detected")
+    _require(len(edge_set) == len(edges), "Duplicate edges detected")
 
     adj = [0] * n_verts
     deg = [0] * n_verts
     dim_cnt = [0] * n
     for u, v in edges:
-        if u >= v:
-            raise ValueError(f"Unnormalized edge ({u}, {v})")
+        _require(u < v, f"Unnormalized edge ({u}, {v})")
         diff = u ^ v
-        if diff == 0 or (diff & (diff - 1)) != 0:
-            raise ValueError(f"Non-hypercube edge ({u}, {v})")
+        _require(diff != 0 and (diff & (diff - 1)) == 0, f"Non-hypercube edge ({u}, {v})")
         d = diff.bit_length() - 1
         adj[u] |= (1 << d)
         adj[v] |= (1 << d)
@@ -139,13 +153,14 @@ def analyze_edges(edges: list[tuple[int, int]], n: int) -> dict:
                 w = u ^ (1 << i) ^ (1 << j)
                 if (adj[w] & (1 << i)) and (adj[w] & (1 << j)):
                     c4_common += 1
-    assert c4_common % 4 == 0
+    _require(c4_common % 4 == 0, f"Internal C4 symmetry count not divisible by 4: {c4_common}")
     c4_common //= 4
-    assert c4_common == n4, f"Dual C4 check mismatch: {c4_common} vs {n4}"
+    _require(c4_common == n4, f"Dual C4 check mismatch: {c4_common} vs {n4}")
 
-    # Inclusion maximality & odd-square Degree-Blocking Identity check
+    # Inclusion maximality, min_x7 & odd-square Degree-Blocking Identity check
     is_odd = (n0 == 0 and n2_opp == 0 and n2_adj == 0 and n4 == 0)
     addable = 0
+    min_x7: int | None = None
     deg_block_max_err = 0
     missing_checked = 0
     for v in range(n_verts):
@@ -167,6 +182,8 @@ def analyze_edges(edges: list[tuple[int, int]], n: int) -> dict:
                         b_cnt += 1
                     elif eo and not ev and not eu:
                         q_opp += 1
+                if min_x7 is None or b_cnt < min_x7:
+                    min_x7 = b_cnt
                 if b_cnt == 0:
                     addable += 1
                 if is_odd:
@@ -174,17 +191,17 @@ def analyze_edges(edges: list[tuple[int, int]], n: int) -> dict:
                     if err > deg_block_max_err:
                         deg_block_max_err = err
     if is_odd:
-        assert deg_block_max_err == 0, f"Degree-Blocking Identity failed: max_err={deg_block_max_err}"
+        _require(deg_block_max_err == 0, f"Degree-Blocking Identity failed: max_err={deg_block_max_err}")
 
     # Exact Empty-Square Forcing Identity verification (when C4-free)
     m = len(edges)
     w_sum = sum(d * (d - 1) // 2 for d in deg)
     total_sq = math.comb(n, 2) * (1 << (n - 2))
-    assert n0 + n1 + n2_opp + n2_adj + n3 + n4 == total_sq
+    _require(n0 + n1 + n2_opp + n2_adj + n3 + n4 == total_sq, "Square partition sum mismatch")
     if n4 == 0:
         lhs = n2_opp - n0
         rhs = (n - 1) * m - total_sq - w_sum
-        assert lhs == rhs, f"Identity failed: {lhs} != {rhs}"
+        _require(lhs == rhs, f"Empty-Square Forcing Identity failed: {lhs} != {rhs}")
 
     q, r = divmod(2 * m, n_verts)
     w_min = (n_verts - r) * (q * (q - 1) // 2) + r * ((q + 1) * q // 2)
@@ -207,6 +224,7 @@ def analyze_edges(edges: list[tuple[int, int]], n: int) -> dict:
         "c4_free": (n4 == 0),
         "inclusion_maximal": (addable == 0),
         "addable_edges": addable,
+        "min_x7": min_x7,
         "odd_square": is_odd,
         "deg_block_max_err": deg_block_max_err if is_odd else None,
         "missing_edges_checked": missing_checked,
@@ -243,9 +261,9 @@ def analyze_edges(edges: list[tuple[int, int]], n: int) -> dict:
 
 
 def verify_case5a_exclusion() -> dict:
-    """Exhaustive 14-orbit Stab_{Aut(Q_8)}(f_1) verification of Case 5A:
-    |delta| = 5 minimal, a = 3 added edges, r = 2 removed edges, |E(H_0)| = 682.
-    Proves 0 surviving triples across all 1,023 pairs (f_1, f_2).
+    """Exhaustive 14-orbit Stab_{Aut(Q_8)}(f_1) elimination of the 31 candidate Case 5A triples
+    (given the paper reduction in README §1.B.5 for |delta| = 5 minimal, a = 3, r = 2,
+    |E(H_0)| = 682): checks 0 surviving triples across all 1,023 pairs (f_1, f_2).
     """
     t0 = time.perf_counter()
     edges: list[tuple[int, int, int]] = []
@@ -281,7 +299,7 @@ def verify_case5a_exclusion() -> dict:
     # Verify canonical Clifford-sign odd-square reference x_ref on all 1,792 squares
     x_ref = [bin(u & ((1 << d) - 1)).count("1") % 2 for (u, _, d) in edges]
     for sq in squares:
-        assert sum(x_ref[e] for e in sq) % 2 == 1
+        _require(sum(x_ref[e] for e in sq) % 2 == 1, "x_ref failed odd-square check")
 
     f1 = eidx[(0, 1)]
     orbits: dict[tuple[str, int], list[int]] = {}
@@ -295,8 +313,8 @@ def verify_case5a_exclusion() -> dict:
             key = ("orth", ((u >> 1) & ~(1 << (d - 1))).bit_count())
         orbits.setdefault(key, []).append(f2)
 
-    assert len(orbits) == 14
-    assert sum(len(v) for v in orbits.values()) == 1023
+    _require(len(orbits) == 14, f"Expected 14 Stab(f1) orbits, got {len(orbits)}")
+    _require(sum(len(v) for v in orbits.values()) == 1023, "Orbit sizes do not sum to 1023")
 
     survivors = 0
     triples_checked = 0
@@ -343,17 +361,20 @@ def verify_case5a_exclusion() -> dict:
                 continue
 
             if fixed_d4 is None:
-                u1, v1, _ = edges[e1]
-                u2, v2, _ = edges[e2]
-                u3, v3, _ = edges[e3]
+                # Exact complete enumeration of ALL vertex covers (hitting sets) of size <= 2
+                # over the endpoints of {e1, e2, e3}.
+                ep1 = {edges[e1][0], edges[e1][1]}
+                ep2 = {edges[e2][0], edges[e2][1]}
+                ep3 = {edges[e3][0], edges[e3][1]}
+                all_v = sorted(ep1 | ep2 | ep3)
                 d4_list: list[set[int]] = []
-                for a in (u1, v1):
-                    if a in (u2, v2) and a in (u3, v3):
+                for a in all_v:
+                    if a in ep1 and a in ep2 and a in ep3:
                         d4_list.append({a})
-                    else:
-                        for b in (u2, v2):
-                            if a in (u3, v3) or b in (u3, v3):
-                                d4_list.append({a, b})
+                for a, b in combinations(all_v, 2):
+                    s = {a, b}
+                    if (s & ep1) and (s & ep2) and (s & ep3):
+                        d4_list.append(s)
                 if not d4_list:
                     continue
             else:
@@ -415,8 +436,8 @@ def verify_case5a_exclusion() -> dict:
     }
 
 
-def corrupt_edges(edges: list[tuple[int, int]], n: int) -> list[tuple[int, int]]:
-    """Inject one missing edge that closes a 3-edge path into a C4."""
+def corrupt_edges_same_size(edges: list[tuple[int, int]], n: int) -> list[tuple[int, int]]:
+    """Swap 1 existing edge out and 1 missing edge in so |E| stays UNCHANGED while C4 > 0 is injected."""
     edge_set = set(edges)
     n_verts = 1 << n
     for i in range(n):
@@ -434,19 +455,53 @@ def corrupt_edges(edges: list[tuple[int, int]], n: int) -> list[tuple[int, int]]
                     ]
                     missing = [e for e in sq if e not in edge_set]
                     if len(missing) == 1:
-                        return list(edges) + [missing[0]]
+                        sq_set = set(sq)
+                        # Drop an edge NOT in sq so sq becomes a C4 while |E| stays identical
+                        for rem in edges:
+                            if rem not in sq_set:
+                                return [e for e in edges if e != rem] + [missing[0]]
     return list(edges) + [edges[0]]
+
+
+def check_pinned_atlas_entry(name: str, info: dict) -> tuple[bool, list[str]]:
+    exp_e, exp_odd, exp_sq, exp_w, exp_del, exp_x7, exp_sha = EXPECTED_ATLAS[name]
+    sq = info["squares"]
+    got_sq = (sq["n0"], sq["n1"], sq["n2_opp"], sq["n2_adj"], sq["n3"])
+    errs: list[str] = []
+    if not info["c4_free"]:
+        errs.append(f"C4={info['c4_count']} > 0")
+    if info["edges"] != exp_e:
+        errs.append(f"edges={info['edges']} != {exp_e}")
+    if not info["inclusion_maximal"]:
+        errs.append(f"addable={info['addable_edges']} > 0")
+    if info["odd_square"] != exp_odd:
+        errs.append(f"odd={info['odd_square']} != {exp_odd}")
+    if got_sq != exp_sq:
+        errs.append(f"squares={got_sq} != {exp_sq}")
+    if info["w_sum"] != exp_w:
+        errs.append(f"W={info['w_sum']} != {exp_w}")
+    if info["delta_deg"] != exp_del:
+        errs.append(f"delta_deg={info['delta_deg']} != {exp_del}")
+    if info["min_x7"] != exp_x7:
+        errs.append(f"min_x7={info['min_x7']} != {exp_x7}")
+    if info["sha256"] != exp_sha:
+        errs.append(f"sha={info['sha256'][:12]} != {exp_sha[:12]}")
+    return (len(errs) == 0), errs
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Exact cold verifier for C4-free Q_n subgraphs & Case 5A F2 gauge-defect exclusion."
     )
-    parser.add_argument("files", nargs="*", help="Edge list files to verify (defaults to all 10 atlas/*.edges)")
+    parser.add_argument("files", nargs="*", help="Edge list files to verify (defaults to exact 10 atlas/*.edges)")
     parser.add_argument("--n", type=int, default=8, help="Hypercube dimension (default 8)")
     parser.add_argument("--min-edges", type=int, default=None, help="Minimum required edges to PASS")
     parser.add_argument("--skip-case5a", action="store_true", help="Skip 14-orbit Case 5A check")
-    parser.add_argument("--corrupt", action="store_true", help="Negative self-test: inject a C4 and expect FAIL (rc=1)")
+    parser.add_argument(
+        "--corrupt",
+        action="store_true",
+        help="Negative self-test: inject C4 > 0 at unchanged |E| and expect FAIL (rc=1)",
+    )
     parser.add_argument("--json", action="store_true", help="Print JSON output only")
     args = parser.parse_args()
 
@@ -455,26 +510,43 @@ def main() -> int:
     if args.files:
         targets = [Path(p) for p in args.files]
     else:
-        targets = sorted((here / "atlas").glob("*.edges"))
+        atlas_dir = here / "atlas"
+        targets = sorted(atlas_dir.glob("*.edges"))
+        found_names = {p.name for p in targets}
+        expected_names = set(EXPECTED_ATLAS.keys())
+        if found_names != expected_names:
+            missing = sorted(expected_names - found_names)
+            extra = sorted(found_names - expected_names)
+            print(
+                f"ERROR: atlas/ file set mismatch (expected exact 10 files). missing={missing}, extra={extra}",
+                file=sys.stderr,
+            )
+            return 1
+
     if not targets:
         print("ERROR: no edge files provided or found in atlas/", file=sys.stderr)
         return 1
 
+    pinned_mode = default_mode and (args.n == 8) and (args.min_edges is None)
     results = []
     all_pass = True
     for path in targets:
         edges = load_edges(path, args.n)
         if args.corrupt:
-            edges = corrupt_edges(edges, args.n)
+            edges = corrupt_edges_same_size(edges, args.n)
         info = analyze_edges(edges, args.n)
         info["file"] = str(path)
-        if args.min_edges is not None:
-            edge_ok = info["edges"] >= args.min_edges
-        elif default_mode and path.name in EXPECTED_ATLAS_EDGES:
-            edge_ok = (info["edges"] == EXPECTED_ATLAS_EDGES[path.name]) and info["inclusion_maximal"]
+        errs: list[str] = []
+        if pinned_mode:
+            ok, errs = check_pinned_atlas_entry(path.name, info)
         else:
-            edge_ok = info["edges"] >= 675
-        ok = info["c4_free"] and edge_ok
+            min_req = args.min_edges if args.min_edges is not None else 675
+            if not info["c4_free"]:
+                errs.append(f"C4={info['c4_count']} > 0")
+            if info["edges"] < min_req:
+                errs.append(f"edges={info['edges']} < {min_req}")
+            ok = (len(errs) == 0)
+        info["errors"] = errs
         info["status"] = "PASS" if ok else "FAIL"
         if not ok:
             all_pass = False
@@ -488,6 +560,7 @@ def main() -> int:
 
     payload = {
         "verifier": "q8-c4-extremal-forcing/verify.py",
+        "pinned_atlas_mode": pinned_mode,
         "corrupt_mode": args.corrupt,
         "all_pass": all_pass,
         "results": results,
@@ -498,12 +571,13 @@ def main() -> int:
     else:
         for r in results:
             sq = r["squares"]
+            err_s = f" errs={r['errors']}" if r["errors"] else ""
             print(
                 f"[{r['status']}] {Path(r['file']).name}: Q_{r['n']} |E|={r['edges']} "
                 f"C4={r['c4_count']} max={r['inclusion_maximal']} odd={r['odd_square']} "
                 f"sq=({sq['n0']},{sq['n1']},{sq['n2_opp']}+{sq['n2_adj']},{sq['n3']},{sq['n4']}) "
-                f"W={r['w_sum']}(+{r['delta_deg']}) |d|>={r['f2_delta_lower_bound']} "
-                f"sha={r['sha256'][:12]} ({r['elapsed_sec']}s)"
+                f"W={r['w_sum']}(+{r['delta_deg']}) min_x7={r['min_x7']} |d|>={r['f2_delta_lower_bound']} "
+                f"sha={r['sha256'][:12]} ({r['elapsed_sec']}s){err_s}"
             )
         if case5a is not None:
             tag = "PASS" if case5a["pass"] else "FAIL"
@@ -513,9 +587,11 @@ def main() -> int:
                 f"{case5a['triples_checked']} triples) -> {case5a['survivors']} survivors ({case5a['elapsed_sec']}s)"
             )
         if all_pass:
-            print(f"VERIFIED PASS: {len(results)}/{len(results)} witnesses & exact checks passed.")
+            mode_label = "pinned atlas witnesses" if pinned_mode else "edge file(s) (unpinned)"
+            case_label = " & Case 5A" if case5a is not None else " (Case 5A skipped)"
+            print(f"VERIFIED PASS: {len(results)}/{len(results)} {mode_label}{case_label} passed.")
         else:
-            print("VERIFIED FAIL: corruption or check failure detected.")
+            print("VERIFIED FAIL: one or more checks failed (see [FAIL] lines above).")
     return 0 if all_pass else 1
 
 
