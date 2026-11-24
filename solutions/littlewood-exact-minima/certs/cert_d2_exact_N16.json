@@ -1,0 +1,60 @@
+{
+  "type": "d2_cooley_tukey_cert",
+  "schema_v": 3,
+  "N": 16,
+  "G": 128,
+  "eps_safe": 1e-06,
+  "certified_LB_M": 27.396746021071838,
+  "certified_LB_C_plus": 1.269477567882618,
+  "closed_exact": true,
+  "witness_c": [
+    1,
+    1,
+    1,
+    -1,
+    1,
+    1,
+    1,
+    -1,
+    -1,
+    -1,
+    1,
+    -1,
+    1,
+    1,
+    -1,
+    1
+  ],
+  "witness_str": "+++-+++---+-++-+",
+  "witness_C_plus_lo": 1.2694798847205528,
+  "witness_C_plus_ub": 1.2694798983429987,
+  "witness_C_rms_ub": 1.3085499276166384,
+  "witness_E4": 24,
+  "n_survivors": 84,
+  "survivor_codes_sha256": "96ce7fc4b1d260ab7ee0cb32fc78bae2fa83ab9729e163f82bc8c3f8029af99c",
+  "survivor_codes_zlib_b64": "eJwNw9tKQgEAALCTmBhaZCaCYRaCESRGEQplaKRGgRkJKV0IIVPCHswko49vgy0FQRAy7LIRo64YM+6qa66bcMOkm6ZMm3HLrNvm3HHXvAX33PfAoiUPPfLYE8tWPPXMqufWrHvhpQ2btrzy2hvb3trxznu7Ptiz76NPPvviqwPfHPruyLEfTvx06pczv53748Jf//wH7vAUQw==",
+  "coarse_hits": [
+    [
+      55,
+      98
+    ]
+  ],
+  "stats": {
+    "enum_sec": 0.0001,
+    "join_sec": 0.0001,
+    "cert_sec": 0.0002,
+    "total_sec": 0.0048,
+    "words_scanned": 172,
+    "cand_checked": 44,
+    "coarse_hit_count": 1
+  },
+  "hardened_v4_2": true,
+  "fp_pad": 1e-09,
+  "claim_scope": "exact optimal value bracket (M_n and C+); uniqueness within 1e-4 window not claimed",
+  "certified_LB_M_n": 1.3085475254330619,
+  "witness_f_lo": 27.396846021071838,
+  "witness_f_ub": 27.396846609048154,
+  "witness_M_n_lo": 1.3085499135749425,
+  "witness_M_n_ub": 1.3085499276166384,
+  "witness_C_rms_lo": 1.3085499135749425
+}

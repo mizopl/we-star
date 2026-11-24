@@ -1,0 +1,56 @@
+{
+  "type": "d2_cooley_tukey_cert",
+  "N": 22,
+  "G": 128,
+  "eps_safe": 1e-06,
+  "certified_LB_M": 37.19765554703341,
+  "certified_LB_C_plus": 1.2717269249371692,
+  "closed_exact": true,
+  "witness_c": [
+    1,
+    1,
+    1,
+    1,
+    -1,
+    -1,
+    -1,
+    -1,
+    1,
+    1,
+    -1,
+    1,
+    -1,
+    1,
+    1,
+    -1,
+    1,
+    1,
+    1,
+    -1,
+    1,
+    1
+  ],
+  "witness_str": "++++----++-+-++-+++-++",
+  "witness_C_plus_lo": 1.2717286343541359,
+  "witness_C_plus_ub": 1.2717286705225381,
+  "witness_C_rms_ub": 1.3003104115917776,
+  "witness_E4": 47,
+  "n_survivors": 630,
+  "survivor_codes_sha256": "b7a8e7b49842c18fc14899bdda510f5f45296860d57eebdd5cfc5852928c2d36",
+  "survivor_codes_zlib_b64": "eJwN0vl3CAQAAOAhyxjPTW6W67lqjNzmPnK1Xuxt7rIxIWZuz30k59JExiLLi0yrkPG0XJFj5spVyZY9R5kjpF7fD99/8AUGBAQEUZRgSlCK0pSlHOWpyEtUogpVqUktQniZ2tShHvVpQEMa0ZhQmtKMMJrTkla0pg1taUc4HelEZ7rQlW50pwc96UVv+tCP/rxBBG/yFgMYSCRRRDOIwQxlOG/zDiOJIZZRjCaOMbzLWCYQzyQSmMw0pjODmcxiDnOZx3wWsJBFLGYpy1nBSlaRyBqSWMs61pPMJlLYzFZS2cZ2drCTNHaRzm72sJd9ZLCfAxwkk8Mc4SjHOcFpzpDFWbI5x3kucJHLXOE6v3CDm+SQyy3yuM1d7vEn+TzkEY/5m2f8w3P+5T8KFAgIKEghXqAwgbxIEYIoRjDFKUFJSlGaMpSlPBWoSGWqUJVqVKcGNalFCHWpR30a0JgmvMKrhNKUMFrwGi1pTRva0o72dCCcTnSmG93pwev0pi8RRBJFNEMYyjBGMJIYYhlFHGMYyzjG8x4TiSeByUxhKtOZwUxmMZs5zGUe81nAQhbxPktZzgpWsppE1pDEOpLZyCZS+JTNpPI52/iCL9lJGrtIZzd7+I59ZLCfAxwkk0Mc5ggnOMkpTnOGLM6SzTkucJHLXOEa17nBTXLI5RZ53OYOd7lHPg94yCMe84SnPOM5BQv6SGECKUIQxQimOCUoSSnKUJZyVKASlalCVapRg5qEUJs61KU+DWlEE0JpRhjNaUFr2tKO9nQgnI50ogtd6UZPetGHvvSjPxEMYCCRRBHNIAYzhKEMYzgxxBLHOMYzgXgmkcBkpjGdGcxkFrOZwzzms4CFLGIJH7CMFawikSTW8jHr+YQNJLORFLaQyg7S2EU6u9lLBvs5yPdk8gOHOMwRjnKME5ziNFlkc5FLXOEq1/iV3/idm+SQyx/kcZe/uE8+D3jII57wlOcULOQUhQmkCEEUpRjBFKcEJSlNGcpSjvJUoBKVqUZ1alCTWoRQm7rUoz4NaEwTQmlGGC1oRVva0YFwOtKZLnSlOz3oRR/60o/+RDCAgUQSRTSDGMxQhjGcEcQQy2jiGMt4JjCReCaRwBSmMo0ZzGU+C1nMEpaxnJWsYjWJfMgaPiKJdaxnA8lsIoUtfMZWUtnGdnaQxi6+Ip2v+YZv2UMGmRziCMf4keOc4CdOcoozZHGWbM5xngtc4mcuc5Ub3CSHXG6Rxx3uk89DnvA/ipMxlg==",
+  "coarse_hits": [
+    [
+      969,
+      697
+    ]
+  ],
+  "stats": {
+    "enum_sec": 0.0026,
+    "join_sec": 0.0043,
+    "cert_sec": 0.0103,
+    "total_sec": 0.0222,
+    "pairs_visited": 171154,
+    "mask_passed": 25205,
+    "coarse_hit_count": 1
+  }
+}

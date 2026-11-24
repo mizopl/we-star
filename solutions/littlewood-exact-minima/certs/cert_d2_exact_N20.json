@@ -1,0 +1,54 @@
+{
+  "type": "d2_cooley_tukey_cert",
+  "N": 20,
+  "G": 128,
+  "eps_safe": 1e-06,
+  "certified_LB_M": 35.15430063689743,
+  "certified_LB_C_plus": 1.2938370515805824,
+  "closed_exact": true,
+  "witness_c": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    -1,
+    -1,
+    1,
+    1,
+    -1,
+    -1,
+    1,
+    1,
+    -1,
+    1,
+    -1,
+    -1,
+    1,
+    -1,
+    1
+  ],
+  "witness_str": "+++++--++--++-+--+-+",
+  "witness_C_plus_lo": 1.2938388918051185,
+  "witness_C_plus_ub": 1.293838913244801,
+  "witness_C_rms_ub": 1.3257903643102147,
+  "witness_E4": 46,
+  "n_survivors": 294,
+  "survivor_codes_sha256": "b289578018b745f2c0b97c9861123e58e6a17c1f76b584b7e3fc6e7c7187e81a",
+  "survivor_codes_zlib_b64": "eJwNw2loDgAAANCPWMa2nHPONcxyJqOwZeYe2zTFMtckpBwz98ixDTk25soYoqSssISimDmX2dx30oYVP2g05Yf36jUNBAJBBhtiqGG2srVtbGs7w+1gRzvZ2S5G2NUeRtrL3vYxymj7O8AhDjXGYQ53pKOMNc54x5jgWMc53glOdLKJJplsitNMdboznGmas0x3tnOc6zwzXOgiF7vEpS5zuZlmudo1rnWDG812k5vd6nZzzDXPHe5yj3vNt8D9FnrEoxZ53BMWe9LTnvWcJV70kqVe9bo3vOktb1vmHcu96z3vW2GlT6yy2me+8JWvfes73/vBj36yxlq/+NU6f/jLen/7xwb/+s9GjQKBxjaxqUE2M9jmtjDEUMNsaStb28a2htveTnY2wq52s7s97GmkUfY12n4OdJCDHWKMwx3hSEcZa5yjjTfBsY53ghOdZKJTnGqSyaaY6kzTnGW685xvhgtc5GKXuNRlrnClma4yyzWuc73ZbnGbOeaa5053udu97jPfAvd7wEIPesjDHvGYRRZ7ytOe8ZznvWCJF73kZUu94jVvWGa5d73nAx/6yAofW2mV1T71mc996Wvf+Nb3frbGWr/4zTq/+9Nf1tvgf538iTM=",
+  "coarse_hits": [
+    [
+      107,
+      405
+    ]
+  ],
+  "stats": {
+    "enum_sec": 0.0004,
+    "join_sec": 0.0023,
+    "cert_sec": 0.0052,
+    "total_sec": 0.0132,
+    "pairs_visited": 29156,
+    "mask_passed": 5762,
+    "coarse_hit_count": 1
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "type": "d2_cooley_tukey_cert",
+  "schema_v": 3,
+  "N": 10,
+  "G": 128,
+  "eps_safe": 1e-06,
+  "certified_LB_M": 19.21590701632915,
+  "certified_LB_C_plus": 1.3217036876123576,
+  "closed_exact": true,
+  "witness_c": [
+    1,
+    1,
+    1,
+    1,
+    -1,
+    -1,
+    1,
+    -1,
+    1,
+    -1
+  ],
+  "witness_str": "++++--+-+-",
+  "witness_C_plus_lo": 1.3217071266953189,
+  "witness_C_plus_ub": 1.3217071308142945,
+  "witness_C_rms_ub": 1.386218133487616,
+  "witness_E4": 13,
+  "n_survivors": 14,
+  "survivor_codes_sha256": "69f0a459303fc812c9467fa72b0b8b8bfc8f93363d203db08a76814aa9d1f0bd",
+  "survivor_codes_zlib_b64": "eJwNw4cNACAMAKC6NY7/zxUSIiKS2WK12R1Ol9vj9fkBB3wAYA==",
+  "coarse_hits": [
+    [
+      13,
+      1
+    ]
+  ],
+  "stats": {
+    "enum_sec": 0.0,
+    "join_sec": 0.0001,
+    "cert_sec": 0.0001,
+    "total_sec": 0.2288,
+    "words_scanned": 22,
+    "cand_checked": 14,
+    "coarse_hit_count": 1
+  },
+  "hardened_v4_2": true,
+  "fp_pad": 1e-09,
+  "claim_scope": "exact optimal value bracket (M_n and C+); uniqueness within 1e-4 window not claimed",
+  "certified_LB_M_n": 1.3862145222269586,
+  "witness_f_lo": 19.21600701632915,
+  "witness_f_ub": 19.216007136098902,
+  "witness_M_n_lo": 1.386218129167598,
+  "witness_M_n_ub": 1.386218133487616,
+  "witness_C_rms_lo": 1.386218129167598
+}

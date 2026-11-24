@@ -1,0 +1,58 @@
+{
+  "type": "d2_cooley_tukey_cert",
+  "N": 24,
+  "G": 128,
+  "eps_safe": 1e-06,
+  "certified_LB_M": 38.00413352320167,
+  "certified_LB_C_plus": 1.2329498533712013,
+  "closed_exact": true,
+  "witness_c": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    -1,
+    -1,
+    1,
+    1,
+    1,
+    -1,
+    1,
+    -1,
+    -1,
+    1,
+    -1,
+    -1,
+    1,
+    1,
+    -1,
+    1,
+    -1,
+    1
+  ],
+  "witness_str": "++++++--+++-+--+--++-+-+",
+  "witness_C_plus_lo": 1.232951475496123,
+  "witness_C_plus_ub": 1.2329515133680669,
+  "witness_C_rms_ub": 1.2583758688933653,
+  "witness_E4": 72,
+  "n_survivors": 1114,
+  "survivor_codes_sha256": "9bc7b83b70ba841491abc2cb8da43b8a99a46fecd1260f64457eb2f18fe14848",
+  "survivor_codes_zlib_b64": "eJwN1Pd3CAYCwPFUyQmiRsTW2DyzirRGiJi1Hz1xYkXVSGsmZniEqNYWqqVGbK+2OtuhhNKK1KZUnXk2sem7zw+f/+D7vrkCAgLyEUIohShMEYpRklKUoSzlqEBFKlOFqnxADT6kJrWozcfUoR6RNCKKxjShKc1pwSe0pBWtaUM72tOBjnxKNJ3pQgxd6UYsn9Gbz+lDX/rRnzi+4EsGMIR4EhjGKMaTxAQmkswkpjCN6cxkFrNJYQ5zmcd8FrCIJaSynBWsZBVrWMs6NrKJzWzhJ7ayje3sYBe72cNe9nGAgxwijaMcI50TnOI0ZznHBS5yictc4wZ3ucd9MnnKM57zite85Z13AgKy8C5ZyUYg2QkiBzkJJjd5yEd+QihAKAUpQgnCKEkpSlOeClSkEtWoTi3C+Yg61KUe9YmgIZFE0ZgmNKUZzWlBS1rRmja0pT0d6EQ0nelCDF3pQSx96EscAxjIEIaSwHBGMJLRJDKGsYxjPElMJJlJfMMUZjCT2cxhLt8yj/ksZgmpLGUVq1nDj6xlHevZwEa2so2d7GYPeznAQdI4yjHSOcHvnOI0ZzjLBS5ymWvc4Ba3+R93uMs97vOAx2TylGc85yWveM0b3pIli47IRiDZCSInuQgmN3nIS34KUoiiFKM4JQijJKUpS3kqUo3q1KAmtahNOHWpR30iaEgkUTSjOW1oS3ui6UwMXelOD3oSSy/6EMdABjGYocSTwHBGMJJRjCaRMYxlHOOZwEQm8RVfM5VpzGAWKXzH9yzgBxaymFSWs4qNbGIL29jBbvawj/0c5BCHOcIxjpNOBuc4z0X+4BJ/coVrXOcGN7nNPR7wkEc84TkveMlr3vCWvwl411/IQjYCCSIHOQkmN++RjxAKEEpBilCC9wmjJKUpTwUqUolqVKcW4dQhggY0JJIomtKM5rSkDW1pTwc6EU1nuhBDV7rTk1h60Yf+xDGQQQxmCENJYDgjGMkoRjOGsYwjiYkkM4kpTGMms0lhDnP5lnnMZxGLWUIqK1jFGtayjg1sZDM/sZV/s4097OUAB0njCL9wlGP8ym8c5wQZnOQs5zjPRS5xmatc5wa3uM0d7nKP+zzmCZk85RkveMkr3pAlq3cQSHaCyEUwuclDXvKRnxAKEEohClOEohSjOCUIoxTlKE8FKlKJylShKjWoRTh1qEt9ImhIJI2IoglNaUZL2tKO9nSgI/+kE9F0IYaudKM7PYilN33pRxxfMoCBDCGeBIYxnFEkMoaxjGM8SUwgma+YwnRmMIsU5jGfRSxmCaksZRmrWM0a1rKeDWxiC9vZwU52sZs97OU/7GM/B/iZQxzmKOmcIIOTnOI0Z7nAZf7kCle5zi1uc4cHPCaTpzznBS95xWve8Ja/CcjmP2QlG4FkJ4ic5CKY3OQhL/kJIZSCFKIwRSlGcUrwPmGUpDTlqUZ1PqAGHxLOR3xMXepRnwgaEEkUzWhBK1rTls70oCe9+IzP6UM/vmAggxjMUOIZzghGMppExjCO8SSRzGSmMI3pzGAms0hhLvOYzyIWs4RUlrKM1axnA5vYwnZ2sIt97OcABzlEGoc5xnHSOUEGJznFGc5yjotc5gp/cZVrXOcGN7nFbe5wl3vc5yGPeMwTMnnKC17yhiyBGiGQ7ASRg1wEk5t85CeEAoRShKIUpwRhlKIMZSlHeSpQicpUoSrVqEFNahNOHSJoQEMiaUQUzfiElrSlHR3oyKd0Ipp/0YUYutGdHsTSm/7EMZAhxJPAMEaRyBjGksREkpnEZKYwlWlMZxYpzOM7vmcBP7CQRSxmCaksYyWrWMNa1rGBjWxhG9vZwS52s4e97GM/B/iZQ6RxmKMcI50TZHCS05zlHJe5wl9c5b9c5ya3uMNDHpPJU17wkle8Ies/dEIQOchFMPkIoQChFKEoxQmjJKUoQ1nKUYGKVKIyVahKNWpQk1rUJpw6RNCIxjShKc1pQUta04Z2tKcDnYimM12IoSvd6EFPYulFb/rQl37EMYBBDCGeBIYxikQmMpmv+YapTGM6M5nFbOYwl/ksYCGLWMpyVrCS1azhR9ayjvVsZBOb2cJWtrOT3RwkjSP8wlF+5TeOk8HvnOQUpznDOc5zgT+4yjWuc4Nb3OYuj3hMJv8HIPgyIQ==",
+  "coarse_hits": [
+    [
+      315,
+      1867
+    ]
+  ],
+  "stats": {
+    "enum_sec": 0.0024,
+    "join_sec": 0.0061,
+    "cert_sec": 0.0096,
+    "total_sec": 0.0205,
+    "pairs_visited": 400838,
+    "mask_passed": 23324,
+    "coarse_hit_count": 1
+  }
+}

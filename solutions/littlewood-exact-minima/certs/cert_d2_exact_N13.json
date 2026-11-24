@@ -1,0 +1,60 @@
+{
+  "type": "d2_cooley_tukey_odd_cert",
+  "schema_v": 3,
+  "N": 13,
+  "G": 128,
+  "eps_safe": 1e-06,
+  "certified_LB_M": 21.09635113583071,
+  "certified_LB_C_plus": 1.2275513121608839,
+  "closed_exact": true,
+  "witness_c": [
+    1,
+    1,
+    1,
+    -1,
+    -1,
+    -1,
+    1,
+    1,
+    -1,
+    1,
+    1,
+    -1,
+    1
+  ],
+  "witness_str": "+++---++-++-+",
+  "witness_C_plus_lo": 1.2275542215499284,
+  "witness_C_plus_ub": 1.2275542283605843,
+  "witness_C_rms_ub": 1.2738932261114198,
+  "witness_E4": 22,
+  "n_survivors_e_canon": 17,
+  "n_survivors_o": 24,
+  "survivor_e_sha256": "d7f4a672f17868e76581e462944124b8ebec2d4af95be94c3d0ab0a027f900a0",
+  "survivor_o_sha256": "03aa877e74de04af3fc2edf80d822007c67e848f847f0ea08b98c1e94884d417",
+  "survivor_e_zlib_b64": "eJwNw7EKgCAUAMCHZNQijo6JhDg09v+/5h1ciojD7OnlbbHafOwOX6fLz98NJEABlA==",
+  "survivor_o_zlib_b64": "eJwNwwkOQDAQAMB1VxxRRRD/f6eZZKqIqG1s7ewdTI5Ozi6ubmZ3i4enl7ePr58/LBQBTA==",
+  "coarse_hits": [
+    [
+      53,
+      12
+    ]
+  ],
+  "stats": {
+    "enum_sec": 0.0001,
+    "join_sec": 0.0001,
+    "cert_sec": 0.0001,
+    "total_sec": 0.0035,
+    "words_scanned": 31,
+    "cand_checked": 8,
+    "coarse_hit_count": 1
+  },
+  "hardened_v4_2": true,
+  "fp_pad": 1e-09,
+  "claim_scope": "exact optimal value bracket (M_n and C+); uniqueness within 1e-4 window not claimed",
+  "certified_LB_M_n": 1.2738901998279706,
+  "witness_f_lo": 21.09645113583071,
+  "witness_f_ub": 21.09645136992329,
+  "witness_M_n_lo": 1.2738932190436683,
+  "witness_M_n_ub": 1.2738932261114198,
+  "witness_C_rms_lo": 1.2738932190436683
+}

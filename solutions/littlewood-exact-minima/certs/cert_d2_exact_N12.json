@@ -1,0 +1,56 @@
+{
+  "type": "d2_cooley_tukey_cert",
+  "schema_v": 3,
+  "N": 12,
+  "G": 128,
+  "eps_safe": 1e-06,
+  "certified_LB_M": 19.68440866033984,
+  "certified_LB_C_plus": 1.2305223612615104,
+  "closed_exact": true,
+  "witness_c": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    -1,
+    -1,
+    1,
+    1,
+    -1,
+    1,
+    -1
+  ],
+  "witness_str": "+++++--++-+-",
+  "witness_C_plus_lo": 1.2305254868844837,
+  "witness_C_plus_ub": 1.2305254933753378,
+  "witness_C_rms_ub": 1.2807715405178641,
+  "witness_E4": 10,
+  "n_survivors": 28,
+  "survivor_codes_sha256": "07745886d0207a60f94e7613889d28f866bd481568895c412c80682b9e146581",
+  "survivor_codes_zlib_b64": "eJwNwwUKgAAQALBTTOzC9v/PdINFRCSmZuYWllbWNrZ29g6OTs4urm7uHp5e3j6+fv5CJAGv",
+  "coarse_hits": [
+    [
+      27,
+      5
+    ]
+  ],
+  "stats": {
+    "enum_sec": 0.0,
+    "join_sec": 0.0,
+    "cert_sec": 0.0001,
+    "total_sec": 0.0024,
+    "words_scanned": 36,
+    "cand_checked": 15,
+    "coarse_hit_count": 1
+  },
+  "hardened_v4_2": true,
+  "fp_pad": 1e-09,
+  "claim_scope": "exact optimal value bracket (M_n and C+); uniqueness within 1e-4 window not claimed",
+  "certified_LB_M_n": 1.280768280510434,
+  "witness_f_lo": 19.68450866033984,
+  "witness_f_ub": 19.684508868006038,
+  "witness_M_n_lo": 1.2807715337619692,
+  "witness_M_n_ub": 1.2807715405178641,
+  "witness_C_rms_lo": 1.2807715337619692
+}
