@@ -110,6 +110,8 @@ Most AI math and coding demos publish only the polished final answer, hiding fai
 | <sub>[eternagame](https://github.com/eternagame/eterna-hard)</sub> | <sub>95/100 on Eterna100-V2 (`p3` withdrawn, see `CORRECTION.md`) + 37/300 solves on eterna-hard (+1 Martian) &amp; ViennaRNA C-API bug</sub> | <sub>[#1031](https://github.com/elder-plinius/V3R1T4S/pull/1031) · [eterna-hard](./eterna-hard/)</sub> |
 | <sub>[conway-99](https://github.com/mizopl/conway-99-graph)</sub> | <sub>42 zero-axiom Lean 4 theorems &amp; 54 LRAT proofs ($p=7$ in 0.82s), adopted by @ibenarb</sub> | <sub>[repo](https://github.com/mizopl/conway-99-graph) · [#774](https://github.com/elder-plinius/V3R1T4S/pull/774) · [ibenarb](https://github.com/ibenarb/conway99-research)</sub> |
 
+<sub><b>External notes &amp; corrections:</b> Lychrel bases <code>50, 98, 146</code> (<code>doi:10.5281/zenodo.23468033</code>) are cited by Y. Kusayama (<a href="https://doi.org/10.5281/zenodo.23289048">doi:10.5281/zenodo.23289048</a>). Independent replays of <code>[M2026]</code>/<code>[M2026b]</code>: <a href="https://github.com/arhancanli/quantavane-replays">@arhancanli</a>, <a href="https://github.com/rpinho/math-certificates">@rpinho</a>; Conway-99 review: <a href="https://github.com/ibenarb/conway99-research">@ibenarb</a>. Corrections: Eterna100-V2 <code>p3</code> claims withdrawn (<code>CORRECTION.md</code>); <code>3e</code> limit fix in <a href="https://github.com/teorth/optimizationproblems/pull/388">#388</a>.</sub>
+
 ### Recent Standalone Verification Packages (`2026-11`)
 
 | Package | Verified Scope & Status | Links |
