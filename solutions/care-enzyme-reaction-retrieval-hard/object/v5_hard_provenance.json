@@ -1,0 +1,22 @@
+{
+  "model": "we_star_CARE_engine_v5_3seed_cb+mtr",
+  "split": "hard",
+  "train_files": [
+    "splits/task2/hard_reaction_train.csv"
+  ],
+  "optional_files": [
+    "processed_data/text2EC.csv",
+    "processed_data/protein2EC.csv",
+    "processed_data/EC_list.txt"
+  ],
+  "test_input_columns": [
+    "Reaction"
+  ],
+  "strict_zero_external_db": true,
+  "gpu_models": [
+    "cb",
+    "mtr"
+  ],
+  "notes": "Zero external databases (no rhea, no brenda, no kegg, no uniprot_api, no chatgpt); test input strictly unmapped Reaction SMILES only (no mapped reaction, no reaction text); 0 extra GPU compute (reuses air-gapped Stage1/2 GPU ckpts).",
+  "archive_format": "compact_top50_row_indexed_csv_gz (row_idx,0..49; zero third-party text columns; deterministic gzip mtime=0)"
+}

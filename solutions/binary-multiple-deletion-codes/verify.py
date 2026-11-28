@@ -126,6 +126,39 @@ def main() -> int:
             got_sz, got_ds, got_lcs, got_sha = verify_code(words, n, s, size, wsha, exp_ds, False)
             print(f"[OK] companion ({n},{s}) {p.name} | size={got_sz} | |D_{s}|={got_ds} | maxLCS={got_lcs}<{n-s} | sha={got_sha[:16]}")
 
+        # Fast (<10 ms) read-only Lean 4.36.0 TCB & manifest integrity check
+        lean_dir = pkg_root / "lean4_certs"
+        if lean_dir.is_dir():
+            comp_p = lean_dir / "comparator.json"
+            comp = json.loads(comp_p.read_text(encoding="utf-8"))
+            if comp.get("schema") != "proofer-comparator-v1":
+                raise ValueError(f"unexpected schema in comparator.json: {comp.get('schema')}")
+            if comp.get("toolchain") != "leanprover/lean4:v4.36.0":
+                raise ValueError(f"unexpected toolchain in comparator.json: {comp.get('toolchain')}")
+            if comp.get("enable_nanoda") is not True:
+                raise ValueError("comparator.json enable_nanoda must be True")
+            if comp.get("allowed_axioms") != ["propext", "Classical.choice", "Quot.sound"]:
+                raise ValueError(f"unexpected allowed_axioms: {comp.get('allowed_axioms')}")
+            if comp.get("forbidden_axioms") != ["sorryAx", "Lean.ofReduceBool", "Lean.trustCompiler"]:
+                raise ValueError(f"unexpected forbidden_axioms: {comp.get('forbidden_axioms')}")
+            targets = comp.get("target_theorems", [])
+            if not isinstance(targets, list) or len(targets) != 36:
+                raise ValueError(f"expected 36 target_theorems in comparator.json, got {len(targets) if isinstance(targets, list) else type(targets)}")
+            for req_t in ("Challenge.bounds_12_3", "Challenge.lower_bound_16_2_226", "Challenge.exact_opt_11_3", "Challenge.exact_opt_9_2"):
+                if req_t not in targets:
+                    raise ValueError(f"missing required theorem {req_t} in comparator.json")
+            lm = json.loads((lean_dir / "lake-manifest.json").read_text(encoding="utf-8"))
+            if lm.get("packages") != [] or lm.get("version") != "1.3.0" or lm.get("name") != "deletion_code_certs":
+                raise ValueError(f"zero-Mathlib violation in lake-manifest.json: {lm}")
+            stmt_txt = (lean_dir / "DeletionCode" / "Statements.lean").read_text(encoding="utf-8")
+            if any(ln.strip().startswith("import ") for ln in stmt_txt.splitlines()):
+                raise ValueError("TCB violation: DeletionCode/Statements.lean must have 0 imports")
+            audit_txt = (lean_dir / "AuditAxioms.lean").read_text(encoding="utf-8")
+            for req_t in targets:
+                if f"#print axioms {req_t}" not in audit_txt:
+                    raise ValueError(f"AuditAxioms.lean missing #print axioms {req_t}")
+            print(f"[OK] lean4_certs TCB & comparator.json verified ({len(targets)}/36 Tier A targets, 0 external deps)")
+
         sums = pkg_root / "SHA256SUMS"
         if not args.skip_checksums and sums.is_file():
             checked = 0

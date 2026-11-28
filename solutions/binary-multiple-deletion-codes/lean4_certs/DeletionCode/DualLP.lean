@@ -50,7 +50,7 @@ theorem strictAsc_nodup : ∀ {L : List Nat}, isStrictAsc L = true → L.Nodup
     rw [List.nodup_cons]
     refine ⟨fun hmem => Nat.lt_irrefl a (hall a hmem), strictAsc_nodup h.2⟩
 
-private theorem delBit_lt_pub (m p y : Nat) (hy : y < 2 ^ m) (hp : p < m) :
+theorem delBit_lt_pub (m p y : Nat) (hy : y < 2 ^ m) (hp : p < m) :
     delBit y p < 2 ^ (m - 1) := by
   unfold delBit
   have hpos_p : 0 < 2 ^ p := Nat.two_pow_pos p
@@ -172,10 +172,10 @@ def checkDualTree2 (n D : Nat) (y : Nat → Nat) : Nat → Nat → DualTree → 
       checkDualTree2 n D y d (2 * x) l && checkDualTree2 n D y d (2 * x + 1) r
   | _, _, _ => false
 
-private theorem mul_pow2_l (x d' y : Nat) : (2 * x) * 2 ^ d' + y = x * 2 ^ (d' + 1) + y := by
+theorem mul_pow2_l (x d' y : Nat) : (2 * x) * 2 ^ d' + y = x * 2 ^ (d' + 1) + y := by
   rw [Nat.pow_succ, Nat.mul_comm 2 x, Nat.mul_assoc, Nat.mul_comm 2 (2 ^ d')]
 
-private theorem mul_pow2_r (x d' y : Nat) (hge : ¬ y < 2 ^ d') :
+theorem mul_pow2_r (x d' y : Nat) (hge : ¬ y < 2 ^ d') :
     (2 * x + 1) * 2 ^ d' + (y - 2 ^ d') = x * 2 ^ (d' + 1) + y := by
   rw [Nat.add_mul, Nat.one_mul, Nat.pow_succ, Nat.mul_comm 2 x, Nat.mul_assoc, Nat.mul_comm 2 (2 ^ d')]
   omega
@@ -442,13 +442,8 @@ theorem exact_opt_9_3 :
 -- KLEIN-4 <c, r> SYMMETRY CERTIFICATE FOR OUR RECORD (16, 3) = 44 CODEBOOK
 -- =============================================================================
 
-def bitComp (n x : Nat) : Nat := (2 ^ n - 1) - x
-
-def bitRev (n x : Nat) : Nat :=
-  let rec go : Nat → Nat → Nat → Nat
-    | 0, _, acc => acc
-    | k + 1, cur, acc => go k (cur / 2) (2 * acc + cur % 2)
-  go n x 0
+abbrev bitComp := DeletionCode.bitComp
+abbrev bitRev := DeletionCode.bitRev
 
 /-- Pure-kernel proof that our record `(16, 3) = 44` codebook (`Cert_16_3.code`) is strictly invariant
     under BOTH bit-complement `c` and string reversal `r` (generating the full Klein-4 group `V_4 = <c, r>`). -/

@@ -1,0 +1,37 @@
+# GitHub Actions CI template for the Zero-Mathlib Lean 4.36.0 Deletion-Code Suite.
+# Copy to `.github/workflows/lean_verify.yml` (and set `CERT_DIR` if placed in a subdirectory).
+name: Lean 4.36.0 Pure-Kernel Verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  CERT_DIR: "."
+
+jobs:
+  verify-lean4:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install elan and pinned Lean 4 toolchain
+        working-directory: ${{ env.CERT_DIR }}
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.elan/bin:$PATH"
+          TOOLCHAIN="$(tr -d '[:space:]' < lean-toolchain)"
+          elan toolchain install "$TOOLCHAIN"
+          elan default "$TOOLCHAIN"
+          lean --version
+          lake --version
+
+      - name: Run sequential cold build, 36/36 axiom audit, and leanchecker
+        working-directory: ${{ env.CERT_DIR }}
+        run: bash verify_all.sh

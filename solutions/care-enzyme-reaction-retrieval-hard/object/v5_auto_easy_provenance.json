@@ -1,0 +1,21 @@
+{
+  "model": "we_star_CARE_engine_v5_auto_regime_full_catalog_seen_ec4_3seed_M1only",
+  "auto_detected_regime": "full_catalog_seen_ec4",
+  "train_ec3_coverage": 1.0,
+  "train_ec4_coverage": 1.0,
+  "train_files": [
+    "splits/task2/easy_reaction_train.csv"
+  ],
+  "optional_files": [
+    "processed_data/text2EC.csv",
+    "processed_data/protein2EC.csv",
+    "processed_data/EC_list.txt"
+  ],
+  "test_input_columns": [
+    "Reaction"
+  ],
+  "strict_zero_external_db": true,
+  "gpu_models": [],
+  "notes": "Train-catalog auto-regime with zero split-name conditionals; zero external databases (no rhea, no brenda, no kegg, no uniprot_api, no chatgpt); test input strictly unmapped Reaction SMILES only (no mapped reaction, no reaction text).",
+  "archive_format": "compact_top50_row_indexed_csv_gz (row_idx,0..49; zero third-party text columns; deterministic gzip mtime=0)"
+}

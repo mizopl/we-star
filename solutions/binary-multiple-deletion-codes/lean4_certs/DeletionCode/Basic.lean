@@ -11,13 +11,9 @@
     6. General Clique-Cover Upper Bound Theorem for deletion-correcting codes.
 -/
 
-namespace DeletionCode
+import DeletionCode.Statements
 
-/-- Standard inductive subsequence relation on binary words (`List Bool`). -/
-inductive IsSubseq : List Bool → List Bool → Prop where
-  | nil : IsSubseq [] []
-  | cons_keep (b : Bool) {u v : List Bool} : IsSubseq u v → IsSubseq (b :: u) (b :: v)
-  | cons_drop (b : Bool) {u v : List Bool} : IsSubseq u v → IsSubseq u (b :: v)
+namespace DeletionCode
 
 theorem IsSubseq.nil_left : ∀ (v : List Bool), IsSubseq [] v
   | [] => .nil
@@ -80,14 +76,6 @@ theorem exists_subseq_of_length {v : List Bool} {k : Nat} (hk : k ≤ v.length) 
       obtain ⟨u, hu_len, hu_sub⟩ := ih hle
       exact ⟨b :: u, by simp [hu_len], .cons_keep b hu_sub⟩
 
-/-- A word `d` is in the `s`-deletion ball `D_s(x)` iff `d` is a subsequence of `x` of length `x.length - s`. -/
-def InDelBall (s : Nat) (x d : List Bool) : Prop :=
-  IsSubseq d x ∧ d.length + s = x.length
-
-/-- Existence of a common subsequence of length at least `k` (`LCS(x, y) >= k`). -/
-def HasCommonSubseqAtLeast (k : Nat) (x y : List Bool) : Prop :=
-  ∃ d : List Bool, k ≤ d.length ∧ IsSubseq d x ∧ IsSubseq d y
-
 /--
   Fundamental Equivalence Theorem (100% general for all `n`, `s <= n`):
   Two binary words `x, y` of length `n` have disjoint `s`-deletion balls
@@ -104,11 +92,6 @@ theorem disjoint_delBall_iff_no_common_subseq
     exact hdisj d' ⟨hx', hy'⟩
   · intro hno d ⟨⟨hdx, hdlen⟩, ⟨hdy, _⟩⟩
     exact hno ⟨d, by omega, hdx, hdy⟩
-
-/-- LSB-first bit-vector decoding `natToWord n x : List Bool` of exact length `n`. -/
-def natToWord : Nat → Nat → List Bool
-  | 0, _ => []
-  | n + 1, x => (x % 2 == 1) :: natToWord n (x / 2)
 
 theorem natToWord_length : ∀ (n x : Nat), (natToWord n x).length = n
   | 0, _ => rfl
@@ -214,7 +197,7 @@ theorem del3Nat_isSubseq {n i j k x : Nat} (hij : i < j) (hjk : j < k) (hkn : k 
   have s1 := deleteAt_isSubseq (natToWord n x) k
   exact s3.trans (h2 ▸ s2.trans (h1 ▸ s1))
 
-private theorem natToWord_eq_mod : ∀ (m a b : Nat),
+theorem natToWord_eq_mod : ∀ (m a b : Nat),
     natToWord m a = natToWord m b → a % 2 ^ m = b % 2 ^ m := by
   intro m
   induction m with
@@ -385,21 +368,6 @@ theorem exists_del3Nat_of_subseq {n x : Nat} {d : List Bool}
           have := deleteAt_length (natToWord n x) (b + 1) (by omega); omega
         exact deleteAt_comm _ k0 a (by omega) (by omega)
       exact mk_goal k0 (a + 1) (b + 1) (by omega) (by omega) (by omega) (by rw [hd_del, hswap1, hswap2])
-
-/-- Formal validity predicate for an `s`-deletion-correcting code encoded as `List Nat` of `n`-bit words. -/
-def IsValidDeletionCode (n s : Nat) (C : List Nat) : Prop :=
-  (∀ x ∈ C, x < 2 ^ n) ∧
-  (∀ (i j : Nat) (hi : i < C.length) (hj : j < C.length), i ≠ j →
-    C[i] ≠ C[j] ∧
-    (∀ d, ¬ (InDelBall s (natToWord n C[i]) d ∧ InDelBall s (natToWord n C[j]) d)) ∧
-    ¬ HasCommonSubseqAtLeast (n - s) (natToWord n C[i]) (natToWord n C[j]))
-
-/-- Formal inclusion-maximality (non-extendability) predicate over all `2^n` binary words.
-    NOTE (-0 Hype): Certifies inclusion-maximality (no single word can extend `C`), NOT global cardinality optimality. -/
-def IsInclusionMaximal (n s : Nat) (C : List Nat) : Prop :=
-  ∀ x : Nat, x < 2 ^ n →
-    ∃ (i : Nat) (_ : i < C.length) (d : List Bool),
-      InDelBall s (natToWord n x) d ∧ InDelBall s (natToWord n C[i]) d
 
 /-- O(log M) bit-indexed binary trie mapping each `(n-s)`-bit descendant to `owner_idx + 1` (or `0`). -/
 inductive BitTrie where

@@ -1,0 +1,76 @@
+{
+  "target_id": "care-enzyme-reaction-retrieval-hard",
+  "benchmark": "CARE NeurIPS 2024 Task 2 (arXiv:2406.15669v3)",
+  "zenodo_record": "14004425",
+  "zenodo_archive_sha256": "05daa7e13ddf2835fc48e7e7b34f2d9e0b22e168df4e67f1998506791f55ec80",
+  "strict_zero_external_db": true,
+  "test_input_columns": [
+    "Reaction"
+  ],
+  "claimed_partial_wins": [
+    "p1",
+    "p2"
+  ],
+  "not_claimed": [
+    "p3_task1_protein_lt30",
+    "medium_L3_L1_vs_creep_text"
+  ],
+  "splits": {
+    "hard": {
+      "n_test": 460,
+      "pred_file": "object/v5_hard_top50.csv.gz",
+      "pred_sha256": "45ac3d902f0d36306c72e523bbb07eb3690cf368b39ffc22caf77746bc8ced88",
+      "provenance_file": "object/v5_hard_provenance.json",
+      "provenance_sha256": "e62faa86a4bcce581a2723a2f041432f3de3d591baca59d1b66402e265e3e8be",
+      "verified_scores_pct": {
+        "L4": 10.0,
+        "L3": 32.0,
+        "L2": 42.4,
+        "L1": 80.4,
+        "k50_L4": 41.7
+      },
+      "eval_count_outer_loop": 5,
+      "top1_tied_rows": 183,
+      "tie_break_100seed_mean_pct": {
+        "L4": 10.05,
+        "L3": 32.42,
+        "L2": 42.39,
+        "L1": 80.43
+      }
+    },
+    "medium": {
+      "n_test": 393,
+      "pred_file": "object/v5_medium_top50.csv.gz",
+      "pred_sha256": "45bd58a6f2f750303c9174820c5a11c9cc9810cc0ceaeb7d326cd21889d01aed",
+      "provenance_file": "object/v5_medium_provenance.json",
+      "provenance_sha256": "f7023547e58b9ee6b530dcbde8f65378513dcaa5963b524032f2cbe0fc7a14a8",
+      "verified_scores_pct": {
+        "L4": 11.5,
+        "L3": 55.7,
+        "L2": 77.4,
+        "L1": 89.8,
+        "k50_L4": 65.4
+      },
+      "eval_count_outer_loop": 6,
+      "top1_tied_rows": 0
+    },
+    "easy": {
+      "n_test": 393,
+      "role": "separate_blind_oneshot_0gpu_extension",
+      "pred_file": "object/v5_auto_easy_top50.csv.gz",
+      "pred_sha256": "1de74e1525ca62cbc549174585079acd26e8f8b5f9b192c88cefb9e6d1619494",
+      "provenance_file": "object/v5_auto_easy_provenance.json",
+      "provenance_sha256": "14bb6618306118435fbab96798f6ba8c68e8bd6b138b64b57ca96359a7d4e188",
+      "verified_scores_pct": {
+        "L4": 74.0,
+        "L3": 88.3,
+        "L2": 95.2,
+        "L1": 98.0,
+        "k50_L4": 98.7
+      },
+      "eval_count_outer_loop": 1,
+      "official_split_2d_canonical_overlap_rows": 103
+    }
+  },
+  "pub_stats_summary_sha256": "b764e3793fe3fc14f0d09e7163d1eedb2b9bc4120df42f4871712caa9f8d7c46"
+}

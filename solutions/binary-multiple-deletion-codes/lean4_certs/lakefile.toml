@@ -1,6 +1,9 @@
 name = "deletion_code_certs"
 version = "0.1.0"
-defaultTargets = ["DeletionCode"]
+defaultTargets = ["DeletionCode", "Challenge"]
 
 [[lean_lib]]
 name = "DeletionCode"
+
+[[lean_lib]]
+name = "Challenge"
